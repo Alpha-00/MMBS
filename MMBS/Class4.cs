@@ -60,6 +60,7 @@ namespace MMBS
             public string hidenlink;
             public string linkalias;//Part to show like name
             public string mark;//link 123:, play:
+            public string FAicon = "download";//https://fontawesome.com/v4.7.0/icons/
             public string host;
             public bool IsMarked;
             public object Spec_Data;
@@ -70,13 +71,9 @@ namespace MMBS
                 {
                     case "download": check = true; usefor = "download";linkalias = "Download";
                         break;
-<<<<<<< HEAD
                     case "obb": usefor = "download"; linkalias = "OBB"; break;
                     case "omirror": usefor = "download"; linkalias = "Mirror"; break;
                     case "mirror": check = true; usefor = "mirror"; linkalias = "Mirror"; FAicon = "rocket"; break;
-=======
-                    case "apk": usefor = "download"; linkalias = "APK only"; break;
->>>>>>> parent of 74612af (first commit)
                 }
             }
             public Linker()
@@ -99,6 +96,9 @@ namespace MMBS
     }
     public class PostDataBundle : ICloneable
     {
+        /// <summary>
+        /// Init PostDataBunble
+        /// </summary>
         public PostDataBundle()
         {
             folderlink = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
@@ -113,6 +113,7 @@ namespace MMBS
             appinfo.Description.spec_bold = "";
             appinfo.Description.spec_boldnoline = "";
             appinfo.Description.spec_noline = "";
+            appinfo.miscellaneous = new Dictionary<string, string>();
             appinfo.Icon = new DefineInfoPack.imageinfo();
             appinfo.Icon.codename = "";
             appinfo.Icon.dir = "";
@@ -124,8 +125,10 @@ namespace MMBS
             appinfo.Icon.name = "Icon";
             appinfo.Icon.packtype = "";
             appinfo.Icon.sharetype = "bylink";
+            appinfo.extpermReq = false;
             appinfo.internetReq = false;
             appinfo.rootReq = false;
+            appinfo.obbReq = false;
             appinfo.name = "App name";
             appinfo.nameword = new List<string>();
             appinfo.searchkeyword = "";
@@ -157,6 +160,7 @@ namespace MMBS
             this.modinfo = modinfo;
             this.credit = credit;
         }
+        
         public string folderlink;
         public string specialcmd;
         public appinfopack appinfo;
@@ -168,6 +172,7 @@ namespace MMBS
         {
             public string name;
             public string packedname;
+            public Dictionary<string, string> miscellaneous;
             public List<string> nameword;//after analyst
             public string searchkeyword;
             public string version;
@@ -176,8 +181,10 @@ namespace MMBS
             public string seriesver; // series version
             public string androidReq;
             public decimal androidReqcode;
+            public bool extpermReq;
             public bool internetReq;
             public bool rootReq;
+            public bool obbReq;
             public DefineInfoPack.imageinfo Icon;
             public Descriptionpack Description;
             public string datasource;
@@ -312,12 +319,19 @@ namespace MMBS
             }
             public void ImportImagelistFromImageDownloadList(OldProcessor.ProcSupporter.ImageDownloader[] images)
             {
-                ImageList = new List<DefineInfoPack.imageinfo>();
+
                 if (images != null)
-                    for (int i = 0; i < images.Length;i++)
                 {
-                    ImageList.Add(new DefineInfoPack.imageinfo(images[i].name, images[i].ImageDir, images[i].Link, images[i].height, images[i].width, images[i].image));
+                    ResetImageList();
+                    for (int i = 0; i < images.Length; i++)
+                    {
+                        ImageList.Add(new DefineInfoPack.imageinfo(images[i].name, images[i].ImageDir, images[i].Link, images[i].height, images[i].width, images[i].image));
+                    }
                 }
+            }
+            public void ResetImageList()
+            {
+                ImageList = new List<DefineInfoPack.imageinfo>();
             }
         }
         public struct DownloadLinkpack
@@ -332,6 +346,9 @@ namespace MMBS
         public struct modinfopack
         {
             public string modtype;
+            //
+            //Summary:
+            //      "Paid" or "Mod"
             public string moddata;
             public bool usedata;
             public ProjectInterfaceData.ModType UI;
@@ -344,6 +361,10 @@ namespace MMBS
             public static string creditStringForm = "$$$.creditNameString$$$$$$$.creditHostString$$$$";
             public static string creditNameFormat = "$$$.creditName$$$$";
             public static string creditHostFormat = " ($$$.creditHost$$$$)";
+            /// <summary>
+            /// This string use for store that I don't know where to get
+            /// </summary>
+            public static string tmp = "";
             public int nowIndex = 0;
             public int defIndex = 0;
             public CreditsList.CreditItem now = new CreditsList.CreditItem();
@@ -366,63 +387,84 @@ namespace MMBS
                 {
                     Console.WriteLine("***###First Run");
                     LoadData();
+                    isFirstRun = false;
                     Console.WriteLine("***///First Run");
                 }
-                ConvertOldVerToNewVer();
-
+                if (System.IO.File.Exists("C:\\BloggerSupporter\\creditList.txt"))
+                {
+                    ConvertOldVerToNewVer();
+                }
                 Console.WriteLine("///Debug");
+            }
+            public int Search_and_Set(string name)
+            {
+                int i = 0;
+                try
+                {
+
+                    this.now= CreditsList.list.First((x) => { i++; return x.name == name; });
+                }
+                catch(Exception e)
+                {
+                    i = 0;
+                }
+                i--;
+                if (i > 0)
+                {
+                    this.nowIndex = i;
+                }
+                return -1;
             }
             public void ConvertOldVerToNewVer()
             {
-                
-                    if (System.IO.File.Exists("C:\\BloggerSupporter\\creditList.txt"))
-                    {
-                        using (System.IO.StreamReader cache = System.IO.File.OpenText("C:\\BloggerSupporter\\creditList.txt"))
-                        {
-                            string line = cache.ReadLine();
-                            string cmdtitle;
-                            string cmddata;
-                            string[] cmdData;
-                            while (!string.IsNullOrEmpty(line))
-                            {
-                                if (line.Contains(":="))
-                                {
-                                    cmdtitle = line.Remove(line.IndexOf(":="));
-                                    cmddata = line.Substring(line.IndexOf(":=") + 2);
-                                }
-                                else
-                                {
-                                    cmdtitle = line.Trim(' ');
-                                    cmddata = "";
-                                }
-                                cmdData = null;
-                                if (cmddata.Contains("::==::"))
-                                {
-                                    cmdData = cmddata.Split("::==::");
 
-                                }
-                                else
-                                {
-                                    List<string> justcache = new List<string>();
-                                    justcache.Add(cmddata);
-                                    cmdData = justcache.ToArray();
-                                }
-                                switch (cmdtitle)
-                                {
-                                    case "creditStringForm": break;
-                                    case "creditNameFormat": break;
-                                    case "creditHostFormat": break;
-                                    case "one":
-                                        if (cmdData != null)
-                                            if (cmdData.Length >= 1 && cmdData.Length <= 4)
-                                                CreditsList.New(cmdData[0], cmdData.Length >= 2 ? cmdData[1] : "", cmdData.Length >= 3 ? Convert.ToInt32(cmdData[2]) : 0, cmdData.Length == 4 ? cmdData[3].ToLower() == "true" : false);
-                                        break;
-                                }
-                                line = cache.ReadLine();
-                            }
+
+                using (System.IO.StreamReader cache = System.IO.File.OpenText("C:\\BloggerSupporter\\creditList.txt"))
+                {
+                    string line = cache.ReadLine();
+                    string cmdtitle;
+                    string cmddata;
+                    string[] cmdData;
+                    while (!string.IsNullOrEmpty(line))
+                    {
+                        if (line.Contains(":="))
+                        {
+                            cmdtitle = line.Remove(line.IndexOf(":="));
+                            cmddata = line.Substring(line.IndexOf(":=") + 2);
                         }
-                    System.IO.File.Delete("C:\\BloggerSupporter\\creditList.txt");
+                        else
+                        {
+                            cmdtitle = line.Trim(' ');
+                            cmddata = "";
+                        }
+                        cmdData = null;
+                        if (cmddata.Contains("::==::"))
+                        {
+                            cmdData = cmddata.Split("::==::");
+
+                        }
+                        else
+                        {
+                            List<string> justcache = new List<string>();
+                            justcache.Add(cmddata);
+                            cmdData = justcache.ToArray();
+                        }
+                        switch (cmdtitle)
+                        {
+                            case "creditStringForm": break;
+                            case "creditNameFormat": break;
+                            case "creditHostFormat": break;
+                            case "one":
+                                if (cmdData != null)
+                                    if (cmdData.Length >= 1 && cmdData.Length <= 4)
+                                        CreditsList.New(cmdData[0], cmdData.Length >= 2 ? cmdData[1] : "", cmdData.Length >= 3 ? Convert.ToInt32(cmdData[2]) : 0, cmdData.Length == 4 ? cmdData[3].ToLower() == "true" : false);
+                                break;
+                        }
+                        line = cache.ReadLine();
                     }
+                }
+                System.IO.File.Delete("C:\\BloggerSupporter\\creditList.txt");
+                    
                 
                 
             }
@@ -430,10 +472,22 @@ namespace MMBS
             {
                 if (System.IO.File.Exists(creditFileDir))
                 {
-                    Console.Write("***###Load Data");
+                    Console.Write("***###Load Data ");
                     XmlReader cache = XmlReader.Create(creditFileDir);
-                    Console.WriteLine(cache == null);
-                    cache.MoveToContent();
+                    Console.WriteLine($"{(!(cache == null))} {cache.ReadState}");
+                    try
+                    {
+                        cache.MoveToContent();
+                    }
+                    catch (Exception e)
+                    {
+                        if (e.Message.ToLower().Contains("root"))
+                        {
+                            cache.Close();
+                            Init();
+                            return true;
+                        }
+                    }
                     int indexer = 0;
                     while (cache.Read())
                     {
@@ -482,7 +536,7 @@ namespace MMBS
                 XmlWriterSettings settings = new XmlWriterSettings();
                 settings.Indent = true;
                 settings.Encoding = Encoding.UTF8;
-                if (!System.IO.File.Exists(creditFileDir)) System.IO.File.Create(creditFileDir);
+                if (!System.IO.File.Exists(creditFileDir)) System.IO.File.Create(creditFileDir).Close();
                 XmlWriter cache = XmlWriter.Create(creditFileDir,settings);
                 cache.WriteStartDocument();
                 

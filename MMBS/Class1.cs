@@ -3,13 +3,11 @@ using OpenQA.Selenium.DevTools.V107.Debugger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-<<<<<<< HEAD
 using System.Runtime.CompilerServices;
 using System.Security.Principal;
-=======
->>>>>>> parent of 74612af (first commit)
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MMBS
 {
@@ -34,17 +32,15 @@ namespace MMBS
                 case "Murl": try { if (System.IO.File.Exists("C:\\BloggerSupporter\\megaurlToken.txt")) return System.IO.File.ReadAllLines("C:\\BloggerSupporter\\megaurlToken.txt")[0]; else return tokenMegaurl; } catch (Exception e) { System.Windows.Forms.MessageBox.Show("Lỗi đọc file megaurlToken");} break;//Megaurl.in
                 case "Dai": return deepai; break;
                 case "curdir": return System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath); break;//Current Dir
+                case "userdir": return System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).Remove(System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).LastIndexOf("\\AppData\\Local")); break;
                 case "nothinghereID": return nothinghereID;break;
                 case "offlinemodsID": return offlinemodsID; break;
-<<<<<<< HEAD
                 case "mmbsprojectFolder": {
                         if (!System.IO.Directory.Exists("C:\\BloggerSupporter")) System.IO.Directory.CreateDirectory("C:\\BloggerSupporter");
                         return "C:\\BloggerSupporter\\";
                             } break;
                 case "BTH": return bth;
                            
-=======
->>>>>>> parent of 74612af (first commit)
             }
             return "";
         }
@@ -67,16 +63,21 @@ namespace MMBS
         }
         
     }
+   public partial class WorldVar
+    {
+
+    }
     public class CustomizePostResult
     {
-        /* $$$: start param get
-         * !: nospace
-         * ?: require this content for all string
-         * :: require one of all content for a string
-         * .: end custom
-         * $$$$: Stop param
+        /* $$$  : start param get
+         * !    : nospace
+         * ?    : require this content for all string
+         * :    : require one of all content for a string
+         * .    : end custom
+         * $$$$ : Stop param
          */
         public PostDataBundle cachenow;
+        //sample //For version v180000
         public string layout = "$$$.iconScript$$$$" + "\n"
                                 + "$$$.descScript$$$$" + "\n"
                                 + "$$$.igroupScript$$$$"/*infogroup script*/ + "\n"
@@ -105,8 +106,10 @@ namespace MMBS
         public string modListItem = "<li>"+ "$$$.modItem$$$$" + "</li>"+"\n";
         public string[] internetReqHtml;
         public string[] rootReqHtml;
+        public string[] obbReqHtml;
+        public string[] extpermReqHtml;
         public string imageScript = "<h2>" + "\n" + "Screenshots</h2>" + "\n" + "$$$.imageHtml$$$$";
-        public string imagecardScript = "<div class=\"separator\" style=\"clear: both; text-align: center;\">"+"\n"+ "<a href="+ "$$$:.imageLink$$$$"+ "\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\">"
+        public string imagecardScript = "<div class=\"separator\" style=\"clear: both; text-align: center;\">"+"\n"+ "<a href="+"\""+ "$$$:.imageLink$$$$"+ "\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\">"
                                     + "<img border=\"0\" data-original-height=\""+ "$$$:.imageOHeight$$$$"+ "\"data-original-width=\""+ "$$$:.imageOWidth$$$$"+ "\"height=\""+ "$$$:.imageNHeight$$$$"+ "\"src=\"" + "$$$:.imageLink$$$$"+ "\"width=\"" + "$$$:.imageNWidth$$$$"+ "\" /></a ></div >"+"\n";
         public string seperateLineScript = "<div><br/></div>\n";
         public string videoScript = "<h2>" + "\n" + "Review Game</h2>" + "\n"
@@ -116,11 +119,10 @@ namespace MMBS
             + "$$$!?.videoID$$$$" + "?feature=player_embedded\" width=\"320\"></iframe></div>" + "\n";
         public string downloadScript = "<div id=\"wrap\">" + "\n" + "$$$:.downlinkBundleScript$$$$" + "</div>" + "\n";
         
-        public string downoneScript = "<a class=\"btn-slide2\" href=\"" + "$$$:.downLink$$$$" + "\" target=\"_blank\">" + "\n" + "<span class=\"circle2\"><i class=\"fa fa-download\"></i></span>" + "\n" + "<span class=\"title2\">" + "$$$:.downName$$$$" + "</span>" + "\n" + "<span class=\"title-hover2\">Click here</span>" + "\n" + "</a>" + "\n";
-        //public static string credit = "<h3>" + "\n" + "<span style=\"color: red;\">*** Credit for the mod: TigerOMs (offlinemods)</span></h3>";//Model
+        public string downoneScript = "<a class=\"btn-slide2\" href=\"" + "$$$:.downLink$$$$" + "\" target=\"_blank\">" + "\n" + "<span class=\"circle2\"><i class=\"fa fa-$$$:.downFAicon$$$$\"></i></span>" + "\n" + "<span class=\"title2\">" + "$$$:.downName$$$$" + "</span>" + "\n" + "<span class=\"title-hover2\">Click here</span>" + "\n" + "</a>" + "\n";
+        //public static string credit = "<h3>" + "\n" + "<span style=\"color: red;\">*** Credit for the mod: TigerOMs (offlinemods)</span></h3>";//Model//Another Comment:<i class=\"fa fa-download\"></i></span>"
         public static string credit = "<h3>" + "\n" + "<span style=\"color: red;\">*** Credit for the mod: <span style=\"color: #2EC849\">$$$?.creditString$$$$</span></span></h3>" + "\n";
         //public string lastword = "<h3>" + "\n" + "<span style=\"color: orange;\">*** Do not re-upload the mods without asking me. Be aware!</span></h3>";//This is the old one
-<<<<<<< HEAD
         public string lastword = "<h3>" + "\n" + "<span style=\"color: red;\">*** Don't modify the toast to make it yours. If you are about to leech this mod without leaving a credit then...f*ck you, leechers!</span></h3>";//<-----HIDEN HERE
        
         public void simpleInit()
@@ -137,13 +139,6 @@ namespace MMBS
             obbReqHtml = new string[2] {        ("<span style=\"color: #2ec849; \"><b>No</b></span>"),             ("<a href=\"https://www.offlinemods.net/2016/10/how-to-install-game-which-has-obb-file.html\" title= \"How to install game which has obb file?\" target=\"_blank\" style=\"color: red;\"><b>Yes</b></a>") };
             //extpermReqHtml = new string[2] {    ("<a href=\"https://www.offlinemods.net/\" " +/*title= \"\"*/" target=\"_blank\" style=\"color: #2ec849; \"><b>Overlay</b></a>"),             ("<a href=\"https://www.offlinemods.net/2019/10/how-to-grant-storage-permission-on-android.html\" title= \"How to grant storage permission on android?\" target=\"_blank\" style=\"color: red;\"><b>External storage</b></a>") };
             extpermReqHtml = new string[2] { ("<span style=\"color: #2ec849; \"><b>No</b></span>"), ("<a href=\"https://www.offlinemods.net/2019/10/how-to-grant-storage-permission-on-android.html\" title= \"How to grant storage permission on android?\" target=\"_blank\" style=\"color: red;\"><b>Yes</b></a>") };
-=======
-        public string lastword = "<h3>" + "\n" + "<span style=\"color: red;\">*** Don't modify the toast to make it yours. If you are about to leech this mod without leaving a credit then...f*ck you, leechers!</span></h3>";
-        public void simpleInit()
-        {
-           internetReqHtml = new string[2] { ("Not required."),("<span style=\"color: red; \"><b>Yes</b></span>")};
-            rootReqHtml = new string[2] { ("NO."), ("<span style=\"color: red; \"><b>Yes</b></span>") };
->>>>>>> parent of 74612af (first commit)
         }
         public CustomizePostResult()
         {
@@ -160,7 +155,8 @@ namespace MMBS
         public bool titleuse;
         public string searchproRes;
         public bool searchuse;
-        public string postHtml;
+        public string postHtml;//default version
+        public string postHtml2;//other version //to test beta or to preserve old ver
         public void SimpleProcess(PostDataBundle thenow)
         {
             //Title Process
@@ -181,13 +177,29 @@ namespace MMBS
                 //System.Windows.Forms.MessageBox.Show(thenow.appinfo.name.Split(':').Length.ToString());
                 searchuse = true;
             }
+            if (!string.IsNullOrEmpty(searchproRes))
+            if (thenow.appinfo.miscellaneous != null)
+                    if (thenow.appinfo.miscellaneous.Count > 0)
+                    {
+                        for (int i = 0;  i< thenow.appinfo.miscellaneous.Count; i++)
+                        {
+                            searchproRes += ", "+ thenow.appinfo.miscellaneous.ElementAt(i).Value;
+                        }
+                    }
+            //For html process
+            ////postHtml_v180000_Processor(thenow);
+            ////postHtml_v191130_Processor(thenow);
+            postHtml_v211016_Processor(thenow);
+        }
+        string postHtml_v180000_Processor(PostDataBundle thenow)
+        {
             //Icon Script
             string SP_IconScipt = "";
             if (thenow.appinfo.Icon.enable)
             {
                 if (!String.IsNullOrWhiteSpace(thenow.appinfo.Icon.link))
                 {
-                    thenow.appinfo.Icon.link=thenow.appinfo.Icon.link.Replace(" ", "");
+                    thenow.appinfo.Icon.link = thenow.appinfo.Icon.link.Replace(" ", "");
                     SP_IconScipt = iconScript.Replace("$$$!?.iconlink$$$$", thenow.appinfo.Icon.link);
                 }
             }
@@ -217,7 +229,7 @@ namespace MMBS
                 string[] subcache = (!String.IsNullOrWhiteSpace(thenow.modinfo.UI.modTypeGetDat(thenow.modinfo.UI.currentindex)) ? thenow.modinfo.UI.modTypeGetDat(thenow.modinfo.UI.currentindex).Split('\n') : new string[1] { "" });
                 if (subcache.Length < 2)
                 {
-                    cache_modList =" " +subcache[0];
+                    cache_modList = " " + subcache[0];
 
                 }
                 else
@@ -233,20 +245,20 @@ namespace MMBS
             {
                 cache_modList = " " + MyFunction.FirstCharEachWordUpcase(thenow.modinfo.UI.modTypeGetname(thenow.modinfo.UI.currentindex));
             }
-            SP_iGroupScript = MyFunction.MultiReplace(igroupHtml, "$$$.datAReq$$$$", thenow.appinfo.androidReq, "$$$.datVer$$$$",thenow.appinfo.version, 
-                "$$$.datSize$$$$", thenow.appinfo.size, "$$$.modListHtml$$$$", cache_modList, "$$$.datSourceType$$$$",thenow.appinfo.datasourcemask,
-                "$$$.datSourceLink$$$$",thenow.appinfo.datasource, "$$$.internetReqHtml$$$$",internetReqHtml[thenow.appinfo.internetReq?1:0], "$$$.rootReqHtml$$$$", rootReqHtml[thenow.appinfo.rootReq ? 1 : 0]);
-            SP_iGroupScript = igroupScript.Replace("$$$.igroupHtml$$$$",SP_iGroupScript);
+            SP_iGroupScript = MyFunction.MultiReplace(igroupHtml, "$$$.datAReq$$$$", thenow.appinfo.androidReq, "$$$.datVer$$$$", thenow.appinfo.version,
+                "$$$.datSize$$$$", thenow.appinfo.size, "$$$.modListHtml$$$$", cache_modList, "$$$.datSourceType$$$$", thenow.appinfo.datasourcemask,
+                "$$$.datSourceLink$$$$", thenow.appinfo.datasource, "$$$.internetReqHtml$$$$", internetReqHtml[thenow.appinfo.internetReq ? 1 : 0], "$$$.rootReqHtml$$$$", rootReqHtml[thenow.appinfo.rootReq ? 1 : 0]);
+            SP_iGroupScript = igroupScript.Replace("$$$.igroupHtml$$$$", SP_iGroupScript);
             //Image Script //Undone
             string SP_ImageScript = "";
             const int sizefit = 640;
             if (thenow.postmedia.ImageList.Count > 0 && thenow.postmedia.ImageInScript)
             {
-                for (int i = 0; i<thenow.postmedia.ImageList.Count; i++)
+                for (int i = 0; i < thenow.postmedia.ImageList.Count; i++)
                 {
                     if (thenow.postmedia.ImageList[i].enable)
                     {
-                        int NewHeight = thenow.postmedia.ImageList[i].height >= thenow.postmedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(thenow.postmedia.ImageList[i].height/ thenow.postmedia.ImageList[i].width* sizefit));
+                        int NewHeight = thenow.postmedia.ImageList[i].height >= thenow.postmedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(thenow.postmedia.ImageList[i].height / thenow.postmedia.ImageList[i].width * sizefit));
                         int NewWidth = thenow.postmedia.ImageList[i].height <= thenow.postmedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(thenow.postmedia.ImageList[i].width / thenow.postmedia.ImageList[i].height * sizefit));
                         string SP_ImageLink_cache = thenow.postmedia.ImageList[i].link;
                         if (thenow.appinfo.datasourcetype == "play")
@@ -254,26 +266,26 @@ namespace MMBS
                             if (SP_ImageLink_cache.Contains("-rw")) SP_ImageLink_cache = SP_ImageLink_cache.Replace("-rw", "");
                             if (SP_ImageLink_cache.Contains("=")) SP_ImageLink_cache = SP_ImageLink_cache.Remove(SP_ImageLink_cache.IndexOf("=")) + "=w" + NewWidth + "-h" + NewHeight;
                         }
-                        SP_ImageScript += MyFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$",SP_ImageLink_cache, "$$$:.imageOHeight$$$$",thenow.postmedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postmedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$",NewHeight.ToString(), "$$$:.imageNWidth$$$$",NewWidth.ToString());
-                    } 
-                    //Đây là code tạm để thêm separate, nhớ sửa
-                    if (i!=thenow.postmedia.ImageList.Count - 1)
-                    if (thenow.postmedia.ImageList[i].enable&& thenow.postmedia.ImageList[i + 1].enable)
-                    {
-                        SP_ImageScript += seperateLineScript;
+                        SP_ImageScript += MyFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", thenow.postmedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postmedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
                     }
+                    //Đây là code tạm để thêm separate, nhớ sửa
+                    if (i != thenow.postmedia.ImageList.Count - 1)
+                        if (thenow.postmedia.ImageList[i].enable && thenow.postmedia.ImageList[i + 1].enable)
+                        {
+                            SP_ImageScript += seperateLineScript;
+                        }
                 }
             }
             SP_ImageScript = imageScript.Replace("$$$.imageHtml$$$$", SP_ImageScript);
             //Video Script //Undone
             string SP_VideoScript = "";
-            
-            SP_VideoScript= (string.IsNullOrWhiteSpace(thenow.postmedia.VideoReview.ID))?thenow.postmedia.VideoReview.generateID():thenow.postmedia.VideoReview.ID;
+
+            SP_VideoScript = (string.IsNullOrWhiteSpace(thenow.postmedia.VideoReview.ID)) ? thenow.postmedia.VideoReview.generateID() : thenow.postmedia.VideoReview.ID;
             if (!String.IsNullOrWhiteSpace(SP_VideoScript))
             {
                 SP_VideoScript = videoScript.Replace("$$$!?.videoID$$$$", SP_VideoScript);
                 if (SP_ImageScript != imageScript.Replace("$$$.imageHtml$$$$", ""))
-                    SP_VideoScript = seperateLineScript+SP_VideoScript;
+                    SP_VideoScript = seperateLineScript + SP_VideoScript;
             }
             else
             {
@@ -291,15 +303,9 @@ namespace MMBS
                 if (!thenow.Downloadlink.MListEnable)
                 {
                     if (thenow.Downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.Downloadlink.Downloadlink.link))
-<<<<<<< HEAD
                         SP_DownloadScript = MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.Downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.Downloadlink.Downloadlink.FAicon);
                     if (thenow.Downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.Downloadlink.OBBlink.link))
                         SP_DownloadScript += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.Downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.Downloadlink.OBBlink.FAicon);
-=======
-                    SP_DownloadScript = MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.Downloadlink.Downloadlink.linkalias);
-                    if (thenow.Downloadlink.APKlink.check && !string.IsNullOrWhiteSpace(thenow.Downloadlink.APKlink.link))
-                    SP_DownloadScript += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.APKlink.link, "$$$:.downName$$$$", thenow.Downloadlink.APKlink.linkalias);
->>>>>>> parent of 74612af (first commit)
                     SP_DownloadScript = downloadScript.Replace("$$$:.downlinkBundleScript$$$$", SP_DownloadScript);
                 }
                 else
@@ -307,23 +313,19 @@ namespace MMBS
                     string cache_downloadbundle = "";
                     if (thenow.Downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.Downloadlink.Downloadlink.link))
                     {
-                        cache_downloadbundle = MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.Downloadlink.Downloadlink.linkalias);
+                        cache_downloadbundle = MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.Downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.Downloadlink.Downloadlink.FAicon);
                         if (thenow.Downloadlink.linklist.Count > 0)
                         {
-                            cache_downloadbundle +=MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.linklist[0].link, "$$$:.downName$$$$", thenow.Downloadlink.linklist[0].linkalias);
+                            cache_downloadbundle += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.linklist[0].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket");
                         }
                         SP_DownloadScript = downloadScript.Replace("$$$:.downlinkBundleScript$$$$", cache_downloadbundle);
                     }
                     if (thenow.Downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.Downloadlink.OBBlink.link))
                     {
-<<<<<<< HEAD
                         SP_DownloadScript += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.Downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.Downloadlink.Downloadlink.FAicon);
-=======
-                        SP_DownloadScript += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.APKlink.link, "$$$:.downName$$$$", thenow.Downloadlink.APKlink.linkalias);
->>>>>>> parent of 74612af (first commit)
                         if (thenow.Downloadlink.linklist.Count > 1)
                         {
-                            cache_downloadbundle += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.linklist[1].link, "$$$:.downName$$$$", thenow.Downloadlink.linklist[1].linkalias);
+                            cache_downloadbundle += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.Downloadlink.linklist[1].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket");
                         }
                         SP_DownloadScript += downloadScript.Replace("$$$:.downlinkBundleScript$$$$", cache_downloadbundle);
                     }
@@ -331,14 +333,13 @@ namespace MMBS
             }//*/
             //Credit
             string SP_CreditScript = "";
-           if (thenow.credit.now!=null)
-            SP_CreditScript = string.IsNullOrWhiteSpace(thenow.credit.now.GetPreview(true))?"":credit.Replace( "$$$?.creditString$$$$", thenow.credit.now.GetToUse());
+            if (thenow.credit.now != null)
+                SP_CreditScript = string.IsNullOrWhiteSpace(thenow.credit.now.GetPreview(true)) ? "" : credit.Replace("$$$?.creditString$$$$", thenow.credit.now.GetToUse());
             //Summary
-            postHtml = MyFunction.MultiReplace(layout, "$$$.iconScript$$$$",SP_IconScipt, "$$$.descScript$$$$",SP_DescScript, "$$$.igroupScript$$$$",SP_iGroupScript, "$$$.imageScript$$$$",SP_ImageScript, "$$$.videoScript$$$$",SP_VideoScript, "$$$.downloadScript$$$$",SP_DownloadScript, "$$$.creadit$$$$",SP_CreditScript, "$$$.lastword",lastword);
-           // System.Windows.Forms.MessageBox.Show(postHtml);
+            return postHtml2 = MyFunction.MultiReplace(layout, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.downloadScript$$$$", SP_DownloadScript, "$$$.creadit$$$$", SP_CreditScript, "$$$.lastword", lastword);
+            // System.Windows.Forms.MessageBox.Show(postHtml);
         }
         
-<<<<<<< HEAD
         /// <summary>
         /// Custom form post v191130
         /// 
@@ -1094,13 +1095,12 @@ namespace MMBS
                 }
             }
         }
-=======
->>>>>>> parent of 74612af (first commit)
         public string Get()
         {
             return "";
         }
     }
+    
     class Module
     {
         public class SearchKeywordModule

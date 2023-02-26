@@ -29,7 +29,6 @@
     <Setting Name="shortenlinkServer" Type="System.String" Scope="User">
       <Value Profile="(Default)">megaurl.in</Value>
     </Setting>
-<<<<<<< HEAD
     <Setting Name="NoDownImage" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
@@ -39,7 +38,5 @@
     <Setting Name="appmessage" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-=======
->>>>>>> parent of 74612af (first commit)
   </Settings>
 </SettingsFile>

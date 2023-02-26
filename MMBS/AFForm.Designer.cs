@@ -60,7 +60,6 @@
             this.butIcon = new System.Windows.Forms.PictureBox();
             this.menuNext = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.skipFMFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
             this.stripNoDownImage = new System.Windows.Forms.ToolStripMenuItem();
             this.listCredit = new System.Windows.Forms.ComboBox();
             this.labelCredit = new System.Windows.Forms.Label();
@@ -78,10 +77,6 @@
             this.labelValidMirrorDL = new System.Windows.Forms.Label();
             this.boxMirrorDLlink = new System.Windows.Forms.TextBox();
             this.progMirrorDL = new System.Windows.Forms.ProgressBar();
-=======
-            this.listCredit = new System.Windows.Forms.ComboBox();
-            this.labelCredit = new System.Windows.Forms.Label();
->>>>>>> parent of 74612af (first commit)
             this.groupDS.SuspendLayout();
             this.groupDL.SuspendLayout();
             this.groupAO.SuspendLayout();
@@ -162,6 +157,7 @@
             // 
             // groupDL
             // 
+            this.groupDL.Controls.Add(this.checkSign);
             this.groupDL.Controls.Add(this.linkDLname);
             this.groupDL.Controls.Add(this.butMDL);
             this.groupDL.Controls.Add(this.labelUnvalidDL);
@@ -175,6 +171,7 @@
             this.groupDL.TabIndex = 4;
             this.groupDL.TabStop = false;
             this.groupDL.Text = "Download";
+            this.groupDL.TextChanged += new System.EventHandler(this.groupDL_TextChanged);
             // 
             // checkSign
             // 
@@ -190,7 +187,7 @@
             // 
             this.linkDLname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkDLname.AutoSize = true;
-            this.linkDLname.Font = new System.Drawing.Font("Roboto Light", 10F);
+            this.linkDLname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.linkDLname.ForeColor = System.Drawing.Color.White;
             this.linkDLname.LinkArea = new System.Windows.Forms.LinkArea(0, 11);
             this.linkDLname.LinkColor = System.Drawing.Color.Blue;
@@ -291,13 +288,13 @@
             // 
             this.linkAOname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkAOname.AutoSize = true;
-            this.linkAOname.Font = new System.Drawing.Font("Roboto Light", 10F);
+            this.linkAOname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.linkAOname.LinkColor = System.Drawing.Color.Blue;
             this.linkAOname.Location = new System.Drawing.Point(233, -4);
             this.linkAOname.MaximumSize = new System.Drawing.Size(181, 23);
             this.linkAOname.Name = "linkAOname";
             this.linkAOname.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.linkAOname.Size = new System.Drawing.Size(102, 20);
+            this.linkAOname.Size = new System.Drawing.Size(101, 20);
             this.linkAOname.TabIndex = 5;
             this.linkAOname.TabStop = true;
             this.linkAOname.Text = "example.apk";
@@ -384,11 +381,7 @@
             this.checkRoot.AutoSize = true;
             this.checkRoot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-<<<<<<< HEAD
             this.checkRoot.Location = new System.Drawing.Point(230, 385);
-=======
-            this.checkRoot.Location = new System.Drawing.Point(323, 239);
->>>>>>> parent of 74612af (first commit)
             this.checkRoot.Name = "checkRoot";
             this.checkRoot.Size = new System.Drawing.Size(62, 24);
             this.checkRoot.TabIndex = 7;
@@ -402,11 +395,7 @@
             this.checkInternet.AutoSize = true;
             this.checkInternet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkInternet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-<<<<<<< HEAD
             this.checkInternet.Location = new System.Drawing.Point(307, 355);
-=======
-            this.checkInternet.Location = new System.Drawing.Point(227, 239);
->>>>>>> parent of 74612af (first commit)
             this.checkInternet.Name = "checkInternet";
             this.checkInternet.Size = new System.Drawing.Size(83, 24);
             this.checkInternet.TabIndex = 6;
@@ -421,14 +410,10 @@
             this.boxModInfo.DetectUrls = false;
             this.boxModInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.1F);
             this.boxModInfo.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.boxModInfo.Location = new System.Drawing.Point(15, 392);
-=======
-            this.boxModInfo.Location = new System.Drawing.Point(12, 270);
->>>>>>> parent of 74612af (first commit)
             this.boxModInfo.Name = "boxModInfo";
             this.boxModInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.boxModInfo.Size = new System.Drawing.Size(209, 125);
+            this.boxModInfo.Size = new System.Drawing.Size(209, 152);
             this.boxModInfo.TabIndex = 9;
             this.boxModInfo.Text = "Hello";
             this.boxModInfo.TextChanged += new System.EventHandler(this.boxModInfo_TextChanged);
@@ -444,13 +429,9 @@
             this.butModInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butModInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butModInfo.ForeColor = System.Drawing.Color.Lime;
-<<<<<<< HEAD
             this.butModInfo.Location = new System.Drawing.Point(15, 356);
-=======
-            this.butModInfo.Location = new System.Drawing.Point(12, 239);
->>>>>>> parent of 74612af (first commit)
             this.butModInfo.Name = "butModInfo";
-            this.butModInfo.Size = new System.Drawing.Size(83, 34);
+            this.butModInfo.Size = new System.Drawing.Size(83, 37);
             this.butModInfo.TabIndex = 8;
             this.butModInfo.Text = "MOD";
             this.butModInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -468,11 +449,7 @@
             this.butIcon.ContextMenuStrip = this.menuNext;
             this.butIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.butIcon.Image = global::MMBS.Properties.Resources.offlinemods_logo_pns;
-<<<<<<< HEAD
             this.butIcon.Location = new System.Drawing.Point(230, 419);
-=======
-            this.butIcon.Location = new System.Drawing.Point(227, 270);
->>>>>>> parent of 74612af (first commit)
             this.butIcon.Name = "butIcon";
             this.butIcon.Size = new System.Drawing.Size(160, 160);
             this.butIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -484,21 +461,11 @@
             // 
             this.menuNext.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuNext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.skipFMFToolStripMenuItem});
+            this.skipFMFToolStripMenuItem,
+            this.stripNoDownImage});
             this.menuNext.Name = "menuNext";
-            this.menuNext.Size = new System.Drawing.Size(162, 28);
+            this.menuNext.Size = new System.Drawing.Size(289, 52);
             // 
-            // skipFMFToolStripMenuItem
-            // 
-            this.skipFMFToolStripMenuItem.Checked = global::MMBS.Properties.Settings.Default.AFFskipFMF;
-            this.skipFMFToolStripMenuItem.CheckOnClick = true;
-            this.skipFMFToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.skipFMFToolStripMenuItem.Name = "skipFMFToolStripMenuItem";
-            this.skipFMFToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
-            this.skipFMFToolStripMenuItem.Text = "One (Beta)";
-            this.skipFMFToolStripMenuItem.Click += new System.EventHandler(this.skipFMFToolStripMenuItem_Click_1);
-            // 
-<<<<<<< HEAD
             // skipFMFToolStripMenuItem
             // 
             this.skipFMFToolStripMenuItem.Checked = global::MMBS.Properties.Settings.Default.AFFskipFMF;
@@ -518,17 +485,11 @@
             this.stripNoDownImage.Text = "Don\'t Download Image Preview";
             this.stripNoDownImage.Click += new System.EventHandler(this.stripNoDownImage_Click);
             // 
-=======
->>>>>>> parent of 74612af (first commit)
             // listCredit
             // 
             this.listCredit.Font = new System.Drawing.Font("Calibri", 10F);
             this.listCredit.FormattingEnabled = true;
-<<<<<<< HEAD
             this.listCredit.Location = new System.Drawing.Point(15, 550);
-=======
-            this.listCredit.Location = new System.Drawing.Point(12, 401);
->>>>>>> parent of 74612af (first commit)
             this.listCredit.Name = "listCredit";
             this.listCredit.Size = new System.Drawing.Size(190, 29);
             this.listCredit.TabIndex = 10;
@@ -538,17 +499,12 @@
             // labelCredit
             // 
             this.labelCredit.AutoSize = true;
-<<<<<<< HEAD
             this.labelCredit.Location = new System.Drawing.Point(205, 553);
-=======
-            this.labelCredit.Location = new System.Drawing.Point(202, 404);
->>>>>>> parent of 74612af (first commit)
             this.labelCredit.Name = "labelCredit";
             this.labelCredit.Size = new System.Drawing.Size(21, 20);
             this.labelCredit.TabIndex = 11;
             this.labelCredit.Text = "©";
             // 
-<<<<<<< HEAD
             // checkOBB
             // 
             this.checkOBB.AutoSize = true;
@@ -731,27 +687,22 @@
             this.progMirrorDL.TabIndex = 3;
             this.progMirrorDL.Visible = false;
             // 
-=======
->>>>>>> parent of 74612af (first commit)
             // AFForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(401, 602);
             this.Controls.Add(this.groupMirrorDL);
             this.Controls.Add(this.progressOnProc);
             this.Controls.Add(this.checkNoImgs_Syswarn);
             this.Controls.Add(this.comboExportScript);
             this.Controls.Add(this.checkExtPerms);
-=======
-            this.ClientSize = new System.Drawing.Size(401, 442);
->>>>>>> parent of 74612af (first commit)
             this.Controls.Add(this.labelCredit);
             this.Controls.Add(this.listCredit);
             this.Controls.Add(this.butModInfo);
             this.Controls.Add(this.checkRoot);
+            this.Controls.Add(this.checkOBB);
             this.Controls.Add(this.checkInternet);
             this.Controls.Add(this.groupAO);
             this.Controls.Add(this.groupDL);
@@ -816,7 +767,6 @@
         private System.Windows.Forms.ComboBox listCredit;
         private System.Windows.Forms.Label labelCredit;
         private System.Windows.Forms.ContextMenuStrip menuClipboard;
-<<<<<<< HEAD
         private System.Windows.Forms.CheckBox checkOBB;
         private System.Windows.Forms.ToolStripMenuItem stripNoDownImage;
         private System.Windows.Forms.CheckBox checkExtPerms;
@@ -833,7 +783,5 @@
         private System.Windows.Forms.Label labelValidMirrorDL;
         private System.Windows.Forms.TextBox boxMirrorDLlink;
         private System.Windows.Forms.ProgressBar progMirrorDL;
-=======
->>>>>>> parent of 74612af (first commit)
     }
 }

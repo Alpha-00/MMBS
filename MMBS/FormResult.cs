@@ -16,7 +16,6 @@ using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using Google.Apis.Auth.OAuth2;
 using System.Threading;
-
 using Newtonsoft.Json.Linq;
 namespace MMBS
 {
@@ -46,7 +45,6 @@ namespace MMBS
             if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
             toolTip.SetToolTip(butTitle, res.titleprocRes);
         }
-<<<<<<< HEAD
         public FormResult(PostDataBundle thenow, string code, params string[] para)
         {
             InitializeComponent();
@@ -117,8 +115,6 @@ namespace MMBS
                 MessageBox.Show(e.Message);
             }
         }
-=======
->>>>>>> parent of 74612af (first commit)
         public void LoadLocation()
         {
             /*{
@@ -171,12 +167,8 @@ namespace MMBS
         private void butPost_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(res.postHtml);
-<<<<<<< HEAD
             if(!String.IsNullOrWhiteSpace(res.postHtml))
                 SystemAlt.Windows_Forms_Clipboard_SetText(res.postHtml);
-=======
-            Clipboard.SetText(!String.IsNullOrWhiteSpace(res.postHtml)?res.postHtml:"");
->>>>>>> parent of 74612af (first commit)
             if (Properties.Settings.Default.OldStyle) {  butPost.Font = new Font(butPost.Font,FontStyle.Underline); }
             else
             butPost.ForeColor = Color.Yellow;
@@ -260,53 +252,7 @@ namespace MMBS
 
         private void butAutoPost_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             SystemAlt.Windows_Forms_Clipboard_SetText(!String.IsNullOrWhiteSpace(res.postHtml) ? res.postHtml : "");
-=======
-            this.Hide();
-            string[] Scopes = { BloggerService.Scope.Blogger };
-            string ApplicationName = "MMBS";
-            UserCredential credential;
-
-            using (var stream =
-                new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
-            {
-                // The file token.json stores the user's access and refresh tokens, and is created
-                // automatically when the authorization flow completes for the first time.
-                string credPath = "token.json";
-                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    GoogleClientSecrets.Load(stream).Secrets,
-                    Scopes,
-                    "user",
-                    CancellationToken.None,
-                    new FileDataStore(credPath, true)).Result;
-                Console.WriteLine("Credential file saved to: " + credPath);
-            }
-            var service1 = new BloggerService(new BaseClientService.Initializer()
-            {
-                HttpClientInitializer = credential,
-                ApplicationName = ApplicationName,
-            });
-            //var cache = new JObject();
-            //cache.Add("name", FormData.appinfo.name +" "+ FormData.modinfo.modtype);
-
-            Google.Apis.Blogger.v3.Data.Post post = new Post();
-            post.Title = (string.IsNullOrWhiteSpace(res.titleprocRes) ? "" : res.titleprocRes);
-            post.Labels = new List<string>();
-            if (res.titleprocRes.ToLower().Contains("mod"))
-            post.Labels.Add("ModdedGames");
-            else if (res.titleprocRes.ToLower().Contains("paid"))
-                post.Labels.Add("PaidGames");
-            post.Content = !String.IsNullOrWhiteSpace(res.postHtml) ? res.postHtml : "";
-            post.CustomMetaData = "{\"Search Description\" = \"" + ( !String.IsNullOrWhiteSpace(res.searchproRes) ? res.searchproRes : "" )+ "\"}";
-            //post.Labels.Add("A");
-            PostsResource.InsertRequest request = service1.Posts.Insert(post,Class1.GetToken("offlinemodsID"));
-            request.IsDraft = true;
-            
-            Post result = request.Execute();
-            System.Diagnostics.Process.Start("https://draft.blogger.com/blogger.g?blogID=" +  Class1.GetToken("offlinemodsID") + "#editor/postID=" + result.Id);
-            this.Show();
->>>>>>> parent of 74612af (first commit)
         }
     }
 }

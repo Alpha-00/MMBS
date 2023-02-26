@@ -17,7 +17,6 @@ using System.Threading;
 
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-<<<<<<< HEAD
 using System.Web;
 using System.Net;
 
@@ -34,8 +33,6 @@ using System.Text.Json;
 using Newtonsoft.Json;
 using System.Text.Json.Nodes;
 
-=======
->>>>>>> parent of 74612af (first commit)
 namespace MMBS
 {
     class MMBStool
@@ -379,6 +376,7 @@ namespace MMBS
                 }
                 return cache;
             }
+            //Todo: I wanna have a Html webpage library
             public class ImageDownloader
             {
                 public byte[] ImageinByte;
@@ -596,7 +594,6 @@ namespace MMBS
                     return "";
                 }
             }
-<<<<<<< HEAD
 
  
             public static string httpreqDownloadString(Uri uri)
@@ -732,8 +729,6 @@ namespace MMBS
 
             }
             
-=======
->>>>>>> parent of 74612af (first commit)
         }
         public class ProcessDataResourceTextBox
         {
@@ -795,13 +790,9 @@ namespace MMBS
                         if (string.IsNullOrEmpty(coverImagelink)) throw new Exception("Can't find cover image");
                         if (coverImagelink.Contains("-rw")) coverImagelink = coverImagelink.Remove(coverImagelink.Length - 2);
                         if (!coverImagelink.Contains("http")) coverImagelink = "https://" + coverImagelink;
-<<<<<<< HEAD
                         //https://play-lh.googleusercontent.com/IeGa7ALAZCgO5TNWfEbxtJdtmM6QKZjbPax4uHHgFhMJfpWdupkmjY5WvUfq99ThZPc=s180
                         string temp_coverthumbnailLink = coverImagelink.Remove(coverImagelink.IndexOf("=") + 1) + "s140";
                         coverImage = new ProcSupporter.ImageDownloader(temp_coverthumbnailLink, "cover", cacheDir);
-=======
-                        coverImage = new ProcSupporter.ImageDownloader(coverImagelink, "cover", cacheDir);
->>>>>>> parent of 74612af (first commit)
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
                         link = ("https://play.google.com/store/apps/details?id=" + packagename);
@@ -852,7 +843,6 @@ namespace MMBS
                     try
                     {
                         if (link.Contains("/vn/")) link = link.Replace("/vn/", "/");
-<<<<<<< HEAD
                         //! The Code to solve 403 Forbiden problem
                         //Source Code: https://stackoverflow.com/questions/16735042/the-remote-server-returned-an-error-403-forbidden
                         //Navigate to front page to Set cookies
@@ -880,11 +870,6 @@ namespace MMBS
                         //End Source
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) cache = System.IO.Directory.CreateDirectory(cacheDir).FullName;
-=======
-                        webpage = cache_net.DownloadString(link);
-                        cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packedname;
-                        if (!System.IO.Directory.Exists(cacheDir)) System.IO.Directory.CreateDirectory(cacheDir);
->>>>>>> parent of 74612af (first commit)
                         ProcSupporter.HtmlScriptCard scriptCache;
                         scriptCache = ProcSupporter.FindCardinScript(webpage, "class=\"icon\"");
                         scriptCache = ProcSupporter.FindCardinScript(webpage, scriptCache.stop + 3);
@@ -1040,9 +1025,15 @@ namespace MMBS
                 host = info.host;
             }
         }
+       
         public class ProcessDownloadLinkTextBox
         {
-            public enum request_code { ValidCheckOnly, FullInfo };
+            public enum request_code 
+            { 
+                ///<summary>Valid Check only</summary>
+                SimpleInfo, 
+                FullInfo 
+            };
             public string step;
             System.Net.WebClient cache_net;
             //Data here
@@ -1054,20 +1045,17 @@ namespace MMBS
             public string fsize;
             public request_code REQUEST;
             //
-            public ProcessDownloadLinkTextBox(string content, request_code Request=request_code.FullInfo)
+            public ProcessDownloadLinkTextBox(string content, request_code Request = request_code.FullInfo)
             {
                 REQUEST = Request;
-                if (REQUEST == request_code.ValidCheckOnly)
+                string cache = content.Replace(" ", "");
+                //Special Pre Process for www.4file.net
+                if (content.Contains("www.4file.net") && !(content.Contains("http://")||content.Contains("https://"))) cache = "http://"+content.Replace(" ", "");
+                if (REQUEST == request_code.SimpleInfo)
                 {
-<<<<<<< HEAD
                     // User_DebugSystem.Command("call\nB?t d?u ki?m duy?t link");
                     
                     if (OldProcessor.ProcSupporter.ValidLinker(content))
-=======
-                    string cache = content.Replace(" ", "");
-                    // User_DebugSystem.Command("call\nB?t d?u ki?m duy?t link");
-                    if (oldProcessor.ProcSupporter.ValidLinker(content))
->>>>>>> parent of 74612af (first commit)
                     {
                         Uri uri = new Uri(cache);
                         host = uri.Host;
@@ -1080,30 +1068,26 @@ namespace MMBS
                             switch (uri.Host.ToLower())
                             {
                                 case "userscloud.com": webpage = cache_net.DownloadString(uri); if (!string.IsNullOrEmpty(webpage)) valid = 1; break;
-<<<<<<< HEAD
                                 case "drive.google.com": googledriveProc(uri); break;
                                 case "www.4file.net": webpage = cache_net.DownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<b>File Not Found</b>")) valid = 1; break;
                                 case "sharemods.com": webpage = cache_net.DownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<b>File Not Found</b>")) valid = 1; break;
                                 case "apkadmin.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<h2>File Not Found</h2>")) valid = 1; break;
                                 case "www.file-upload.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<h2>File Not Found</h2>")) valid = 1; break;
                                 case "www.terabox.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("share-error-msg")) valid = 1; break;
-=======
-                                case "drive.google.com": GDrive(uri); break;
-                                case "www.4file.net": webpage = cache_net.DownloadString(uri); if (!string.IsNullOrEmpty(webpage)) valid = 1; break;
->>>>>>> parent of 74612af (first commit)
                                 default: webpage = cache_net.DownloadString(uri); if (!string.IsNullOrEmpty(webpage)) valid = 1; break;
                             }
+                            if (valid == 0) valid = 2;
                         }
                         catch (Exception e)
                         {
-                            valid = 0;
+                            valid = 2;
                         }
                     }
                 }
                 else
                 if (REQUEST == request_code.FullInfo)//!Main Processor
                 {
-                    string cache = content.Replace(" ", "");
+          
                     // User_DebugSystem.Command("call\nB?t d?u ki?m duy?t link");
                     if (OldProcessor.ProcSupporter.ValidLinker(content))
                     {
@@ -1115,7 +1099,6 @@ namespace MMBS
                         //User_DebugSystem.Command("call\nHoàn t?t ki?m duy?t và Chu?n b? x? lý");
                         switch (uri.Host.ToLower())
                         {
-<<<<<<< HEAD
                             case "userscloud.com": userscloudProc(uri); break;
                             case "drive.google.com": googledriveProc(uri); break;
                             case "www.4file.net": www4fileProc(uri); break;
@@ -1123,18 +1106,13 @@ namespace MMBS
                             case "apkadmin.com": apkadminProc(uri); break;
                             case "www.file-upload.com": fileuploadProc(uri);  break;
                             case "www.terabox.com": teraboxProc(uri);  break;
-=======
-                            case "userscloud.com": UCloudProc(uri); break;
-                            case "drive.google.com": GDrive(uri); break;
-                            case "www.4file.net": WWW4file(uri); break;
->>>>>>> parent of 74612af (first commit)
                             default: valid = 0; break;
                         }
 
                     }
                     else valid = 2;
                 }
-                void UCloudProc(Uri uri)
+                void userscloudProc(Uri uri)
                 {
                     webpage = cache_net.DownloadString(uri);
                     ProcSupporter.HtmlScriptCard scriptCache;
@@ -1157,7 +1135,7 @@ namespace MMBS
                         }
                     }
                 }
-                void GDrive(Uri uri)
+                void googledriveProc(Uri uri)
                 {
                     //User_DebugSystem.Command("call\nNhánh x? lý link: Host = 'drive.google.com'");
                     //Init service
@@ -1174,7 +1152,7 @@ namespace MMBS
                     {
                         // The file token.json stores the user's access and refresh tokens, and is created
                         // automatically when the authorization flow completes for the first time.
-                        string credPath = "token.json";
+                        string credPath = "token4D.json";
                         credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                             GoogleClientSecrets.Load(stream).Secrets,
                             Scopes,
@@ -1220,6 +1198,7 @@ namespace MMBS
                     {
                         valid = 2;
                         System.Windows.Forms.MessageBox.Show(e.Message);
+                        Console.WriteLine(e.Message);
                         if (!string.IsNullOrWhiteSpace(e.HelpLink))
                             SystemAlt.Windows_Forms_Clipboard_SetText(e.HelpLink);
                     }
@@ -1228,6 +1207,7 @@ namespace MMBS
                         valid = 2;
                         System.Windows.Forms.MessageBox.Show(e.Message);
                     }
+                    
                     string GetID()
                     {
 
@@ -1270,18 +1250,182 @@ namespace MMBS
 
                     }
                 }
-                void WWW4file(Uri uri)
+                void www4fileProc(Uri uri)
                 {
-                    webpage = cache_net.DownloadString(uri);
+                    //webpage = cache_net.DownloadString(uri);
                     ProcSupporter.HtmlScriptCard scriptCache;
+                    try
+                    {
+                        System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", AppDomain.CurrentDomain.BaseDirectory+"\\Driver\\chromedriver.exe");
+                        ChromeOptions options = new ChromeOptions();
+                        //options.BinaryLocation = System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)+ "\\CocCoc\\Browser\\Application\\browser.exe";
+                        options.AddArgument("--headless");
+                        //options.AddArguments("user-data-dir=C:/Users/user_name/AppData/Local/Google/Chrome/User Data");
+                        OpenQA.Selenium.Chrome.ChromeDriver driver = new ChromeDriver(options);
+                        driver.Navigate().GoToUrl(uri);
+                        driver.FindElement(By.Id("method_free")).Click();
+                        webpage = driver.PageSource;
+                        driver.Quit();
+                    }
+                    catch(Exception e)
+                    {
+                        try
+                        {
+                            OpenQA.Selenium.Edge.EdgeDriver driver = new OpenQA.Selenium.Edge.EdgeDriver();
+                            driver.Navigate().GoToUrl(uri);
+                            driver.FindElement(By.Id("method_free")).Click();
+                            webpage = driver.PageSource;
+                            driver.Quit();
+                        }
+                        catch (Exception e1)
+                        {
+                            try
+                            {
+                                OpenQA.Selenium.Firefox.FirefoxDriver driver = new OpenQA.Selenium.Firefox.FirefoxDriver();
+                                driver.Navigate().GoToUrl(uri);
+                                driver.FindElement(By.Id("method_free")).Click();
+                                webpage = driver.PageSource;
+                                driver.Quit();
+                            }
+                            catch(Exception e2)
+                            {
+                                try
+                                {
+                                    OpenQA.Selenium.IE.InternetExplorerDriver driver = new OpenQA.Selenium.IE.InternetExplorerDriver();
+                                    driver.Navigate().GoToUrl(uri);
+                                    driver.FindElement(By.Id("method_free")).Click();
+                                    webpage = driver.PageSource;
+                                    driver.Quit();
+                                }
+                                catch(Exception e3)
+                                {
+                                    System.Windows.Forms.MessageBox.Show("Vui lòng cài Chrome để xử lý link này");
+                                }
+                            }
+                        }
+                    }
+
+                    if (string.IsNullOrWhiteSpace(webpage)) valid = 2;
+                    else
+                    {
+                        try
+                        {
+                            const string fname_header = "<span class=\"dfilename\">";
+                            const string fname_tail = "</span>";
+                            string smallcache = webpage.Substring(webpage.IndexOf(fname_header), 3000);
+                            fname = smallcache.Substring(smallcache.IndexOf(fname_header) + fname_header.Length, smallcache.Substring(smallcache.IndexOf(fname_header)).IndexOf(fname_tail) - fname_header.Length);
+                            const string fsize_header = "<span class=\"statd\">size</span>\r\n\t\t\t\t\t<span>";
+                            const string fsize_tail = "</span>";
+                            fsize = smallcache.Substring(smallcache.IndexOf(fsize_header) + fsize_header.Length);
+                            //  fsize =   smallcache.Substring(smallcache.IndexOf(fsize_header)).IndexOf(fsize_tail) - fsize_header.Length);
+                            fsize = fsize.Remove(fsize.IndexOf(fsize_tail));
+                            valid = 1;
+                        }
+                        catch (Exception e)
+                        {
+                            valid = 2;
+                        }
+                    }
                     
-                    OpenQA.Selenium.Chrome.ChromeDriver driver = new ChromeDriver();
                     
-                    driver.Navigate().GoToUrl(uri);
-                    driver.FindElementById("method_free").Click();
-                    webpage = driver.PageSource;
-                    System.Windows.Forms.MessageBox.Show(System.Convert.ToString(webpage.Contains("span class=\"statd\">size</span>")));
-                    driver.Close();
+                }
+                void sharemodsProc(Uri uri)
+                {
+                    try
+                    {
+                        webpage = cache_net.DownloadString(uri);
+                        ProcSupporter.HtmlScriptCard scriptCache;
+                        if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<b>File Not Found</b>"))
+                        {
+                            scriptCache = ProcSupporter.FindCardinScript(webpage, "f-info");
+                            string cache1 = webpage.Substring(scriptCache.stop + 1);
+                            cache1 = cache1.Remove(cache1.IndexOf('<'));
+                            //Download: frosty_heavy_winter_7_3.scs [79.4 MB]
+                            fsize = cache1.Substring(cache1.LastIndexOf('[')).Trim('[', ']');
+                            fname = cache1.Substring("Download: ".Length);
+                            fname = fname.Remove(fname.Length - fsize.Length - 3);
+                            valid = 1;
+                        }
+                        else valid = 2;
+                    }
+                    catch (Exception e)
+                    {
+                        valid = 0;
+                        System.Windows.Forms.MessageBox.Show("Sharemods link Process Error\n"+e.Message);
+                    }
+                }
+          
+                void apkadminProc(Uri uri)
+                {
+                    try
+                    {
+                        //! The Code to solve 403 Forbiden problem
+                        //Source Code: https://stackoverflow.com/questions/16735042/the-remote-server-returned-an-error-403-forbidden
+                        //Navigate to front page to Set cookies
+                        // HttpRequest htmlReq = new HttpRequest("","","");
+
+                       // Dictionary<string,List<string>> OLinks = new Dictionary<string, List<string>>();
+
+                       // string Url = uri.AbsoluteUri;
+                        CookieContainer cookieJar = new CookieContainer();
+                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+                        request.CookieContainer = cookieJar;
+
+                        request.Accept = @"text/html, application/xhtml+xml, */*";
+                        //request.Referer = @"https://www.apkadmin.com/";
+                        request.Headers.Add("Accept-Language", "en-GB");
+                        request.UserAgent = @"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)";
+                        //request.Host = @"www.apkadmin.com";
+                        request.UseDefaultCredentials = true;
+
+                        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                        using (var reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            webpage = reader.ReadToEnd();
+                        }
+                        //End Source
+                        //Old Script
+                        //cache_net.UseDefaultCredentials = true;
+                        //cache_net.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+                        //webpage = cache_net.DownloadString(uri);
+                        ProcSupporter.HtmlScriptCard scriptCache;
+                        if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<h2>File Not Found</h2>"))
+                        {
+                            string cache1 = webpage.Substring(webpage.IndexOf("file-name text-center"));
+                            //cache1 = cache1.Substring(cache1.IndexOf("File: <strong> ") + "File: <strong> ".Length);
+                            cache1 = cache1.Substring(cache1.IndexOf(">")+1);
+                            fname = cache1.Remove(cache1.IndexOf("<"));
+                            //Warn: name code &#x27;
+                            // Temp Function for debug                            
+                            {
+                                if (fname.Contains("&#"))
+                                {
+                                    if (fname.Contains("&#x27;"))
+                                    {
+                                        fname = fname.Replace("&#x27;", "'");
+                                    }
+                                    if (fname.Contains("&#133"))
+                                    {
+                                        fname = fname.Replace("&#133", "");
+                                    }
+                                }
+                            }
+                            //Download: frosty_heavy_winter_7_3.scs [79.4 MB]
+                            //cache1 = cache1.Substring(cache1.IndexOf("Size: <strong> ") + "Size: <strong> ".Length);
+                            cache1 = cache1.Substring(cache1.IndexOf("has-size-icon") + 1);
+                            cache1 = cache1.Substring(cache1.IndexOf("has-size-icon") + "has-size-icon\">Size: ".Length);
+                            fsize = cache1.Remove(cache1.IndexOf("<"));
+                            //! Temporarily Fix for fname
+                            if (uri.Segments.Length > 2) fname = uri.Segments[2].Remove(uri.Segments[2].Length - 5);
+                            valid = 1;
+                        }
+                        else valid = 2;
+                    }
+                    catch (Exception e)
+                    {
+                        valid = 0;
+                        System.Windows.Forms.MessageBox.Show("APKADMIN link Process Error\n" + e.Message);
+                    }
                 }
 
                 void fileuploadProc(Uri uri)
@@ -1389,11 +1533,8 @@ namespace MMBS
             public string desc;
             public string Desc_Bold;
             public string[] imagelink;
-<<<<<<< HEAD
             
             public Dictionary<string, string> miscellaneous;
-=======
->>>>>>> parent of 74612af (first commit)
             public ProcSupporter.ImageDownloader[] image;
             public MainProcessor(string webpage, string webhost, string dir)
             {
@@ -1405,7 +1546,6 @@ namespace MMBS
                 {
                     switch (webhost.ToLower())
                     {
-<<<<<<< HEAD
                         case "play.google.com": PlayModule cache = new PlayModule(webpage, dir); 
                             { this.title = cache.title; this.videolink = cache.videolink; this.req = cache.req; this.version = cache.version; this.desc = cache.desc; this.Desc_Bold = cache.Desc_Bold; this.imagelink = cache.imagelink; this.image = cache.image; this.miscellaneous = cache.miscellaneous; } break;
                         case "apps.apple.com": APPLEModule cache4 = new APPLEModule(webpage, dir);
@@ -1419,10 +1559,6 @@ namespace MMBS
                             QooappModule cache5 = new QooappModule(webpage, dir);
                             { this.title = cache5.title; this.videolink = cache5.videolink; this.req = cache5.req; this.version = cache5.version; this.desc = cache5.desc; this.Desc_Bold = cache5.Desc_Bold; this.imagelink = cache5.imagelink; this.image = cache5.image; }
                             break;
-=======
-                        case "play.google.com": PlayModule cache = new PlayModule(webpage, dir); { this.title = cache.title; this.videolink = cache.videolink; this.req = cache.req; this.version = cache.version; this.desc = cache.desc; this.Desc_Bold = cache.Desc_Bold; this.imagelink = cache.imagelink; this.image = cache.image; } break;
-                        case "apkpure.com": APKpureModule cache2 = new APKpureModule(webpage, dir); { this.title = cache2.title; this.videolink = cache2.videolink; this.req = cache2.req; this.version = cache2.version; this.desc = cache2.desc; this.Desc_Bold = cache2.Desc_Bold; this.imagelink = cache2.imagelink; this.image = cache2.image; } break;
->>>>>>> parent of 74612af (first commit)
 
                     }
                 }
@@ -1439,6 +1575,7 @@ namespace MMBS
                 public string desc;
                 public string Desc_Bold;
                 public string[] imagelink;
+                public Dictionary<string, string> miscellaneous;
                 public ProcSupporter.ImageDownloader[] image;
                 public HtmlDocument HTMLdoc = new HtmlDocument();
                 public HtmlNode tmpHTMLnode;
@@ -1455,7 +1592,6 @@ namespace MMBS
                 {
                     /*try
                     {*/
-<<<<<<< HEAD
                         this.dir = dir;
                         this.webpage = webpage;
                         HTMLdoc.LoadHtml(webpage);
@@ -1467,23 +1603,12 @@ namespace MMBS
                         Get_Image();
                         Get_Desc();
 
-=======
-                    this.dir = dir;
-                    this.webpage = webpage;
-                    Get_Title();
-                    Get_Video();
-                    Get_Req();
-                    Get_Version();
-                    Get_Image();
-                    Get_Desc();
->>>>>>> parent of 74612af (first commit)
                     /*}
                     catch (Exception e)
                     {
                         System.Windows.Forms.MessageBox.Show("Process Error\n" + e.Message);
                     }*/
                 }
-<<<<<<< HEAD
                 
                 public void Get_CustomData()
                 {
@@ -1635,13 +1760,8 @@ namespace MMBS
                 public void Get_Title()
                 {
                     string identity_head = "<h1 itemprop=\"name\" class=\"Fd93Bb F5UCq xwcR9d\"><span>";
-=======
-                public void Get_Title()
-                {
-                    string identity_head = "<h1 class=\"AHFaub\" itemprop=\"name\"><span >";
->>>>>>> parent of 74612af (first commit)
                     string identity_tail = "</span>";
-                    System.Windows.Forms.Clipboard.SetText(webpage);
+                    //System.Windows.Forms.Clipboard.SetText(webpage);
                     int subcache = this.webpage.IndexOf(identity_head) + identity_head.Length;
                     if (subcache >= identity_head.Length)
                     {
@@ -1721,22 +1841,27 @@ namespace MMBS
                     string identity = "alt=\"Screenshot Image\"";
                     oldProcessor.ProcSupporter.HtmlScriptCard card;
                     List<string> cache = new List<string>();
+                    List<string> cache_thumbLink = new List<string>();
                     string cache_string;
                     while (this.webpage.Contains(identity))
                     {
                         card = ProcSupporter.FindCardinScript(this.webpage, identity);
                         cache_string = card.GetData("srcset");
                         cache.Add(cache_string.Contains(" ") ? cache_string.Remove(cache_string.IndexOf(" ")) : cache_string);
+                        cache_thumbLink.Add(cache.Last().Remove(cache.Last().IndexOf("=")) + "=h160");
                         this.webpage = this.webpage.Remove(1, card.stop);
                     }
 
                     if (cache != null)
                     {
-                        this.image = new ProcSupporter.ImageDownloader[cache.Count];
-                        Parallel.For(0, cache.Count, new ParallelOptions { MaxDegreeOfParallelism = 8 }, i => { image[i] = new ProcSupporter.ImageDownloader(cache[i], "Screenshot " + i.ToString(), this.dir); });
-                        //for (int i=0;i<= cache.Count-1; i++) image[i] = new ProcSupporter.ImageDownloader(cache[i], "Screenshot " + i.ToString(), this.dir);
+                        if (!Properties.Settings.Default.NoDownImage)
+                        {
+                            this.image = new ProcSupporter.ImageDownloader[cache.Count];
+                            Parallel.For(0, cache.Count, new ParallelOptions { MaxDegreeOfParallelism = 8 }, i => { image[i] = new ProcSupporter.ImageDownloader(cache_thumbLink[i], "Screenshot " + i.ToString(), this.dir); });
+                            //for (int i=0;i<= cache.Count-1; i++) image[i] = new ProcSupporter.ImageDownloader(cache[i], "Screenshot " + i.ToString(), this.dir);
 
-                        this.imagelink = cache.ToArray();
+                            this.imagelink = cache.ToArray();
+                        }
                     }
 
                 }

@@ -105,7 +105,7 @@ namespace MMBS
 
         private void ETest1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            MessageBox.Show(e.ClickedItem.Name);
+            
         }
 
         private void cmdEXE1ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -319,6 +319,13 @@ namespace MMBS
         private void betaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.BetaTest = betaToolStripMenuItem.Checked;
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //Option Context click
+            ZZZOptions form = new ZZZOptions();
+            form.ShowDialog();
         }
     }
 }

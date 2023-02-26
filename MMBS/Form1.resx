@@ -125,7 +125,6 @@
   </metadata>
   <data name="UpdateLog.Text" xml:space="preserve">
     <value>CHANGE LOGS
-<<<<<<< HEAD
 0.31.230223 : Update PMT template
 0.31.221224 : Support QooApp data source
 0.30.221214 : Change Clipboard SetText to multiple API
@@ -181,8 +180,6 @@
 0.16.191002 : BloggerAPI active
 0.15.191001 : 4file is supported
 0.14.190930 : Simplize APK only Link checker and some Redesign in FMF
-=======
->>>>>>> parent of 74612af (first commit)
 0.13.190927 : Fix Some Bugs
 0.12.190925 : Remove DeepAI IDC library
 0.11.190702 : Temporarily Sollution for Megaurl API Access

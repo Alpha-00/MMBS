@@ -4,80 +4,129 @@
         <name>MaterialDesignThemes.Wpf</name>
     </assembly>
     <members>
-        <member name="T:ControlzEx.PackIconBase`1">
-            <summary>
-            Base class for creating an icon control for icon packs.
-            </summary>
-            <typeparam name="TKind"></typeparam>
-        </member>
-        <member name="M:ControlzEx.PackIconBase`1.#ctor(System.Func{System.Collections.Generic.IDictionary{`0,System.String}})">
-            <param name="dataIndexFactory">
-            Inheritors should provide a factory for setting up the path data index (per icon kind).
-            The factory will only be utilised once, across all closed instances (first instantiation wins).
-            </param>
-        </member>
-        <member name="P:ControlzEx.PackIconBase`1.Kind">
-            <summary>
-            Gets or sets the icon to display.
-            </summary>
-        </member>
-        <member name="P:ControlzEx.PackIconBase`1.Data">
-            <summary>
-            Gets the icon path data for the current <see cref="P:ControlzEx.PackIconBase`1.Kind"/>.
-            </summary>
-        </member>
-        <member name="T:ControlzEx.PopupEx">
-            <summary>
-            This custom popup can be used by validation error templates or something else.
-            It provides some additional nice features:
-                - repositioning if host-window size or location changed
-                - repositioning if host-window gets maximized and vice versa
-                - it's only topmost if the host-window is activated
-            </summary>
-        </member>
-        <member name="P:ControlzEx.PopupEx.CloseOnMouseLeftButtonDown">
-            <summary>
-            Gets/sets if the popup can be closed by left mouse button down.
-            </summary>
-        </member>
-        <member name="M:ControlzEx.PopupEx.RefreshPosition">
-            <summary>
-            Causes the popup to update it's position according to it's current settings.
-            </summary>
-        </member>
-        <member name="T:ControlzEx.PopupEx.SWP">
-            <summary>
-            SetWindowPos options
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.ButtonAssist">
-            <summary>
-            Helper properties for working with for make round corner.
-            </summary>
-        </member>
         <member name="F:MaterialDesignThemes.Wpf.ButtonAssist.CornerRadiusProperty">
             <summary>
             Controls the corner radius of the surrounding box.
             </summary>
         </member>
-        <member name="T:MaterialDesignThemes.Wpf.Card">
+        <member name="T:MaterialDesignThemes.Wpf.CalendarFormatInfo">
             <summary>
-            A card is a content control, styled according to Material Design guidelines.
+            Provides culture-specific information about the format of calendar.
             </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.CalendarFormatInfo.YearMonthPattern">
+            <summary>
+            Gets the custom format string for a year and month value.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.CalendarFormatInfo.ComponentOnePattern">
+            <summary>
+            Gets the custom format string for a component one value.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.CalendarFormatInfo.ComponentTwoPattern">
+            <summary>
+            Gets the custom format string for a component two value.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.CalendarFormatInfo.ComponentThreePattern">
+            <summary>
+            Gets the custom format string for a component three value.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.CalendarFormatInfo.SetYearPattern(System.String[],System.String)">
+            <summary>
+            Sets the culture-specific custom format string for a year value. 
+            </summary>
+            <param name="cultureNames">An array of string that specify the name of culture to set the <paramref name="yearPattern"/> for.</param>
+            <param name="yearPattern">The custom format string for a year value. If null, culture-specific custom format string for a year value is removed.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="cultureNames"/> is null.</exception>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.CalendarFormatInfo.SetYearPattern(System.String,System.String)">
+            <summary>
+            Sets the culture-specific custom format string for a year value.
+            </summary>
+            <param name="cultureName">A string that specify the name of culture to set the <paramref name="yearPattern"/> for.</param>
+            <param name="yearPattern">The custom format string for a year value. If null, culture-specific custom format string for a year value is removed.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="cultureName"/> is null.</exception>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.CalendarFormatInfo.SetDayOfWeekStyle(System.String[],MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle)">
+            <summary>
+            Sets the culture-specific day of week style.
+            </summary>
+            <param name="cultureNames">An array of string that specify the name of culture to set the <paramref name="dayOfWeekStyle"/> for.</param>
+            <param name="dayOfWeekStyle">A <see cref="T:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle"/> to be set.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="cultureNames"/> is null.</exception>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.CalendarFormatInfo.SetDayOfWeekStyle(System.String,MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle)">
+            <summary>
+            Sets the culture-specific day of week style.
+            </summary>
+            <param name="cultureName">A string that specify the name of culture to set the <paramref name="dayOfWeekStyle"/> for.</param>
+            <param name="dayOfWeekStyle">A <see cref="T:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle"/> to be set.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="cultureName"/> is null.</exception>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.CalendarFormatInfo.ResetDayOfWeekStyle(System.String[])">
+            <summary>
+            Resets the culture-specific day of week style to default value.
+            </summary>
+            <param name="cultureNames">An array of string that specify the name of culture to reset.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="cultureNames"/> is null.</exception>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.CalendarFormatInfo.ResetDayOfWeekStyle(System.String)">
+            <summary>
+            Resets the culture-specific day of week style to default value.
+            </summary>
+            <param name="cultureName">A string that specify the name of culture to reset.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="cultureName"/> is null.</exception>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.CalendarFormatInfo.FromCultureInfo(System.Globalization.CultureInfo)">
+            <summary>
+            Creates a <see cref="T:MaterialDesignThemes.Wpf.CalendarFormatInfo"/> from the <see cref="T:System.Globalization.CultureInfo"/>.
+            </summary>
+            <param name="cultureInfo">A <see cref="T:System.Globalization.CultureInfo"/> that specifies the culture to get the date format.</param>
+            <returns>The <see cref="T:MaterialDesignThemes.Wpf.CalendarFormatInfo"/> object that this method creates.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="cultureInfo"/> is null.</exception>
+        </member>
+        <member name="T:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle">
+            <summary>
+            Represents a day of week style.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle.Pattern">
+            <summary>
+            Gets the custom format string for a day of week value.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle.Separator">
+            <summary>
+            Gets the string that separates MonthDay and DayOfWeek.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle.IsFirst">
+            <summary>
+            Gets a value indicating whether DayOfWeek is before MonthDay.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle"/> struct.
+            </summary>
+            <param name="pattern">A custom format string for a day of week value.</param>
+            <param name="separator">A string that separates MonthDay and DayOfWeek.</param>
+            <param name="isFirst">A value indicating whether DayOfWeek is before MonthDay.</param>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle.Parse(System.String)">
+            <summary>
+            Extracts the <see cref="T:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle"/> from the date format string.
+            </summary>
+            <param name="s">the date format string.</param>
+            <returns>The <see cref="T:MaterialDesignThemes.Wpf.CalendarFormatInfo.DayOfWeekStyle"/> struct.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="s"/> is null.</exception>
         </member>
         <member name="P:MaterialDesignThemes.Wpf.Chip.IsDeletable">
             <summary>
             Indicates if the delete button should be visible.
-            </summary>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.Chip.DeleteClickEvent">
-            <summary>
-            Event correspond to delete button left mouse button click 
-            </summary>
-        </member>
-        <member name="E:MaterialDesignThemes.Wpf.Chip.DeleteClick">
-            <summary>
-            Add / Remove DeleteClickEvent handler 
             </summary>
         </member>
         <member name="M:MaterialDesignThemes.Wpf.ClockItemButton.OnClick">
@@ -87,7 +136,7 @@
         </member>
         <member name="T:MaterialDesignThemes.Wpf.ColorZone">
             <summary>
-            User a colour zone to easily switch the background and foreground colours, whilst still remaining within the selected Material Design palette.
+            User a colour zone to easily switch the background and foreground colours, from selected Material Design palette or custom ones.
             </summary>
         </member>
         <member name="F:MaterialDesignThemes.Wpf.ComboBoxAssist.ClassicModeProperty">
@@ -119,7 +168,6 @@
                 2) DateTime? Calendar.SelectedDate
             </remarks>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="F:MaterialDesignThemes.Wpf.Converters.CircularProgressBar.ArcEndPointConverter.ParameterMidPoint">
             <summary>
             CircularProgressBar draws two arcs to support a full circle at 100 %.
@@ -138,8 +186,6 @@
             Converter for <see cref="T:MaterialDesignThemes.Wpf.SmartHint"/> control. Can be extended by <see cref="M:MaterialDesignThemes.Wpf.HintProxyFabric.RegisterBuilder(System.Func{System.Windows.Controls.Control,System.Boolean},System.Func{System.Windows.Controls.Control,MaterialDesignThemes.Wpf.IHintProxy})"/> method.
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="T:MaterialDesignThemes.Wpf.Converters.ListViewGridViewConverter">
             <summary>
             Helps coerce the correct item container style for a <see cref="T:System.Windows.Controls.ListView"/>, according to whether the list is displaying in standard mode, or using a <see cref="P:System.Windows.Controls.ListView.View"/>, such as a <see cref="T:System.Windows.Controls.GridView"/>.
@@ -165,9 +211,14 @@
             <param name="culture"></param>
             <returns></returns>
         </member>
-        <member name="T:MaterialDesignThemes.Wpf.Converters.HintProxyFabricConverter">
+        <member name="M:MaterialDesignThemes.Wpf.Converters.PickerInnerPaddingConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
             <summary>
-            Converter for <see cref="T:MaterialDesignThemes.Wpf.SmartHint"/> control. Can be extended by <see cref="M:MaterialDesignThemes.Wpf.HintProxyFabric.RegisterBuilder(System.Func{System.Windows.Controls.Control,System.Boolean},System.Func{System.Windows.Controls.Control,MaterialDesignThemes.Wpf.IHintProxy})"/> method.
+            Sets the left padding for the inner picker button to zero
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Converters.PickerInnerPaddingConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Adds the width of the inner picker button to the right of inner padding 
             </summary>
         </member>
         <member name="M:MaterialDesignThemes.Wpf.Converters.CardClipConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
@@ -181,7 +232,6 @@
             <param name="culture"></param>
             <returns></returns>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="M:MaterialDesignThemes.Wpf.DataGridAssist.AllowDirectEditWithoutFocus(System.Object,System.Windows.Input.MouseButtonEventArgs)">
             <summary>
             Allows editing of components inside of a data grid cell with a single left click.
@@ -203,8 +253,6 @@
             Allows interaction with the current dialog session.
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="M:MaterialDesignThemes.Wpf.DialogClosingEventArgs.Cancel">
             <summary>
             Cancel the close.
@@ -217,173 +265,13 @@
         </member>
         <member name="P:MaterialDesignThemes.Wpf.DialogClosingEventArgs.Parameter">
             <summary>
-            Gets the paramter originally provided to <see cref="F:MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand"/>/
+            Gets the parameter originally provided to <see cref="F:MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand"/>/
             </summary>
         </member>
         <member name="P:MaterialDesignThemes.Wpf.DialogClosingEventArgs.Session">
             <summary>
-            Allows interation with the current dialog session.
+            Allows interaction with the current dialog session.
             </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.DialogClosingEventArgs.Content">
-            <summary>
-            Gets the <see cref="P:MaterialDesignThemes.Wpf.DialogHost.DialogContent"/> which is currently displayed, so this could be a view model or a UI element.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.DialogHostEx">
-            <summary>
-            Helper extensions for showing dialogs.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogHostEx.ShowDialog(System.Windows.Window,System.Object)">
-            <summary>
-            Shows a dialog using the first found <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> in a given <see cref="T:System.Windows.Window"/>.
-            </summary>
-            <param name="window">Window on which the modal dialog should be displayed. Must contain a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>.</param>
-            <param name="content"></param>
-            <exception cref="T:System.InvalidOperationException">
-            Thrown is a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> is not found when conducting a depth first traversal of visual tree.  
-            </exception>
-            <remarks>
-            As a depth first traversal of the window's visual tree is performed, it is not safe to use this method in a situtation where a screen has multiple <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>s.
-            </remarks>
-            <returns></returns>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogHostEx.ShowDialog(System.Windows.Window,System.Object,MaterialDesignThemes.Wpf.DialogOpenedEventHandler)">
-            <summary>
-            Shows a dialog using the first found <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> in a given <see cref="T:System.Windows.Window"/>.
-            </summary>
-            <param name="window">Window on which the modal dialog should be displayed. Must contain a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>.</param>
-            <param name="content">Content to show (can be a control or view model).</param>
-            <param name="openedEventHandler">Allows access to opened event which would otherwise have been subscribed to on a instance.</param>
-            <exception cref="T:System.InvalidOperationException">
-            Thrown is a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> is not found when conducting a depth first traversal of visual tree.  
-            </exception>
-            <remarks>
-            As a depth first traversal of the window's visual tree is performed, it is not safe to use this method in a situtation where a screen has multiple <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>s.
-            </remarks>
-            <returns></returns>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogHostEx.ShowDialog(System.Windows.Window,System.Object,MaterialDesignThemes.Wpf.DialogClosingEventHandler)">
-            <summary>
-            Shows a dialog using the first found <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> in a given <see cref="T:System.Windows.Window"/>.
-            </summary>
-            <param name="window">Window on which the modal dialog should be displayed. Must contain a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>.</param>
-            <param name="content">Content to show (can be a control or view model).</param>
-            <param name="closingEventHandler">Allows access to closing event which would otherwise have been subscribed to on a instance.</param>
-            <exception cref="T:System.InvalidOperationException">
-            Thrown is a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> is not found when conducting a depth first traversal of visual tree.  
-            </exception>
-            <remarks>
-            As a depth first traversal of the window's visual tree is performed, it is not safe to use this method in a situtation where a screen has multiple <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>s.
-            </remarks>
-            <returns></returns>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogHostEx.ShowDialog(System.Windows.Window,System.Object,MaterialDesignThemes.Wpf.DialogOpenedEventHandler,MaterialDesignThemes.Wpf.DialogClosingEventHandler)">
-            <summary>
-            Shows a dialog using the first found <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> in a given <see cref="T:System.Windows.Window"/>.
-            </summary>
-            <param name="window">Window on which the modal dialog should be displayed. Must contain a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>.</param>
-            <param name="content">Content to show (can be a control or view model).</param>
-            <param name="openedEventHandler">Allows access to opened event which would otherwise have been subscribed to on a instance.</param>
-            <param name="closingEventHandler">Allows access to closing event which would otherwise have been subscribed to on a instance.</param>
-            <exception cref="T:System.InvalidOperationException">
-            Thrown is a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> is not found when conducting a depth first traversal of visual tree.  
-            </exception>
-            <remarks>
-            As a depth first traversal of the window's visual tree is performed, it is not safe to use this method in a situtation where a screen has multiple <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>s.
-            </remarks>
-            <returns></returns>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogHostEx.ShowDialog(System.Windows.DependencyObject,System.Object)">
-            <summary>
-            Shows a dialog using the parent/ancestor <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> of the a given <see cref="T:System.Windows.DependencyObject"/>.
-            </summary>
-            <param name="childDependencyObject">Dependency object which should be a visual child of a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>, where the dialog will be shown.</param>        
-            <param name="content">Content to show (can be a control or view model).</param>
-            <exception cref="T:System.InvalidOperationException">
-            Thrown is a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> is not found when conducting a depth first traversal of visual tree.  
-            </exception>
-            <returns></returns>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogHostEx.ShowDialog(System.Windows.DependencyObject,System.Object,MaterialDesignThemes.Wpf.DialogOpenedEventHandler)">
-            <summary>
-            Shows a dialog using the parent/ancestor <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> of the a given <see cref="T:System.Windows.DependencyObject"/>.
-            </summary>
-            <param name="childDependencyObject">Dependency object which should be a visual child of a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>, where the dialog will be shown.</param>        
-            <param name="content">Content to show (can be a control or view model).</param>
-            <param name="openedEventHandler">Allows access to opened event which would otherwise have been subscribed to on a instance.</param>
-            <exception cref="T:System.InvalidOperationException">
-            Thrown is a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> is not found when conducting a depth first traversal of visual tree.  
-            </exception>
-            <returns></returns>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogHostEx.ShowDialog(System.Windows.DependencyObject,System.Object,MaterialDesignThemes.Wpf.DialogClosingEventHandler)">
-            <summary>
-            Shows a dialog using the parent/ancestor <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> of the a given <see cref="T:System.Windows.DependencyObject"/>.
-            </summary>
-            <param name="childDependencyObject">Dependency object which should be a visual child of a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>, where the dialog will be shown.</param>        
-            <param name="content">Content to show (can be a control or view model).</param>
-            <param name="closingEventHandler">Allows access to closing event which would otherwise have been subscribed to on a instance.</param>
-            <exception cref="T:System.InvalidOperationException">
-            Thrown is a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> is not found when conducting a depth first traversal of visual tree.  
-            </exception>
-            <returns></returns>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogHostEx.ShowDialog(System.Windows.DependencyObject,System.Object,MaterialDesignThemes.Wpf.DialogOpenedEventHandler,MaterialDesignThemes.Wpf.DialogClosingEventHandler)">
-            <summary>
-            Shows a dialog using the parent/ancestor <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> of the a given <see cref="T:System.Windows.DependencyObject"/>.
-            </summary>
-            <param name="childDependencyObject">Dependency object which should be a visual child of a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/>, where the dialog will be shown.</param>        
-            <param name="content">Content to show (can be a control or view model).</param>
-            <param name="openedEventHandler">Allows access to opened event which would otherwise have been subscribed to on a instance.</param>
-            <param name="closingEventHandler">Allows access to closing event which would otherwise have been subscribed to on a instance.</param>
-            <exception cref="T:System.InvalidOperationException">
-            Thrown is a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> is not found when conducting a depth first traversal of visual tree.  
-            </exception>
-            <returns></returns>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.DialogOpenedEventArgs.Session">
-            <summary>
-            Allows interation with the current dialog session.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.DialogSession">
-            <summary>
-            Allows an open dialog to be managed. Use is only permitted during a single display operation.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.DialogSession.IsEnded">
-            <summary>
-            Indicates if the dialog session has ended.  Once ended no further method calls will be permitted.
-            </summary>
-            <remarks>
-            Client code cannot set this directly, this is internally managed.  To end the dialog session use <see cref="M:MaterialDesignThemes.Wpf.DialogSession.Close"/>.
-            </remarks>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.DialogSession.Content">
-            <summary>
-            Gets the <see cref="P:MaterialDesignThemes.Wpf.DialogHost.DialogContent"/> which is currently displayed, so this could be a view model or a UI element.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogSession.UpdateContent(System.Object)">
-            <summary>
-            Update the current content in the dialog.
-            </summary>
-            <param name="content"></param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogSession.Close">
-            <summary>
-            Closes the dialog.
-            </summary>
-            <exception cref="T:System.InvalidOperationException">Thrown if the dialog session has ended, or a close operation is currently in progress.</exception>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.DialogSession.Close(System.Object)">
-            <summary>
-            Closes the dialog.
-            </summary>
-            <param name="parameter">Result parameter which will be returned in <see cref="P:MaterialDesignThemes.Wpf.DialogClosingEventArgs.Parameter"/> or from <see cref="M:MaterialDesignThemes.Wpf.DialogHost.Show(System.Object)"/> method.</param>
-            <exception cref="T:System.InvalidOperationException">Thrown if the dialog session has ended, or a close operation is currently in progress.</exception>
         </member>
         <member name="T:MaterialDesignThemes.Wpf.DialogHostOpenDialogCommandDataContextSource">
             <summary>
@@ -495,7 +383,6 @@
             <param name="closingEventHandler">Allows access to closing event which would otherwise have been subscribed to on a instance.</param>
             <returns>Task result is the parameter used to close the dialog, typically what is passed to the <see cref="F:MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand"/> command.</returns>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="M:MaterialDesignThemes.Wpf.DialogHost.Show(System.Object,System.Object,MaterialDesignThemes.Wpf.DialogOpenedEventHandler,MaterialDesignThemes.Wpf.DialogClosingEventHandler,MaterialDesignThemes.Wpf.DialogClosedEventHandler)">
             <summary>
             Shows a modal dialog. To use, a <see cref="T:MaterialDesignThemes.Wpf.DialogHost"/> instance must be in a visual tree (typically this may be specified towards the root of a Window's XAML).
@@ -534,8 +421,6 @@
             <param name="dialogIdentifier">of the instance where the dialog should be closed. Typically this will match an identifier set in XAML.</param>
             <returns></returns>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="P:MaterialDesignThemes.Wpf.DialogHost.Identifier">
             <summary>
             Identifier which is used in conjunction with <see cref="M:MaterialDesignThemes.Wpf.DialogHost.Show(System.Object)"/> to determine where a dialog should be shown.
@@ -572,7 +457,6 @@
             Set the theme (light/dark) for the dialog.
             </summary>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="P:MaterialDesignThemes.Wpf.DialogHost.OverlayBackground">
             <summary>
             Represents the overlay brush that is used to dim the background behind the dialog
@@ -583,8 +467,6 @@
             Represents the brush for the Dialog's background
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="E:MaterialDesignThemes.Wpf.DialogHost.DialogOpened">
             <summary>
             Raised when a dialog is opened.
@@ -636,7 +518,6 @@
             </summary>
             <returns>The popup content.</returns>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="T:MaterialDesignThemes.Wpf.DialogHostEx">
             <summary>
             Helper extensions for showing dialogs.
@@ -858,16 +739,15 @@
             Allows interaction with the current dialog session.
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="M:MaterialDesignThemes.Wpf.Extensions.GetVisualAncestry(System.Windows.DependencyObject)">
             <summary>
             Returns full visual ancestry, starting at the leaf.
+            <para>If element is not of <see cref="T:System.Windows.Media.Visual"/> or <see cref="T:System.Windows.Media.Media3D.Visual3D"/> the
+            logical ancestry is used.</para>
             </summary>
             <param name="leaf"></param>
             <returns></returns>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="F:MaterialDesignThemes.Wpf.FlipperAssist.UniformCornerRadiusProperty">
             <summary>
             Controls the (uniform) corner radius of the contained card
@@ -876,473 +756,6 @@
         <member name="F:MaterialDesignThemes.Wpf.FlipperAssist.CardStyleProperty">
             <summary>
             Controls the style of the contained card
-========
-        <member name="F:MaterialDesignThemes.Wpf.HintAssist.HintProperty">
-            <summary>
-            The hint property
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.HintAssist.SetHint(System.Windows.DependencyObject,System.Object)">
-            <summary>
-            Sets the hint.
-            </summary>
-            <param name="element">The element.</param>
-            <param name="value">The value.</param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.HintAssist.GetHint(System.Windows.DependencyObject)">
-            <summary>
-            Gets the hint.
-            </summary>
-            <param name="element">The element.</param>
-            <returns>
-            The <see cref="T:System.String" />.
-            </returns>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.HintAssist.HintOpacityProperty">
-            <summary>
-            The hint opacity property
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.HintAssist.GetHintOpacityProperty(System.Windows.DependencyObject)">
-            <summary>
-            Gets the text box view margin.
-            </summary>
-            <param name="element">The element.</param>
-            <returns>
-            The <see cref="T:System.Windows.Thickness" />.
-            </returns>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.HintAssist.SetHintOpacity(System.Windows.DependencyObject,System.Double)">
-            <summary>
-            Sets the hint opacity.
-            </summary>
-            <param name="element">The element.</param>
-            <param name="value">The value.</param>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.HintAssist.ForegroundProperty">
-            <summary>
-            The color for the text of a focused control.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.HintAssist.GetForeground(System.Windows.DependencyObject)">
-            <summary>
-            Gets the color for the text of a focused control.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.HintAssist.SetForeground(System.Windows.DependencyObject,System.Windows.Media.Brush)">
-            <summary>
-            Sets the color for the text of a focused control.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Icon">
-            <summary>
-            Displays an icon image/path, according to the specified <see cref="P:MaterialDesignThemes.Wpf.Icon.Type"/> name.
-            </summary>
-            <remarks>
-            All icons sourced from Material Design Icons Font - <see cref="!:https://materialdesignicons.com/"/> - in accordance of 
-            <see cref="!:https://github.com/Templarian/MaterialDesign/blob/master/license.txt"/>.
-            </remarks>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Icon.Type">
-            <summary>
-            Gets or sets the name of icon being displayed.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.IconType">
-            <summary>
-            List of available icons for use with <see cref="T:MaterialDesignThemes.Wpf.Icon"/>.
-            </summary>
-            <remarks>
-            All icons sourced from Material Design Icons Font - <see cref="!:https://materialdesignicons.com/"/> - in accordance of 
-            <see cref="!:https://github.com/Templarian/MaterialDesign/blob/master/license.txt"/>.
-            </remarks>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue(System.Object)">
-            <summary>
-            Queues a notificaton message for display in a snackbar.
-            </summary>
-            <param name="content">Message.</param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue(System.Object,System.Object,System.Action)">
-            <summary>
-            Queues a notificaton message for display in a snackbar.
-            </summary>
-            <param name="content">Message.</param>
-            <param name="actionContent">Content for the action button.</param>
-            <param name="actionHandler">Call back to be executed if user clicks the action button.</param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue``1(System.Object,System.Object,System.Action{``0},``0)">
-            <summary>
-            Queues a notificaton message for display in a snackbar.
-            </summary>
-            <param name="content">Message.</param>
-            <param name="actionContent">Content for the action button.</param>
-            <param name="actionHandler">Call back to be executed if user clicks the action button.</param>
-            <param name="actionArgument">Argument to pass to <paramref name="actionHandler"/>.</param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue(System.Object,System.Boolean)">
-            <summary>
-            Queues a notificaton message for display in a snackbar.
-            </summary>
-            <param name="content">Message.</param>
-            <param name="neverConsiderToBeDuplicate">Subsequent, duplicate messages queued within a short time span will 
-            be discarded. To override this behaviour and ensure the message always gets displayed set to <c>true</c>.</param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue(System.Object,System.Object,System.Action,System.Boolean)">
-            <summary>
-            Queues a notificaton message for display in a snackbar.
-            </summary>
-            <param name="content">Message.</param>
-            <param name="actionContent">Content for the action button.</param>
-            <param name="actionHandler">Call back to be executed if user clicks the action button.</param>
-            <param name="promote">The message will promoted to the front of the queue.</param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue``1(System.Object,System.Object,System.Action{``0},``0,System.Boolean)">
-            <summary>
-            Queues a notificaton message for display in a snackbar.
-            </summary>
-            <param name="content">Message.</param>
-            <param name="actionContent">Content for the action button.</param>
-            <param name="actionHandler">Call back to be executed if user clicks the action button.</param>
-            <param name="actionArgument">Argument to pass to <paramref name="actionHandler"/>.</param>
-            <param name="promote">The message will be promoted to the front of the queue and never considered to be a duplicate.</param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue``1(System.Object,System.Object,System.Action{``0},``0,System.Boolean,System.Boolean)">
-            <summary>
-            Queues a notificaton message for display in a snackbar.
-            </summary>
-            <param name="content">Message.</param>
-            <param name="actionContent">Content for the action button.</param>
-            <param name="actionHandler">Call back to be executed if user clicks the action button.</param>
-            <param name="actionArgument">Argument to pass to <paramref name="actionHandler"/>.</param>
-            <param name="promote">The message will be promoted to the front of the queue.</param>
-            <param name="neverConsiderToBeDuplicate">The message will never be considered a duplicate.</param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue(System.Object,System.Object,System.Action{System.Object},System.Object,System.Boolean,System.Boolean)">
-            <summary>
-            Queues a notificaton message for display in a snackbar.
-            </summary>
-            <param name="content">Message.</param>
-            <param name="actionContent">Content for the action button.</param>
-            <param name="actionHandler">Call back to be executed if user clicks the action button.</param>
-            <param name="actionArgument">Argument to pass to <paramref name="actionHandler"/>.</param>
-            <param name="promote">The message will promoted to the front of the queue.</param>
-            <param name="neverConsiderToBeDuplicate">The message will never be considered a duplicate.</param>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.MessageQueueExtension">
-            <summary>
-            Provides shorthand to initialise a new <see cref="T:MaterialDesignThemes.Wpf.SnackbarMessageQueue"/> for a <see cref="T:MaterialDesignThemes.Wpf.Snackbar"/>.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Palette">
-            <summary>
-            Provides full information about a palette.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.PaletteHelper.ReplacePalette(MaterialDesignThemes.Wpf.Palette)">
-            <summary>
-            Replaces the entire palette
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.PaletteHelper.ReplacePrimaryColor(MaterialDesignColors.Swatch)">
-            <summary>
-            Replaces the primary color, selecting a balanced set of hues for the light, mid and dark hues.
-            </summary>
-            <param name="swatch"></param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.PaletteHelper.QueryPalette">
-            <summary>
-            Attempts to query the current palette configured in the application's resources.
-            </summary>
-            <returns></returns>
-            <exception cref="T:System.InvalidOperationException">Thrown if there is any ambiguity regarding the palette. Provided
-            standard guidelines have been followed for palette configuration, this should not happen.</exception>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Plane3D">
-            <summary>
-            View a control on a 3D plane.    
-            </summary>
-            <remarks>
-            Taken from http://blogs.msdn.com/greg_schechter/archive/2007/10/26/enter-the-planerator-dead-simple-3d-in-wpf-with-a-stupid-name.aspx , Greg Schechter - Fall 2007
-            </remarks>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Plane3D.LayoutInvalidationCatcher">
-            <summary>
-            Wrap this around a class that we want to catch the measure and arrange 
-            processes occuring on, and propagate to the parent Planerator, if any.
-            Do this because layout invalidations don't flow up out of a 
-            Viewport2DVisual3D object.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.ScaleHost">
-            <summary>
-            Internal use only.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Screen">
-            <summary>
-             Represents a display device or multiple display devices on a single system.
-             Based on http://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/Screen.cs
-             </summary>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.Screen._workingArea">
-            <summary>
-            Available working area on the screen. This excludes taskbars and other
-            docked windows.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Screen.AllScreens">
-            <summary>
-            Gets an array of all of the displays on the system.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Screen.Bounds">
-            <summary>
-            Gets the bounds of the display.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Screen.DeviceName">
-            <summary>
-            Gets the device name associated with a display.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Screen.Primary">
-            <summary>
-            Gets a value indicating whether a particular display is the primary device.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Screen.PrimaryScreen">
-            <summary>
-            Gets the primary display.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Screen.WorkingArea">
-            <summary>
-            Gets the working area of the screen.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Screen.DesktopChangedCount">
-            <summary>
-            Screen instances call this property to determine
-            if their WorkingArea cache needs to be invalidated.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.Equals(System.Object)">
-            <summary>
-            Specifies a value that indicates whether the specified object is equal to this one.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.FromPoint(System.Windows.Point)">
-            <summary>
-            Retrieves a <see cref='T:MaterialDesignThemes.Wpf.Screen'/> for the monitor that contains the specified point.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.FromRect(System.Windows.Rect)">
-            <summary>
-            Retrieves a <see cref='T:MaterialDesignThemes.Wpf.Screen'/> for the monitor that contains the largest region of the Rect.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.GetWorkingArea(System.Windows.Point)">
-            <summary>
-             Retrieves the working area for the monitor that is closest to the specified point.
-             </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.GetWorkingArea(System.Windows.Rect)">
-            <summary>
-             Retrieves the working area for the monitor that contains the largest region of the specified Rect.
-             </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.GetBounds(System.Windows.Point)">
-            <summary>
-             Retrieves the bounds of the monitor that is closest to the specified point.
-             </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.GetBounds(System.Windows.Rect)">
-            <summary>
-            Retrieves the bounds of the monitor that contains the largest region of the specified Rect.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.GetHashCode">
-            <summary>
-            Computes and retrieves a hash code for an object.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.OnDisplaySettingsChanging(System.Object,System.EventArgs)">
-            <summary>
-            Called by the SystemEvents class when our display settings are
-            changing.  We cache screen information and at this point we must
-            invalidate our cache.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.OnUserPreferenceChanged(System.Object,Microsoft.Win32.UserPreferenceChangedEventArgs)">
-            <summary>
-            Called by the SystemEvents class when our display settings have
-            changed.  Here, we increment a static counter that Screen instances
-            can check against to invalidate their cache.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Screen.ToString">
-            <summary>
-            Retrieves a string representing this object.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Snackbar">
-            <summary>
-            Implements a <see cref="T:MaterialDesignThemes.Wpf.Snackbar"/> inspired by the Material Design specs (https://material.google.com/components/snackbars-toasts.html).
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.SnackbarMessage">
-            <summary>
-            Defines the content of a message within a <see cref="T:MaterialDesignThemes.Wpf.Snackbar"/>.  Primary content should be set via the 
-            standard <see cref="!:SnackbarMessage.Content"/> property.  Where an action is allowed, content
-            can be provided in <see cref="P:MaterialDesignThemes.Wpf.SnackbarMessage.ActionContent"/>.  Standard button properties are 
-            provided for actions, includiing <see cref="P:MaterialDesignThemes.Wpf.SnackbarMessage.ActionCommand"/>.
-            </summary>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.SnackbarMessage.ActionClickEvent">
-            <summary>
-            Event correspond to left mouse button click on the Action button.
-            </summary>
-        </member>
-        <member name="E:MaterialDesignThemes.Wpf.SnackbarMessage.ActionClick">
-            <summary>
-            Add / Remove ActionClickEvent handler 
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.SnackbarMessageQueue.IgnoreDuplicate">
-            <summary>
-            Gets or sets a value that indicates whether this message queue displays messages without discarding duplicates. 
-            True to show every message even if there are duplicates.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.SnackbarMessageQueueItem.Content">
-            <summary>
-            The content to be displayed
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.SnackbarMessageQueueItem.ActionContent">
-            <summary>
-            The content for the action button on the snackbar
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.SnackbarMessageQueueItem.ActionHandler">
-            <summary>
-            Handler to be invoked when the action button is clicked
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.SnackbarMessageQueueItem.ActionArgument">
-            <summary>
-            The argument to pass to the <see cref="P:MaterialDesignThemes.Wpf.SnackbarMessageQueueItem.ActionHandler"/> delegate.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.SnackbarMessageQueueItem.IsPromoted">
-            <summary>
-            Promote the message, pushing it in front of any message that is not promoted.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.SnackbarMessageQueueItem.IgnoreDuplicate">
-            <summary>
-            Still display this message even if it is a duplicate.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Transitions.FadeWipe.Duration">
-            <summary>
-            Duration of the animation
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Transitions.IndexedItemOffsetMultiplierExtension">
-            <summary>
-            Multiplies a time span unit by the index of an item in a list.  
-            </summary>
-            <remarks>
-            Example usage is for a <see cref="T:MaterialDesignThemes.Wpf.Transitions.TransitioningContent"/> to have a <see cref="P:MaterialDesignThemes.Wpf.Transitions.TransitionEffect.OffsetTime" />
-            time delayed according to position in a list, so cascading animations can occur.
-            </remarks>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Transitions.SlideWipe.Direction">
-            <summary>
-            Direction of the slide wipe
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Transitions.SlideWipe.Duration">
-            <summary>
-            Duration of the animation
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Transitions.TransitionAssist">
-            <summary>
-            Allows transitions to be disabled where supported.
-            </summary>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.Transitions.TransitionAssist.DisableTransitionsProperty">
-            <summary>
-            Allows transitions to be disabled where supported.  Note this is an inheritable property.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Transitions.TransitionAssist.SetDisableTransitions(System.Windows.DependencyObject,System.Boolean)">
-            <summary>
-            Allows transitions to be disabled where supported.  Note this is an inheritable property.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.Transitions.TransitionAssist.GetDisableTransitions(System.Windows.DependencyObject)">
-            <summary>
-            Allows transitions to be disabled where supported.  Note this is an inheritable property.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Transitions.Transitioner">
-            <summary>
-            The transitioner provides an easy way to move between content with a default in-place circular transition.
-            </summary>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.Transitions.Transitioner.MoveNextCommand">
-            <summary>
-            Causes the the next slide to be displayed (affectively increments <see cref="P:System.Windows.Controls.Primitives.Selector.SelectedIndex"/>).
-            </summary>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.Transitions.Transitioner.MovePreviousCommand">
-            <summary>
-            Causes the the previous slide to be displayed (affectively decrements <see cref="P:System.Windows.Controls.Primitives.Selector.SelectedIndex"/>).
-            </summary>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.Transitions.Transitioner.MoveFirstCommand">
-            <summary>
-            Moves to the first slide.
-            </summary>
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.Transitions.Transitioner.MoveLastCommand">
-            <summary>
-            Moves to the last slide.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Transitions.Transitioner.AutoApplyTransitionOrigins">
-            <summary>
-            If enabled, transition origins will be applied to wipes, according to where a transition was triggered from.  For example, the mouse point where a user clicks a button.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Transitions.TransitionerSlide">
-            <summary>
-            Content control to host the content of an individual page within a <see cref="T:MaterialDesignThemes.Wpf.Transitions.Transitioner"/>.
-            </summary>
-        </member>
-        <member name="T:MaterialDesignThemes.Wpf.Transitions.TransitioningContent">
-            <summary>
-            Content control to enable easier transitions.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Transitions.TransitioningContentBase.OpeningEffect">
-            <summary>
-            Gets or sets the transition to run when the content is loaded and made visible.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Transitions.TransitioningContentBase.OpeningEffectsOffset">
-            <summary>
-            Delay offset to be applied to all opening effect transitions.
-            </summary>
-        </member>
-        <member name="P:MaterialDesignThemes.Wpf.Transitions.TransitioningContentBase.OpeningEffects">
-            <summary>
-            Allows multiple transition effects to be combined and run upon the content loading or being made visible.
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
             </summary>
         </member>
         <member name="T:MaterialDesignThemes.Wpf.IHintProxy">
@@ -1365,15 +778,14 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="P:MaterialDesignThemes.Wpf.MaterialDataGridTextColumn.MaxLength">
+        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue(System.Object)">
             <summary>
-            Set the maximum length for the text field.
+            Queues a notification message for display in a snackbar.
             </summary>
-            <remarks>Not a dprop, as is only applied once.</remarks>
+            <param name="content">Message.</param>
         </member>
-        <member name="T:MaterialDesignThemes.Wpf.PackIcon">
+        <member name="M:MaterialDesignThemes.Wpf.ISnackbarMessageQueue.Enqueue(System.Object,System.Object,System.Action)">
             <summary>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
             Queues a notification message for display in a snackbar.
             </summary>
             <param name="content">Message.</param>
@@ -1478,9 +890,6 @@
         <member name="P:MaterialDesignThemes.Wpf.PackIcon.Data">
             <summary>
             Gets the icon path data for the current <see cref="P:MaterialDesignThemes.Wpf.PackIcon.Kind"/>.
-========
-            Icon from the Material Design Icons project, <see cref="!:https://materialdesignicons.com/"/>.
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
             </summary>
         </member>
         <member name="T:MaterialDesignThemes.Wpf.PackIconDataFactory">
@@ -1496,11 +905,10 @@
             List of available icons for use with <see cref="T:MaterialDesignThemes.Wpf.PackIcon" />.
             </summary>
             <remarks>
-            All icons sourced from Material Design Icons Font - <see cref="!:https://materialdesignicons.com/"/> - in accordance of 
-            <see cref="!:https://github.com/Templarian/MaterialDesign/blob/master/license.txt"/>.
+            All icons sourced from Material Design Icons Font - https://materialdesignicons.com/ - in accordance of 
+            https://github.com/Templarian/MaterialDesign/blob/master/LICENSE.
             </remarks>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="T:MaterialDesignThemes.Wpf.Palette">
             <summary>
             Provides full information about a palette.
@@ -1522,8 +930,6 @@
             Viewport2DVisual3D object.
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="T:MaterialDesignThemes.Wpf.PopupBoxPlacementMode">
             <summary>
             Defines how the <see cref="T:MaterialDesignThemes.Wpf.PopupBox"/> popup is aligned to the toggle part of the control.
@@ -1689,7 +1095,6 @@
             Gets or sets how to unfurl controls when opening the popups. Only child elements of type <see cref="T:System.Windows.Controls.Primitives.ButtonBase"/> are animated.
             </summary>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="F:MaterialDesignThemes.Wpf.PopupBox.PopupHorizontalOffsetProperty">
             <summary>
             Get or sets the popup horizontal offset in relation to the button.
@@ -1720,8 +1125,6 @@
             Get or sets the corner radius of the popup card.
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="P:MaterialDesignThemes.Wpf.PopupBox.PopupPlacementMethod">
             <summary>
             Framework use. Provides the method used to position the popup.
@@ -1762,6 +1165,33 @@
             Raises <see cref="F:MaterialDesignThemes.Wpf.PopupBox.ClosedEvent"/>.
             </summary>
         </member>
+        <member name="T:MaterialDesignThemes.Wpf.PopupEx">
+            <summary>
+            This class was initially based on work done in ControlzEx
+            https://github.com/ControlzEx/ControlzEx
+            
+            This custom popup can be used by validation error templates or something else.
+            It provides some additional nice features:
+                - repositioning if host-window size or location changed
+                - repositioning if host-window gets maximized and vice versa
+                - it's only topmost if the host-window is activated
+            </summary>
+        </member>
+        <member name="P:MaterialDesignThemes.Wpf.PopupEx.CloseOnMouseLeftButtonDown">
+            <summary>
+            Gets/sets if the popup can be closed by left mouse button down.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.PopupEx.RefreshPosition">
+            <summary>
+            Causes the popup to update it's position according to it's current settings.
+            </summary>
+        </member>
+        <member name="T:MaterialDesignThemes.Wpf.PopupEx.SWP">
+            <summary>
+            SetWindowPos options
+            </summary>
+        </member>
         <member name="T:MaterialDesignThemes.Wpf.Properties.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1784,7 +1214,6 @@
             The icon aka content may be set as a DataTemplate via the ButtonContentTemplate property.
             </summary>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="P:MaterialDesignThemes.Wpf.RatingBar.ValueIncrements">
             <summary>
             Gets or sets the value increments. Set to a value between 0.0 and 1.0 (both exclusive) to enable fractional values. Default value is 1.0 (i.e. fractional values disabled)
@@ -1952,8 +1381,6 @@
             Retrieves a string representing this object.
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="T:MaterialDesignThemes.Wpf.SmartHint">
             <summary>
             A control that implement placeholder behavior. Can work as a simple placeholder either as a floating hint, see <see cref="P:MaterialDesignThemes.Wpf.SmartHint.UseFloating"/> property.
@@ -1961,7 +1388,6 @@
             To set a target control you should set the HintProxy property. Use the <see cref="P:MaterialDesignThemes.Wpf.Converters.HintProxyFabricConverter.Instance"/> converter which converts a control into the IHintProxy interface.
             </summary>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="T:MaterialDesignThemes.Wpf.Snackbar">
             <summary>
             Implements a <see cref="T:MaterialDesignThemes.Wpf.Snackbar"/> inspired by the Material Design specs (https://material.google.com/components/snackbars-toasts.html).
@@ -2060,8 +1486,6 @@
             Automatic ToolTip for TextBlock or TextBoxBase if containing text is trimmed
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="T:MaterialDesignThemes.Wpf.TextFieldAssist">
             <summary>
             Helper properties for working with text fields.
@@ -2105,13 +1529,27 @@
             <param name="element"></param>
             <returns></returns>
         </member>
+        <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.UnderlineBrushProperty">
+            <summary>
+            The attached WPF property for getting or setting the <see cref="T:System.Windows.Media.Brush"/> value for an underline decoration.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.TextFieldAssist.SetUnderlineBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)">
+            <summary>
+            Sets the <see cref="T:System.Windows.Media.Brush"/> used for underline decoration.
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.TextFieldAssist.GetUnderlineBrush(System.Windows.DependencyObject)">
+            <summary>
+            Gets the <see cref="T:System.Windows.Media.Brush"/> used for underline decoration.
+            </summary>
+            <param name="element"></param>
+        </member>
         <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.HasFilledTextFieldProperty">
             <summary>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
             Controls the visibility of the text field box.
-========
-            Controls the visibility of the filled text field.
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
             </summary>
         </member>
         <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.HasOutlinedTextFieldProperty">
@@ -2139,27 +1577,11 @@
             Enables a ripple effect on focusing the text box.
             </summary>
         </member>
-        <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.UnderlineBrushProperty">
-            <summary>
-            The color for highlighting effects on the border of a text box.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.TextFieldAssist.SetUnderlineBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)">
-            <summary>
-            Sets the color for highlighting effects on the border of a text box.
-            </summary>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.TextFieldAssist.GetUnderlineBrush(System.Windows.DependencyObject)">
-            <summary>
-            Gets the color for highlighting effects on the border of a text box.
-            </summary>
-        </member>
         <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.IncludeSpellingSuggestionsProperty">
             <summary>
             Automatically inserts spelling suggestions into the text box context menu.
             </summary>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.SuffixTextProperty">
             <summary>
             SuffixText dependency property
@@ -2205,8 +1627,6 @@
             Controls the size of the trailing icon
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="M:MaterialDesignThemes.Wpf.TextFieldAssist.ApplyTextBoxViewMargin(System.Windows.Controls.Control,System.Windows.Thickness)">
             <summary>
             Applies the text box view margin.
@@ -2220,6 +1640,19 @@
             </summary>
             <param name="dependencyObject">The dependency object.</param>
             <param name="dependencyPropertyChangedEventArgs">The dependency property changed event args.</param>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.Theme.GetSystemTheme">
+            <summary>
+            Get the current Windows theme.
+            Based on ControlzEx
+            https://github.com/ControlzEx/ControlzEx/blob/48230bb023c588e1b7eb86ea83f7ddf7d25be735/src/ControlzEx/Theming/WindowsThemeHelper.cs#L19
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.TimePicker.OnGotFocus(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+                Called when this element gets focus.
+            </summary>
         </member>
         <member name="M:MaterialDesignThemes.Wpf.TimePicker.OnIsDropDownOpenChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
             <summary> 
@@ -2278,52 +1711,31 @@
             Allows an on (IsChecked) template to be provided on supporting <see cref="T:System.Windows.Controls.Primitives.ToggleButton"/> styles.
             </summary>
         </member>
-        <member name="F:MaterialDesignThemes.Wpf.RippleAssist.IsCenteredProperty">
+        <member name="T:MaterialDesignThemes.Wpf.TransitionAssist">
             <summary>
-            Set to <c>true</c> to cause the ripple to originate from the centre of the 
-            content.  Otherwise the effect will originate from the mouse down position.        
+            Allows transitions to be disabled where supported.
             </summary>
         </member>
-        <member name="M:MaterialDesignThemes.Wpf.RippleAssist.SetIsCentered(System.Windows.DependencyObject,System.Boolean)">
+        <member name="F:MaterialDesignThemes.Wpf.TransitionAssist.DisableTransitionsProperty">
             <summary>
-            Set to <c>true</c> to cause the ripple to originate from the centre of the 
-            content.  Otherwise the effect will originate from the mouse down position.        
-            </summary>
-            <param name="element"></param>
-            <param name="value"></param>
-        </member>
-        <member name="M:MaterialDesignThemes.Wpf.RippleAssist.GetIsCentered(System.Windows.DependencyObject)">
-            <summary>
-            Set to <c>true</c> to cause the ripple to originate from the centre of the 
-            content.  Otherwise the effect will originate from the mouse down position.        
-            </summary>
-            <param name="element"></param>        
-        </member>
-        <member name="F:MaterialDesignThemes.Wpf.RippleAssist.IsDisabledProperty">
-            <summary>
-            Set to <c>True</c> to disable ripple effect
+            Allows transitions to be disabled where supported.  Note this is an inheritable property.
             </summary>
         </member>
-        <member name="M:MaterialDesignThemes.Wpf.RippleAssist.SetIsDisabled(System.Windows.DependencyObject,System.Boolean)">
+        <member name="M:MaterialDesignThemes.Wpf.TransitionAssist.SetDisableTransitions(System.Windows.DependencyObject,System.Boolean)">
             <summary>
-            Set to <c>True</c> to disable ripple effect
+            Allows transitions to be disabled where supported.  Note this is an inheritable property.
             </summary>
-            <param name="element"></param>
-            <param name="value"></param>
         </member>
-        <member name="M:MaterialDesignThemes.Wpf.RippleAssist.GetIsDisabled(System.Windows.DependencyObject)">
+        <member name="M:MaterialDesignThemes.Wpf.TransitionAssist.GetDisableTransitions(System.Windows.DependencyObject)">
             <summary>
-            Set to <c>True</c> to disable ripple effect
+            Allows transitions to be disabled where supported.  Note this is an inheritable property.
             </summary>
-            <param name="element"></param>        
         </member>
-        <member name="F:MaterialDesignThemes.Wpf.Ripple.RecognizesAccessKeyProperty">
+        <member name="P:MaterialDesignThemes.Wpf.Transitions.FadeWipe.Duration">
             <summary>
-              The DependencyProperty for the RecognizesAccessKey property. 
-              Default Value: false 
-            </summary> 
+            Duration of the animation
+            </summary>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="T:MaterialDesignThemes.Wpf.Transitions.IndexedItemOffsetMultiplierExtension">
             <summary>
             Multiplies a time span unit by the index of an item in a list.  
@@ -2397,12 +1809,6 @@
             <summary>
             Allows multiple transition effects to be combined and run upon the content loading or being made visible.
             </summary>
-========
-        <member name="P:MaterialDesignThemes.Wpf.Ripple.RecognizesAccessKey">
-            <summary> 
-              Determine if Ripple should use AccessText in its style
-            </summary> 
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         </member>
         <member name="M:MaterialDesignThemes.Wpf.TreeHelper.FindChild``1(System.Windows.DependencyObject,System.String)">
             <summary>
@@ -2471,7 +1877,6 @@
             implementors when the additional template associated with a tree should not be used.
             </summary>
         </member>
-<<<<<<<< HEAD:packages/MaterialDesignThemes.4.6.1/lib/net462/MaterialDesignThemes.Wpf.xml
         <member name="F:MaterialDesignThemes.Wpf.TreeViewAssist.HasNoItemsExpanderVisibilityProperty">
             <summary>
             Allows controlling the visibility of the expander arrow on TreeViewItems that do not have any children.
@@ -2484,8 +1889,6 @@
             <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/adorners-overview">See here</a>
             </summary>
         </member>
-========
->>>>>>>> parent of 74612af (first commit):packages/MaterialDesignThemes.2.6.0/lib/net45/MaterialDesignThemes.Wpf.XML
         <member name="T:MaterialDesignThemes.Wpf.Underline">
             <summary>
             
@@ -2521,36 +1924,6 @@
         <member name="M:MaterialDesignThemes.Wpf.ValidationAssist.GetSuppress(System.Windows.DependencyObject)">
             <summary>
             Framework use only.
-            </summary>
-        </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
-            <summary>
-            GeneratedInternalTypeHelper
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
-            <summary>
-            CreateInstance
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            GetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            SetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
-            <summary>
-            CreateDelegate
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
-            <summary>
-            AddEventHandler
             </summary>
         </member>
     </members>

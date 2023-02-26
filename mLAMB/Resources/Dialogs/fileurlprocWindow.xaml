@@ -1,0 +1,25 @@
+﻿<Window x:Class="mLAMB.Resources.Dialogs.fileurlprocWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mLAMB.Resources.Dialogs"
+        mc:Ignorable="d"
+        Title="fileurlprocWindow" Height="373.2" Width="329.6" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="labelDown" Content="Download" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ProgressBar x:Name="progDown" HorizontalAlignment="Left" Height="27" Margin="10,36,0,0" VerticalAlignment="Top" Width="301"/>
+        <Label x:Name="labelMirrorDown" Content="Mirror Download" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top"/>
+        <ProgressBar x:Name="progMirrorDown" HorizontalAlignment="Left" Height="27" Margin="10,94,0,0" VerticalAlignment="Top" Width="301"/>
+        <Label x:Name="labelReUp" Content="Reupload" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top"/>
+        <ProgressBar x:Name="progReUp" HorizontalAlignment="Left" Height="26" Margin="10,168,0,0" VerticalAlignment="Top" Width="301"/>
+        <RichTextBox x:Name="boxShell" HorizontalAlignment="Left" Height="117" Margin="10,210,0,0" VerticalAlignment="Top" Width="301" IsReadOnly="True">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>

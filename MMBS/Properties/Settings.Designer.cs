@@ -12,11 +12,7 @@ namespace MMBS.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-<<<<<<< HEAD
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.5.0.0")]
-=======
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.0.0.0")]
->>>>>>> parent of 74612af (first commit)
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -134,7 +130,6 @@ namespace MMBS.Properties {
                 this["shortenlinkServer"] = value;
             }
         }
-<<<<<<< HEAD
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -171,7 +166,5 @@ namespace MMBS.Properties {
                 this["appmessage"] = value;
             }
         }
-=======
->>>>>>> parent of 74612af (first commit)
     }
 }

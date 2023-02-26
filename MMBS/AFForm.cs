@@ -17,7 +17,20 @@ namespace MMBS
         public string[] linkMaskConst = new string[] { "https://play.google.com","https://apkpure.com","https://userscloud.com","https://drive.google.com","https://123link.pro"};
         public string[] linkMaskText = new string[] { "Play://", "APKpure://", "UCloud://", "GDrive://", "123L://" };
         public PostDataBundle AFFinputer;
-        
+        public int _checkvarThreads=0;
+        /// <summary>
+        /// Number of Threads on Working<br/>
+        /// If It's back to 0, the progress bar will disappear
+        /// </summary>
+        public int checkvarThreads
+        {
+            get => _checkvarThreads;
+            set
+            {
+                _checkvarThreads = value;
+                progressOnProc.Visible = _checkvarThreads != 0;
+            }
+        }
         public class LinkMaskDat
         {
             public string mask;
@@ -30,19 +43,37 @@ namespace MMBS
                 ismask = false;
             }
         }
-        public AFForm()
+        /// <summary>
+        /// For Form special setup only
+        /// </summary>
+        public void Initialize()
         {
             InitializeComponent();
+            tipOne.SetToolTip(checkExtPerms, checkExtPerms.Checked ? "External Storage" : "Overlay");
+        }
+        public AFForm()
+        {
+            Initialize();
             if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
         }
         public AFForm(string cmd)
         {
-            InitializeComponent();
+            Initialize();
             if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
             AFFinputer = new PostDataBundle();
             switch (cmd)
             {
                 case "new": ResetForm(); break;
+            }
+        }
+        public AFForm(string cmd, PostDataBundle importdata)
+        {
+            Initialize();
+            if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
+            AFFinputer = new PostDataBundle();
+            switch (cmd)
+            {
+                case "process": ResetForm(); AFFinputer = importdata; this.Shown+=RefreshData; break;
             }
         }
         public void ResetForm()
@@ -57,20 +88,15 @@ namespace MMBS
             boxModInfo.Text = AFFinputer.modinfo.UI.modTypeGetDat(AFFinputer.modinfo.UI.currentindex);
             boxDSlink.Text = AFFinputer.appinfo.datasource;
             boxDLlink.Text = AFFinputer.Downloadlink.Downloadlink.link;
-<<<<<<< HEAD
             boxAOlink.Text = AFFinputer.Downloadlink.OBBlink.link;
             checkAPK.Checked = AFFinputer.Downloadlink.OBBlink.check;
             boxMirrorDLlink.Text = AFFinputer.Downloadlink.OMirrorlink.link;
             checkMirror.Checked = AFFinputer.Downloadlink.OMirrorlink.check;
 
             checkExtPerms.Checked = AFFinputer.appinfo.extpermReq;
-=======
-            boxAOlink.Text = AFFinputer.Downloadlink.APKlink.link;
-            checkAPK.Checked = AFFinputer.Downloadlink.APKlink.check;
-            
->>>>>>> parent of 74612af (first commit)
             checkInternet.Checked = AFFinputer.appinfo.internetReq;
             checkRoot.Checked = AFFinputer.appinfo.rootReq;
+            checkOBB.Checked = AFFinputer.appinfo.obbReq;
             labelValidDS.Visible = false;
             labelUnvalidDS.Visible = false;
             labelValidDL.Visible = false;
@@ -87,7 +113,16 @@ namespace MMBS
             butIcon.Image = (Properties.Resources.offlinemods_logo_pns);
             listCredit.Items.Clear();
 
+            comboExportScript.SelectedIndex = 0;
                       ImportCreditList();
+        }
+        public void RefreshData(object sender, EventArgs e)
+        {
+            boxDSlink.Text = AFFinputer.appinfo.datasource;
+            boxModInfo.Text = AFFinputer.modinfo.moddata;
+            checkOBB.Checked = AFFinputer.appinfo.obbReq;
+            checkRoot.Checked = AFFinputer.appinfo.rootReq;
+            listCredit.SelectedIndex = AFFinputer.credit.nowIndex;
         }
         public void ImportCreditList()
         {
@@ -196,8 +231,8 @@ namespace MMBS
         public string datasource_webpage_cache;
         public void InfoSeterProc(string cmd)
         {
-            string title = cmd.Remove(cmd.IndexOf('\n'));
-            string param = cmd.Substring(cmd.IndexOf('\n') + 1);
+            string title = cmd.Contains("\n")?cmd.Remove(cmd.IndexOf('\n')):cmd;
+            string param = cmd.Contains("\n") ? cmd.Substring(cmd.IndexOf('\n') + 1):cmd;
             switch (title)
             {
                 case "groupDS text": groupDS.Text = param; break;
@@ -215,21 +250,17 @@ namespace MMBS
                 case "checkDL label": labelValidDL.Visible = Convert.ToInt32(param) == 1; labelUnvalidDL.Visible = (Convert.ToInt32(param) == 2); break;
                 case "checkAO label": labelValidAO.Visible = Convert.ToInt32(param) == 1; labelUnvalidAO.Visible = (Convert.ToInt32(param) == 2); break;
                 case "checkAPK check": checkAPK.Checked = Convert.ToBoolean(param);break;
-                
 
+                case "checkvarThreads.+": checkvarThreads++;break;
+                case "checkvarThreads.-": checkvarThreads--; break;
             }
             
         }
         public static string[] DSlabelText = new string[] { "Original APK", "Play Store","APKpure"};
         public void boxDSproc()
         {
-<<<<<<< HEAD
             this.Invoke(InfoSeter,"checkvarThreads.+");
             OldProcessor.ProcessDataResourceTextBox processDataResourceTextBox = new OldProcessor.ProcessDataResourceTextBox(boxDSlink.Text);
-=======
-           
-            oldProcessor.ProcessDataResourceTextBox processDataResourceTextBox = new oldProcessor.ProcessDataResourceTextBox(boxDSlink.Text);
->>>>>>> parent of 74612af (first commit)
             
             this.Invoke(InfoSeter, "checkDS label\n" + processDataResourceTextBox.valid.ToString());
             this.Invoke(InfoSeter, "progressDS value\n0");
@@ -258,12 +289,8 @@ namespace MMBS
                 this.Invoke(InfoSeter, "groupDS text\n" + DSlabelText[0]);
                 this.Invoke(InfoSeter, "butIcon image\ndefault");
             }
-<<<<<<< HEAD
             // controlForm("groupDS.Text Change",processDataResourceTextBox.packagename);
             this.Invoke(InfoSeter,"checkvarThreads.-");
-=======
-                                    // controlForm("groupDS.Text Change",processDataResourceTextBox.packedname);
->>>>>>> parent of 74612af (first commit)
         }
         private void boxDSlink_TextChanged(object sender, EventArgs e)
         {
@@ -274,14 +301,20 @@ namespace MMBS
                 
                 System.Threading.ThreadStart threadStart = new System.Threading.ThreadStart(boxDSproc);
                 System.Threading.Thread interfacer = new System.Threading.Thread(threadStart);
+                interfacer.Name = "DSlinkProc";
                 InfoSeter = new SetInformation(InfoSeterProc);
+                //interfacer.ApartmentState = System.Threading.ApartmentState.STA;
                 interfacer.Start();
                 
                 
             }
         }
+       // [STAThread]
         public void boxDLproc()
         {
+            Console.WriteLine("checkinvoke");
+            this.Invoke(InfoSeterDown,"checkvarThreads.+");
+            Console.WriteLine("st");
             User_DebugSystem.Command(boxDLlink.Text);
             OldProcessor.ProcessDownloadLinkTextBox processDownloadLinkTextBox = new OldProcessor.ProcessDownloadLinkTextBox(boxDLlink.Text);
             User_DebugSystem.Command("call\nHoàn tất và nhập dữ liệu vào Form\n"+ (processDownloadLinkTextBox.valid==1 ?"Thành công":"Thất bại"));
@@ -337,6 +370,7 @@ namespace MMBS
             //labelValidDL.Visible = Convert.ToInt32(param) == 1; labelUnvalidDL.Visible = (Convert.ToInt32(param) == 2); break;
 
             // SetPropertyThreadSafe(labelValidDL,labelValidDL.Visible,);
+            this.Invoke(InfoSeterDown, "checkvarThreads.-");
         }
         private void boxDLlink_TextChanged(object sender, EventArgs e)
         {
@@ -344,18 +378,15 @@ namespace MMBS
             {
                 System.Threading.ThreadStart threadStart = new System.Threading.ThreadStart(boxDLproc);
                 System.Threading.Thread interfacer = new System.Threading.Thread(threadStart);
+                interfacer.Name = "DLlinkProc";
                 InfoSeterDown = new SetInformation(InfoSeterProc);
                 interfacer.Start();
             }
         }
         public void boxAOproc()
         {
-<<<<<<< HEAD
             this.Invoke(InfoSeterDown, "checkvarThreads.+");
             OldProcessor.ProcessDownloadLinkTextBox processAPKLinkTextBox = new OldProcessor.ProcessDownloadLinkTextBox(boxAOlink.Text,OldProcessor.ProcessDownloadLinkTextBox.request_code.SimpleInfo);
-=======
-            oldProcessor.ProcessDownloadLinkTextBox processAPKLinkTextBox = new oldProcessor.ProcessDownloadLinkTextBox(boxAOlink.Text,oldProcessor.ProcessDownloadLinkTextBox.request_code.ValidCheckOnly);
->>>>>>> parent of 74612af (first commit)
            /* this.Invoke(InfoSeter, "checkAO label\n" + processAPKLinkTextBox.valid);
             this.Invoke(InfoSeter, "linkAOname text\n" + processAPKLinkTextBox.fname);*/
             if (processAPKLinkTextBox.valid > 0)
@@ -380,6 +411,7 @@ namespace MMBS
             labelValidAO.Invoke(new MethodInvoker(delegate { labelValidAO.Visible = processAPKLinkTextBox.valid == 1; }));
             labelUnvalidAO.Invoke(new MethodInvoker(delegate { labelUnvalidAO.Visible = processAPKLinkTextBox.valid == 2; }));
             linkAOname.Invoke(new MethodInvoker(delegate { linkAOname.Text = processAPKLinkTextBox.fname; }));
+            this.Invoke(InfoSeterDown, "checkvarThreads.-");
         }
         private void boxAOlink_TextChanged(object sender, EventArgs e)
         {
@@ -388,6 +420,7 @@ namespace MMBS
                 checkAPK.Checked = boxAOlink.Text != "";
                 System.Threading.ThreadStart threadStart = new System.Threading.ThreadStart(boxAOproc);
                 System.Threading.Thread interfacer = new System.Threading.Thread(threadStart);
+                interfacer.Name = "AOlinkProc";
                 InfoSeterDown = new SetInformation(InfoSeterProc);
                 interfacer.Start();
             }
@@ -401,6 +434,7 @@ namespace MMBS
             OldProcessor.MainProcessor main = new OldProcessor.MainProcessor(datasource_webpage_cache, AFFinputer.appinfo.datasourcetype, AFFinputer.folderlink);
             AFFinputer.appinfo.name = main.title;
             AFFinputer.appinfo.version = main.version;
+            AFFinputer.appinfo.miscellaneous = main.miscellaneous;
             AFFinputer.appinfo.androidReq = main.req;
             AFFinputer.postmedia.VideoReview.ImportFromLink(main.videolink,main.dir);
             AFFinputer.appinfo.Description.OldprocessInputProtocoForPlayProc(main.desc, main.Desc_Bold);
@@ -408,7 +442,6 @@ namespace MMBS
             AFFinputer.appinfo.Description.noline = true;
             AFFinputer.postmedia.ImageInScript = true;
             
-
             string cache;
             if (AFFinputer.Downloadlink.Downloadlink.host == "drive.google.com")
             {
@@ -425,7 +458,6 @@ namespace MMBS
                 AFFinputer.Downloadlink.OBBlink.link = cache==""? AFFinputer.Downloadlink.OBBlink.link:cache;
                 
             }
-<<<<<<< HEAD
             if (AFFinputer.Downloadlink.OMirrorlink.link == "drive.google.com")
             {
                 cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.Downloadlink.OMirrorlink.link);
@@ -434,13 +466,9 @@ namespace MMBS
             }
 
 
-=======
-            AFFinputer.postmedia.ImportImagelistFromImageDownloadList(main.image);
->>>>>>> parent of 74612af (first commit)
             if (Properties.Settings.Default.PermformCheck)counter = DateTime.FromBinary(DateTime.Now.ToBinary() - counter.ToBinary());
-            if (!string.IsNullOrWhiteSpace(AFFinputer.folderlink)&&(AFFinputer.folderlink!=Class1.GetToken("curdir")))
+            if (!Properties.Settings.Default.NoDownImage)
             {
-<<<<<<< HEAD
                 AFFinputer.postmedia.ImportImagelistFromImageDownloadList(main.image);
                 if (!string.IsNullOrWhiteSpace(AFFinputer.folderlink) && (AFFinputer.folderlink != Class1.GetToken("curdir")))
                 {
@@ -452,20 +480,19 @@ namespace MMBS
                         file = new System.IO.FileInfo(i); 
                         AFFinputer.postmedia.ImageList[Convert.ToInt32(file.Name.Remove(file.Name.LastIndexOf(".")).Replace("Screenshot ", ""))].enable = true; };
                 }
-=======
-                dialogFile.InitialDirectory = AFFinputer.folderlink;
-
-                dialogFile.Title = ("Image Selection");
-
-                DialogResult imagelist = dialogFile.ShowDialog();
-                System.IO.FileInfo file;
-                foreach (string i in dialogFile.FileNames) { file = new System.IO.FileInfo(i); AFFinputer.postmedia.ImageList[Convert.ToInt32(file.Name.Remove(file.Name.LastIndexOf(".")).Replace("Screenshot ", ""))].enable = true; };
->>>>>>> parent of 74612af (first commit)
             }
+            //Required for recycle this Form
+            else AFFinputer.postmedia.ResetImageList();
+            
             if (Properties.Settings.Default.PermformCheck) MessageBox.Show("Process Done in "+counter.ToString("mm:ss.ffffff"));
             if (!Properties.Settings.Default.AFFskipFMF)
             {
                 FMForm fmf = new FMForm(AFFinputer);
+                switch (comboExportScript.Items[comboExportScript.SelectedIndex])
+                {
+                    case "Offlinemods Html Script": break;
+                    case "PMT BBcode Script": fmf.execute("checkPublish:PMT"); break;
+                }
                 do
                 {
                     fmf.needRecall = false;
@@ -531,6 +558,11 @@ namespace MMBS
         private void checkRoot_CheckedChanged(object sender, EventArgs e)
         {
             AFFinputer.appinfo.rootReq = checkRoot.Checked;
+        }
+
+        private void checkOBB_CheckedChanged(object sender, EventArgs e)
+        {
+            AFFinputer.appinfo.obbReq = checkOBB.Checked;
         }
 
         private void checkAPK_CheckedChanged(object sender, EventArgs e)
@@ -612,12 +644,8 @@ namespace MMBS
         private void butMDL_Click(object sender, EventArgs e)
         {
             if (AFFinputer.Downloadlink.linklist.Count < 1) AFFinputer.Downloadlink.linklist.Add(new DefineInfoPack.Linker("download"));
-<<<<<<< HEAD
             AFFinputer.Downloadlink.linklist[0].linkalias = "Unsigned";
             OldProcessor.MirrorLink DLmirror = new OldProcessor.MirrorLink( AFFinputer.Downloadlink.linklist[0].linkalias, AFFinputer.Downloadlink.linklist[0].link);
-=======
-            oldProcessor.MirrorLink DLmirror = new oldProcessor.MirrorLink( AFFinputer.Downloadlink.linklist[0].linkalias, AFFinputer.Downloadlink.linklist[0].link);
->>>>>>> parent of 74612af (first commit)
             this.butMDL.Text = DLmirror.valid > 0 ? (DLmirror.valid == 1 ? "✓" : "✗") : "+";
             this.butMDL.ForeColor = DLmirror.valid > 0 ? (DLmirror.valid == 1 ? System.Drawing.Color.Lime : Color.Red) : Color.White;
             if (DLmirror.valid == 1)
@@ -625,6 +653,10 @@ namespace MMBS
                 AFFinputer.Downloadlink.linklist[0].link = DLmirror.host == "drive.google.com" ? OldProcessor.ProcSupporter.ShortenLink(DLmirror.link) : DLmirror.link;
                 AFFinputer.Downloadlink.linklist[0].linkalias = DLmirror.name;
                 AFFinputer.Downloadlink.linklist[0].host = DLmirror.host;
+
+                //tempcode 211016 signed/unsigned
+                AFFinputer.Downloadlink.linklist[0].linkalias = AFFinputer.Downloadlink.Downloadlink.linkalias == "Signed" ? "Unsigned" : AFFinputer.Downloadlink.linklist[0].linkalias;
+                checkSign.Checked = true;
             }
             else
             {
@@ -632,6 +664,8 @@ namespace MMBS
                 AFFinputer.Downloadlink.linklist[0].linkalias = "";
                 AFFinputer.Downloadlink.linklist[0].host = "";
             }
+
+            
         }
 
         private void butMAO_Click(object sender, EventArgs e)
@@ -750,7 +784,6 @@ namespace MMBS
             ((ContextMenuStrip)sender).SourceControl.Text = e.ClickedItem.Text;
         }
         public bool isFirstClipboardMenuOpen = false;
-<<<<<<< HEAD
 
         private void stripNoDownImage_Click(object sender, EventArgs e)
         {
@@ -852,7 +885,5 @@ namespace MMBS
             linkMirrorDownload.Invoke(new MethodInvoker(delegate { linkMirrorDownload.Text = processMirrorLinkTextBox.fname; }));
             this.Invoke(InfoSeterDown, "checkvarThreads.-");
         }
-=======
->>>>>>> parent of 74612af (first commit)
     }
 }

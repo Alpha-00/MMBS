@@ -4,6 +4,17 @@
         <name>MMBS</name>
     </assembly>
     <members>
+        <member name="P:MMBS.AFForm.checkvarThreads">
+            <summary>
+            Number of Threads on Working<br/>
+            If It's back to 0, the progress bar will disappear
+            </summary>
+        </member>
+        <member name="M:MMBS.AFForm.Initialize">
+            <summary>
+            For Form special setup only
+            </summary>
+        </member>
         <member name="F:MMBS.AFForm.components">
             <summary>
             Required designer variable.
@@ -21,7 +32,6 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-<<<<<<< HEAD
         <member name="M:MMBS.CustomizePostResult.postHtml_v191130_Processor(MMBS.PostDataBundle)">
             <summary>
             Custom form post v191130
@@ -89,8 +99,6 @@
              <returns>A Process object holding the clipboard, or null</returns>
             -----------------------------------------------------------------------------
         </member>
-=======
->>>>>>> parent of 74612af (first commit)
         <member name="F:MMBS.DataGetForm.components">
             <summary>
             Required designer variable.
@@ -193,9 +201,52 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:MMBS.Program.Main">
+        <member name="M:MMBS.Program.Main(System.String[])">
             <summary>
             The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:MMBS.Program.GetRefference(System.String,System.String)">
+            <summary>
+            Get Data from outside
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MMBS.Program.Initialization">
+            <summary>
+            Mark Init Data for the first start 
+            Included Slashscreen
+            </summary>
+        </member>
+        <member name="T:MMBS.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources._2000px_YouTube_full_color_icon__2017__svg">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources.bloggersupport">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources.offlinemods_logo_pns">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
         <member name="F:MMBS.SMForm.components">
@@ -232,35 +283,21 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:MMBS.Properties.Resources">
+        <member name="F:MMBS.ZZZOptions.components">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+            Required designer variable.
             </summary>
         </member>
-        <member name="P:MMBS.Properties.Resources.ResourceManager">
+        <member name="M:MMBS.ZZZOptions.Dispose(System.Boolean)">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
+            Clean up any resources being used.
             </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="P:MMBS.Properties.Resources.Culture">
+        <member name="M:MMBS.ZZZOptions.InitializeComponent">
             <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:MMBS.Properties.Resources._2000px_YouTube_full_color_icon__2017__svg">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:MMBS.Properties.Resources.bloggersupport">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:MMBS.Properties.Resources.offlinemods_logo_pns">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:RTF.IBuilderContent">
@@ -593,6 +630,30 @@
         <member name="T:CurrentPatient.IRtfProcessor">
             <summary>
             Processor of RTF
+            </summary>
+        </member>
+        <member name="T:MyConfigSupporter.BBtxtFile.Collection">
+            <summary>
+            Use for contruct data
+            </summary>
+        </member>
+        <member name="F:MyConfigSupporter.BBtxtFile.Collection.specific">
+             <summary>
+             <strong>EXAM</strong><br/>
+             bbtxt.v1.customoption.default<br/>
+            
+             collection
+             text
+             </summary>
+        </member>
+        <member name="F:MyConfigSupporter.BBtxtFile.Collection.version">
+            <summary>
+            v1
+            </summary>
+        </member>
+        <member name="F:MyConfigSupporter.BBtxtFile.Collection.onWork">
+            <summary>
+            Working with inside Data, default = -1
             </summary>
         </member>
     </members>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,8 +73,10 @@ namespace MMBS
             this.boxVersion.Text = thenow.appinfo.version;
             this.boxSize.Text = thenow.appinfo.size;
             this.boxAReq.Text = thenow.appinfo.androidReq;
+            this.checkExtPerms.Checked = thenow.appinfo.extpermReq;
             this.checkInternet.Checked = thenow.appinfo.internetReq;
             this.checkRoot.Checked = thenow.appinfo.rootReq;
+            this.checkOBB.Checked = thenow.appinfo.obbReq;
             this.checkABold.Checked = thenow.appinfo.Description.bold;
             this.checkNoLine.Checked = thenow.appinfo.Description.noline;
             if (this.checkABold.Checked && this.checkNoLine.Checked)
@@ -215,6 +218,7 @@ namespace MMBS
             //textBox1.Height = size.Height;
             FormData.appinfo.name = boxAppname.Text;
             Process_name();
+            
             FormData.appinfo.searchkeyword = boxSearchKey.Text;
             void Process_name()
             {
@@ -225,6 +229,7 @@ namespace MMBS
                     boxSearchKey.Text += cache2 + "\n" ;
                 }
             }
+            
         }
         protected string Appnamecache;
 
@@ -245,7 +250,10 @@ namespace MMBS
         {
             FormData.appinfo.internetReq = checkInternet.Checked;
         }
-
+        private void checkOBB_CheckedChanged(object sender, EventArgs e)
+        {
+            FormData.appinfo.obbReq = checkOBB.Checked;
+        }
         private void butModInfo_Click(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.OldStyle) { }
@@ -443,11 +451,31 @@ namespace MMBS
 
         private void butDone_Click(object sender, EventArgs e)
         {
-            Hide();
-            FormResult formResult = new FormResult(FormData);
-            if (!formResult.Visible)
-            formResult.ShowDialog();
-            Show();
+            if (stripOtherPMT.Checked)
+            {
+                stripOtherPMT.PerformClick();
+                return;
+            }
+            switch (butDone.Text)
+            {
+                case "DONE": NormalProcess(); break;
+                case "POST": PostProcess(); break;
+            }
+            void NormalProcess()
+            {
+                Hide();
+                FormResult formResult = new FormResult(FormData);
+                if (!formResult.Visible)
+                    formResult.ShowDialog();
+                Show();
+            }
+            void PostProcess()
+            {
+                Hide();
+                FormResult formResult = new FormResult(FormData);
+                formResult.PostOnly_Service();
+                Show();
+            }
         }
 
         private void boxVideoLink_TextChanged(object sender, EventArgs e)
@@ -625,7 +653,6 @@ namespace MMBS
         {
             FormData.postmedia.ImageInScript = checkImageinScript.Checked;
         }
-<<<<<<< HEAD
 
         private void ListImageReview_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
@@ -756,7 +783,5 @@ namespace MMBS
         {
             FormData.Downloadlink.OMirrorlink.link = boxOMirror.Text;
         }
-=======
->>>>>>> parent of 74612af (first commit)
     }
 }

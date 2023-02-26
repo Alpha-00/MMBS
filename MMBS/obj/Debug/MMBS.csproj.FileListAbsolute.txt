@@ -95,14 +95,11 @@ D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Google.Apis.PlatformServices.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Google.Apis.Urlshortener.v1.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\HtmlAgilityPack.dll
-<<<<<<< HEAD
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\ImageProcessor.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\ImageProcessor.Plugins.WebP.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Imgur.API.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\MaterialDesignColors.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\MaterialDesignThemes.Wpf.dll
-=======
->>>>>>> parent of 74612af (first commit)
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\MaterialSkin.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Microsoft.Extensions.Primitives.dll
@@ -138,7 +135,6 @@ D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Google.Apis.Urlshortener.v1.xml
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\HtmlAgilityPack.pdb
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\HtmlAgilityPack.xml
-<<<<<<< HEAD
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\ImageProcessor.xml
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\ImageProcessor.Plugins.WebP.xml
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Imgur.API.xml
@@ -159,11 +155,6 @@ D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\System.ValueTuple.xml
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Debug\MMBS.csproj.AssemblyReference.cache
-=======
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Newtonsoft.Json.xml
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\WebDriver.xml
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Debug\MMBS.csprojAssemblyReference.cache
->>>>>>> parent of 74612af (first commit)
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Debug\MMBS.AFForm.resources
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Debug\MMBS.DataGetForm.resources
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Debug\MMBS.FMForm.resources
@@ -184,14 +175,6 @@ D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Debug\MMBS.csproj.CopyComplete
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Debug\MMBS.exe
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Debug\MMBS.pdb
-<<<<<<< HEAD
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Debug\MMBS.csproj.SuggestedBindingRedirects.cache
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Microsoft.AspNetCore.WebUtilities.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\Microsoft.AspNetCore.WebUtilities.xml
-=======
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\MaterialDesignColors.dll
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\MaterialDesignThemes.Wpf.dll
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\MaterialDesignColors.pdb
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\MaterialDesignThemes.Wpf.pdb
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Debug\MaterialDesignThemes.Wpf.xml
->>>>>>> parent of 74612af (first commit)

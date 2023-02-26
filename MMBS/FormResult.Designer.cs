@@ -47,7 +47,7 @@
             this.butTitle.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.butTitle.FlatAppearance.BorderSize = 3;
             this.butTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butTitle.Font = new System.Drawing.Font("Product Sans", 15F);
+            this.butTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.butTitle.ForeColor = System.Drawing.Color.Transparent;
             this.butTitle.Location = new System.Drawing.Point(8, 12);
             this.butTitle.Name = "butTitle";
@@ -63,7 +63,7 @@
             this.butPost.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.butPost.FlatAppearance.BorderSize = 3;
             this.butPost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butPost.Font = new System.Drawing.Font("Product Sans", 15F);
+            this.butPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.butPost.ForeColor = System.Drawing.Color.Transparent;
             this.butPost.Location = new System.Drawing.Point(8, 127);
             this.butPost.Name = "butPost";
@@ -78,7 +78,7 @@
             this.butSearch.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.butSearch.FlatAppearance.BorderSize = 3;
             this.butSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butSearch.Font = new System.Drawing.Font("Product Sans", 15F);
+            this.butSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.butSearch.ForeColor = System.Drawing.Color.Transparent;
             this.butSearch.Location = new System.Drawing.Point(8, 242);
             this.butSearch.Name = "butSearch";
@@ -94,7 +94,7 @@
             this.butQuit.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.butQuit.FlatAppearance.BorderSize = 3;
             this.butQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butQuit.Font = new System.Drawing.Font("Product Sans", 15F);
+            this.butQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.butQuit.ForeColor = System.Drawing.Color.Red;
             this.butQuit.Location = new System.Drawing.Point(8, 370);
             this.butQuit.Name = "butQuit";
@@ -108,16 +108,15 @@
             // 
             this.butAutoPost.BackColor = System.Drawing.Color.Black;
             this.butAutoPost.BackgroundImage = global::MMBS.Properties.Resources.offlinemods_logo_pns;
-            this.butAutoPost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.butAutoPost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.butAutoPost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butAutoPost.Font = new System.Drawing.Font("Product Sans", 16F);
+            this.butAutoPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.butAutoPost.ForeColor = System.Drawing.Color.Yellow;
-            this.butAutoPost.Location = new System.Drawing.Point(83, 333);
+            this.butAutoPost.Location = new System.Drawing.Point(95, 334);
             this.butAutoPost.Name = "butAutoPost";
-            this.butAutoPost.Size = new System.Drawing.Size(62, 39);
+            this.butAutoPost.Size = new System.Drawing.Size(42, 39);
             this.butAutoPost.TabIndex = 4;
             this.butAutoPost.UseVisualStyleBackColor = false;
-            this.butAutoPost.Visible = false;
             this.butAutoPost.Click += new System.EventHandler(this.butAutoPost_Click);
             // 
             // resFormOption
@@ -145,7 +144,7 @@
             // 
             // FormResult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -158,7 +157,7 @@
             this.Controls.Add(this.butPost);
             this.Controls.Add(this.butAutoPost);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::MMBS.Properties.Settings.Default, "newPostBlankPosition", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.Font = new System.Drawing.Font("Product Sans", 10F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

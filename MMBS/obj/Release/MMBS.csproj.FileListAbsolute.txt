@@ -122,7 +122,6 @@ D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MaterialDesignThemes.Wpf.xml
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Newtonsoft.Json.xml
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\WebDriver.xml
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csprojAssemblyReference.cache
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.AFForm.resources
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.DataGetForm.resources
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.FMForm.resources
@@ -135,14 +134,11 @@ D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.ToolsForm.resources
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.MainMenu.en-US.resources
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.GenerateResource.cache
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.CoreCompileInputs.cache
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\en-US\MMBS.resources.dll
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.exe.manifest
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.application
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.CopyComplete
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.exe
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.pdb
-<<<<<<< HEAD
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.ZZZOptions.resources
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.CoreCompileInputs.cache
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.xml
@@ -344,5 +340,3 @@ D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.Extensions.Primitives.xml
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.Net.Http.Headers.xml
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Text.Encoding.CodePages.xml
-=======
->>>>>>> parent of 74612af (first commit)

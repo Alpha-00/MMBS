@@ -52,6 +52,7 @@
             this.cmdEXE5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdEXE6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdEXE7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuOption = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.AFFmenuStrip.SuspendLayout();
@@ -240,10 +241,11 @@
             this.ETest1.AllowDrop = true;
             this.ETest1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ETest1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.executerToolStripMenuItem});
+            this.executerToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.ETest1.Name = "contextMenuStrip1";
             this.ETest1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.ETest1.Size = new System.Drawing.Size(135, 28);
+            this.ETest1.Size = new System.Drawing.Size(135, 52);
             this.ETest1.Text = "Environment Test 1";
             this.ETest1.UseWaitCursor = true;
             this.ETest1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
@@ -312,6 +314,13 @@
             this.cmdEXE7ToolStripMenuItem.Text = "CmdEXE7";
             this.cmdEXE7ToolStripMenuItem.Click += new System.EventHandler(this.cmdEXE7ToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(134, 24);
+            this.toolStripMenuItem1.Text = "Option";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // mainMenuOption
             // 
             this.mainMenuOption.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -374,6 +383,7 @@
         private System.Windows.Forms.ToolStripMenuItem standardToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip mainMenuOption;
         private System.Windows.Forms.ToolStripMenuItem betaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

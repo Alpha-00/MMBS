@@ -1,0 +1,14 @@
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\bin\API Debug\LAMB.exe.config
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\bin\API Debug\LAMB.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\bin\API Debug\LAMB.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\LAMB.csprojAssemblyReference.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\MainWindow.g.cs
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\App.g.cs
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\LAMB_MarkupCompile.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\LAMB_MarkupCompile.lref
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\MainWindow.baml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\LAMB.g.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\LAMB.Properties.Resources.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\LAMB.csproj.GenerateResource.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\LAMB.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\LAMB\obj\API Debug\LAMB.pdb

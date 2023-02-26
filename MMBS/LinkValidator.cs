@@ -30,11 +30,7 @@ namespace MMBS
         }
         public void ValidChecker(string link)
         {
-<<<<<<< HEAD
             OldProcessor.ProcessDownloadLinkTextBox check = new OldProcessor.ProcessDownloadLinkTextBox(link,OldProcessor.ProcessDownloadLinkTextBox.request_code.SimpleInfo);
-=======
-            oldProcessor.ProcessDownloadLinkTextBox check = new oldProcessor.ProcessDownloadLinkTextBox(link);
->>>>>>> parent of 74612af (first commit)
             labelUn.Visible = check.valid == 2;
             labelValid.Visible = check.valid > 0;
             labelValid.ForeColor = check.valid == 1 ? System.Drawing.Color.Lime : Color.Red;

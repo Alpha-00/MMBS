@@ -96,9 +96,8 @@ namespace MMBS
                     c.BackgroundImage = null;
                     foreach (Control cs in c.Controls)
                     {
-
+                        if (cs.Name.EndsWith("_Syswarn")) continue;
                         cache = cs.GetType();
-
                         if (@switch.ContainsKey(cache))
                             LoadOldStyle(cs);
                         else Call(cache.ToString());

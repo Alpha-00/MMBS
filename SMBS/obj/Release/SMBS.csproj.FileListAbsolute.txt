@@ -16,7 +16,6 @@ D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMB
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\bin\Release\SMBS.exe.config
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\bin\Release\SMBS.exe
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\bin\Release\SMBS.pdb
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.csprojAssemblyReference.cache
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\MainWindow.g.cs
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\App.g.cs
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS_MarkupCompile.cache
@@ -25,12 +24,8 @@ D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.g.resources
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.Properties.Resources.resources
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.csproj.GenerateResource.cache
-D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.csproj.CoreCompileInputs.cache
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.exe
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.pdb
-<<<<<<< HEAD
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.csproj.CoreCompileInputs.cache
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.csproj.AssemblyReference.cache
 D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\SMBS\obj\Release\SMBS.csproj.SuggestedBindingRedirects.cache
-=======
->>>>>>> parent of 74612af (first commit)
