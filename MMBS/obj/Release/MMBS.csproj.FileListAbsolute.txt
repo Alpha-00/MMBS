@@ -1,0 +1,348 @@
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.MainMenu.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.Properties.Resources.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.MainMenu.en-US.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.GenerateResource.cache
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.CoreCompileInputs.cache
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.exe.config
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.exe.manifest
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.application
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.exe
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.pdb
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\en-US\MMBS.resources.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\en-US\MMBS.resources.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.exe.manifest
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.application
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.exe
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.pdb
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Auth.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Auth.PlatformServices.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Blogger.v3.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Core.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Drive.v3.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.PlatformServices.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Urlshortener.v1.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Newtonsoft.Json.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.Http.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Cryptography.Algorithms.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Cryptography.Encoding.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Cryptography.Primitives.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Cryptography.X509Certificates.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.pdb
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Auth.pdb
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Auth.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Blogger.v3.pdb
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Blogger.v3.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Core.pdb
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Core.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Drive.v3.pdb
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Drive.v3.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Urlshortener.v1.pdb
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Urlshortener.v1.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Newtonsoft.Json.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.CopyComplete
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\credentials.json
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.FMForm.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MaterialSkin.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.Video.DirectShow.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.Video.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AsciiToUnicodeMon.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\NeoSmart.Unicode.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.Video.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.Video.DirectShow.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.AFForm.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.DataGetForm.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.FormResult.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.LinkValidator.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.SMForm.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.ToolsForm.resources
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\phantomjs.exe
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\phantomjs-license.txt
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\HtmlAgilityPack.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\WebDriver.dll
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\HtmlAgilityPack.pdb
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\HtmlAgilityPack.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\WebDriver.xml
+D:\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csprojAssemblyReference.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\phantomjs.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\phantomjs-license.txt
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\credentials.json
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.exe.config
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.exe.manifest
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.application
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\en-US\MMBS.resources.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.Video.DirectShow.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.Video.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AsciiToUnicodeMon.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Auth.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Auth.PlatformServices.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Blogger.v3.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Core.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Drive.v3.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.PlatformServices.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Urlshortener.v1.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\HtmlAgilityPack.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MaterialDesignColors.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MaterialDesignThemes.Wpf.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MaterialSkin.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\NeoSmart.Unicode.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Newtonsoft.Json.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.Http.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Cryptography.Algorithms.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Cryptography.Encoding.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Cryptography.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Cryptography.X509Certificates.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\WebDriver.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.Video.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\AForge.Video.DirectShow.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Auth.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Auth.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Blogger.v3.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Blogger.v3.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Core.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Core.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Drive.v3.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Drive.v3.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Urlshortener.v1.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Google.Apis.Urlshortener.v1.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\HtmlAgilityPack.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\HtmlAgilityPack.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MaterialDesignColors.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MaterialDesignThemes.Wpf.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MaterialDesignThemes.Wpf.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Newtonsoft.Json.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\WebDriver.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csprojAssemblyReference.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.AFForm.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.DataGetForm.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.FMForm.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.MainMenu.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.Form4Service.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.FormResult.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.LinkValidator.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.Properties.Resources.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.SMForm.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.ToolsForm.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.MainMenu.en-US.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.GenerateResource.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.CoreCompileInputs.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\en-US\MMBS.resources.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.exe.manifest
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.application
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.CopyComplete
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.pdb
+<<<<<<< HEAD
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.ZZZOptions.resources
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.CoreCompileInputs.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\MMBS.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Imgur.API.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Imgur.API.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Microsoft.Win32.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\netstandard.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.AppContext.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Collections.Concurrent.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Collections.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Collections.NonGeneric.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Collections.Specialized.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.ComponentModel.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.ComponentModel.EventBasedAsync.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.ComponentModel.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.ComponentModel.TypeConverter.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Console.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Data.Common.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Diagnostics.Contracts.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Diagnostics.Debug.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Diagnostics.FileVersionInfo.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Diagnostics.Process.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Diagnostics.StackTrace.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Diagnostics.Tools.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Diagnostics.TraceSource.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Diagnostics.Tracing.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Drawing.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Dynamic.Runtime.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Globalization.Calendars.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Globalization.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Globalization.Extensions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.Compression.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.Compression.ZipFile.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.FileSystem.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.FileSystem.DriveInfo.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.FileSystem.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.FileSystem.Watcher.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.IsolatedStorage.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.MemoryMappedFiles.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.Pipes.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.IO.UnmanagedMemoryStream.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Linq.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Linq.Expressions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Linq.Parallel.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Linq.Queryable.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.NameResolution.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.NetworkInformation.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.Ping.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.Requests.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.Security.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.Sockets.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.WebHeaderCollection.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.WebSockets.Client.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Net.WebSockets.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.ObjectModel.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Reflection.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Reflection.Extensions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Reflection.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Resources.Reader.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Resources.ResourceManager.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Resources.Writer.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.Extensions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.Handles.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.InteropServices.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.Numerics.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.Serialization.Formatters.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.Serialization.Json.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.Serialization.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.Serialization.Xml.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Claims.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Cryptography.Csp.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.Principal.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Security.SecureString.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Text.Encoding.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Text.Encoding.Extensions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Text.RegularExpressions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Threading.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Threading.Overlapped.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Threading.Tasks.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Threading.Tasks.Parallel.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Threading.Thread.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Threading.ThreadPool.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Threading.Timer.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Xml.ReaderWriter.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Xml.XDocument.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Xml.XmlDocument.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Xml.XmlSerializer.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Xml.XPath.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Xml.XPath.XDocument.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Buffers.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Memory.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Numerics.Vectors.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Text.Encodings.Web.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Text.Json.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.ValueTuple.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Buffers.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Memory.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Numerics.Vectors.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Text.Encodings.Web.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Text.Json.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\Release\System.ValueTuple.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\credentials.json
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MMBS.exe.config
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MMBS.exe.manifest
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MMBS.application
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MMBS.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MMBS.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MMBS.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\en-US\MMBS.resources.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\AForge.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\AForge.Video.DirectShow.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\AForge.Video.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\AsciiToUnicodeMon.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Auth.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Auth.PlatformServices.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Blogger.v3.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Core.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Drive.v3.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.PlatformServices.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Urlshortener.v1.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\HtmlAgilityPack.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Imgur.API.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MaterialDesignColors.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MaterialDesignThemes.Wpf.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MaterialSkin.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\NeoSmart.Unicode.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Newtonsoft.Json.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Buffers.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Memory.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Numerics.Vectors.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Runtime.CompilerServices.Unsafe.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Text.Encodings.Web.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Text.Json.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Threading.Tasks.Extensions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.ValueTuple.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\WebDriver.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\AForge.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\AForge.Video.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\AForge.Video.DirectShow.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Auth.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Auth.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Blogger.v3.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Blogger.v3.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Core.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Core.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Drive.v3.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Drive.v3.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Urlshortener.v1.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Google.Apis.Urlshortener.v1.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\HtmlAgilityPack.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\HtmlAgilityPack.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Imgur.API.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MaterialDesignColors.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MaterialDesignThemes.Wpf.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\MaterialDesignThemes.Wpf.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Newtonsoft.Json.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Buffers.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Memory.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Numerics.Vectors.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Runtime.CompilerServices.Unsafe.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Text.Encodings.Web.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Text.Json.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Threading.Tasks.Extensions.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.ValueTuple.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.CopyComplete
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.AssemblyReference.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\obj\Release\MMBS.csproj.SuggestedBindingRedirects.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\ImageProcessor.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\ImageProcessor.Plugins.WebP.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\ImageProcessor.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\ImageProcessor.Plugins.WebP.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\selenium-manager\linux\selenium-manager
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\selenium-manager\macos\selenium-manager
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\selenium-manager\windows\selenium-manager.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.AspNetCore.WebUtilities.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.Extensions.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.Net.Http.Headers.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.ComponentModel.Annotations.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Text.Encoding.CodePages.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\WebDriver.Support.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.AspNetCore.WebUtilities.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.Extensions.Primitives.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\Microsoft.Net.Http.Headers.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin\MMBS\System.Text.Encoding.CodePages.xml
+=======
+>>>>>>> parent of 74612af (first commit)

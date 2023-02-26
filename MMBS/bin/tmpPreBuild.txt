@@ -1,0 +1,5 @@
+WinRAR a MMBS2.rar MMBS -IBCK
+@echo off
+
+powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Archiving Completed', 'COMPRESSED', 'OK', [System.Windows.Forms.MessageBoxIcon]::Information);}"
+Explorer "D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS\bin"

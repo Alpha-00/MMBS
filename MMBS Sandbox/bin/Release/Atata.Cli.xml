@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Atata.Cli</name>
+    </assembly>
+    <members>
+        <member name="T:Atata.Cli.CliCommand">
+            <summary>
+            Represents the CLI command.
+            It is one-time executable and not reusable.
+            Uses <see cref="P:Atata.Cli.CliCommand.Process" /> class to execute a command.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.CliCommand.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.CliCommand" /> class.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="arguments">The arguments.</param>
+        </member>
+        <member name="P:Atata.Cli.CliCommand.Process">
+            <summary>
+            Gets the process.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommand.StartInfo">
+            <summary>
+            Gets the process <see cref="T:System.Diagnostics.ProcessStartInfo" /> instance that can be configured.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommand.CommandText">
+            <summary>
+            Gets the executable command text.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommand.Output">
+            <summary>
+            Gets the output of command.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommand.Error">
+            <summary>
+            Gets the error of command.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.CliCommand.Start">
+            <summary>
+            Starts the command by starting the <see cref="P:Atata.Cli.CliCommand.Process" /> instance.
+            </summary>
+            <returns>The same instance.</returns>
+            <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+            <exception cref="T:Atata.Cli.CliCommandException">The command has already been started.</exception>
+        </member>
+        <member name="M:Atata.Cli.CliCommand.WaitForExit(System.Nullable{System.TimeSpan})">
+            <summary>
+            Waits for the associated process to exit with optional timeout.
+            </summary>
+            <param name="timeout">The timeout.</param>
+            <returns>The command result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+            <exception cref="T:Atata.Cli.CliCommandException">The command was not started.</exception>
+        </member>
+        <member name="M:Atata.Cli.CliCommand.Kill">
+            <summary>
+            Immediately stops the associated process.
+            After killing the process, disposes the <see cref="T:Atata.Cli.CliCommand" /> instance.
+            </summary>
+            <returns>The command result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+            <exception cref="T:Atata.Cli.CliCommandException">The command was not started.</exception>
+        </member>
+        <member name="M:Atata.Cli.CliCommand.Kill(System.Boolean)">
+            <summary>
+            Immediately stops the associated process, and optionally its child/descendent processes.
+            After killing the process, disposes the <see cref="T:Atata.Cli.CliCommand" /> instance.
+            </summary>
+            <param name="entireProcessTree">
+            <see langword="true" /> to kill the associated process and its descendants;
+            <see langword="false" /> to kill only the associated process.
+            </param>
+            <returns>The command result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+            <exception cref="T:Atata.Cli.CliCommandException">The command was not started.</exception>
+        </member>
+        <member name="M:Atata.Cli.CliCommand.Dispose">
+            <summary>
+            Disposes the object.
+            </summary>
+        </member>
+        <member name="T:Atata.Cli.CliCommandException">
+            <summary>
+            Represents the error that occurred during CLI command execution.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.CliCommandException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.CliCommandException" /> class.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.CliCommandException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.CliCommandException" /> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Atata.Cli.CliCommandException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.CliCommandException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:Atata.Cli.CliCommandException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.CliCommandException" /> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="M:Atata.Cli.CliCommandException.Create(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            Creates a new instance of the <see cref="T:Atata.Cli.CliCommandException" /> class.
+            </summary>
+            <param name="commandText">The command text.</param>
+            <param name="error">The error.</param>
+            <param name="output">The output.</param>
+            <param name="innerException">The inner exception.</param>
+            <returns>The <see cref="T:Atata.Cli.CliCommandException" /> instance.</returns>
+        </member>
+        <member name="T:Atata.Cli.CliCommandResult">
+            <summary>
+            Represents the result of CLI command.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommandResult.CommandText">
+            <summary>
+            Gets the text of the command that was executed.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommandResult.WorkingDirectory">
+            <summary>
+            Gets the working directory.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommandResult.ExitCode">
+            <summary>
+            Gets the command exit code.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommandResult.Output">
+            <summary>
+            Gets the command output.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommandResult.Error">
+            <summary>
+            Gets the command error.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.CliCommandResult.HasError">
+            <summary>
+            Gets a value indicating whether the result has an error.
+            </summary>
+        </member>
+        <member name="T:Atata.Cli.CliCommandResultValidationRules">
+            <summary>
+            The enumeration of possible validation rules of CLI command result.
+            </summary>
+        </member>
+        <member name="F:Atata.Cli.CliCommandResultValidationRules.None">
+            <summary>
+            No validation.
+            </summary>
+        </member>
+        <member name="F:Atata.Cli.CliCommandResultValidationRules.ZeroExitCode">
+            <summary>
+            The exit code should equal 0.
+            </summary>
+        </member>
+        <member name="F:Atata.Cli.CliCommandResultValidationRules.NoError">
+            <summary>
+            There should not be an error text.
+            </summary>
+        </member>
+        <member name="F:Atata.Cli.CliCommandResultValidationRules.ZeroExitCodeAndNoError">
+            <summary>
+            The exit code should equal 0 and there should not be an error text.
+            </summary>
+        </member>
+        <member name="T:Atata.Cli.BashShellCliCommandFactory">
+            <summary>
+            Represents the <see cref="T:Atata.Cli.CliCommand" /> factory that executes the command through the Unix Bash shell program.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.BashShellCliCommandFactory.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.BashShellCliCommandFactory" /> class.
+            </summary>
+            <param name="shellArguments">The shell arguments.</param>
+        </member>
+        <member name="T:Atata.Cli.CmdShellCliCommandFactory">
+            <summary>
+            Represents the <see cref="T:Atata.Cli.CliCommand" /> factory that executes the command through the Windows cmd shell program.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.CmdShellCliCommandFactory.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.CmdShellCliCommandFactory" /> class.
+            </summary>
+            <param name="shellArguments">The shell arguments.</param>
+        </member>
+        <member name="M:Atata.Cli.CmdShellCliCommandFactory.BuildShellCommandArgument(System.String,System.String)">
+            <summary>
+            Builds the shell command argument.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="commandArguments">The command arguments.</param>
+            <returns>The shell command argument.</returns>
+        </member>
+        <member name="T:Atata.Cli.DirectCliCommandFactory">
+            <summary>
+            Represents the direct <see cref="T:Atata.Cli.CliCommand" /> factory.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.DirectCliCommandFactory.Create(System.String,System.String)">
+            <summary>
+            Creates the <see cref="T:Atata.Cli.CliCommand" /> by the specified parameters.
+            </summary>
+            <param name="fileNameOrCommand">The file name or command.</param>
+            <param name="arguments">The arguments.</param>
+            <returns>The created <see cref="T:Atata.Cli.CliCommand" /> instance.</returns>
+        </member>
+        <member name="T:Atata.Cli.OSDependentShellCliCommandFactory">
+            <summary>
+            Represents the <see cref="T:Atata.Cli.CliCommand" /> factory that executes the command
+            through one of the registered in it shell <see cref="T:Atata.Cli.ICliCommandFactory" /> instances
+            depending on the current operating system.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.OSDependentShellCliCommandFactory.UseCmdForWindows">
+            <summary>
+            Gets the <see cref="T:Atata.Cli.OSDependentShellCliCommandFactory" /> instance
+            configured to use <see cref="T:Atata.Cli.CmdShellCliCommandFactory" /> for Windows.
+            </summary>
+            /// <returns>The configured <see cref="T:Atata.Cli.OSDependentShellCliCommandFactory" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.OSDependentShellCliCommandFactory.UseCmdForWindowsAndShForOthers">
+            <summary>
+            Gets the <see cref="T:Atata.Cli.OSDependentShellCliCommandFactory" /> instance
+            configured to use <see cref="T:Atata.Cli.CmdShellCliCommandFactory" /> for Windows
+            and <see cref="T:Atata.Cli.ShShellCliCommandFactory" /> for other operating systems.
+            </summary>
+            <returns>The configured <see cref="T:Atata.Cli.OSDependentShellCliCommandFactory" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.OSDependentShellCliCommandFactory.UseCmdForWindowsAndBashForOthers">
+            <summary>
+            Gets the <see cref="T:Atata.Cli.OSDependentShellCliCommandFactory" /> instance
+            configured to use <see cref="T:Atata.Cli.CmdShellCliCommandFactory" /> for Windows
+            and <see cref="T:Atata.Cli.BashShellCliCommandFactory" /> for other operating systems.
+            </summary>
+            <returns>The configured <see cref="T:Atata.Cli.OSDependentShellCliCommandFactory" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.OSDependentShellCliCommandFactory.UseForOS(System.String,Atata.Cli.ICliCommandFactory)">
+            <summary>
+            Configures to use the specified <paramref name="commandFactory" /> for <paramref name="osPlatform" />.
+            </summary>
+            <param name="osPlatform">The OS platform.</param>
+            <param name="commandFactory">The command factory.</param>
+            <returns>The configured <see cref="T:Atata.Cli.OSDependentShellCliCommandFactory" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.OSDependentShellCliCommandFactory.UseForOS(System.Runtime.InteropServices.OSPlatform,Atata.Cli.ICliCommandFactory)">
+            <summary>
+            Configures to use the specified <paramref name="commandFactory" /> for <paramref name="osPlatform" />.
+            </summary>
+            <param name="osPlatform">The OS platform.</param>
+            <param name="commandFactory">The command factory.</param>
+            <returns>The configured <see cref="T:Atata.Cli.OSDependentShellCliCommandFactory" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.OSDependentShellCliCommandFactory.UseForOtherOS(Atata.Cli.ICliCommandFactory)">
+            <summary>
+            Configures to use the specified <paramref name="commandFactory" /> for other operating systems.
+            </summary>
+            <param name="commandFactory">The command factory.</param>
+            <returns>The configured <see cref="T:Atata.Cli.OSDependentShellCliCommandFactory" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.OSDependentShellCliCommandFactory.Create(System.String,System.String)">
+            <summary>
+            Creates the <see cref="T:Atata.Cli.CliCommand" /> by the specified parameters.
+            </summary>
+            <param name="fileNameOrCommand">The file name or command.</param>
+            <param name="arguments">The arguments.</param>
+            <returns>The created <see cref="T:Atata.Cli.CliCommand" /> instance.</returns>
+        </member>
+        <member name="T:Atata.Cli.ShellCliCommandFactory">
+            <summary>
+            Represents the <see cref="T:Atata.Cli.CliCommand" /> base factory class that executes the command through the specified shell program.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.ShellCliCommandFactory.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.ShellCliCommandFactory" /> class.
+            </summary>
+            <param name="shellFileName">Name of the shell file.</param>
+            <param name="shellArguments">The shell arguments.</param>
+        </member>
+        <member name="P:Atata.Cli.ShellCliCommandFactory.ShellFileName">
+            <summary>
+            Gets the name of the shell file.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.ShellCliCommandFactory.ShellArguments">
+            <summary>
+            Gets the shell arguments.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.ShellCliCommandFactory.Create(System.String,System.String)">
+            <summary>
+            Creates the <see cref="T:Atata.Cli.CliCommand" /> by the specified parameters.
+            </summary>
+            <param name="fileNameOrCommand">The file name or command.</param>
+            <param name="arguments">The arguments.</param>
+            <returns>The created <see cref="T:Atata.Cli.CliCommand" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ShellCliCommandFactory.ConcatShellArguments(System.String,System.String)">
+            <summary>
+            Concatenates the shell arguments.
+            </summary>
+            <param name="shellArguments">The shell arguments.</param>
+            <param name="shellCommandArgument">The shell command argument.</param>
+            <returns>The full shell arguments string.</returns>
+        </member>
+        <member name="M:Atata.Cli.ShellCliCommandFactory.BuildShellCommandArgument(System.String,System.String)">
+            <summary>
+            Builds the shell command argument.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="commandArguments">The command arguments.</param>
+            <returns>The shell command argument.</returns>
+        </member>
+        <member name="T:Atata.Cli.ShShellCliCommandFactory">
+            <summary>
+            Represents the <see cref="T:Atata.Cli.CliCommand" /> factory that executes the command through the Unix sh shell program.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.ShShellCliCommandFactory.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.ShShellCliCommandFactory" /> class.
+            </summary>
+            <param name="shellArguments">The shell arguments.</param>
+        </member>
+        <member name="T:Atata.Cli.SudoShellCliCommandFactory">
+            <summary>
+            Represents the <see cref="T:Atata.Cli.CliCommand" /> factory that executes the command through the Unix sudo shell program.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.SudoShellCliCommandFactory.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.SudoShellCliCommandFactory" /> class.
+            </summary>
+            <param name="shellArguments">The shell arguments.</param>
+        </member>
+        <member name="M:Atata.Cli.SudoShellCliCommandFactory.BuildShellCommandArgument(System.String,System.String)">
+            <summary>
+            Builds the shell command argument.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="commandArguments">The command arguments.</param>
+            <returns>The shell command argument.</returns>
+        </member>
+        <member name="T:Atata.Cli.UnixShellCliCommandFactory">
+            <summary>
+            Represents the <see cref="T:Atata.Cli.CliCommand" /> factory that executes the command through the specified Unix shell program.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.UnixShellCliCommandFactory.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.UnixShellCliCommandFactory" /> class.
+            </summary>
+            <param name="shellFileName">Name of the shell file.</param>
+            <param name="shellArguments">The shell arguments.</param>
+        </member>
+        <member name="M:Atata.Cli.UnixShellCliCommandFactory.EscapeDoubleQuotes(System.String)">
+            <summary>
+            Escapes the double quotes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The escaped string.</returns>
+        </member>
+        <member name="M:Atata.Cli.UnixShellCliCommandFactory.BuildShellCommandArgument(System.String,System.String)">
+            <summary>
+            Builds the shell command argument.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="commandArguments">The command arguments.</param>
+            <returns>The shell command argument.</returns>
+        </member>
+        <member name="M:Atata.Cli.UnixShellCliCommandFactory.EscapeCommandArguments(System.String)">
+            <summary>
+            Escapes the command arguments.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The escaped string.</returns>
+        </member>
+        <member name="T:Atata.Cli.ICliCommandFactory">
+            <summary>
+            Provides an interface of <see cref="T:Atata.Cli.CliCommand" /> factory.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.ICliCommandFactory.Create(System.String,System.String)">
+            <summary>
+            Creates the <see cref="T:Atata.Cli.CliCommand" /> by the specified parameters.
+            </summary>
+            <param name="fileNameOrCommand">The file name or command.</param>
+            <param name="arguments">The arguments.</param>
+            <returns>The created <see cref="T:Atata.Cli.CliCommand" /> instance.</returns>
+        </member>
+        <member name="T:Atata.Cli.ProgramCli">
+            <summary>
+            Represents the program CLI.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.ProgramCli" /> class.
+            </summary>
+            <param name="fileNameOrCommand">The file name or command.</param>
+            <param name="useCommandShell">If set to <see langword="true" /> uses command shell (cmd/bash).</param>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.#ctor(System.String,Atata.Cli.ICliCommandFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.ProgramCli" /> class.
+            </summary>
+            <param name="fileNameOrCommand">The file name or command.</param>
+            <param name="commandFactory">The command factory.</param>
+        </member>
+        <member name="P:Atata.Cli.ProgramCli.DefaultShellCliCommandFactory">
+            <summary>
+            Gets or sets the default shell <see cref="T:Atata.Cli.ICliCommandFactory" /> instance.
+            The default value is <see cref="M:Atata.Cli.OSDependentShellCliCommandFactory.UseCmdForWindowsAndShForOthers" />.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.ProgramCli.FileNameOrCommand">
+            <summary>
+            Gets the program file name or command.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.ProgramCli.CliCommandFactory">
+            <summary>
+            Gets or sets the CLI command factory.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.ProgramCli.UseCommandShell">
+            <summary>
+            Gets a value indicating whether to use command shell (cmd, bash, etc.).
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.ProgramCli.WorkingDirectory">
+            <summary>
+            Gets or sets the working directory.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.ProgramCli.Encoding">
+            <summary>
+            Gets or sets the encoding to use.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.ProgramCli.WaitForExitTimeout">
+            <summary>
+            Gets or sets the wait for exit timeout.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.ProgramCli.ProcessStartInfoConfigurationActions">
+            <summary>
+            Gets the list of configuration actions of process <see cref="P:System.Diagnostics.Process.StartInfo" />.
+            </summary>
+        </member>
+        <member name="P:Atata.Cli.ProgramCli.ResultValidationRules">
+            <summary>
+            Gets or sets the command result validation rules that are performed in
+            <see cref="M:Atata.Cli.ProgramCli.Execute(System.String)" /> and <see cref="M:Atata.Cli.ProgramCli.ExecuteAsync(System.String)" />
+            methods and produce <see cref="T:Atata.Cli.CliCommandException" /> throwing.
+            The default value is <see cref="F:Atata.Cli.CliCommandResultValidationRules.ZeroExitCode" />.
+            </summary>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.AddProcessStartInfoConfiguration(System.Action{System.Diagnostics.ProcessStartInfo})">
+            <summary>
+            Adds the process <see cref="P:System.Diagnostics.Process.StartInfo" /> configuration.
+            </summary>
+            <param name="configurationAction">The configuration action.</param>
+            <returns>The same instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.WithCliCommandFactory(Atata.Cli.ICliCommandFactory)">
+            <summary>
+            Sets the CLI command factory.
+            </summary>
+            <param name="cliCommandFactory">The CLI command factory.</param>
+            <returns>The same instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.WithWorkingDirectory(System.String)">
+            <summary>
+            Sets the working directory.
+            </summary>
+            <param name="workingDirectory">The working directory.</param>
+            <returns>The same instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.Start(System.String)">
+            <summary>
+            Starts the program with the specified arguments.
+            </summary>
+            <param name="arguments">The arguments.</param>
+            <returns>The started <see cref="T:Atata.Cli.CliCommand" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.Execute(System.String)">
+            <summary>
+            Starts the program with the specified arguments and waits until it exits.
+            Throws <see cref="T:Atata.Cli.CliCommandException" /> if program result doesn't meet validation rules
+            of <see cref="P:Atata.Cli.ProgramCli.ResultValidationRules" /> property.
+            </summary>
+            <param name="arguments">The arguments.</param>
+            <returns>The <see cref="T:Atata.Cli.CliCommandResult" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.ExecuteAsync(System.String)">
+            <summary>
+            Starts the program with the specified arguments and waits until it exits.
+            Throws <see cref="T:Atata.Cli.CliCommandException" /> if program result doesn't meet validation rules
+            of <see cref="P:Atata.Cli.ProgramCli.ResultValidationRules" /> property.
+            </summary>
+            <param name="arguments">The arguments.</param>
+            <returns>The <see cref="T:Atata.Cli.CliCommandResult" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.ExecuteRaw(System.String)">
+            <summary>
+            Starts the program with the specified arguments and waits until it exits.
+            </summary>
+            <param name="arguments">The arguments.</param>
+            <returns>The <see cref="T:Atata.Cli.CliCommandResult" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli.ExecuteRawAsync(System.String)">
+            <summary>
+            Starts the program with the specified arguments and waits until it exits.
+            </summary>
+            <param name="arguments">The arguments.</param>
+            <returns>The <see cref="T:Atata.Cli.CliCommandResult" /> instance.</returns>
+        </member>
+        <member name="T:Atata.Cli.ProgramCli`1">
+            <summary>
+            Represents the base class of specific program CLI.
+            </summary>
+            <typeparam name="TCli">The type of the specific CLI class that inherits <see cref="T:Atata.Cli.ProgramCli`1" />.</typeparam>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli`1.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.ProgramCli`1" /> class.
+            </summary>
+            <param name="fileNameOrCommand">The file name or command.</param>
+            <param name="useCommandShell">If set to <see langword="true" /> uses command shell (cmd/bash).</param>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli`1.#ctor(System.String,Atata.Cli.ICliCommandFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.Cli.ProgramCli`1" /> class.
+            </summary>
+            <param name="fileNameOrCommand">The file name or command.</param>
+            <param name="commandFactory">The command factory.</param>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli`1.InBaseDirectory">
+            <summary>
+            Creates the <typeparamref name="TCli" /> instance
+            with <see cref="P:Atata.Cli.ProgramCli.WorkingDirectory" /> set to <see cref="P:System.AppDomain.BaseDirectory" /> of <see cref="P:System.AppDomain.CurrentDomain" />.
+            </summary>
+            <returns>The created <typeparamref name="TCli" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli`1.InDirectory(System.String)">
+            <summary>
+            Creates the <typeparamref name="TCli" /> instance
+            with <see cref="P:Atata.Cli.ProgramCli.WorkingDirectory" /> set to the specified value.
+            </summary>
+            <param name="directory">The directory.</param>
+            <returns>The created <typeparamref name="TCli" /> instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli`1.AddProcessStartInfoConfiguration(System.Action{System.Diagnostics.ProcessStartInfo})">
+            <summary>
+            Adds the process <see cref="P:System.Diagnostics.Process.StartInfo" /> configuration.
+            </summary>
+            <param name="configurationAction">The configuration action.</param>
+            <returns>The same instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli`1.WithCliCommandFactory(Atata.Cli.ICliCommandFactory)">
+            <summary>
+            Sets the CLI command factory.
+            </summary>
+            <param name="cliCommandFactory">The CLI command factory.</param>
+            <returns>The same instance.</returns>
+        </member>
+        <member name="M:Atata.Cli.ProgramCli`1.WithWorkingDirectory(System.String)">
+            <summary>
+            Sets the working directory.
+            </summary>
+            <param name="workingDirectory">The working directory.</param>
+            <returns>The same instance.</returns>
+        </member>
+    </members>
+</doc>

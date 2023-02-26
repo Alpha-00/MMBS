@@ -1,0 +1,1296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Atata.WebDriverSetup</name>
+    </assembly>
+    <members>
+        <member name="T:Atata.WebDriverSetup.Architecture">
+            <summary>
+            Specifies the architecture type.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.Architecture.Auto">
+            <summary>
+            The automatic architecture detection of current OS.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.Architecture.X32">
+            <summary>
+            The x32 (x86) architecture.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.Architecture.X64">
+            <summary>
+            The x64 architecture.
+            </summary>
+        </member>
+        <member name="T:Atata.WebDriverSetup.BrowserDetector">
+            <summary>
+            Provides a set of static methods for a detection of browser installations.
+            Browser detection is supported for Chrome, Firefox and Edge,
+            so as a browser name the following constants can be used:
+            <list type="bullet">
+            <item><see cref="F:Atata.WebDriverSetup.BrowserNames.Chrome" /></item>
+            <item><see cref="F:Atata.WebDriverSetup.BrowserNames.Firefox" /></item>
+            <item><see cref="F:Atata.WebDriverSetup.BrowserNames.Edge" /></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.BrowserDetector.GetFirstInstalledBrowserName(System.String[])">
+            <summary>
+            Gets the name of the first installed browser among the <paramref name="browserNames" />.
+            </summary>
+            <param name="browserNames">The browser names.</param>
+            <returns>
+            The browser name; or <see langword="null" /> if none of the browsers is installed.
+            </returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.BrowserDetector.GetFirstInstalledBrowserName(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets the name of the first installed browser among the <paramref name="browserNames" />.
+            </summary>
+            <param name="browserNames">The browser names.</param>
+            <returns>
+            The browser name; or <see langword="null" /> if none of the browsers is installed.
+            </returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.BrowserDetector.IsBrowserInstalled(System.String)">
+            <summary>
+            Determines whether the browser with the specified name is installed.
+            </summary>
+            <param name="browserName">Name of the browser.</param>
+            <returns>
+            <see langword="true" /> if the browser is installed; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.BrowserDetector.GetInstalledBrowserVersion(System.String)">
+            <summary>
+            Gets the installed browser version by the browser name.
+            </summary>
+            <param name="browserName">Name of the browser.</param>
+            <returns>The version string; or <see langword="null" /> if the browser is not found.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.BrowserNames">
+            <summary>
+            Provides a set of constant fields that represent browser names supported for a driver setup.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.BrowserNames.Chrome">
+            <summary>
+            The Chrome browser name.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.BrowserNames.Firefox">
+            <summary>
+            The Firefox browser name.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.BrowserNames.Edge">
+            <summary>
+            The Edge browser name.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.BrowserNames.Opera">
+            <summary>
+            The Opera browser name.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.BrowserNames.InternetExplorer">
+            <summary>
+            The Internet Explorer browser name.
+            </summary>
+        </member>
+        <member name="T:Atata.WebDriverSetup.DriverSetup">
+            <summary>
+            Provides a set of static methods and properties for driver configuration and setup.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetup.GlobalOptions">
+            <summary>
+            Gets the global setup options.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetup.GlobalConfiguration">
+            <summary>
+            Gets the global setup configuration builder.
+            Configures <see cref="P:Atata.WebDriverSetup.DriverSetup.GlobalOptions" />.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetup.PendingConfigurations">
+            <summary>
+            Gets the pending driver setup configurations,
+            the configurations that were created but were not set up.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.RegisterStrategyFactory(System.String,System.Func{Atata.WebDriverSetup.IHttpRequestExecutor,Atata.WebDriverSetup.IDriverSetupStrategy})">
+            <summary>
+            Registers the driver setup strategy factory.
+            </summary>
+            <param name="browserName">Name of the browser.</param>
+            <param name="driverSetupStrategyFactory">The driver setup strategy factory.</param>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.GetDefaultConfiguration(System.String)">
+            <summary>
+            Gets the default driver setup configuration builder.
+            </summary>
+            <param name="browserName">Name of the browser.</param>
+            <example>
+            Can be used to set, for example, default x32 architecture for Internet Explorer driver.
+            <code>
+            DriverSetup.GetDefaultConfiguration(BrowserNames.InternetExplorer)
+               .WithX32Architecture();
+            </code>
+            </example>
+            <returns>The <see cref="T:Atata.WebDriverSetup.DriverSetupOptionsBuilder" /> instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.ConfigureChrome">
+            <summary>
+            Creates the Chrome driver setup configuration builder.
+            </summary>
+            <returns>The <see cref="T:Atata.WebDriverSetup.DriverSetupConfigurationBuilder" /> for Chrome driver.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.ConfigureFirefox">
+            <summary>
+            Creates the Firefox/Gecko driver setup configuration builder.
+            </summary>
+            <returns>The <see cref="T:Atata.WebDriverSetup.DriverSetupConfigurationBuilder" /> for Firefox driver.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.ConfigureEdge">
+            <summary>
+            Creates the Edge driver setup configuration builder.
+            </summary>
+            <returns>The <see cref="T:Atata.WebDriverSetup.DriverSetupConfigurationBuilder" /> for Edge driver.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.ConfigureOpera">
+            <summary>
+            Creates the Opera driver setup configuration builder.
+            </summary>
+            <returns>The <see cref="T:Atata.WebDriverSetup.DriverSetupConfigurationBuilder" /> for Opera driver.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.ConfigureInternetExplorer">
+            <summary>
+            Creates the Internet Explorer driver setup configuration builder.
+            </summary>
+            <returns>The <see cref="T:Atata.WebDriverSetup.DriverSetupConfigurationBuilder" /> for Internet Explorer driver.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.Configure(System.String)">
+            <summary>
+            Creates the driver setup configuration builder for the specified <paramref name="browserName" />.
+            Supported browser names are defined in <see cref="T:Atata.WebDriverSetup.BrowserNames" /> static class.
+            </summary>
+            <param name="browserName">The browser name. Can be one of <see cref="T:Atata.WebDriverSetup.BrowserNames" /> values.</param>
+            <returns>The <see cref="T:Atata.WebDriverSetup.DriverSetupConfigurationBuilder" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.Configure(System.String,System.Func{Atata.WebDriverSetup.IHttpRequestExecutor,Atata.WebDriverSetup.IDriverSetupStrategy})">
+            <summary>
+            Creates the driver setup configuration builder using <paramref name="driverSetupStrategyFactory" />
+            that instantiates specific <see cref="T:Atata.WebDriverSetup.IDriverSetupStrategy" />.
+            </summary>
+            <param name="browserName">The name of the browser.</param>
+            <param name="driverSetupStrategyFactory">The driver setup strategy factory.</param>
+            <returns>The <see cref="T:Atata.WebDriverSetup.DriverSetupConfigurationBuilder" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.AutoSetUp(System.String)">
+            <summary>
+            Sets up driver with auto version detection for the browser with the specified name.
+            Supported browser names are defined in <see cref="T:Atata.WebDriverSetup.BrowserNames" /> static class.
+            </summary>
+            <param name="browserName">The browser name. Can be one or many of <see cref="T:Atata.WebDriverSetup.BrowserNames" /> values.</param>
+            <returns>
+            The <see cref="T:Atata.WebDriverSetup.DriverSetupResult" /> instance;
+            or <see langword="null" />, if the <see cref="P:Atata.WebDriverSetup.DriverSetupOptions.IsEnabled" /> property
+            of <see cref="P:Atata.WebDriverSetup.DriverSetup.GlobalOptions" /> is <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.AutoSetUp(System.String[])">
+            <summary>
+            Sets up drivers with auto version detection for the browsers with the specified names.
+            Supported browser names are defined in <see cref="T:Atata.WebDriverSetup.BrowserNames" /> static class.
+            </summary>
+            <param name="browserNames">The browser names. Can be one or many of <see cref="T:Atata.WebDriverSetup.BrowserNames" /> values.</param>
+            <returns>The array of <see cref="T:Atata.WebDriverSetup.DriverSetupResult" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.AutoSetUp(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Sets up drivers with auto version detection for the browsers with the specified names.
+            Supported browser names are defined in <see cref="T:Atata.WebDriverSetup.BrowserNames" /> static class.
+            </summary>
+            <param name="browserNames">The browser names. Can be one or many of <see cref="T:Atata.WebDriverSetup.BrowserNames" /> values.</param>
+            <returns>The array of <see cref="T:Atata.WebDriverSetup.DriverSetupResult" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.AutoSetUpAsync(System.String)">
+            <summary>
+            Sets up driver with auto version detection for the browser with the specified name.
+            Supported browser names are defined in <see cref="T:Atata.WebDriverSetup.BrowserNames" /> static class.
+            </summary>
+            <param name="browserName">The browser name. Can be one or many of <see cref="T:Atata.WebDriverSetup.BrowserNames" /> values.</param>
+            <returns>
+            The <see cref="T:Atata.WebDriverSetup.DriverSetupResult" /> instance;
+            or <see langword="null" />, if the <see cref="P:Atata.WebDriverSetup.DriverSetupOptions.IsEnabled" /> property
+            of <see cref="P:Atata.WebDriverSetup.DriverSetup.GlobalOptions" /> is <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.AutoSetUpAsync(System.String[])">
+            <summary>
+            Sets up drivers with auto version detection for the browsers with the specified names.
+            Supported browser names are defined in <see cref="T:Atata.WebDriverSetup.BrowserNames" /> static class.
+            </summary>
+            <param name="browserNames">The browser names. Can be one or many of <see cref="T:Atata.WebDriverSetup.BrowserNames" /> values.</param>
+            <returns>The array of <see cref="T:Atata.WebDriverSetup.DriverSetupResult" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.AutoSetUpAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Sets up drivers with auto version detection for the browsers with the specified names.
+            Supported browser names are defined in <see cref="T:Atata.WebDriverSetup.BrowserNames" /> static class.
+            </summary>
+            <param name="browserNames">The browser names. Can be one or many of <see cref="T:Atata.WebDriverSetup.BrowserNames" /> values.</param>
+            <returns>The array of <see cref="T:Atata.WebDriverSetup.DriverSetupResult" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.AutoSetUpSafely(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Sets up drivers with auto version detection for the browsers with the specified names.
+            Supported browser names are defined in <see cref="T:Atata.WebDriverSetup.BrowserNames" /> static class.
+            Skips invalid/unsupported browser names.
+            </summary>
+            <param name="browserNames">The browser names. Can be one or many of <see cref="T:Atata.WebDriverSetup.BrowserNames" /> values.</param>
+            <returns>The array of <see cref="T:Atata.WebDriverSetup.DriverSetupResult" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.AutoSetUpSafelyAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Sets up drivers with auto version detection for the browsers with the specified names.
+            Supported browser names are defined in <see cref="T:Atata.WebDriverSetup.BrowserNames" /> static class.
+            Skips invalid/unsupported browser names.
+            </summary>
+            <param name="browserNames">The browser names. Can be one or many of <see cref="T:Atata.WebDriverSetup.BrowserNames" /> values.</param>
+            <returns>The array of <see cref="T:Atata.WebDriverSetup.DriverSetupResult" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.SetUpPendingConfigurations">
+            <summary>
+            Sets up pending configurations that are stored in <see cref="P:Atata.WebDriverSetup.DriverSetup.PendingConfigurations" /> property.
+            </summary>
+            <returns>The array of <see cref="T:Atata.WebDriverSetup.DriverSetupResult" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetup.SetUpPendingConfigurationsAsync">
+            <summary>
+            Sets up pending configurations that are stored in <see cref="P:Atata.WebDriverSetup.DriverSetup.PendingConfigurations" /> property.
+            </summary>
+            <returns>The array of <see cref="T:Atata.WebDriverSetup.DriverSetupResult" />.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.DriverSetupConfiguration">
+            <summary>
+            Represents the specific driver setup configuration.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupConfiguration.#ctor(Atata.WebDriverSetup.DriverSetupOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupConfiguration" /> class using <paramref name="baseOptions" />.
+            </summary>
+            <param name="baseOptions">The base options.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupConfiguration.Version">
+            <summary>
+            Gets or sets the version.
+            The default value is <see cref="F:Atata.WebDriverSetup.DriverVersions.Auto" />.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupConfiguration.EnvironmentVariableName">
+            <summary>
+            <para>
+            Gets or sets the name of the environment variable
+            that will be set with a value equal to the driver directory path.
+            </para>
+            <para>
+            The default value is specific to the driver being configured.
+            It has <c>"{BrowserName}Driver"</c> format.
+            For example: <c>"ChromeDriver"</c> or <c>"InternetExplorerDriver"</c>.
+            </para>
+            <para>
+            The <see langword="null" /> value means that none variable should be set.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Atata.WebDriverSetup.DriverSetupConfigurationBuilder">
+            <summary>
+            Represents the driver setup configuration builder.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupConfigurationBuilder.#ctor(System.String,System.Func{Atata.WebDriverSetup.IHttpRequestExecutor,Atata.WebDriverSetup.IDriverSetupStrategy},Atata.WebDriverSetup.DriverSetupConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupConfigurationBuilder" /> class.
+            </summary>
+            <param name="browserName">Name of the browser.</param>
+            <param name="driverSetupStrategyFactory">The driver setup strategy factory.</param>
+            <param name="context">The driver setup configuration.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupConfigurationBuilder.BrowserName">
+            <summary>
+            Gets the name of the browser.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupConfigurationBuilder.WithAutoVersion">
+            <summary>
+            Sets the automatic driver version detection by installed browser version.
+            If the version cannot be detected automatically, latest driver version should be used.
+            </summary>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupConfigurationBuilder.WithLatestVersion">
+            <summary>
+            Sets the latest version of driver.
+            </summary>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupConfigurationBuilder.ByBrowserVersion(System.String)">
+            <summary>
+            Sets the browser version.
+            It will find driver version corresponding to the browser version.
+            </summary>
+            <param name="version">The version string.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupConfigurationBuilder.WithVersion(System.String)">
+            <summary>
+            Sets the version of driver to use.
+            </summary>
+            <param name="version">The version string.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupConfigurationBuilder.WithEnvironmentVariableName(System.String)">
+            <summary>
+            <para>
+            Sets the name of the environment variable
+            that will be set with a value equal to the driver directory path.
+            </para>
+            <para>
+            The default value is specific to the driver being configured.
+            It has <c>"{BrowserName}Driver"</c> format.
+            For example: <c>"ChromeDriver"</c> or <c>"InternetExplorerDriver"</c>.
+            </para>
+            <para>
+            The <see langword="null" /> value means that none variable should be set.
+            </para>
+            </summary>
+            <param name="variableName">The variable name.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupConfigurationBuilder.SetUp">
+            <summary>
+            Sets up driver.
+            </summary>
+            <returns>
+            The <see cref="T:Atata.WebDriverSetup.DriverSetupResult" /> instance;
+            or <see langword="null" />, if the configuration
+            <see cref="P:Atata.WebDriverSetup.DriverSetupOptions.IsEnabled" /> property is <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupConfigurationBuilder.SetUpAsync">
+            <summary>
+            Sets up driver.
+            </summary>
+            <returns>
+            The <see cref="T:Atata.WebDriverSetup.DriverSetupResult" /> instance;
+            or <see langword="null" />, if the configuration
+            <see cref="P:Atata.WebDriverSetup.DriverSetupOptions.IsEnabled" /> property is <see langword="false" />.
+            </returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.DriverSetupException">
+            <summary>
+            Represents the driver setup exception.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupException" /> class.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupException" /> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupException" /> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Atata.WebDriverSetup.DriverSetupOptions">
+            <summary>
+            Represents the common driver setup options.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptions.#ctor(Atata.WebDriverSetup.DriverSetupOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupOptions" /> class.
+            </summary>
+            <param name="baseOptions">The base options.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.StorageDirectoryPath">
+            <summary>
+            Gets or sets the storage directory path.
+            The default value is <c>"{basedir}/drivers")</c>.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.Architecture">
+            <summary>
+            Gets or sets the architecture (auto, x32 or x64).
+            The default value is <see cref="F:Atata.WebDriverSetup.Architecture.Auto" />.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.Proxy">
+            <summary>
+            Gets or sets the proxy.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.UseMutex">
+            <summary>
+            Gets or sets a value indicating whether to use mutex to sync driver setup across machine.
+            The default value is <see langword="false" />.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.UseVersionCache">
+            <summary>
+            Gets or sets a value indicating whether to use version cache.
+            The default value is <see langword="true" />.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.LatestVersionCheckInterval">
+            <summary>
+            Gets or sets the latest version check interval.
+            The default value is <c>2</c> hours.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.SpecificVersionCheckInterval">
+            <summary>
+            Gets or sets the specific version check interval.
+            The default value is <c>2</c> hours.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.HttpRequestTryCount">
+            <summary>
+            Gets or sets the HTTP request try count.
+            The default value is <c>3</c>.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.HttpRequestRetryInterval">
+            <summary>
+            Gets or sets the HTTP request retry interval.
+            The default value is <c>3</c> seconds.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.IsEnabled">
+            <summary>
+            Gets or sets a value indicating whether this instance is enabled.
+            The default value is <see langword="true" />.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptions.AddToEnvironmentPathVariable">
+            <summary>
+            Gets or sets a value indicating whether to add the driver directory path
+            to environment "Path" variable.
+            The default value is <see langword="true" />.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptions.GetOption``1(System.String)">
+            <summary>
+            Gets the option value from this options or a base one.
+            </summary>
+            <typeparam name="T">The type of the option.</typeparam>
+            <param name="optionName">Name of the option.</param>
+            <returns>The option value or default value.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptions.SetOption(System.String,System.Object)">
+            <summary>
+            Sets the option value.
+            </summary>
+            <param name="optionName">Name of the option.</param>
+            <param name="value">The value to set.</param>
+        </member>
+        <member name="T:Atata.WebDriverSetup.DriverSetupOptionsBuilder">
+            <summary>
+            Represents the driver setup options builder.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder.#ctor(Atata.WebDriverSetup.DriverSetupOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupOptionsBuilder" /> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2">
+            <summary>
+            Represents the base class for driver setup options builder.
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <typeparam name="TContext">The type of the context.</typeparam>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.#ctor(`1)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2" /> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.BuildingContext">
+            <summary>
+            Gets the building context.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithStorageDirectoryPath(System.String)">
+            <summary>
+            Sets the storage directory path.
+            The default value is <c>"{basedir}/drivers")</c>.
+            </summary>
+            <param name="path">The directory path.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithX32Architecture">
+            <summary>
+            Sets the x32 (x86) architecture.
+            </summary>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithX64Architecture">
+            <summary>
+            Sets the x64 architecture.
+            </summary>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithArchitecture(Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Sets the architecture.
+            The default value is <see cref="F:Atata.WebDriverSetup.Architecture.Auto" />.
+            </summary>
+            <param name="architecture">The architecture.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithProxy(System.Net.IWebProxy)">
+            <summary>
+            Sets the web proxy.
+            </summary>
+            <param name="proxy">The proxy.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithMutex(System.Boolean)">
+            <summary>
+            Sets a value indicating whether to use mutex to sync driver setup across machine.
+            The default value is <see langword="false" />.
+            </summary>
+            <param name="isEnabled">Whether to use mutex.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithVersionCache(System.Boolean)">
+            <summary>
+            Sets a value indicating whether to use version cache.
+            The default value is <see langword="true" />.
+            </summary>
+            <param name="isEnabled">Whether to use version cache.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithLatestVersionCheckInterval(System.TimeSpan)">
+            <summary>
+            Sets the latest version check interval.
+            The default values is <c>2</c> hours.
+            </summary>
+            <param name="interval">The interval.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithSpecificVersionCheckInterval(System.TimeSpan)">
+            <summary>
+            Sets the specific version check interval.
+            The default values is <c>2</c> hours.
+            </summary>
+            <param name="interval">The interval.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithHttpRequestTryCount(System.Int32)">
+            <summary>
+            Sets the HTTP request try count.
+            The default values is <c>3</c>.
+            </summary>
+            <param name="count">The count.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithHttpRequestRetryInterval(System.TimeSpan)">
+            <summary>
+            Sets the HTTP request retry interval.
+            The default values is <c>3</c> seconds.
+            </summary>
+            <param name="interval">The interval.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithEnabledState(System.Boolean)">
+            <summary>
+            Sets a value indicating whether the configuration is enabled.
+            The default values is <see langword="true" />.
+            </summary>
+            <param name="isEnabled">Whether is enabled.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupOptionsBuilder`2.WithAddToEnvironmentPathVariable(System.Boolean)">
+            <summary>
+            Sets a value indicating whether to add the driver directory path
+            to environment "Path" variable.
+            The default value is <see langword="true" />.
+            </summary>
+            <param name="isEnabled">Whether is enabled.</param>
+            <returns>The same builder instance.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.DriverSetupResult">
+            <summary>
+            Represents the result of a driver setup.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverSetupResult.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.DriverSetupResult" /> class.
+            </summary>
+            <param name="browserName">Name of the browser.</param>
+            <param name="version">The version.</param>
+            <param name="directoryPath">The directory path.</param>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupResult.BrowserName">
+            <summary>
+            Gets the name of the browser.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupResult.Version">
+            <summary>
+            Gets the version.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupResult.DirectoryPath">
+            <summary>
+            Gets the setup driver directory path.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.DriverSetupResult.FileName">
+            <summary>
+            Gets the name of the driver file.
+            </summary>
+        </member>
+        <member name="T:Atata.WebDriverSetup.DriverVersions">
+            <summary>
+            Provides a set of predefined version values and a functionality for driver version management.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.DriverVersions.BrowserVersionPrefix">
+            <summary>
+            The browser version prefix.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.DriverVersions.Auto">
+            <summary>
+            The automatic version detection.
+            If the version cannot be detected automatically, latest driver version should be used.
+            </summary>
+        </member>
+        <member name="F:Atata.WebDriverSetup.DriverVersions.Latest">
+            <summary>
+            The latest version.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverVersions.CreateCorrespondingToBrowser(System.String)">
+            <summary>
+            Creates the string for version that corresponds to the specific browser version.
+            </summary>
+            <param name="browserVersion">The browser version.</param>
+            <returns>The version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.DriverVersions.TryExtractBrowserVersion(System.String,System.String@)">
+            <summary>
+            Tries to extract browser version from version string.
+            </summary>
+            <param name="version">The version.</param>
+            <param name="browserVersion">The browser version.</param>
+            <returns><see langword="true" /> if the version string contains a browser version; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.ArchitectureExtensions">
+            <summary>
+            Provides a set of methods for <see cref="T:Atata.WebDriverSetup.Architecture" />.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ArchitectureExtensions.GetBits(Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Gets the bits of architecture.
+            </summary>
+            <param name="architecture">The architecture.</param>
+            <returns>Either <c>64</c> or <c>32</c> value.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.HttpRequestExecutor">
+            <summary>
+            Represents a functionality for HTTP requests execution.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.HttpRequestExecutor.#ctor(System.Net.IWebProxy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.HttpRequestExecutor" /> class.
+            </summary>
+            <param name="proxy">The proxy.</param>
+        </member>
+        <member name="M:Atata.WebDriverSetup.HttpRequestExecutor.DownloadString(System.String)">
+            <summary>
+            Downloads the string.
+            </summary>
+            <param name="url">The URL.</param>
+            <returns>The downloaded string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.HttpRequestExecutor.DownloadFile(System.String,System.String)">
+            <summary>
+            Downloads the file.
+            </summary>
+            <param name="url">The URL.</param>
+            <param name="filePath">The destination file path.</param>
+        </member>
+        <member name="M:Atata.WebDriverSetup.HttpRequestExecutor.GetRedirectUrl(System.String)">
+            <summary>
+            Gets the redirect location URL.
+            </summary>
+            <param name="url">The URL.</param>
+            <returns>The redirect location URL.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.IHttpRequestExecutor">
+            <summary>
+            Represents a functionality for HTTP requests execution.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.IHttpRequestExecutor.DownloadFile(System.String,System.String)">
+            <summary>
+            Downloads the file.
+            </summary>
+            <param name="url">The URL.</param>
+            <param name="filePath">The destination file path.</param>
+        </member>
+        <member name="M:Atata.WebDriverSetup.IHttpRequestExecutor.DownloadString(System.String)">
+            <summary>
+            Downloads the string.
+            </summary>
+            <param name="url">The URL.</param>
+            <returns>The downloaded string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.IHttpRequestExecutor.GetRedirectUrl(System.String)">
+            <summary>
+            Gets the redirect location URL.
+            </summary>
+            <param name="url">The URL.</param>
+            <returns>The redirect location URL.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.ReliableHttpRequestExecutor">
+            <summary>
+            Represents a reliable HTTP request executor.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ReliableHttpRequestExecutor.#ctor(Atata.WebDriverSetup.IHttpRequestExecutor,System.Int32,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.ReliableHttpRequestExecutor" /> class.
+            </summary>
+            <param name="httpRequestExecutor">The HTTP request executor.</param>
+            <param name="tryCount">The try count.</param>
+            <param name="retryInterval">The retry interval.</param>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ReliableHttpRequestExecutor.DownloadFile(System.String,System.String)">
+            <summary>
+            Downloads the file.
+            </summary>
+            <param name="url">The URL.</param>
+            <param name="filePath">The destination file path.</param>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ReliableHttpRequestExecutor.DownloadString(System.String)">
+            <summary>
+            Downloads the string.
+            </summary>
+            <param name="url">The URL.</param>
+            <returns>The downloaded string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ReliableHttpRequestExecutor.GetRedirectUrl(System.String)">
+            <summary>
+            Gets the redirect location URL.
+            </summary>
+            <param name="url">The URL.</param>
+            <returns>The redirect location URL.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.IDriverSetupStrategy">
+            <summary>
+            Represents the strategy of driver setup.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.IDriverSetupStrategy.DriverBinaryFileName">
+            <summary>
+            Gets the name of the driver binary file.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.IDriverSetupStrategy.GetDriverDownloadUrl(System.String,Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Gets the driver download URL.
+            </summary>
+            <param name="version">The version.</param>
+            <param name="architecture">The architecture.</param>
+            <returns>The driver download URL.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.IGetsDriverLatestVersion">
+            <summary>
+            Provides a method that resolves the driver latest version.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.IGetsDriverLatestVersion.GetDriverLatestVersion">
+            <summary>
+            Gets the driver latest version.
+            </summary>
+            <returns>The latest version string.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.IGetsDriverVersionCorrespondingToBrowserVersion">
+            <summary>
+            Provides a method that resolves the driver version corresponding to the browser version.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.IGetsDriverVersionCorrespondingToBrowserVersion.GetDriverVersionCorrespondingToBrowserVersion(System.String)">
+            <summary>
+            Gets the driver version corresponding to the browser version.
+            </summary>
+            <param name="browserVersion">The browser version.</param>
+            <returns>The driver version string.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.IGetsInstalledBrowserVersion">
+            <summary>
+            Provides a method that resolves the installed browser version.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.IGetsInstalledBrowserVersion.GetInstalledBrowserVersion">
+            <summary>
+            Gets the installed browser version.
+            </summary>
+            <returns>The version number.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.ChromeDriverSetupStrategy">
+            <summary>
+            Represents the Chrome driver (<c>chromedriver.exe</c>/<c>chromedriver</c>) setup strategy.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ChromeDriverSetupStrategy.#ctor(Atata.WebDriverSetup.IHttpRequestExecutor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.ChromeDriverSetupStrategy" /> class.
+            </summary>
+            <param name="httpRequestExecutor">The HTTP request executor.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.ChromeDriverSetupStrategy.DriverBinaryFileName">
+            <summary>
+            Gets the name of the driver binary file.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ChromeDriverSetupStrategy.GetDriverLatestVersion">
+            <summary>
+            Gets the driver latest version.
+            </summary>
+            <returns>The latest version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ChromeDriverSetupStrategy.GetDriverDownloadUrl(System.String,Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Gets the driver download URL.
+            </summary>
+            <param name="version">The version.</param>
+            <param name="architecture">The architecture.</param>
+            <returns>The driver download URL.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ChromeDriverSetupStrategy.GetInstalledBrowserVersion">
+            <summary>
+            Gets the installed browser version.
+            </summary>
+            <returns>The version number.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.ChromeDriverSetupStrategy.GetDriverVersionCorrespondingToBrowserVersion(System.String)">
+            <summary>
+            Gets the driver version corresponding to the browser version.
+            </summary>
+            <param name="browserVersion">The browser version.</param>
+            <returns>The driver version string.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.EdgeDriverSetupStrategy">
+            <summary>
+            Represents the Edge driver (<c>msedgedriver.exe</c>/<c>msedgedriver</c>) setup strategy.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.EdgeDriverSetupStrategy.#ctor(Atata.WebDriverSetup.IHttpRequestExecutor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.EdgeDriverSetupStrategy" /> class.
+            </summary>
+            <param name="httpRequestExecutor">The HTTP request executor.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.EdgeDriverSetupStrategy.DriverBinaryFileName">
+            <summary>
+            Gets the name of the driver binary file.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.EdgeDriverSetupStrategy.GetDriverLatestVersion">
+            <summary>
+            Gets the driver latest version.
+            </summary>
+            <returns>The latest version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.EdgeDriverSetupStrategy.GetDriverDownloadUrl(System.String,Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Gets the driver download URL.
+            </summary>
+            <param name="version">The version.</param>
+            <param name="architecture">The architecture.</param>
+            <returns>The driver download URL.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.EdgeDriverSetupStrategy.GetInstalledBrowserVersion">
+            <summary>
+            Gets the installed browser version.
+            </summary>
+            <returns>The version number.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.EdgeDriverSetupStrategy.GetDriverVersionCorrespondingToBrowserVersion(System.String)">
+            <summary>
+            Gets the driver version corresponding to the browser version.
+            </summary>
+            <param name="browserVersion">The browser version.</param>
+            <returns>The driver version string.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.FirefoxDriverSetupStrategy">
+            <summary>
+            Represents the Firefox/Gecko driver (<c>geckodriver.exe</c>/<c>geckodriver</c>) setup strategy.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.FirefoxDriverSetupStrategy.#ctor(Atata.WebDriverSetup.IHttpRequestExecutor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.FirefoxDriverSetupStrategy" /> class.
+            </summary>
+            <param name="httpRequestExecutor">The HTTP request executor.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.FirefoxDriverSetupStrategy.DriverBinaryFileName">
+            <summary>
+            Gets the name of the driver binary file.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.FirefoxDriverSetupStrategy.GetDriverDownloadFileName(System.String,Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Gets the name of the driver download file.
+            </summary>
+            <param name="version">The version.</param>
+            <param name="architecture">The architecture.</param>
+            <returns>The file name.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.FirefoxDriverSetupStrategy.GetInstalledBrowserVersion">
+            <summary>
+            Gets the installed browser version.
+            </summary>
+            <returns>The version number.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.FirefoxDriverSetupStrategy.GetDriverVersionCorrespondingToBrowserVersion(System.String)">
+            <summary>
+            Gets the driver version corresponding to the browser version.
+            </summary>
+            <param name="browserVersion">The browser version.</param>
+            <returns>The driver version string.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.GitHubRepositoryBasedDriverSetupStrategy">
+            <summary>
+            Represents the base class for the driver setup strategies that are based on GitHub repository as a driver storage.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.GitHubRepositoryBasedDriverSetupStrategy.#ctor(Atata.WebDriverSetup.IHttpRequestExecutor,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.GitHubRepositoryBasedDriverSetupStrategy" /> class.
+            </summary>
+            <param name="httpRequestExecutor">The HTTP request executor.</param>
+            <param name="organizationName">Name of the GitHub organization.</param>
+            <param name="repositoryName">Name of the GitHub repository.</param>
+            <param name="versionTagPrefix">The version tag prefix.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.GitHubRepositoryBasedDriverSetupStrategy.DriverBinaryFileName">
+            <summary>
+            Gets the name of the driver binary file.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.GitHubRepositoryBasedDriverSetupStrategy.GetDriverLatestVersion">
+            <summary>
+            Gets the driver latest version.
+            </summary>
+            <returns>The latest version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.GitHubRepositoryBasedDriverSetupStrategy.GetDriverDownloadUrl(System.String,Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Gets the driver download URL.
+            </summary>
+            <param name="version">The version.</param>
+            <param name="architecture">The architecture.</param>
+            <returns>The driver download URL.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.GitHubRepositoryBasedDriverSetupStrategy.GetDriverDownloadFileName(System.String,Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Gets the name of the driver download file.
+            </summary>
+            <param name="version">The version.</param>
+            <param name="architecture">The architecture.</param>
+            <returns>The file name.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.InternetExplorerDriverSetupStrategy">
+            <summary>
+            Represents the Internet Explorer driver (<c>IEDriverServer.exe</c>) setup strategy.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.InternetExplorerDriverSetupStrategy.DriverBinaryFileName">
+            <summary>
+            Gets the name of the driver binary file.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.InternetExplorerDriverSetupStrategy.GetDriverLatestVersion">
+            <summary>
+            Gets the driver latest version.
+            </summary>
+            <returns>The latest version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.InternetExplorerDriverSetupStrategy.GetDriverDownloadUrl(System.String,Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Gets the driver download URL.
+            </summary>
+            <param name="version">The version.</param>
+            <param name="architecture">The architecture.</param>
+            <returns>The driver download URL.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.OperaDriverSetupStrategy">
+            <summary>
+            Represents the Opera driver (<c>operadriver.exe</c>/<c>operadriver</c>) setup strategy.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.OperaDriverSetupStrategy.#ctor(Atata.WebDriverSetup.IHttpRequestExecutor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.OperaDriverSetupStrategy" /> class.
+            </summary>
+            <param name="httpRequestExecutor">The HTTP request executor.</param>
+        </member>
+        <member name="P:Atata.WebDriverSetup.OperaDriverSetupStrategy.DriverBinaryFileName">
+            <summary>
+            Gets the name of the driver binary file.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.OperaDriverSetupStrategy.GetDriverDownloadFileName(System.String,Atata.WebDriverSetup.Architecture)">
+            <summary>
+            Gets the name of the driver download file.
+            </summary>
+            <param name="version">The version.</param>
+            <param name="architecture">The architecture.</param>
+            <returns>The file name.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.AppVersionDetector">
+            <summary>
+            Provides a set of utility methods for the installed application version detection.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.AppVersionDetector.GetFromProgramFiles(System.String[])">
+            <summary>
+            Gets the application version from "Program Files" and "Program Files (x86)" folders.
+            </summary>
+            <param name="applicationRelativePaths">The application relative paths in Program Files or Program Files (x86) folders.</param>
+            <returns>The version or <see langword="null" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.AppVersionDetector.GetFromProgramFiles(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets the application version from "Program Files" and "Program Files (x86)" folders.
+            </summary>
+            <param name="applicationRelativePaths">The application relative paths in Program Files or Program Files (x86) folders.</param>
+            <returns>The version or <see langword="null" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.AppVersionDetector.GetFromExecutableFileVersion(System.String)">
+            <summary>
+            Gets the application version from executable file version information.
+            </summary>
+            <param name="filePath">The file path.</param>
+            <returns>The version or <see langword="null" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.AppVersionDetector.GetFromBLBeaconInRegistry(System.String)">
+            <summary>
+            Gets the application version from "BLBeacon/version" key in registry.
+            </summary>
+            <param name="applicationRelativePathInSoftwareSection">The application relative path in software section.</param>
+            <returns>The version or <see langword="null" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.AppVersionDetector.GetByApplicationPathInRegistry(System.String)">
+            <summary>
+            Gets the application version by application path in registry.
+            </summary>
+            <param name="applicationName">Name of the application.</param>
+            <returns>The version or <see langword="null" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.AppVersionDetector.GetThroughOSXApplicationCli(System.String)">
+            <summary>
+            Gets the application version through OSX application CLI passing <c>"--version"</c> argument.
+            </summary>
+            <param name="applicationName">The application name.</param>
+            <returns>The version or <see langword="null" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.AppVersionDetector.GetThroughCli(System.String,System.String)">
+            <summary>
+            Gets the application version through CLI.
+            </summary>
+            <param name="fileNameOrCommand">The file name or command.</param>
+            <param name="arguments">The command arguments.</param>
+            <returns>The version or <see langword="null" />.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.OSInfo">
+            <summary>
+            Provides a set of operating system specific informational properties.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.OSInfo.IsWindows">
+            <summary>
+            Gets a value indicating whether the current OS is Windows.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.OSInfo.IsLinux">
+            <summary>
+            Gets a value indicating whether the current OS is Linux.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.OSInfo.IsOSX">
+            <summary>
+            Gets a value indicating whether the current OS is macOS.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.OSInfo.Is64Bit">
+            <summary>
+            Gets a value indicating whether the current OS is 64-bit.
+            </summary>
+        </member>
+        <member name="P:Atata.WebDriverSetup.OSInfo.Bits">
+            <summary>
+            Gets the bits of OS.
+            Returns either <c>64</c> or <c>32</c> value.
+            </summary>
+        </member>
+        <member name="T:Atata.WebDriverSetup.RegistryUtils">
+            <summary>
+            Provides a set of utility methods for working with a registry.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.RegistryUtils.GetApplicationPath(System.String)">
+            <summary>
+            Gets the application path in registry.
+            Tries to find the path in software paths of <c>HKEY_CURRENT_USER</c> and <c>HKEY_LOCAL_MACHINE</c>.
+            </summary>
+            <param name="applicationName">Name of the application.</param>
+            <returns>The path or <see langword="null" />.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.RegistryUtils.GetValue(System.String,System.String)">
+            <summary>
+            Gets the registry value by key name and optionally by value name.
+            </summary>
+            <param name="keyName">Name of the key.</param>
+            <param name="valueName">Name of the value.</param>
+            <returns>The value or <see langword="null" />.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.VersionUtils">
+            <summary>
+            Provides a set of utility methods for version strings.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.VersionUtils.TrimRevision(System.String)">
+            <summary>
+            Trims the revision number of the version.
+            </summary>
+            <example>
+            <c>"1.2.3.4"</c> -&gt; <c>"1.2.3"</c>.
+            </example>
+            <param name="version">The version.</param>
+            <returns>The trimmed version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.VersionUtils.TrimPatch(System.String)">
+            <summary>
+            Trims the patch and revision numbers of the version.
+            </summary>
+            <example>
+            <c>"1.2.3.4"</c> -&gt; <c>"1.2"</c>.
+            </example>
+            <param name="version">The version.</param>
+            <returns>The trimmed version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.VersionUtils.TrimMinor(System.String)">
+            <summary>
+            Trims the minor, patch and revision numbers of the version.
+            </summary>
+            <example>
+            <c>"1.2.3.4"</c> -&gt; <c>"1"</c>.
+            </example>
+            <param name="version">The version.</param>
+            <returns>The trimmed version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.VersionUtils.GetNumbersCount(System.String)">
+            <summary>
+            Gets the version numbers count.
+            </summary>
+            <example>
+            <c>"1.2.3.4"</c> -&gt; 4.
+            </example>
+            <param name="version">The version.</param>
+            <returns>The count of numbers.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.IDriverVersionCache">
+            <summary>
+            Provides a set of methods for driver version resolution using cache.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.IDriverVersionCache.GetOrAddLatest(System.DateTime,System.Func{System.String})">
+            <summary>
+            Adds a latest driver version to the cache by using the specified function
+            if the latest version does not already exist in cache or is timed out,
+            or returns the existing value if it exists and is not timed out.
+            </summary>
+            <param name="minimumAcceptableTimestamp">The minimum acceptable timestamp.</param>
+            <param name="latestVersionResolveFunction">The function that resolves the latest version.</param>
+            <returns>The driver version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.IDriverVersionCache.GetOrAdd(System.String,System.DateTime,System.Func{System.String,System.String})">
+            <summary>
+            Adds a browser/driver versions pair to the cache by using the specified function
+            if the browser version does not already exist in cache or is timed out,
+            or returns the existing value if it exists and is not timed out.
+            </summary>
+            <param name="browserVersion">The browser version.</param>
+            <param name="minimumAcceptableTimestamp">The minimum acceptable timestamp.</param>
+            <param name="versionResolveFunction">The function that resolves the version.</param>
+            <returns>The driver version string.</returns>
+        </member>
+        <member name="T:Atata.WebDriverSetup.XmlFileDriverVersionCache">
+            <summary>
+            Represents the driver version cache that uses XML file to store the data.
+            </summary>
+        </member>
+        <member name="M:Atata.WebDriverSetup.XmlFileDriverVersionCache.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atata.WebDriverSetup.XmlFileDriverVersionCache" /> class.
+            </summary>
+            <param name="filePath">The file path.</param>
+        </member>
+        <member name="M:Atata.WebDriverSetup.XmlFileDriverVersionCache.GetOrAddLatest(System.DateTime,System.Func{System.String})">
+            <summary>
+            Adds a latest driver version to the cache by using the specified function
+            if the latest version does not already exist in cache or is timed out,
+            or returns the existing value if it exists and is not timed out.
+            </summary>
+            <param name="minimumAcceptableTimestamp">The minimum acceptable timestamp.</param>
+            <param name="latestVersionResolveFunction">The function that resolves the latest version.</param>
+            <returns>The driver version string.</returns>
+        </member>
+        <member name="M:Atata.WebDriverSetup.XmlFileDriverVersionCache.GetOrAdd(System.String,System.DateTime,System.Func{System.String,System.String})">
+            <summary>
+            Adds a browser/driver versions pair to the cache by using the specified function
+            if the browser version does not already exist in cache or is timed out,
+            or returns the existing value if it exists and is not timed out.
+            </summary>
+            <param name="browserVersion">The browser version.</param>
+            <param name="minimumAcceptableTimestamp">The minimum acceptable timestamp.</param>
+            <param name="versionResolveFunction">The function that resolves the version.</param>
+            <returns>The driver version string.</returns>
+        </member>
+    </members>
+</doc>

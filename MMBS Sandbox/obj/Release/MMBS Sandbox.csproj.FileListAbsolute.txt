@@ -1,0 +1,74 @@
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\selenium-manager\linux\selenium-manager
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\selenium-manager\macos\selenium-manager
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\selenium-manager\windows\selenium-manager.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\MMBS Sandbox.exe.config
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\MMBS Sandbox.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\MMBS Sandbox.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\AngleSharp.Css.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\AngleSharp.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\AngleSharp.Js.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\jint.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.AspNetCore.WebUtilities.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.Logging.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.Options.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.Primitives.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Net.Http.Headers.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Newtonsoft.Json.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\OutputColorizer.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\PuppeteerSharp.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Buffers.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Memory.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Numerics.Vectors.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Text.Encoding.CodePages.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Text.Encodings.Web.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\WebDriver.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\AngleSharp.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\AngleSharp.Css.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\AngleSharp.Js.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\ICSharpCode.SharpZipLib.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\ICSharpCode.SharpZipLib.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.AspNetCore.WebUtilities.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.Logging.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.Options.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.Primitives.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Net.Http.Headers.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Newtonsoft.Json.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\PuppeteerSharp.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Buffers.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Memory.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Numerics.Vectors.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Text.Encoding.CodePages.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Text.Encodings.Web.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\obj\Release\MMBS Sandbox.csproj.AssemblyReference.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\obj\Release\MMBS Sandbox.csproj.SuggestedBindingRedirects.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\obj\Release\MMBS Sandbox.csproj.CoreCompileInputs.cache
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\obj\Release\MMBS Sandbox.csproj.CopyComplete
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\obj\Release\MMBS Sandbox.exe
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\obj\Release\MMBS Sandbox.pdb
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Atata.Cli.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Atata.WebDriverSetup.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.DependencyInjection.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Win32.Registry.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Diagnostics.DiagnosticSource.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Security.AccessControl.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Security.Principal.Windows.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.ValueTuple.dll
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Atata.Cli.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Atata.WebDriverSetup.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Extensions.DependencyInjection.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\Microsoft.Win32.Registry.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Diagnostics.DiagnosticSource.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Security.AccessControl.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.Security.Principal.Windows.xml
+D:\Unpublished Project\Unpublished Project\Ya4r.net\Minimize MyBloggerSupporter\MMBS Sandbox\bin\Release\System.ValueTuple.xml

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+<<<<<<< HEAD:MMBS/bin/MMBS/MMBS.application
+  <assemblyIdentity name="MMBS.application" version="0.26.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
+=======
+  <assemblyIdentity name="MMBS.application" version="0.8.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
+>>>>>>> parent of 74612af (first commit):MMBS/bin/Release/MMBS.application
+  <description asmv2:publisher="Honmyou" asmv2:product="MMBS" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <deployment install="true" mapFileExtensions="true" co.v1:createDesktopShortcut="true">
+    <subscription>
+      <update>
+        <expiration maximumAge="0" unit="days" />
+      </update>
+    </subscription>
+    <deploymentProvider codebase="https://fnote.me/notes/76f6e0/MMBS.application" />
+  </deployment>
+  <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
+    <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
+  </compatibleFrameworks>
+  <dependency>
+<<<<<<< HEAD:MMBS/bin/MMBS/MMBS.application
+    <dependentAssembly dependencyType="install" codebase="MMBS.exe.manifest" size="31781">
+      <assemblyIdentity name="MMBS.exe" version="0.26.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+=======
+    <dependentAssembly dependencyType="install" codebase="MMBS.exe.manifest" size="22679">
+      <assemblyIdentity name="MMBS.exe" version="0.8.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+>>>>>>> parent of 74612af (first commit):MMBS/bin/Release/MMBS.application
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD:MMBS/bin/MMBS/MMBS.application
+        <dsig:DigestValue>dle8Wlg2nOKHKoGw34/QmHvdmMtZUs9tKlT0qng/nhM=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>Zsfrovta92s3vdljkoKlgaHsuNeTO17YfGt3TJPXCfM=</dsig:DigestValue>
+>>>>>>> parent of 74612af (first commit):MMBS/bin/Release/MMBS.application
+      </hash>
+    </dependentAssembly>
+  </dependency>
+</asmv1:assembly>
