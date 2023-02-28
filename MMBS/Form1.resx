@@ -125,6 +125,8 @@
   </metadata>
   <data name="UpdateLog.Text" xml:space="preserve">
     <value>CHANGE LOGS
+0.32.230228 : Begin support Activate on Mouse Enter the AFF
+0.31.230228 : Update PMT template to 230228PMT
 0.31.230223 : Update PMT template
 0.31.221224 : Support QooApp data source
 0.30.221214 : Change Clipboard SetText to multiple API

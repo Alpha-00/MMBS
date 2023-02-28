@@ -997,27 +997,76 @@ namespace MMBS
                 searchuse = false;
                 //For codepage process
                 //v20200608PMT
-                string toolscript = "<!--MMBS:20200608PMT-->";
+                string toolscript = "<!--MMBS:230228PMT-->";
                 layout = "$$$.iconScript$$$$" + "\n\n"
                 + "$$$.datasourceScript$$$$" + "\n\n"
                 + "$$$.igroupScript$$$$"/*infogroup script*/+ "\n\n\n"
                 + "$$$.modfeatureScript$$$$" + "\n\n\n"
                 + "$$$.credit$$$$" + "\n\n\n"
-
-                                + "$$$.howtoScript$$$$" + "\n\n\n\n"
-                                    + "$$$.downlinkScript$$$$" +"\n\n\n\n"
-                                    + "$$$.tutorialslinkScript$$$$";
+                + "$$$.howtoScript$$$$" + "\n\n\n\n"
+                + "$$$.downlinkScript$$$$" +"\n\n\n\n"
+                + "$$$.tutorialslinkScript$$$$";
                 string iconScript = string.IsNullOrWhiteSpace(thenow.appinfo.Icon.link)?"":$"[IMG]{thenow.appinfo.Icon.link}[/IMG]";
-                string datasourceScript = thenow.appinfo.datasourcetype == "play" ? $"Playstore Link: [URL='{thenow.appinfo.datasource}']{thenow.appinfo.name} - Apps on Google Play[/URL]": "";
-                string igroupScript =   $"[COLOR=#ff0000]Game Name: {thenow.appinfo.name}[/COLOR]\nGame Version: {(thenow.appinfo.version == "Varies with device" ? "" : thenow.appinfo.version)}" +
-                                        $"\nNeeds OBB: [COLOR=#00ff00]{(thenow.appinfo.obbReq ? "Yes" : "No")}[/COLOR]"
-                                        +$"\nNeeds Root: [COLOR=#00ff00]{(thenow.appinfo.rootReq ? "Yes" : "No")}[/COLOR]"
-                                        + $"\nNeeds external permission: [COLOR=#00ff00]{(thenow.appinfo.extpermReq ? "Yes" : "No")}[/COLOR]";
+                string datasourceScript = thenow.appinfo.datasourcetype == "play" 
+                    ? $"Playstore Link: [URL='{thenow.appinfo.datasource}']{thenow.appinfo.name} - Apps on Google Play[/URL]"
+                    : "";
+                string igroupScript =
+                    $"[COLOR=#ff0000]Game Name: {thenow.appinfo.name}[/COLOR]\n"
+                    + $"Game Version: {(thenow.appinfo.version == "Varies with device" ? "" : thenow.appinfo.version)}"
+                    + $"\nNeeds OBB: [COLOR=#00ff00]{(thenow.appinfo.obbReq ? "Yes" : "No")}[/COLOR]"
+                    + $"\nNeeds Root: [COLOR=#00ff00]{(thenow.appinfo.rootReq ? "Yes" : "No")}[/COLOR]"
+                    ;
+                    //+ $"\nNeeds external permission: [COLOR=#00ff00]{(thenow.appinfo.extpermReq ? "Yes" : "No")}[/COLOR]";
                 string modfeatureScript = "[COLOR=#ff0000]*MOD Features*[/COLOR]\n";
-                string credit = thenow.credit.now != null?$"[COLOR=rgb(255, 0, 0)]***Credit for the mod:[/COLOR] [B][COLOR=rgb(0, 255, 0)]{(string.IsNullOrWhiteSpace(thenow.credit.now.GetPreview(true)) ? "" : (thenow.credit.now.GetPreview(true)== "OfflineMods.Net (offlinemods)" ? "OfflineMods.Net" : thenow.credit.now.GetToUse()))}[/COLOR][/B]":"";
-                string howtoScript = "[COLOR=#ff0000]*How to install (click the spoilers to read)*[/COLOR]\n\n[SPOILER=\"For non-root MODs (signed APKs)\"]\n1. Remove original game\na. if you played with mod before, you can install new mod over it.\n2. Download modded APK\n3. Install modded APK\n4. Enjoy =)\nGoogle+ login possible? [COLOR=#ff0000]No.[/COLOR]\nFacebook login possible? [COLOR=#00ff00]Yes. But remove your facebook app from device.[/COLOR]\nSpecific game account login possible (for example: HIVE)? [COLOR=#00ff00]Yes.[/COLOR][/SPOILER]\n\n[SPOILER=\"For root MODs (unsigned APKs)\"]\n1. Your device must be rooted.\n2. Your device must be full patched. How to? Read:\n[URL='https://platinmods.com/index.php?threads/videotutorial-how-to-login-with-google-or-facebook-app-on-modded-games.15/']Tutorial - [Videotutorial] How To Login With Google+ Or Facebook App On Modded Games[/URL]\n3. Install original game from playstore or use original game APK when uploaded here. If you have original game already installed, skip 3. & 4..\n4. Start original game and login once with Google+.\n5. Close game and install unsigned APK over the playstore version (don't remove the original game).\nGoogle+ login possible? [COLOR=#00ff00]Yes.[/COLOR]\nFacebook login possible? [COLOR=#00ff00]Yes. [/COLOR]\nSpecific Game Account login possible (for example: HIVE)? [COLOR=#00ff00]Yes.[/COLOR][/SPOILER]\n\n[SPOILER=\"How to install OBB files\"]\n\nWay 1 (no root):\n1.) Install playstore version and download OBB files ingame\n2.) Go to Android/OBB folder on your device and rename game OBB with additional \"x\" or something\n3.) Remove playstore version\n4.) Install mod APK\n5.) Go to  Android/OBB and remove the added \"x\" from game data\n6.) Enjoy\nOr watch: [URL='https://platinmods.com/index.php?threads/videotutorial-how-to-do-the-obb-trick-no-root-obb-installation-guide.219/']Tutorial - [Videotutorial] How to do the OBB Trick (no root) | OBB Installation Guide[/URL]\n\nWay 2 (root & no-root):\n1.) Download OBB files\n2.) Download mod APK\n3.) Move OBB Files to Android/OBB folder in your device\n4.) Install mod APK\n5.) Enjoy\n\nWay 3 (root):\nInstall the MOD over the Playstore-Version after you downloaded the OBBs ingame with the PS-Version.\nFollow this patch Guide: [URL='https://platinmods.com/index.php?threads/videotutorial-how-to-login-with-google-or-facebook-app-on-modded-games.15/']Tutorial - [Videotutorial] How To Login With Google+ Or Facebook App On Modded Games[/URL][/SPOILER]";
-                string downlinkScript = $"[COLOR=#00ff00][U]Free Download:[/U][/COLOR]\n[HIDE]{thenow.Downloadlink.Downloadlink.link}\n\nMirror:\n{thenow.Downloadlink.OMirrorlink.link}[/HIDE]";
-                string tutorialslinkScript = "[COLOR=#ff0000]Tutorials:[/COLOR]\n[URL='https://platinmods.com/threads/how-to-overwrite-update-a-mod-with-nox-emulator.4530/']How to sign up and download on Platinmods.com[/URL]\n[URL='https://platinmods.com/threads/.178666/']List of useful tutorials about how to use this website and its content[/URL]";
+                string credit = 
+                    thenow.credit.now != null
+                    ? $"[COLOR=rgb(255, 0, 0)]***Credit for the mod:[/COLOR] [B][COLOR=rgb(0, 255, 0)]" +
+                    $"{(string.IsNullOrWhiteSpace(thenow.credit.now.GetPreview(true)) ? "" : (thenow.credit.now.GetPreview(true)== "OfflineMods.Net (offlinemods)" ? "OfflineMods.Net" : thenow.credit.now.GetToUse()))}" +
+                    $"[/COLOR][/B]":"";
+                string howtoScript = 
+                    "[COLOR=#ff0000]*How to install (click the spoilers to read)*[/COLOR]\n\n" +
+                    "[SPOILER=\"Signed APKs\"]\r\n" +
+                    "Signed APKs do work on all Android devices (rooted + non-rooted).\r\n" +
+                    "Signed APKs are in the most cases the only provided files by the mod publisher as they work for everyone.\r\n\r\n" +
+                    "1.) Remove the original game/app.\r\n" +
+                    "2.) Download the MOD APK.\r\n" +
+                    "3.) Install the downloaded MOD APK.\r\n" +
+                    "4.) Enjoy.\r\n\r\n" +
+                    "Google login possible? [COLOR=#ff0000]No.[/COLOR]\r\n" +
+                    "Facebook login possible? [COLOR=#00ff00]Yes. But you have to remove the Facebook App from your device.[/COLOR]\r\n" +
+                    "Specific game account login possible (for example: E-Mail, HIVE, Kakao)? [COLOR=#00ff00]Yes.[/COLOR]\r\n\r\n" +
+                    "[B]Notes:[/B]\r\n" +
+                    "- If you used our MOD APK before and just want to update, you can install the new MOD APK on top of the old without removing the game/app first.\r\n" +
+                    "- In-App purchases are not possible on signed APKs as they require Google services similar to the Google login process.[/SPOILER]\r\n\r\n" +
+                    "[SPOILER=\"Unsigned APKs\"]\r\n" +
+                    "Unsigned APKs do only work on rooted and patched devices/environments.\r\n" +
+                    "These are not always provided by the mod publisher as they do only work under certain circumstances.\r\n\r\n" +
+                    "1.) Your device must be rooted.\r\n" +
+                    "2.) Your device must be patched to ignore app signatures. This can be done with the help of tools such as Luckypatcher or Xposed.\r\n\r\n" +
+                    "Once you fill that requirements the process is the same as with signed APKs with the difference that you can overwrite the original game/app with the MOD APK without removing it first.\r\n\r\n" +
+                    "1.) Download the unsigned MOD APK.\r\n" +
+                    "2.) Install the unsigned MOD APK.\r\n" +
+                    "3.) Enjoy.\r\n\r\n" +
+                    "[B]Note:[/B]\r\n" +
+                    "For the case the unsigned APK does fail to install: Your device patch is not done correctly!\r\n\r\n" +
+                    "Google login possible? [COLOR=#00ff00]Yes.[/COLOR]\r\n" +
+                    "Facebook login possible? [COLOR=#00ff00]Yes. Even with Facebook App installed.[/COLOR]\r\n" +
+                    "Specific game account login possible (for example: E-Mail, HIVE, Kakao)? [COLOR=#00ff00]Yes.[/COLOR]\r\n\r\n" +
+                    "You are rooted and want to know how to patch your device? Please [URL='https://platinmods.com/threads/.15/']click here[/URL] for more information.[/SPOILER]\r\n\r\n" +
+                    "[SPOILER=\"How to install OBB files\"]\r\n\r\n" +
+                    "OBB files are not required by every game/app. If necessary, the mod publisher will [U]usually[/U] provide them and tell you that they are needed.\r\n\r\n" +
+                    "1.) Download the OBB file/files.\r\n" +
+                    "2.) Download the MOD APK.\r\n" +
+                    "3.) Move the OBB files with the help of a filemanager to Android/obb/<packagecode> on your device.\r\n" +
+                    "4.) Install the downloaded MOD APK.\r\n" +
+                    "5.) Enjoy.\r\n\r\n" +
+                    "The OBB files are either provided as \".obb\" files or as \".zip\" files. ZIP files do require to be extracted first.\r\n\r\n" +
+                    "Still facing issues? Please [URL='https://platinmods.com/threads/.178664/']click here[/URL] for more details.[/SPOILER]\r\n\r\n\r\n";
+                string downlinkScript = $"[COLOR=#00ff00][U]Free Download:[/U][/COLOR]\n" +
+                    $"[HIDE]{thenow.Downloadlink.Downloadlink.link}\n\nMirror:\n{thenow.Downloadlink.OMirrorlink.link}[/HIDE]";
+                string tutorialslinkScript = "[COLOR=#ff0000]Tutorials:[/COLOR]\r\n" +
+                    "[URL='https://platinmods.com/threads/.220/']How to sign up and download on Platinmods.com[/URL]\r\n" +
+                    "[URL='https://platinmods.com/threads/.178666/']List of useful tutorials about how to use this website and its content[/URL]";
                 
                 
                 string cache_modList = "";
