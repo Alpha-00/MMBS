@@ -885,5 +885,13 @@ namespace MMBS
             linkMirrorDownload.Invoke(new MethodInvoker(delegate { linkMirrorDownload.Text = processMirrorLinkTextBox.fname; }));
             this.Invoke(InfoSeterDown, "checkvarThreads.-");
         }
+
+        private void AFForm_MouseHover(object sender, EventArgs e) {
+            
+        }
+
+        private void AFForm_MouseEnter(object sender, EventArgs e) {
+            this.Activate();
+        }
     }
 }

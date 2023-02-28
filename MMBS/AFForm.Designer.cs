@@ -719,6 +719,8 @@
             this.Text = "AFForm";
             this.Load += new System.EventHandler(this.AFForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AFForm_KeyDown);
+            this.MouseEnter += new System.EventHandler(this.AFForm_MouseEnter);
+            this.MouseHover += new System.EventHandler(this.AFForm_MouseHover);
             this.groupDS.ResumeLayout(false);
             this.groupDS.PerformLayout();
             this.groupDL.ResumeLayout(false);
