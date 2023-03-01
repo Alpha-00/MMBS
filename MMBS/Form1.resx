@@ -125,6 +125,7 @@
   </metadata>
   <data name="UpdateLog.Text" xml:space="preserve">
     <value>CHANGE LOGS
+0.32.230301 : Update PMT template to 230301PMT
 0.32.230228 : Begin support Activate on Mouse Enter the AFF
 0.31.230228 : Update PMT template to 230228PMT
 0.31.230223 : Update PMT template

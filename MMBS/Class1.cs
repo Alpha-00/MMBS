@@ -997,7 +997,7 @@ namespace MMBS
                 searchuse = false;
                 //For codepage process
                 //v20200608PMT
-                string toolscript = "<!--MMBS:230228PMT-->";
+                string toolscript = "<!--MMBS:230301PMT-->";
                 layout = "$$$.iconScript$$$$" + "\n\n"
                 + "$$$.datasourceScript$$$$" + "\n\n"
                 + "$$$.igroupScript$$$$"/*infogroup script*/+ "\n\n\n"
@@ -1009,11 +1009,11 @@ namespace MMBS
                 string iconScript = string.IsNullOrWhiteSpace(thenow.appinfo.Icon.link)?"":$"[IMG]{thenow.appinfo.Icon.link}[/IMG]";
                 string datasourceScript = thenow.appinfo.datasourcetype == "play" 
                     ? $"Playstore Link: [URL='{thenow.appinfo.datasource}']{thenow.appinfo.name} - Apps on Google Play[/URL]"
-                    : "";
+                    : $"Original APK: [URL='{thenow.appinfo.datasource}']{thenow.appinfo.name}[/URL]";
                 string igroupScript =
                     $"[COLOR=#ff0000]Game Name: {thenow.appinfo.name}[/COLOR]\n"
                     + $"Game Version: {(thenow.appinfo.version == "Varies with device" ? "" : thenow.appinfo.version)}"
-                    + $"\nNeeds OBB: [COLOR=#00ff00]{(thenow.appinfo.obbReq ? "Yes" : "No")}[/COLOR]"
+                    + $"\nNeeds OBB: [COLOR=#80ff00]{(thenow.appinfo.obbReq ? "Yes" : "No")}[/COLOR]"
                     + $"\nNeeds Root: [COLOR=#00ff00]{(thenow.appinfo.rootReq ? "Yes" : "No")}[/COLOR]"
                     ;
                     //+ $"\nNeeds external permission: [COLOR=#00ff00]{(thenow.appinfo.extpermReq ? "Yes" : "No")}[/COLOR]";
