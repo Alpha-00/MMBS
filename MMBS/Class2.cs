@@ -1538,7 +1538,7 @@ namespace MMBS
             public ProcSupporter.ImageDownloader[] image;
             public MainProcessor(string webpage, string webhost, string dir)
             {
-
+                if (webhost == "play") webhost = "play.google.com";
 
                 this.dir = dir;
                 if (string.IsNullOrWhiteSpace(webhost)) { }

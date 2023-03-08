@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium.DevTools.V105.Runtime;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -431,6 +432,7 @@ namespace MMBS
             this.Hide();
             DateTime counter = new DateTime();
             if (Properties.Settings.Default.PermformCheck) counter = DateTime.Now;
+            
             OldProcessor.MainProcessor main = new OldProcessor.MainProcessor(datasource_webpage_cache, AFFinputer.appinfo.datasourcetype, AFFinputer.folderlink);
             AFFinputer.appinfo.name = main.title;
             AFFinputer.appinfo.version = main.version;
@@ -446,7 +448,7 @@ namespace MMBS
             if (AFFinputer.Downloadlink.Downloadlink.host == "drive.google.com")
             {
                 cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.Downloadlink.Downloadlink.link);
-                ////Special Process For megaurl shortenlink
+                ///Special Process For megaurl shortenlink
                 
                 
                 ///////
