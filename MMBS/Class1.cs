@@ -997,7 +997,7 @@ namespace MMBS
                 searchuse = false;
                 //For codepage process
                 //v20200608PMT
-                string toolscript = "<!--MMBS:230301PMT-->";
+                string toolscript = "<!--MMBS:230308PMT-->";
                 layout = "$$$.iconScript$$$$" + "\n\n"
                 + "$$$.datasourceScript$$$$" + "\n\n"
                 + "$$$.igroupScript$$$$"/*infogroup script*/+ "\n\n\n"
@@ -1015,8 +1015,7 @@ namespace MMBS
                     + $"Game Version: {(thenow.appinfo.version == "Varies with device" ? "" : thenow.appinfo.version)}"
                     + $"\nNeeds OBB: [COLOR=#80ff00]{(thenow.appinfo.obbReq ? "Yes" : "No")}[/COLOR]"
                     + $"\nNeeds Root: [COLOR=#00ff00]{(thenow.appinfo.rootReq ? "Yes" : "No")}[/COLOR]"
-                    ;
-                    //+ $"\nNeeds external permission: [COLOR=#00ff00]{(thenow.appinfo.extpermReq ? "Yes" : "No")}[/COLOR]";
+                    + (thenow.appinfo.extpermReq ? $"\nNeeds Ext.Storage Permission: [COLOR=#00ff00]Yes[/COLOR]":"");
                 string modfeatureScript = "[COLOR=#ff0000]*MOD Features*[/COLOR]\n";
                 string credit = 
                     thenow.credit.now != null
