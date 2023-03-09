@@ -1020,7 +1020,7 @@ namespace MMBS
                 string credit = 
                     thenow.credit.now != null
                     ? $"[COLOR=rgb(255, 0, 0)]***Credit for the mod:[/COLOR] [B][COLOR=rgb(0, 255, 0)]" +
-                    $"{(string.IsNullOrWhiteSpace(thenow.credit.now.GetPreview(true)) ? "" : (thenow.credit.now.GetPreview(true)== "OfflineMods.Net (offlinemods)" ? "OfflineMods.Net" : thenow.credit.now.GetToUse()))}" +
+                    $"{(string.IsNullOrWhiteSpace(thenow.credit.now.GetPreview(true)) ? "" : (thenow.credit.now.GetPreview(true)== "OfflineMods.Net (offlinemods)" ? "๖Hulk™" : thenow.credit.now.GetToUse()))}" +
                     $"[/COLOR][/B]":"";
                 string howtoScript = 
                     "[COLOR=#ff0000]*How to install (click the spoilers to read)*[/COLOR]\n\n" +
