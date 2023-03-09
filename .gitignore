@@ -6,7 +6,7 @@
 /MMBS/Form1.en-US.resx
 /MMBS/Form1.Designer.cs
 /MMBS/Form1.cs
-/MMBS/bin
-/MMBS/bin/Release
-bin/Release
-bin/
+*/**/bin/Debug
+*/**/bin/Release
+*/**/obj/Debug
+*/**/obj/Release
