@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "lF1Js318jyK9XShmXrkPXkW52RPJ0p0wP59D35+OpLRxgDQYJIcgOaDVekh+O7+j/GUmj1VCBNx0b3LzMphTaA==",
+  "success": true,
+  "projectFilePath": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\WMBS\\WMBS (Package)\\WMBS (Package).wapproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.1\\microsoft.windows.sdk.buildtools.10.0.22621.1.nupkg.sha512",
+    "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\microsoft.windowsappsdk.1.4.231115000.nupkg.sha512",
+    "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk.foundation\\1.0.0-experimental1\\microsoft.windowsappsdk.foundation.1.0.0-experimental1.nupkg.sha512",
+    "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk.interactiveexperiences\\1.0.0-experimental1\\microsoft.windowsappsdk.interactiveexperiences.1.0.0-experimental1.nupkg.sha512",
+    "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk.winui\\1.0.0-experimental1\\microsoft.windowsappsdk.winui.1.0.0-experimental1.nupkg.sha512"
+  ],
+  "logs": []
+}

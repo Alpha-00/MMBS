@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="mLAMB.View.test.horizontal_button_list"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:mLAMB.View.test"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:models="clr-namespace:mLAMB.Model.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="test" Background="White" Margin="10,40,29,0" Height="58" VerticalAlignment="Top">
+        <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+            <StackPanel>
+               <ListView ItemsSource="{Binding Items}">
+                    <!--<d:ListView.ItemsSource>
+                        <x:Array Type="{x:Type models:CMDchip}">
+                            <models:CMDchip Label="lastest"/>
+                            <models:CMDchip Label="newest"/>
+                        </x:Array>
+                    </d:ListView.ItemsSource>-->
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Auto" CanHorizontallyScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <!--<Button x:Name="{Binding Label, StringFormat=quickBut_{0}}" Height="36" VerticalAlignment="Top" Margin="10,10,0,0" ToolTip="{Binding Tooltip}" Click="onButQuickclick">
+                                <Label Margin="5,0,5,0" Height="25" Content="{Binding Label}"/>
+                            </Button>-->
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

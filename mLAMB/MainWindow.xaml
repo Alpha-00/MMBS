@@ -1,0 +1,65 @@
+﻿<Window x:Class="mLAMB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mLAMB"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="637.6" Width="438.2" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Background="White">
+
+
+    <Grid Margin="0,0,-0.2,0">
+        <StackPanel Margin="0,60,0.2,10" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <Grid x:Name="gridgroupMain" Background="White" Margin="10,40,29,0" Height="385" VerticalAlignment="Top" GotFocus="gridgroupMain_GotFocus">
+                <!--Background-->
+                <Rectangle Name="bordergroupMain" Stroke="#FFDDDDDD" StrokeThickness="1.2" StrokeDashCap="Round" RadiusX="20" ></Rectangle>
+                <!-- Content-->
+                <Label Content="Paste your LINK here" HorizontalAlignment="Left" Height="24" Margin="10,10,0,0" VerticalAlignment="Top" Width="126"/>
+                <TextBox x:Name="boxRequest" Height="48" Margin="15,41,15,0" TextWrapping="Wrap" VerticalAlignment="Top" KeyDown="boxRequest_KeyDown" Loaded="boxRequest_Loaded" PreviewTextInput="boxRequest_PreviewTextInput" TextInput="boxRequest_TextInput" TextChanged="boxRequest_TextChanged"/>
+                <Label x:Name="labelReqtype" Content="CMD" Margin="0,10,15,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="235" FontWeight="Bold" Background="{x:Null}" HorizontalContentAlignment="Right" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Red" Offset="0"/>
+                            <GradientStop Color="#FF9C0000" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <RichTextBox x:Name="boxShell" Margin="15,136,15,0" TextChanged="boxShell_TextChanged" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" KeyUp="boxShell_KeyUp" HorizontalScrollBarVisibility="Auto" Height="228" VerticalAlignment="Top">
+                    <FlowDocument PagePadding="5,5,5,0" PageWidth="2048" LineHeight="5" OverridesDefaultStyle="True" />
+                </RichTextBox>
+                <Button x:Name="buttonExe" Content="Execute" Height="35" Margin="130,94,162,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+                <!--Grid Label-->
+                <Label Margin="0,-34,0,0" Name="labelgroupMain" Height="34" VerticalAlignment="Top" HorizontalAlignment="Left" Width="393" FontSize="18">
+                    <Label.Content>Main Card</Label.Content>
+                </Label>
+                <Button x:Name="buttonRecent" Height="35" Margin="242,94,105,0" VerticalAlignment="Top" Click="buttonRecent_Click">
+                    <Label FontFamily="Segoe MDL2 Assets" Content="&#xE823;"/>
+                </Button>
+            </Grid>
+            <Grid x:Name="gridgroupQuick" Background="White" Margin="10,40,29,0" Height="56" VerticalAlignment="Top">
+                <!--Grid Label-->
+                <Label Margin="0,-34,0,0" Name="labelgroupQuick" Height="34" VerticalAlignment="Top" HorizontalAlignment="Left" Width="393" FontSize="18">
+                    <Label.Content>QuickCMD Card</Label.Content>
+                </Label>
+                <StackPanel Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Auto" CanHorizontallyScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <Button x:Name="butQuick_lastest" Height="36" VerticalAlignment="Top" Margin="10,10,0,0" Click="onButQuickclick" ToolTip="The lastest mod from PMT" >
+                        <Label Margin="5,0,5,0" Height="25">lastest</Label>
+                    </Button>
+                    <Button x:Name="butQuick_newest" Height="36" VerticalAlignment="Top" Margin="10,10,0,0" Click="onButQuickclick" ToolTip="The post from PMT What's new" >
+                        <Label Margin="5,0,5,0" Height="25">news</Label>
+                    </Button>
+                    <Button x:Name="butQuick_apple" Height="36" VerticalAlignment="Top" Margin="10,10,0,0" Click="onButQuickclick" ToolTip="The post from PMT What's new" >
+                        <Label Margin="5,0,5,0" Height="25">lastest_apple</Label>
+                    </Button>
+                </StackPanel>
+                <Rectangle Name="bordergroupQuick" Stroke="#FFDDDDDD" StrokeThickness="1.2" StrokeDashCap="Round" RadiusX="20" ></Rectangle>
+            </Grid>
+            
+        </StackPanel>
+        <Label x:Name="Title" Content="mLAMB" HorizontalAlignment="Left" Margin="10,0
+,0,0" VerticalAlignment="Top" Height="85" Width="auto" FontFamily="{StaticResource ProductSans}" FontSize="48" MouseEnter="Title_DragEnter" MouseLeave="Title_DragLeave"/>
+
+    </Grid>
+
+</Window>

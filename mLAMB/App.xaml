@@ -1,0 +1,9 @@
+﻿<Application x:Class="mLAMB.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:mLAMB"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <FontFamily x:Key="ProductSans">pack://application:,,,./Resources/Fonts/#Product Sans</FontFamily>
+    </Application.Resources>
+</Application>

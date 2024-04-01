@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*/**/bin/Debug
+*/**/bin/Release
+*/**/obj/Debug
+*/**/obj/Release
+/MMBS/bin/MMBS.rar
+/MMBS/bin/MMBS/app.publish/MMBS.exe
+/MMBS/bin/MMBS/MMBS.exe
+/MMBS/obj/Release/MMBS.exe
+/.vs/Minimize MyBloggerSupporter/FileContentIndex
+*/MMBS/bin/*
+*/MMBS/obj/*
+*/SMBSY/bin/*
+*/SMBSY/obj/*
+*/SMBSY.Core/bin/*
+*/SMBSY.Core/obj/*
+# Beta Project
+/MMBS Local Web/*
+/MMBS Razor Helper/*

@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "SMBSY (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "SMBSY (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}

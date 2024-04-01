@@ -1,0 +1,1 @@
+WinRAR a "bin\MMBS3.rar" "bin\MMBS" -IBCK

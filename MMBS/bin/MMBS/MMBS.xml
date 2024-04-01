@@ -1,0 +1,1088 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MMBS</name>
+    </assembly>
+    <members>
+        <member name="F:MMBS.AFFios.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.AFFios.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.AFFios.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:MMBS.AFForm.checkvarThreads">
+            <summary>
+            Number of Threads on Working<br/>
+            If It's back to 0, the progress bar will disappear
+            </summary>
+        </member>
+        <member name="M:MMBS.AFForm.Initialize">
+            <summary>
+            For Form special setup only
+            </summary>
+        </member>
+        <member name="F:MMBS.AFForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.AFForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.AFForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MMBS.CustomizePostResult.postHtml_v191130_Processor(MMBS.PostDataBundle)">
+            <summary>
+            Custom form post v191130
+            
+            ///v200116
+            ///Fix some bug
+            
+            ///v200216
+            ///Change Download Link Arrangement
+            
+            ///v200218
+            ///Add contentsDesc Flag
+            
+            ///v200516
+            ///Temporarily Support APKpure
+            
+            ///v200619
+            ///Add extpermReq to Form
+            ///Add link to Req when they required (Update simple Init)
+            
+            ///v200620
+            ///Upgrade Html Descript Processor
+            </summary>
+            <param name="para"></param>
+        </member>
+        <member name="M:MMBS.CustomizePostResult.postHtml_v211016_Processor(MMBS.PostDataBundle)">
+            <summary>
+            Custom form post v211016
+            </summary>
+            
+            ///v211124
+            ///add <!--more--> tag
+            <param name="thenow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MMBS.CustomizePostResult.postHtml_iosVersion(MMBS.PostDataBundle)">
+            <summary>
+            IOS templating
+            </summary>
+            <param name="thenow"></param>
+        </member>
+        <member name="F:MMBS.OldProcessor.ProcessDownloadLinkTextBox.request_code.SimpleInfo">
+            <summary>Valid Check only</summary>
+        </member>
+        <member name="M:MMBS.PostDataBundle.#ctor">
+            <summary>
+            Init PostDataBunble
+            </summary>
+        </member>
+        <member name="F:MMBS.PostDataBundle.creditpack.tmp">
+            <summary>
+            This string use for store that I don't know where to get
+            </summary>
+        </member>
+        <member name="F:MMBS.ApisCall.ImgurAPI.imgurSR">
+            <summary>
+            Secret Key of Imgur
+            </summary>
+        </member>
+        <member name="T:MMBS.Class6">
+            <summary>
+            API Process Class
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MMBS.API.tmpReceiver(System.String)" -->
+        <member name="T:MMBS.API.InteractDebugger">
+            <summary>
+            Is a couple with mLAMB API Interact Debugger
+            </summary>
+        </member>
+        <member name="M:MMBS.SystemAlt.ProcessHoldingClipboard">
+            -----------------------------------------------------------------------------
+             <summary>
+             Gets the Process that's holding the clipboard
+             </summary>
+             <returns>A Process object holding the clipboard, or null</returns>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:MMBS.CustomControl.UserControl1.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.CustomControl.UserControl1.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.CustomControl.UserControl1.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMBS.CustomDataManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.CustomDataManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.CustomDataManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMBS.TemplateToolForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.TemplateToolForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.TemplateToolForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MMBS.CPTServices.start">
+            <summary>
+            Start tracking folder and watch for file changes
+            </summary>
+        </member>
+        <member name="M:MMBS.CPTServices.stop">
+            <summary>
+            Stop service
+            </summary>
+        </member>
+        <member name="M:MMBS.FMForm.removeTagAtLevel(System.String,System.String[],System.String[],System.Int32)">
+            <summary>
+            Helper method to remove specific tag at level without harm that tag in other level
+            TODO: Implement
+            </summary>
+            <param name="input"></param>
+            <param name="parrent"></param>
+            <param name="target">Target Remove Tag name. For example: li, p, s</param>
+            <param name="level">Level of target tag, meaning how many open parrent tag before</param>
+            <returns></returns>
+        </member>
+        <member name="F:MMBS.FMForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.FMForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.FMForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMBS.MainMenu.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.MainMenu.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.MainMenu.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMBS.Form4Service.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.Form4Service.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.Form4Service.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMBS.FormResult.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.FormResult.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.FormResult.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMBS.LinkValidator.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.LinkValidator.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.LinkValidator.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.toolscript">
+            <summary>
+                <para>
+                    Static information about version of the script for tracking and future refactor
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.flagDesc">
+            <summary>
+                <para>
+                    Raise Flag in Description Snippet. This using to help JavaScript in theme to modify
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.seperateLineScript">
+            <summary>
+                <para>
+                    Template for a single line separator    
+            </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.limitMoreScript">
+            <summary>
+                <para>
+                    Script to split content, hint that Blogger will break description
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.layout">
+            <summary>
+                <para>
+                    General structure of the article
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.descButReveal">
+            <summary>
+                <para>
+                    Javascript element to help reveal description
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.styleVIPadmin">
+            <summary>
+            <para>
+                Predefined style for VIP author
+            </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.styleWrapBreakable">
+            <summary>
+            Predefined style for breakable group of button
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.iconScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.descScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.descLineScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.igroupScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.igroupHtml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.modListHtml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.modListItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.imageScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.imagecardScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.videoScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.linkScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.linkoneScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.linkoneScript2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.credit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.lastword">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240104.codeWrapLine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MMBS.Model.PostForm.PostFormBase`1">
+            <summary>
+                <para>
+                    Base class for building form
+                </para>
+                <para>
+                    Containing all basic function implementation for all form version
+                </para>
+                <para>
+                    This is used instead of GeneralPostForm in the meanwhile
+                </para>
+            </summary>
+        </member>
+        <member name="M:MMBS.Model.PostForm.PostFormBase`1.prepareElements">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MMBS.Model.PostForm.PostFormTemplate">
+            <summary>
+            Using for basic template element
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.toolscript">
+            <summary>
+                <para>
+                    Static information about version of the script for tracking and future refactor
+                </para>
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.layout">
+            <summary>
+                <para>
+                    General structure of the article
+                </para>
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.flagDesc">
+            <summary>
+                <para>
+                    Raise Flag in Description Snippet. This using to help JavaScript in theme to modify
+                </para>
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.descButReveal">
+            <summary>
+                <para>
+                    Javascript element to help reveal description
+                </para>
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.styleVIPadmin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.seperateLineScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.iconScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.descScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.descLineScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.igroupScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.igroupHtml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.modListHtml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.modListItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.imageScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.imagecardScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.videoScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.linkScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.linkoneScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.linkoneScript2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.credit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.lastword">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MMBS.Model.PostForm.PostFormTemplate.codeWrapLine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MMBS.Program.Main(System.String[])">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:MMBS.Program.GetRefference(System.String,System.String)">
+            <summary>
+            Get Data from outside
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MMBS.Program.Initialization">
+            <summary>
+            Mark Init Data for the first start 
+            Included Slashscreen
+            </summary>
+        </member>
+        <member name="T:MMBS.DefaultResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MMBS.DefaultResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MMBS.DefaultResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:MMBS.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources._2000px_YouTube_full_color_icon__2017__svg">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources.bloggersupport">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:MMBS.Properties.Resources.offlinemods_logo_pns">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="F:MMBS.SMForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.SMForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.SMForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMBS.tempCDF.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.tempCDF.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.tempCDF.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMBS.ToolsForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.ToolsForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.ToolsForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MMBS.ZZZOptions.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.ZZZOptions.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.ZZZOptions.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Framework.Bindable.Notify(System.String)">
+            <summary>
+            Child class may call this method explicitly in the property setter
+            </summary>
+            <param name="property"></param>
+        </member>
+        <member name="M:Framework.Bindable.Set``1(``0@,``0,System.String)">
+            <summary>
+            Set value to a property and raise the PropertyChanged event
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="member"></param>
+            <param name="value"></param>
+            <param name="property"></param>
+        </member>
+        <member name="M:Framework.Bindable.Set``1(``0@,``0,System.String[],System.String)">
+            <summary>
+            Set value to a property, raise the PropertyChanged event of itself and a list of other properties
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="member"></param>
+            <param name="value"></param>
+            <param name="properties">The related properties to be notified</param>
+            <param name="property"></param>
+        </member>
+        <member name="M:Framework.Bindable.Set``1(``0@,``0,System.Predicate{``0},System.String,System.String)">
+            <summary>
+            Set value to a property as well as a predicate to validate value.
+            This requires the control to enable the ValidatesOnExceptions in the binding
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="member"></param>
+            <param name="value"></param>
+            <param name="predicate">A predicate to check the input</param>
+            <param name="message">A message to display when invalid input occurs</param>
+            <param name="property"></param>
+        </member>
+        <member name="T:RTF.IBuilderContent">
+            <summary>
+            Exposes an underlying RTFBuilderbase
+            </summary>
+        </member>
+        <member name="T:RTF.IRTFRow">
+            <summary>
+            Row Interface
+            </summary>
+        </member>
+        <member name="F:RTF.RTFAlignment.BottomCenter">
+            <summary>Content is vertically aligned at the bottom, and horizontally aligned at the center.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="F:RTF.RTFAlignment.BottomLeft">
+            <summary>Content is vertically aligned at the bottom, and horizontally aligned on the left.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="F:RTF.RTFAlignment.BottomRight">
+            <summary>Content is vertically aligned at the bottom, and horizontally aligned on the right.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="F:RTF.RTFAlignment.MiddleCenter">
+            <summary>Content is vertically aligned in the middle, and horizontally aligned at the center.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="F:RTF.RTFAlignment.MiddleLeft">
+            <summary>Content is vertically aligned in the middle, and horizontally aligned on the left.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="F:RTF.RTFAlignment.MiddleRight">
+            <summary>Content is vertically aligned in the middle, and horizontally aligned on the right.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="F:RTF.RTFAlignment.TopCenter">
+            <summary>Content is vertically aligned at the top, and horizontally aligned at the center.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="F:RTF.RTFAlignment.TopLeft">
+            <summary>Content is vertically aligned at the top, and horizontally aligned on the left.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="F:RTF.RTFAlignment.TopRight">
+            <summary>Content is vertically aligned at the top, and horizontally aligned on the right.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="T:RTF.RTFBuilder">
+            <summary>
+            Rich Text Generator
+            </summary>
+        </member>
+        <member name="M:RTF.RTFBuilder.CheckChar(System.String)">
+            <summary>
+            Checks the char.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:RTF.RTFBuilder.RTFFormatWrap">
+            <summary>
+            Wraps RTFBuilderbase for formatting changes allowing injection of appropriate rtf codes to revert format after each Append (string) call
+            </summary>
+        </member>
+        <member name="T:RTF.RTFBuilder.RTFParaWrap">
+            <summary>
+            Wraps RtfBuilderbase injecting appropriate rtf codes after paragraph append 
+            </summary>
+        </member>
+        <member name="T:RTF.RTFBuilder.RTFBuilderUnWrapped">
+            <summary>
+            Cancels persistent Formatting Changes on an unwrapped RtfBuilder
+            Exposed by the FormatLock on RtfBuilderbase
+            </summary>
+        </member>
+        <member name="T:RTF.RTFBuilder.RTFCell">
+            <summary>
+            Cell In Table Row
+            </summary>
+        </member>
+        <member name="T:RTF.RTFBuilder.RTFCellDefinitionBuilder">
+            <summary>
+            Injects Cell Rtf Codes
+            </summary>
+        </member>
+        <member name="M:RTF.RTFBuilder.RTFImage.GdipEmfToWmfBits(System.IntPtr,System.UInt32,System.Byte[],System.Int32,RTF.RTFBuilder.RTFImage.EmfToWmfBitsFlags)">
+            <summary>
+            Use the EmfToWmfBits function in the GDI+ specification to convert a 
+            Enhanced Metafile to a Windows Metafile
+            </summary>
+            <param name="_hEmf">
+            A handle to the Enhanced Metafile to be converted
+            </param>
+            <param name="_bufferSize">
+            The size of the buffer used to store the Windows Metafile bits returned
+            </param>
+            <param name="_buffer">
+            An array of bytes used to hold the Windows Metafile bits returned
+            </param>
+            <param name="_mappingMode">
+            The mapping mode of the image.  This control uses MM_ANISOTROPIC.
+            </param>
+            <param name="_flags">
+            Flags used to specify the format of the Windows Metafile returned
+            </param>
+        </member>
+        <member name="M:RTF.RTFBuilder.RTFImage.WriteImagePrefix(System.Drawing.Image,System.Single,System.Single)">
+            <summary>
+            Creates the RTF control string that describes the image being inserted.
+            This description (in this case) specifies that the image is an
+            MM_ANISOTROPIC metafile, meaning that both X and Y axes can be scaled
+            independently.  The control string also gives the images current dimensions,
+            and its target dimensions, so if you want to control the size of the
+            image being inserted, this would be the place to do it. The prefix should
+            have the form ...
+            
+            {\pict\wmetafile8\picw[A]\pich[B]\picwgoal[C]\pichgoal[D]
+            
+            where ...
+            
+            A	= current width of the metafile in hundredths of millimeters (0.01mm)
+            	= Image Width in Inches * Number of (0.01mm) per inch
+            	= (Image Width in Pixels / Graphics Context's Horizontal Resolution) * 2540
+            	= (Image Width in Pixels / Graphics.DpiX) * 2540
+            
+            B	= current height of the metafile in hundredths of millimeters (0.01mm)
+            	= Image Height in Inches * Number of (0.01mm) per inch
+            	= (Image Height in Pixels / Graphics Context's Vertical Resolution) * 2540
+            	= (Image Height in Pixels / Graphics.DpiX) * 2540
+            
+            C	= target width of the metafile in twips
+            	= Image Width in Inches * Number of twips per inch
+            	= (Image Width in Pixels / Graphics Context's Horizontal Resolution) * 1440
+            	= (Image Width in Pixels / Graphics.DpiX) * 1440
+            
+            D	= target height of the metafile in twips
+            	= Image Height in Inches * Number of twips per inch
+            	= (Image Height in Pixels / Graphics Context's Horizontal Resolution) * 1440
+            	= (Image Height in Pixels / Graphics.DpiX) * 1440
+            
+            </summary>
+            <remarks>
+            The Graphics Context's resolution is simply the current resolution at which
+            windows is being displayed.  Normally it's 96 dpi, but instead of assuming
+            I just added the code.
+            
+            According to Ken Howe at pbdr.com, "Twips are screen-independent units
+            used to ensure that the placement and proportion of screen elements in
+            your screen application are the same on all display systems."
+            
+            Units Used
+            ----------
+            1 Twip = 1/20 Point
+            1 Point = 1/72 Inch
+            1 Twip = 1/1440 Inch
+            
+            1 Inch = 2.54 cm
+            1 Inch = 25.4 mm
+            1 Inch = 2540 (0.01)mm
+            </remarks>
+            <param name="_image"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RTF.RTFBuilder.RTFImage.WriteRtfImage(System.Drawing.Image)">
+            <summary>
+            Wraps the image in an Enhanced Metafile by drawing the image onto the
+            graphics context, then converts the Enhanced Metafile to a Windows
+            Metafile, and finally appends the bits of the Windows Metafile in HEX
+            to a string and returns the string.
+            </summary>
+            <param name="_image"></param>
+            <returns>
+            A string containing the bits of a Windows Metafile in HEX
+            </returns>
+        </member>
+        <member name="F:RTF.RTFBuilder.TWIPSA4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RTF.RTFBuilder.TWIPSA4V">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RTF.RTFBuilder.RTFRow">
+            <summary>
+            Rich Table Row
+            </summary>
+        </member>
+        <member name="T:RTF.RTFBuilderbase">
+            <summary>
+            Base Class for RtfBuilder and GDF Builder
+            Handles format (font , fontstyle, colour) delegating string appending to derived classes. 
+            </summary>
+        </member>
+        <member name="F:RTF.RTFBuilderbase._fontTable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RTF.RTFBuilderbase.AppendRTFDocument(System.String)">
+            <summary>
+            Appends the RTF document.
+            </summary>
+            <param name="rtf">The RTF.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RTF.RTFBuilderbase.IndexOfFont(RTF.RTFFont)">
+            <summary>
+            Indexes the of font.
+            </summary>
+            <param name="font">The font.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RTF.RTFBuilderbase.FontStyle(System.Drawing.FontStyle)">
+            <summary>
+            Changes the Font Style.
+            </summary>
+            <param name="fontStyle">The font style.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RTF.RTFBuilderbase.IndexOf(System.Drawing.Color)">
+            <summary>
+            Gets the index of the Color.
+            Important for merging ColorTables
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RTF.RTFBuilderbase.InsertImage(System.Drawing.Image)">
+            <summary>
+            Inserts the image.
+            </summary>
+            <param name="image">The image.</param>
+            <returns></returns>
+        </member>
+        <member name="T:RTF.RTFCellDefinition">
+            <summary>
+            Definition Of Cell In Table Row
+            </summary>
+        </member>
+        <member name="P:RTF.RTFCellDefinition.Alignment">
+            <summary>
+            Gets the alignment.
+            </summary>
+            <value>The alignment.</value>
+        </member>
+        <member name="P:RTF.RTFCellDefinition.RTFBorderSide">
+            <summary>
+            Gets the RTFborderside.
+            </summary>
+            <value>The RTF border side.</value>
+        </member>
+        <member name="P:RTF.RTFCellDefinition.BorderWidth">
+            <summary>
+            Gets the width of the border.
+            </summary>
+            <value>The width of the border.</value>
+        </member>
+        <member name="P:RTF.RTFCellDefinition.BorderColor">
+            <summary>
+            Gets the color of the border.
+            </summary>
+            <value>The color of the border.</value>
+        </member>
+        <member name="P:RTF.RTFCellDefinition.CellWidthRaw">
+            <summary>
+            Gets or sets the width of the cell.
+            </summary>
+            <value>The width of the cell.</value>
+        </member>
+        <member name="P:RTF.RTFCellDefinition.X">
+            <summary>
+            Gets the X.
+            </summary>
+            <value>The X.</value>
+        </member>
+        <member name="T:RTF.RTFRowDefinition">
+            <summary>
+            Definition of Rich Table Row
+            </summary>
+        </member>
+        <member name="M:RTF.RTFRowDefinition.#ctor(System.Int32,RTF.RTFAlignment,RTF.RTFBorderSide,System.Int32,System.Drawing.Color,System.Windows.Forms.Padding)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RTF.RTFRowDefinition"/> struct.
+            </summary>
+            <param name="rowWidth">Width of the row.</param>
+            <param name="alignment">The alignment.</param>
+            <param name="rTFBorderSide">The RTFBorderSide.</param>
+            <param name="borderWidth">Width of the border.</param>
+            <param name="borderColor">Color of the border.</param>
+        </member>
+        <member name="P:RTF.RTFRowDefinition.Alignment">
+            <summary>
+            Gets the alignment.
+            </summary>
+            <value>The alignment.</value>
+        </member>
+        <member name="P:RTF.RTFRowDefinition.RTFBorderSide">
+            <summary>
+            Gets the RTF border side.
+            </summary>
+            <value>The RTF border side.</value>
+        </member>
+        <member name="P:RTF.RTFRowDefinition.BorderWidth">
+            <summary>
+            Gets the width of the border.
+            </summary>
+            <value>The width of the border.</value>
+        </member>
+        <member name="P:RTF.RTFRowDefinition.BorderColor">
+            <summary>
+            Gets the color of the border.
+            </summary>
+            <value>The color of the border.</value>
+        </member>
+        <member name="P:RTF.RTFRowDefinition.RowWidth">
+            <summary>
+            Gets or sets the width of the cell.
+            </summary>
+            <value>The width of the cell.</value>
+        </member>
+        <member name="T:RTF.RTFUtil">
+            <summary>
+            A Work in Progress
+            </summary>
+        </member>
+        <member name="T:CurrentPatient.IRtfProcessor">
+            <summary>
+            Processor of RTF
+            </summary>
+        </member>
+        <member name="T:MyConfigSupporter.BBtxtFile.Collection">
+            <summary>
+            Use for contruct data
+            </summary>
+        </member>
+        <member name="F:MyConfigSupporter.BBtxtFile.Collection.specific">
+             <summary>
+             <strong>EXAM</strong><br/>
+             bbtxt.v1.customoption.default<br/>
+            
+             collection
+             text
+             </summary>
+        </member>
+        <member name="F:MyConfigSupporter.BBtxtFile.Collection.version">
+            <summary>
+            v1
+            </summary>
+        </member>
+        <member name="F:MyConfigSupporter.BBtxtFile.Collection.onWork">
+            <summary>
+            Working with inside Data, default = -1
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,15 @@
+App.xbf
+MainWindow.xbf
+Styles\FontSizes.xbf
+Styles\TextBlock.xbf
+Styles\Thickness.xbf
+Views\homePage.xbf
+Views\inputFullPage.xbf
+Views\inputShortPage.xbf
+Views\miscPage.xbf
+Views\outputPage.xbf
+Views\previewPage.xbf
+Views\selectImgDetailPage.xbf
+Views\selectImgPage.xbf
+Views\SettingsPage.xbf
+Views\ShellPage.xbf

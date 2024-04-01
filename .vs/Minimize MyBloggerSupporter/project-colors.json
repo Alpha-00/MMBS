@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1ee8851b-32f9-4af1-85d2-3879f3ddafa4": {
+      "ProjectGuid": "1ee8851b-32f9-4af1-85d2-3879f3ddafa4",
+      "DisplayName": "mLAMB",
+      "ColorIndex": 0
+    },
+    "9b535012-9cf9-4ced-a58e-f376142b0c27": {
+      "ProjectGuid": "9b535012-9cf9-4ced-a58e-f376142b0c27",
+      "DisplayName": "MMBS",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
