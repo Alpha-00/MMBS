@@ -289,7 +289,8 @@ namespace MMBS
                         if (query.Count == 0)
                         {
                             ID = uri.Segments[1];
-                            ID = ID.Remove(ID.IndexOf("/"));
+                            if (ID.Contains("/"))
+                                ID = ID.Remove(ID.IndexOf("/"));
                             return ID;
                         }
 

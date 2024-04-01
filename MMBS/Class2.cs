@@ -2180,7 +2180,7 @@ namespace MMBS
                         cache = cache.Replace("\r", "");
                         cache = cache.Trim(' ');
                         // Remove : if the name have only one part
-                        if (cache.Last() == ':') cache.Remove(cache.Length - 1);
+                        if (cache.Last() == ':') cache = cache.Remove(cache.Length - 1);
                     }
                     title = cache;
                     if (title.Contains(" APK")) title = title.Remove(title.LastIndexOf(" APK"), " APK".Length);
