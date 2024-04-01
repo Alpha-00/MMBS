@@ -2180,7 +2180,7 @@ namespace MMBS
                         cache = cache.Replace("\r", "");
                         cache = cache.Trim(' ');
                         // Remove : if the name have only one part
-                        if (cache.Last() == ':') cache.Remove(cache.Length - 1);
+                        if (cache.Last() == ':') cache = cache.Remove(cache.Length - 1);
                     }
                     title = cache;
                     if (title.Contains(" APK")) title = title.Remove(title.LastIndexOf(" APK"), " APK".Length);
@@ -2211,33 +2211,40 @@ namespace MMBS
                 }
                 public void Get_Image()
                 {
-                    if (webpage.Contains("class=\"details-tube ga tube-domain\""))
+                    if (!webpage.Contains("<div class=\"screen-wrap\">"))
                     {
-                        /// Hot fix for Html Agilty Pack is not support img tag
-                        var nodes = doc.DocumentNode.SelectNodes("//*[@id=\"screen\"]/div/a").Nodes().ToList();
-                        var images = nodes.Where((node) => node.OuterHtml.StartsWith("<img"));
-                        List<string> subcache = images.Select((node)=>node.Attributes["src"].Value).ToList();
-                        // remove gifs data image (no link src)
-                        subcache = subcache.Where((link) => link.StartsWith("http")).ToList();
-                        if (subcache.Count>0)
-                        {
-                            this.image = new ProcSupporter.ImageDownloader[subcache.Count];
-                            Parallel.For(0, subcache.Count, new ParallelOptions { MaxDegreeOfParallelism = 8 }, i => { image[i] = new ProcSupporter.ImageDownloader(subcache[i], "Screenshot " + i.ToString(), this.dir); });
-
-                            imagelink = subcache.ToArray();
-                        }
+#if DEBUG
+                        throw new Exception("Parser Error: No Image Found");
+#endif
                     }
+                    /// Hot fix for Html Agilty Pack is not support img tag
+                    var nodes = doc.DocumentNode.SelectNodes("//*[@id=\"screen\"]/div/a").Nodes().ToList();
+                    var images = nodes.Where((node) => node.OuterHtml.StartsWith("<img"));
+                    List<string> subcache = images.Select((node) => node.Attributes["src"].Value).ToList();
+                    // remove gifs data image (no link src)
+                    subcache = subcache.Where((link) => link.StartsWith("http")).ToList();
+                    if (subcache.Count > 0)
+                    {
+                        this.image = new ProcSupporter.ImageDownloader[subcache.Count];
+                        Parallel.For(0, subcache.Count, new ParallelOptions { MaxDegreeOfParallelism = 8 }, i => { image[i] = new ProcSupporter.ImageDownloader(subcache[i], "Screenshot " + i.ToString(), this.dir); });
+
+                        imagelink = subcache.ToArray();
+                    }
+
                 }
                 public void Get_Desc()
                 {
-                    var nodes = doc.DocumentNode.SelectNodes("//div[@class=\"content\"]/div[1]/div/div/div").Nodes().ToList();
+                    var results = doc.DocumentNode.SelectNodes("//div[@class=\"content\"]/div[1]/div/div");
+                    if (results is null) throw new Exception("Parser Error: No Description Found");
+                    var nodes = results.Nodes().ToList();
                     if (nodes.Count <= 0) throw new Exception("Parser Error: No Description Found");
                     string content = "";
                     for (int i = 0; i< nodes.Count; i++)
                     {
                         if (nodes[i].InnerHtml == "<br>") { content += "\n"; continue; }
-                        content += nodes[i].InnerHtml;
+                        content += nodes[i].InnerText + "\n";
                     }
+                    content = content.Trim();
                      //string cache = webpage.Substring(webpage.IndexOf("<div class=\"description\">"), webpage.IndexOf("<div class=\"showmore_trigger\">") - webpage.IndexOf("<div class=\"description\">"));
                     
                     //cache = cache.Remove(cache.Length - 1 - 23, 24);
