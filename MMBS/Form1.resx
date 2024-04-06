@@ -127,7 +127,8 @@
     <value>262, 21</value>
   </metadata>
   <data name="UpdateLog.Text" xml:space="preserve">
-    <value>0.39.240401 : update APKpure scraper
+    <value>0.39.240406 : APKpure remove limit size of image links
+0.39.240401 : update APKpure scraper
 0.38.240123 : add template debug tool
 0.37.240110 : update form 240104
 0.37.240108 : add form 240104
