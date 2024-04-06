@@ -932,6 +932,8 @@ namespace MMBS
                         coverImagelink = scriptCache.GetData("src");
                         //System.Windows.Forms.MessageBox.Show(scriptCache.script);
                         if (!coverImagelink.Contains("http")) coverImagelink = "https://" + coverImagelink;
+                        coverImagelink = Regex.Replace(coverImagelink, "(?<url>[^?]+\\?)(?<prefix>.+)?(?<remove>w=\\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
+                        coverImagelink = Regex.Replace(coverImagelink, "(?<url>[^?]+\\?)(?<prefix>.+)?(?<remove>h=\\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
                         coverImage = new ProcSupporter.ImageDownloader(coverImagelink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
@@ -2211,7 +2213,7 @@ namespace MMBS
                 }
                 public void Get_Image()
                 {
-                    if (!webpage.Contains("<div class=\"screen-wrap\">"))
+                    if (webpage.Contains("<div class=\"screen-wrap\">") == false)
                     {
 #if DEBUG
                         throw new Exception("Parser Error: No Image Found");
@@ -2221,8 +2223,19 @@ namespace MMBS
                     var nodes = doc.DocumentNode.SelectNodes("//*[@id=\"screen\"]/div/a").Nodes().ToList();
                     var images = nodes.Where((node) => node.OuterHtml.StartsWith("<img"));
                     List<string> subcache = images.Select((node) => node.Attributes["src"].Value).ToList();
-                    // remove gifs data image (no link src)
-                    subcache = subcache.Where((link) => link.StartsWith("http")).ToList();
+                    // Process and filter links
+                    List<string> tempLinkList = new List<string>();
+                    for (int i = 0; i < subcache.Count; i++)
+                    {
+                        var link = subcache[i];
+                        // remove gifs data image (no link src)
+                        if (!link.StartsWith("http")) continue;
+                        link = Regex.Replace(link, "(?<url>[^?]+\\?)(?<prefix>.+)?(?<remove>w=\\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
+                        link = Regex.Replace(link, "(?<url>[^?]+\\?)(?<prefix>.+)?(?<remove>h=\\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
+                        tempLinkList.Add(link);
+
+                    }
+                    subcache = tempLinkList;
                     if (subcache.Count > 0)
                     {
                         this.image = new ProcSupporter.ImageDownloader[subcache.Count];
