@@ -2145,7 +2145,7 @@ namespace MMBS
                     doc = new HtmlDocument();
                     doc.LoadHtml(webpage);
                     Get_Title();
-                    Get_Video();
+                    //Get_Video();// Disable
                     Get_Req();
                     Get_Version();
                     Get_Image();
