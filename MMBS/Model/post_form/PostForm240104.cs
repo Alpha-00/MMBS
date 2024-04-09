@@ -293,7 +293,7 @@ namespace MMBS.Model.PostForm
         ///         Script to split content, hint that Blogger will break description
         ///     </para>
         /// </summary>
-        public String limitMoreScript => "<!--more-->";
+        public String limitMoreScript => "<!--more-->\n"+ seperateLineScript;
         /// <summary>
         ///     <para>
         ///         General structure of the article
