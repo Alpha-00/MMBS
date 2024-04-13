@@ -136,8 +136,8 @@ namespace MMBS
             if (dialogFile.FileNames.Length > 0)
             {
 
-                var client = new ApisCall.ImgurAPI();
-                Imgur.API.Endpoints.ImageEndpoint account = new Imgur.API.Endpoints.ImageEndpoint(ApisCall.ImgurAPI.apiClient, new System.Net.Http.HttpClient());
+                var client = new ApiService.ImgurAPI();
+                Imgur.API.Endpoints.ImageEndpoint account = new Imgur.API.Endpoints.ImageEndpoint(ApiService.ImgurAPI.apiClient, new System.Net.Http.HttpClient());
                 foreach (string i in dialogFile.FileNames)
                 {
                     try
@@ -161,7 +161,7 @@ namespace MMBS
 
         private void butCover_Click(object sender, EventArgs e)
         {
-            ApisCall.ImgurAPI client = new ApisCall.ImgurAPI();
+            ApiService.ImgurAPI client = new ApiService.ImgurAPI();
             OpenFileDialog dialogFile = new OpenFileDialog();
             dialogFile.Filter = "Image Files|*.jpg,*.gif,*.png,*.webp";
             dialogFile.Multiselect = false;

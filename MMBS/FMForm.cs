@@ -5,10 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace MMBS
 {
@@ -111,6 +113,12 @@ namespace MMBS
             LoadImageFromList(thenow.postmedia.ImageList);
             LoadVideoReview(thenow.postmedia.VideoReview);
             this.clistMirrorlink.Items.Clear();
+
+            // UI switch
+            if (boxIcon.Image != null) butIconEdit.Visible = false;
+            if (boxIcon.Image != null) butIconClipboard.Visible = false;
+            processIconCounter = 0;
+            processImageCounter = 0;
         }
         public int initFormData()
         {
@@ -150,6 +158,7 @@ namespace MMBS
             }
             
         }
+        
         public void LoadVideoReview(PostDataBundle.PostMediapack.VideoReviewpack v)
         {
             checkVideo.Checked = v.Cover.enable;
@@ -759,65 +768,219 @@ namespace MMBS
         {
             
         }
+        private async Task addImageReviewByClipboard(Image input = null)
+        {
+            processImageCounter++;
+            ApiService.ImgurAPI client = new ApiService.ImgurAPI();
+            var imgClipboard = input ?? Clipboard.GetImage();
+            if (imgClipboard == null) { return; }
+            var uploadResult = await client.Upload(imgClipboard.ToStream(System.Drawing.Imaging.ImageFormat.Jpeg));
+            if (uploadResult != 0) { MessageBox.Show("Imgur image upload failed with code " + uploadResult, "Upload Failed"); return; }
+            var file = "";
+            var link = client.GetUrl();
+            // Update Data
+            var fileName = "img_" + FormData.postmedia.ImageList.Count();
+            var image = imgClipboard;
+            DefineInfoPack.imageinfo imageData = new DefineInfoPack.imageinfo(fileName, file, link, image.Height, image.Width, image);
+            FormData.postmedia.ImageList.Add(imageData);
+            FormData.postmedia.ImageList.Last().enable = true;
+            // Update UI
+            //ilistScreenShot.Images.Add(image);
+            LoadImageFromList(FormData.postmedia.ImageList);
+            processImageCounter--;
+        }
+        // TODO: Add progress bar to indicate change
+        private async Task addImageReviewByLink(string url)
+        {
+            processImageCounter++;
+            if (String.IsNullOrEmpty(url)) return;
+            Image image = null;
+            // Load image from internet to memory
+            try
+            {
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(url);
+                MemoryStream ms = new MemoryStream(bytes);
+                image = System.Drawing.Image.FromStream(ms);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Download Image Failed");
+                return;
+            }
+            if (image == null)
+            {
+                MessageBox.Show("No error detect, please check source code for the issue", "Download Image Failed");
+                return;
+            }
 
+            
+            var link = url;
+            // Update Data
+            var fileName = "img_"+FormData.postmedia.ImageList.Count();
+            
+            DefineInfoPack.imageinfo imageData = new DefineInfoPack.imageinfo(fileName, "", link, image.Height, image.Width, image);
+            FormData.postmedia.ImageList.Add(imageData);
+            FormData.postmedia.ImageList.Last().enable = true;
+            // Update UI
+            //ilistScreenShot.Images.Add(image);
+            LoadImageFromList(FormData.postmedia.ImageList);
+
+            processImageCounter--;
+        }
         private async void butAddImg_Click(object sender, EventArgs e)
         {
+            processImageCounter++;
+            dialogFile.Reset();
+            dialogFile.Filter = "Image Files|*.jpg;*.gif;*.png;*.webp|All files (*.*)|*.*";
             dialogFile.InitialDirectory = FormData.folderlink;
-            DialogResult x = dialogFile.ShowDialog();
-            if (dialogFile.FileNames.Length > 0)
+            dialogFile.Multiselect = true;
+            dialogFile.Title = "Images Select";
+
+            if (dialogFile.ShowDialog() != DialogResult.OK) return;
+            if (dialogFile.FileNames.Length == 0) return;
+
+            ApiService.ImgurAPI service = new ApiService.ImgurAPI();
+            string[] links = await service.Upload(dialogFile.FileNames);
+            if (links.Length == 0) MessageBox.Show("Upload Failed", "Imgur");
+            if (links.Length != dialogFile.FileNames.Length) throw new Exception("Fatal Error: Multiple Upload Image Failed");
+            for (int i = 0; i < links.Length; i++)
             {
-                
-                var client = new ApisCall.ImgurAPI();
-                Imgur.API.Endpoints.ImageEndpoint account = new Imgur.API.Endpoints.ImageEndpoint(ApisCall.ImgurAPI.apiClient, new System.Net.Http.HttpClient());
-                foreach (string i in dialogFile.FileNames)
-                {
-                    try
-                    {
-                        Imgur.API.Models.IImage result;
-                        using (FileStream f = new FileStream(i, FileMode.Open))
-                        {
-                            result = await account.UploadImageAsync(f);
-                            ilistScreenShot.Images.Add(Image.FromFile(i));
-                            if (null != result)
-                                FormData.postmedia.ImageList.Add(new DefineInfoPack.imageinfo("imgur_" + result.Id, i, result.Link,result.Height, result.Width,Image.FromFile(i)));
-                                    }
-                    }
-                    catch(Exception exc)
-                    {
-                        MessageBox.Show(exc.Message);
-                    }
-                }
+                var file = dialogFile.FileNames[i];
+                var link = links[i];
+                // Update Data
+                var fileName = Path.GetFileNameWithoutExtension(file);
+                var image = System.Drawing.Image.FromFile(file);
+                DefineInfoPack.imageinfo imageData = new DefineInfoPack.imageinfo(fileName,file, link, image.Height, image.Width, image);
+                FormData.postmedia.ImageList.Add(imageData);
+                FormData.postmedia.ImageList.Last().enable = true;
+                // Update UI
+                //ilistScreenShot.Images.Add(image);
+                LoadImageFromList(FormData.postmedia.ImageList);
+
             }
+            processImageCounter--;
+            //if (dialogFile.FileNames.Length > 0)
+            //{
+
+            //    var client = new ApiService.ImgurAPI();
+            //    Imgur.API.Endpoints.ImageEndpoint account = new Imgur.API.Endpoints.ImageEndpoint(ApiService.ImgurAPI.apiClient, new System.Net.Http.HttpClient());
+            //    foreach (string i in dialogFile.FileNames)
+            //    {
+            //        try
+            //        {
+            //            Imgur.API.Models.IImage result;
+            //            using (FileStream f = new FileStream(i, FileMode.Open))
+            //            {
+            //                result = await account.UploadImageAsync(f);
+            //                ilistScreenShot.Images.Add(Image.FromFile(i));
+            //                if (null != result)
+            //                    FormData.postmedia.ImageList.Add(new DefineInfoPack.imageinfo("imgur_" + result.Id, i, result.Link,result.Height, result.Width,Image.FromFile(i)));
+            //                        }
+            //        }
+            //        catch(Exception exc)
+            //        {
+            //            MessageBox.Show(exc.Message);
+            //        }
+            //    }
+            //}
         }
 
         private void boxOMirror_TextChanged(object sender, EventArgs e)
         {
             FormData.Downloadlink.OMirrorlink.link = boxOMirror.Text;
         }
-
-        private void boxIcon_DoubleClick(object sender, EventArgs e)
+        private async Task updateIconByLink(string url)
         {
-            ApisCall.ImgurAPI client = new ApisCall.ImgurAPI();
+            processIconCounter++;
+            if (String.IsNullOrEmpty(url)) return;
+            Image image = null;
+            // Load image from internet to memory
+            try
+            {
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(url);
+                MemoryStream ms = new MemoryStream(bytes);
+                image = System.Drawing.Image.FromStream(ms);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Download Image Failed");
+                return;
+            }
+            if (image == null)
+            {
+                MessageBox.Show("No error detect, please check source code for the issue", "Download Image Failed");
+                return;
+            }
+            FormData.appinfo.Icon.enable = true;
+            FormData.appinfo.Icon.link = url;
+
+            FormData.appinfo.Icon.dir = "";
+            FormData.appinfo.Icon.image = image;
+            processIconCounter--;
+        }
+        private async Task updateIconByUploadFile()
+        {
+            processIconCounter++;
+            ApiService.ImgurAPI client = new ApiService.ImgurAPI();
             OpenFileDialog dialogFile = new OpenFileDialog();
-            dialogFile.Filter = "Image Files|*.jpg,*.gif,*.png,*.webp";
+            dialogFile.Reset();
+            dialogFile.Filter = "Image Files|*.jpg;*.gif;*.png;*.webp|All files (*.*)|*.*";
             dialogFile.Multiselect = false;
             dialogFile.Title = "Avatar Select";
             var res = dialogFile.ShowDialog();
             if (res == DialogResult.OK)
             {
-                var request = client.Upload(dialogFile.FileName);
-                request.Wait();
-                if (request.Result == 0) { return; }
+                var uploadResult = await client.Upload(dialogFile.FileName);
+                if (uploadResult != 0) { MessageBox.Show("Imgur image upload failed with code "+ uploadResult + "\n" + dialogFile.FileName,"Upload Failed"); return;  }
                 FormData.appinfo.Icon.enable = true;
                 FormData.appinfo.Icon.link = client.GetUrl();
                 FormData.appinfo.Icon.dir = dialogFile.FileName;
                 FormData.appinfo.Icon.image = Image.FromFile(dialogFile.FileName);
+                this.boxIcon.Image = FormData.appinfo.Icon.image;
             }
+            processIconCounter--;
+        }
+
+        private async Task updateIconFromClipboard(Image input = null)
+        {
+            processIconCounter++;
+            ApiService.ImgurAPI client = new ApiService.ImgurAPI();
+            var imgClipboard = input ?? Clipboard.GetImage();
+            if (imgClipboard == null) { return;  }
+
+
+                var uploadResult = await client.Upload(imgClipboard.ToStream(System.Drawing.Imaging.ImageFormat.Jpeg));
+                if (uploadResult != 0) { MessageBox.Show("Imgur image upload failed with code " + uploadResult, "Upload Failed"); return; }
+                FormData.appinfo.Icon.enable = true;
+                FormData.appinfo.Icon.link = client.GetUrl();
+                FormData.appinfo.Icon.dir = dialogFile.FileName;
+                FormData.appinfo.Icon.image = imgClipboard;
+                this.boxIcon.Image = FormData.appinfo.Icon.image;
+            processIconCounter--;
+        }
+
+
+        private async void noticeToolTipIcon(string url)
+        {
+            if (string.IsNullOrEmpty(url)) 
+            { 
+                //tipIcon.ToolTipTitle = ""; 
+                tipIcon.SetToolTip(boxIcon, "");
+                return; 
+            }
+            //tipIcon.ToolTipTitle = url;
+            tipIcon.SetToolTip(boxIcon, url);
+        }
+        private async void boxIcon_DoubleClick(object sender, EventArgs e)
+        {
+            await updateIconByUploadFile();
         }
 
         private void boxIcon_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pasteHtml_Click(object sender, EventArgs e)
@@ -971,6 +1134,172 @@ namespace MMBS
             {
                 case Keys.V: if (e.Shift && e.Control) pasteHtml_Click(sender, new EventArgs()); break;
             }
+        }
+
+
+        private bool isBoxIconEntered = false;
+        private void boxIcon_MouseEnter(object sender, EventArgs e)
+        {
+            isBoxIconEntered = true;
+            if (!butIconEdit.Visible)
+            {
+                butIconEdit.Visible = true;
+            }
+            if (!butIconClipboard.Visible)
+            {
+                butIconClipboard.Visible = true;
+            }
+        }
+
+        private async void boxIcon_MouseLeave(object sender, EventArgs e)
+        {
+            isBoxIconEntered = false;
+            await Task.Delay(3000);
+            if (butIconEdit.Visible)
+            {
+                butIconEdit.Visible = false;
+            }
+            if (butIconClipboard.Visible)
+            {
+                butIconClipboard.Visible = false;
+            }
+        }
+
+        private async void butIconEdit_Click(object sender, EventArgs e)
+        {
+            await updateIconByUploadFile();
+        }
+
+        private void FMForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private async void FMForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            Console.WriteLine("Shortcut press " + isBoxIconEntered.ToString() + (char)e.KeyValue);
+            if (isBoxIconEntered)
+            {
+                if (e.Control && e.KeyValue == (int)'V')
+                {
+                    var text = Clipboard.GetText();
+                    // Try to using image clipboard
+                    if (String.IsNullOrEmpty(text) || !Uri.IsWellFormedUriString(text, UriKind.Absolute))
+                    {
+                        await updateIconFromClipboard();
+                        noticeToolTipIcon(FormData.appinfo.Icon.link);
+                        return;
+                    }
+                    if ((new Uri(text)).IsFile)
+                    {
+                        await updateIconFromClipboard(Image.FromFile(text));
+                        noticeToolTipIcon(FormData.appinfo.Icon.link);
+                        return;
+                    }
+                    await updateIconByLink(text);
+                    noticeToolTipIcon(FormData.appinfo.Icon.link);
+                    //MessageBox.Show("Trigger Clipboard Event");
+
+                }
+            }
+        }
+
+        private async void listImageReview_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == (int)'V')
+            {
+                var text = Clipboard.GetText();
+                // Try to using image clipboard
+                if (String.IsNullOrEmpty(text) || !Uri.IsWellFormedUriString(text, UriKind.Absolute))
+                {
+                    await addImageReviewByClipboard();
+                    return;
+                }
+                if ((new Uri(text)).IsFile) {
+                    await addImageReviewByClipboard(Image.FromFile(text));
+                    return;
+                }
+                await updateIconByLink(text);
+                //MessageBox.Show("Trigger Clipboard Event");
+            }
+        }
+
+        private int _progressIconCounter = 0;
+        private int processIconCounter
+        {
+            get { return _progressIconCounter; } 
+            set
+            {
+                _progressIconCounter = value;
+                if (_progressIconCounter > 0)
+                {
+                    progressIcon.Visible = true;
+                    return;
+                }
+                progressIcon.Visible = false;
+            }
+        }
+
+        private int _progressImageCounter = 0;
+        private int processImageCounter
+        {
+            get
+            {
+                return _progressIconCounter;
+            }
+            set
+            {
+                _progressIconCounter = value;
+                if (_progressIconCounter > 0)
+                {
+                    progressImage.Visible = true;
+                    return;
+                }
+                progressImage.Visible = false;
+            }
+        }
+
+        private async void butIconClipboard_Click(object sender, EventArgs e)
+        {
+            var text = Clipboard.GetText();
+            // Try to using image clipboard
+            if (String.IsNullOrEmpty(text) || !Uri.IsWellFormedUriString(text, UriKind.Absolute))
+            {
+                await updateIconFromClipboard();
+                noticeToolTipIcon(FormData.appinfo.Icon.link);
+                return;
+            }
+            if ((new Uri(text)).IsFile)
+            {
+                await updateIconFromClipboard(Image.FromFile(text));
+                noticeToolTipIcon(FormData.appinfo.Icon.link);
+                return;
+            }
+            await updateIconByLink(text);
+            noticeToolTipIcon(FormData.appinfo.Icon.link);
+        }
+
+        private void boxImageLink_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void butAddImgClipboard_Click(object sender, EventArgs e)
+        {
+            var text = Clipboard.GetText();
+            // Try to using image clipboard
+            if (String.IsNullOrEmpty(text) || !Uri.IsWellFormedUriString(text, UriKind.Absolute))
+            {
+                await addImageReviewByClipboard();
+                return;
+            }
+            if ((new Uri(text)).IsFile)
+            {
+                await addImageReviewByClipboard(Image.FromFile(text));
+                return;
+            }
+            await updateIconByLink(text);
+            //MessageBox.Show("Trigger Clipboard Event");
         }
     }
 }

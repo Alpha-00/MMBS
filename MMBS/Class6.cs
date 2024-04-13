@@ -199,12 +199,12 @@ namespace MMBS
                 System.IO.File.WriteAllText($"C:\\BloggerSupporter\\ILogs{code}.txt", dat.ToString());
             }
         }
-        /// <summary>
-        /// Alternative Implementation for System API
-        /// </summary>
         
     }
 
+        /// <summary>
+        /// Alternative Implementation for System API
+        /// </summary>
     public static class SystemAlt
     {
         public static bool Windows_Forms_Clipboard_SetText(string dat)

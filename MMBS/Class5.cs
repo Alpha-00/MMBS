@@ -53,6 +53,16 @@ namespace MMBS
 
         }
     }
+    public static class ImageExtension
+    {
+        public static Stream ToStream(this System.Drawing.Image image, System.Drawing.Imaging.ImageFormat format)
+        {
+            var stream = new System.IO.MemoryStream();
+            image.Save(stream, format);
+            stream.Position = 0;
+            return stream;
+        }
+    }
     public static class UriExtension
     {
         public static string QueryKey(this Uri uri, string key)
@@ -151,7 +161,7 @@ namespace MMBS
         }
     }
 
-    public static class ApisCall
+    public static class ApiService
     {
         public class BloggerAPI
         {
@@ -223,10 +233,140 @@ namespace MMBS
             public async Task<int> Upload(string path)
             {
                 var filePath = path;
-                using (var fileStream = System.IO.File.OpenRead(filePath))
+                try
+                {
+                    using (var fileStream = System.IO.File.OpenRead(filePath))
+                    {
+                        var imageEndpoint = new ImageEndpoint(apiClient, httpClient);
+                        var imageUpload = await imageEndpoint.UploadImageAsync(fileStream);
+                        url = imageUpload.Link;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Imgur Upload Failed");
+                    Console.WriteLine(ex.Message);
+                    throw ex;
+                    return 1;
+                }
+                return 0;
+            }
+            public async Task<string[]> Upload(string[] paths)
+            {
+                try
                 {
                     var imageEndpoint = new ImageEndpoint(apiClient, httpClient);
-                    var imageUpload = await imageEndpoint.UploadImageAsync(fileStream);
+                    List<string> result = new List<string>();
+                    foreach (var filePath in paths)
+                    {
+                        using (var fileStream = System.IO.File.OpenRead(filePath))
+                        {
+
+                            var imageUpload = await imageEndpoint.UploadImageAsync(fileStream);
+                            url = imageUpload.Link;
+                            result.Add(url);
+                        }
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Imgur Upload Failed");
+                    Console.WriteLine(ex.Message);
+                    throw ex;
+                }
+            } 
+            public async Task<int> Upload(Stream stream)
+            {
+                try
+                {
+                        var imageEndpoint = new ImageEndpoint(apiClient, httpClient);
+                        var imageUpload = await imageEndpoint.UploadImageAsync(stream);
+                    url = imageUpload.Link;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Imgur Upload Failed");
+                    Console.WriteLine(ex.Message);
+                    throw ex;
+                    return 1;
+                }
+                return 0;
+            }
+            public string GetUrl()
+            {
+                return url;
+            }
+        }
+        public class Based64ImageAlternativeAPI
+        {
+
+            //public static ApiClient apiClient = new ApiClient(imgurID, imgurSR);
+            //public HttpClient httpClient = new HttpClient();
+
+            public string url;
+
+            private string imgToBase64(System.Drawing.Image image)
+            {
+                string _base64String = null;
+
+                using (MemoryStream _mStream = new MemoryStream())
+                {
+                    image.Save(_mStream, image.RawFormat);
+                    byte[] _imageBytes = _mStream.ToArray();
+                    _base64String = Convert.ToBase64String(_imageBytes);
+
+                    return "data:image/jpg;base64," + _base64String;
+                }
+            }
+
+            public async Task<int> Upload(string path)
+            {
+                var filePath = path;
+                try
+                {
+                        url = imgToBase64(System.Drawing.Image.FromFile(filePath));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Imgur Upload Failed");
+                    Console.WriteLine(ex.Message);
+                    throw ex;
+                }
+                return 0;
+            }
+            public async Task<string[]> Upload(string[] paths)
+            {
+                try
+                {
+                    
+                    List<string> result = new List<string>();
+                    foreach (var filePath in paths)
+                    {
+                            url = imgToBase64(System.Drawing.Image.FromFile(filePath));
+                            result.Add(url);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Imgur Upload Failed");
+                    Console.WriteLine(ex.Message);
+                    throw ex;
+                }
+            }
+            public async Task<int> Upload(Stream stream)
+            {
+                try
+                {
+                    url = imgToBase64(System.Drawing.Image.FromStream(stream));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Imgur Upload Failed");
+                    Console.WriteLine(ex.Message);
+                    throw ex;
+                    return 1;
                 }
                 return 0;
             }

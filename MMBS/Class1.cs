@@ -134,7 +134,7 @@ namespace MMBS
             obbReqHtml = new string[2] {        ("NO."),              ("<span style=\"color: red; \"><b>Yes</b></span>") };
             extpermReqHtml = new string[]{      ("NO"),              ("<span style=\"color: red; \"><b>Yes</b></span>") };
             */
-            /// <!--MMBS:191130:200516-->
+            // <!--MMBS:191130:200516-->
             internetReqHtml = new string[2] 
                 {   ("<span style=\"color: #2ec849; \"><b>No</b></span>"),   
                     ("<span style=\"color: red; \"><b>Yes</b></span>") 
@@ -339,7 +339,7 @@ namespace MMBS
 
             }
             //Download Script // Undone
-            string SP_DownloadScript = "";///* Fatal Param
+            string SP_DownloadScript = "";//* Fatal Param
             
 
             if (thenow.Downloadlink.Downloadlink.check || thenow.Downloadlink.OBBlink.check)
@@ -598,9 +598,9 @@ namespace MMBS
 
             }
             //Link Script // Undone
-            string SP_DownloadScript = "";///* Fatal Param
+            string SP_DownloadScript = "";//* Fatal Param
             string SP_SourceScript = "";
-            ///Additional Script after main script
+            //Additional Script after main script
             string script_postDownload = "";
             if (!string.IsNullOrEmpty(thenow.appinfo.datasource))
             {
@@ -922,9 +922,9 @@ namespace MMBS
 
             }
             //Link Script // Undone
-            string SP_DownloadScript = "";///* Fatal Param
+            string SP_DownloadScript = "";//* Fatal Param
             string SP_SourceScript = "";
-            ///Additional Script after main script
+            //Additional Script after main script
             string script_postDownload = "";
             if (!string.IsNullOrEmpty(thenow.appinfo.datasource))
             {
@@ -932,8 +932,8 @@ namespace MMBS
                 //Temporarily v200516
                 SP_SourceScript = thenow.appinfo.datasourcetype != "play" ? MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appinfo.datasource, "$$$:.downName$$$$", thenow.appinfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
             }
-            ///Todo: Hot fix- Need refactor
-            ///
+            //Todo: Hot fix- Need refactor
+            
 
             if (String.IsNullOrWhiteSpace(thenow.Downloadlink.Downloadlink.link + thenow.Downloadlink.OBBlink.link + thenow.Downloadlink.OMirrorlink.link))
             {
@@ -1505,9 +1505,9 @@ namespace MMBS
             //Video Script //Undone
             
             //Link Script // Undone
-            string SP_DownloadScript = "";///* Fatal Param
+            string SP_DownloadScript = "";//* Fatal Param
             string SP_SourceScript = "";
-            ///Additional Script after main script
+            //Additional Script after main script
             string script_postDownload = "";
             if (!string.IsNullOrEmpty(thenow.appinfo.datasource))
             {

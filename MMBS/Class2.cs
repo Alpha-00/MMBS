@@ -1538,7 +1538,7 @@ namespace MMBS
                 }
                 async void teraboxProc(Uri uri)
                 {
-                    ///API Crawl
+                    //API Crawl
                     try
                     {
                         var surl = uri.QueryKey("surl");
@@ -1558,7 +1558,7 @@ namespace MMBS
                         valid = 0;
                         System.Windows.Forms.MessageBox.Show("Terabox link Process Error\n" + e.Message);
                     }
-                    ///Full WebLoad Crawl
+                    //Full WebLoad Crawl
                     /*
                     try
                     {
@@ -2219,7 +2219,7 @@ namespace MMBS
                         throw new Exception("Parser Error: No Image Found");
 #endif
                     }
-                    /// Hot fix for Html Agilty Pack is not support img tag
+                    // Hot fix for Html Agilty Pack is not support img tag
                     var nodes = doc.DocumentNode.SelectNodes("//*[@id=\"screen\"]/div/a").Nodes().ToList();
                     var images = nodes.Where((node) => node.OuterHtml.StartsWith("<img"));
                     List<string> subcache = images.Select((node) => node.Attributes["src"].Value).ToList();

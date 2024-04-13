@@ -464,7 +464,7 @@ namespace MMBS
             if (AFFinputer.Downloadlink.Downloadlink.host == "drive.google.com")
             {
                 cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.Downloadlink.Downloadlink.link);
-                ///Special Process For megaurl shortenlink
+                //Special Process For megaurl shortenlink
                 
                 
                 ///////
@@ -557,7 +557,7 @@ namespace MMBS
                 }
                 var res = new CustomizePostResult();
                 res.SimpleProcess(AFFinputer);
-                ApisCall.BloggerAPI api = new ApisCall.BloggerAPI(Class1.GetToken("offlinemodsID"));
+                ApiService.BloggerAPI api = new ApiService.BloggerAPI(Class1.GetToken("offlinemodsID"));
                 api.NewPost(res.titleprocRes,res.postHtml,new string[] {(AFFinputer.modinfo.UI.currentindex == 0? "ModdedGames" : "PaidGames") },"{\n\"search_description\" = "+res.searchproRes+"\n}");
                 api.SendPost(true);
 

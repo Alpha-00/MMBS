@@ -166,9 +166,9 @@ namespace MMBS.Model.PostForm
 
             }
             //Link Script // Undone
-            string SP_DownloadScript = "";///* Fatal Param
+            string SP_DownloadScript = "";//* Fatal Param
             string SP_SourceScript = "";
-            ///Additional Script after main script
+            //Additional Script after main script
             string script_postDownload = "";
             if (!string.IsNullOrEmpty(data.appinfo.datasource))
             {
@@ -176,8 +176,8 @@ namespace MMBS.Model.PostForm
                 //Temporarily v200516
                 SP_SourceScript = data.appinfo.datasourcetype != "play" ? MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.appinfo.datasource, "$$$:.downName$$$$", data.appinfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
             }
-            ///Todo: Hot fix- Need refactor
-            ///
+            //Todo: Hot fix- Need refactor
+            
 
             if (String.IsNullOrWhiteSpace(data.Downloadlink.Downloadlink.link + data.Downloadlink.OBBlink.link + data.Downloadlink.OMirrorlink.link))
             {

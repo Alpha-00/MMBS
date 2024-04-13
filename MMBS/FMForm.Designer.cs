@@ -34,6 +34,8 @@
 			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Bye Bye");
 			this.boxAppname = new System.Windows.Forms.TextBox();
 			this.groupInfo = new System.Windows.Forms.GroupBox();
+			this.progressIcon = new System.Windows.Forms.ProgressBar();
+			this.butIconEdit = new System.Windows.Forms.Button();
 			this.checkExtPerms = new System.Windows.Forms.CheckBox();
 			this.checkNoLine = new System.Windows.Forms.CheckBox();
 			this.labelDesc = new System.Windows.Forms.Label();
@@ -82,12 +84,14 @@
 			this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
 			this.stripOtherPMT = new System.Windows.Forms.ToolStripMenuItem();
 			this.scibanCustomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.scibanCustomExportDataStripItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.boxVreview = new System.Windows.Forms.PictureBox();
 			this.boxVideoLink = new System.Windows.Forms.TextBox();
 			this.labelVideo = new System.Windows.Forms.LinkLabel();
 			this.butCacheFolder = new System.Windows.Forms.Button();
 			this.checkVideo = new System.Windows.Forms.CheckBox();
 			this.groupImage = new System.Windows.Forms.GroupBox();
+			this.progressImage = new System.Windows.Forms.ProgressBar();
 			this.labelImageName = new System.Windows.Forms.Label();
 			this.butAddImg = new System.Windows.Forms.Button();
 			this.checkImageinScript = new System.Windows.Forms.CheckBox();
@@ -97,7 +101,9 @@
 			this.boxImage = new System.Windows.Forms.PictureBox();
 			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
 			this.dialogFile = new System.Windows.Forms.OpenFileDialog();
-			this.scibanCustomExportDataStripItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tipIcon = new System.Windows.Forms.ToolTip(this.components);
+			this.butIconClipboard = new System.Windows.Forms.Button();
+			this.butAddImgClipboard = new System.Windows.Forms.Button();
 			this.groupInfo.SuspendLayout();
 			this.descMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.boxIcon)).BeginInit();
@@ -129,6 +135,9 @@
 			// 
 			// groupInfo
 			// 
+			this.groupInfo.Controls.Add(this.butIconClipboard);
+			this.groupInfo.Controls.Add(this.progressIcon);
+			this.groupInfo.Controls.Add(this.butIconEdit);
 			this.groupInfo.Controls.Add(this.checkExtPerms);
 			this.groupInfo.Controls.Add(this.boxAppname);
 			this.groupInfo.Controls.Add(this.checkNoLine);
@@ -154,6 +163,25 @@
 			this.groupInfo.TabIndex = 2;
 			this.groupInfo.TabStop = false;
 			this.groupInfo.Text = "App Information";
+			// 
+			// progressIcon
+			// 
+			this.progressIcon.Location = new System.Drawing.Point(401, 18);
+			this.progressIcon.Name = "progressIcon";
+			this.progressIcon.Size = new System.Drawing.Size(140, 4);
+			this.progressIcon.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+			this.progressIcon.TabIndex = 29;
+			// 
+			// butIconEdit
+			// 
+			this.butIconEdit.ForeColor = System.Drawing.Color.Black;
+			this.butIconEdit.Location = new System.Drawing.Point(512, 134);
+			this.butIconEdit.Name = "butIconEdit";
+			this.butIconEdit.Size = new System.Drawing.Size(24, 23);
+			this.butIconEdit.TabIndex = 28;
+			this.butIconEdit.Text = "✏️";
+			this.butIconEdit.UseVisualStyleBackColor = true;
+			this.butIconEdit.Click += new System.EventHandler(this.butIconEdit_Click);
 			// 
 			// checkExtPerms
 			// 
@@ -387,9 +415,9 @@
 			// 
 			this.boxIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.boxIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.boxIcon.ErrorImage = global::MMBS.Properties.Resources.offlinemods_logo_pns;
-			this.boxIcon.Image = global::MMBS.Properties.Resources.offlinemods_logo_pns;
-			this.boxIcon.InitialImage = global::MMBS.Properties.Resources.offlinemods_logo_pns;
+			this.boxIcon.ErrorImage = ((System.Drawing.Image)(resources.GetObject("boxIcon.ErrorImage")));
+			this.boxIcon.Image = ((System.Drawing.Image)(resources.GetObject("boxIcon.Image")));
+			this.boxIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("boxIcon.InitialImage")));
 			this.boxIcon.Location = new System.Drawing.Point(401, 22);
 			this.boxIcon.Name = "boxIcon";
 			this.boxIcon.Size = new System.Drawing.Size(140, 140);
@@ -398,6 +426,8 @@
 			this.boxIcon.TabStop = false;
 			this.boxIcon.Click += new System.EventHandler(this.boxIcon_Click);
 			this.boxIcon.DoubleClick += new System.EventHandler(this.boxIcon_DoubleClick);
+			this.boxIcon.MouseEnter += new System.EventHandler(this.boxIcon_MouseEnter);
+			this.boxIcon.MouseLeave += new System.EventHandler(this.boxIcon_MouseLeave);
 			// 
 			// checkABold
 			// 
@@ -703,7 +733,7 @@
 			this.butModInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.butModInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.butModInfo.ForeColor = System.Drawing.Color.Lime;
-			this.butModInfo.Location = new System.Drawing.Point(369, 524);
+			this.butModInfo.Location = new System.Drawing.Point(313, 548);
 			this.butModInfo.Name = "butModInfo";
 			this.butModInfo.Size = new System.Drawing.Size(135, 34);
 			this.butModInfo.TabIndex = 5;
@@ -718,10 +748,10 @@
 			this.boxModInfo.DetectUrls = false;
 			this.boxModInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.15F);
 			this.boxModInfo.ForeColor = System.Drawing.Color.White;
-			this.boxModInfo.Location = new System.Drawing.Point(313, 564);
+			this.boxModInfo.Location = new System.Drawing.Point(313, 592);
 			this.boxModInfo.Name = "boxModInfo";
 			this.boxModInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.boxModInfo.Size = new System.Drawing.Size(239, 186);
+			this.boxModInfo.Size = new System.Drawing.Size(239, 158);
 			this.boxModInfo.TabIndex = 6;
 			this.boxModInfo.Text = "";
 			this.boxModInfo.EnabledChanged += new System.EventHandler(this.boxModInfo_EnabledChanged);
@@ -731,8 +761,7 @@
 			// 
 			this.ilistScreenShot.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilistScreenShot.ImageStream")));
 			this.ilistScreenShot.TransparentColor = System.Drawing.Color.Transparent;
-			this.ilistScreenShot.Images.SetKeyName(0, "Avata desu ka.png");
-			this.ilistScreenShot.Images.SetKeyName(1, "bb2w.png");
+			this.ilistScreenShot.Images.SetKeyName(0, "bb2w.png");
 			// 
 			// listImageReview
 			// 
@@ -756,11 +785,12 @@
 			this.listImageReview.UseCompatibleStateImageBehavior = false;
 			this.listImageReview.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListImageReview_DrawItem);
 			this.listImageReview.SelectedIndexChanged += new System.EventHandler(this.listImageReview_SelectedIndexChanged);
+			this.listImageReview.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listImageReview_KeyDown);
 			// 
 			// butDone
 			// 
 			this.butDone.BackColor = System.Drawing.Color.Black;
-			this.butDone.BackgroundImage = global::MMBS.Properties.Resources.offlinemods_logo_pns;
+			this.butDone.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butDone.BackgroundImage")));
 			this.butDone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.butDone.ContextMenuStrip = this.contextmenuPublish;
 			this.butDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -788,7 +818,7 @@
             this.scibanCustomToolStripMenuItem,
             this.scibanCustomExportDataStripItem});
 			this.contextmenuPublish.Name = "contextMenuStrip1";
-			this.contextmenuPublish.Size = new System.Drawing.Size(227, 200);
+			this.contextmenuPublish.Size = new System.Drawing.Size(227, 172);
 			this.contextmenuPublish.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextmenuPublish_ItemClicked);
 			// 
 			// toolStripTextBox1
@@ -834,9 +864,15 @@
 			this.scibanCustomToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
 			this.scibanCustomToolStripMenuItem.Text = "Sciban Custom";
 			// 
+			// scibanCustomExportDataStripItem
+			// 
+			this.scibanCustomExportDataStripItem.Name = "scibanCustomExportDataStripItem";
+			this.scibanCustomExportDataStripItem.Size = new System.Drawing.Size(226, 26);
+			this.scibanCustomExportDataStripItem.Text = "Sciban Custom + Data";
+			// 
 			// boxVreview
 			// 
-			this.boxVreview.Image = global::MMBS.Properties.Resources._2000px_YouTube_full_color_icon__2017__svg;
+			this.boxVreview.Image = ((System.Drawing.Image)(resources.GetObject("boxVreview.Image")));
 			this.boxVreview.InitialImage = null;
 			this.boxVreview.Location = new System.Drawing.Point(568, 539);
 			this.boxVreview.Name = "boxVreview";
@@ -912,6 +948,8 @@
 			// 
 			// groupImage
 			// 
+			this.groupImage.Controls.Add(this.butAddImgClipboard);
+			this.groupImage.Controls.Add(this.progressImage);
 			this.groupImage.Controls.Add(this.labelImageName);
 			this.groupImage.Controls.Add(this.butAddImg);
 			this.groupImage.Controls.Add(this.checkImageinScript);
@@ -928,6 +966,14 @@
 			this.groupImage.TabIndex = 7;
 			this.groupImage.TabStop = false;
 			this.groupImage.Text = "Image";
+			// 
+			// progressImage
+			// 
+			this.progressImage.Location = new System.Drawing.Point(6, 162);
+			this.progressImage.Name = "progressImage";
+			this.progressImage.Size = new System.Drawing.Size(515, 4);
+			this.progressImage.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+			this.progressImage.TabIndex = 30;
 			// 
 			// labelImageName
 			// 
@@ -948,7 +994,7 @@
 			this.butAddImg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.butAddImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.butAddImg.ForeColor = System.Drawing.Color.Black;
-			this.butAddImg.Location = new System.Drawing.Point(500, -4);
+			this.butAddImg.Location = new System.Drawing.Point(495, 11);
 			this.butAddImg.Name = "butAddImg";
 			this.butAddImg.Size = new System.Drawing.Size(28, 28);
 			this.butAddImg.TabIndex = 29;
@@ -1014,6 +1060,7 @@
 			this.boxImageLink.Size = new System.Drawing.Size(348, 22);
 			this.boxImageLink.TabIndex = 20;
 			this.boxImageLink.TabStop = false;
+			this.boxImageLink.TextChanged += new System.EventHandler(this.boxImageLink_TextChanged);
 			// 
 			// boxImage
 			// 
@@ -1040,11 +1087,38 @@
 			this.dialogFile.Title = "Add Images";
 			this.dialogFile.FileOk += new System.ComponentModel.CancelEventHandler(this.dialogFile_FileOk);
 			// 
-			// scibanCustomExportDataStripItem
+			// tipIcon
 			// 
-			this.scibanCustomExportDataStripItem.Name = "scibanCustomExportDataStripItem";
-			this.scibanCustomExportDataStripItem.Size = new System.Drawing.Size(226, 26);
-			this.scibanCustomExportDataStripItem.Text = "Sciban Custom + Data";
+			this.tipIcon.AutoPopDelay = 5000;
+			this.tipIcon.InitialDelay = 100;
+			this.tipIcon.ReshowDelay = 100;
+			this.tipIcon.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+			// 
+			// butIconClipboard
+			// 
+			this.butIconClipboard.ForeColor = System.Drawing.Color.Black;
+			this.butIconClipboard.Location = new System.Drawing.Point(482, 134);
+			this.butIconClipboard.Name = "butIconClipboard";
+			this.butIconClipboard.Size = new System.Drawing.Size(24, 23);
+			this.butIconClipboard.TabIndex = 30;
+			this.butIconClipboard.Text = "📋";
+			this.butIconClipboard.UseVisualStyleBackColor = true;
+			this.butIconClipboard.Click += new System.EventHandler(this.butIconClipboard_Click);
+			// 
+			// butAddImgClipboard
+			// 
+			this.butAddImgClipboard.BackColor = System.Drawing.Color.White;
+			this.butAddImgClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.butAddImgClipboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.butAddImgClipboard.ForeColor = System.Drawing.Color.Black;
+			this.butAddImgClipboard.Location = new System.Drawing.Point(463, 11);
+			this.butAddImgClipboard.Name = "butAddImgClipboard";
+			this.butAddImgClipboard.Size = new System.Drawing.Size(28, 28);
+			this.butAddImgClipboard.TabIndex = 31;
+			this.butAddImgClipboard.Text = "📋";
+			this.butAddImgClipboard.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+			this.butAddImgClipboard.UseVisualStyleBackColor = false;
+			this.butAddImgClipboard.Click += new System.EventHandler(this.butAddImgClipboard_Click);
 			// 
 			// FMForm
 			// 
@@ -1069,6 +1143,7 @@
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ForeColor = System.Drawing.Color.White;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.KeyPreview = true;
 			this.Name = "FMForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Full Manual Form";
@@ -1077,6 +1152,8 @@
 			this.Load += new System.EventHandler(this.FMForm_Load);
 			this.Shown += new System.EventHandler(this.FMForm_Shown);
 			this.VisibleChanged += new System.EventHandler(this.FMForm_VisibleChanged);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FMForm_KeyDown);
+			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FMForm_KeyPress);
 			this.groupInfo.ResumeLayout(false);
 			this.groupInfo.PerformLayout();
 			this.descMenu.ResumeLayout(false);
@@ -1162,5 +1239,11 @@
         private System.Windows.Forms.ToolStripMenuItem pasteHtml;
         private System.Windows.Forms.ToolStripMenuItem scibanCustomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scibanCustomExportDataStripItem;
+        private System.Windows.Forms.Button butIconEdit;
+        private System.Windows.Forms.ToolTip tipIcon;
+        private System.Windows.Forms.ProgressBar progressIcon;
+        private System.Windows.Forms.ProgressBar progressImage;
+        private System.Windows.Forms.Button butIconClipboard;
+        private System.Windows.Forms.Button butAddImgClipboard;
     }
 }
