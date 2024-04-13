@@ -11,20 +11,28 @@
       "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\fmform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\datamodule\\local_image_upload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\datamodule\\local_image_upload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\model\\post_form\\postform240104.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\model\\post_form\\postform240104.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\datamodule\\local_image_upload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\datamodule\\local_image_upload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\datamodule\\standard_data_append.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -243,10 +247,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{860AF57F-2628-483E-B177-D4EF3630B7AD}|MMBS Razor\\MMBS Razor Helper.csproj|d:\\unpublished project\\unpublished project\\ya4r.net\\minimize mybloggersupporter\\mmbs razor\\razor template\\title.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{860AF57F-2628-483E-B177-D4EF3630B7AD}|MMBS Razor\\MMBS Razor Helper.csproj|solutionrelative:mmbs razor\\razor template\\title.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -284,7 +284,7 @@
         },
         {
           "DockedWidth": 283,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -292,63 +292,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FMForm.cs",
-              "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
-              "RelativeDocumentMoniker": "MMBS\\FMForm.cs",
-              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs \u2B24",
-              "RelativeToolTip": "MMBS\\FMForm.cs \u2B24",
-              "ViewState": "AQIAAJ4BAAAAAAAAAAAAAKwBAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-09T13:10:27.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "local_image_upload.cs",
-              "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DataModule\\local_image_upload.cs",
-              "RelativeDocumentMoniker": "MMBS\\DataModule\\local_image_upload.cs",
-              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DataModule\\local_image_upload.cs",
-              "RelativeToolTip": "MMBS\\DataModule\\local_image_upload.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAhwAwAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T02:11:47.047Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "AFForm.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs",
               "RelativeDocumentMoniker": "MMBS\\AFForm.cs",
               "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs",
               "RelativeToolTip": "MMBS\\AFForm.cs",
-              "ViewState": "AQIAABgCAAAAAAAAAAAmwCACAAAUAAAA",
+              "ViewState": "AQIAAPcCAAAAAAAAAAAAAAQDAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-12-31T08:19:42.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PostForm240104.cs",
-              "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\PostForm240104.cs",
-              "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\PostForm240104.cs",
-              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\PostForm240104.cs",
-              "RelativeToolTip": "MMBS\\Model\\post_form\\PostForm240104.cs",
-              "ViewState": "AQIAAKUAAAAAAAAAAAAtwKgAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-21T08:05:46.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Class5.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class5.cs",
               "RelativeDocumentMoniker": "MMBS\\Class5.cs",
-              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class5.cs \u2B24",
-              "RelativeToolTip": "MMBS\\Class5.cs \u2B24",
+              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class5.cs",
+              "RelativeToolTip": "MMBS\\Class5.cs",
               "ViewState": "AQIAACsBAAAAAAAAAAAcwEABAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-01-06T07:35:16.273Z",
@@ -356,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 5,
               "Title": "Class2.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class2.cs",
               "RelativeDocumentMoniker": "MMBS\\Class2.cs",
@@ -373,15 +335,66 @@
               "Title": "FMForm.cs [Design]",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
               "RelativeDocumentMoniker": "MMBS\\FMForm.cs",
-              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs [Design] \u2B24",
-              "RelativeToolTip": "MMBS\\FMForm.cs [Design] \u2B24",
+              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs [Design]",
+              "RelativeToolTip": "MMBS\\FMForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-11T05:15:19.093Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "FMForm.cs",
+              "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
+              "RelativeDocumentMoniker": "MMBS\\FMForm.cs",
+              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
+              "RelativeToolTip": "MMBS\\FMForm.cs",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAAAHcAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-09T13:10:27.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "local_image_upload.cs",
+              "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DataModule\\local_image_upload.cs",
+              "RelativeDocumentMoniker": "MMBS\\DataModule\\local_image_upload.cs",
+              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DataModule\\local_image_upload.cs",
+              "RelativeToolTip": "MMBS\\DataModule\\local_image_upload.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAhwAwAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T02:11:47.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AFForm.cs [Design]",
+              "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs",
+              "RelativeDocumentMoniker": "MMBS\\AFForm.cs",
+              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs [Design]",
+              "RelativeToolTip": "MMBS\\AFForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-31T08:01:27.536Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PostForm240104.cs",
+              "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\PostForm240104.cs",
+              "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\PostForm240104.cs",
+              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\PostForm240104.cs",
+              "RelativeToolTip": "MMBS\\Model\\post_form\\PostForm240104.cs",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAtwKgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-21T08:05:46.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Class6.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class6.cs",
               "RelativeDocumentMoniker": "MMBS\\Class6.cs",
@@ -394,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Program.cs",
               "RelativeDocumentMoniker": "MMBS\\Program.cs",
@@ -406,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.cs",
               "RelativeDocumentMoniker": "MMBS\\Form1.cs",
@@ -418,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ZZZOptions.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\ZZZOptions.cs",
               "RelativeDocumentMoniker": "MMBS\\ZZZOptions.cs",
@@ -431,7 +444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "standard_data_append.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DataModule\\standard_data_append.cs",
               "RelativeDocumentMoniker": "MMBS\\DataModule\\standard_data_append.cs",
@@ -443,7 +456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class1.cs",
               "RelativeDocumentMoniker": "MMBS\\Class1.cs",
@@ -456,7 +469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "CustomDataManagement.Designer.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\CustomDataManagement.Designer.cs",
               "RelativeDocumentMoniker": "MMBS\\CustomDataManagement.Designer.cs",
@@ -468,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Class4.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class4.cs",
               "RelativeDocumentMoniker": "MMBS\\Class4.cs",
@@ -480,7 +493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.cs",
               "RelativeDocumentMoniker": "MMBS\\Form1.cs",
@@ -491,7 +504,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "mmbs_template_model_v1.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\mmbs_template_model_v1.cs",
               "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\mmbs_template_model_v1.cs",
@@ -503,7 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Class3.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class3.cs",
               "RelativeDocumentMoniker": "MMBS\\Class3.cs",
@@ -515,7 +528,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "RTFBuilderbase.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Somethings\\RTFBuilderbase.cs",
               "RelativeDocumentMoniker": "MMBS\\Somethings\\RTFBuilderbase.cs",
@@ -527,7 +540,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "MMBS",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\MMBS.csproj",
               "RelativeDocumentMoniker": "MMBS\\MMBS.csproj",
@@ -538,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "MainProcessorTests.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\MainProcessorTests.cs",
               "RelativeDocumentMoniker": "coretestDownloadLink1\\MainProcessorTests.cs",
@@ -550,7 +563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "CustomDataManagement.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\CustomDataManagement.cs",
               "RelativeDocumentMoniker": "MMBS\\CustomDataManagement.cs",
@@ -562,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "PostFormGeneralCustom.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\PostFormGeneralCustom.cs",
               "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\PostFormGeneralCustom.cs",
@@ -574,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "CustomDataManagement.cs [Design]",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\CustomDataManagement.cs",
               "RelativeDocumentMoniker": "MMBS\\CustomDataManagement.cs",
@@ -585,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "page.scriban-html",
               "DocumentMoniker": "C:\\BloggerSupporter\\template\\page.scriban-html",
               "ToolTip": "C:\\BloggerSupporter\\template\\page.scriban-html",
@@ -594,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "custom_post_template_debug_tool_form.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.cs",
               "RelativeDocumentMoniker": "MMBS\\custom_post_template_debug_tool_form.cs",
@@ -606,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ProcSupporterTests.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\ProcSupporterTests.cs",
               "RelativeDocumentMoniker": "coretestDownloadLink1\\ProcSupporterTests.cs",
@@ -618,7 +631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "CustomizePostResultTests.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\CustomizePostResultTests.cs",
               "RelativeDocumentMoniker": "coretestDownloadLink1\\CustomizePostResultTests.cs",
@@ -630,7 +643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "CPTServicesTests.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\CPTServicesTests.cs",
               "RelativeDocumentMoniker": "coretestDownloadLink1\\CPTServicesTests.cs",
@@ -642,7 +655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "custom_post_template_debug_tool_form.Designer.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.Designer.cs",
               "RelativeDocumentMoniker": "MMBS\\custom_post_template_debug_tool_form.Designer.cs",
@@ -654,7 +667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "custom_post_template_debug_tool_form.cs [Design]",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.cs",
               "RelativeDocumentMoniker": "MMBS\\custom_post_template_debug_tool_form.cs",
@@ -665,7 +678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "page.scriban-html",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\page.scriban-html",
               "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\page.scriban-html",
@@ -677,7 +690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "Bindable.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Framework\\Bindable.cs",
               "RelativeDocumentMoniker": "MMBS\\Framework\\Bindable.cs",
@@ -689,7 +702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "Command.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Framework\\Command.cs",
               "RelativeDocumentMoniker": "MMBS\\Framework\\Command.cs",
@@ -701,7 +714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "FormResult.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FormResult.cs",
               "RelativeDocumentMoniker": "MMBS\\FormResult.cs",
@@ -713,7 +726,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "FormResult.cs [Design]",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FormResult.cs",
               "RelativeDocumentMoniker": "MMBS\\FormResult.cs",
@@ -724,7 +737,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "custom_post_template_debug_tool_form.resx",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.resx",
               "RelativeDocumentMoniker": "MMBS\\custom_post_template_debug_tool_form.resx",
@@ -735,7 +748,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\Program.cs",
               "RelativeDocumentMoniker": "MMBS Razor\\Program.cs",
@@ -746,7 +759,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "mmbs_template_model_v1.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\Razor Template\\mmbs_template_model_v1.cs",
               "RelativeDocumentMoniker": "MMBS Razor\\Razor Template\\mmbs_template_model_v1.cs",
@@ -757,7 +770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "PostFormBase.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\PostFormBase.cs",
               "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\PostFormBase.cs",
@@ -769,7 +782,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "DefaultResource.resx",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DefaultResource.resx",
               "RelativeDocumentMoniker": "MMBS\\DefaultResource.resx",
@@ -781,7 +794,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "DefaultResource.Designer.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DefaultResource.Designer.cs",
               "RelativeDocumentMoniker": "MMBS\\DefaultResource.Designer.cs",
@@ -793,7 +806,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "App.razor",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\Components\\App.razor",
               "RelativeDocumentMoniker": "MMBS Local Web\\Components\\App.razor",
@@ -804,7 +817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "Routes.razor",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "MMBS Local Web\\Components\\Routes.razor",
@@ -815,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "MMBS Local Web\\Components\\Layout\\MainLayout.razor",
@@ -826,7 +839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "MMBS Local Web\\Components\\Layout\\NavMenu.razor",
@@ -837,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "bootstrap.min.css",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\wwwroot\\bootstrap\\bootstrap.min.css",
               "RelativeDocumentMoniker": "MMBS Local Web\\wwwroot\\bootstrap\\bootstrap.min.css",
@@ -859,7 +872,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "page.cshtml",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\Razor Template\\page.cshtml",
               "RelativeDocumentMoniker": "MMBS Razor\\Razor Template\\page.cshtml",
@@ -870,7 +883,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "Microsoft.WinUI.targets",
               "DocumentMoniker": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WinUI.targets",
               "ToolTip": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WinUI.targets",
@@ -879,7 +892,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "Microsoft.WindowsAppSDK.targets",
               "DocumentMoniker": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WindowsAppSDK.targets",
               "ToolTip": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WindowsAppSDK.targets",
@@ -888,7 +901,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "tempCDF.cs [Design]",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\tempCDF.cs",
               "RelativeDocumentMoniker": "MMBS\\tempCDF.cs",
@@ -899,7 +912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "SMForm.cs [Design]",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\SMForm.cs",
               "RelativeDocumentMoniker": "MMBS\\SMForm.cs",
@@ -910,19 +923,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "FMForm.resx",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.resx",
               "RelativeDocumentMoniker": "MMBS\\FMForm.resx",
-              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.resx \u2B24",
-              "RelativeToolTip": "MMBS\\FMForm.resx \u2B24",
+              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.resx",
+              "RelativeToolTip": "MMBS\\FMForm.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
               "WhenOpened": "2024-01-09T13:08:23.282Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "packages.config",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\packages.config",
               "RelativeDocumentMoniker": "MMBS\\packages.config",
@@ -934,7 +947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "Form1.resx",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.resx",
               "RelativeDocumentMoniker": "MMBS\\Form1.resx",
@@ -945,7 +958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "Form1.en-US.resx",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.en-US.resx",
               "RelativeDocumentMoniker": "MMBS\\Form1.en-US.resx",
@@ -956,7 +969,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "MMBS\\Form1.Designer.cs",
@@ -968,7 +981,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "HonmyoU.snk",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\HonmyoU.snk",
               "RelativeDocumentMoniker": "MMBS\\HonmyoU.snk",
@@ -979,7 +992,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "web.config",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\web.config",
               "RelativeDocumentMoniker": "MMBS\\web.config",
@@ -991,7 +1004,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "todo.txt",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\todo.txt",
               "RelativeDocumentMoniker": "MMBS\\todo.txt",
@@ -1003,7 +1016,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "ColorByRegexConfig.txt",
               "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
               "RelativeDocumentMoniker": ".vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
@@ -1011,18 +1024,6 @@
               "RelativeToolTip": ".vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-01-05T13:50:56.632Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "AFForm.cs [Design]",
-              "DocumentMoniker": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs",
-              "RelativeDocumentMoniker": "MMBS\\AFForm.cs",
-              "ToolTip": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs [Design]",
-              "RelativeToolTip": "MMBS\\AFForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-31T08:01:27.536Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

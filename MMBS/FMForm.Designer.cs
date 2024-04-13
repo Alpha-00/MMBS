@@ -104,6 +104,10 @@
 			this.tipIcon = new System.Windows.Forms.ToolTip(this.components);
 			this.butIconClipboard = new System.Windows.Forms.Button();
 			this.butAddImgClipboard = new System.Windows.Forms.Button();
+			this.listCredit = new System.Windows.Forms.ComboBox();
+			this.boxPackage = new System.Windows.Forms.TextBox();
+			this.labelPackage = new System.Windows.Forms.Label();
+			this.labelAuthor = new System.Windows.Forms.Label();
 			this.groupInfo.SuspendLayout();
 			this.descMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.boxIcon)).BeginInit();
@@ -137,6 +141,7 @@
 			// 
 			this.groupInfo.Controls.Add(this.butIconClipboard);
 			this.groupInfo.Controls.Add(this.progressIcon);
+			this.groupInfo.Controls.Add(this.webBrowser1);
 			this.groupInfo.Controls.Add(this.butIconEdit);
 			this.groupInfo.Controls.Add(this.checkExtPerms);
 			this.groupInfo.Controls.Add(this.boxAppname);
@@ -874,9 +879,9 @@
 			// 
 			this.boxVreview.Image = ((System.Drawing.Image)(resources.GetObject("boxVreview.Image")));
 			this.boxVreview.InitialImage = null;
-			this.boxVreview.Location = new System.Drawing.Point(568, 539);
+			this.boxVreview.Location = new System.Drawing.Point(948, 491);
 			this.boxVreview.Name = "boxVreview";
-			this.boxVreview.Size = new System.Drawing.Size(160, 119);
+			this.boxVreview.Size = new System.Drawing.Size(138, 86);
 			this.boxVreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.boxVreview.TabIndex = 18;
 			this.boxVreview.TabStop = false;
@@ -888,9 +893,9 @@
 			this.boxVideoLink.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.boxVideoLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
 			this.boxVideoLink.ForeColor = System.Drawing.Color.White;
-			this.boxVideoLink.Location = new System.Drawing.Point(734, 636);
+			this.boxVideoLink.Location = new System.Drawing.Point(571, 518);
 			this.boxVideoLink.Name = "boxVideoLink";
-			this.boxVideoLink.Size = new System.Drawing.Size(352, 22);
+			this.boxVideoLink.Size = new System.Drawing.Size(353, 22);
 			this.boxVideoLink.TabIndex = 8;
 			this.boxVideoLink.TextChanged += new System.EventHandler(this.boxVideoLink_TextChanged);
 			// 
@@ -901,7 +906,7 @@
 			this.labelVideo.DisabledLinkColor = System.Drawing.Color.Gray;
 			this.labelVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.labelVideo.LinkColor = System.Drawing.Color.White;
-			this.labelVideo.Location = new System.Drawing.Point(736, 606);
+			this.labelVideo.Location = new System.Drawing.Point(570, 487);
 			this.labelVideo.Name = "labelVideo";
 			this.labelVideo.Size = new System.Drawing.Size(110, 20);
 			this.labelVideo.TabIndex = 20;
@@ -917,12 +922,12 @@
 			this.butCacheFolder.FlatAppearance.BorderSize = 2;
 			this.butCacheFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.butCacheFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.butCacheFolder.Location = new System.Drawing.Point(993, 539);
+			this.butCacheFolder.Location = new System.Drawing.Point(571, 546);
 			this.butCacheFolder.Name = "butCacheFolder";
-			this.butCacheFolder.Size = new System.Drawing.Size(102, 31);
+			this.butCacheFolder.Size = new System.Drawing.Size(137, 25);
 			this.butCacheFolder.TabIndex = 21;
 			this.butCacheFolder.TabStop = false;
-			this.butCacheFolder.Text = "Open Folder";
+			this.butCacheFolder.Text = "Open Media Folder";
 			this.butCacheFolder.UseVisualStyleBackColor = false;
 			this.butCacheFolder.Click += new System.EventHandler(this.butCacheFolder_Click);
 			// 
@@ -937,7 +942,7 @@
 			this.checkVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.checkVideo.ForeColor = System.Drawing.Color.Lime;
 			this.checkVideo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-			this.checkVideo.Location = new System.Drawing.Point(1068, 610);
+			this.checkVideo.Location = new System.Drawing.Point(685, 491);
 			this.checkVideo.Name = "checkVideo";
 			this.checkVideo.Size = new System.Drawing.Size(14, 13);
 			this.checkVideo.TabIndex = 22;
@@ -962,7 +967,7 @@
 			this.groupImage.ForeColor = System.Drawing.Color.White;
 			this.groupImage.Location = new System.Drawing.Point(565, 11);
 			this.groupImage.Name = "groupImage";
-			this.groupImage.Size = new System.Drawing.Size(527, 507);
+			this.groupImage.Size = new System.Drawing.Size(527, 459);
 			this.groupImage.TabIndex = 7;
 			this.groupImage.TabStop = false;
 			this.groupImage.Text = "Image";
@@ -979,7 +984,7 @@
 			// 
 			this.labelImageName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelImageName.AutoSize = true;
-			this.labelImageName.Location = new System.Drawing.Point(6, 444);
+			this.labelImageName.Location = new System.Drawing.Point(6, 400);
 			this.labelImageName.Name = "labelImageName";
 			this.labelImageName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.labelImageName.Size = new System.Drawing.Size(103, 20);
@@ -1014,7 +1019,7 @@
 			this.checkImageinScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.checkImageinScript.ForeColor = System.Drawing.Color.Lime;
 			this.checkImageinScript.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-			this.checkImageinScript.Location = new System.Drawing.Point(152, 4);
+			this.checkImageinScript.Location = new System.Drawing.Point(68, 4);
 			this.checkImageinScript.Name = "checkImageinScript";
 			this.checkImageinScript.Size = new System.Drawing.Size(14, 13);
 			this.checkImageinScript.TabIndex = 24;
@@ -1026,7 +1031,7 @@
 			// checkImageUse
 			// 
 			this.checkImageUse.AutoSize = true;
-			this.checkImageUse.Location = new System.Drawing.Point(358, 170);
+			this.checkImageUse.Location = new System.Drawing.Point(295, 428);
 			this.checkImageUse.Name = "checkImageUse";
 			this.checkImageUse.Size = new System.Drawing.Size(61, 24);
 			this.checkImageUse.TabIndex = 22;
@@ -1042,7 +1047,7 @@
 			this.labelDuplicated.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.labelDuplicated.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
 			this.labelDuplicated.ForeColor = System.Drawing.Color.Red;
-			this.labelDuplicated.Location = new System.Drawing.Point(393, 480);
+			this.labelDuplicated.Location = new System.Drawing.Point(224, 392);
 			this.labelDuplicated.Name = "labelDuplicated";
 			this.labelDuplicated.Size = new System.Drawing.Size(135, 31);
 			this.labelDuplicated.TabIndex = 21;
@@ -1055,25 +1060,25 @@
 			this.boxImageLink.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.boxImageLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
 			this.boxImageLink.ForeColor = System.Drawing.Color.White;
-			this.boxImageLink.Location = new System.Drawing.Point(6, 474);
+			this.boxImageLink.Location = new System.Drawing.Point(6, 430);
 			this.boxImageLink.Name = "boxImageLink";
-			this.boxImageLink.Size = new System.Drawing.Size(348, 22);
+			this.boxImageLink.Size = new System.Drawing.Size(280, 22);
 			this.boxImageLink.TabIndex = 20;
 			this.boxImageLink.TabStop = false;
 			this.boxImageLink.TextChanged += new System.EventHandler(this.boxImageLink_TextChanged);
 			// 
 			// boxImage
 			// 
-			this.boxImage.Location = new System.Drawing.Point(6, 169);
+			this.boxImage.Location = new System.Drawing.Point(6, 173);
 			this.boxImage.Name = "boxImage";
-			this.boxImage.Size = new System.Drawing.Size(346, 295);
+			this.boxImage.Size = new System.Drawing.Size(346, 211);
 			this.boxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.boxImage.TabIndex = 18;
 			this.boxImage.TabStop = false;
 			// 
 			// webBrowser1
 			// 
-			this.webBrowser1.Location = new System.Drawing.Point(734, 543);
+			this.webBrowser1.Location = new System.Drawing.Point(6, 105);
 			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
 			this.webBrowser1.Name = "webBrowser1";
 			this.webBrowser1.Size = new System.Drawing.Size(62, 56);
@@ -1120,16 +1125,71 @@
 			this.butAddImgClipboard.UseVisualStyleBackColor = false;
 			this.butAddImgClipboard.Click += new System.EventHandler(this.butAddImgClipboard_Click);
 			// 
+			// listCredit
+			// 
+			this.listCredit.Font = new System.Drawing.Font("Calibri", 10F);
+			this.listCredit.FormattingEnabled = true;
+			this.listCredit.Location = new System.Drawing.Point(825, 627);
+			this.listCredit.Name = "listCredit";
+			this.listCredit.Size = new System.Drawing.Size(268, 29);
+			this.listCredit.TabIndex = 23;
+			this.listCredit.Text = "Credit";
+			this.listCredit.SelectedIndexChanged += new System.EventHandler(this.listCredit_SelectedIndexChanged);
+			// 
+			// boxPackage
+			// 
+			this.boxPackage.AutoCompleteCustomSource.AddRange(new string[] {
+            "Android 2.3+",
+            "Android 4.0+",
+            "Android 4.1+",
+            "Android 5.0+",
+            "Android 6.0+"});
+			this.boxPackage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.boxPackage.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.boxPackage.BackColor = System.Drawing.Color.Black;
+			this.boxPackage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.boxPackage.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.boxPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.boxPackage.ForeColor = System.Drawing.Color.White;
+			this.boxPackage.Location = new System.Drawing.Point(566, 627);
+			this.boxPackage.Name = "boxPackage";
+			this.boxPackage.Size = new System.Drawing.Size(240, 27);
+			this.boxPackage.TabIndex = 33;
+			this.boxPackage.TextChanged += new System.EventHandler(this.boxPackage_TextChanged);
+			// 
+			// labelPackage
+			// 
+			this.labelPackage.AutoSize = true;
+			this.labelPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.labelPackage.Location = new System.Drawing.Point(570, 602);
+			this.labelPackage.Name = "labelPackage";
+			this.labelPackage.Size = new System.Drawing.Size(107, 20);
+			this.labelPackage.TabIndex = 34;
+			this.labelPackage.Text = "App Package";
+			// 
+			// labelAuthor
+			// 
+			this.labelAuthor.AutoSize = true;
+			this.labelAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.labelAuthor.Location = new System.Drawing.Point(828, 601);
+			this.labelAuthor.Name = "labelAuthor";
+			this.labelAuthor.Size = new System.Drawing.Size(58, 20);
+			this.labelAuthor.TabIndex = 35;
+			this.labelAuthor.Text = "Author";
+			// 
 			// FMForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(1104, 762);
-			this.Controls.Add(this.webBrowser1);
+			this.Controls.Add(this.labelAuthor);
+			this.Controls.Add(this.labelPackage);
+			this.Controls.Add(this.boxPackage);
+			this.Controls.Add(this.listCredit);
 			this.Controls.Add(this.groupImage);
-			this.Controls.Add(this.checkVideo);
 			this.Controls.Add(this.butCacheFolder);
+			this.Controls.Add(this.checkVideo);
 			this.Controls.Add(this.labelVideo);
 			this.Controls.Add(this.boxVideoLink);
 			this.Controls.Add(this.boxVreview);
@@ -1245,5 +1305,9 @@
         private System.Windows.Forms.ProgressBar progressImage;
         private System.Windows.Forms.Button butIconClipboard;
         private System.Windows.Forms.Button butAddImgClipboard;
+        private System.Windows.Forms.ComboBox listCredit;
+        private System.Windows.Forms.TextBox boxPackage;
+        private System.Windows.Forms.Label labelPackage;
+        private System.Windows.Forms.Label labelAuthor;
     }
 }
