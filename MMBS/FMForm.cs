@@ -114,6 +114,11 @@ namespace MMBS
             LoadVideoReview(thenow.postmedia.VideoReview);
             this.clistMirrorlink.Items.Clear();
 
+            boxPackage.Text = thenow.appinfo.packagename;
+            listCredit.Items.Clear();
+            ImportCreditList();
+            //listCredit.Text = thenow.credit.now.name;
+
             // UI switch
             if (boxIcon.Image != null) butIconEdit.Visible = false;
             if (boxIcon.Image != null) butIconClipboard.Visible = false;
@@ -156,7 +161,11 @@ namespace MMBS
                     listImageReview.Refresh();
                 }
             }
-            
+
+            if (Ilist != null && Ilist.Any((item)=> item.enable)) {
+                this.checkImageinScript.Checked = true;
+            }
+
         }
         
         public void LoadVideoReview(PostDataBundle.PostMediapack.VideoReviewpack v)
@@ -1300,6 +1309,56 @@ namespace MMBS
             }
             await updateIconByLink(text);
             //MessageBox.Show("Trigger Clipboard Event");
+        }
+
+        private void boxPackage_TextChanged(object sender, EventArgs e)
+        {
+            FormData.appinfo.packagename = boxPackage.Text;
+        }
+        public void ImportCreditList()
+        {
+            int selected = 0;
+            listCredit.Items.Clear();
+            if (PostDataBundle.creditpack.CreditsList.list != null && PostDataBundle.creditpack.CreditsList.list.Count > 0)
+            {
+                foreach (PostDataBundle.creditpack.CreditsList.CreditItem credit in PostDataBundle.creditpack.CreditsList.list)
+                {
+                    listCredit.Items.Add(credit.GetPreview(true));
+                }
+            }
+            listCredit.Items.Add("...other");
+            listCredit.SelectedIndex = FormData.credit.defIndex;
+        }
+
+        private void listCredit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listCredit.SelectedIndex == -1)
+            {
+
+            }
+            else if (listCredit.SelectedIndex == listCredit.Items.Count - 1)
+            {
+                string cache = Microsoft.VisualBasic.Interaction.InputBox("Vui lòng nhập Credit.\nGợi ý Format: [Tên] ([Tên website])", "Credit Input");
+                if (!string.IsNullOrEmpty(cache))
+                {
+                    if (cache.Contains(" (") && cache.Contains(")") && cache.LastIndexOf("(") < cache.LastIndexOf(")") && cache.Trim(' ').LastIndexOf(")") == cache.Trim().Count() - 1)
+                    {
+                        string mini = cache.Substring(cache.LastIndexOf("(") + 1).Trim(' ');
+                        mini = mini.Remove(mini.Count() - 1);
+                        PostDataBundle.creditpack.CreditsList.New(cache.Remove(cache.LastIndexOf("(")).Trim(' '), mini);
+                    }
+                    else
+                        PostDataBundle.creditpack.CreditsList.New(cache, "");
+                    ImportCreditList();
+                    listCredit.SelectedIndex = listCredit.Items.Count - 2;
+                    FormData.credit.SaveData();
+                }
+            }
+            else
+            {
+                FormData.credit.nowIndex = listCredit.SelectedIndex;
+                FormData.credit.now = PostDataBundle.creditpack.CreditsList.list[listCredit.SelectedIndex];
+            }
         }
     }
 }

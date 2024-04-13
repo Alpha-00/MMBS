@@ -103,7 +103,7 @@
             This string use for store that I don't know where to get
             </summary>
         </member>
-        <member name="F:MMBS.ApisCall.ImgurAPI.imgurSR">
+        <member name="F:MMBS.ApiService.ImgurAPI.imgurSR">
             <summary>
             Secret Key of Imgur
             </summary>
@@ -117,6 +117,11 @@
         <member name="T:MMBS.API.InteractDebugger">
             <summary>
             Is a couple with mLAMB API Interact Debugger
+            </summary>
+        </member>
+        <member name="T:MMBS.SystemAlt">
+            <summary>
+            Alternative Implementation for System API
             </summary>
         </member>
         <member name="M:MMBS.SystemAlt.ProcessHoldingClipboard">
