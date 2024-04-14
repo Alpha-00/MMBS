@@ -23,6 +23,7 @@ using System.Net.Http;
 using Imgur.API.Models;
 using System.Text.RegularExpressions;
 using System.Web.Helpers;
+using System.Windows.Forms;
 
 namespace MMBS
 {
@@ -31,17 +32,26 @@ namespace MMBS
     {
 
     }
+    /// <summary>
+    /// Custom Function for templating in string type
+    /// </summary>
     public static class StringExtension
     {
+        /// <summary>
+        /// Split a string by a long separator
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="separator">May have multiple character</param>
+        /// <returns></returns>
         public static string[] Split(this String str, string separator)
         {
 
             List<string> cache = new List<string>();
-            string mini = str;
+            var mini = str;
 
             while (mini.Contains(separator))
             {
-                string proc_cache = mini.Remove(mini.IndexOf(separator));
+                var proc_cache = mini.Remove(mini.IndexOf(separator));
                 if (!string.IsNullOrEmpty(mini))
                 {
                     cache.Add(proc_cache);
@@ -54,8 +64,17 @@ namespace MMBS
 
         }
     }
+    /// <summary>
+    /// Extends basic function for Image type
+    /// </summary>
     public static class ImageExtension
     {
+        /// <summary>
+        /// Conver Image to a stream file using Memory Stream
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="format"></param>
+        /// <returns></returns>
         public static Stream ToStream(this System.Drawing.Image image, System.Drawing.Imaging.ImageFormat format)
         {
             var stream = new System.IO.MemoryStream();
@@ -64,8 +83,17 @@ namespace MMBS
             return stream;
         }
     }
+    /// <summary>
+    /// Extends some uri behavior
+    /// </summary>
     public static class UriExtension
     {
+        /// <summary>
+        /// Get value of the query part by finding base on key
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static string QueryKey(this Uri uri, string key)
         {
             if (String.IsNullOrEmpty(uri.Query) && (uri.Query.Trim() != "?")) return null;
@@ -161,14 +189,16 @@ namespace MMBS
                 SizeSuffixes[mag]);
         }
     }
-
+    /// <summary>
+    /// Service for External API
+    /// </summary>
     public static class ApiService
     {
         public class BloggerAPI
         {
-            string ApplicationName = "MMBS";
+            const string ApplicationName = "MMBS";
             UserCredential credential;
-            BloggerService service;
+            private BloggerService service;
             public Post postcache;
             public string BlogID;
             public BloggerAPI(string BlogID)
@@ -230,7 +260,7 @@ namespace MMBS
                     {
                         return _id;
                     }
-                    if (loadIdFromFile())
+                    if (!loadIdFromFile())
                         loadIdFromForm();
                     if (String.IsNullOrEmpty(_id)) throw new Exception("Imgur ID required");
                     return _id;
@@ -245,7 +275,7 @@ namespace MMBS
                     {
                         return _secret;
                     }
-                    if (loadIdFromFile())
+                    if (!loadIdFromFile())
                         loadIdFromForm();
                     if (String.IsNullOrEmpty(_secret)) throw new Exception("Imgur Secret required");
                     return _secret;
@@ -260,6 +290,9 @@ namespace MMBS
                     this.id = id;
                     this.secret = secret;
                 }
+                public ImgurIdModel()
+                {
+                }
             }
             private bool loadIdFromFile()
             {
@@ -267,7 +300,7 @@ namespace MMBS
                 var path = Class1.GetToken("imgurDir");
                 if (!System.IO.File.Exists(path)) return false;
                 var text = System.IO.File.ReadAllText(path);
-                var data = Json.Decode<ImgurIdModel>(text);
+                var data = Json.Decode(text,typeof(ImgurIdModel));
                 if (data == null) return false;
                 if (data.id == null) return false;
                 if (data.secret == null) return false;
@@ -279,6 +312,7 @@ namespace MMBS
             private void loadIdFromForm()
             {
                 var form = new QueryForm.ImgurIdQueryForm();
+                form.Location = new System.Drawing.Point((Screen.PrimaryScreen.WorkingArea.Width - form.Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - form.Height) / 2);
                 if (form.ShowDialog() != System.Windows.Forms.DialogResult.OK) { System.Windows.Forms.MessageBox.Show("Dialog closed. Process can't be continue"); }
                 // Set data
                 _id = form.imgurID;

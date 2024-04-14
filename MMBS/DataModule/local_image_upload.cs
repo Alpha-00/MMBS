@@ -21,7 +21,7 @@ namespace MMBS.DataModule
             data.name = Path.GetFileNameWithoutExtension(path);
 
             var client = new ApiService.ImgurAPI();
-            Imgur.API.Endpoints.ImageEndpoint account = new Imgur.API.Endpoints.ImageEndpoint(ApiService.ImgurAPI.apiClient, new System.Net.Http.HttpClient());
+            Imgur.API.Endpoints.ImageEndpoint account = new Imgur.API.Endpoints.ImageEndpoint(client.apiClient, new System.Net.Http.HttpClient());
             try
             {
                 Imgur.API.Models.IImage result;

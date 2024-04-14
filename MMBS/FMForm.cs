@@ -942,7 +942,7 @@ namespace MMBS
             if (res == DialogResult.OK)
             {
                 var uploadResult = await client.Upload(dialogFile.FileName);
-                if (uploadResult != 0) { MessageBox.Show("Imgur image upload failed with code "+ uploadResult + "\n" + dialogFile.FileName,"Upload Failed"); return;  }
+                if (uploadResult != 0) { MessageBox.Show("Imgur image upload failed with code "+ uploadResult + "\n" + dialogFile.FileName,"Upload Failed"); processIconCounter--; return;  }
                 FormData.appinfo.Icon.enable = true;
                 FormData.appinfo.Icon.link = client.GetUrl();
                 FormData.appinfo.Icon.dir = dialogFile.FileName;
@@ -957,11 +957,11 @@ namespace MMBS
             processIconCounter++;
             ApiService.ImgurAPI client = new ApiService.ImgurAPI();
             var imgClipboard = input ?? Clipboard.GetImage();
-            if (imgClipboard == null) { return;  }
+            if (imgClipboard == null) { processIconCounter--; return;  }
 
 
                 var uploadResult = await client.Upload(imgClipboard.ToStream(System.Drawing.Imaging.ImageFormat.Jpeg));
-                if (uploadResult != 0) { MessageBox.Show("Imgur image upload failed with code " + uploadResult, "Upload Failed"); return; }
+                if (uploadResult != 0) { MessageBox.Show("Imgur image upload failed with code " + uploadResult, "Upload Failed"); processIconCounter--; return; }
                 FormData.appinfo.Icon.enable = true;
                 FormData.appinfo.Icon.link = client.GetUrl();
                 FormData.appinfo.Icon.dir = dialogFile.FileName;
@@ -1236,10 +1236,11 @@ namespace MMBS
         private int _progressIconCounter = 0;
         private int processIconCounter
         {
-            get { return _progressIconCounter; } 
+            get => _progressIconCounter;
             set
             {
                 _progressIconCounter = value;
+                if (_progressIconCounter < 0) { throw new Exception("Progress Manager Fatal Error"); };
                 if (_progressIconCounter > 0)
                 {
                     progressIcon.Visible = true;
@@ -1252,14 +1253,12 @@ namespace MMBS
         private int _progressImageCounter = 0;
         private int processImageCounter
         {
-            get
-            {
-                return _progressIconCounter;
-            }
+            get => _progressImageCounter;
             set
             {
-                _progressIconCounter = value;
-                if (_progressIconCounter > 0)
+                _progressImageCounter = value;
+                if (_progressImageCounter < 0) { throw new Exception("Progress Manager Fatal Error"); };
+                if (_progressImageCounter > 0)
                 {
                     progressImage.Visible = true;
                     return;
