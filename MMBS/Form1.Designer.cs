@@ -284,6 +284,7 @@
 			// formSMF
 			// 
 			this.formSMF.BackColor = System.Drawing.Color.Black;
+			this.formSMF.Enabled = false;
 			this.formSMF.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
 			this.formSMF.FlatAppearance.BorderSize = 2;
 			this.formSMF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
