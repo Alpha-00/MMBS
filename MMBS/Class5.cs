@@ -22,6 +22,7 @@ using Imgur.API.Endpoints;
 using System.Net.Http;
 using Imgur.API.Models;
 using System.Text.RegularExpressions;
+using System.Web.Helpers;
 
 namespace MMBS
 {
@@ -218,14 +219,92 @@ namespace MMBS
         }
         public class ImgurAPI
         {
-            private const string imgurID = "9334e3b9906c667";
+            private string _id = "";
+            private string _secret = "";
+
+            private string imgurID {
+                get
+                {
+                    // If already load
+                    if (!String.IsNullOrEmpty(_id))
+                    {
+                        return _id;
+                    }
+                    if (loadIdFromFile())
+                        loadIdFromForm();
+                    if (String.IsNullOrEmpty(_id)) throw new Exception("Imgur ID required");
+                    return _id;
+                }
+            }
+            private string imgurSecret
+            {
+                get
+                {
+                    // If already load
+                    if (!String.IsNullOrEmpty(_secret))
+                    {
+                        return _secret;
+                    }
+                    if (loadIdFromFile())
+                        loadIdFromForm();
+                    if (String.IsNullOrEmpty(_secret)) throw new Exception("Imgur Secret required");
+                    return _secret;
+                }
+            }
+            private class ImgurIdModel
+            {
+                public string id;
+                public string secret;
+                public ImgurIdModel(string id, string secret)
+                {
+                    this.id = id;
+                    this.secret = secret;
+                }
+            }
+            private bool loadIdFromFile()
+            {
+                // Loading from file
+                var path = Class1.GetToken("imgurDir");
+                if (!System.IO.File.Exists(path)) return false;
+                var text = System.IO.File.ReadAllText(path);
+                var data = Json.Decode<ImgurIdModel>(text);
+                if (data == null) return false;
+                if (data.id == null) return false;
+                if (data.secret == null) return false;
+
+                this._secret = data.secret;
+                this._id = data.id;
+                return true;
+            }
+            private void loadIdFromForm()
+            {
+                var form = new QueryForm.ImgurIdQueryForm();
+                if (form.ShowDialog() != System.Windows.Forms.DialogResult.OK) { System.Windows.Forms.MessageBox.Show("Dialog closed. Process can't be continue"); }
+                // Set data
+                _id = form.imgurID;
+                _secret = form.imgurSecret;
+                // Save data
+                var path = Class1.GetToken("imgurDir");
+                var data = new ImgurIdModel(_id, _secret);
+                var text = Json.Encode(data);
+                System.IO.File.WriteAllText(path, text);
+            }
+            //private const string imgurID = "9334e3b9906c667";
             /// <summary>
             /// Secret Key of Imgur
             /// </summary>
-            private const string imgurSR = "281c809967ce99257d36334fc2443cd081acd820";
+            //private const string imgurSR = "281c809967ce99257d36334fc2443cd081acd820";
 
 
-            public static ApiClient apiClient = new ApiClient(imgurID, imgurSR);
+            private ApiClient _apiClient = null;
+            public ApiClient apiClient {
+                get
+                {
+                    if (_apiClient == null) { 
+                        _apiClient = new ApiClient(imgurID, imgurSecret);
+                    }
+                    return _apiClient;
+                } }
             public HttpClient httpClient = new HttpClient();
 
             public string url;
