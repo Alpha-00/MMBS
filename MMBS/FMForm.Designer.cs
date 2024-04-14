@@ -34,7 +34,9 @@
 			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Bye Bye");
 			this.boxAppname = new System.Windows.Forms.TextBox();
 			this.groupInfo = new System.Windows.Forms.GroupBox();
+			this.butIconClipboard = new System.Windows.Forms.Button();
 			this.progressIcon = new System.Windows.Forms.ProgressBar();
+			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
 			this.butIconEdit = new System.Windows.Forms.Button();
 			this.checkExtPerms = new System.Windows.Forms.CheckBox();
 			this.checkNoLine = new System.Windows.Forms.CheckBox();
@@ -91,6 +93,7 @@
 			this.butCacheFolder = new System.Windows.Forms.Button();
 			this.checkVideo = new System.Windows.Forms.CheckBox();
 			this.groupImage = new System.Windows.Forms.GroupBox();
+			this.butAddImgClipboard = new System.Windows.Forms.Button();
 			this.progressImage = new System.Windows.Forms.ProgressBar();
 			this.labelImageName = new System.Windows.Forms.Label();
 			this.butAddImg = new System.Windows.Forms.Button();
@@ -99,11 +102,8 @@
 			this.labelDuplicated = new System.Windows.Forms.Label();
 			this.boxImageLink = new System.Windows.Forms.TextBox();
 			this.boxImage = new System.Windows.Forms.PictureBox();
-			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
 			this.dialogFile = new System.Windows.Forms.OpenFileDialog();
 			this.tipIcon = new System.Windows.Forms.ToolTip(this.components);
-			this.butIconClipboard = new System.Windows.Forms.Button();
-			this.butAddImgClipboard = new System.Windows.Forms.Button();
 			this.listCredit = new System.Windows.Forms.ComboBox();
 			this.boxPackage = new System.Windows.Forms.TextBox();
 			this.labelPackage = new System.Windows.Forms.Label();
@@ -169,6 +169,17 @@
 			this.groupInfo.TabStop = false;
 			this.groupInfo.Text = "App Information";
 			// 
+			// butIconClipboard
+			// 
+			this.butIconClipboard.ForeColor = System.Drawing.Color.Black;
+			this.butIconClipboard.Location = new System.Drawing.Point(482, 134);
+			this.butIconClipboard.Name = "butIconClipboard";
+			this.butIconClipboard.Size = new System.Drawing.Size(24, 23);
+			this.butIconClipboard.TabIndex = 30;
+			this.butIconClipboard.Text = "📋";
+			this.butIconClipboard.UseVisualStyleBackColor = true;
+			this.butIconClipboard.Click += new System.EventHandler(this.butIconClipboard_Click);
+			// 
 			// progressIcon
 			// 
 			this.progressIcon.Location = new System.Drawing.Point(401, 18);
@@ -176,6 +187,16 @@
 			this.progressIcon.Size = new System.Drawing.Size(140, 4);
 			this.progressIcon.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
 			this.progressIcon.TabIndex = 29;
+			// 
+			// webBrowser1
+			// 
+			this.webBrowser1.Location = new System.Drawing.Point(6, 105);
+			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+			this.webBrowser1.Name = "webBrowser1";
+			this.webBrowser1.Size = new System.Drawing.Size(62, 56);
+			this.webBrowser1.TabIndex = 30;
+			this.webBrowser1.Visible = false;
+			this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.WebBrowser1_DocumentCompleted);
 			// 
 			// butIconEdit
 			// 
@@ -499,8 +520,6 @@
 			// checkOMirror
 			// 
 			this.checkOMirror.AutoSize = true;
-			this.checkOMirror.Checked = true;
-			this.checkOMirror.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.checkOMirror.FlatAppearance.BorderColor = System.Drawing.Color.Black;
 			this.checkOMirror.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
 			this.checkOMirror.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -513,6 +532,7 @@
 			this.checkOMirror.TabIndex = 31;
 			this.checkOMirror.UseMnemonic = false;
 			this.checkOMirror.UseVisualStyleBackColor = true;
+			this.checkOMirror.CheckedChanged += new System.EventHandler(this.checkOMirror_CheckedChanged);
 			// 
 			// labelOMirror
 			// 
@@ -593,8 +613,6 @@
 			// checkAPKLink
 			// 
 			this.checkAPKLink.AutoSize = true;
-			this.checkAPKLink.Checked = true;
-			this.checkAPKLink.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.checkAPKLink.FlatAppearance.BorderColor = System.Drawing.Color.Black;
 			this.checkAPKLink.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
 			this.checkAPKLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -972,6 +990,21 @@
 			this.groupImage.TabStop = false;
 			this.groupImage.Text = "Image";
 			// 
+			// butAddImgClipboard
+			// 
+			this.butAddImgClipboard.BackColor = System.Drawing.Color.White;
+			this.butAddImgClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.butAddImgClipboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.butAddImgClipboard.ForeColor = System.Drawing.Color.Black;
+			this.butAddImgClipboard.Location = new System.Drawing.Point(463, 11);
+			this.butAddImgClipboard.Name = "butAddImgClipboard";
+			this.butAddImgClipboard.Size = new System.Drawing.Size(28, 28);
+			this.butAddImgClipboard.TabIndex = 31;
+			this.butAddImgClipboard.Text = "📋";
+			this.butAddImgClipboard.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+			this.butAddImgClipboard.UseVisualStyleBackColor = false;
+			this.butAddImgClipboard.Click += new System.EventHandler(this.butAddImgClipboard_Click);
+			// 
 			// progressImage
 			// 
 			this.progressImage.Location = new System.Drawing.Point(6, 162);
@@ -1076,16 +1109,6 @@
 			this.boxImage.TabIndex = 18;
 			this.boxImage.TabStop = false;
 			// 
-			// webBrowser1
-			// 
-			this.webBrowser1.Location = new System.Drawing.Point(6, 105);
-			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-			this.webBrowser1.Name = "webBrowser1";
-			this.webBrowser1.Size = new System.Drawing.Size(62, 56);
-			this.webBrowser1.TabIndex = 30;
-			this.webBrowser1.Visible = false;
-			this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.WebBrowser1_DocumentCompleted);
-			// 
 			// dialogFile
 			// 
 			this.dialogFile.Multiselect = true;
@@ -1098,32 +1121,6 @@
 			this.tipIcon.InitialDelay = 100;
 			this.tipIcon.ReshowDelay = 100;
 			this.tipIcon.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-			// 
-			// butIconClipboard
-			// 
-			this.butIconClipboard.ForeColor = System.Drawing.Color.Black;
-			this.butIconClipboard.Location = new System.Drawing.Point(482, 134);
-			this.butIconClipboard.Name = "butIconClipboard";
-			this.butIconClipboard.Size = new System.Drawing.Size(24, 23);
-			this.butIconClipboard.TabIndex = 30;
-			this.butIconClipboard.Text = "📋";
-			this.butIconClipboard.UseVisualStyleBackColor = true;
-			this.butIconClipboard.Click += new System.EventHandler(this.butIconClipboard_Click);
-			// 
-			// butAddImgClipboard
-			// 
-			this.butAddImgClipboard.BackColor = System.Drawing.Color.White;
-			this.butAddImgClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.butAddImgClipboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.butAddImgClipboard.ForeColor = System.Drawing.Color.Black;
-			this.butAddImgClipboard.Location = new System.Drawing.Point(463, 11);
-			this.butAddImgClipboard.Name = "butAddImgClipboard";
-			this.butAddImgClipboard.Size = new System.Drawing.Size(28, 28);
-			this.butAddImgClipboard.TabIndex = 31;
-			this.butAddImgClipboard.Text = "📋";
-			this.butAddImgClipboard.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-			this.butAddImgClipboard.UseVisualStyleBackColor = false;
-			this.butAddImgClipboard.Click += new System.EventHandler(this.butAddImgClipboard_Click);
 			// 
 			// listCredit
 			// 

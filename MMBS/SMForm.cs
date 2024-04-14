@@ -137,7 +137,7 @@ namespace MMBS
             {
 
                 var client = new ApiService.ImgurAPI();
-                Imgur.API.Endpoints.ImageEndpoint account = new Imgur.API.Endpoints.ImageEndpoint(ApiService.ImgurAPI.apiClient, new System.Net.Http.HttpClient());
+                Imgur.API.Endpoints.ImageEndpoint account = new Imgur.API.Endpoints.ImageEndpoint(client.apiClient, new System.Net.Http.HttpClient());
                 foreach (string i in dialogFile.FileNames)
                 {
                     try
