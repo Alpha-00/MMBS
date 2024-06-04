@@ -58,7 +58,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\MMBS.xml</DocumentationFile>
+    <DocumentationFile>bin\MMBS\MMBS.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>bloggersupport.ico</ApplicationIcon>
@@ -558,6 +558,7 @@
       <DependentUpon>LinkValidator.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\post_form\mmbs_template_model_v1.cs" />
+    <Compile Include="Model\post_form\Mod977\PostForm240603_Mod977.cs" />
     <Compile Include="Model\post_form\PostForm240104.cs" />
     <Compile Include="Model\post_form\PostFormBase.cs" />
     <Compile Include="Model\post_form\PostFormGeneralCustom.cs" />

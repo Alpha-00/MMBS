@@ -216,31 +216,31 @@ namespace MMBS.Model.PostForm
             data = new MmbsTemplateModelv1()
             {
                 // Basic
-                name = bundle.appinfo.name,
-                package = bundle.appinfo.packagename,
-                version = bundle.appinfo.version,
-                size = bundle.appinfo.size,
-                sourceLink = bundle.appinfo.datasource,
-                sourceType = bundle.appinfo.datasourcemask,
-                // Icon
-                haveIcon = bundle.appinfo.Icon.enable,
-                iconPath = bundle.appinfo.Icon.link,
+                name = bundle.appInfo.name,
+                package = bundle.appInfo.packageName,
+                version = bundle.appInfo.version,
+                size = bundle.appInfo.size,
+                sourceLink = bundle.appInfo.datasource,
+                sourceType = bundle.appInfo.datasourcemask,
+                // icon
+                haveIcon = bundle.appInfo.icon.enable,
+                iconPath = bundle.appInfo.icon.link,
                 // Desc
-                descriptionRaw = bundle.appinfo.Description.GetDat(),
+                descriptionRaw = bundle.appInfo.description.GetDat(),
                 descriptionHtml = _descriptionHtml(bundle),
                 descriptionText = _descriptionText(bundle),
-                descriptionRtf = bundle.appinfo.Description.rtf,
+                descriptionRtf = bundle.appInfo.description.rtf,
                 descriptionLines = _descriptionLines(bundle),
                 // Mod
-                modType = bundle.modinfo.UI.modTypeGetname(bundle.modinfo.UI.currentindex).ToLower() ?? "",
-                modRaw = bundle.modinfo.UI.modTypeGetDat(bundle.modinfo.UI.currentindex) ?? "",
+                modType = bundle.modInfo.UI.modTypeGetname(bundle.modInfo.UI.currentindex).ToLower() ?? "",
+                modRaw = bundle.modInfo.UI.modTypeGetDat(bundle.modInfo.UI.currentindex) ?? "",
                 modItems = _modItems(bundle),
                 // Require
-                needVersion = bundle.appinfo.androidReq,
-                needInternet = bundle.appinfo.internetReq,
-                needRoot = bundle.appinfo.rootReq,
-                needObbData = bundle.appinfo.obbReq,
-                needExternalPermission = bundle.appinfo.extpermReq,
+                needVersion = bundle.appInfo.androidReq,
+                needInternet = bundle.appInfo.internetReq,
+                needRoot = bundle.appInfo.rootReq,
+                needObbData = bundle.appInfo.obbReq,
+                needExternalPermission = bundle.appInfo.extpermReq,
                 // Images
                 imageLinks = _imageLinks(bundle),
                 imageWidths = _imageWidths(bundle),
@@ -252,10 +252,10 @@ namespace MMBS.Model.PostForm
                 videoThumbnailLink = _videoThumbnailLink(bundle),
                 videoId = _videoId(bundle),
                 // Download
-                downloadPath = bundle.Downloadlink.Downloadlink.link,
-                obbPath = bundle.Downloadlink.OBBlink.link,
-                mirrorPath = bundle.Downloadlink.OMirrorlink.link,
-                haveMoreMirror = bundle.Downloadlink.MListEnable,
+                downloadPath = bundle.downloadlink.Downloadlink.link,
+                obbPath = bundle.downloadlink.OBBlink.link,
+                mirrorPath = bundle.downloadlink.OMirrorlink.link,
+                haveMoreMirror = bundle.downloadlink.MListEnable,
                 moreMirrorPaths = _additionMirrorDownloadLinks(bundle),
                 // Credit
                 authorName = bundle.credit.now.GetToUse(),
@@ -286,12 +286,12 @@ namespace MMBS.Model.PostForm
             + "</div></div>";
             string result = "";
             // ESCAPE
-            if (string.IsNullOrWhiteSpace(bundle.appinfo.Description.GetDat()))
+            if (string.IsNullOrWhiteSpace(bundle.appInfo.description.GetDat()))
             {
                 return result;
             }
             // PROCESS
-            string[] cache_Desc = bundle.appinfo.Description.GetDat().Split('\n');
+            string[] cache_Desc = bundle.appInfo.description.GetDat().Split('\n');
             if (cache_Desc.Length < 2)
             {
                 result = cache_Desc[0];
@@ -331,7 +331,7 @@ namespace MMBS.Model.PostForm
         }
         internal string _descriptionText(PostDataBundle bundle)
         {
-            string result = bundle.appinfo.Description.GetDat();
+            string result = bundle.appInfo.description.GetDat();
             if (String.IsNullOrEmpty(result)) return result;
             result = Regex.Replace(result, @"<[^>\n]*>", "");
             Dictionary<string, string> specialSymbol = new Dictionary<string, string>()
@@ -349,13 +349,13 @@ namespace MMBS.Model.PostForm
         }
         internal string[] _descriptionLines(PostDataBundle bundle)
         {
-            string result = bundle.appinfo.Description.GetDat();
+            string result = bundle.appInfo.description.GetDat();
             return result.Split("\n");
         }
 
         internal string[] _modItems(PostDataBundle bundle)
         {
-            var temp = !String.IsNullOrWhiteSpace(bundle.modinfo.UI.modTypeGetDat(bundle.modinfo.UI.currentindex)) ? bundle.modinfo.UI.modTypeGetDat(bundle.modinfo.UI.currentindex).Split('\n') : new string[] { };
+            var temp = !String.IsNullOrWhiteSpace(bundle.modInfo.UI.modTypeGetDat(bundle.modInfo.UI.currentindex)) ? bundle.modInfo.UI.modTypeGetDat(bundle.modInfo.UI.currentindex).Split('\n') : new string[] { };
             if (temp == null) return new string[] { };
             return temp;
         }
@@ -363,8 +363,8 @@ namespace MMBS.Model.PostForm
         private DefineInfoPack.imageinfo[] selectImages(PostDataBundle bundle)
         {
             if (_selectImages != null) return _selectImages;
-            if (bundle.postmedia.ImageList.Count <1) return new DefineInfoPack.imageinfo[] { };
-            _selectImages = bundle.postmedia.ImageList.Where(x => x.enable).ToArray();
+            if (bundle.postMedia.ImageList.Count <1) return new DefineInfoPack.imageinfo[] { };
+            _selectImages = bundle.postMedia.ImageList.Where(x => x.enable).ToArray();
             return _selectImages;
         }
         internal string[] _imageLinks(PostDataBundle bundle)
@@ -378,10 +378,10 @@ namespace MMBS.Model.PostForm
                 if (!string.IsNullOrWhiteSpace(link))
                 {
                     
-                    if (bundle.appinfo.datasourcetype == "play")
+                    if (bundle.appInfo.datasourcetype == "play")
                     {
-                        int newHeight = bundle.postmedia.ImageList[i].height >= bundle.postmedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(bundle.postmedia.ImageList[i].height / bundle.postmedia.ImageList[i].width * sizefit));
-                        int newWidth = bundle.postmedia.ImageList[i].height <= bundle.postmedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(bundle.postmedia.ImageList[i].width / bundle.postmedia.ImageList[i].height * sizefit));
+                        int newHeight = bundle.postMedia.ImageList[i].height >= bundle.postMedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(bundle.postMedia.ImageList[i].height / bundle.postMedia.ImageList[i].width * sizefit));
+                        int newWidth = bundle.postMedia.ImageList[i].height <= bundle.postMedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(bundle.postMedia.ImageList[i].width / bundle.postMedia.ImageList[i].height * sizefit));
                         if (link.Contains("-rw")) link = link.Replace("-rw", "");
                         if (link.Contains("=")) link = link.Remove(link.IndexOf("=")) + "=w" + newWidth + "-h" + newHeight;
                     }
@@ -397,7 +397,7 @@ namespace MMBS.Model.PostForm
             const int sizefit = 640;
             for (int i = 0; i < list.Length; i++)
             {
-                int width = bundle.postmedia.ImageList[i].height <= bundle.postmedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(bundle.postmedia.ImageList[i].width / bundle.postmedia.ImageList[i].height * sizefit));
+                int width = bundle.postMedia.ImageList[i].height <= bundle.postMedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(bundle.postMedia.ImageList[i].width / bundle.postMedia.ImageList[i].height * sizefit));
                 result.Add(width);
             }
             return result.ToArray();
@@ -409,7 +409,7 @@ namespace MMBS.Model.PostForm
             const int sizefit = 640;
             for (int i = 0; i < list.Length; i++)
             {
-                int height = bundle.postmedia.ImageList[i].height >= bundle.postmedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(bundle.postmedia.ImageList[i].height / bundle.postmedia.ImageList[i].width * sizefit));
+                int height = bundle.postMedia.ImageList[i].height >= bundle.postMedia.ImageList[i].width ? sizefit : Convert.ToInt32(Math.Truncate(bundle.postMedia.ImageList[i].height / bundle.postMedia.ImageList[i].width * sizefit));
                 result.Add(height);
             }
             return result.ToArray();
@@ -443,17 +443,17 @@ namespace MMBS.Model.PostForm
         }
         internal string _videoId(PostDataBundle bundle)
         {
-            string result = bundle.postmedia.VideoReview.ID;
+            string result = bundle.postMedia.VideoReview.ID;
             if (string.IsNullOrWhiteSpace(result))
-                result = bundle.postmedia.VideoReview.generateID();
+                result = bundle.postMedia.VideoReview.generateID();
             return result;
         }
         internal string[] _additionMirrorDownloadLinks(PostDataBundle bundle)
         {
             List<string> result = new List<string>();
-            for (int i = 0; i < bundle.Downloadlink.linklist.Count; i++)
+            for (int i = 0; i < bundle.downloadlink.linklist.Count; i++)
             {
-                result.Add(bundle.Downloadlink.linklist[i].link);
+                result.Add(bundle.downloadlink.linklist[i].link);
             }
             return result.ToArray();
         }

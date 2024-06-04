@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="MMBS.exe" version="0.37.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="MMBS.exe" version="0.40.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="bloggersupport.ico" asmv2:publisher="Honmyou" asmv2:product="MMBS" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -956,14 +956,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MMBS.exe" size="1674200">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MMBS.exe" size="1816536">
       <assemblyIdentity name="MMBS" version="0.23.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>j+7maxF30rHIXBQcHH3rIXR9kny9/tC0TFjA9SePb8Q=</dsig:DigestValue>
+        <dsig:DigestValue>yMS/8b9rFf3/CjOMjBcbOYL0+DtyW0pb23fX+e8ZPqo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -975,7 +975,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jGOI568gj765roog3u+e0OYzkU2cy+LUd82FMJe7AVU=</dsig:DigestValue>
+        <dsig:DigestValue>J3Bwvhp4wuQNXqq6JI1fKih+AKwQu4vg4rWs3vwA5Ww=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

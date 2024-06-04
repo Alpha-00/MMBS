@@ -63,19 +63,19 @@ namespace MMBS
                             debug.Logs($"\tparsed:{parser.ToString(Formatting.None)}");
                             cache = parser["dat"].ToObject<Dictionary<string, string>>();
                             if (cache.ContainsKey("playlink"))
-                            thenow.appinfo.datasource = cache["playlink"];
+                            thenow.appInfo.datasource = cache["playlink"];
                             if (cache.ContainsKey("version"))
-                                thenow.appinfo.version = cache["version"];
+                                thenow.appInfo.version = cache["version"];
                             if (cache.ContainsKey("package"))
-                                thenow.appinfo.packagename = cache["package"];
+                                thenow.appInfo.packageName = cache["package"];
                             if (cache.ContainsKey("reqsys"))
-                                thenow.appinfo.androidReq = cache["reqsys"];
+                                thenow.appInfo.androidReq = cache["reqsys"];
                             if (cache.ContainsKey("obb"))
-                                thenow.appinfo.obbReq = Convert.ToBoolean(cache["obb"]);
+                                thenow.appInfo.obbReq = Convert.ToBoolean(cache["obb"]);
                             if (cache.ContainsKey("root"))
-                                thenow.appinfo.rootReq = Convert.ToBoolean(cache["root"]);
+                                thenow.appInfo.rootReq = Convert.ToBoolean(cache["root"]);
                             if (cache.ContainsKey("mod"))
-                                thenow.modinfo.moddata = cache["mod"];
+                                thenow.modInfo.moddata = cache["mod"];
                             if (cache.ContainsKey("device"))
                             {
                                 //Todo: Import List of supported device
@@ -140,10 +140,10 @@ namespace MMBS
                                     cache = cache.Substring(i);
                                     switch (key)
                                     {
-                                        case "playID": importdata.appinfo.datasource = data; break;
-                                        case "ver": importdata.appinfo.version = data; break;
-                                        case "obb": importdata.appinfo.obbReq = data == "TRUE"; break;
-                                        case "root": importdata.appinfo.rootReq = data == "TRUE"; break;
+                                        case "playID": importdata.appInfo.datasource = data; break;
+                                        case "ver": importdata.appInfo.version = data; break;
+                                        case "obb": importdata.appInfo.obbReq = data == "TRUE"; break;
+                                        case "root": importdata.appInfo.rootReq = data == "TRUE"; break;
 
                                         default: break;
                                     }

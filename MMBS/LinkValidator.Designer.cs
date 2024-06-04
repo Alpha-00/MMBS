@@ -127,7 +127,7 @@
             this.Font = new System.Drawing.Font("Product Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LinkValidator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

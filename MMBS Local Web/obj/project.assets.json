@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\MMBS Local Web.csproj",
+      "projectUniqueName": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\MMBS Local Web.csproj",
       "projectName": "MMBS_Local_Web",
-      "projectPath": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\MMBS Local Web.csproj",
+      "projectPath": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\MMBS Local Web.csproj",
       "packagesPath": "C:\\Users\\E5-576G\\.nuget\\packages\\",
-      "outputPath": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\obj\\",
+      "outputPath": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Local Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -76,7 +76,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300-preview.24203.14/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

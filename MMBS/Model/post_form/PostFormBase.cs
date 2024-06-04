@@ -71,7 +71,7 @@ namespace MMBS.Model.PostForm
 
         /// <summary>
         ///     <para>
-        ///         Raise Flag in Description Snippet. This using to help JavaScript in theme to modify
+        ///         Raise Flag in description Snippet. This using to help JavaScript in theme to modify
         ///     </para>
         /// </summary>
         static String flagDesc;

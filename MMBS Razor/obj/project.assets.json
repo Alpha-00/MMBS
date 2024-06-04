@@ -1385,11 +1385,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\MMBS Razor Helper.csproj",
+      "projectUniqueName": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\MMBS Razor Helper.csproj",
       "projectName": "MMBS Razor Helper",
-      "projectPath": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\MMBS Razor Helper.csproj",
+      "projectPath": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\MMBS Razor Helper.csproj",
       "packagesPath": "C:\\Users\\E5-576G\\.nuget\\packages\\",
-      "outputPath": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\obj\\",
+      "outputPath": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -1458,7 +1458,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300-preview.24203.14/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -74,47 +74,47 @@ namespace MMBS
         {
             if (this.boxDescription.Rtf != null)
             {
-                FormData.appinfo.Description.rtf = this.boxDescription.Rtf;
+                FormData.appInfo.description.rtf = this.boxDescription.Rtf;
             }
         }
 
         public void LoadDataFromPostDataBundleToForm(PostDataBundle thenow)
         {
             //app info
-            this.boxAppname.Text = thenow.appinfo.name;
-            if (thenow.appinfo.Icon.image != null) this.boxIcon.Image = thenow.appinfo.Icon.image;
-            this.boxVersion.Text = thenow.appinfo.version;
-            this.boxSize.Text = thenow.appinfo.size;
-            this.boxAReq.Text = thenow.appinfo.androidReq;
-            this.checkExtPerms.Checked = thenow.appinfo.extpermReq;
-            this.checkInternet.Checked = thenow.appinfo.internetReq;
-            this.checkRoot.Checked = thenow.appinfo.rootReq;
-            this.checkOBB.Checked = thenow.appinfo.obbReq;
-            this.checkABold.Checked = thenow.appinfo.Description.bold;
-            this.checkNoLine.Checked = thenow.appinfo.Description.noline;
+            this.boxAppname.Text = thenow.appInfo.name;
+            if (thenow.appInfo.icon.image != null) this.boxIcon.Image = thenow.appInfo.icon.image;
+            this.boxVersion.Text = thenow.appInfo.version;
+            this.boxSize.Text = thenow.appInfo.size;
+            this.boxAReq.Text = thenow.appInfo.androidReq;
+            this.checkExtPerms.Checked = thenow.appInfo.extpermReq;
+            this.checkInternet.Checked = thenow.appInfo.internetReq;
+            this.checkRoot.Checked = thenow.appInfo.rootReq;
+            this.checkOBB.Checked = thenow.appInfo.obbReq;
+            this.checkABold.Checked = thenow.appInfo.description.bold;
+            this.checkNoLine.Checked = thenow.appInfo.description.noline;
             if (this.checkABold.Checked && this.checkNoLine.Checked)
-                this.boxDescription.Text = thenow.appinfo.Description.spec_boldnoline;
+                this.boxDescription.Text = thenow.appInfo.description.spec_boldnoline;
             else if (!this.checkABold.Checked && this.checkNoLine.Checked)
-                this.boxDescription.Text = thenow.appinfo.Description.spec_noline;
+                this.boxDescription.Text = thenow.appInfo.description.spec_noline;
             else if (this.checkABold.Checked && !this.checkNoLine.Checked)
-                this.boxDescription.Text = thenow.appinfo.Description.spec_bold;
+                this.boxDescription.Text = thenow.appInfo.description.spec_bold;
             else if (!this.checkABold.Checked && !this.checkNoLine.Checked)
-                this.boxDescription.Text = thenow.appinfo.Description.stockdata;
-            this.boxSource.Text = thenow.appinfo.datasource;
-            this.boxDownLink.Text = thenow.Downloadlink.Downloadlink.link;
-            this.boxAPKlink.Text = thenow.Downloadlink.OBBlink.link;
-            this.boxOMirror.Text = thenow.Downloadlink.OMirrorlink.link;
-            this.labelAPKlink.Text = thenow.Downloadlink.OBBlink.linkalias;
-            this.butModInfo.Text = thenow.modinfo.UI.modTypeGetname(thenow.modinfo.UI.currentindex);
-            this.butModInfo.ForeColor = thenow.modinfo.UI.modTypegetcolor(thenow.modinfo.UI.currentindex);
-            this.boxModInfo.Enabled = thenow.modinfo.UI.modTypeAllowData(thenow.modinfo.UI.currentindex);
-            this.boxModInfo.Text = thenow.modinfo.UI.modTypeGetDat(thenow.modinfo.UI.currentindex);
-            checkImageinScript.Checked = thenow.postmedia.ImageInScript;
-            LoadImageFromList(thenow.postmedia.ImageList);
-            LoadVideoReview(thenow.postmedia.VideoReview);
+                this.boxDescription.Text = thenow.appInfo.description.rawText;
+            this.boxSource.Text = thenow.appInfo.datasource;
+            this.boxDownLink.Text = thenow.downloadlink.Downloadlink.link;
+            this.boxAPKlink.Text = thenow.downloadlink.OBBlink.link;
+            this.boxOMirror.Text = thenow.downloadlink.OMirrorlink.link;
+            this.labelAPKlink.Text = thenow.downloadlink.OBBlink.linkalias;
+            this.butModInfo.Text = thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex);
+            this.butModInfo.ForeColor = thenow.modInfo.UI.modTypegetcolor(thenow.modInfo.UI.currentindex);
+            this.boxModInfo.Enabled = thenow.modInfo.UI.modTypeAllowData(thenow.modInfo.UI.currentindex);
+            this.boxModInfo.Text = thenow.modInfo.UI.modTypeGetDat(thenow.modInfo.UI.currentindex);
+            checkImageinScript.Checked = thenow.postMedia.ImageInScript;
+            LoadImageFromList(thenow.postMedia.ImageList);
+            LoadVideoReview(thenow.postMedia.VideoReview);
             this.clistMirrorlink.Items.Clear();
 
-            boxPackage.Text = thenow.appinfo.packagename;
+            boxPackage.Text = thenow.appInfo.packageName;
             listCredit.Items.Clear();
             ImportCreditList();
             //listCredit.Text = thenow.credit.now.name;
@@ -245,10 +245,10 @@ namespace MMBS
                 boxAppname.ScrollBars = ScrollBars.None;
             }
             //textBox1.Height = size.Height;
-            FormData.appinfo.name = boxAppname.Text;
+            FormData.appInfo.name = boxAppname.Text;
             Process_name();
             
-            FormData.appinfo.searchkeyword = boxSearchKey.Text;
+            FormData.appInfo.searchkeyword = boxSearchKey.Text;
             void Process_name()
             {
                 string[] cache = MMBStool.SearchKeywordGenerator.AnameAnalyse(boxAppname.Text);
@@ -277,30 +277,30 @@ namespace MMBS
 
         private void checkInternet_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.internetReq = checkInternet.Checked;
+            FormData.appInfo.internetReq = checkInternet.Checked;
         }
         private void checkOBB_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.obbReq = checkOBB.Checked;
+            FormData.appInfo.obbReq = checkOBB.Checked;
         }
         private void butModInfo_Click(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.OldStyle) { }
             else
             {
-                this.butModInfo.ForeColor = FormData.modinfo.UI.modTypegetcolor(FormData.modinfo.UI.currentindex);
+                this.butModInfo.ForeColor = FormData.modInfo.UI.modTypegetcolor(FormData.modInfo.UI.currentindex);
             }
-            FormData.modinfo.UI.currentindex = FormData.modinfo.UI.Getnext();
-            this.butModInfo.Text = FormData.modinfo.UI.modTypeGetname(FormData.modinfo.UI.currentindex);
+            FormData.modInfo.UI.currentindex = FormData.modInfo.UI.Getnext();
+            this.butModInfo.Text = FormData.modInfo.UI.modTypeGetname(FormData.modInfo.UI.currentindex);
             
-            this.boxModInfo.Enabled = FormData.modinfo.UI.modTypeAllowData(FormData.modinfo.UI.currentindex);
-            this.boxModInfo.Text = FormData.modinfo.UI.modTypeGetDat(FormData.modinfo.UI.currentindex);
+            this.boxModInfo.Enabled = FormData.modInfo.UI.modTypeAllowData(FormData.modInfo.UI.currentindex);
+            this.boxModInfo.Text = FormData.modInfo.UI.modTypeGetDat(FormData.modInfo.UI.currentindex);
 
         }
 
         private void boxVersion_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.version = boxVersion.Text;
+            FormData.appInfo.version = boxVersion.Text;
         }
 
         private void boxVersion_KeyPress(object sender, KeyPressEventArgs e)
@@ -319,7 +319,7 @@ namespace MMBS
 
         private void boxSize_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.size = boxSize.Text;
+            FormData.appInfo.size = boxSize.Text;
         }
 
         private void boxSize_KeyDown(object sender, KeyEventArgs e)
@@ -332,7 +332,7 @@ namespace MMBS
 
         private void boxAReq_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.androidReq = boxAReq.Text;
+            FormData.appInfo.androidReq = boxAReq.Text;
         }
 
         private void boxAReq_KeyDown(object sender, KeyEventArgs e)
@@ -372,7 +372,7 @@ namespace MMBS
 
         private void checkRoot_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.rootReq = checkRoot.Checked;
+            FormData.appInfo.rootReq = checkRoot.Checked;
         }
 
         private void checkRoot_KeyDown(object sender, KeyEventArgs e)
@@ -386,16 +386,16 @@ namespace MMBS
         private void boxDescription_TextChanged(object sender, EventArgs e)
         {
             if (this.checkABold.Checked && this.checkNoLine.Checked)
-                FormData.appinfo.Description.spec_boldnoline =this.boxDescription.Text;
+                FormData.appInfo.description.spec_boldnoline =this.boxDescription.Text;
             else if (!this.checkABold.Checked && this.checkNoLine.Checked)
-                FormData.appinfo.Description.spec_noline = this.boxDescription.Text;
+                FormData.appInfo.description.spec_noline = this.boxDescription.Text;
             else if (this.checkABold.Checked && !this.checkNoLine.Checked)
-                FormData.appinfo.Description.spec_bold = this.boxDescription.Text;
+                FormData.appInfo.description.spec_bold = this.boxDescription.Text;
             else if (!this.checkABold.Checked && !this.checkNoLine.Checked)
-                FormData.appinfo.Description.stockdata = this.boxDescription.Text;
+                FormData.appInfo.description.rawText = this.boxDescription.Text;
             try
             {
-                FormData.appinfo.Description.rtf = this.boxDescription.Rtf;
+                FormData.appInfo.description.rtf = this.boxDescription.Rtf;
             }
             catch
             {
@@ -405,19 +405,19 @@ namespace MMBS
 
         private void boxSource_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.datasource = boxSource.Text;
+            FormData.appInfo.datasource = boxSource.Text;
             if (boxSource.Text.Contains("https://play.google.com/"))
             {
                 
-                FormData.appinfo.datasourcetype = "play";
-                FormData.appinfo.datasourcemask = AFForm.DSlabelText[1];
+                FormData.appInfo.datasourcetype = "play";
+                FormData.appInfo.datasourcemask = AFForm.DSlabelText[1];
             }
             else
             {
-                FormData.appinfo.datasourcetype = "default";
-                FormData.appinfo.datasourcemask = AFForm.DSlabelText[0];
+                FormData.appInfo.datasourcetype = "default";
+                FormData.appInfo.datasourcemask = AFForm.DSlabelText[0];
             }
-            labelSource.Text = FormData.appinfo.datasourcemask;
+            labelSource.Text = FormData.appInfo.datasourcemask;
         }
 
         private void boxSource_KeyDown(object sender, KeyEventArgs e)
@@ -430,14 +430,14 @@ namespace MMBS
 
         private void boxDownLink_TextChanged(object sender, EventArgs e)
         {
-            FormData.Downloadlink.Downloadlink.link = boxDownLink.Text;
+            FormData.downloadlink.Downloadlink.link = boxDownLink.Text;
         }
 
         private void boxAPKlink_TextChanged(object sender, EventArgs e)
         {
-            FormData.Downloadlink.OBBlink.link = boxAPKlink.Text;
-            FormData.Downloadlink.OBBlink.Check();
-            if (!checkAPKLink.Checked && FormData.Downloadlink.OBBlink.legal) checkAPKLink.Checked = true;
+            FormData.downloadlink.OBBlink.link = boxAPKlink.Text;
+            FormData.downloadlink.OBBlink.Check();
+            if (!checkAPKLink.Checked && FormData.downloadlink.OBBlink.legal) checkAPKLink.Checked = true;
         }
 
         private void boxAppname_Enter(object sender, EventArgs e)
@@ -448,12 +448,12 @@ namespace MMBS
 
         private void boxSearchKey_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.searchkeyword = boxSearchKey.Text;
+            FormData.appInfo.searchkeyword = boxSearchKey.Text;
         }
 
         private void boxModInfo_TextChanged(object sender, EventArgs e)
         {
-            FormData.modinfo.UI.modTypeSetData(boxModInfo.Text,FormData.modinfo.UI.currentindex);
+            FormData.modInfo.UI.modTypeSetData(boxModInfo.Text,FormData.modInfo.UI.currentindex);
         }
 
         private void labelVideo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -496,7 +496,7 @@ namespace MMBS
             switch (butDone.Text)
             {
                 case "DONE": NormalProcess(); break;
-                case "POST": PostProcess(); break;
+                case "POST": PostingProcess(); break;
             }
             void NormalProcess()
             {
@@ -506,7 +506,7 @@ namespace MMBS
                     formResult.ShowDialog();
                 Show();
             }
-            void PostProcess()
+            void PostingProcess()
             {
                 Hide();
                 FormResult formResult = new FormResult(FormData);
@@ -517,7 +517,7 @@ namespace MMBS
 
         private void boxVideoLink_TextChanged(object sender, EventArgs e)
         {
-            FormData.postmedia.VideoReview.link = boxVideoLink.Text;
+            FormData.postMedia.VideoReview.link = boxVideoLink.Text;
         }
 
         private void boxDownLink_KeyDown(object sender, KeyEventArgs e)
@@ -541,21 +541,21 @@ namespace MMBS
 
         private void boxDownLink_Leave(object sender, EventArgs e)
         {
-            FormData.Downloadlink.Downloadlink.Check();
+            FormData.downloadlink.Downloadlink.Check();
         }
 
         private void boxAPKlink_Leave(object sender, EventArgs e)
         {
-            FormData.Downloadlink.OBBlink.Check();
+            FormData.downloadlink.OBBlink.Check();
 
         }
 
         private void checkABold_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.Description.bold = checkABold.Checked;
+            FormData.appInfo.description.bold = checkABold.Checked;
             if (!Properties.Settings.Default.OldStyle)
             {
-                if (FormData.appinfo.Description.bold)
+                if (FormData.appInfo.description.bold)
                 {
                     checkABold.ForeColor = System.Drawing.Color.Lime;
                 }
@@ -565,10 +565,10 @@ namespace MMBS
 
         private void checkNoLine_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.Description.noline = checkNoLine.Checked;
+            FormData.appInfo.description.noline = checkNoLine.Checked;
             if (!Properties.Settings.Default.OldStyle)
             {
-                if (FormData.appinfo.Description.noline)
+                if (FormData.appInfo.description.noline)
                 {
                     checkNoLine.ForeColor = System.Drawing.Color.Lime;
                 }
@@ -583,21 +583,21 @@ namespace MMBS
 
         private void butMDown_Click(object sender, EventArgs e)
         {
-            if (FormData.Downloadlink.linklist.Count < 1) FormData.Downloadlink.linklist.Add(new DefineInfoPack.Linker("download"));
-            OldProcessor.MirrorLink DLmirror = new OldProcessor.MirrorLink(FormData.Downloadlink.linklist[0].linkalias, FormData.Downloadlink.linklist[0].link);
+            if (FormData.downloadlink.linklist.Count < 1) FormData.downloadlink.linklist.Add(new DefineInfoPack.Linker("download"));
+            OldProcessor.MirrorLink DLmirror = new OldProcessor.MirrorLink(FormData.downloadlink.linklist[0].linkalias, FormData.downloadlink.linklist[0].link);
             this.butMDown.Text = DLmirror.valid > 0 ? (DLmirror.valid == 1 ? "✓" : "✗") : "+";
             this.butMDown.ForeColor = DLmirror.valid > 0 ? (DLmirror.valid == 1 ? System.Drawing.Color.Lime : Color.Red) : Color.White;
             if (DLmirror.valid == 1)
             {
-                FormData.Downloadlink.linklist[0].link = DLmirror.host == "drive.google.com" ? OldProcessor.ProcSupporter.ShortenLink(DLmirror.link) : DLmirror.link;
-                FormData.Downloadlink.linklist[0].linkalias = DLmirror.name;
-                FormData.Downloadlink.linklist[0].host = DLmirror.host;
+                FormData.downloadlink.linklist[0].link = DLmirror.host == "drive.google.com" ? OldProcessor.ProcSupporter.ShortenLink(DLmirror.link) : DLmirror.link;
+                FormData.downloadlink.linklist[0].linkalias = DLmirror.name;
+                FormData.downloadlink.linklist[0].host = DLmirror.host;
             }
             else
             {
-                FormData.Downloadlink.linklist[0].link = "";
-                FormData.Downloadlink.linklist[0].linkalias = "";
-                FormData.Downloadlink.linklist[0].host = "";
+                FormData.downloadlink.linklist[0].link = "";
+                FormData.downloadlink.linklist[0].linkalias = "";
+                FormData.downloadlink.linklist[0].host = "";
             }
         }
 
@@ -606,43 +606,43 @@ namespace MMBS
            // MessageBox.Show(listImageReview.SelectedIndices.Count.ToString());
             if (listImageReview.SelectedIndices.Count > 0)
             {
-                boxImage.Image = FormData.postmedia.ImageList[listImageReview.SelectedIndices[0]].image;
-                boxImageLink.Text = FormData.postmedia.ImageList[listImageReview.SelectedIndices[0]].link;
-                checkImageUse.Checked = FormData.postmedia.ImageList[listImageReview.SelectedIndices[0]].enable;
+                boxImage.Image = FormData.postMedia.ImageList[listImageReview.SelectedIndices[0]].image;
+                boxImageLink.Text = FormData.postMedia.ImageList[listImageReview.SelectedIndices[0]].link;
+                checkImageUse.Checked = FormData.postMedia.ImageList[listImageReview.SelectedIndices[0]].enable;
                 labelImageName.Text = "Screenshot " + listImageReview.SelectedIndices[0].ToString();
             }
         }
 
         private void checkAPKLink_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.Downloadlink.OBBlink.check = checkAPKLink.Checked;
+            FormData.downloadlink.OBBlink.check = checkAPKLink.Checked;
         }
 
         private void butMAPK_Click(object sender, EventArgs e)
         {
-            if (FormData.Downloadlink.linklist.Count == 0) FormData.Downloadlink.linklist.Add(new DefineInfoPack.Linker("download"));
-            if (FormData.Downloadlink.linklist.Count == 1) FormData.Downloadlink.linklist.Add(new DefineInfoPack.Linker("obb"));
+            if (FormData.downloadlink.linklist.Count == 0) FormData.downloadlink.linklist.Add(new DefineInfoPack.Linker("download"));
+            if (FormData.downloadlink.linklist.Count == 1) FormData.downloadlink.linklist.Add(new DefineInfoPack.Linker("obb"));
 
-            OldProcessor.MirrorLink AOmirror = new OldProcessor.MirrorLink(FormData.Downloadlink.linklist[1].linkalias, FormData.Downloadlink.linklist[1].link);
+            OldProcessor.MirrorLink AOmirror = new OldProcessor.MirrorLink(FormData.downloadlink.linklist[1].linkalias, FormData.downloadlink.linklist[1].link);
             this.butMAPK.Text = AOmirror.valid > 0 ? (AOmirror.valid == 1 ? "✓" : "✗") : "+";
             this.butMAPK.ForeColor = AOmirror.valid > 0 ? (AOmirror.valid == 1 ? System.Drawing.Color.Lime : Color.Red) : Color.White;
             if (AOmirror.valid == 1)
             {
-                FormData.Downloadlink.linklist[1].link = AOmirror.host == "drive.google.com" ? OldProcessor.ProcSupporter.ShortenLink(AOmirror.link) : AOmirror.link;
-                FormData.Downloadlink.linklist[1].linkalias = AOmirror.name;
-                FormData.Downloadlink.linklist[1].host = AOmirror.host;
+                FormData.downloadlink.linklist[1].link = AOmirror.host == "drive.google.com" ? OldProcessor.ProcSupporter.ShortenLink(AOmirror.link) : AOmirror.link;
+                FormData.downloadlink.linklist[1].linkalias = AOmirror.name;
+                FormData.downloadlink.linklist[1].host = AOmirror.host;
             }
             else
             {
-                FormData.Downloadlink.linklist[1].link = "";
-                FormData.Downloadlink.linklist[1].linkalias = "";
-                FormData.Downloadlink.linklist[1].host = "";
+                FormData.downloadlink.linklist[1].link = "";
+                FormData.downloadlink.linklist[1].linkalias = "";
+                FormData.downloadlink.linklist[1].host = "";
             }
         }
 
         private void checkVideo_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.postmedia.VideoReview.Cover.enable = checkVideo.Checked;
+            FormData.postMedia.VideoReview.Cover.enable = checkVideo.Checked;
         }
 
         private void boxVreview_Click(object sender, EventArgs e)
@@ -688,7 +688,7 @@ namespace MMBS
 
         private void CheckImageinScript_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.postmedia.ImageInScript = checkImageinScript.Checked;
+            FormData.postMedia.ImageInScript = checkImageinScript.Checked;
         }
 
         private void ListImageReview_DrawItem(object sender, DrawListViewItemEventArgs e)
@@ -747,6 +747,7 @@ namespace MMBS
                 case "stripOtherPMT": cmdProcess("mmbsOther:PMT:current"); break;
                 case "scibanCustomToolStripMenuItem": cmdProcess("mmbsOther:Sciban:default");  break;
                 case "scibanCustomExportDataStripItem": cmdProcess("mmbsOther:Sciban:export"); break;
+                case "stripOMcurrentver":  break;
             }
             bool cmdProcess(string code,params string[] para)
             {
@@ -761,7 +762,7 @@ namespace MMBS
 
         private void checkExtPerms_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.extpermReq = checkExtPerms.Checked;
+            FormData.appInfo.extpermReq = checkExtPerms.Checked;
         }
         public bool execute(string cmd)
         {
@@ -788,14 +789,14 @@ namespace MMBS
             var file = "";
             var link = client.GetUrl();
             // Update Data
-            var fileName = "img_" + FormData.postmedia.ImageList.Count();
+            var fileName = "img_" + FormData.postMedia.ImageList.Count();
             var image = imgClipboard;
             DefineInfoPack.imageinfo imageData = new DefineInfoPack.imageinfo(fileName, file, link, image.Height, image.Width, image);
-            FormData.postmedia.ImageList.Add(imageData);
-            FormData.postmedia.ImageList.Last().enable = true;
+            FormData.postMedia.ImageList.Add(imageData);
+            FormData.postMedia.ImageList.Last().enable = true;
             // Update UI
             //ilistScreenShot.Images.Add(image);
-            LoadImageFromList(FormData.postmedia.ImageList);
+            LoadImageFromList(FormData.postMedia.ImageList);
             processImageCounter--;
         }
         // TODO: Add progress bar to indicate change
@@ -826,14 +827,14 @@ namespace MMBS
             
             var link = url;
             // Update Data
-            var fileName = "img_"+FormData.postmedia.ImageList.Count();
+            var fileName = "img_"+FormData.postMedia.ImageList.Count();
             
             DefineInfoPack.imageinfo imageData = new DefineInfoPack.imageinfo(fileName, "", link, image.Height, image.Width, image);
-            FormData.postmedia.ImageList.Add(imageData);
-            FormData.postmedia.ImageList.Last().enable = true;
+            FormData.postMedia.ImageList.Add(imageData);
+            FormData.postMedia.ImageList.Last().enable = true;
             // Update UI
             //ilistScreenShot.Images.Add(image);
-            LoadImageFromList(FormData.postmedia.ImageList);
+            LoadImageFromList(FormData.postMedia.ImageList);
 
             processImageCounter--;
         }
@@ -861,11 +862,11 @@ namespace MMBS
                 var fileName = Path.GetFileNameWithoutExtension(file);
                 var image = System.Drawing.Image.FromFile(file);
                 DefineInfoPack.imageinfo imageData = new DefineInfoPack.imageinfo(fileName,file, link, image.Height, image.Width, image);
-                FormData.postmedia.ImageList.Add(imageData);
-                FormData.postmedia.ImageList.Last().enable = true;
+                FormData.postMedia.ImageList.Add(imageData);
+                FormData.postMedia.ImageList.Last().enable = true;
                 // Update UI
                 //ilistScreenShot.Images.Add(image);
-                LoadImageFromList(FormData.postmedia.ImageList);
+                LoadImageFromList(FormData.postMedia.ImageList);
 
             }
             processImageCounter--;
@@ -884,7 +885,7 @@ namespace MMBS
             //                result = await account.UploadImageAsync(f);
             //                ilistScreenShot.Images.Add(Image.FromFile(i));
             //                if (null != result)
-            //                    FormData.postmedia.ImageList.Add(new DefineInfoPack.imageinfo("imgur_" + result.Id, i, result.Link,result.Height, result.Width,Image.FromFile(i)));
+            //                    FormData.postMedia.ImageList.Add(new DefineInfoPack.imageinfo("imgur_" + result.Id, i, result.Link,result.Height, result.Width,Image.FromFile(i)));
             //                        }
             //        }
             //        catch(Exception exc)
@@ -897,7 +898,7 @@ namespace MMBS
 
         private void boxOMirror_TextChanged(object sender, EventArgs e)
         {
-            FormData.Downloadlink.OMirrorlink.link = boxOMirror.Text;
+            FormData.downloadlink.OMirrorlink.link = boxOMirror.Text;
         }
         private async Task updateIconByLink(string url)
         {
@@ -922,11 +923,11 @@ namespace MMBS
                 MessageBox.Show("No error detect, please check source code for the issue", "Download Image Failed");
                 return;
             }
-            FormData.appinfo.Icon.enable = true;
-            FormData.appinfo.Icon.link = url;
+            FormData.appInfo.icon.enable = true;
+            FormData.appInfo.icon.link = url;
 
-            FormData.appinfo.Icon.dir = "";
-            FormData.appinfo.Icon.image = image;
+            FormData.appInfo.icon.dir = "";
+            FormData.appInfo.icon.image = image;
             processIconCounter--;
         }
         private async Task updateIconByUploadFile()
@@ -943,11 +944,11 @@ namespace MMBS
             {
                 var uploadResult = await client.Upload(dialogFile.FileName);
                 if (uploadResult != 0) { MessageBox.Show("Imgur image upload failed with code "+ uploadResult + "\n" + dialogFile.FileName,"Upload Failed"); processIconCounter--; return;  }
-                FormData.appinfo.Icon.enable = true;
-                FormData.appinfo.Icon.link = client.GetUrl();
-                FormData.appinfo.Icon.dir = dialogFile.FileName;
-                FormData.appinfo.Icon.image = Image.FromFile(dialogFile.FileName);
-                this.boxIcon.Image = FormData.appinfo.Icon.image;
+                FormData.appInfo.icon.enable = true;
+                FormData.appInfo.icon.link = client.GetUrl();
+                FormData.appInfo.icon.dir = dialogFile.FileName;
+                FormData.appInfo.icon.image = Image.FromFile(dialogFile.FileName);
+                this.boxIcon.Image = FormData.appInfo.icon.image;
             }
             processIconCounter--;
         }
@@ -962,11 +963,11 @@ namespace MMBS
 
                 var uploadResult = await client.Upload(imgClipboard.ToStream(System.Drawing.Imaging.ImageFormat.Jpeg));
                 if (uploadResult != 0) { MessageBox.Show("Imgur image upload failed with code " + uploadResult, "Upload Failed"); processIconCounter--; return; }
-                FormData.appinfo.Icon.enable = true;
-                FormData.appinfo.Icon.link = client.GetUrl();
-                FormData.appinfo.Icon.dir = dialogFile.FileName;
-                FormData.appinfo.Icon.image = imgClipboard;
-                this.boxIcon.Image = FormData.appinfo.Icon.image;
+                FormData.appInfo.icon.enable = true;
+                FormData.appInfo.icon.link = client.GetUrl();
+                FormData.appInfo.icon.dir = dialogFile.FileName;
+                FormData.appInfo.icon.image = imgClipboard;
+                this.boxIcon.Image = FormData.appInfo.icon.image;
             processIconCounter--;
         }
 
@@ -1196,17 +1197,17 @@ namespace MMBS
                     if (String.IsNullOrEmpty(text) || !Uri.IsWellFormedUriString(text, UriKind.Absolute))
                     {
                         await updateIconFromClipboard();
-                        noticeToolTipIcon(FormData.appinfo.Icon.link);
+                        noticeToolTipIcon(FormData.appInfo.icon.link);
                         return;
                     }
                     if ((new Uri(text)).IsFile)
                     {
                         await updateIconFromClipboard(Image.FromFile(text));
-                        noticeToolTipIcon(FormData.appinfo.Icon.link);
+                        noticeToolTipIcon(FormData.appInfo.icon.link);
                         return;
                     }
                     await updateIconByLink(text);
-                    noticeToolTipIcon(FormData.appinfo.Icon.link);
+                    noticeToolTipIcon(FormData.appInfo.icon.link);
                     //MessageBox.Show("Trigger Clipboard Event");
 
                 }
@@ -1274,17 +1275,17 @@ namespace MMBS
             if (String.IsNullOrEmpty(text) || !Uri.IsWellFormedUriString(text, UriKind.Absolute))
             {
                 await updateIconFromClipboard();
-                noticeToolTipIcon(FormData.appinfo.Icon.link);
+                noticeToolTipIcon(FormData.appInfo.icon.link);
                 return;
             }
             if ((new Uri(text)).IsFile)
             {
                 await updateIconFromClipboard(Image.FromFile(text));
-                noticeToolTipIcon(FormData.appinfo.Icon.link);
+                noticeToolTipIcon(FormData.appInfo.icon.link);
                 return;
             }
             await updateIconByLink(text);
-            noticeToolTipIcon(FormData.appinfo.Icon.link);
+            noticeToolTipIcon(FormData.appInfo.icon.link);
         }
 
         private void boxImageLink_TextChanged(object sender, EventArgs e)
@@ -1312,7 +1313,7 @@ namespace MMBS
 
         private void boxPackage_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.packagename = boxPackage.Text;
+            FormData.appInfo.packageName = boxPackage.Text;
         }
         public void ImportCreditList()
         {
@@ -1362,7 +1363,7 @@ namespace MMBS
 
         private void checkOMirror_CheckedChanged(object sender, EventArgs e)
         {
-            FormData.Downloadlink.OMirrorlink.check = checkOMirror.Checked;
+            FormData.downloadlink.OMirrorlink.check = checkOMirror.Checked;
         }
     }
 }

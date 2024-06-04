@@ -87,7 +87,7 @@ namespace MMBS
                     ApplicationName = ApplicationName,
                 });
                 //var cache = new JObject();
-                //cache.Add("name", FormData.appinfo.name +" "+ FormData.modinfo.modtype);
+                //cache.Add("name", FormData.appInfo.name +" "+ FormData.modInfo.modtype);
 
                 Google.Apis.Blogger.v3.Data.Post post = new Post();
                 post.Title = (string.IsNullOrWhiteSpace(res.titleprocRes) ? "" : res.titleprocRes);

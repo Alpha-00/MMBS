@@ -117,7 +117,7 @@
             this.boxDesc.Name = "boxDesc";
             this.boxDesc.Size = new System.Drawing.Size(213, 68);
             this.boxDesc.TabIndex = 2;
-            this.boxDesc.Text = "Description";
+            this.boxDesc.Text = "description";
             this.boxDesc.TextChanged += new System.EventHandler(this.boxDesc_TextChanged);
             // 
             // boxDownloadlink

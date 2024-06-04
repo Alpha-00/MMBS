@@ -8,10 +8,15 @@ using System.Web.UI.WebControls.Expressions;
 
 namespace MMBS.Model.PostForm
 {
-    public class PostForm240104 : PostFormBase<TemplateData240104>
+    public class PostForm240603_Mod977 : PostFormBase<TemplateData240603_Mod977>
     {
-        public PostForm240104(PostDataBundle data)
-            : base(data, new TemplateData240104())
+        /// <summary>
+        /// Need to run follow sequence
+        /// 1. generateForm()
+        /// </summary>
+        /// <param name="data"></param>
+        public PostForm240603_Mod977(PostDataBundle data)
+            : base(data, new TemplateData240603_Mod977())
         {
 
         }
@@ -110,14 +115,14 @@ namespace MMBS.Model.PostForm
             "$$$.sourceUrl$$$$", data.appInfo.datasource,
             "$$$.package$$$$", data.appInfo.packageName,
             "$$$.modListHtml$$$$", cache_modList,
-            "$$$.igroupReqHtml$$$$", cache_reqList,
-            "$$$.rootReqHtml$$$$", template.rootReqHtml[data.appInfo.rootReq ?
-                // temp implement
-                (!string.IsNullOrWhiteSpace(data.downloadlink.Downloadlink.linkalias) ? (data.downloadlink.Downloadlink.linkalias == "Signed" ? 2 : 1) : 1)
-            : 0],
-            "$$$.obbReqHtml$$$$", template.obbReqHtml[data.appInfo.obbReq ? 1 : 0],
-            "$$$.internetReqHtml$$$$", template.internetReqHtml[data.appInfo.internetReq ? 1 : 0],
-            "$$$.extpermReqHtml$$$$", template.extpermReqHtml[data.appInfo.extpermReq ? 1 : 0]
+            "$$$.igroupReqHtml$$$$", cache_reqList
+            //"$$$.rootReqHtml$$$$", template.rootReqHtml[data.appInfo.rootReq ?
+            //    // temp implement
+            //    (!string.IsNullOrWhiteSpace(data.downloadlink.downloadlink.linkalias) ? (data.downloadlink.downloadlink.linkalias == "Signed" ? 2 : 1) : 1)
+            //: 0],
+            //"$$$.obbReqHtml$$$$", template.obbReqHtml[data.appInfo.obbReq ? 1 : 0],
+            //"$$$.internetReqHtml$$$$", template.internetReqHtml[data.appInfo.internetReq ? 1 : 0],
+            //"$$$.extpermReqHtml$$$$", template.extpermReqHtml[data.appInfo.extpermReq ? 1 : 0]
                 );
             SP_iGroupScript = template.igroupScript.Replace("$$$.igroupHtml$$$$", SP_iGroupScript);
             //Image Script //Undone
@@ -201,7 +206,7 @@ namespace MMBS.Model.PostForm
                     if (data.downloadlink.OMirrorlink.check && !string.IsNullOrWhiteSpace(data.downloadlink.OMirrorlink.link)) {
                         if (data.downloadlink.OMirrorlink.linkalias == "Mirror")
                             data.downloadlink.OMirrorlink.linkalias = "Support Us";
-                        SP_DownloadScript += MyFunction.MultiReplace(template.linkoneScript2, "$$$:.downLink$$$$", data.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", data.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.OMirrorlink.FAicon);
+                        SP_DownloadScript += MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", data.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.OMirrorlink.FAicon);
                     }
                     SP_DownloadScript = template.linkScript.Replace("$$$:.downlinkBundleScript$$$$", SP_DownloadScript);
                 }
@@ -212,7 +217,7 @@ namespace MMBS.Model.PostForm
                     string cache_downloadbundle = "";
                     if (data.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(data.downloadlink.Downloadlink.link))
                     {
-                        cache_downloadbundle = MyFunction.MultiReplace(template.linkoneScript2, "$$$:.downLink$$$$", data.downloadlink.Downloadlink.link, "$$$:.downName$$$$", data.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle = MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.Downloadlink.link, "$$$:.downName$$$$", data.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
                     }
                     if (data.downloadlink.linklist.Count > 0)
                     {
@@ -263,9 +268,9 @@ namespace MMBS.Model.PostForm
             return MyFunction.MultiReplace(template.layout, "$$$.styleCard$$$$", SP_styleCard, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.linkScript$$$$", SP_DownloadScript, "$$$.credit$$$$", SP_CreditScript, "$$$.lastword$$$$", template.lastword);
         }
     }
-    public class TemplateData240104 : PostFormTemplate
+    public class TemplateData240603_Mod977 : PostFormTemplate
     {
-        public TemplateData240104()
+        public TemplateData240603_Mod977()
         {
         }
         /// <summary>
@@ -273,7 +278,7 @@ namespace MMBS.Model.PostForm
         ///         Static information about version of the script for tracking and future refactor
         ///     </para>
         /// </summary>
-        public String toolscript => "<!--MMBS:240105:240105-->";
+        public String toolscript => "<!--MMBS:240603:240603-->";
 
         /// <summary>
         ///     <para>
@@ -321,11 +326,11 @@ namespace MMBS.Model.PostForm
         ///         Javascript element to help reveal description
         ///     </para>
         /// </summary>
-        public String descButReveal => "<input " +
-                    "onclick=\"if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = '';this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show Game Descriptions'; }\" " +
-                    "onmouseover=\"this.style.backgroundColor = 'rgb(28,28,28)';\" onmouseout=\"this.style.backgroundColor = '#28A6E2';\"" +
-                    " style=\"font-size: 20px; margin: 3px; padding: 5px; width: 300px; background-color: #28A6E2; border: none; border-radius: 2px; color: white;\"" +
-                    " type=\"button\" value=\"Show Game Descriptions\">";
+        //public String descButReveal => "<input " +
+        //            "onclick=\"if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = '';this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show Game Descriptions'; }\" " +
+        //            "onmouseover=\"this.style.backgroundColor = 'rgb(28,28,28)';\" onmouseout=\"this.style.backgroundColor = '#28A6E2';\"" +
+        //            " style=\"font-size: 20px; margin: 3px; padding: 5px; width: 300px; background-color: #28A6E2; border: none; border-radius: 2px; color: white;\"" +
+        //            " type=\"button\" value=\"Hiển thị mô tả\">";
 
         /// <summary>
         /// <para>
@@ -356,7 +361,7 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String descScript =>
-            "<h3 style=\"text-align: left;\">About this game</h3>"
+            "<h3 style=\"text-align: left;\">Các tính năng nổi bật:</h3>"
                 + "<div>"
                     + /*param*/ "$$$.descHtml$$$$"
                 + "</div>\n";
@@ -372,27 +377,27 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String igroupScript => seperateLineScript
-                + "<h3>Mod Info</h3>" + "\n"
+                + "<h3>Thông tin MOD</h3>" + "\n"
                     +/*param*/ "$$$.igroupHtml$$$$" + "\n";
 
         /// <summary>
         /// 
         /// </summary>
         public String igroupHtml => "<ul>" + "\n"
-                                        + "<li>Package:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"color: #04ff00;\"><b>$$$.package$$$$</b></span></a></li>"
-                                        + "<li>Require: " + "$$$.datAReq$$$$" + "</li>" + "\n"
-                                        + "<li>Version: " + "$$$.datVer$$$$" + "</li>" + "\n"
-                                        + "<li>Mod feature(s):" + "$$$.modListHtml$$$$" + "</li>" + "\n"
-                                        + "<li>File size: " + "$$$.datSize$$$$" + "</li>" + "\n"
-                                        + "$$$.igroupReqHtml$$$$"
+                                        + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"color: #04ff00;\"><b>$$$.package$$$$</b></span></a></li>"
+                                        + "<li>Yêu cầu: " + "$$$.datAReq$$$$" + "</li>" + "\n"
+                                        + "<li>Phiên bản: " + "$$$.datVer$$$$" + "</li>" + "\n"
+                                        + "<li>Tính năng MOD:" + "$$$.modListHtml$$$$" + "</li>" + "\n"
+                                        + "<li>Kích thước file MOD: " + "$$$.datSize$$$$" + "</li>" + "\n"
+                                        //+ "$$$.igroupReqHtml$$$$"
                                         + "</ul>" + "\n";
 
-        public Dictionary<String, String> igroupRequireItem => new Dictionary<String, String> {
-            { "rootReq", "<li>Needs Root: " + "$$$.rootReqHtml$$$$" + "</li>" + "\n" }
-            ,{ "internetReq", "<li>Internet: " + "$$$.internetReqHtml$$$$" + "</li>" + "\n" }
-            ,{ "obbReq", "<li>Needs Obb: " + "$$$.obbReqHtml$$$$" + "</li>" + "\n" }
-            ,{ "permReq", "<li>Needs Special Permission: " + "$$$.extpermReqHtml$$$$" + "</li>" + "\n" }
-        };
+        //public Dictionary<String, String> igroupRequireItem => new Dictionary<String, String> {
+        //    { "rootReq", "<li>Needs Root: " + "$$$.rootReqHtml$$$$" + "</li>" + "\n" }
+        //    ,{ "internetReq", "<li>Internet: " + "$$$.internetReqHtml$$$$" + "</li>" + "\n" }
+        //    ,{ "obbReq", "<li>Needs Obb: " + "$$$.obbReqHtml$$$$" + "</li>" + "\n" }
+        //    ,{ "permReq", "<li>Needs Special Permission: " + "$$$.extpermReqHtml$$$$" + "</li>" + "\n" }
+        //};
 
         /// <summary>
         /// 
@@ -407,14 +412,12 @@ namespace MMBS.Model.PostForm
         /// <summary>
         /// 
         /// </summary>
-        public String imageScript => seperateLineScript + "<h3>" + "\n" + "In-Game Images</h3>" + "\n" + "$$$.imageHtml$$$$";
+        public String imageScript => seperateLineScript + "<h3>" + "\n" + "Hình ảnh trong game</h3>" + "\n" + "$$$.imageHtml$$$$";
 
         /// <summary>
         /// 
         /// </summary>
-        public String imagecardScript => "<div class=\"separator\" style=\"clear: both; text-align: center;\">" + "\n" + "<a href=" + "\"" + /*param*/ "$$$:.imageLink$$$$" + "\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\">"
-                                       + "<img border=\"0\" data-original-height=\"" + /*param*/ "$$$:.imageOHeight$$$$" + "\"data-original-width=\"" + /*param*/ "$$$:.imageOWidth$$$$" + "\"height=\"" + /*param*/ "$$$:.imageNHeight$$$$" + "\"src=\"" + /*param*/ "$$$:.imageLink$$$$" + "\"width=\"" + /*param*/ "$$$:.imageNWidth$$$$" + "\" /></a >" +
-                                       "</div >" + "\n";
+        public String imagecardScript => "<div class=\"separator\" style=\"clear: both; text-align: center;\">\r\n<a href=\"$$$:.imageLink$$$$\" style=\"margin-left: 1em; margin-right: 1em;\"><img border=\"0\" data-original-height=\"$$$:.imageOHeight$$$$\" data-original-width=\"$$$:.imageOWidth$$$$\" height=\"$$$:.imageNHeight$$$$\" src=\"$$$:.imageLink$$$$\" width=\"$$$:.imageNWidth$$$$\"></a></div>";
 
         /// <summary>
         /// 
@@ -434,48 +437,48 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String linkoneScript =>
-            "<div class=\"buttons\">\r\n\t<a rel=\"noopener noreferrer\" href=\"$$$:.downLink$$$$\" target=\"_blank\">\r\n\t\t<button class=\"btn-hover color-9\">$$$:.downName$$$$</button>\r\n\t</a>\r\n</div>";
+            "<div style=\"text-align: center;\"><a href=\"$:.downLink$$$$\" rel=\"nofollow noopener\"><button class=\"glow-on-hover\" type=\"button\"><svg class=\"h-6 w-6\" fill=\"none\" stroke-width=\"2\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n  <path d=\"M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\r\n</path></svg>Tải ngay</button></a></div>";
         
 
         /// <summary>
         /// 
         /// </summary>
-        public String linkoneScript2 => "<div class=\"buttons\">\r\n\t<a rel=\"noopener noreferrer\" href=\"$$$:.downLink$$$$\" target=\"_blank\">\r\n\t\t<button class=\"btn-hover color-10\">$$$:.downName$$$$</button>\r\n\t</a>\r\n</div>";
+        //public String linkoneScript2 => "<div class=\"buttons\">\r\n\t<a rel=\"noopener noreferrer\" href=\"$$$:.downLink$$$$\" target=\"_blank\">\r\n\t\t<button class=\"btn-hover color-10\">$$$:.downName$$$$</button>\r\n\t</a>\r\n</div>";
 
         /// <summary>
         /// 
         /// </summary>
-        public String credit => "<br/><h3 style=\"text-align: center;\">" + "\n" + "<span style=\"color: red;\">Credit to <span id=\"$$$?.creditLevel$$$$\" style=\"color: #28A6E2\">$$$?.creditString$$$$</span></span></h3>" + "\n";
+        public String credit => "<span style=\"color: red;\">MOD bởi <span id=\"VIPadmin\" style=\"color: #28a6e2;\">Mod977</span></span></h3>" + "\n";
 
         /// <summary>
         /// 
         /// </summary>
-        public String lastword => "<h3 style=\"text-align: center;\">" + "\n" + "<span style=\"color: red;\">Don't change the toast to make this yours. Thanks!</span></h3>";
+        public String lastword => "<span style=\"color: red;\">Copy xin ghi rõ nguồn. Xin cảm ơn!</span></h3>";
 
         /// <summary>
         /// 
         /// </summary>
         public String codeWrapLine => "<div id=\"wrap\">" + "\n" + "$$$:.var$$$$" + "\n" + "</div>" + "\n";
-        public String[] internetReqHtml => new string[2] 
+        /*public String[] internetReqHtml => new string[2] 
                 {   ("<span style=\"color: #2ec849; \"><b>No</b></span>"),   
                     ("<span style=\"color: red; \"><b>Yes</b></span>") 
-                };
-    public String[] rootReqHtml => new string[3] 
+                };*/
+    /*public String[] rootReqHtml => new string[3] 
                 {
                     ("<span style=\"color: #2ec849; \"><b>No</b></span>"),
                     ("<a href=\"https://www.offlinemods.net/2017/10/how-to-install-unsigned-apks-on-your.html\" title= \"How to install unsigned apks on your phone?\" target=\"_blank\" style=\"color: red;\"><b>Yes</b></a>"),
                     ("<a href=\"https://www.offlinemods.net/2017/10/how-to-install-unsigned-apks-on-your.html\" title= \"How to install unsigned apks on your phone?\" target=\"_blank\" style=\"color: red;\"><b>Yes/No</b></a>")
-                };
-public String[] obbReqHtml => new string[2]
+                };*/
+/*public String[] obbReqHtml => new string[2]
     {
                     ("<span style=\"color: #2ec849; \"><b>No</b></span>"),(
                     "<a href=\"https://www.offlinemods.net/2016/10/how-to-install-game-which-has-obb-file.html\" title= \"How to install game which has obb file?\" target=\"_blank\" style=\"color: red;\"><b>Yes</b></a>")
-    };
+    };*/
 //extpermReqHtml = new string[2] {    ("<a href=\"https://www.offlinemods.net/\" " +/*title= \"\"*/" target=\"_blank\" style=\"color: #2ec849; \"><b>Overlay</b></a>"),             ("<a href=\"https://www.offlinemods.net/2019/10/how-to-grant-storage-permission-on-android.html\" title= \"How to grant storage permission on android?\" target=\"_blank\" style=\"color: red;\"><b>External storage</b></a>") };
-public String[] extpermReqHtml => new string[2]
+/*public String[] extpermReqHtml => new string[2]
     {
                     ("<span style=\"color: #2ec849; \"><b>No</b></span>"),
                     ("<a href=\"https://www.offlinemods.net/2019/10/how-to-grant-storage-permission-on-android.html\" title= \"How to grant storage permission on android?\" target=\"_blank\" style=\"color: red;\"><b>Yes</b></a>")
-    };
+    };*/
     }
 }

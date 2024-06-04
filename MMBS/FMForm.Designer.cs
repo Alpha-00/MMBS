@@ -30,8 +30,8 @@
         {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMForm));
-			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Hello", 0);
-			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Bye Bye");
+			System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Hello", 0);
+			System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Bye Bye");
 			this.boxAppname = new System.Windows.Forms.TextBox();
 			this.groupInfo = new System.Windows.Forms.GroupBox();
 			this.butIconClipboard = new System.Windows.Forms.Button();
@@ -251,7 +251,7 @@
 			this.labelDesc.Name = "labelDesc";
 			this.labelDesc.Size = new System.Drawing.Size(95, 20);
 			this.labelDesc.TabIndex = 13;
-			this.labelDesc.Text = "Description";
+			this.labelDesc.Text = "description";
 			// 
 			// descMenu
 			// 
@@ -792,11 +792,11 @@
 			this.listImageReview.ForeColor = System.Drawing.Color.White;
 			this.listImageReview.HideSelection = false;
 			this.listImageReview.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			listViewItem1.StateImageIndex = 0;
-			listViewItem2.StateImageIndex = 0;
+			listViewItem3.StateImageIndex = 0;
+			listViewItem4.StateImageIndex = 0;
 			this.listImageReview.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem3,
+            listViewItem4});
 			this.listImageReview.LargeImageList = this.ilistScreenShot;
 			this.listImageReview.Location = new System.Drawing.Point(6, 23);
 			this.listImageReview.MultiSelect = false;
@@ -841,7 +841,7 @@
             this.scibanCustomToolStripMenuItem,
             this.scibanCustomExportDataStripItem});
 			this.contextmenuPublish.Name = "contextMenuStrip1";
-			this.contextmenuPublish.Size = new System.Drawing.Size(227, 172);
+			this.contextmenuPublish.Size = new System.Drawing.Size(227, 200);
 			this.contextmenuPublish.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextmenuPublish_ItemClicked);
 			// 
 			// toolStripTextBox1
@@ -1199,7 +1199,7 @@
 			this.Controls.Add(this.groupInfo);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ForeColor = System.Drawing.Color.White;
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
 			this.KeyPreview = true;
 			this.Name = "FMForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

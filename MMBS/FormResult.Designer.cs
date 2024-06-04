@@ -160,7 +160,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
             this.Location = global::MMBS.Properties.Settings.Default.newPostBlankPosition;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormResult";

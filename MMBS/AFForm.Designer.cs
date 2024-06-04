@@ -725,7 +725,7 @@
             this.Controls.Add(this.groupDS);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ForeColor = System.Drawing.Color.White;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AFForm";

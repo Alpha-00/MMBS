@@ -692,7 +692,7 @@
             this.Controls.Add(this.butIcon);
             this.Controls.Add(this.boxModInfo);
             this.Controls.Add(this.butBack);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
             this.Name = "AFFios";
             this.Text = "AFFios";
             this.menuNext.ResumeLayout(false);

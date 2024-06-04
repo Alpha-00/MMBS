@@ -106,7 +106,7 @@
 			this.Controls.Add(this.linkHelp);
 			this.Controls.Add(this.butAccept);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
 			this.Name = "ImgurIdQueryForm";
 			this.ShowInTaskbar = false;
 			this.Text = "Imgur ID";

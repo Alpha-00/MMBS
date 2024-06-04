@@ -798,7 +798,7 @@ namespace MMBS
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) System.IO.Directory.CreateDirectory(cacheDir);
                         ProcSupporter.HtmlScriptCard scriptCache;
-                        scriptCache = ProcSupporter.FindCardinScript(webpage, "alt=\"Icon image\"");
+                        scriptCache = ProcSupporter.FindCardinScript(webpage, "alt=\"icon image\"");
                         coverImagelink = scriptCache.GetData("src");
 
                         if (string.IsNullOrEmpty(coverImagelink)) throw new Exception("Can't find cover image");
@@ -2248,9 +2248,9 @@ namespace MMBS
                 public void Get_Desc()
                 {
                     var results = doc.DocumentNode.SelectNodes("//div[@class=\"content\"]/div[1]/div/div");
-                    if (results is null) throw new Exception("Parser Error: No Description Found");
+                    if (results is null) throw new Exception("Parser Error: No description Found");
                     var nodes = results.Nodes().ToList();
-                    if (nodes.Count <= 0) throw new Exception("Parser Error: No Description Found");
+                    if (nodes.Count <= 0) throw new Exception("Parser Error: No description Found");
                     string content = "";
                     for (int i = 0; i< nodes.Count; i++)
                     {

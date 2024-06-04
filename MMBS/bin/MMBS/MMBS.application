@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <assemblyIdentity name="MMBS.application" version="0.37.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <assemblyIdentity name="MMBS.application" version="0.40.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <description asmv2:publisher="Honmyou" asmv2:product="MMBS" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" co.v1:createDesktopShortcut="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
@@ -8,13 +8,13 @@
   </compatibleFrameworks>
   <dependency>
     <dependentAssembly dependencyType="install" codebase="MMBS.exe.manifest" size="79066">
-      <assemblyIdentity name="MMBS.exe" version="0.37.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+      <assemblyIdentity name="MMBS.exe" version="0.40.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>udYwOOf+fkZALFpCTYBZBSyf8IC6VXULjyv2s6YTS6I=</dsig:DigestValue>
+        <dsig:DigestValue>JTTb3icXGa9FFONPC5Y6hOVk6lAG+06B2hAyBZHoijc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

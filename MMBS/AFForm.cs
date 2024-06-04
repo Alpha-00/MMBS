@@ -82,22 +82,22 @@ namespace MMBS
             groupDS.Text = "Data Source";
             groupDL.Text = "Download";
             groupAO.Text = "OBB";
-            butModInfo.Text = AFFinputer.modinfo.UI.modTypeGetname(AFFinputer.modinfo.UI.currentindex);
+            butModInfo.Text = AFFinputer.modInfo.UI.modTypeGetname(AFFinputer.modInfo.UI.currentindex);
             if (!Properties.Settings.Default.OldStyle)
-            butModInfo.ForeColor = AFFinputer.modinfo.UI.modTypegetcolor(AFFinputer.modinfo.UI.currentindex);
-            boxModInfo.Enabled = AFFinputer.modinfo.UI.modTypeAllowData(AFFinputer.modinfo.UI.currentindex);
-            boxModInfo.Text = AFFinputer.modinfo.UI.modTypeGetDat(AFFinputer.modinfo.UI.currentindex);
-            boxDSlink.Text = AFFinputer.appinfo.datasource;
-            boxDLlink.Text = AFFinputer.Downloadlink.Downloadlink.link;
-            boxAOlink.Text = AFFinputer.Downloadlink.OBBlink.link;
-            checkAPK.Checked = AFFinputer.Downloadlink.OBBlink.check;
-            boxMirrorDLlink.Text = AFFinputer.Downloadlink.OMirrorlink.link;
-            checkMirror.Checked = AFFinputer.Downloadlink.OMirrorlink.check;
+            butModInfo.ForeColor = AFFinputer.modInfo.UI.modTypegetcolor(AFFinputer.modInfo.UI.currentindex);
+            boxModInfo.Enabled = AFFinputer.modInfo.UI.modTypeAllowData(AFFinputer.modInfo.UI.currentindex);
+            boxModInfo.Text = AFFinputer.modInfo.UI.modTypeGetDat(AFFinputer.modInfo.UI.currentindex);
+            boxDSlink.Text = AFFinputer.appInfo.datasource;
+            boxDLlink.Text = AFFinputer.downloadlink.Downloadlink.link;
+            boxAOlink.Text = AFFinputer.downloadlink.OBBlink.link;
+            checkAPK.Checked = AFFinputer.downloadlink.OBBlink.check;
+            boxMirrorDLlink.Text = AFFinputer.downloadlink.OMirrorlink.link;
+            checkMirror.Checked = AFFinputer.downloadlink.OMirrorlink.check;
 
-            checkExtPerms.Checked = AFFinputer.appinfo.extpermReq;
-            checkInternet.Checked = AFFinputer.appinfo.internetReq;
-            checkRoot.Checked = AFFinputer.appinfo.rootReq;
-            checkOBB.Checked = AFFinputer.appinfo.obbReq;
+            checkExtPerms.Checked = AFFinputer.appInfo.extpermReq;
+            checkInternet.Checked = AFFinputer.appInfo.internetReq;
+            checkRoot.Checked = AFFinputer.appInfo.rootReq;
+            checkOBB.Checked = AFFinputer.appInfo.obbReq;
             labelValidDS.Visible = false;
             labelUnvalidDS.Visible = false;
             labelValidDL.Visible = false;
@@ -119,10 +119,10 @@ namespace MMBS
         }
         public void RefreshData(object sender, EventArgs e)
         {
-            boxDSlink.Text = AFFinputer.appinfo.datasource;
-            boxModInfo.Text = AFFinputer.modinfo.moddata;
-            checkOBB.Checked = AFFinputer.appinfo.obbReq;
-            checkRoot.Checked = AFFinputer.appinfo.rootReq;
+            boxDSlink.Text = AFFinputer.appInfo.datasource;
+            boxModInfo.Text = AFFinputer.modInfo.moddata;
+            checkOBB.Checked = AFFinputer.appInfo.obbReq;
+            checkRoot.Checked = AFFinputer.appInfo.rootReq;
             listCredit.SelectedIndex = AFFinputer.credit.nowIndex;
         }
         public void ImportCreditList()
@@ -171,13 +171,13 @@ namespace MMBS
             if (Properties.Settings.Default.OldStyle) { }
             else
             {
-                this.butModInfo.ForeColor = AFFinputer.modinfo.UI.modTypegetcolor(AFFinputer.modinfo.UI.currentindex);
+                this.butModInfo.ForeColor = AFFinputer.modInfo.UI.modTypegetcolor(AFFinputer.modInfo.UI.currentindex);
             }
-                AFFinputer.modinfo.UI.currentindex = AFFinputer.modinfo.UI.Getnext();
-                this.butModInfo.Text = AFFinputer.modinfo.UI.modTypeGetname(AFFinputer.modinfo.UI.currentindex);
+                AFFinputer.modInfo.UI.currentindex = AFFinputer.modInfo.UI.Getnext();
+                this.butModInfo.Text = AFFinputer.modInfo.UI.modTypeGetname(AFFinputer.modInfo.UI.currentindex);
                 
-                this.boxModInfo.Enabled = AFFinputer.modinfo.UI.modTypeAllowData(AFFinputer.modinfo.UI.currentindex);
-                this.boxModInfo.Text = AFFinputer.modinfo.UI.modTypeGetDat(AFFinputer.modinfo.UI.currentindex);
+                this.boxModInfo.Enabled = AFFinputer.modInfo.UI.modTypeAllowData(AFFinputer.modInfo.UI.currentindex);
+                this.boxModInfo.Text = AFFinputer.modInfo.UI.modTypeGetDat(AFFinputer.modInfo.UI.currentindex);
             
         }
         public static string Proccontentcache;
@@ -244,10 +244,10 @@ namespace MMBS
                     boxDSlink.Text = param;
                     boxDSlink.TextChanged += boxDSlink_TextChanged;
                     break;
-                case "butIcon image": butIcon.Image = param == "default" ? Properties.Resources.offlinemods_logo_pns : AFFinputer.appinfo.Icon.image; break;
+                case "butIcon image": butIcon.Image = param == "default" ? Properties.Resources.offlinemods_logo_pns : AFFinputer.appInfo.icon.image; break;
                 case "linkDLname text": linkDLname.Text = string.IsNullOrWhiteSpace(param)?"":param; break;
                 case "linkAOname text": linkAOname.Text = string.IsNullOrWhiteSpace(param) ? "" : param; break;
-                case "system savedata download size": AFFinputer.appinfo.sizeinbyte = Convert.ToInt64(param);break;
+                case "system savedata download size": AFFinputer.appInfo.sizeinbyte = Convert.ToInt64(param);break;
                 case "checkDL label": labelValidDL.Visible = Convert.ToInt32(param) == 1; labelUnvalidDL.Visible = (Convert.ToInt32(param) == 2); break;
                 case "checkAO label": labelValidAO.Visible = Convert.ToInt32(param) == 1; labelUnvalidAO.Visible = (Convert.ToInt32(param) == 2); break;
                 case "checkAPK check": checkAPK.Checked = Convert.ToBoolean(param);break;
@@ -268,20 +268,20 @@ namespace MMBS
             if (processDataResourceTextBox.valid==1)
             {
                 
-                AFFinputer.appinfo.packagename = processDataResourceTextBox.packagename;
-                AFFinputer.appinfo.datasource = processDataResourceTextBox.link;
-                AFFinputer.appinfo.datasourcepage = processDataResourceTextBox.webpage;
-                AFFinputer.appinfo.Icon.link = processDataResourceTextBox.coverImagelink;
-                AFFinputer.appinfo.Icon.dir = processDataResourceTextBox.coverImageDir;
+                AFFinputer.appInfo.packageName = processDataResourceTextBox.packagename;
+                AFFinputer.appInfo.datasource = processDataResourceTextBox.link;
+                AFFinputer.appInfo.datasourcepage = processDataResourceTextBox.webpage;
+                AFFinputer.appInfo.icon.link = processDataResourceTextBox.coverImagelink;
+                AFFinputer.appInfo.icon.dir = processDataResourceTextBox.coverImageDir;
                 if (processDataResourceTextBox.coverImage!=null)
-                AFFinputer.appinfo.Icon.image = processDataResourceTextBox.coverImage.image;
-                AFFinputer.appinfo.Icon.enable = true;
+                AFFinputer.appInfo.icon.image = processDataResourceTextBox.coverImage.image;
+                AFFinputer.appInfo.icon.enable = true;
                 AFFinputer.folderlink = processDataResourceTextBox.cacheDir;
-                AFFinputer.appinfo.datasourcetype = processDataResourceTextBox.host;
-                AFFinputer.appinfo.datasourcemask = (processDataResourceTextBox.host == "play.google.com" ? DSlabelText[1] : (processDataResourceTextBox.host == "apkpure.com" ? DSlabelText[2] : ""));
+                AFFinputer.appInfo.datasourcetype = processDataResourceTextBox.host;
+                AFFinputer.appInfo.datasourcemask = (processDataResourceTextBox.host == "play.google.com" ? DSlabelText[1] : (processDataResourceTextBox.host == "apkpure.com" ? DSlabelText[2] : ""));
                 datasource_webpage_cache = processDataResourceTextBox.webpage;
                 groupDS.Invoke(new MethodInvoker(delegate { groupDS.Text = (processDataResourceTextBox.host == "play.google.com" ? DSlabelText[1] : (processDataResourceTextBox.host == "apkpure.com" ? DSlabelText[2] : DSlabelText[0])); }));
-                butIcon.Invoke(new MethodInvoker(delegate { butIcon.Image = processDataResourceTextBox.coverImageDir == "default" ? Properties.Resources.offlinemods_logo_pns : AFFinputer.appinfo.Icon.image; }));
+                butIcon.Invoke(new MethodInvoker(delegate { butIcon.Image = processDataResourceTextBox.coverImageDir == "default" ? Properties.Resources.offlinemods_logo_pns : AFFinputer.appInfo.icon.image; }));
               //  this.Invoke(InfoSeter, "groupDS text\n" + (processDataResourceTextBox.host == "play.google.com" ? DSlabelText[1] : (processDataResourceTextBox.host == "apkpure.com" ? DSlabelText[2] : DSlabelText[0])));
                // this.Invoke(InfoSeter, "butIcon image\n" + processDataResourceTextBox.coverImageDir);
             }
@@ -290,7 +290,7 @@ namespace MMBS
                 this.Invoke(InfoSeter, "groupDS text\n" + DSlabelText[0]);
                 this.Invoke(InfoSeter, "butIcon image\ndefault");
             }
-            // controlForm("groupDS.Text Change",processDataResourceTextBox.packagename);
+            // controlForm("groupDS.Text Change",processDataResourceTextBox.packageName);
             this.Invoke(InfoSeter,"checkvarThreads.-");
         }
         private void boxDSlink_TextChanged(object sender, EventArgs e)
@@ -312,7 +312,7 @@ namespace MMBS
             if (this.Created && ((this.boxDSlink.Text.Contains("apple.com"))))
             {
                 checkRoot.Text = "Jailbreak";
-                checkOBB.Text = "Icon";
+                checkOBB.Text = "icon";
                 checkInternet.Visible = false;
                 checkExtPerms.Visible = false;
                 
@@ -337,10 +337,10 @@ namespace MMBS
             
             if (processDownloadLinkTextBox.valid > 0)
             {
-                AFFinputer.appinfo.size = processDownloadLinkTextBox.fsize;
-                AFFinputer.Downloadlink.Downloadlink.link = processDownloadLinkTextBox.link;
-                AFFinputer.Downloadlink.Downloadlink.check = Convert.ToBoolean(processDownloadLinkTextBox.valid);
-                AFFinputer.Downloadlink.Downloadlink.host = processDownloadLinkTextBox.host;
+                AFFinputer.appInfo.size = processDownloadLinkTextBox.fsize;
+                AFFinputer.downloadlink.Downloadlink.link = processDownloadLinkTextBox.link;
+                AFFinputer.downloadlink.Downloadlink.check = Convert.ToBoolean(processDownloadLinkTextBox.valid);
+                AFFinputer.downloadlink.Downloadlink.host = processDownloadLinkTextBox.host;
                 
             }
             else if (!string.IsNullOrEmpty(processDownloadLinkTextBox.link))
@@ -348,11 +348,11 @@ namespace MMBS
                 string cache = Microsoft.VisualBasic.Interaction.InputBox("Server không được hỗ trợ\nVui lòng nhập kích thước file\n Nếu bỏ trống link sẽ không được xử lý\n Có thể điền dấu cách để xử lý", "Nhập kích thước file", "");
                 if (!string.IsNullOrEmpty(cache))
                 {
-                    AFFinputer.appinfo.size = cache == " " ? "" : cache;
-                    AFFinputer.Downloadlink.Downloadlink.link = processDownloadLinkTextBox.link;
-                    AFFinputer.Downloadlink.Downloadlink.check = true;
-                    AFFinputer.Downloadlink.Downloadlink.actived = false;
-                    AFFinputer.Downloadlink.Downloadlink.host = processDownloadLinkTextBox.host;
+                    AFFinputer.appInfo.size = cache == " " ? "" : cache;
+                    AFFinputer.downloadlink.Downloadlink.link = processDownloadLinkTextBox.link;
+                    AFFinputer.downloadlink.Downloadlink.check = true;
+                    AFFinputer.downloadlink.Downloadlink.actived = false;
+                    AFFinputer.downloadlink.Downloadlink.host = processDownloadLinkTextBox.host;
                 }
                 else
                 {
@@ -407,10 +407,10 @@ namespace MMBS
             this.Invoke(InfoSeter, "linkAOname text\n" + processAPKLinkTextBox.fname);*/
             if (processAPKLinkTextBox.valid > 0)
             {
-                AFFinputer.appinfo.size = AFFinputer.appinfo.size==""?processAPKLinkTextBox.fsize:AFFinputer.appinfo.size;
-                AFFinputer.Downloadlink.OBBlink.link = processAPKLinkTextBox.link;
-                AFFinputer.Downloadlink.OBBlink.check = Convert.ToBoolean(processAPKLinkTextBox.valid);
-                AFFinputer.Downloadlink.OBBlink.host = processAPKLinkTextBox.host;
+                AFFinputer.appInfo.size = AFFinputer.appInfo.size==""?processAPKLinkTextBox.fsize:AFFinputer.appInfo.size;
+                AFFinputer.downloadlink.OBBlink.link = processAPKLinkTextBox.link;
+                AFFinputer.downloadlink.OBBlink.check = Convert.ToBoolean(processAPKLinkTextBox.valid);
+                AFFinputer.downloadlink.OBBlink.host = processAPKLinkTextBox.host;
             }
             else if (!string.IsNullOrEmpty(processAPKLinkTextBox.link))
             {
@@ -419,9 +419,9 @@ namespace MMBS
                 Microsoft.VisualBasic.MsgBoxResult cache = Microsoft.VisualBasic.Interaction.MsgBox("Server không được hỗ trợ\nBạn có muốn giữ link này không?", Microsoft.VisualBasic.MsgBoxStyle.OkCancel,"LINK KHÁC");
                 if (cache == Microsoft.VisualBasic.MsgBoxResult.Ok)
                 {
-                    AFFinputer.Downloadlink.OBBlink.link = processAPKLinkTextBox.link;
-                    AFFinputer.Downloadlink.OBBlink.check = true;
-                    AFFinputer.Downloadlink.OBBlink.host = processAPKLinkTextBox.host;
+                    AFFinputer.downloadlink.OBBlink.link = processAPKLinkTextBox.link;
+                    AFFinputer.downloadlink.OBBlink.check = true;
+                    AFFinputer.downloadlink.OBBlink.host = processAPKLinkTextBox.host;
                 }
             }
             labelValidAO.Invoke(new MethodInvoker(delegate { labelValidAO.Visible = processAPKLinkTextBox.valid == 1; }));
@@ -448,62 +448,62 @@ namespace MMBS
             DateTime counter = new DateTime();
             if (Properties.Settings.Default.PermformCheck) counter = DateTime.Now;
             
-            OldProcessor.MainProcessor main = new OldProcessor.MainProcessor(datasource_webpage_cache, AFFinputer.appinfo.datasourcetype, AFFinputer.folderlink);
-            AFFinputer.appinfo.name = main.title;
-            AFFinputer.appinfo.version = main.version;
-            AFFinputer.appinfo.miscellaneous = main.miscellaneous;
-            AFFinputer.appinfo.androidReq = main.req;
-            AFFinputer.postmedia.VideoReview.ImportFromLink(main.videolink,main.dir);
-            AFFinputer.appinfo.Description.OldprocessInputProtocoForPlayProc(main.desc, main.Desc_Bold);
-            AFFinputer.appinfo.Description.bold = true;
-            AFFinputer.appinfo.Description.noline = true;
-            AFFinputer.postmedia.ImageInScript = true;
+            OldProcessor.MainProcessor main = new OldProcessor.MainProcessor(datasource_webpage_cache, AFFinputer.appInfo.datasourcetype, AFFinputer.folderlink);
+            AFFinputer.appInfo.name = main.title;
+            AFFinputer.appInfo.version = main.version;
+            AFFinputer.appInfo.miscellaneous = main.miscellaneous;
+            AFFinputer.appInfo.androidReq = main.req;
+            AFFinputer.postMedia.VideoReview.ImportFromLink(main.videolink,main.dir);
+            AFFinputer.appInfo.description.OldprocessInputProtocoForPlayProc(main.desc, main.Desc_Bold);
+            AFFinputer.appInfo.description.bold = true;
+            AFFinputer.appInfo.description.noline = true;
+            AFFinputer.postMedia.ImageInScript = true;
             
             string cache;
             // Download link box shortening
-            if (AFFinputer.Downloadlink.Downloadlink.host == "drive.google.com")
+            if (AFFinputer.downloadlink.Downloadlink.host == "drive.google.com")
             {
-                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.Downloadlink.Downloadlink.link);
+                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.downloadlink.Downloadlink.link);
                 //Special Process For megaurl shortenlink
                 
                 
                 ///////
-                AFFinputer.Downloadlink.Downloadlink.link = cache==""? AFFinputer.Downloadlink.Downloadlink.link:cache;
+                AFFinputer.downloadlink.Downloadlink.link = cache==""? AFFinputer.downloadlink.Downloadlink.link:cache;
             }
-            if (AFFinputer.Downloadlink.OBBlink.host == "drive.google.com")
+            if (AFFinputer.downloadlink.OBBlink.host == "drive.google.com")
             {
-                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.Downloadlink.OBBlink.link);
-                AFFinputer.Downloadlink.OBBlink.link = cache==""? AFFinputer.Downloadlink.OBBlink.link:cache;
+                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.downloadlink.OBBlink.link);
+                AFFinputer.downloadlink.OBBlink.link = cache==""? AFFinputer.downloadlink.OBBlink.link:cache;
                 
             }
-            if (AFFinputer.Downloadlink.OMirrorlink.link == "drive.google.com")
+            if (AFFinputer.downloadlink.OMirrorlink.link == "drive.google.com")
             {
-                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.Downloadlink.OMirrorlink.link);
-                AFFinputer.Downloadlink.OMirrorlink.link = cache == "" ? AFFinputer.Downloadlink.OMirrorlink.link : cache;
+                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.downloadlink.OMirrorlink.link);
+                AFFinputer.downloadlink.OMirrorlink.link = cache == "" ? AFFinputer.downloadlink.OMirrorlink.link : cache;
 
             }
             // Mirror Link box shortening
-            if (!String.IsNullOrEmpty(AFFinputer.Downloadlink.OBBlink.link))
+            if (!String.IsNullOrEmpty(AFFinputer.downloadlink.OBBlink.link))
             {
-                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.Downloadlink.OBBlink.link);
-                AFFinputer.Downloadlink.OBBlink.link = cache == "" ? AFFinputer.Downloadlink.OBBlink.link : cache;
+                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.downloadlink.OBBlink.link);
+                AFFinputer.downloadlink.OBBlink.link = cache == "" ? AFFinputer.downloadlink.OBBlink.link : cache;
             }
-            if (!String.IsNullOrEmpty(AFFinputer.Downloadlink.OMirrorlink.link)){
-                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.Downloadlink.OMirrorlink.link);
-                AFFinputer.Downloadlink.OMirrorlink.link = cache == "" ? AFFinputer.Downloadlink.OMirrorlink.link : cache;
+            if (!String.IsNullOrEmpty(AFFinputer.downloadlink.OMirrorlink.link)){
+                cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.downloadlink.OMirrorlink.link);
+                AFFinputer.downloadlink.OMirrorlink.link = cache == "" ? AFFinputer.downloadlink.OMirrorlink.link : cache;
             }
-            if (AFFinputer.Downloadlink.linklist.Count > 0)
+            if (AFFinputer.downloadlink.linklist.Count > 0)
             {
-                for (int i = 0; i<AFFinputer.Downloadlink.linklist.Count; i++)
+                for (int i = 0; i<AFFinputer.downloadlink.linklist.Count; i++)
                 {
-                    cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.Downloadlink.OMirrorlink.link);
-                    AFFinputer.Downloadlink.linklist[i].link = cache == "" ? AFFinputer.Downloadlink.OMirrorlink.link : cache;
+                    cache = OldProcessor.ProcSupporter.ShortenLink(AFFinputer.downloadlink.OMirrorlink.link);
+                    AFFinputer.downloadlink.linklist[i].link = cache == "" ? AFFinputer.downloadlink.OMirrorlink.link : cache;
                 }
             }
             if (Properties.Settings.Default.PermformCheck)counter = DateTime.FromBinary(DateTime.Now.ToBinary() - counter.ToBinary());
             if (!Properties.Settings.Default.NoDownImage)
             {
-                AFFinputer.postmedia.ImportImagelistFromImageDownloadList(main.image);
+                AFFinputer.postMedia.ImportImagelistFromImageDownloadList(main.image);
                 if (!string.IsNullOrWhiteSpace(AFFinputer.folderlink) && (AFFinputer.folderlink != Class1.GetToken("curdir")))
                 {
                     dialogFile.InitialDirectory = AFFinputer.folderlink.Replace('/','\\');
@@ -512,11 +512,11 @@ namespace MMBS
                     System.IO.FileInfo file;
                     foreach (string i in dialogFile.FileNames) { 
                         file = new System.IO.FileInfo(i); 
-                        AFFinputer.postmedia.ImageList[Convert.ToInt32(file.Name.Remove(file.Name.LastIndexOf(".")).Replace("Screenshot ", ""))].enable = true; };
+                        AFFinputer.postMedia.ImageList[Convert.ToInt32(file.Name.Remove(file.Name.LastIndexOf(".")).Replace("Screenshot ", ""))].enable = true; };
                 }
             }
             //Required for recycle this Form
-            else AFFinputer.postmedia.ResetImageList();
+            else AFFinputer.postMedia.ResetImageList();
             
             if (Properties.Settings.Default.PermformCheck) MessageBox.Show("Process Done in "+counter.ToString("mm:ss.ffffff"));
             if (!Properties.Settings.Default.AFFskipFMF)
@@ -549,16 +549,16 @@ namespace MMBS
             }
             else
             {
-                string[] cacheSList = MMBStool.SearchKeywordGenerator.AnameAnalyse(AFFinputer.appinfo.name);
-                AFFinputer.appinfo.searchkeyword = "";
+                string[] cacheSList = MMBStool.SearchKeywordGenerator.AnameAnalyse(AFFinputer.appInfo.name);
+                AFFinputer.appInfo.searchkeyword = "";
                 foreach (string cache2 in cacheSList)
                 {
-                    AFFinputer.appinfo.searchkeyword += cache2 + "\n";
+                    AFFinputer.appInfo.searchkeyword += cache2 + "\n";
                 }
                 var res = new CustomizePostResult();
                 res.SimpleProcess(AFFinputer);
                 ApiService.BloggerAPI api = new ApiService.BloggerAPI(Class1.GetToken("offlinemodsID"));
-                api.NewPost(res.titleprocRes,res.postHtml,new string[] {(AFFinputer.modinfo.UI.currentindex == 0? "ModdedGames" : "PaidGames") },"{\n\"search_description\" = "+res.searchproRes+"\n}");
+                api.NewPost(res.titleprocRes,res.postHtml,new string[] {(AFFinputer.modInfo.UI.currentindex == 0? "ModdedGames" : "PaidGames") },"{\n\"search_description\" = "+res.searchproRes+"\n}");
                 api.SendPost(true);
 
                 
@@ -580,28 +580,28 @@ namespace MMBS
 
         private void boxModInfo_TextChanged(object sender, EventArgs e)
         {
-            AFFinputer.modinfo.UI.modTypeSetData(boxModInfo.Text, AFFinputer.modinfo.UI.currentindex);
+            AFFinputer.modInfo.UI.modTypeSetData(boxModInfo.Text, AFFinputer.modInfo.UI.currentindex);
         }
 
         private void checkInternet_CheckedChanged(object sender, EventArgs e)
         {
-            AFFinputer.appinfo.internetReq = checkInternet.Checked;
+            AFFinputer.appInfo.internetReq = checkInternet.Checked;
            
         }
 
         private void checkRoot_CheckedChanged(object sender, EventArgs e)
         {
-            AFFinputer.appinfo.rootReq = checkRoot.Checked;
+            AFFinputer.appInfo.rootReq = checkRoot.Checked;
         }
 
         private void checkOBB_CheckedChanged(object sender, EventArgs e)
         {
-            AFFinputer.appinfo.obbReq = checkOBB.Checked;
+            AFFinputer.appInfo.obbReq = checkOBB.Checked;
         }
 
         private void checkAPK_CheckedChanged(object sender, EventArgs e)
         {
-            AFFinputer.Downloadlink.OBBlink.check = checkAPK.Checked;
+            AFFinputer.downloadlink.OBBlink.check = checkAPK.Checked;
         }
         public string processDisplayFileName(string fname, Font font, Size SizeLimit)
         {
@@ -677,26 +677,26 @@ namespace MMBS
 
         private void butMDL_Click(object sender, EventArgs e)
         {
-            if (AFFinputer.Downloadlink.linklist.Count < 1) AFFinputer.Downloadlink.linklist.Add(new DefineInfoPack.Linker("download"));
-            AFFinputer.Downloadlink.linklist[0].linkalias = "Unsigned";
-            OldProcessor.MirrorLink DLmirror = new OldProcessor.MirrorLink( AFFinputer.Downloadlink.linklist[0].linkalias, AFFinputer.Downloadlink.linklist[0].link);
+            if (AFFinputer.downloadlink.linklist.Count < 1) AFFinputer.downloadlink.linklist.Add(new DefineInfoPack.Linker("download"));
+            AFFinputer.downloadlink.linklist[0].linkalias = "Unsigned";
+            OldProcessor.MirrorLink DLmirror = new OldProcessor.MirrorLink( AFFinputer.downloadlink.linklist[0].linkalias, AFFinputer.downloadlink.linklist[0].link);
             this.butMDL.Text = DLmirror.valid > 0 ? (DLmirror.valid == 1 ? "✓" : "✗") : "+";
             this.butMDL.ForeColor = DLmirror.valid > 0 ? (DLmirror.valid == 1 ? System.Drawing.Color.Lime : Color.Red) : Color.White;
             if (DLmirror.valid == 1)
             {
-                AFFinputer.Downloadlink.linklist[0].link = DLmirror.host == "drive.google.com" ? OldProcessor.ProcSupporter.ShortenLink(DLmirror.link) : DLmirror.link;
-                AFFinputer.Downloadlink.linklist[0].linkalias = DLmirror.name;
-                AFFinputer.Downloadlink.linklist[0].host = DLmirror.host;
+                AFFinputer.downloadlink.linklist[0].link = DLmirror.host == "drive.google.com" ? OldProcessor.ProcSupporter.ShortenLink(DLmirror.link) : DLmirror.link;
+                AFFinputer.downloadlink.linklist[0].linkalias = DLmirror.name;
+                AFFinputer.downloadlink.linklist[0].host = DLmirror.host;
 
                 //tempcode 211016 signed/unsigned
-                AFFinputer.Downloadlink.linklist[0].linkalias = AFFinputer.Downloadlink.Downloadlink.linkalias == "Signed" ? "Unsigned" : AFFinputer.Downloadlink.linklist[0].linkalias;
+                AFFinputer.downloadlink.linklist[0].linkalias = AFFinputer.downloadlink.Downloadlink.linkalias == "Signed" ? "Unsigned" : AFFinputer.downloadlink.linklist[0].linkalias;
                 checkSign.Checked = true;
             }
             else
             {
-                AFFinputer.Downloadlink.linklist[0].link = "";
-                AFFinputer.Downloadlink.linklist[0].linkalias = "";
-                AFFinputer.Downloadlink.linklist[0].host = "";
+                AFFinputer.downloadlink.linklist[0].link = "";
+                AFFinputer.downloadlink.linklist[0].linkalias = "";
+                AFFinputer.downloadlink.linklist[0].host = "";
             }
 
             
@@ -704,23 +704,23 @@ namespace MMBS
 
         private void butMAO_Click(object sender, EventArgs e)
         {
-            if (AFFinputer.Downloadlink.linklist.Count == 0) AFFinputer.Downloadlink.linklist.Add(new DefineInfoPack.Linker("download"));
-            if (AFFinputer.Downloadlink.linklist.Count == 1) AFFinputer.Downloadlink.linklist.Add(new DefineInfoPack.Linker("obb"));
+            if (AFFinputer.downloadlink.linklist.Count == 0) AFFinputer.downloadlink.linklist.Add(new DefineInfoPack.Linker("download"));
+            if (AFFinputer.downloadlink.linklist.Count == 1) AFFinputer.downloadlink.linklist.Add(new DefineInfoPack.Linker("obb"));
             
-            OldProcessor.MirrorLink AOmirror = new OldProcessor.MirrorLink(AFFinputer.Downloadlink.linklist[1].linkalias, AFFinputer.Downloadlink.linklist[1].link);
+            OldProcessor.MirrorLink AOmirror = new OldProcessor.MirrorLink(AFFinputer.downloadlink.linklist[1].linkalias, AFFinputer.downloadlink.linklist[1].link);
             this.butMAO.Text = AOmirror.valid > 0 ? (AOmirror.valid == 1 ? "✓" : "✗") : "+";
             this.butMAO.ForeColor = AOmirror.valid > 0 ? (AOmirror.valid == 1 ? System.Drawing.Color.Lime : Color.Red) : Color.White;
             if (AOmirror.valid == 1)
             {
-                AFFinputer.Downloadlink.linklist[1].link = AOmirror.host == "drive.google.com" ? OldProcessor.ProcSupporter.ShortenLink(AOmirror.link) : AOmirror.link;
-                AFFinputer.Downloadlink.linklist[1].linkalias = AOmirror.name;
-                AFFinputer.Downloadlink.linklist[1].host = AOmirror.host;
+                AFFinputer.downloadlink.linklist[1].link = AOmirror.host == "drive.google.com" ? OldProcessor.ProcSupporter.ShortenLink(AOmirror.link) : AOmirror.link;
+                AFFinputer.downloadlink.linklist[1].linkalias = AOmirror.name;
+                AFFinputer.downloadlink.linklist[1].host = AOmirror.host;
             }
             else
             {
-                AFFinputer.Downloadlink.linklist[1].link = "";
-                AFFinputer.Downloadlink.linklist[1].linkalias = "";
-                AFFinputer.Downloadlink.linklist[1].host = "";
+                AFFinputer.downloadlink.linklist[1].link = "";
+                AFFinputer.downloadlink.linklist[1].linkalias = "";
+                AFFinputer.downloadlink.linklist[1].host = "";
             }
         }
 
@@ -826,7 +826,7 @@ namespace MMBS
 
         private void checkExtPerms_CheckedChanged(object sender, EventArgs e)
         {
-            AFFinputer.appinfo.extpermReq = checkExtPerms.Checked;
+            AFFinputer.appInfo.extpermReq = checkExtPerms.Checked;
             tipOne.SetToolTip(checkExtPerms, checkExtPerms.Checked ? "External Storage" : "Overlay");
 
         }
@@ -853,7 +853,7 @@ namespace MMBS
 
         private void groupDL_TextChanged(object sender, EventArgs e)
         {
-            AFFinputer.Downloadlink.Downloadlink.linkalias = groupDL.Text;
+            AFFinputer.downloadlink.Downloadlink.linkalias = groupDL.Text;
         }
 
         private void checkRoot_CheckStateChanged(object sender, EventArgs e)
@@ -897,10 +897,10 @@ namespace MMBS
              this.Invoke(InfoSeter, "linkAOname text\n" + processAPKLinkTextBox.fname);*/
             if (processMirrorLinkTextBox.valid > 0)
             {
-                AFFinputer.appinfo.size = AFFinputer.appinfo.size == "" ? processMirrorLinkTextBox.fsize : AFFinputer.appinfo.size;
-                AFFinputer.Downloadlink.OMirrorlink.link = processMirrorLinkTextBox.link;
-                AFFinputer.Downloadlink.OMirrorlink.check = Convert.ToBoolean(processMirrorLinkTextBox.valid);
-                AFFinputer.Downloadlink.OMirrorlink.host = processMirrorLinkTextBox.host;
+                AFFinputer.appInfo.size = AFFinputer.appInfo.size == "" ? processMirrorLinkTextBox.fsize : AFFinputer.appInfo.size;
+                AFFinputer.downloadlink.OMirrorlink.link = processMirrorLinkTextBox.link;
+                AFFinputer.downloadlink.OMirrorlink.check = Convert.ToBoolean(processMirrorLinkTextBox.valid);
+                AFFinputer.downloadlink.OMirrorlink.host = processMirrorLinkTextBox.host;
             }
             else if (!string.IsNullOrEmpty(processMirrorLinkTextBox.link))
             {
@@ -909,9 +909,9 @@ namespace MMBS
                 Microsoft.VisualBasic.MsgBoxResult cache = Microsoft.VisualBasic.Interaction.MsgBox("Server không được hỗ trợ\nBạn có muốn giữ link này không?", Microsoft.VisualBasic.MsgBoxStyle.OkCancel, "LINK KHÁC");
                 if (cache == Microsoft.VisualBasic.MsgBoxResult.Ok)
                 {
-                    AFFinputer.Downloadlink.OMirrorlink.link = processMirrorLinkTextBox.link;
-                    AFFinputer.Downloadlink.OMirrorlink.check = true;
-                    AFFinputer.Downloadlink.OMirrorlink.host = processMirrorLinkTextBox.host;
+                    AFFinputer.downloadlink.OMirrorlink.link = processMirrorLinkTextBox.link;
+                    AFFinputer.downloadlink.OMirrorlink.check = true;
+                    AFFinputer.downloadlink.OMirrorlink.host = processMirrorLinkTextBox.host;
                 }
             }
             labelValidMirrorDL.Invoke(new MethodInvoker(delegate { labelValidMirrorDL.Visible = processMirrorLinkTextBox.valid == 1; }));

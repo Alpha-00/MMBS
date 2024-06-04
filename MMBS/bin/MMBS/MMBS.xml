@@ -103,7 +103,51 @@
             This string use for store that I don't know where to get
             </summary>
         </member>
-        <member name="F:MMBS.ApiService.ImgurAPI.imgurSR">
+        <member name="T:MMBS.StringExtension">
+            <summary>
+            Custom Function for templating in string type
+            </summary>
+        </member>
+        <member name="M:MMBS.StringExtension.Split(System.String,System.String)">
+            <summary>
+            Split a string by a long separator
+            </summary>
+            <param name="str"></param>
+            <param name="separator">May have multiple character</param>
+            <returns></returns>
+        </member>
+        <member name="T:MMBS.ImageExtension">
+            <summary>
+            Extends basic function for Image type
+            </summary>
+        </member>
+        <member name="M:MMBS.ImageExtension.ToStream(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Conver Image to a stream file using Memory Stream
+            </summary>
+            <param name="image"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MMBS.UriExtension">
+            <summary>
+            Extends some uri behavior
+            </summary>
+        </member>
+        <member name="M:MMBS.UriExtension.QueryKey(System.Uri,System.String)">
+            <summary>
+            Get value of the query part by finding base on key
+            </summary>
+            <param name="uri"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MMBS.ApiService">
+            <summary>
+            Service for External API
+            </summary>
+        </member>
+        <member name="F:MMBS.ApiService.ImgurAPI._apiClient">
             <summary>
             Secret Key of Imgur
             </summary>
@@ -595,6 +639,23 @@
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="F:MMBS.QueryForm.ImgurIdQueryForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.QueryForm.ImgurIdQueryForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.QueryForm.ImgurIdQueryForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:MMBS.Properties.Resources">

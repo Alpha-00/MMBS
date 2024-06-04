@@ -33,9 +33,9 @@ namespace MMBSTests
         {
             CustomizePostResult processor = new CustomizePostResult();
             PostDataBundle data = new PostDataBundle();
-            data.appinfo.name = "Creative now or not is the Lie from the church !?!";
-            data.modinfo.moddata = "Hello from newyork.\n-It's my life\nnotlike that isn't it.";
-            TestContext.WriteLine(data.appinfo.name);
+            data.appInfo.name = "Creative now or not is the Lie from the church !?!";
+            data.modInfo.moddata = "Hello from newyork.\n-It's my life\nnotlike that isn't it.";
+            TestContext.WriteLine(data.appInfo.name);
             processor.SimpleProcess(data);
             TestContext.WriteLine(processor.titleprocRes);
         }

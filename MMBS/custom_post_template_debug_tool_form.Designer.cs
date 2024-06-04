@@ -551,7 +551,7 @@
 			this.ClientSize = new System.Drawing.Size(708, 530);
 			this.Controls.Add(this.flowLayout);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
 			this.Name = "TemplateToolForm";
 			this.Text = "Template Tool";
 			this.flowLayout.ResumeLayout(false);

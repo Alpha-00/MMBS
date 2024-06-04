@@ -331,7 +331,7 @@
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
 			this.ForeColor = System.Drawing.Color.White;
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
 			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(718, 476);
 			this.MinimumSize = new System.Drawing.Size(360, 476);

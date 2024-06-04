@@ -31,23 +31,23 @@ namespace MMBS
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.androidReq = (boxAreq.Text == "Vary") ? "Varies with device" : "Android " + boxAreq.Text + "+";
+            FormData.appInfo.androidReq = (boxAreq.Text == "Vary") ? "Varies with device" : "Android " + boxAreq.Text + "+";
         }
 
         private void boxAppName_Enter(object sender, EventArgs e)
         {
-            FormData.appinfo.name = boxAppName.Text;
+            FormData.appInfo.name = boxAppName.Text;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.size = boxSize.Text;
+            FormData.appInfo.size = boxSize.Text;
         }
 
         private void boxDataSource_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.datasource = boxDataSource.Text;
-            if (FormData.appinfo.name == "")
+            FormData.appInfo.datasource = boxDataSource.Text;
+            if (FormData.appInfo.name == "")
             {
 
             }
@@ -55,28 +55,28 @@ namespace MMBS
 
         private void boxDesc_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.Description.stockdata = boxDesc.Text;
+            FormData.appInfo.description.rawText = boxDesc.Text;
         }
 
         private void boxDownloadlink_TextChanged(object sender, EventArgs e)
         {
-            FormData.Downloadlink.Downloadlink.link = boxDownloadlink.Text;
+            FormData.downloadlink.Downloadlink.link = boxDownloadlink.Text;
         }
 
         private void boxAPKlink_TextChanged(object sender, EventArgs e)
         {
-            FormData.Downloadlink.OBBlink.link = boxDownloadlink.Text;
+            FormData.downloadlink.OBBlink.link = boxDownloadlink.Text;
         }
 
         private void boxVideo_TextChanged(object sender, EventArgs e)
         {
-            FormData.postmedia.VideoReview.link = boxVideo.Text;
+            FormData.postMedia.VideoReview.link = boxVideo.Text;
         }
 
         private void boxMod_TextChanged(object sender, EventArgs e)
         {
-            FormData.modinfo.moddata = boxMod.Text;
-            FormData.modinfo.modtype = (boxMod.Text.ToLower() == "paid") ? "Paid" : "Mod";
+            FormData.modInfo.moddata = boxMod.Text;
+            FormData.modInfo.modtype = (boxMod.Text.ToLower() == "paid") ? "Paid" : "Mod";
         }
 
         private void butPost_Click(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace MMBS
                 ApplicationName = ApplicationName,
             });
             //var cache = new JObject();
-            //cache.Add("name", FormData.appinfo.name +" "+ FormData.modinfo.modtype);
+            //cache.Add("name", FormData.appInfo.name +" "+ FormData.modInfo.modtype);
             
             Google.Apis.Blogger.v3.Data.Post post = new Post();
             post.Title = "Bye";
@@ -124,7 +124,7 @@ namespace MMBS
 
         private void boxAppName_TextChanged(object sender, EventArgs e)
         {
-            FormData.appinfo.name = boxAppName.Text;
+            FormData.appInfo.name = boxAppName.Text;
         }
 
         private void butImage_Click(object sender, EventArgs e)
@@ -148,7 +148,7 @@ namespace MMBS
                             
                             result = account.UploadImageAsync(f).Result;
                             if (null != result)
-                                FormData.postmedia.ImageList.Add(new DefineInfoPack.imageinfo("imgur_" + result.Id, i, result.Link, result.Height, result.Width, Image.FromFile(i)));
+                                FormData.postMedia.ImageList.Add(new DefineInfoPack.imageinfo("imgur_" + result.Id, i, result.Link, result.Height, result.Width, Image.FromFile(i)));
                         }
                     }
                     catch (Exception exc)
@@ -172,10 +172,10 @@ namespace MMBS
                 var request = client.Upload(dialogFile.FileName);
                 request.Wait();
                 if (request.Result == 0) { return; }
-                FormData.appinfo.Icon.enable = true;
-                FormData.appinfo.Icon.link = client.GetUrl();
-                FormData.appinfo.Icon.dir = dialogFile.FileName;
-                FormData.appinfo.Icon.image = Image.FromFile(dialogFile.FileName);
+                FormData.appInfo.icon.enable = true;
+                FormData.appInfo.icon.link = client.GetUrl();
+                FormData.appInfo.icon.dir = dialogFile.FileName;
+                FormData.appInfo.icon.image = Image.FromFile(dialogFile.FileName);
             }
         }
 

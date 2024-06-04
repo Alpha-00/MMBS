@@ -104,75 +104,75 @@ namespace MMBS
             folderlink = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
             
             //App Info
-            appinfo.androidReq = "";
-            appinfo.androidReqcode = 0;
-            appinfo.datasource = "";
-            appinfo.Description.stockdata = "";
-            appinfo.Description.bold = true;
-            appinfo.Description.noline = true;
-            appinfo.Description.spec_bold = "";
-            appinfo.Description.spec_boldnoline = "";
-            appinfo.Description.spec_noline = "";
-            appinfo.miscellaneous = new Dictionary<string, string>();
-            appinfo.Icon = new DefineInfoPack.imageinfo();
-            appinfo.Icon.codename = "";
-            appinfo.Icon.dir = "";
-            appinfo.Icon.enable = false;
-            appinfo.Icon.height = 0;
-            appinfo.Icon.width = 0;
-            appinfo.Icon.link = "";
-            appinfo.Icon.local = false;
-            appinfo.Icon.name = "Icon";
-            appinfo.Icon.packtype = "";
-            appinfo.Icon.sharetype = "bylink";
-            appinfo.extpermReq = false;
-            appinfo.internetReq = false;
-            appinfo.rootReq = false;
-            appinfo.obbReq = false;
-            appinfo.name = "App name";
-            appinfo.nameword = new List<string>();
-            appinfo.searchkeyword = "";
-            appinfo.seriesver = "";
-            appinfo.size = "";
-            appinfo.sizeinbyte = 0;
-            appinfo.version = "";
+            appInfo.androidReq = "";
+            appInfo.androidReqcode = 0;
+            appInfo.datasource = "";
+            appInfo.description.rawText = "";
+            appInfo.description.bold = true;
+            appInfo.description.noline = true;
+            appInfo.description.spec_bold = "";
+            appInfo.description.spec_boldnoline = "";
+            appInfo.description.spec_noline = "";
+            appInfo.miscellaneous = new Dictionary<string, string>();
+            appInfo.icon = new DefineInfoPack.imageinfo();
+            appInfo.icon.codename = "";
+            appInfo.icon.dir = "";
+            appInfo.icon.enable = false;
+            appInfo.icon.height = 0;
+            appInfo.icon.width = 0;
+            appInfo.icon.link = "";
+            appInfo.icon.local = false;
+            appInfo.icon.name = "icon";
+            appInfo.icon.packtype = "";
+            appInfo.icon.sharetype = "bylink";
+            appInfo.extpermReq = false;
+            appInfo.internetReq = false;
+            appInfo.rootReq = false;
+            appInfo.obbReq = false;
+            appInfo.name = "App name";
+            appInfo.nameword = new List<string>();
+            appInfo.searchkeyword = "";
+            appInfo.seriesver = "";
+            appInfo.size = "";
+            appInfo.sizeinbyte = 0;
+            appInfo.version = "";
             //Download Link
-            Downloadlink.Downloadlink = new DefineInfoPack.Linker("download");
-            Downloadlink.OBBlink = new DefineInfoPack.Linker("obb");
-            Downloadlink.OMirrorlink = new DefineInfoPack.Linker("omirror");
-            Downloadlink.linklist = new List<DefineInfoPack.Linker>();
+            downloadlink.Downloadlink = new DefineInfoPack.Linker("download");
+            downloadlink.OBBlink = new DefineInfoPack.Linker("obb");
+            downloadlink.OMirrorlink = new DefineInfoPack.Linker("omirror");
+            downloadlink.linklist = new List<DefineInfoPack.Linker>();
             //
-            modinfo.UI = new ProjectInterfaceData.ModType(0);
-            postmedia = new PostMediapack();
-            postmedia.ImageList = new List<DefineInfoPack.imageinfo>();
-            postmedia.VideoReview.Cover = new DefineInfoPack.imageinfo();
-            postmedia.VideoReview.Cover.enable = false;
-            postmedia.VideoReview.link = "";
+            modInfo.UI = new ProjectInterfaceData.ModType(0);
+            postMedia = new PostMediapack();
+            postMedia.ImageList = new List<DefineInfoPack.imageinfo>();
+            postMedia.VideoReview.Cover = new DefineInfoPack.imageinfo();
+            postMedia.VideoReview.Cover.enable = false;
+            postMedia.VideoReview.link = "";
             //
             credit = new creditpack();
         }
         public PostDataBundle(string folderlink, appinfopack appinfo, PostMediapack postmedia, DownloadLinkpack downloadlink, modinfopack modinfo, creditpack credit)
         {
             this.folderlink = folderlink;
-            this.appinfo = appinfo;
-            this.postmedia = postmedia;
-            this.Downloadlink = downloadlink;
-            this.modinfo = modinfo;
+            this.appInfo = appinfo;
+            this.postMedia = postmedia;
+            this.downloadlink = downloadlink;
+            this.modInfo = modinfo;
             this.credit = credit;
         }
         
         public string folderlink;
         public string specialcmd;
-        public appinfopack appinfo;
-        public PostMediapack postmedia;
-        public DownloadLinkpack Downloadlink;
-        public modinfopack modinfo;
+        public appinfopack appInfo;
+        public PostMediapack postMedia;
+        public DownloadLinkpack downloadlink;
+        public modinfopack modInfo;
         public creditpack credit;
         public Dictionary<string,string> custom_data;
         public struct appinfopack
         {
             public string name;
-            public string packagename;
+            public string packageName;
             public Dictionary<string, string> miscellaneous;
             public List<string> nameword;//after analyst
             public string searchkeyword;
@@ -186,15 +186,15 @@ namespace MMBS
             public bool internetReq;
             public bool rootReq;
             public bool obbReq;
-            public DefineInfoPack.imageinfo Icon;
-            public Descriptionpack Description;
+            public DefineInfoPack.imageinfo icon;
+            public Descriptionpack description;
             public string datasource;
             public string datasourcetype;//play,apkpure,...
             public string datasourcemask;//Play Store, APKpure
             public string datasourcepage;//cache
             public struct Descriptionpack
             {
-                public string stockdata;
+                public string rawText;
                 public string rtf;
                 public string spec_boldnoline;
                 public string spec_bold;
@@ -209,13 +209,13 @@ namespace MMBS
                     if (bold && noline) return spec_boldnoline;
                     else if (!bold && noline) return spec_noline;
                     else if (bold && !noline) return spec_bold;
-                    else return stockdata;
+                    else return rawText;
                 }
                 public void SetDat(string data)
                 {
                     if (!bold && !noline)
                     {
-                        stockdata = data;
+                        rawText = data;
                         spec_bold = processAutoBold(data);
                         spec_noline = processNoline(data);
                         spec_boldnoline = processNoline(spec_bold);
@@ -253,7 +253,7 @@ namespace MMBS
                 }
                 public string OldprocessInputProtocoForPlayProc(string desc,string Desc)//desc stock & desc simple bold
                 {
-                    stockdata = desc;
+                    rawText = desc;
                     spec_bold = Desc;
                     bold = true;
                     noline = true;
@@ -910,7 +910,7 @@ namespace MMBS
         }*/
         public Object Clone()
         {
-            return new PostDataBundle(this.folderlink, this.appinfo, this.postmedia, this.Downloadlink, this.modinfo, this.credit);
+            return new PostDataBundle(this.folderlink, this.appInfo, this.postMedia, this.downloadlink, this.modInfo, this.credit);
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T23KepS6VOU=",
+  "dgSpecHash": "piqfgi9xMBk=",
   "success": true,
-  "projectFilePath": "D:\\Unpublished Project\\Unpublished Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\MMBS Razor Helper.csproj",
+  "projectFilePath": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS Razor\\MMBS Razor Helper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
