@@ -1027,12 +1027,19 @@ namespace MMBS
                     switch (codeseg[1])
                     {
                         case "PMT":
-                            switch (codeseg[2]) {
-                                case "current": PMT();
-                                    break;
-                            }break;
-                        case "Sciban":
-                            PostFormGeneralCustom engine = new PostFormGeneralCustom();
+                            {
+                                searchuse = false;
+                                switch (codeseg[2])
+                                {
+                                    case "current":
+                                        PMT();
+                                        break;
+                                }
+                            }
+                            break;
+                        case "Sciban":{
+                                searchuse = false;
+                                PostFormGeneralCustom engine = new PostFormGeneralCustom();
                             switch (codeseg[2])
                             {
                                 case "default":break;
@@ -1041,10 +1048,12 @@ namespace MMBS
                             engine.prepareData(thenow);
                             titleprocRes = engine.generateTitle();
                             titleuse = String.IsNullOrEmpty(titleprocRes);
-                            postHtml = engine.generateForm();
+                                postHtml = engine.generateForm();
+                            }
                             break;
                         case "Offlinemods":
                             {
+                                searchuse = true;
                                 SimpleProcess(thenow);
                                 var processor = new PostForm240104(thenow);
                                 this.postHtml = processor.quickGenerate();
@@ -1052,6 +1061,7 @@ namespace MMBS
                             break;
                         case "Mod977":
                             {
+                                searchuse = true;
                                 SimpleProcess(thenow);
                             }break;
 

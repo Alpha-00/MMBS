@@ -762,7 +762,7 @@ namespace MMBS
             public Newtonsoft.Json.Linq.JObject jsondata;
             public int valid;
             //
-            public ProcessDataResourceTextBox(string content)
+            public ProcessDataResourceTextBox(string content, string contentQuery = "")
             {
                 string cache = content.Replace(" ", "");
                 if (OldProcessor.ProcSupporter.ValidLinker(content))
@@ -789,7 +789,8 @@ namespace MMBS
                 void PLAYproc(string packagename)
                 {
                     this.packagename = packagename;
-                    link = ("https://play.google.com/store/apps/details?id=" + packagename + "&hl=en");
+                    link = "https://play.google.com/store/apps/details?id=" + packagename;
+                    link += "&" + contentQuery;
                     try
                     {
 
@@ -798,7 +799,12 @@ namespace MMBS
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) System.IO.Directory.CreateDirectory(cacheDir);
                         ProcSupporter.HtmlScriptCard scriptCache;
-                        scriptCache = ProcSupporter.FindCardinScript(webpage, "alt=\"Icon image\"");
+                        var lang = webpage.Substring(0, 100);
+                        lang = (new Regex(@"lang=""(?<lang>\w{2})""")).Match(lang).Groups["lang"].Value;
+                        var searchKey = "";
+                        if (lang == "en") searchKey = "alt=\"Icon image\"";
+                        if (lang == "vi") searchKey = "alt=\"Hình ảnh của biểu tượng\"";
+                        scriptCache = ProcSupporter.FindCardinScript(webpage, searchKey);
                         coverImagelink = scriptCache.GetData("src");
 
                         if (string.IsNullOrEmpty(coverImagelink)) throw new Exception("Can't find cover image");

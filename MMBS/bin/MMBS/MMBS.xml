@@ -333,6 +333,135 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="M:MMBS.Model.PostForm.PostForm240603_Mod977.#ctor(MMBS.PostDataBundle)">
+            <summary>
+            Need to run follow sequence
+            1. generateForm()
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.toolscript">
+            <summary>
+                <para>
+                    Static information about version of the script for tracking and future refactor
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.flagDesc">
+            <summary>
+                <para>
+                    Raise Flag in description Snippet. This using to help JavaScript in theme to modify
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.seperateLineScript">
+            <summary>
+                <para>
+                    Template for a single line separator    
+            </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.limitMoreScript">
+            <summary>
+                <para>
+                    Script to split content, hint that Blogger will break description
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.layout">
+            <summary>
+                <para>
+                    General structure of the article
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.styleVIPadmin">
+            <summary>
+            <para>
+                Predefined style for VIP author
+            </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.styleWrapBreakable">
+            <summary>
+            Predefined style for breakable group of button
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.iconScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.descScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.descLineScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.igroupScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.igroupHtml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.modListHtml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.modListItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.imageScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.imagecardScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.videoScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.linkScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.linkoneScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.credit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.lastword">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.codeWrapLine">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:MMBS.Model.PostForm.TemplateData240104.toolscript">
             <summary>
                 <para>
@@ -343,7 +472,7 @@
         <member name="P:MMBS.Model.PostForm.TemplateData240104.flagDesc">
             <summary>
                 <para>
-                    Raise Flag in Description Snippet. This using to help JavaScript in theme to modify
+                    Raise Flag in description Snippet. This using to help JavaScript in theme to modify
                 </para>
             </summary>
         </member>
@@ -507,7 +636,7 @@
         <member name="F:MMBS.Model.PostForm.PostFormTemplate.flagDesc">
             <summary>
                 <para>
-                    Raise Flag in Description Snippet. This using to help JavaScript in theme to modify
+                    Raise Flag in description Snippet. This using to help JavaScript in theme to modify
                 </para>
             </summary>
         </member>

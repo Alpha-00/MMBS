@@ -116,6 +116,7 @@ namespace MMBS
 
             comboExportScript.SelectedIndex = 0;
                       ImportCreditList();
+            comboSourceQuery.SelectedIndex = 0;
         }
         public void RefreshData(object sender, EventArgs e)
         {
@@ -261,7 +262,7 @@ namespace MMBS
         public void boxDSproc()
         {
             this.Invoke(InfoSeter,"checkvarThreads.+");
-            OldProcessor.ProcessDataResourceTextBox processDataResourceTextBox = new OldProcessor.ProcessDataResourceTextBox(boxDSlink.Text);
+            OldProcessor.ProcessDataResourceTextBox processDataResourceTextBox = new OldProcessor.ProcessDataResourceTextBox(boxDSlink.Text,comboSourceQuery.Text);
             
             this.Invoke(InfoSeter, "checkDS label\n" + processDataResourceTextBox.valid.ToString());
             this.Invoke(InfoSeter, "progressDS value\n0");
@@ -295,9 +296,9 @@ namespace MMBS
         }
         private void boxDSlink_TextChanged(object sender, EventArgs e)
         {
+            if (!this.Created) return;
            // if (String.IsNullOrWhiteSpace(e.ToString()))
-           if (this.Created)
-            {
+           
                 //MessageBox.Show(e.ToString());
                 
                 System.Threading.ThreadStart threadStart = new System.Threading.ThreadStart(boxDSproc);
@@ -307,9 +308,8 @@ namespace MMBS
                 //interfacer.ApartmentState = System.Threading.ApartmentState.STA;
                 interfacer.Start();
                 
-                
-            }
-            if (this.Created && ((this.boxDSlink.Text.Contains("apple.com"))))
+             
+            if (this.boxDSlink.Text.Contains("apple.com"))
             {
                 checkRoot.Text = "Jailbreak";
                 checkOBB.Text = "icon";
@@ -323,6 +323,11 @@ namespace MMBS
                 checkOBB.Text = "Obb";
                 checkInternet.Visible = true;
                 checkExtPerms.Visible = true;
+            }
+
+            if (this.boxDSlink.Text.Contains("play.google.com"))
+            {
+                comboSourceQuery.Visible = false;
             }
         }
        // [STAThread]
@@ -524,7 +529,7 @@ namespace MMBS
                 FMForm fmf = new FMForm(AFFinputer);
                 switch (comboExportScript.Items[comboExportScript.SelectedIndex])
                 {
-                    case "Offlinemods Html Script": break;
+                    case "Html Script": break;
                     case "PMT BBcode Script": fmf.execute("checkPublish:PMT"); break;
                 }
                 do
@@ -941,6 +946,11 @@ namespace MMBS
                 
             }
             form.Dispose();
+        }
+
+        private void comboSourceQuery_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //AFFinputer.appInfo.dataSourceQuery = comboSourceQuery.Text;
         }
     }
 }

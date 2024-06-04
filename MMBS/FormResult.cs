@@ -53,7 +53,8 @@ namespace MMBS
             res = new CustomizePostResult();
             res.SpecificProcess(thenow,this,code,para);
             butTitle.Enabled = res.titleuse;
-            butSearch.Enabled = false;
+            butSearch.Enabled = res.searchuse;
+
             CoreDirectory = thenow.folderlink;
             if (Properties.Settings.Default.BetaTest) butAutoPost.Visible = true;
             if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);

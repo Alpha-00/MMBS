@@ -150,6 +150,8 @@ namespace MMBS
             postMedia.VideoReview.link = "";
             //
             credit = new creditpack();
+            //
+            //appInfo.dataSourceQuery = "hl=en";
         }
         public PostDataBundle(string folderlink, appinfopack appinfo, PostMediapack postmedia, DownloadLinkpack downloadlink, modinfopack modinfo, creditpack credit)
         {
@@ -192,6 +194,7 @@ namespace MMBS
             public string datasourcetype;//play,apkpure,...
             public string datasourcemask;//Play Store, APKpure
             public string datasourcepage;//cache
+            //public string dataSourceQuery;//hl=en
             public struct Descriptionpack
             {
                 public string rawText;

@@ -253,7 +253,14 @@ namespace MMBS.Model.PostForm
             string SP_CreditScript = "";
             if (data.credit.now != null)
             {
-                SP_CreditScript = string.IsNullOrWhiteSpace(data.credit.now.GetPreview(true)) ? "" : template.credit.Replace("$$$?.creditString$$$$", data.credit.now.GetToUse());
+                var preview = data.credit.now.GetPreview(true);
+                if (string.IsNullOrWhiteSpace(preview))
+                    SP_CreditScript = "";
+                else
+                {
+                    var creditString = preview == "OfflineMods.Net" ? "Mod977" : data.credit.now.GetToUse();
+                    SP_CreditScript = template.credit.Replace("$$$?.creditString$$$$", creditString);
+                }
                 string cache_creditLevel = "";
                 if (data.credit.now.host == "offlinemods")
                 {
@@ -437,7 +444,7 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String linkoneScript =>
-            "<div style=\"text-align: center;\"><a href=\"$:.downLink$$$$\" rel=\"nofollow noopener\"><button class=\"glow-on-hover\" type=\"button\"><svg class=\"h-6 w-6\" fill=\"none\" stroke-width=\"2\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n  <path d=\"M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\r\n</path></svg>Tải ngay</button></a></div>";
+            "<div style=\"text-align: center;\"><a href=\"$$$:.downLink$$$$\" rel=\"nofollow noopener\"><button class=\"glow-on-hover\" type=\"button\"><svg class=\"h-6 w-6\" fill=\"none\" stroke-width=\"2\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n  <path d=\"M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\r\n</path></svg>Tải ngay</button></a></div>";
         
 
         /// <summary>
@@ -448,12 +455,12 @@ namespace MMBS.Model.PostForm
         /// <summary>
         /// 
         /// </summary>
-        public String credit => "<span style=\"color: red;\">MOD bởi <span id=\"VIPadmin\" style=\"color: #28a6e2;\">Mod977</span></span></h3>" + "\n";
+        public String credit => "<h3 style=\"text-align: center;\">\n<span style=\"color: red;\">MOD bởi <span id=\"VIPadmin\" style=\"color: #28a6e2;\">$$$?.creditString$$$$</span></span></h3>" + "\n";
 
         /// <summary>
         /// 
         /// </summary>
-        public String lastword => "<span style=\"color: red;\">Copy xin ghi rõ nguồn. Xin cảm ơn!</span></h3>";
+        public String lastword => "<h3 style=\"text-align: center;\">\n<span style=\"color: red;\">Copy xin ghi rõ nguồn. Xin cảm ơn!</span></h3>";
 
         /// <summary>
         /// 
