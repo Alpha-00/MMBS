@@ -30,8 +30,8 @@
         {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMForm));
-			System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Hello", 0);
-			System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Bye Bye");
+			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Hello", 0);
+			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Bye Bye");
 			this.boxAppname = new System.Windows.Forms.TextBox();
 			this.groupInfo = new System.Windows.Forms.GroupBox();
 			this.butIconClipboard = new System.Windows.Forms.Button();
@@ -80,13 +80,16 @@
 			this.listImageReview = new System.Windows.Forms.ListView();
 			this.butDone = new System.Windows.Forms.Button();
 			this.contextmenuPublish = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+			this.stripTitleOM = new System.Windows.Forms.ToolStripTextBox();
 			this.stripOMcurrentver = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
 			this.stripOtherPMT = new System.Windows.Forms.ToolStripMenuItem();
 			this.scibanCustomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.scibanCustomExportDataStripItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.stripMod977 = new System.Windows.Forms.ToolStripTextBox();
+			this.stripMod977_current = new System.Windows.Forms.ToolStripMenuItem();
 			this.boxVreview = new System.Windows.Forms.PictureBox();
 			this.boxVideoLink = new System.Windows.Forms.TextBox();
 			this.labelVideo = new System.Windows.Forms.LinkLabel();
@@ -249,7 +252,7 @@
 			this.labelDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.labelDesc.Location = new System.Drawing.Point(6, 165);
 			this.labelDesc.Name = "labelDesc";
-			this.labelDesc.Size = new System.Drawing.Size(95, 20);
+			this.labelDesc.Size = new System.Drawing.Size(91, 20);
 			this.labelDesc.TabIndex = 13;
 			this.labelDesc.Text = "description";
 			// 
@@ -792,11 +795,11 @@
 			this.listImageReview.ForeColor = System.Drawing.Color.White;
 			this.listImageReview.HideSelection = false;
 			this.listImageReview.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			listViewItem3.StateImageIndex = 0;
-			listViewItem4.StateImageIndex = 0;
+			listViewItem1.StateImageIndex = 0;
+			listViewItem2.StateImageIndex = 0;
 			this.listImageReview.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem1,
+            listViewItem2});
 			this.listImageReview.LargeImageList = this.ilistScreenShot;
 			this.listImageReview.Location = new System.Drawing.Point(6, 23);
 			this.listImageReview.MultiSelect = false;
@@ -833,33 +836,34 @@
 			// 
 			this.contextmenuPublish.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.contextmenuPublish.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
+            this.stripTitleOM,
             this.stripOMcurrentver,
             this.toolStripSeparator1,
             this.toolStripTextBox2,
             this.stripOtherPMT,
             this.scibanCustomToolStripMenuItem,
-            this.scibanCustomExportDataStripItem});
+            this.scibanCustomExportDataStripItem,
+            this.toolStripSeparator2,
+            this.stripMod977,
+            this.stripMod977_current});
 			this.contextmenuPublish.Name = "contextMenuStrip1";
-			this.contextmenuPublish.Size = new System.Drawing.Size(227, 200);
+			this.contextmenuPublish.Size = new System.Drawing.Size(227, 261);
 			this.contextmenuPublish.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextmenuPublish_ItemClicked);
 			// 
-			// toolStripTextBox1
+			// stripTitleOM
 			// 
-			this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-			this.toolStripTextBox1.Name = "toolStripTextBox1";
-			this.toolStripTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
-			this.toolStripTextBox1.Text = "Offlinemods";
-			this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.stripTitleOM.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+			this.stripTitleOM.Name = "stripTitleOM";
+			this.stripTitleOM.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.stripTitleOM.Size = new System.Drawing.Size(100, 27);
+			this.stripTitleOM.Text = "Offlinemods";
+			this.stripTitleOM.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// stripOMcurrentver
 			// 
-			this.stripOMcurrentver.Checked = true;
-			this.stripOMcurrentver.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.stripOMcurrentver.Name = "stripOMcurrentver";
 			this.stripOMcurrentver.Size = new System.Drawing.Size(226, 26);
-			this.stripOMcurrentver.Text = "v191130";
+			this.stripOMcurrentver.Text = "v240104";
 			// 
 			// toolStripSeparator1
 			// 
@@ -892,6 +896,27 @@
 			this.scibanCustomExportDataStripItem.Name = "scibanCustomExportDataStripItem";
 			this.scibanCustomExportDataStripItem.Size = new System.Drawing.Size(226, 26);
 			this.scibanCustomExportDataStripItem.Text = "Sciban Custom + Data";
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(223, 6);
+			// 
+			// stripMod977
+			// 
+			this.stripMod977.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.stripMod977.Name = "stripMod977";
+			this.stripMod977.Size = new System.Drawing.Size(100, 27);
+			this.stripMod977.Text = "Mod977";
+			this.stripMod977.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			// 
+			// stripMod977_current
+			// 
+			this.stripMod977_current.Checked = true;
+			this.stripMod977_current.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.stripMod977_current.Name = "stripMod977_current";
+			this.stripMod977_current.Size = new System.Drawing.Size(226, 26);
+			this.stripMod977_current.Text = "v240603";
 			// 
 			// boxVreview
 			// 
@@ -1199,7 +1224,6 @@
 			this.Controls.Add(this.groupInfo);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ForeColor = System.Drawing.Color.White;
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
 			this.KeyPreview = true;
 			this.Name = "FMForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1281,7 +1305,7 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.CheckBox checkOBB;
         private System.Windows.Forms.ContextMenuStrip contextmenuPublish;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox stripTitleOM;
         private System.Windows.Forms.ToolStripMenuItem stripOMcurrentver;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
@@ -1306,5 +1330,8 @@
         private System.Windows.Forms.TextBox boxPackage;
         private System.Windows.Forms.Label labelPackage;
         private System.Windows.Forms.Label labelAuthor;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripTextBox stripMod977;
+        private System.Windows.Forms.ToolStripMenuItem stripMod977_current;
     }
 }

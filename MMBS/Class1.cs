@@ -1043,6 +1043,17 @@ namespace MMBS
                             titleuse = String.IsNullOrEmpty(titleprocRes);
                             postHtml = engine.generateForm();
                             break;
+                        case "Offlinemods":
+                            {
+                                SimpleProcess(thenow);
+                                var processor = new PostForm240104(thenow);
+                                this.postHtml = processor.quickGenerate();
+                            }
+                            break;
+                        case "Mod977":
+                            {
+                                SimpleProcess(thenow);
+                            }break;
 
                     }break;
             }

@@ -85,7 +85,7 @@ namespace MMBS.Model.PostFormTests
                         new DefineInfoPack.imageinfo()
                         {
                             link = "https://play-lh.googleusercontent.com/_JGrRxAv6owVk6061kw4reOV6Vp0fdeobabGmrwW3TTgL5Q73RyTavJa-KUbTLOzHg=w640-h360",
-                            width = 
+                            
                         }
                     }
                 }

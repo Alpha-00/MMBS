@@ -103,10 +103,10 @@ namespace MMBS.Model.PostForm
                 cache_modList = " " + MyFunction.CapitalizeEachWord(data.modInfo.UI.modTypeGetname(data.modInfo.UI.currentindex));
             }
             string cache_reqList = "";
-            if (data.appInfo.rootReq) { cache_reqList += template.igroupRequireItem["rootReq"]; }
-            if (data.appInfo.internetReq) { cache_reqList += template.igroupRequireItem["internetReq"]; }
-            if (data.appInfo.obbReq) { cache_reqList += template.igroupRequireItem["obbReq"]; }
-            if (data.appInfo.extpermReq) { cache_reqList += template.igroupRequireItem["permReq"]; }
+            //if (data.appInfo.rootReq) { cache_reqList += template.igroupRequireItem["rootReq"]; }
+            //if (data.appInfo.internetReq) { cache_reqList += template.igroupRequireItem["internetReq"]; }
+            //if (data.appInfo.obbReq) { cache_reqList += template.igroupRequireItem["obbReq"]; }
+            //if (data.appInfo.extpermReq) { cache_reqList += template.igroupRequireItem["permReq"]; }
             SP_iGroupScript = MyFunction.MultiReplace(
             template.igroupHtml, 
             "$$$.datAReq$$$$", data.appInfo.androidReq, 
@@ -114,8 +114,8 @@ namespace MMBS.Model.PostForm
             "$$$.datSize$$$$", data.appInfo.size,
             "$$$.sourceUrl$$$$", data.appInfo.datasource,
             "$$$.package$$$$", data.appInfo.packageName,
-            "$$$.modListHtml$$$$", cache_modList,
-            "$$$.igroupReqHtml$$$$", cache_reqList
+            "$$$.modListHtml$$$$", cache_modList
+            //"$$$.igroupReqHtml$$$$", cache_reqList
             //"$$$.rootReqHtml$$$$", template.rootReqHtml[data.appInfo.rootReq ?
             //    // temp implement
             //    (!string.IsNullOrWhiteSpace(data.downloadlink.downloadlink.linkalias) ? (data.downloadlink.downloadlink.linkalias == "Signed" ? 2 : 1) : 1)

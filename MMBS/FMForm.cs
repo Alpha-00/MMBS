@@ -747,7 +747,8 @@ namespace MMBS
                 case "stripOtherPMT": cmdProcess("mmbsOther:PMT:current"); break;
                 case "scibanCustomToolStripMenuItem": cmdProcess("mmbsOther:Sciban:default");  break;
                 case "scibanCustomExportDataStripItem": cmdProcess("mmbsOther:Sciban:export"); break;
-                case "stripOMcurrentver":  break;
+                case "stripOMcurrentver": cmdProcess("mmbsOther:Offlinemods:current"); break;
+                case "stripMod977_current": cmdProcess("mmbsOther:Mod977:current"); break;
             }
             bool cmdProcess(string code,params string[] para)
             {

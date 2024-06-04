@@ -798,7 +798,7 @@ namespace MMBS
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) System.IO.Directory.CreateDirectory(cacheDir);
                         ProcSupporter.HtmlScriptCard scriptCache;
-                        scriptCache = ProcSupporter.FindCardinScript(webpage, "alt=\"icon image\"");
+                        scriptCache = ProcSupporter.FindCardinScript(webpage, "alt=\"Icon image\"");
                         coverImagelink = scriptCache.GetData("src");
 
                         if (string.IsNullOrEmpty(coverImagelink)) throw new Exception("Can't find cover image");
@@ -818,7 +818,7 @@ namespace MMBS
 
                     catch (Exception e)
                     {
-                        System.Windows.Forms.MessageBox.Show("Loi gi roi\n" + e.Message);
+                        System.Windows.Forms.MessageBox.Show("Loi gi roi\nPlay Processor\n" + e.Message);
                         valid = 2;
 
                     }
