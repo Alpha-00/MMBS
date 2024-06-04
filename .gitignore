@@ -4,6 +4,7 @@
 
 */**/bin/Debug
 */**/bin/Release
+*/**/bin/MMBS
 */**/obj/Debug
 */**/obj/Release
 /MMBS/bin/MMBS.rar
