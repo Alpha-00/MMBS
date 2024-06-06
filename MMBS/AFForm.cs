@@ -950,6 +950,7 @@ namespace MMBS
         private void comboSourceQuery_SelectedIndexChanged(object sender, EventArgs e)
         {
             AFFinputer.appInfo.dataSourceQuery = comboSourceQuery.Text;
+            boxDSlink_TextChanged(comboSourceQuery,e);
         }
     }
 }

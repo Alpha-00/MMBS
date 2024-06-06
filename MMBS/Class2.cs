@@ -1776,9 +1776,10 @@ namespace MMBS
                 {
 
                     JToken tmpJToken = null;
-                    if (getLangCode() == "vi")
+                    var lang = getLangCode();
+                    if (lang == "vi")
                         tmpJToken = customdata.SelectToken("$.data[1][2][12][0][0][1]");
-                    if (getLangCode() == "en")
+                    if (lang == "en")
                         tmpJToken = customdata.SelectToken("$.data[1][2][72][0][1]");
                     if (tmpJToken is null) return;
                     string cache = tmpJToken.Value<string>();
