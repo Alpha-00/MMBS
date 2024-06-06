@@ -1185,7 +1185,7 @@ namespace MMBS
 
                 string downlinkScript = $"[COLOR=#00ff00][U]Free Download:[/U][/COLOR]\n" +
                     $"[HIDE]\n" +
-                    $"downloadlink: {thenow.downloadlink.Downloadlink.link}\n\n" +
+                    $"Download Link: {thenow.downloadlink.Downloadlink.link}\n\n" +
                     $"Mirror: {thenow.downloadlink.OMirrorlink.link}" 
                     + (String.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link) ? "" : $"\n\nOBB:\n{thenow.downloadlink.OBBlink.link}") +
                     $"[/HIDE]";
