@@ -1774,7 +1774,12 @@ namespace MMBS
                 }
                 public void Get_Desc()
                 {
-                    var tmpJToken = customdata.SelectToken("$.data[1][2][72][0][1]");
+
+                    JToken tmpJToken = null;
+                    if (getLangCode() == "vi")
+                        tmpJToken = customdata.SelectToken("$.data[1][2][12][0][0][1]");
+                    if (getLangCode() == "en")
+                        tmpJToken = customdata.SelectToken("$.data[1][2][72][0][1]");
                     if (tmpJToken is null) return;
                     string cache = tmpJToken.Value<string>();
                     cache = cache.Replace("\n", "");
@@ -1805,6 +1810,10 @@ namespace MMBS
                     desc = cache;
                     Desc_Bold = cache;
 
+                }
+                private String getLangCode()
+                {
+                    return HTMLdoc.DocumentNode.SelectSingleNode("html").Attributes["lang"].Value;
                 }
                 // Legacy Code for parsing Play html before 220528 
                 /*
