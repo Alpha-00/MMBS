@@ -261,8 +261,10 @@ namespace MMBS
         public static string[] DSlabelText = new string[] { "Original APK", "Play Store","APKpure"};
         public void boxDSproc()
         {
+            String queryText = "";
+            comboSourceQuery.Invoke(new MethodInvoker(delegate() { queryText = comboSourceQuery.Text; }));
             this.Invoke(InfoSeter,"checkvarThreads.+");
-            OldProcessor.ProcessDataResourceTextBox processDataResourceTextBox = new OldProcessor.ProcessDataResourceTextBox(boxDSlink.Text,comboSourceQuery.Text);
+            OldProcessor.ProcessDataResourceTextBox processDataResourceTextBox = new OldProcessor.ProcessDataResourceTextBox(boxDSlink.Text, queryText);
             
             this.Invoke(InfoSeter, "checkDS label\n" + processDataResourceTextBox.valid.ToString());
             this.Invoke(InfoSeter, "progressDS value\n0");
@@ -325,10 +327,7 @@ namespace MMBS
                 checkExtPerms.Visible = true;
             }
 
-            if (this.boxDSlink.Text.Contains("play.google.com"))
-            {
-                comboSourceQuery.Visible = false;
-            }
+            comboSourceQuery.Visible = this.boxDSlink.Text.Contains("play.google.com");
         }
        // [STAThread]
         public void boxDLproc()
@@ -950,7 +949,7 @@ namespace MMBS
 
         private void comboSourceQuery_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //AFFinputer.appInfo.dataSourceQuery = comboSourceQuery.Text;
+            AFFinputer.appInfo.dataSourceQuery = comboSourceQuery.Text;
         }
     }
 }

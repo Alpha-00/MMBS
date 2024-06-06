@@ -30,6 +30,7 @@
         {
 			this.components = new System.ComponentModel.Container();
 			this.groupDS = new System.Windows.Forms.GroupBox();
+			this.comboSourceQuery = new System.Windows.Forms.ComboBox();
 			this.labelUnvalidDS = new System.Windows.Forms.Label();
 			this.labelValidDS = new System.Windows.Forms.Label();
 			this.boxDSlink = new System.Windows.Forms.TextBox();
@@ -77,7 +78,6 @@
 			this.boxMirrorDLlink = new System.Windows.Forms.TextBox();
 			this.progMirrorDL = new System.Windows.Forms.ProgressBar();
 			this.butCustomData = new System.Windows.Forms.Button();
-			this.comboSourceQuery = new System.Windows.Forms.ComboBox();
 			this.groupDS.SuspendLayout();
 			this.groupDL.SuspendLayout();
 			this.groupAO.SuspendLayout();
@@ -100,6 +100,20 @@
 			this.groupDS.TabIndex = 1;
 			this.groupDS.TabStop = false;
 			this.groupDS.Text = "Data Source";
+			// 
+			// comboSourceQuery
+			// 
+			this.comboSourceQuery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboSourceQuery.ItemHeight = 20;
+			this.comboSourceQuery.Items.AddRange(new object[] {
+            "hl=vi",
+            "hl=en"});
+			this.comboSourceQuery.Location = new System.Drawing.Point(218, 0);
+			this.comboSourceQuery.Name = "comboSourceQuery";
+			this.comboSourceQuery.Size = new System.Drawing.Size(117, 28);
+			this.comboSourceQuery.TabIndex = 4;
+			this.comboSourceQuery.Visible = false;
+			this.comboSourceQuery.SelectedIndexChanged += new System.EventHandler(this.comboSourceQuery_SelectedIndexChanged);
 			// 
 			// labelUnvalidDS
 			// 
@@ -701,21 +715,6 @@
 			this.butCustomData.UseVisualStyleBackColor = true;
 			this.butCustomData.Click += new System.EventHandler(this.butCustomData_Click);
 			// 
-			// comboSourceQuery
-			// 
-			this.comboSourceQuery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboSourceQuery.FormattingEnabled = true;
-			this.comboSourceQuery.ItemHeight = 20;
-			this.comboSourceQuery.Items.AddRange(new object[] {
-            "hl=vi",
-            "hl=en"});
-			this.comboSourceQuery.Location = new System.Drawing.Point(218, 0);
-			this.comboSourceQuery.Name = "comboSourceQuery";
-			this.comboSourceQuery.Size = new System.Drawing.Size(117, 28);
-			this.comboSourceQuery.TabIndex = 4;
-			this.comboSourceQuery.Visible = false;
-			this.comboSourceQuery.SelectedIndexChanged += new System.EventHandler(this.comboSourceQuery_SelectedIndexChanged);
-			// 
 			// AFForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -815,6 +814,6 @@
         private System.Windows.Forms.TextBox boxMirrorDLlink;
         private System.Windows.Forms.ProgressBar progMirrorDL;
         private System.Windows.Forms.Button butCustomData;
-        private System.Windows.Forms.ComboBox comboSourceQuery;
+        public System.Windows.Forms.ComboBox comboSourceQuery;
     }
 }
