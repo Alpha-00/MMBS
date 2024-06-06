@@ -356,8 +356,8 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String descScript =>
-            "<h3 style=\"text-align: left;\">About this game</h3>"
-                + "<div>"
+            //"<h3 style=\"text-align: left;\">About this game</h3>"
+                 "<div>"
                     + /*param*/ "$$$.descHtml$$$$"
                 + "</div>\n";
 
