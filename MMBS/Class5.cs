@@ -323,13 +323,9 @@ namespace MMBS
                 var text = Json.Encode(data);
                 System.IO.File.WriteAllText(path, text);
             }
-            //private const string imgurID = "9334e3b9906c667";
             /// <summary>
             /// Secret Key of Imgur
             /// </summary>
-            //private const string imgurSR = "281c809967ce99257d36334fc2443cd081acd820";
-
-
             private ApiClient _apiClient = null;
             public ApiClient apiClient {
                 get

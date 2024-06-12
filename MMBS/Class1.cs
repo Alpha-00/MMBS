@@ -192,7 +192,7 @@ namespace MMBS
 
                     for (int i = 0; i < items.Length; i++)
                     {
-                        if (items[i].Length > 25) continue;
+                        if (items[i].Length > 50) continue;
                         items[i] = items[i].Trim();
                         items[i] = Regex.Replace(items[i], "^-|^\\+|\\.$", "");
                         items[i] = MyFunction.CapitalizeEachWord(items[i]);
