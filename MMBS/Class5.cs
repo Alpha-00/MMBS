@@ -24,6 +24,9 @@ using Imgur.API.Models;
 using System.Text.RegularExpressions;
 using System.Web.Helpers;
 using System.Windows.Forms;
+using OpenQA.Selenium.DevTools;
+using System.Net;
+using Scriban.Parsing;
 
 namespace MMBS
 {
@@ -251,7 +254,7 @@ namespace MMBS
         {
             private string _id = "";
             private string _secret = "";
-
+            private string _refresh = "";
             private string imgurID {
                 get
                 {
@@ -281,14 +284,33 @@ namespace MMBS
                     return _secret;
                 }
             }
+            private string imgurRefreshToken
+            {
+                get
+                {
+                    if (String.IsNullOrEmpty(_refresh)) return "";
+
+                    return _refresh;
+
+                }
+                set
+                {
+                    _refresh = value;
+                }
+            }
+
             private class ImgurIdModel
             {
                 public string id;
                 public string secret;
-                public ImgurIdModel(string id, string secret)
+                public string refresh;
+                public string token;
+                public ImgurIdModel(string id, string secret, string refresh = "", string token = "")
                 {
                     this.id = id;
                     this.secret = secret;
+                    this.refresh = refresh;
+                    this.token = token;
                 }
                 public ImgurIdModel()
                 {
@@ -304,10 +326,18 @@ namespace MMBS
                 if (data == null) return false;
                 if (data.id == null) return false;
                 if (data.secret == null) return false;
-
+                
                 this._secret = data.secret;
                 this._id = data.id;
+                this._refresh = data.refresh;
                 return true;
+            }
+            private void saveToFile(string id = null, string secret = null, string refresh = null, string token = null)
+            {
+                var data = new ImgurIdModel(id??_id, secret??_secret, refresh??_refresh, token);
+                var path = Class1.GetToken("imgurDir");
+                var text = Json.Encode(data);
+                System.IO.File.WriteAllText(path, text);
             }
             private void loadIdFromForm()
             {
@@ -317,11 +347,51 @@ namespace MMBS
                 // Set data
                 _id = form.imgurID;
                 _secret = form.imgurSecret;
+
                 // Save data
                 var path = Class1.GetToken("imgurDir");
                 var data = new ImgurIdModel(_id, _secret);
                 var text = Json.Encode(data);
                 System.IO.File.WriteAllText(path, text);
+            }
+            private void loadIdFromOAuth()
+            {
+                System.Net.HttpListener listener = new System.Net.HttpListener();
+                if (!System.Net.HttpListener.IsSupported)
+                {
+                    System.Windows.Forms.MessageBox.Show("OAuth unsupported. Please contact dev to use secret file again");
+                    return;
+                }
+                Imgur.API.Authentication.ApiClient client = new ApiClient(imgurID, imgurSecret);
+                //client.SetOAuth2Token()
+                HttpClient httpClient = new HttpClient();
+                Imgur.API.Endpoints.OAuth2Endpoint oAuth = new OAuth2Endpoint(client, httpClient);
+                
+                System.Diagnostics.Process.Start(oAuth.GetAuthorizationUrl());
+                listener.Prefixes.Add("https://*:7371/");
+                listener.Start();
+                var context = listener.GetContext();
+                var uri = context.Request.Url;
+                var getToken = oAuth.GetTokenAsync(uri.QueryKey("refresh_token"));
+                getToken.Start();
+                getToken.Wait();
+                var result = getToken.Result;
+                //var x = new IOAuth2Token();
+                saveToFile(refresh: result.RefreshToken, token: result.AccessToken);
+                listener.Stop();
+                //https://localhost:7371/#access_token=c34c1a854d492673518910e75ad18fa68c52694d&expires_in=315360000&token_type=bearer&refresh_token=83588d9e0e94791e137476cb108eceb8cca67c6f&account_username=Honmyou&account_id=116285171
+                //String oauthTarget = $"https://api.imgur.com/oauth2/authorize?client_id={imgurID}&response_type=code";
+                //System.Diagnostics.Process.Start(oauthTarget);
+                
+                //listener.Prefixes.Add("https://*:7371/");
+                //listener.Start();
+                //var context = listener.GetContext();
+                //var request = context.Request;
+                //var url = request.Url;
+
+                //listener.Stop();
+
+
             }
             /// <summary>
             /// Secret Key of Imgur

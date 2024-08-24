@@ -395,7 +395,7 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String igroupHtml => "<ul>" + "\n"
-                                        + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span><b>$$$.package$$$$</b></span></a></li>"
+                                        + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"color:red;\"><b>$$$.package$$$$</b></span></a></li>"
                                         + "<li>Yêu cầu: " + "$$$.datAReq$$$$" + "</li>" + "\n"
                                         + "<li>Phiên bản: " + "$$$.datVer$$$$" + "</li>" + "\n"
                                         + "<li>Tính năng MOD:" + "$$$.modListHtml$$$$" + "</li>" + "\n"
@@ -412,7 +412,7 @@ namespace MMBS.Model.PostForm
         //    ,{ "permReq", "<li>Needs Special Permission: " + "$$$.extpermReqHtml$$$$" + "</li>" + "\n" }
         //};
 
-        public String infoNotifyExtPermMessage => "Để có được các tính năng MOD, bạn phải <a href=\"/\" rel=\"nofollow\" target=\"_blank\"><span><b>Cấp quyền truy cập bộ nhớ ngoài</b></span></a>";
+        public String infoNotifyExtPermMessage => "<span style=\"color:red;\">Để có được các tính năng MOD, bạn phải <a href=\"/\" rel=\"nofollow\" target=\"_blank\"><span><b>Cấp quyền truy cập bộ nhớ ngoài</b></span></a></span>";
 
         /// <summary>
         /// 

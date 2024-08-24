@@ -14,7 +14,7 @@
         }
     }
     #VIPadmin{
-        background: url(https://imgur.com/u59ftm6t.jpg) repeat-y;
+        background: url(https://i.imgur.com/u59ftm6t.jpg) repeat-y;
         background-size: cover;
         text-shadow: 0 0 44px rgba(40, 166, 266);
         background-clip: text;
