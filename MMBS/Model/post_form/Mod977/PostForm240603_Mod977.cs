@@ -107,6 +107,8 @@ namespace MMBS.Model.PostForm
             //if (data.appInfo.internetReq) { cache_reqList += template.igroupRequireItem["internetReq"]; }
             //if (data.appInfo.obbReq) { cache_reqList += template.igroupRequireItem["obbReq"]; }
             //if (data.appInfo.extpermReq) { cache_reqList += template.igroupRequireItem["permReq"]; }
+            string cacheReqMessageList = "";
+            if (data.appInfo.extpermReq) cacheReqMessageList += "<li>"+ template.infoNotifyExtPermMessage+"</li>\n";
             SP_iGroupScript = MyFunction.MultiReplace(
             template.igroupHtml, 
             "$$$.datAReq$$$$", data.appInfo.androidReq, 
@@ -114,7 +116,8 @@ namespace MMBS.Model.PostForm
             "$$$.datSize$$$$", data.appInfo.size,
             "$$$.sourceUrl$$$$", data.appInfo.datasource,
             "$$$.package$$$$", data.appInfo.packageName,
-            "$$$.modListHtml$$$$", cache_modList
+            "$$$.modListHtml$$$$", cache_modList,
+            "$$$.infoNotifyMessage$$$$", cacheReqMessageList
             //"$$$.igroupReqHtml$$$$", cache_reqList
             //"$$$.rootReqHtml$$$$", template.rootReqHtml[data.appInfo.rootReq ?
             //    // temp implement
@@ -345,7 +348,7 @@ namespace MMBS.Model.PostForm
         /// </para>
         /// </summary>
         public String styleVIPadmin => "<!--Animation CSS by Daniel Riemer--> \n <style>@-webkit-keyframes aitf { 0% { background-position: 0% 50%; } 100% { background-position: 50% 100%; } }\n"
-                + " #VIPadmin {background: url(https://imgur.com/u59ftm6t.jpg) repeat-y; background-size: cover;-webkit-background-clip: text!important;background-clip: text;text-shadow: 0 0 44px rgba(40, 166, 266);-webkit-text-fill-color: transparent;-webkit-animation: aitf 8s linear infinite;-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;-webkit-background-clip: text !important;}</style>\n";
+                + " #VIPadmin {background: url(https://i.imgur.com/u59ftm6t.jpg) repeat-y; background-size: cover;-webkit-background-clip: text!important;background-clip: text;text-shadow: 0 0 44px rgba(40, 166, 266);-webkit-text-fill-color: transparent;-webkit-animation: aitf 8s linear infinite;-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;-webkit-background-clip: text !important;}</style>\n";
         /// <summary>
         /// Predefined style for breakable group of button
         /// </summary>
@@ -392,13 +395,15 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String igroupHtml => "<ul>" + "\n"
-                                        + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"color: #04ff00;\"><b>$$$.package$$$$</b></span></a></li>"
+                                        + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span><b>$$$.package$$$$</b></span></a></li>"
                                         + "<li>Yêu cầu: " + "$$$.datAReq$$$$" + "</li>" + "\n"
                                         + "<li>Phiên bản: " + "$$$.datVer$$$$" + "</li>" + "\n"
                                         + "<li>Tính năng MOD:" + "$$$.modListHtml$$$$" + "</li>" + "\n"
                                         + "<li>Kích thước file MOD: " + "$$$.datSize$$$$" + "</li>" + "\n"
                                         //+ "$$$.igroupReqHtml$$$$"
+                                        + "$$$.infoNotifyMessage$$$$"
                                         + "</ul>" + "\n";
+
 
         //public Dictionary<String, String> igroupRequireItem => new Dictionary<String, String> {
         //    { "rootReq", "<li>Needs Root: " + "$$$.rootReqHtml$$$$" + "</li>" + "\n" }
@@ -406,6 +411,8 @@ namespace MMBS.Model.PostForm
         //    ,{ "obbReq", "<li>Needs Obb: " + "$$$.obbReqHtml$$$$" + "</li>" + "\n" }
         //    ,{ "permReq", "<li>Needs Special Permission: " + "$$$.extpermReqHtml$$$$" + "</li>" + "\n" }
         //};
+
+        public String infoNotifyExtPermMessage => "Để có được các tính năng MOD, bạn phải <a href=\"/\" rel=\"nofollow\" target=\"_blank\"><span><b>Cấp quyền truy cập bộ nhớ ngoài</b></span></a>";
 
         /// <summary>
         /// 

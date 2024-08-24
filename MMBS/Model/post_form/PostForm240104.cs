@@ -333,7 +333,7 @@ namespace MMBS.Model.PostForm
         /// </para>
         /// </summary>
         public String styleVIPadmin => "<!--Animation CSS by Daniel Riemer--> \n <style>@-webkit-keyframes aitf { 0% { background-position: 0% 50%; } 100% { background-position: 50% 100%; } }\n"
-                + " #VIPadmin {background: url(https://imgur.com/u59ftm6t.jpg) repeat-y; background-size: cover;-webkit-background-clip: text!important;background-clip: text;text-shadow: 0 0 44px rgba(40, 166, 266);-webkit-text-fill-color: transparent;-webkit-animation: aitf 8s linear infinite;-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;-webkit-background-clip: text !important;}</style>\n";
+                + " #VIPadmin {background: url(https://i.imgur.com/u59ftm6t.jpg) repeat-y; background-size: cover;-webkit-background-clip: text!important;background-clip: text;text-shadow: 0 0 44px rgba(40, 166, 266);-webkit-text-fill-color: transparent;-webkit-animation: aitf 8s linear infinite;-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;-webkit-background-clip: text !important;}</style>\n";
         /// <summary>
         /// Predefined style for breakable group of button
         /// </summary>
