@@ -106,9 +106,9 @@
 			this.comboSourceQuery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboSourceQuery.ItemHeight = 20;
 			this.comboSourceQuery.Items.AddRange(new object[] {
-            "hl=vi",
-            "hl=en"});
-			this.comboSourceQuery.Location = new System.Drawing.Point(218, 0);
+            "hl=en",
+            "hl=vi"});
+            this.comboSourceQuery.Location = new System.Drawing.Point(218, 0);
 			this.comboSourceQuery.Name = "comboSourceQuery";
 			this.comboSourceQuery.Size = new System.Drawing.Size(117, 28);
 			this.comboSourceQuery.TabIndex = 4;
