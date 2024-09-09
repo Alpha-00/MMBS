@@ -350,7 +350,8 @@ namespace MMBS.Model.PostForm
                 + "</a>"
                 + "\n"
                 + "</div>"
-                + "\n";
+                + "\n"
+                + seperateLineScript;
 
         /// <summary>
         /// 

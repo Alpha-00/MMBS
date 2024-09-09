@@ -395,7 +395,7 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String igroupHtml => "<ul>" + "\n"
-                                        + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"color:red;\"><b>$$$.package$$$$</b></span></a></li>"
+                                        + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"color:#04ff00;display: inline-block;overflow: hidden;text-overflow: ellipsis;max-width: calc(100% - 100px);vertical-align: bottom;word-wrap: normal;\"><b>$$$.package$$$$</b></span></a></li>"
                                         + "<li>Yêu cầu: " + "$$$.datAReq$$$$" + "</li>" + "\n"
                                         + "<li>Phiên bản: " + "$$$.datVer$$$$" + "</li>" + "\n"
                                         + "<li>Tính năng MOD:" + "$$$.modListHtml$$$$" + "</li>" + "\n"

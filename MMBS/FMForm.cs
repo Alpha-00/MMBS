@@ -1023,6 +1023,8 @@ namespace MMBS
             // Add new line after list tag
             html = Regex.Replace(html, @"(?<=</(ol|ul|li))>", ">\n");
             html = Regex.Replace(html, @"(?<=<(ol|ul))>", ">\n");
+            // Remove horizontal rule element
+            html = Regex.Replace(html, @"<(hr|\/hr)>", "\n");
             html = html.Trim();
             if (Regex.IsMatch(html, @"^<ol.*ol>"))
             {
