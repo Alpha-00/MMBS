@@ -78,6 +78,7 @@
 			this.boxMirrorDLlink = new System.Windows.Forms.TextBox();
 			this.progMirrorDL = new System.Windows.Forms.ProgressBar();
 			this.butCustomData = new System.Windows.Forms.Button();
+			this.checkMenu = new System.Windows.Forms.CheckBox();
 			this.groupDS.SuspendLayout();
 			this.groupDL.SuspendLayout();
 			this.groupAO.SuspendLayout();
@@ -108,7 +109,7 @@
 			this.comboSourceQuery.Items.AddRange(new object[] {
             "hl=en",
             "hl=vi"});
-            this.comboSourceQuery.Location = new System.Drawing.Point(218, 0);
+			this.comboSourceQuery.Location = new System.Drawing.Point(218, 0);
 			this.comboSourceQuery.Name = "comboSourceQuery";
 			this.comboSourceQuery.Size = new System.Drawing.Size(117, 28);
 			this.comboSourceQuery.TabIndex = 4;
@@ -429,7 +430,7 @@
 			this.boxModInfo.Location = new System.Drawing.Point(15, 392);
 			this.boxModInfo.Name = "boxModInfo";
 			this.boxModInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.boxModInfo.Size = new System.Drawing.Size(209, 152);
+			this.boxModInfo.Size = new System.Drawing.Size(209, 191);
 			this.boxModInfo.TabIndex = 9;
 			this.boxModInfo.Text = "Hello";
 			this.boxModInfo.TextChanged += new System.EventHandler(this.boxModInfo_TextChanged);
@@ -465,7 +466,7 @@
 			this.butIcon.ContextMenuStrip = this.menuNext;
 			this.butIcon.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.butIcon.Image = global::MMBS.Properties.Resources.offlinemods_logo_pns;
-			this.butIcon.Location = new System.Drawing.Point(230, 419);
+			this.butIcon.Location = new System.Drawing.Point(230, 452);
 			this.butIcon.Name = "butIcon";
 			this.butIcon.Size = new System.Drawing.Size(160, 160);
 			this.butIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -505,7 +506,7 @@
 			// 
 			this.listCredit.Font = new System.Drawing.Font("Calibri", 10F);
 			this.listCredit.FormattingEnabled = true;
-			this.listCredit.Location = new System.Drawing.Point(15, 550);
+			this.listCredit.Location = new System.Drawing.Point(13, 589);
 			this.listCredit.Name = "listCredit";
 			this.listCredit.Size = new System.Drawing.Size(190, 29);
 			this.listCredit.TabIndex = 10;
@@ -515,7 +516,7 @@
 			// labelCredit
 			// 
 			this.labelCredit.AutoSize = true;
-			this.labelCredit.Location = new System.Drawing.Point(205, 553);
+			this.labelCredit.Location = new System.Drawing.Point(203, 592);
 			this.labelCredit.Name = "labelCredit";
 			this.labelCredit.Size = new System.Drawing.Size(21, 20);
 			this.labelCredit.TabIndex = 11;
@@ -567,7 +568,7 @@
 			this.checkNoImgs_Syswarn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.checkNoImgs_Syswarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.checkNoImgs_Syswarn.ForeColor = System.Drawing.Color.Blue;
-			this.checkNoImgs_Syswarn.Location = new System.Drawing.Point(307, 385);
+			this.checkNoImgs_Syswarn.Location = new System.Drawing.Point(307, 415);
 			this.checkNoImgs_Syswarn.Name = "checkNoImgs_Syswarn";
 			this.checkNoImgs_Syswarn.Size = new System.Drawing.Size(80, 24);
 			this.checkNoImgs_Syswarn.TabIndex = 14;
@@ -587,7 +588,7 @@
 			this.progressOnProc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.progressOnProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(175)))), ((int)(((byte)(0)))));
-			this.progressOnProc.Location = new System.Drawing.Point(0, 600);
+			this.progressOnProc.Location = new System.Drawing.Point(0, 622);
 			this.progressOnProc.MarqueeAnimationSpeed = 20;
 			this.progressOnProc.Name = "progressOnProc";
 			this.progressOnProc.Size = new System.Drawing.Size(403, 2);
@@ -715,12 +716,26 @@
 			this.butCustomData.UseVisualStyleBackColor = true;
 			this.butCustomData.Click += new System.EventHandler(this.butCustomData_Click);
 			// 
+			// checkMenu
+			// 
+			this.checkMenu.AutoSize = true;
+			this.checkMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.checkMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.checkMenu.Location = new System.Drawing.Point(307, 385);
+			this.checkMenu.Name = "checkMenu";
+			this.checkMenu.Size = new System.Drawing.Size(68, 24);
+			this.checkMenu.TabIndex = 16;
+			this.checkMenu.Text = "Menu";
+			this.checkMenu.UseVisualStyleBackColor = true;
+			this.checkMenu.CheckedChanged += new System.EventHandler(this.checkMenu_CheckedChanged);
+			// 
 			// AFForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(401, 602);
+			this.ClientSize = new System.Drawing.Size(401, 624);
+			this.Controls.Add(this.checkMenu);
 			this.Controls.Add(this.butCustomData);
 			this.Controls.Add(this.groupMirrorDL);
 			this.Controls.Add(this.progressOnProc);
@@ -815,5 +830,6 @@
         private System.Windows.Forms.ProgressBar progMirrorDL;
         private System.Windows.Forms.Button butCustomData;
         public System.Windows.Forms.ComboBox comboSourceQuery;
+        private System.Windows.Forms.CheckBox checkMenu;
     }
 }

@@ -380,7 +380,7 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String igroupHtml => "<ul>" + "\n"
-                                        + "<li>Package:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"color: #04ff00;\"><b>$$$.package$$$$</b></span></a></li>"
+                                        + "<li>Package:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"color: red;\"><b>$$$.package$$$$</b></span></a></li>"
                                         + "<li>Require: " + "$$$.datAReq$$$$" + "</li>" + "\n"
                                         + "<li>Version: " + "$$$.datVer$$$$" + "</li>" + "\n"
                                         + "<li>Mod feature(s):" + "$$$.modListHtml$$$$" + "</li>" + "\n"

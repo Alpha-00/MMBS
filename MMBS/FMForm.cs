@@ -90,6 +90,7 @@ namespace MMBS
             this.checkInternet.Checked = thenow.appInfo.internetReq;
             this.checkRoot.Checked = thenow.appInfo.rootReq;
             this.checkOBB.Checked = thenow.appInfo.obbReq;
+            this.checkMenu.Checked = thenow.appInfo.menuModFlag;
             this.checkABold.Checked = thenow.appInfo.description.bold;
             this.checkNoLine.Checked = thenow.appInfo.description.noline;
             if (this.checkABold.Checked && this.checkNoLine.Checked)
@@ -1367,6 +1368,11 @@ namespace MMBS
         private void checkOMirror_CheckedChanged(object sender, EventArgs e)
         {
             FormData.downloadlink.OMirrorlink.check = checkOMirror.Checked;
+        }
+
+        private void checkMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            FormData.appInfo.menuModFlag = checkMenu.Checked;
         }
     }
 }

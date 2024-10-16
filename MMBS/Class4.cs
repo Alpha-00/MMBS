@@ -188,6 +188,7 @@ namespace MMBS
             public bool internetReq;
             public bool rootReq;
             public bool obbReq;
+            public bool menuModFlag;
             public DefineInfoPack.imageinfo icon;
             public Descriptionpack description;
             public string datasource;

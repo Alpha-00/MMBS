@@ -98,6 +98,7 @@ namespace MMBS
             checkInternet.Checked = AFFinputer.appInfo.internetReq;
             checkRoot.Checked = AFFinputer.appInfo.rootReq;
             checkOBB.Checked = AFFinputer.appInfo.obbReq;
+            checkMenu.Checked = AFFinputer.appInfo.menuModFlag;
             labelValidDS.Visible = false;
             labelUnvalidDS.Visible = false;
             labelValidDL.Visible = false;
@@ -124,6 +125,7 @@ namespace MMBS
             boxModInfo.Text = AFFinputer.modInfo.moddata;
             checkOBB.Checked = AFFinputer.appInfo.obbReq;
             checkRoot.Checked = AFFinputer.appInfo.rootReq;
+            checkMenu.Checked = AFFinputer.appInfo.menuModFlag;
             listCredit.SelectedIndex = AFFinputer.credit.nowIndex;
         }
         public void ImportCreditList()
@@ -951,6 +953,11 @@ namespace MMBS
         {
             AFFinputer.appInfo.dataSourceQuery = comboSourceQuery.Text;
             boxDSlink_TextChanged(comboSourceQuery,e);
+        }
+
+        private void checkMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            AFFinputer.appInfo.menuModFlag = checkMenu.Checked;
         }
     }
 }

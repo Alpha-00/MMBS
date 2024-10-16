@@ -183,7 +183,8 @@ namespace MMBS
             if (!string.IsNullOrWhiteSpace(thenow.appInfo.name))
             {
                 string modSurfix = thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex);
-                modSurfix = modSurfix.ToLower() == "mod" ? "Mod APK" : MyFunction.FirstCharEachWordUpcase(modSurfix);
+                string modApkMessage = thenow.appInfo.menuModFlag ? "Mod Menu APK" : "Mod APK";
+                modSurfix = modSurfix.ToLower() == "mod" ? modApkMessage : MyFunction.FirstCharEachWordUpcase(modSurfix);
                     titleprocRes = (thenow.appInfo.name).Trim(' ') +" " + modSurfix;
                 string[] items = (!String.IsNullOrWhiteSpace(thenow.modInfo.UI.modTypeGetDat(thenow.modInfo.UI.currentindex)) ? thenow.modInfo.UI.modTypeGetDat(thenow.modInfo.UI.currentindex).Split('\n') : new string[] {});
                 items = items.Where(x => !String.IsNullOrEmpty(x)).ToArray();
