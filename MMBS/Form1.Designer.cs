@@ -141,14 +141,14 @@
             this.betaToolStripMenuItem});
 			this.AFFmenuStrip.Name = "AFFmenuStrip";
 			this.AFFmenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-			this.AFFmenuStrip.Size = new System.Drawing.Size(211, 110);
+			this.AFFmenuStrip.Size = new System.Drawing.Size(202, 82);
 			// 
 			// AFFms_autoOpen
 			// 
 			this.AFFms_autoOpen.CheckOnClick = true;
 			this.AFFms_autoOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.AFFms_autoOpen.Name = "AFFms_autoOpen";
-			this.AFFms_autoOpen.Size = new System.Drawing.Size(210, 26);
+			this.AFFms_autoOpen.Size = new System.Drawing.Size(201, 26);
 			this.AFFms_autoOpen.Text = "Auto Open";
 			this.AFFms_autoOpen.Click += new System.EventHandler(this.AFFms_autoOpen_Click);
 			// 
@@ -159,14 +159,14 @@
 			this.standardToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.standardToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.standardToolStripMenuItem.Name = "standardToolStripMenuItem";
-			this.standardToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+			this.standardToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
 			this.standardToolStripMenuItem.Text = "Standard Theme";
 			// 
 			// betaToolStripMenuItem
 			// 
 			this.betaToolStripMenuItem.CheckOnClick = true;
 			this.betaToolStripMenuItem.Name = "betaToolStripMenuItem";
-			this.betaToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+			this.betaToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
 			this.betaToolStripMenuItem.Text = "Beta";
 			// 
 			// ETest1

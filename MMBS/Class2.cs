@@ -1592,8 +1592,9 @@ namespace MMBS
                         HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
                         doc.LoadHtml(webpage);
                         var x = doc.DocumentNode.SelectSingleNode("/html/body//div[@class=\"name-file\"]").InnerText;
-                        fname = x.Split(" - ")[0];
-                        fsize = x.Split(" - ")[1];
+                        fname = x;
+                        x = doc.DocumentNode.SelectSingleNode("/html/body//div[@class=\"file-info\"]//span[@class=\"file-size\"]").InnerText;
+                        fsize = x;
                         valid = 1;
                     }
                     catch (Exception e)
