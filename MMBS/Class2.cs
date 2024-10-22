@@ -2387,7 +2387,7 @@ namespace MMBS
                     if (cacheHTMLColection is null) return;
                     string[] cache = cacheHTMLColection.AsParallel().Select((x) =>
                     {
-                        string tmp = x.Attributes["href"].Value;
+                        string tmp = x.Attributes["data-href"].Value;
                         tmp = tmp.Remove(tmp.IndexOf("="));
                         return tmp;
                     }).ToArray<string>();
