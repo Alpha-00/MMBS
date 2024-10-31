@@ -127,7 +127,8 @@
     <value>262, 21</value>
   </metadata>
   <data name="UpdateLog.Text" xml:space="preserve">
-    <value>0.42.241021 : Fix modsfire parser
+    <value>0.49.241031 : credit_vip.txt
+0.42.241021 : Fix modsfire parser
 0.41.240604 : Support new form for Mod977
 0.40.240414 : FMF update
 0.39.240409 : APKpure remove video tag

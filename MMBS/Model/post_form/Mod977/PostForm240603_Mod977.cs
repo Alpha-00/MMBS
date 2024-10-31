@@ -261,11 +261,26 @@ namespace MMBS.Model.PostForm
                     SP_CreditScript = "";
                 else
                 {
-                    var creditString = preview == "OfflineMods.Net" ? "Mod977" : data.credit.now.GetToUse();
-                    SP_CreditScript = template.credit.Replace("$$$?.creditString$$$$", creditString);
+                    var creditString = preview == "OfflineMods.Net" ? "乡HULҜ™" : data.credit.now.GetToUse();
+                    var vipCheck = new List<String>() { "乡HULҜ™", "Apksmodᵗᵘᵇᵒᵗᵒᶜᵈᵒ" };
+                    try
+                    {
+                        var vipFile = System.IO.File.ReadAllText(Class1.GetToken("creditVipFile"));
+                        if (!String.IsNullOrEmpty(vipFile)) {
+                            var temp = vipFile.Split("\n").ToList();
+                            temp.ForEach((x) => vipCheck.Append(x));
+                         }
+                    } catch (System.IO.FileNotFoundException)
+                    {
+                        Console.WriteLine("Vip File Not Found");
+                    }
+
+                    var isVip = vipCheck.Any((x) => x == creditString);
+                    SP_CreditScript = template.credit(isVip).Replace("$$$?.creditString$$$$", creditString);
+
                 }
                 string cache_creditLevel = "";
-                if (data.credit.now.host == "offlinemods")
+                if (SP_CreditScript.Contains("VIPadmin"))
                 {
                     cache_creditLevel = "VIPadmin";
                     SP_styleCard += template.styleVIPadmin;
@@ -463,7 +478,7 @@ namespace MMBS.Model.PostForm
         /// <summary>
         /// 
         /// </summary>
-        public String credit => seperateLineScript+ "<h3 style=\"text-align: center;\">\n<span style=\"color: red;\">MOD bởi <span id=\"VIPadmin\" style=\"color: #28a6e2;\">$$$?.creditString$$$$</span></span></h3>" + "\n";
+        public String credit(bool isVip = true) => seperateLineScript + "<h3 style=\"text-align: center;\">\n<span style=\"color: red;\">MOD bởi <span" + (isVip ? " id=\"VIPadmin\"" : "") + " style=\"color: #28a6e2;\">$$$?.creditString$$$$</span></span></h3>" + "\n";
 
         /// <summary>
         /// 

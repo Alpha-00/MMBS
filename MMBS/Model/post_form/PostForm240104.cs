@@ -249,8 +249,24 @@ namespace MMBS.Model.PostForm
             if (data.credit.now != null)
             {
                 SP_CreditScript = string.IsNullOrWhiteSpace(data.credit.now.GetPreview(true)) ? "" : template.credit.Replace("$$$?.creditString$$$$", data.credit.now.GetToUse());
+                if (SP_CreditScript == "OfflineMods.Net") SP_CreditScript = "乡HULҜ™";
                 string cache_creditLevel = "";
-                if (data.credit.now.host == "offlinemods")
+                var vipCheck = new List<String>() { "乡HULҜ™", "Apksmodᵗᵘᵇᵒᵗᵒᶜᵈᵒ" };
+                try
+                {
+                    var vipFile = System.IO.File.ReadAllText(Class1.GetToken("creditVipFile"));
+                    if (!String.IsNullOrEmpty(vipFile))
+                    {
+                        var temp = vipFile.Split("\n").ToList();
+                        temp.ForEach((x) => vipCheck.Append(x));
+                    }
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    Console.WriteLine("Vip File Not Found");
+                }
+                var isVip = vipCheck.Any((x) => x == data.credit.now.GetToUse());
+                if (data.credit.now.host == "offlinemods" || isVip)
                 {
                     cache_creditLevel = "VIPadmin";
                     SP_styleCard += template.styleVIPadmin;

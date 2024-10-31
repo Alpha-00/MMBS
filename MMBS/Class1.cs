@@ -38,6 +38,7 @@ namespace MMBS
                 case "curdir": return System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);     //Current Dir
                 case "userdir": return System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).Remove(System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).LastIndexOf("\\AppData\\Local"));
                 case "imgurDir": return "C:\\BloggerSupporter\\imgur.txt";
+                case "creditVipFile": return "C:\\BloggerSupporter\\credit_vip.txt";
                 case "nothinghereID": return nothinghereID;
                 case "offlinemodsID": return offlinemodsID;
                 case "mmbsprojectFolder": {
