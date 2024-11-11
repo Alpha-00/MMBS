@@ -118,6 +118,7 @@ namespace MMBS
             boxPackage.Text = thenow.appInfo.packageName;
             listCredit.Items.Clear();
             ImportCreditList();
+
             //listCredit.Text = thenow.credit.now.name;
 
             // UI switch
@@ -1319,6 +1320,13 @@ namespace MMBS
         {
             FormData.appInfo.packageName = boxPackage.Text;
         }
+
+        delegate void refreshListCredit();
+        void refreshListCreditImplement()
+        {
+            listCredit.SelectedIndex = FormData.credit.defIndex;
+            listCredit.Refresh();
+        }
         public void ImportCreditList()
         {
             int selected = 0;
@@ -1331,7 +1339,8 @@ namespace MMBS
                 }
             }
             listCredit.Items.Add("...other");
-            listCredit.SelectedIndex = FormData.credit.defIndex;
+            listCredit.SelectedIndex = FormData.credit.nowIndex;
+            //listCredit.Invoke(new refreshListCredit(refreshListCreditImplement));
         }
 
         private void listCredit_SelectedIndexChanged(object sender, EventArgs e)
