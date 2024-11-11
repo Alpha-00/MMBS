@@ -938,8 +938,9 @@ namespace MMBS
                         coverImagelink = scriptCache.GetData("src");
                         //System.Windows.Forms.MessageBox.Show(scriptCache.script);
                         if (!coverImagelink.Contains("http")) coverImagelink = "https://" + coverImagelink;
-                        coverImagelink = Regex.Replace(coverImagelink, "(?<url>[^?]+\\?)(?<prefix>.+)?(?<remove>w=\\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
-                        coverImagelink = Regex.Replace(coverImagelink, "(?<url>[^?]+\\?)(?<prefix>.+)?(?<remove>h=\\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
+                        coverImagelink = Regex.Replace(coverImagelink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(w=\d+(&amp;|&))|(w=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
+                        coverImagelink = Regex.Replace(coverImagelink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(h=\d+(&amp;|&))|(h=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
+                        //coverImagelink = Regex.Replace(coverImagelink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>fakeurl=\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
                         coverImage = new ProcSupporter.ImageDownloader(coverImagelink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
@@ -2230,7 +2231,7 @@ namespace MMBS
                 }
                 public void Get_Image()
                 {
-                    if (webpage.Contains("<div class=\"screen-wrap\">") == false)
+                    if (webpage.Contains("<div class=\"screen-wrap") == false)
                     {
 #if DEBUG
                         throw new Exception("Parser Error: No Image Found");
@@ -2247,8 +2248,9 @@ namespace MMBS
                         var link = subcache[i];
                         // remove gifs data image (no link src)
                         if (!link.StartsWith("http")) continue;
-                        link = Regex.Replace(link, "(?<url>[^?]+\\?)(?<prefix>.+)?(?<remove>w=\\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
-                        link = Regex.Replace(link, "(?<url>[^?]+\\?)(?<prefix>.+)?(?<remove>h=\\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
+                        link = Regex.Replace(link, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(w=\d+(&amp;|&))|(w=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
+                        link = Regex.Replace(link, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(h=\d+(&amp;|&))|(h=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
+                        //link = Regex.Replace(link, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(fakeurl=\d+(&amp;|&))|(fakeurl=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
                         tempLinkList.Add(link);
 
                     }
