@@ -328,8 +328,8 @@ namespace MMBS
                 checkInternet.Visible = true;
                 checkExtPerms.Visible = true;
             }
-
-            comboSourceQuery.Visible = this.boxDSlink.Text.Contains("play.google.com");
+            // Not visible by default
+            //comboSourceQuery.Visible = this.boxDSlink.Text.Contains("play.google.com");
         }
        // [STAThread]
         public void boxDLproc()
