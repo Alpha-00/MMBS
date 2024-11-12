@@ -508,6 +508,9 @@ namespace MMBS
             }
             public static string ShortenLink(string link)
             {
+                Console.WriteLine("ShortenLink: Temporarily lock due to request");
+                Console.WriteLine("ShortenLink: Should be separate with the whole system and have a config");
+                return link;
                 switch (Properties.Settings.Default.shortenlinkServer)
                 {
                     case ("megaurl.in"): return server_megaurl(); break;
@@ -967,6 +970,7 @@ namespace MMBS
                         if (!System.IO.Directory.Exists(cacheDir)) System.IO.Directory.CreateDirectory(cacheDir);
 
                         if (link.Contains("/vn/")) link = link.Replace("/vn/", "/");
+                        if (link.Contains("/vi/")) link = link.Replace("/vi/", "/en/");
                         CookieContainer cookieJar = new CookieContainer();
                         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(link);
                         request.CookieContainer = cookieJar;
@@ -984,12 +988,16 @@ namespace MMBS
                         doc.LoadHtml(webpage);
                         //HtmlAgilityPack.HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//body/section[@id=\"main\"]/div[1]//div[@class=\"info\"]/div[@class=\"app_name\"]");
                         coverImagelink = doc.DocumentNode.SelectSingleNode("//body/section[@id=\"main\"]//div[@class=\"avatar\"]/img").Attributes["data-src"].Value;
-                        coverImagelink = "https:"+coverImagelink.Substring(coverImagelink.IndexOf("f=auto/") + "f=auto/".Length);
+                        coverImagelink = coverImagelink.Substring(coverImagelink.IndexOf("f=auto/") + "f=auto/".Length);
+                        if (!coverImagelink.ToLower().StartsWith("http")) coverImagelink = "https:" + coverImagelink;
                         if (string.IsNullOrEmpty(coverImagelink)) throw new Exception("Can't find cover image");
                         if (coverImagelink.Contains("-rw")) coverImagelink = coverImagelink.Remove(coverImagelink.Length - 2);
                         if (!coverImagelink.Contains("http")) coverImagelink = "https://" + coverImagelink;
+                        if (coverImagelink.Contains("="))
                         coverImagelink = coverImagelink.Remove(coverImagelink.IndexOf("="))+ "=w240-h480";
-                        string temp_coverthumbnailLink = coverImagelink.Remove(coverImagelink.IndexOf("=") + 1) + "s140";
+                        string temp_coverthumbnailLink = coverImagelink;
+                        if (coverImagelink.Contains("="))
+                             temp_coverthumbnailLink = coverImagelink.Remove(coverImagelink.IndexOf("=") + 1) + "s140";
                         coverImage = new ProcSupporter.ImageDownloader(temp_coverthumbnailLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
@@ -1067,8 +1075,8 @@ namespace MMBS
             static string APKcombo_Getpackedname(Uri uri)
             {
                 //string structure = "host/lang/app_name/apppacked";
-                if (uri.Segments.Length > 3) return uri.Segments[3].Substring(2);
-                if (uri.Segments.Length > 2) return uri.Segments[2].Substring(2);
+                if (uri.Segments.Length > 3) return uri.Segments[3].Substring(2).Replace("/","");
+                if (uri.Segments.Length > 2) return uri.Segments[2].Substring(2).Replace("/", "");
                 return "";
             }
         }
@@ -2390,11 +2398,16 @@ namespace MMBS
                     string[] cache = cacheHTMLColection.AsParallel().Select((x) =>
                     {
                         string tmp = x.Attributes["data-href"].Value;
+                        if (tmp.Contains("="))
                         tmp = tmp.Remove(tmp.IndexOf("="));
                         return tmp;
                     }).ToArray<string>();
                     //=w360-h640
-                    string[] cache_thumbLink = cache.Select((x) => x + "=h160").ToArray<string>();
+                    string[] cache_thumbLink = cache.Select((x)=> {
+                        if (x.StartsWith("https://imgs.apkcombo.com")|| x.StartsWith("https://imgrs.apkcombo.com/")) return x;
+                        return x + "=h160";
+                    }
+                    ).ToArray<string>();
 
                     if (cache != null)
                     {
