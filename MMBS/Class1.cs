@@ -1113,10 +1113,10 @@ namespace MMBS
                 string igroupScript =
                       $"Game Name: {thenow.appInfo.name}\n"
                     + $"Game Version: {(thenow.appInfo.version == "Varies with device" ? "" : thenow.appInfo.version)}"
-                    + $"\nNeeds OBB: {(thenow.appInfo.obbReq ? "[COLOR=#ff0000]Yes[/COLOR]" : "No")}"
-                    + $"\nNeeds Root: {(thenow.appInfo.rootReq ? "[COLOR=#ff0000]Yes[/COLOR]" : "No")}"
+                    + $"\nNeeds OBB: {(thenow.appInfo.obbReq ? "[b][COLOR=#ff0000]Yes[/COLOR][/b]" : "No")}"
+                    + $"\nNeeds Root: {(thenow.appInfo.rootReq ? "[b][COLOR=#ff0000]Yes[/COLOR][/b]" : "No")}"
                     //+ $"\nNeeds Internet: {(thenow.appInfo.internetReq ? "Yes" : "No")}"
-                    + (thenow.appInfo.extpermReq ? $"\nNeeds Ext.Storage Permission: [COLOR=#ff0000]Yes[/COLOR]" :"");
+                    + (thenow.appInfo.extpermReq ? $"\nNeeds Ext.Storage Permission: [b][COLOR=#ff0000]Yes[/COLOR][/b]" :"");
 
                 string modfeatureScript = "[COLOR=#ff0000]*MOD Features*[/COLOR]\n";
 
