@@ -956,14 +956,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MMBS.exe" size="1420760">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MMBS.exe" size="1421272">
       <assemblyIdentity name="MMBS" version="0.23.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1oaxVxs6+oQbYvtQonNU3ZlS/0Kt4W6vkbjz0llZqPs=</dsig:DigestValue>
+        <dsig:DigestValue>DLM7XGF9ythKKwqhEucMyu+oo4cOh4pUBstvOGHpkx4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -975,7 +975,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cB/fiHkmk3p9JzdP06yP1UOBZ91y9OiYCFe/3BGFJYk=</dsig:DigestValue>
+        <dsig:DigestValue>/7w92siXFmVbg/s6HVSDHGluQ8KJc+kFCUtr/cO70eU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

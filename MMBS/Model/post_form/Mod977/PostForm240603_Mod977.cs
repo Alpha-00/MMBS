@@ -427,7 +427,7 @@ namespace MMBS.Model.PostForm
         //    ,{ "permReq", "<li>Needs Special Permission: " + "$$$.extpermReqHtml$$$$" + "</li>" + "\n" }
         //};
 
-        public String infoNotifyExtPermMessage => "<span style=\"color:red;\">Để có được các tính năng MOD, bạn phải <a href=\"https://www.facebook.com/government-nonprofits/blog/regaining-access-to-your-page\" rel=\"nofollow\" target=\"_blank\"><span><b>Cấp quyền truy cập bộ nhớ ngoài</b></span></a></span>";
+        public String infoNotifyExtPermMessage => "<li><span>Để có được các tính năng MOD, bạn phải</span><span style=\"color: red;\"> <a href=\"https://www.mod977.top/2024/11/huong-dan-cap-quyen-truy-cap-bo-nho-ngoai.html\" rel=\"nofollow\" target=\"_blank\"><span><b>Cấp quyền truy cập bộ nhớ ngoài</b></span></a></span></li>";
 
         /// <summary>
         /// 
