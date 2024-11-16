@@ -47,6 +47,6 @@ jobs:
       with:
         file: MMBS/bin/MMBS
         asset_name: mmbs
-        tag: ${{ MMBS_VERSION }}
+        tag: ${{ vars.MMBS_VERSION }}
         overwrite: true
         body: "This is automatical release"
