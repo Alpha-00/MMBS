@@ -1,0 +1,132 @@
+{{~ ### Manifest Section ### ~}}
+<!--MMBS:240105:240105-->
+{{~ ### Custom Style Section ### ~}}
+{{~ if haveIcon ~}}
+<!--Animation CSS by Daniel Riemer-->
+<style>
+    @keyframes aitf {
+        from {
+            background-position: 0% 50%;
+        }
+        
+        to {
+            background-position: 50% 100%;
+        }
+    }
+    #VIPadmin{
+        background: url(https://i.imgur.com/u59ftm6t.jpg) repeat-y;
+        background-size: cover;
+        text-shadow: 0 0 44px rgba(40, 166, 266);
+        background-clip: text;
+        animation: aitf 8s linear infinite;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: aitf 8s linear infinite;
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+    }
+</style>
+{{~ end ~}}
+<!-- Download Group Responsive Arrange -->
+<style>
+    div.wrap-breakable#wrap {    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin: auto;
+        max-width: 500px;
+    }
+</style>
+{{~ ### Icon Section ### ~}}
+{{~ if haveIcon ~}}
+<div class="separator" style="clear: both; text-align: center;">
+    <a href="https://play-lh.googleusercontent.com/NwbysMO_1aJOAAAgs3bcNI8RI80ftnT6zclLtDrJMBrLJ293ZvUeROyn6QtIrpdZsc8=w240-h480"
+    style="margin-left: 1em; margin-right: 1em;"><img border="0" class="hoverZoomLink" data-original-height="180"
+    data-original-width="180"
+    src="https://play-lh.googleusercontent.com/NwbysMO_1aJOAAAgs3bcNI8RI80ftnT6zclLtDrJMBrLJ293ZvUeROyn6QtIrpdZsc8=w240-h480" /></a>
+</div>
+{{~ end ~}}
+{{~ ### Description Section ### ~}}
+<h3 style="text-align: left;">About this game</h3>
+<div>
+    {{~ for $lineId in (0..<descriptionLines.size) ~}}
+    <div>
+        <div style="text-align: justify;"> 
+            {{- descriptionLines[$lineId] -}}
+        </div>
+    </div>
+    {{~ end ~}}
+</div>
+{{~ ### Image and Video Section ### ~}}
+<div style="text-align: justify;"><br /></div>
+<h3>In-Game Images</h3>
+    {{~ for $imageId in (0..<imageLinks.size) ~}}
+    <div class="separator" style="clear: both; text-align: center;">
+        <a href="{{- imageLinks[$imageId] -}}"
+        style="margin-left: 1em; margin-right: 1em;"><img border="0" class="hoverZoomLink" data-original-height="{{- imageHeights[$imageId] -}}"
+        data-original-width="{{- imageWidths[$imageId] -}}" height="{{- imageHeights[$imageId] -}}"
+        src="{{- imageLinks[$imageId] -}}"
+            width="{{- imageWidths[$imageId] -}}" />
+        </a>
+    </div>
+    {{~ end ~}}
+</div>
+<div><br /></div>
+{{~ ### Meta Section ### ~}}
+<h3>Mod Info</h3>
+<ul>
+    <li>Package:&nbsp;<a href="{{- sourceLink -}}" rel="nofollow"
+    target="_blank"><span style="color: #04ff00;"><b>{{- package -}}</span></a></li>
+    <li>Require: {{ needVersion }}</li>
+    <li>Version: {{ version }}</li>
+    <li>Mod feature(s):<ul>
+        {{~ for $modId in (0..<modItems.size) ~}}
+        <li>{{ modItems[$modId] }}</li>
+        {{~ end ~}}
+    </ul></li>
+    <li>File size: {{ size }}</li>
+    {{~ ### Special Require Field Section ### ~}}
+    {{~ if needRoot ~}}
+    <li>Needs Root: <a href="https://www.offlinemods.net/2017/10/how-to-install-unsigned-apks-on-your.html" title= "How to install unsigned apks on your phone?" target="_blank" style="color: red;"><b>Yes</b></a></li>
+    {{~ end ~}}
+    {{~ if needInternet ~}}
+    <li>Internet: <span style="color: red; "><b>Yes</b></span></li>
+    {{~ end ~}}
+    {{~ if needObbData ~}}
+    <li>Needs Obb: <a href="https://www.offlinemods.net/2016/10/how-to-install-game-which-has-obb-file.html" title= "How to install game which has obb file?" target="_blank" style="color: red;"><b>Yes</b></a></li>
+    {{~ end ~}}
+    {{~ if needExternalPermission ~}}
+    <li>Needs Special Permission: <a href="https://www.offlinemods.net/2019/10/how-to-grant-storage-permission-on-android.html" title= "How to grant storage permission on android?" target="_blank" style="color: red;"><b>Yes</b></a></li>
+    {{~ end ~}}
+</ul>
+
+<br />
+{{~ ### Download Section ### ~}}
+<div class="breakable" id="wrap">
+    {{~ if downloadPath != "" ~}}
+    <div class="buttons">
+        <a href="{{- downloadPath -}}" rel="noopener noreferrer" target="_blank">
+            <button class="btn-hover color-9">Download</button>
+        </a>
+    </div>
+    {{~ end ~}}
+    {{~ if obbPath != "" ~}}
+    <div class="buttons">
+        <a href="{{- obbPath -}}" rel="noopener noreferrer" target="_blank">
+            <button class="btn-hover color-10">Support Us</button>
+        </a>
+    </div>
+    {{~ end ~}}
+</div>
+<br /><br />
+{{~ ### Credit Section ### ~}}
+<h3 style="text-align: center;">
+    <span style="color: red;">Credit to&nbsp;<span {{ if isVipAuthor }}id="VIPadmin"{{ end }} style="color: #28a6e2;">{{ authorName }}</span></span>
+</h3>
+{{~ ### Last Word Section ### ~}}
+<h3 style="text-align: center;">
+    <span style="color: red;">Don't change the toast to make this yours. Thanks!</span>
+</h3>

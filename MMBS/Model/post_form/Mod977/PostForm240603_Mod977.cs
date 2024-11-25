@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Google.Apis.Drive.v3.Data;
 using System.Web.UI.WebControls.Expressions;
+using System.Text.RegularExpressions;
 
 namespace MMBS.Model.PostForm
 {
@@ -49,8 +50,23 @@ namespace MMBS.Model.PostForm
                 {
                     string tmpcache = "";
                     int limitCounter = 2;
+                    Regex matchComment = new Regex("^<!--(?<content>.+)-->$");
                     foreach (string str in cache_Desc)
                     {
+                        if (matchComment.IsMatch(str))
+                        {
+                            var content = matchComment.Match(str).Groups["content"].Value;
+                            // Only use for net image
+                            if (Uri.IsWellFormedUriString(content, UriKind.Absolute)) {
+                                
+                            }
+                            // Only use for local image
+                            Regex matchImageFile = new Regex("(.+\\.(jpg|png|webp))$");
+                            if (matchImageFile.IsMatch(content))
+                            {
+
+                            }
+                        }
                         string str_edited = str;
                         //special process for multiple line <b>
                         string str_proc = str.Replace(" ", ""); ;
