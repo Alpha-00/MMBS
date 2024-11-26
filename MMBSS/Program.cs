@@ -4,17 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.Extensions.Configuration;
 namespace MMBS
 {
     public static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
+		internal static IConfiguration Config { get; private set; }
+		/// <summary>
+		/// The main entry point for the application.
+		/// </summary>
+		[STAThread]
         public static void Main(string[] args)
         {
-            Initialization();
+			Config = new ConfigurationBuilder()
+			.AddJsonFile("appsettings.json")
+			.Build();
+
+			// Use the config file to get a connection string.
+			//string? myConnectionString = Config.GetConnectionString("database");
+			Initialization();
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
             if (args.Length == 0)

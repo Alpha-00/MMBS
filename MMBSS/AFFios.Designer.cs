@@ -145,7 +145,8 @@
             // 
             // skipFMFToolStripMenuItem
             // 
-            this.skipFMFToolStripMenuItem.Checked = global::MMBS.Properties.Settings.Default.AFFskipFMF;
+            //this.skipFMFToolStripMenuItem.Checked = global::MMBS.Properties.Settings.Default.AFFskipFMF;
+            this.skipFMFToolStripMenuItem.Checked = bool.Parse(MMBS.Program.Config["isSkipFmf"]);
             this.skipFMFToolStripMenuItem.CheckOnClick = true;
             this.skipFMFToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.skipFMFToolStripMenuItem.Name = "skipFMFToolStripMenuItem";
@@ -154,7 +155,8 @@
             // 
             // stripNoDownImage
             // 
-            this.stripNoDownImage.Checked = global::MMBS.Properties.Settings.Default.NoDownImage;
+            //this.stripNoDownImage.Checked = global::MMBS.Properties.Settings.Default.NoDownImage;
+            this.stripNoDownImage.Checked = !bool.Parse(MMBS.Program.Config["isDownloadImage"]);
             this.stripNoDownImage.CheckOnClick = true;
             this.stripNoDownImage.Name = "stripNoDownImage";
             this.stripNoDownImage.Size = new System.Drawing.Size(288, 24);

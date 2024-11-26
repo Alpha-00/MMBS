@@ -61,12 +61,16 @@ namespace MMBS
         public AFForm()
         {
             Initialize();
-            if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
+            //if (Properties.Settings.Default.OldStyle) 
+            if (bool.Parse(MMBS.Program.Config["isOldTheme"])) 
+				ThemeSystem.LoadOldStyle(this);
         }
         public AFForm(string cmd)
         {
             Initialize();
-            if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
+            //if (Properties.Settings.Default.OldStyle) 
+            if (bool.Parse(MMBS.Program.Config["isOldTheme"])) 
+					ThemeSystem.LoadOldStyle(this);
             AFFinputer = new PostDataBundle();
             switch (cmd)
             {
@@ -76,8 +80,10 @@ namespace MMBS
         public AFForm(string cmd, PostDataBundle importdata)
         {
             Initialize();
-            if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
-            AFFinputer = new PostDataBundle();
+			//if (Properties.Settings.Default.OldStyle) 
+			if (bool.Parse(MMBS.Program.Config["isOldTheme"]))
+				ThemeSystem.LoadOldStyle(this);
+			AFFinputer = new PostDataBundle();
             switch (cmd)
             {
                 case "process": ResetForm(); AFFinputer = importdata; this.Shown+=RefreshData; break;
@@ -89,8 +95,9 @@ namespace MMBS
             groupDL.Text = "Download";
             groupAO.Text = "OBB";
             butModInfo.Text = AFFinputer.modInfo.UI.modTypeGetname(AFFinputer.modInfo.UI.currentindex);
-            if (!Properties.Settings.Default.OldStyle)
-            butModInfo.ForeColor = AFFinputer.modInfo.UI.modTypegetcolor(AFFinputer.modInfo.UI.currentindex);
+			//if (!Properties.Settings.Default.OldStyle)
+			if (!bool.Parse(MMBS.Program.Config["isOldTheme"]))
+			butModInfo.ForeColor = AFFinputer.modInfo.UI.modTypegetcolor(AFFinputer.modInfo.UI.currentindex);
             boxModInfo.Enabled = AFFinputer.modInfo.UI.modTypeAllowData(AFFinputer.modInfo.UI.currentindex);
             boxModInfo.Text = AFFinputer.modInfo.UI.modTypeGetDat(AFFinputer.modInfo.UI.currentindex);
             boxDSlink.Text = AFFinputer.appInfo.datasource;
@@ -177,9 +184,7 @@ namespace MMBS
         }
         private void butModInfo_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.OldStyle) { }
-            else
-            {
+            if (!bool.Parse(MMBS.Program.Config["isOldTheme"])) { 
                 this.butModInfo.ForeColor = AFFinputer.modInfo.UI.modTypegetcolor(AFFinputer.modInfo.UI.currentindex);
             }
                 AFFinputer.modInfo.UI.currentindex = AFFinputer.modInfo.UI.Getnext();
@@ -458,7 +463,9 @@ namespace MMBS
         {
             this.Hide();
             DateTime counter = new DateTime();
-            if (Properties.Settings.Default.PermformCheck) counter = DateTime.Now;
+            //if (Properties.Settings.Default.PermformCheck) 
+            if (bool.Parse(MMBS.Program.Config["isPeformCheck"])) 
+				counter = DateTime.Now;
             
             OldProcessor.MainProcessor main = new OldProcessor.MainProcessor(datasource_webpage_cache, AFFinputer.appInfo.datasourcetype, AFFinputer.folderlink);
             AFFinputer.appInfo.name = main.title;
@@ -512,8 +519,11 @@ namespace MMBS
                     AFFinputer.downloadlink.linklist[i].link = cache == "" ? AFFinputer.downloadlink.OMirrorlink.link : cache;
                 }
             }
-            if (Properties.Settings.Default.PermformCheck)counter = DateTime.FromBinary(DateTime.Now.ToBinary() - counter.ToBinary());
-            if (!Properties.Settings.Default.NoDownImage)
+            //if (Properties.Settings.Default.PermformCheck)
+            if (bool.Parse(MMBS.Program.Config["isPeformCheck"]))
+				counter = DateTime.FromBinary(DateTime.Now.ToBinary() - counter.ToBinary());
+            //if (!Properties.Settings.Default.NoDownImage)
+            if (bool.Parse(MMBS.Program.Config["isDownloadImage"]))
             {
                 AFFinputer.postMedia.ImportImagelistFromImageDownloadList(main.image);
                 if (!string.IsNullOrWhiteSpace(AFFinputer.folderlink) && (AFFinputer.folderlink != Class1.GetToken("curdir")))
@@ -530,8 +540,11 @@ namespace MMBS
             //Required for recycle this Form
             else AFFinputer.postMedia.ResetImageList();
             
-            if (Properties.Settings.Default.PermformCheck) MessageBox.Show("Process Done in "+counter.ToString("mm:ss.ffffff"));
-            if (!Properties.Settings.Default.AFFskipFMF)
+            //if (Properties.Settings.Default.PermformCheck) 
+            if (bool.Parse(MMBS.Program.Config["isPeformCheck"]))
+					MessageBox.Show("Process Done in "+counter.ToString("mm:ss.ffffff"));
+            //if (!Properties.Settings.Default.AFFskipFMF)
+            if (!bool.Parse(MMBS.Program.Config["isSkipFmf"]))
             {
                 FMForm fmf = new FMForm(AFFinputer);
                 switch (comboExportScript.Items[comboExportScript.SelectedIndex])
@@ -756,7 +769,8 @@ namespace MMBS
 
         private void skipFMFToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Properties.Settings.Default.AFFskipFMF = skipFMFToolStripMenuItem.Checked;
+			//Properties.Settings.Default.AFFskipFMF = skipFMFToolStripMenuItem.Checked;
+			Program.Config["isSkipFmf"] = skipFMFToolStripMenuItem.Checked.ToString();
         }
 
         private void ListCredit_SelectedIndexChanged(object sender, EventArgs e)
@@ -802,9 +816,10 @@ namespace MMBS
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (keyData == (Keys.Control | Keys.Shift | Keys.V))
+            if (keyData == (Keys.Control | Keys.Alt | Keys.V))
             {
-                MessageBox.Show($"App Version: {Properties.Settings.Default.appver}");
+                //MessageBox.Show($"App Version: {Properties.Settings.Default.appver}");
+                MessageBox.Show($"App Version: {Program.Config["version"]}");
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
@@ -833,7 +848,8 @@ namespace MMBS
 
         private void stripNoDownImage_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.NoDownImage = stripNoDownImage.Checked;
+			//Properties.Settings.Default.NoDownImage = stripNoDownImage.Checked;
+			MMBS.Program.Config["isDownloadImage"] = stripNoDownImage.Checked.ToString();
         }
 
         private void checkExtPerms_CheckedChanged(object sender, EventArgs e)
@@ -851,8 +867,10 @@ namespace MMBS
 
         private void checkNoImgs_Syswarn_CheckedChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.NoDownImage = checkNoImgs_Syswarn.Checked;
-        }
+            //Properties.Settings.Default.NoDownImage = checkNoImgs_Syswarn.Checked;
+			MMBS.Program.Config["isDownloadImage"] = checkNoImgs_Syswarn.Checked.ToString();
+
+		}
 
         private void checkSign_CheckedChanged(object sender, EventArgs e)
         {

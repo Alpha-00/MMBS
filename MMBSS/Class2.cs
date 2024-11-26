@@ -511,7 +511,8 @@ namespace MMBS
                 Console.WriteLine("ShortenLink: Temporarily lock due to request");
                 Console.WriteLine("ShortenLink: Should be separate with the whole system and have a config");
                 return link;
-                switch (Properties.Settings.Default.shortenlinkServer)
+                //switch (Properties.Settings.Default.shortenlinkServer)
+                switch (MMBS.Program.Config["serverShortenLink"])
                 {
                     case ("megaurl.in"): return server_megaurl(); break;
                 }
@@ -1770,7 +1771,8 @@ namespace MMBS
 
                     if (cache != null)
                     {
-                        if (!Properties.Settings.Default.NoDownImage)
+                        //if (!Properties.Settings.Default.NoDownImage)
+                        if (Convert.ToBoolean(MMBS.Program.Config["isDownloadImage"]))
                         {
                             this.image = new ProcSupporter.ImageDownloader[cache.Length];
                             Parallel.For(0, cache.Length, new ParallelOptions { MaxDegreeOfParallelism = 8 }, i => { image[i] = new ProcSupporter.ImageDownloader(cache_thumbLink[i], "Screenshot " + i.ToString(), this.dir); });
@@ -2060,7 +2062,7 @@ namespace MMBS
                     string[] listcache = customdata.SelectToken("$.results[0].screenshotUrls").Values<string>().ToArray();
                     if (listcache != null)
                     {
-                        if (!Properties.Settings.Default.NoDownImage)
+                        if (Convert.ToBoolean(MMBS.Program.Config["isDownloadImage"]))
                         {
                             this.image = new ProcSupporter.ImageDownloader[listcache.Length];
                             Parallel.For(0, listcache.Length, new ParallelOptions { MaxDegreeOfParallelism = 8 }, i => { image[i] = new ProcSupporter.ImageDownloader(listcache[i], "Screenshot " + i.ToString(), this.dir); });
@@ -2113,7 +2115,7 @@ namespace MMBS
 
                     if (cache != null)
                     {
-                        if (!Properties.Settings.Default.NoDownImage)
+                        if (Convert.ToBoolean(MMBS.Program.Config["isDownloadImage"]))
                         {
                             this.image = new ProcSupporter.ImageDownloader[cache.Length];
                             Parallel.For(0, cache.Length, new ParallelOptions { MaxDegreeOfParallelism = 8 }, i => { image[i] = new ProcSupporter.ImageDownloader(cache_thumbLink[i], "Screenshot " + i.ToString(), this.dir); });
@@ -2411,7 +2413,8 @@ namespace MMBS
 
                     if (cache != null)
                     {
-                        if (!Properties.Settings.Default.NoDownImage)
+                        //if (!Properties.Settings.Default.NoDownImage)
+                        if (Convert.ToBoolean(MMBS.Program.Config["isDownloadImage"]))
                         {
                             this.image = new ProcSupporter.ImageDownloader[cache.Length];
                             Parallel.For(0, cache.Length, new ParallelOptions { MaxDegreeOfParallelism = 8 }, i => { image[i] = new ProcSupporter.ImageDownloader(cache_thumbLink[i], "Screenshot " + i.ToString(), this.dir); });
@@ -2582,7 +2585,8 @@ namespace MMBS
 
                     if (cache != null)
                     {
-                        if (!Properties.Settings.Default.NoDownImage)
+                        //if (!Properties.Settings.Default.NoDownImage)
+                        if (Convert.ToBoolean(MMBS.Program.Config["isDownloadImage"]))
                         {
                             this.image = new ProcSupporter.ImageDownloader[cache.Length];
                             Parallel.For(0, cache.Length, new ParallelOptions { MaxDegreeOfParallelism = 8 }, i => { image[i] = new ProcSupporter.ImageDownloader(cache_thumbLink[i], "Screenshot " + i.ToString(), this.dir); });

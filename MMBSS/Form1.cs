@@ -24,13 +24,17 @@ namespace MMBS
     {
         public MainMenu()
         {
-            Properties.Settings.Default.exit = false;
+            //Properties.Settings.Default.exit = false;
+            MMBS.Program.Config["inExitProcess"] = false.ToString();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             string cache = resources.GetString("UpdateLog.Text");
-            Properties.Settings.Default.appver = cache.Split("\n")[1].Split(":")[0].Trim();
-            Properties.Settings.Default.appmessage = cache.Split("\n")[1].Split(":")[1].Trim();
+			//Properties.Settings.Default.appver = cache.Split("\n")[1].Split(":")[0].Trim();
+			MMBS.Program.Config["version"] = cache.Split("\n")[1].Split(":")[0].Trim();
+			//Properties.Settings.Default.appmessage = cache.Split("\n")[1].Split(":")[1].Trim();
+			MMBS.Program.Config["message"] = cache.Split("\n")[1].Split(":")[1].Trim();
             
-            if (Properties.Settings.Default.AFFautoOpen) { 
+            //if (Properties.Settings.Default.AFFautoOpen) { 
+            if (Convert.ToBoolean(MMBS.Program.Config["isAutoOpenAff"])) { 
                 this.Hide();  
                 AFForm AFFcontrol = new AFForm("new");
                 AFFcontrol.ShowDialog();
@@ -67,7 +71,8 @@ namespace MMBS
             {
                 if (s == LogLine.First())
                 {
-                    cache.Alignment(StringAlignment.Center).FontStyle(FontStyle.Bold | FontStyle.Underline).ForeColor(Properties.Settings.Default.OldStyle ? Color.Orange:Color.Yellow).Append(s).AppendLine();
+                    //cache.Alignment(StringAlignment.Center).FontStyle(FontStyle.Bold | FontStyle.Underline).ForeColor(Properties.Settings.Default.OldStyle ? Color.Orange:Color.Yellow).Append(s).AppendLine();
+                    cache.Alignment(StringAlignment.Center).FontStyle(FontStyle.Bold | FontStyle.Underline).ForeColor(Convert.ToBoolean(MMBS.Program.Config["isOldTheme"]) ? Color.Orange:Color.Yellow).Append(s).AppendLine();
                 }
                 else if (s.Contains(":"))
                 {
@@ -76,7 +81,8 @@ namespace MMBS
                     cache.FontStyle(FontStyle.Underline).ForeColor(Color.Lime).Append(s.Remove(s.IndexOf(" : ")));
                     cache.ForeColor(Color.Lime).Append(" : ");
                     cache.Alignment(StringAlignment.Far);
-                    cache.ForeColor(Properties.Settings.Default.OldStyle?Color.Black:Color.White).Append(s.Substring(s.IndexOf(" : ") + " : ".Length));
+                    //cache.ForeColor(Properties.Settings.Default.OldStyle?Color.Black:Color.White).Append(s.Substring(s.IndexOf(" : ") + " : ".Length));
+                    cache.ForeColor(Convert.ToBoolean(MMBS.Program.Config["isOldTheme"]) ? Color.Black:Color.White).Append(s.Substring(s.IndexOf(" : ") + " : ".Length));
                     cache.AppendLine();
                 }
             }
@@ -290,8 +296,10 @@ namespace MMBS
 
         private void AFFms_autoOpen_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.AFFautoOpen = AFFms_autoOpen.Checked;
-            Properties.Settings.Default.Save();
+			//Properties.Settings.Default.AFFautoOpen = AFFms_autoOpen.Checked;
+			MMBS.Program.Config["isAutoOpenAff"] = AFFms_autoOpen.Checked.ToString();
+            //Properties.Settings.Default.Save();
+			
         }
 
         private void UpdateLog_TextChanged(object sender, EventArgs e)
@@ -306,13 +314,15 @@ namespace MMBS
 
         private void standardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.OldStyle = standardToolStripMenuItem.Checked;
-            Properties.Settings.Default.Save();
+            //Properties.Settings.Default.OldStyle = standardToolStripMenuItem.Checked;
+			MMBS.Program.Config["isOldTheme"] = standardToolStripMenuItem.Checked.ToString();
+            //Properties.Settings.Default.Save();
         }
 
         private void betaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.BetaTest = betaToolStripMenuItem.Checked;
+            //Properties.Settings.Default.BetaTest = betaToolStripMenuItem.Checked;
+			MMBS.Program.Config["isBetaTest"] = betaToolStripMenuItem.Checked.ToString();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

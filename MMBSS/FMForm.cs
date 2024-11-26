@@ -22,8 +22,12 @@ namespace MMBS
             InitializeComponent();
             initFormData();
             LoadDataFromPostDataBundleToForm(FormData);
-            if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
-            if (Properties.Settings.Default.FMFtopmost) this.TopMost = true;
+            //if (Properties.Settings.Default.OldStyle) 
+            if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"])) 
+				ThemeSystem.LoadOldStyle(this);
+            //if (Properties.Settings.Default.FMFtopmost) 
+            if (Convert.ToBoolean(MMBS.Program.Config["isTopMostFmf"])) 
+				this.TopMost = true;
             else { this.TopMost = true; this.TopMost = false; }
 #if DEBUG
             { this.TopMost = true; this.TopMost = false; }
@@ -48,7 +52,7 @@ namespace MMBS
                     boxVreview.Enabled = false;
                     checkVideo.Enabled = false;
                     labelVideo.Enabled = false;
-                    if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
+                    if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"])) ThemeSystem.LoadOldStyle(this);
                     break;
             }
            // if (Properties.Settings.Default.FMFtopmost) this.TopMost = true;
@@ -60,10 +64,12 @@ namespace MMBS
             InitializeComponent();
             initFormData(thenow);
             LoadDataFromPostDataBundleToForm(thenow);
-            if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
+            if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"])) 
+				ThemeSystem.LoadOldStyle(this);
 
             //Support Function
-            if (Properties.Settings.Default.FMFtopmost) this.TopMost = true;
+            if (Convert.ToBoolean(MMBS.Program.Config["isTopMostFmf"])) 
+				this.TopMost = true;
             else { this.TopMost = true; this.TopMost = false; }
 
             SystemCallExecute();
@@ -287,7 +293,7 @@ namespace MMBS
         }
         private void butModInfo_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.OldStyle) { }
+            if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"])) { }
             else
             {
                 this.butModInfo.ForeColor = FormData.modInfo.UI.modTypegetcolor(FormData.modInfo.UI.currentindex);
@@ -555,7 +561,8 @@ namespace MMBS
         private void checkABold_CheckedChanged(object sender, EventArgs e)
         {
             FormData.appInfo.description.bold = checkABold.Checked;
-            if (!Properties.Settings.Default.OldStyle)
+            //if (!Properties.Settings.Default.OldStyle)
+            if (!Convert.ToBoolean(MMBS.Program.Config["isOldTheme"]))
             {
                 if (FormData.appInfo.description.bold)
                 {
@@ -568,7 +575,8 @@ namespace MMBS
         private void checkNoLine_CheckedChanged(object sender, EventArgs e)
         {
             FormData.appInfo.description.noline = checkNoLine.Checked;
-            if (!Properties.Settings.Default.OldStyle)
+            //if (!Properties.Settings.Default.OldStyle)
+            if (!Convert.ToBoolean(MMBS.Program.Config["isOldTheme"]))
             {
                 if (FormData.appInfo.description.noline)
                 {

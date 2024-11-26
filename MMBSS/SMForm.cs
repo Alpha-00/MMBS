@@ -114,11 +114,11 @@ namespace MMBS
             post.Content = "Hello";
             post.CustomMetaData = "{\"Search Keywords\" = \"abc\"}";
             //post.Labels.Add("A");
-            PostsResource.InsertRequest request = service1.Posts.Insert(post, Properties.Settings.Default.BetaTest ? Class1.GetToken("nothinghereID") : Class1.GetToken("offlinemodsID"));
+            PostsResource.InsertRequest request = service1.Posts.Insert(post, Convert.ToBoolean(MMBS.Program.Config["isBetaTest"]) ? Class1.GetToken("nothinghereID") : Class1.GetToken("offlinemodsID"));
             request.IsDraft = true;
            
             Post result = request.Execute();
-            System.Diagnostics.Process.Start("https://draft.blogger.com/blogger.g?blogID="+ (Properties.Settings.Default.BetaTest ? Class1.GetToken("nothinghereID") : Class1.GetToken("offlinemodsID")) + "#editor/postID=" + result.Id);
+            System.Diagnostics.Process.Start("https://draft.blogger.com/blogger.g?blogID="+ (Convert.ToBoolean(MMBS.Program.Config["isBetaTest"]) ? Class1.GetToken("nothinghereID") : Class1.GetToken("offlinemodsID")) + "#editor/postID=" + result.Id);
             this.Show();
         }
 

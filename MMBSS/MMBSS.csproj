@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows10.0.22000.0</TargetFramework>
     <OutputType>WinExe</OutputType>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <HockeyAppResourceId>dd707c2fc0d64f89bb921f25c84df31e</HockeyAppResourceId>
@@ -30,10 +30,12 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DocumentationFile>bin\Debug\MMBS.xml</DocumentationFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DebugType>full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\MMBS\</OutputPath>
     <DocumentationFile>bin\MMBS\MMBS.xml</DocumentationFile>
+    <DebugType>full</DebugType>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>bloggersupport.ico</ApplicationIcon>
@@ -80,6 +82,9 @@
     <EmbeddedResource Include="Model\post_form\title.scriban-html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="credentials.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -194,6 +199,9 @@
     <EmbeddedResource Remove="FMForm .resx" />
   </ItemGroup>
   <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='API Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
   <ItemGroup>
     <EditorConfigFiles Remove="E:\Personal Project\Ya4r.net\Minimize MyBloggerSupporter\MMBSS\.editorconfig" />
   </ItemGroup>

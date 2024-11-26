@@ -29,7 +29,9 @@ namespace MMBS
         {
             InitializeComponent();
             LoadLocation();
-            if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
+            //if (Properties.Settings.Default.OldStyle) 
+			if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"]))
+				ThemeSystem.LoadOldStyle(this);
         }
         public FormResult(PostDataBundle thenow)
         {
@@ -41,8 +43,12 @@ namespace MMBS
             butTitle.Enabled = res.titleuse;
             butSearch.Enabled = res.searchuse;
             CoreDirectory = thenow.folderlink;
-            if (Properties.Settings.Default.BetaTest) butAutoPost.Visible = true;
-            if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
+            //if (Properties.Settings.Default.BetaTest) 
+			if (Convert.ToBoolean(MMBS.Program.Config["isBetaTest"]))
+					butAutoPost.Visible = true;
+            //if (Properties.Settings.Default.OldStyle) 
+			if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"]))
+					ThemeSystem.LoadOldStyle(this);
             toolTip.SetToolTip(butTitle, res.titleprocRes);
         }
         public FormResult(PostDataBundle thenow, string code, params string[] para)
@@ -56,8 +62,12 @@ namespace MMBS
             butSearch.Enabled = res.searchuse;
 
             CoreDirectory = thenow.folderlink;
-            if (Properties.Settings.Default.BetaTest) butAutoPost.Visible = true;
-            if (Properties.Settings.Default.OldStyle) ThemeSystem.LoadOldStyle(this);
+            //if (Properties.Settings.Default.BetaTest) 
+			if (Convert.ToBoolean(MMBS.Program.Config["isBetaTest"]))
+					butAutoPost.Visible = true;
+            //if (Properties.Settings.Default.OldStyle) 
+			if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"]))
+					ThemeSystem.LoadOldStyle(this);
             toolTip.SetToolTip(butTitle, res.titleprocRes);
         }
         public void PostOnly_Service()
@@ -146,7 +156,9 @@ namespace MMBS
         {
             SystemAlt.Windows_Forms_Clipboard_SetText((string.IsNullOrWhiteSpace(res.titleprocRes)?"": res.titleprocRes));
             butPost.Focus();
-            if (Properties.Settings.Default.OldStyle) { butTitle.Font = new Font(butTitle.Font, FontStyle.Underline); }
+            //if (Properties.Settings.Default.OldStyle) 
+            if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"])) 
+			{ butTitle.Font = new Font(butTitle.Font, FontStyle.Underline); }
             else
             butTitle.ForeColor = Color.Yellow;
         }
@@ -154,7 +166,9 @@ namespace MMBS
         private void butSearch_Click(object sender, EventArgs e)
         {
             SystemAlt.Windows_Forms_Clipboard_SetText(!String.IsNullOrWhiteSpace(res.searchproRes)? res.searchproRes: "");
-            if (Properties.Settings.Default.OldStyle) { butSearch.Font = new Font(butSearch.Font, FontStyle.Underline); }
+            //if (Properties.Settings.Default.OldStyle) 
+            if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"])) 
+				{ butSearch.Font = new Font(butSearch.Font, FontStyle.Underline); }
             else
             butSearch.ForeColor = Color.Yellow;
 
@@ -170,7 +184,7 @@ namespace MMBS
             //MessageBox.Show(res.postHtml);
             if(!String.IsNullOrWhiteSpace(res.postHtml))
                 SystemAlt.Windows_Forms_Clipboard_SetText(res.postHtml);
-            if (Properties.Settings.Default.OldStyle) {  butPost.Font = new Font(butPost.Font,FontStyle.Underline); }
+            if (Convert.ToBoolean(MMBS.Program.Config["isOldTheme"])) {  butPost.Font = new Font(butPost.Font,FontStyle.Underline); }
             else
             butPost.ForeColor = Color.Yellow;
             butSearch.Focus();
@@ -248,7 +262,7 @@ namespace MMBS
         {
            // MessageBox.Show(Properties.Settings.Default.newPostBlankPosition.ToString());
            // Properties.Settings.Default.newPostBlankPosition = this.Location;
-            Properties.Settings.Default.Save();
+            //Properties.Settings.Default.Save();
         }//996269
 
         private void butAutoPost_Click(object sender, EventArgs e)

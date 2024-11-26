@@ -1,4 +1,7 @@
-﻿namespace MMBS
+﻿using System;
+using System.Collections.Generic;
+
+namespace MMBS
 {
     partial class FormResult
     {
@@ -156,12 +159,14 @@
             this.Controls.Add(this.butSearch);
             this.Controls.Add(this.butPost);
             this.Controls.Add(this.butAutoPost);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::MMBS.Properties.Settings.Default, "newPostBlankPosition", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            //this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::MMBS.Properties.Settings.Default, "newPostBlankPosition", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.icon")));
-            this.Location = global::MMBS.Properties.Settings.Default.newPostBlankPosition;
+			//this.Location = global::MMBS.Properties.Settings.Default.newPostBlankPosition;
+			var p = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(MMBS.Program.Config["initPosition"]);
+            this.Location = new System.Drawing.Point(Convert.ToInt32(p["x"]), Convert.ToInt32(p["y"]));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormResult";
             this.Text = "Export";

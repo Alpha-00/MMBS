@@ -85,7 +85,7 @@ namespace MMBS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap offlinemods_logo_pns {
             get {
-                object obj = ResourceManager.GetObject("offlinemods logo.pns", resourceCulture);
+                object obj = ResourceManager.GetObject("offlinemods_logo_pns", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

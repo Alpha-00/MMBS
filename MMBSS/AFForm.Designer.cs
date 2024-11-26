@@ -1,4 +1,6 @@
-﻿namespace MMBS
+﻿using System;
+
+namespace MMBS
 {
     partial class AFForm
     {
@@ -465,6 +467,7 @@
 			// 
 			this.butIcon.ContextMenuStrip = this.menuNext;
 			this.butIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+			//this.butIcon.Image = global::MMBS.Properties.Resources.offlinemods_logo_pns;
 			this.butIcon.Image = global::MMBS.Properties.Resources.offlinemods_logo_pns;
 			this.butIcon.Location = new System.Drawing.Point(230, 452);
 			this.butIcon.Name = "butIcon";
@@ -485,7 +488,8 @@
 			// 
 			// skipFMFToolStripMenuItem
 			// 
-			this.skipFMFToolStripMenuItem.Checked = global::MMBS.Properties.Settings.Default.AFFskipFMF;
+			//this.skipFMFToolStripMenuItem.Checked = global::MMBS.Properties.Settings.Default.AFFskipFMF;
+			this.skipFMFToolStripMenuItem.Checked = Convert.ToBoolean(MMBS.Program.Config["isSkipFmf"]);
 			this.skipFMFToolStripMenuItem.CheckOnClick = true;
 			this.skipFMFToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.skipFMFToolStripMenuItem.Name = "skipFMFToolStripMenuItem";
@@ -495,7 +499,8 @@
 			// 
 			// stripNoDownImage
 			// 
-			this.stripNoDownImage.Checked = global::MMBS.Properties.Settings.Default.NoDownImage;
+			//this.stripNoDownImage.Checked = global::MMBS.Properties.Settings.Default.NoDownImage;
+			this.stripNoDownImage.Checked = !Convert.ToBoolean(MMBS.Program.Config["isDownloadImage"]);
 			this.stripNoDownImage.CheckOnClick = true;
 			this.stripNoDownImage.Name = "stripNoDownImage";
 			this.stripNoDownImage.Size = new System.Drawing.Size(288, 24);
