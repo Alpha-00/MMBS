@@ -569,6 +569,7 @@
     <Compile Include="Model\post_form\PostFormGeneralCustom.cs" />
     <Compile Include="DataModule\local_image_upload.cs" />
     <Compile Include="DataModule\standard_data_append.cs" />
+    <Compile Include="Model\post_form\Ya4r\PostForm241128_Ya4r.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DefaultResource.Designer.cs">
