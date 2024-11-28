@@ -127,7 +127,8 @@
     <value>262, 21</value>
   </metadata>
   <data name="UpdateLog.Text" xml:space="preserve">
-    <value>0.51.241112 : fix apkcombo, disable shortenlink
+    <value>0.52.241128 : new ya4r form
+0.51.241112 : fix apkcombo, disable shortenlink
 0.50.241111 : fix apkpure, fix credit index
 0.49.241031 : credit_vip.txt
 0.42.241021 : Fix modsfire parser

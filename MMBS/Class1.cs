@@ -1039,6 +1039,21 @@ namespace MMBS
                                 }
                             }
                             break;
+                        case "Ya4r":
+                            {
+                                searchuse = false;
+                                switch (codeseg[2])
+                                {
+                                    case "current":
+                                        {
+                                            SimpleProcess(thenow);
+                                            var processor = new PostForm241128_Ya4r(thenow);
+                                            this.postHtml = processor.quickGenerate();
+                                        }
+                                        break;
+                                }
+                            }
+                            break;
                         case "Sciban":{
                                 searchuse = false;
                                 PostFormGeneralCustom engine = new PostFormGeneralCustom();

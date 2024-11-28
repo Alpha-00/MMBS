@@ -30,8 +30,8 @@
         {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMForm));
-			System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Hello", 0);
-			System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Bye Bye");
+			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Hello", 0);
+			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Bye Bye");
 			this.boxAppname = new System.Windows.Forms.TextBox();
 			this.groupInfo = new System.Windows.Forms.GroupBox();
 			this.checkMenu = new System.Windows.Forms.CheckBox();
@@ -112,6 +112,7 @@
 			this.boxPackage = new System.Windows.Forms.TextBox();
 			this.labelPackage = new System.Windows.Forms.Label();
 			this.labelAuthor = new System.Windows.Forms.Label();
+			this.stripYa4r = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupInfo.SuspendLayout();
 			this.descMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.boxIcon)).BeginInit();
@@ -809,11 +810,11 @@
 			this.listImageReview.ForeColor = System.Drawing.Color.White;
 			this.listImageReview.HideSelection = false;
 			this.listImageReview.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			listViewItem3.StateImageIndex = 0;
-			listViewItem4.StateImageIndex = 0;
+			listViewItem1.StateImageIndex = 0;
+			listViewItem2.StateImageIndex = 0;
 			this.listImageReview.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem1,
+            listViewItem2});
 			this.listImageReview.LargeImageList = this.ilistScreenShot;
 			this.listImageReview.Location = new System.Drawing.Point(6, 23);
 			this.listImageReview.MultiSelect = false;
@@ -855,13 +856,14 @@
             this.toolStripSeparator1,
             this.toolStripTextBox2,
             this.stripOtherPMT,
+            this.stripYa4r,
             this.scibanCustomToolStripMenuItem,
             this.scibanCustomExportDataStripItem,
             this.toolStripSeparator2,
             this.stripMod977,
             this.stripMod977_current});
 			this.contextmenuPublish.Name = "contextMenuStrip1";
-			this.contextmenuPublish.Size = new System.Drawing.Size(227, 261);
+			this.contextmenuPublish.Size = new System.Drawing.Size(227, 287);
 			this.contextmenuPublish.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextmenuPublish_ItemClicked);
 			// 
 			// stripTitleOM
@@ -1213,6 +1215,12 @@
 			this.labelAuthor.TabIndex = 35;
 			this.labelAuthor.Text = "Author";
 			// 
+			// stripYa4r
+			// 
+			this.stripYa4r.Name = "stripYa4r";
+			this.stripYa4r.Size = new System.Drawing.Size(226, 26);
+			this.stripYa4r.Text = "Ya4r";
+			// 
 			// FMForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1348,5 +1356,6 @@
         private System.Windows.Forms.ToolStripTextBox stripMod977;
         private System.Windows.Forms.ToolStripMenuItem stripMod977_current;
         private System.Windows.Forms.CheckBox checkMenu;
+        private System.Windows.Forms.ToolStripMenuItem stripYa4r;
     }
 }

@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
+//using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
 
@@ -180,7 +180,7 @@ namespace MMBS
             else
             if (v.Cover.local)
             {
-                boxVreview.Image = Image.FromFile(v.Cover.dir);
+                boxVreview.Image = System.Drawing.Image.FromFile(v.Cover.dir);
             }
             
         }
@@ -832,6 +832,7 @@ namespace MMBS
                 case "scibanCustomExportDataStripItem": cmdProcess("mmbsOther:Sciban:export"); break;
                 case "stripOMcurrentver": cmdProcess("mmbsOther:Offlinemods:current"); break;
                 case "stripMod977_current": cmdProcess("mmbsOther:Mod977:current"); break;
+                case "stripYa4r": cmdProcess("mmbsOther:Ya4r:current"); break;
             }
             bool cmdProcess(string code,params string[] para)
             {
