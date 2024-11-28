@@ -27,6 +27,7 @@ using System.Windows.Forms;
 using OpenQA.Selenium.DevTools;
 using System.Net;
 using Scriban.Parsing;
+using static MMBS.DefineInfoPack;
 
 namespace MMBS
 {
@@ -475,6 +476,27 @@ namespace MMBS
             public string GetUrl()
             {
                 return url;
+            }
+            public static imageinfo quickUploadImageSync(string path)
+            {
+                imageinfo result = new imageinfo();
+                AsyncHelpers.RunSync(async () =>
+                {
+                    ApiService.ImgurAPI service = new ApiService.ImgurAPI();
+                    string[] links = await service.Upload(new string[] {path});
+                    for (int i = 0; i < links.Length; i++)
+                    {
+                        var file = (new Uri(path)).Segments.Last();
+                        var link = links[i];
+                        // Update Data
+                        var fileName = Path.GetFileNameWithoutExtension(file);
+                        var image = System.Drawing.Image.FromFile(file);
+                        DefineInfoPack.imageinfo imageData = new DefineInfoPack.imageinfo(fileName, file, link, image.Height, image.Width, image);
+                        result = imageData;
+
+                    }
+                });
+                return result;
             }
         }
         public class Based64ImageAlternativeAPI

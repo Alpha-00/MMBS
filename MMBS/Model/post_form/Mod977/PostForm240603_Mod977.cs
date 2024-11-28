@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Google.Apis.Drive.v3.Data;
 using System.Web.UI.WebControls.Expressions;
+using System.Text.RegularExpressions;
 
 namespace MMBS.Model.PostForm
 {
@@ -51,6 +52,34 @@ namespace MMBS.Model.PostForm
                     int limitCounter = 2;
                     foreach (string str in cache_Desc)
                     {
+                        // Special Comment Match
+                        if (Regex.IsMatch(str, @"<!--.+-->"))
+                        {
+                            string link = Regex.Match(str, @"<!--(?<content>.+)-->").Groups["content"].Value;
+                            var id = data.postMedia.ImageList.FindIndex((info) =>
+                                {
+                                    bool isSameFileName = info.dir.EndsWith(link);
+                                    bool isSameLink = info.link == link;
+                                    return isSameFileName || isSameLink;
+                                });
+                            // No data yet, process upload
+                            if (id == -1)
+                            {
+                                System.Windows.Forms.MessageBox.Show($"Rendering Error: PostForm: Image {link} not found");
+                                //throw new Exception("Image Not Founded");
+                                //// Need to create the path first
+                                //data.postMedia.ImageList.Add(ApiService.ImgurAPI.quickUploadImageSync(link));
+                                //id = data.postMedia.ImageList.FindIndex((path) => path.dir.EndsWith(link));
+                            }
+                            var imageInfo = data.postMedia.ImageList[id];
+                            data.postMedia.ImageList[id].enable = false;
+                            int targetSize = 640;
+                            int NewHeight = imageInfo.height >= imageInfo.width ? targetSize : Convert.ToInt32(Math.Truncate(imageInfo.height / imageInfo.width * targetSize));
+                            int NewWidth = imageInfo.height <= imageInfo.width ? targetSize : Convert.ToInt32(Math.Truncate(imageInfo.width / imageInfo.height * targetSize));
+                            string imageScript = MyFunction.MultiReplace(template.imagecardScript, "$$$:.imageLink$$$$", imageInfo.link, "$$$:.imageOHeight$$$$", imageInfo.height.ToString(), "$$$:.imageOWidth$$$$", imageInfo.width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
+                            continue;
+                        }
+
                         string str_edited = str;
                         //special process for multiple line <b>
                         string str_proc = str.Replace(" ", ""); ;

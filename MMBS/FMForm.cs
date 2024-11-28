@@ -6,9 +6,11 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
 
@@ -487,9 +489,87 @@ namespace MMBS
                 boxModInfo.Visible = boxModInfo.Enabled;
             
         }
-
-        private void butDone_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Search the folder and description content to upload all necessary file
+        /// Check the description to identify links and download it to get more information
+        /// </summary>
+        private async Task imageListRefresh()
         {
+            // Check usage tag in description
+            var desc = FormData.appInfo.description.GetDat();
+            var lines = desc.Split("\n");
+            var reqLocalImages = new List<string>();
+            var reqNetImages = new List<string>();
+            foreach (var line in lines) {
+                if (Regex.IsMatch(line, @"<!--.+-->") == false) continue;
+
+                var content = Regex.Match(line, @"<!--(?<content>.+)-->").Groups["content"].Value.Trim();
+                if (content.StartsWith("http")) 
+                { 
+                    reqNetImages.Add(content);
+                    continue;
+                }
+                if (!Regex.IsMatch(content, @"\.(jpg|png|webp|gif)$")) continue;
+                if (Uri.IsWellFormedUriString(content, UriKind.Absolute))
+                {
+                    reqLocalImages.Add(content);
+                }
+                var folder = FormData.folderlink;
+                if (false == (folder.EndsWith("\\") || folder.EndsWith("/"))) folder += "\\";
+                content = folder + content;
+                reqLocalImages.Add(content);
+            }
+            // Prepare Local Image
+            ApiService.ImgurAPI service = new ApiService.ImgurAPI();
+            foreach (var file in reqLocalImages)
+            {
+                if (!System.IO.File.Exists(file)) { 
+                    MessageBox.Show($"Image <!--{file}--> not found.");
+                }
+                string link = "";
+                // 0 is success
+                if (await service.Upload(file) == 1)
+                {
+                    MessageBox.Show($"Imgur API fatal.\n{file}\nPlease call dev support.","Imgur Upload Error");
+                    continue;
+                } 
+               // Prepare data
+                var fileName = Path.GetFileNameWithoutExtension(file);
+                var image = System.Drawing.Image.FromFile(file);
+                DefineInfoPack.imageinfo imageData = new DefineInfoPack.imageinfo(fileName, file, link, image.Height, image.Width, image);
+                FormData.postMedia.ImageList.Add(imageData);
+                FormData.postMedia.ImageList.Last().enable = true;
+            }
+            // Prepare Network Image
+            var client = new System.Net.Http.HttpClient();
+            int i = 0;
+            foreach (var link in reqNetImages)
+            {
+                var message = new System.Net.Http.HttpRequestMessage();
+                message.Method = HttpMethod.Head;
+                message.RequestUri = new Uri(link);
+                var response = await client.SendAsync(message);
+                if (!response.Headers.GetValues("content-type").First().StartsWith("image"))
+                {
+                    MessageBox.Show($"Link <!--{link}--> not valid");
+                    continue;
+                }
+                var fileData = await client.GetByteArrayAsync(link);
+                var folder = FormData.folderlink;
+                if (false == (folder.EndsWith("\\") || folder.EndsWith("/"))) folder += "\\";
+                var file = folder + $"Internet Image {i}.jpg";
+                File.WriteAllBytes(file, fileData);
+                // Prepare data
+                var fileName = Path.GetFileNameWithoutExtension(file);
+                var image = System.Drawing.Image.FromFile(file);
+                DefineInfoPack.imageinfo imageData = new DefineInfoPack.imageinfo(fileName, file, link, image.Height, image.Width, image);
+                FormData.postMedia.ImageList.Add(imageData);
+                FormData.postMedia.ImageList.Last().enable = true;
+            }
+        }
+        private async void butDone_Click(object sender, EventArgs e)
+        {
+            await imageListRefresh();
             if (stripOtherPMT.Checked)
             {
                 stripOtherPMT.PerformClick();
@@ -744,6 +824,7 @@ namespace MMBS
 
         private void contextmenuPublish_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            
             switch (e.ClickedItem.Name)
             {
                 case "stripOtherPMT": cmdProcess("mmbsOther:PMT:current"); break;

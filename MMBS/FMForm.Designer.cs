@@ -34,6 +34,7 @@
 			System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Bye Bye");
 			this.boxAppname = new System.Windows.Forms.TextBox();
 			this.groupInfo = new System.Windows.Forms.GroupBox();
+			this.checkMenu = new System.Windows.Forms.CheckBox();
 			this.butIconClipboard = new System.Windows.Forms.Button();
 			this.progressIcon = new System.Windows.Forms.ProgressBar();
 			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -111,7 +112,6 @@
 			this.boxPackage = new System.Windows.Forms.TextBox();
 			this.labelPackage = new System.Windows.Forms.Label();
 			this.labelAuthor = new System.Windows.Forms.Label();
-			this.checkMenu = new System.Windows.Forms.CheckBox();
 			this.groupInfo.SuspendLayout();
 			this.descMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.boxIcon)).BeginInit();
@@ -173,6 +173,18 @@
 			this.groupInfo.TabIndex = 2;
 			this.groupInfo.TabStop = false;
 			this.groupInfo.Text = "App Information";
+			// 
+			// checkMenu
+			// 
+			this.checkMenu.AutoSize = true;
+			this.checkMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.checkMenu.Location = new System.Drawing.Point(313, 105);
+			this.checkMenu.Name = "checkMenu";
+			this.checkMenu.Size = new System.Drawing.Size(72, 24);
+			this.checkMenu.TabIndex = 31;
+			this.checkMenu.Text = "Menu";
+			this.checkMenu.UseVisualStyleBackColor = true;
+			this.checkMenu.CheckedChanged += new System.EventHandler(this.checkMenu_CheckedChanged);
 			// 
 			// butIconClipboard
 			// 
@@ -849,7 +861,7 @@
             this.stripMod977,
             this.stripMod977_current});
 			this.contextmenuPublish.Name = "contextMenuStrip1";
-			this.contextmenuPublish.Size = new System.Drawing.Size(227, 233);
+			this.contextmenuPublish.Size = new System.Drawing.Size(227, 261);
 			this.contextmenuPublish.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextmenuPublish_ItemClicked);
 			// 
 			// stripTitleOM
@@ -1200,18 +1212,6 @@
 			this.labelAuthor.Size = new System.Drawing.Size(58, 20);
 			this.labelAuthor.TabIndex = 35;
 			this.labelAuthor.Text = "Author";
-			// 
-			// checkMenu
-			// 
-			this.checkMenu.AutoSize = true;
-			this.checkMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.checkMenu.Location = new System.Drawing.Point(313, 105);
-			this.checkMenu.Name = "checkMenu";
-			this.checkMenu.Size = new System.Drawing.Size(72, 24);
-			this.checkMenu.TabIndex = 31;
-			this.checkMenu.Text = "Menu";
-			this.checkMenu.UseVisualStyleBackColor = true;
-			this.checkMenu.CheckedChanged += new System.EventHandler(this.checkMenu_CheckedChanged);
 			// 
 			// FMForm
 			// 
