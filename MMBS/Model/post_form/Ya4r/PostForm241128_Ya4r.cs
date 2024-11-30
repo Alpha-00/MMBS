@@ -138,7 +138,10 @@ namespace MMBS.Model.PostForm
             }
             foreach (string link in linkList)
             {
-                SP_DownloadScript += template.linkScript.Replace("", data.downloadlink.Downloadlink.link) + "\n";
+                var temp = template.linkScript.Replace("$$$.downloadUrl$$$$", data.downloadlink.Downloadlink.link);
+                temp =  temp.Replace("$$$.title$$$$", _SP_title);
+
+                SP_DownloadScript += temp + "\n";
             }
             if (SP_DownloadScript.EndsWith("\n")) SP_DownloadScript = SP_DownloadScript.Remove(SP_DownloadScript.Length - 1);
             
