@@ -526,9 +526,9 @@ namespace MMBS
                     // Full name and extension
                     bool isFullFileMatch = item.dir.EndsWith(str);
                     // Name without extension
-                    bool isFileNameMatch = Regex.Match(item.dir,@"\\(?<fileName>[^\\]+)\.(png|jpg|webp|gif)\\?$").Groups["fileName"].Value == str;
+                    //bool isFileNameMatch = Regex.Match(item.dir,@"\\(?<fileName>[^\\]+)\.(png|jpg|webp|gif)\\?$").Groups["fileName"].Value == str;
 
-                    return !(isFullFileMatch || isFileNameMatch);
+                    return !(isFullFileMatch);
                 });
                 reqNetImages = reqNetImages.FindAll((str) =>
                 {

@@ -181,6 +181,7 @@ namespace MMBS
             //Title Process
             titleprocRes = "";
             titleuse = false;
+            List<string> modItemsInTitle = new List<string>();
             if (!string.IsNullOrWhiteSpace(thenow.appInfo.name))
             {
                 string modSurfix = thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex);
@@ -191,7 +192,7 @@ namespace MMBS
                 items = items.Where(x => !String.IsNullOrEmpty(x)).ToArray();
                 if (items.Length > 0)
                 {
-
+                    modItemsInTitle = items.ToList();
                     for (int i = 0; i < items.Length; i++)
                     {
                         if (items[i].Length > 50) continue;
@@ -212,7 +213,8 @@ namespace MMBS
             searchuse = false;
             if (!string.IsNullOrWhiteSpace(thenow.appInfo.searchkeyword))
             {
-                searchproRes = Module.SearchKeywordModule.GetResStr(thenow.modInfo.UI.modTypeGetkey(thenow.modInfo.UI.currentindex), thenow.appInfo.searchkeyword.Split('\n'));
+                //searchproRes = Module.SearchKeywordModule.GetResStr(thenow.modInfo.UI.modTypeGetkey(thenow.modInfo.UI.currentindex), thenow.appInfo.searchkeyword.Split('\n'));
+                searchproRes = Module.SearchKeywordModule.GetResStr(thenow.modInfo.UI.modTypeGetkey(thenow.modInfo.UI.currentindex), thenow.appInfo.searchkeyword.Split("\n"),modItemsInTitle.ToArray() );
                 searchproRes = searchproRes.Substring(0, searchproRes.Length - 2);
                 //System.Windows.Forms.MessageBox.Show(thenow.appInfo.name.Split(':').Length.ToString());
                 searchuse = true;
@@ -1638,7 +1640,8 @@ namespace MMBS
         public class SearchKeywordModule
         {
             // Spiral Tower, Spiral Tower mod, Spiral Tower mod apk, download Spiral Tower mod, download Spiral Tower mod apk
-            static string[] keyword = new string[] { "*name*", "*name* *type*", "*name* *type* apk", "download *name* *type*", "download *name* *type* apk", "Game *name* *type* APK" };
+            //static string[] keyword = new string[] { "*name*", "*name* *type*", "*name* *type* apk", "download *name* *type*", "download *name* *type* apk", "Game *name* *type* APK" };
+            static string[] keyword = new string[] { "*name*", "tải *name* *type*" };
 
             public string GetResStr(string modtype, string name, int keycode)
             {
@@ -1667,6 +1670,29 @@ namespace MMBS
                 }
                 return cache;
 
+            }
+            public static string GetResStr(string modtype, string[] names, string[] mods)
+            {
+                List<String> cache = new List<string>();
+                if (names == null || names.Length < 1) return "";
+                foreach (var name in names)
+                {
+                    foreach (var item in keyword)
+                    {
+                        cache.Add( MMBS.MyFunction.MultiReplace(item,
+                            "*name*", name,
+                            "*type*",modtype
+                            ));
+                    }
+                    foreach (var item in  mods)
+                    {
+                        cache.Add(name + " " + item);
+                    }
+                }
+
+                if (cache.Count == 0) return "";
+
+                return String.Join(", ",cache);
             }
 
         }
