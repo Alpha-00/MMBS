@@ -549,7 +549,8 @@ namespace MMBS
                 {
                     MessageBox.Show($"Imgur API fatal.\n{file}\nPlease call dev support.","Imgur Upload Error");
                     continue;
-                } 
+                }
+                link = service.GetUrl();
                // Prepare data
                 var fileName = Path.GetFileNameWithoutExtension(file);
                 var image = System.Drawing.Image.FromFile(file);
