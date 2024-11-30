@@ -178,7 +178,7 @@ namespace MMBS
             boxVideoLink.Text = v.link;
             if (v.Cover.image != null) boxVreview.Image = v.Cover.image;
             else
-            if (v.Cover.local)
+            if (v.Cover.isLocal)
             {
                 boxVreview.Image = System.Drawing.Image.FromFile(v.Cover.dir);
             }
@@ -519,10 +519,27 @@ namespace MMBS
                 content = folder + content;
                 reqLocalImages.Add(content);
             }
+            foreach (var item in FormData.postMedia.ImageList)
+            {
+                // Filter File Already exist
+                reqLocalImages = reqLocalImages.FindAll((str)=>{
+                    // Full name and extension
+                    bool isFullFileMatch = item.dir.EndsWith(str);
+                    // Name without extension
+                    bool isFileNameMatch = Regex.Match(item.dir,@"\\(?<fileName>[^\\]+)\.(png|jpg|webp|gif)\\?$").Groups["fileName"].Value == str;
+
+                    return !(isFullFileMatch || isFileNameMatch);
+                });
+                reqNetImages = reqNetImages.FindAll((str) =>
+                {
+                    return str == item.link;
+                });
+            }
             // Prepare Local Image
             ApiService.ImgurAPI service = new ApiService.ImgurAPI();
             foreach (var file in reqLocalImages)
             {
+
                 if (!System.IO.File.Exists(file)) { 
                     MessageBox.Show($"Image <!--{file}--> not found.");
                 }
@@ -822,9 +839,9 @@ namespace MMBS
             }
         }
 
-        private void contextmenuPublish_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private async void contextmenuPublish_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            
+            await imageListRefresh();
             switch (e.ClickedItem.Name)
             {
                 case "stripOtherPMT": cmdProcess("mmbsOther:PMT:current"); break;

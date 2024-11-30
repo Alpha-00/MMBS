@@ -20,10 +20,22 @@ namespace MMBS
         {
             public string name;
             public string codename;
-            public string packtype;//jpg png gif
-            public string sharetype;//by link, share to drive,...
-            public bool local;//in disk or cloud
+            /// <summary>
+            /// jpg png gif
+            /// </summary>
+            public string packtype;
+            /// <summary>
+            /// by link, share to drive,...
+            /// </summary>
+            public string sharetype;
+            public bool isLocal;
+            /// <summary>
+            /// Upload Url
+            /// </summary>
             public string link;
+            /// <summary>
+            /// Local Direction
+            /// </summary>
             public string dir;
             public bool enable;
             public List<relationship> duplicant;
@@ -121,7 +133,7 @@ namespace MMBS
             appInfo.icon.height = 0;
             appInfo.icon.width = 0;
             appInfo.icon.link = "";
-            appInfo.icon.local = false;
+            appInfo.icon.isLocal = false;
             appInfo.icon.name = "icon";
             appInfo.icon.packtype = "";
             appInfo.icon.sharetype = "bylink";
