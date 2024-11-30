@@ -77,7 +77,7 @@ namespace MMBS.Model.PostForm
                             int NewHeight = imageInfo.height >= imageInfo.width ? targetSize : Convert.ToInt32(Math.Truncate(imageInfo.height / imageInfo.width * targetSize));
                             int NewWidth = imageInfo.height <= imageInfo.width ? targetSize : Convert.ToInt32(Math.Truncate(imageInfo.width / imageInfo.height * targetSize));
                             string tempImgScript = MyFunction.MultiReplace(template.imagecardScript, "$$$:.imageLink$$$$", imageInfo.link, "$$$:.imageOHeight$$$$", imageInfo.height.ToString(), "$$$:.imageOWidth$$$$", imageInfo.width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
-                            SP_DescScript += tempImgScript;
+                            SP_DescScript += "\n"+tempImgScript+"\n";
                             continue;
                         }
 
