@@ -185,7 +185,7 @@ namespace MMBS.Model.PostForm
         /// <summary>
         /// 
         /// </summary>
-        public String iconScript => "[img]" + "$$$.iconUrl$$$$" + "[/img]";
+        public String iconScript => "\n[img]" + "$$$.iconUrl$$$$" + "[/img]";
 
         /// <summary>
         /// 
@@ -209,7 +209,7 @@ namespace MMBS.Model.PostForm
             + "[b][color=blue]$$$.modContent$$$$[/color][/b]" + "\n"
             + "[i]Kích thước file MOD:[/i] [b]$$$.datSize$$$$[/b]";
 
-        public String sourceLinkScript => "[url=$$$.sourceUrl$$$$]Xem thêm thông tin tại Cửa hàng[/url]";
+        public String sourceLinkScript => "\n[url=$$$.sourceUrl$$$$]Xem thêm thông tin tại Cửa hàng[/url]\n";
         /// <summary>
         /// 
         /// </summary>
