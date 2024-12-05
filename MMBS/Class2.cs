@@ -2429,6 +2429,7 @@ namespace MMBS
                     cacheHTMLnode = HTMLdoc.DocumentNode.SelectSingleNode("/html/body/section[@id=\"main\"]//article/div/div/div");
                     if (cacheHTMLnode is null) return;
                     string cache = cacheHTMLnode.InnerHtml;
+                    if (cache.StartsWith("\r")) cache = cache.TrimStart();
                     cache = cache.Replace("\n", "");
                     cache = cache.Replace("<br>", "\n");
                     cache = cache.Replace("<br/>", "\n");
