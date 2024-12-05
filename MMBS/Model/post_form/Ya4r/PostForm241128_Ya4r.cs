@@ -76,11 +76,12 @@ namespace MMBS.Model.PostForm
                             SP_DescScript += imageScript;
                             continue;
                         }
-                        SP_DescScript += str;
+                        SP_DescScript += str + "\n";
                         if (--limitCounter == 0) { break; }
                     }
                 }
             }
+            SP_DescScript = SP_DescScript.Trim();
             SP_DescScript = template.descScript.Replace("$$$.descContent$$$$", SP_DescScript);
             //Infogroup
             string SP_iGroupScript = "";
