@@ -1641,8 +1641,11 @@ namespace MMBS
         {
             // Spiral Tower, Spiral Tower mod, Spiral Tower mod apk, download Spiral Tower mod, download Spiral Tower mod apk
             //static string[] keyword = new string[] { "*name*", "*name* *type*", "*name* *type* apk", "download *name* *type*", "download *name* *type* apk", "Game *name* *type* APK" };
-            static string[] keyword = new string[] { "*name*", "tải *name* *type*" };
-
+            static string[] keyword = new string[] { "*name*", "tải *name* *type*", "tải *name* *type* apk"};
+            /// <summary>
+            /// Using for short or lack of data
+            /// </summary>
+            static string[] subkey = new string[] { "*name* hack tiền", "*name* hack kim cương", "*name* mod menu"};
             public string GetResStr(string modtype, string name, int keycode)
             {
                 if (keyword.Length >= keycode)
@@ -1674,6 +1677,20 @@ namespace MMBS
             public static string GetResStr(string modtype, string[] names, string[] mods)
             {
                 List<String> cache = new List<string>();
+
+
+                /// FILTER MODS
+                List<string> tempMods = new List<string>();
+                foreach (var item in mods)
+                {
+                    var str = item;
+                    if (str.StartsWith("-")) str = str.Substring(1).Trim();
+                    if (str.StartsWith("+")) str = str.Substring(1).Trim();
+                    if (str.EndsWith(".")) str = str.Substring(0,str.Length - 1).Trim(); 
+                    tempMods.Add(item);
+                }
+                /// END FILTER
+
                 if (names == null || names.Length < 1) return "";
                 foreach (var name in names)
                 {
@@ -1684,9 +1701,19 @@ namespace MMBS
                             "*type*",modtype
                             ));
                     }
-                    foreach (var item in  mods)
+                    foreach (var item in mods)
                     {
                         cache.Add(name + " " + item);
+                    }
+                    if (mods.Length < 3)
+                    {
+                        foreach (var item in subkey)
+                        {
+                            cache.Add(MMBS.MyFunction.MultiReplace(item,
+                            "*name*", name,
+                            "*type*", modtype
+                            ));
+                        }
                     }
                 }
 
