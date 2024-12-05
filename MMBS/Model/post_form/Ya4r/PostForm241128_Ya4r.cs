@@ -127,15 +127,15 @@ namespace MMBS.Model.PostForm
             List<string> linkList = new List<string>();
             {
                 string tempLink = data.downloadlink.Downloadlink.link;
-                if (String.IsNullOrEmpty(tempLink)) linkList.Add(tempLink);
+                if (!String.IsNullOrEmpty(tempLink)) linkList.Add(tempLink);
             }
             {
                 string tempLink = data.downloadlink.OBBlink.link;
-                if (String.IsNullOrEmpty(tempLink)) linkList.Add(tempLink);
+                if (!String.IsNullOrEmpty(tempLink)) linkList.Add(tempLink);
             }
             {
                 string tempLink = data.downloadlink.OMirrorlink.link;
-                if (String.IsNullOrEmpty(tempLink)) linkList.Add(tempLink);
+                if (!String.IsNullOrEmpty(tempLink)) linkList.Add(tempLink);
             }
             foreach (string link in linkList)
             {
