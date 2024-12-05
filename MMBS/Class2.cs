@@ -1075,8 +1075,9 @@ namespace MMBS
             static string APKcombo_Getpackedname(Uri uri)
             {
                 //string structure = "host/lang/app_name/apppacked";
-                if (uri.Segments.Length > 3) return uri.Segments[3].Substring(2).Replace("/","");
-                if (uri.Segments.Length > 2) return uri.Segments[2].Substring(2).Replace("/", "");
+                // Removed .Substring(2) due to no need anymore
+                if (uri.Segments.Length > 3) return uri.Segments[3].Replace("/","");
+                if (uri.Segments.Length > 2) return uri.Segments[2].Replace("/", "");
                 return "";
             }
         }
