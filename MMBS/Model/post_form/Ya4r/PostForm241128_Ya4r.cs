@@ -77,6 +77,7 @@ namespace MMBS.Model.PostForm
                             continue;
                         }
                         SP_DescScript += str;
+                        if (--limitCounter == 0) { break; }
                     }
                 }
             }
