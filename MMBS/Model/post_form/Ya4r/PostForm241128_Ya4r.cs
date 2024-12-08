@@ -176,9 +176,10 @@ namespace MMBS.Model.PostForm
         public String layout =>
                 "$$$.descScript$$$$"
                 + "\n"
-                + "$$$.iconScript$$$$"
+                + "\n$$$.iconScript$$$$"
                 + "\n"
-                + "$$$.sourceLinkScript"
+                + "\n$$$.sourceLinkScript\n"
+                + "\n"
                 + "$$$.igroupScript$$$$"
                 + "\n"
                 + "$$$.linkScript$$$$"//For 3 link box
@@ -187,7 +188,7 @@ namespace MMBS.Model.PostForm
         /// <summary>
         /// 
         /// </summary>
-        public String iconScript => "\n[img]" + "$$$.iconUrl$$$$" + "[/img]";
+        public String iconScript => "[img]" + "$$$.iconUrl$$$$" + "[/img]";
 
         /// <summary>
         /// 
@@ -211,7 +212,7 @@ namespace MMBS.Model.PostForm
             + "[b][color=blue]$$$.modContent$$$$[/color][/b]" + "\n"
             + "[i]Kích thước file MOD:[/i] [b]$$$.datSize$$$$[/b]";
 
-        public String sourceLinkScript => "\n[url=$$$.sourceUrl$$$$]Xem thêm thông tin tại Cửa hàng[/url]\n";
+        public String sourceLinkScript => "[url=$$$.sourceUrl$$$$]Xem thêm thông tin tại Cửa hàng[/url]";
         /// <summary>
         /// 
         /// </summary>
