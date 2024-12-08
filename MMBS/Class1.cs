@@ -1689,6 +1689,7 @@ namespace MMBS
                     if (str.EndsWith(".")) str = str.Substring(0,str.Length - 1).Trim(); 
                     tempMods.Add(item);
                 }
+                mods = tempMods.ToArray();
                 /// END FILTER
 
                 if (names == null || names.Length < 1) return "";
