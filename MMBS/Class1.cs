@@ -1687,7 +1687,7 @@ namespace MMBS
                     if (str.StartsWith("-")) str = str.Substring(1).Trim();
                     if (str.StartsWith("+")) str = str.Substring(1).Trim();
                     if (str.EndsWith(".")) str = str.Substring(0,str.Length - 1).Trim(); 
-                    tempMods.Add(item);
+                    tempMods.Add(str);
                 }
                 mods = tempMods.ToArray();
                 /// END FILTER
