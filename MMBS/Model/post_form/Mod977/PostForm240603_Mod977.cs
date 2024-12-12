@@ -141,6 +141,7 @@ namespace MMBS.Model.PostForm
             if (data.appInfo.extpermReq) cacheReqMessageList += "<li>"+ template.infoNotifyExtPermMessage+"</li>\n";
             SP_iGroupScript = MyFunction.MultiReplace(
             template.igroupHtml, 
+            "$$$.obbReq$$$$", data.appInfo.obbReq ? template.obbReq: "",
             "$$$.datAReq$$$$", data.appInfo.androidReq, 
             "$$$.datVer$$$$", data.appInfo.version,
             "$$$.datSize$$$$", data.appInfo.size,
@@ -440,7 +441,8 @@ namespace MMBS.Model.PostForm
         /// 
         /// </summary>
         public String igroupHtml => "<ul>" + "\n"
-                                        + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"display: inline-block;overflow: hidden;text-overflow: ellipsis;max-width: calc(100% - 100px);vertical-align: bottom;word-wrap: normal;\"><b>$$$.package$$$$</b></span></a></li>"
+                                        + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"display: inline-block;overflow: hidden;text-overflow: ellipsis;max-width: calc(100% - 100px);vertical-align: bottom;word-wrap: normal;\"><b>$$$.package$$$$</b></span></a></li>" + "\n"
+                                        + "$$$.obbReq$$$$"
                                         + "<li>Yêu cầu: " + "$$$.datAReq$$$$" + "</li>" + "\n"
                                         + "<li>Phiên bản: " + "$$$.datVer$$$$" + "</li>" + "\n"
                                         + "<li>Tính năng MOD:" + "$$$.modListHtml$$$$" + "</li>" + "\n"
@@ -449,6 +451,7 @@ namespace MMBS.Model.PostForm
                                         + "$$$.infoNotifyMessage$$$$"
                                         + "</ul>" + "\n";
 
+        public String obbReq => "<li>Giải nén thư mục <b>$$$.package$$$$</b> vào Android/obb</li>" + "\n";
 
         //public Dictionary<String, String> igroupRequireItem => new Dictionary<String, String> {
         //    { "rootReq", "<li>Needs Root: " + "$$$.rootReqHtml$$$$" + "</li>" + "\n" }
@@ -456,7 +459,7 @@ namespace MMBS.Model.PostForm
         //    ,{ "obbReq", "<li>Needs Obb: " + "$$$.obbReqHtml$$$$" + "</li>" + "\n" }
         //    ,{ "permReq", "<li>Needs Special Permission: " + "$$$.extpermReqHtml$$$$" + "</li>" + "\n" }
         //};
-
+        
         public String infoNotifyExtPermMessage => "<span>Để có được các tính năng MOD, bạn phải</span><span> <a href=\"https://www.mod977.top/2024/11/huong-dan-cap-quyen-truy-cap-bo-nho-ngoai.html\" rel=\"nofollow\" target=\"_blank\"><span><b>Cấp quyền truy cập bộ nhớ ngoài</b></span></a></span>";
 
         /// <summary>

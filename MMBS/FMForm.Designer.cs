@@ -30,8 +30,8 @@
         {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMForm));
-			System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Hello", 0);
-			System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Bye Bye");
+			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Hello", 0);
+			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Bye Bye");
 			this.boxAppname = new System.Windows.Forms.TextBox();
 			this.groupInfo = new System.Windows.Forms.GroupBox();
 			this.checkMenu = new System.Windows.Forms.CheckBox();
@@ -357,7 +357,7 @@
 			this.checkOBB.TabIndex = 4;
 			this.checkOBB.Text = "Obb";
 			this.checkOBB.UseVisualStyleBackColor = true;
-			this.checkOBB.CheckedChanged += new System.EventHandler(this.checkExtPerms_CheckedChanged);
+			this.checkOBB.CheckedChanged += new System.EventHandler(this.checkOBB_CheckedChanged);
 			this.checkOBB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.checkOBB_KeyDown);
 			// 
 			// checkInternet
@@ -810,11 +810,11 @@
 			this.listImageReview.ForeColor = System.Drawing.Color.White;
 			this.listImageReview.HideSelection = false;
 			this.listImageReview.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			listViewItem3.StateImageIndex = 0;
-			listViewItem4.StateImageIndex = 0;
+			listViewItem1.StateImageIndex = 0;
+			listViewItem2.StateImageIndex = 0;
 			this.listImageReview.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem1,
+            listViewItem2});
 			this.listImageReview.LargeImageList = this.ilistScreenShot;
 			this.listImageReview.Location = new System.Drawing.Point(6, 23);
 			this.listImageReview.MultiSelect = false;
@@ -863,7 +863,7 @@
             this.stripMod977,
             this.stripMod977_current});
 			this.contextmenuPublish.Name = "contextMenuStrip1";
-			this.contextmenuPublish.Size = new System.Drawing.Size(227, 287);
+			this.contextmenuPublish.Size = new System.Drawing.Size(227, 259);
 			this.contextmenuPublish.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextmenuPublish_ItemClicked);
 			// 
 			// stripTitleOM
