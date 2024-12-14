@@ -934,7 +934,7 @@ namespace MMBS
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) cache = System.IO.Directory.CreateDirectory(cacheDir).FullName;
                         ProcSupporter.HtmlScriptCard scriptCache;
-                        scriptCache = ProcSupporter.FindCardinScript(webpage, "class=\"apk_info\"");
+                        scriptCache = ProcSupporter.FindCardinScript(webpage, "class=\"apk_info");
                         // 3 next index include a stop, a next begin and a line break /n
                         scriptCache = ProcSupporter.FindCardinScript(webpage, scriptCache.stop + 3);
 
