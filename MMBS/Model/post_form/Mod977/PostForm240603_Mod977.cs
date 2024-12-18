@@ -442,16 +442,16 @@ namespace MMBS.Model.PostForm
         /// </summary>
         public String igroupHtml => "<ul>" + "\n"
                                         + "<li>Tên gói:&nbsp;<a href=\"$$$.sourceUrl$$$$\" rel=\"nofollow\" target=\"_blank\"><span style=\"display: inline-block;overflow: hidden;text-overflow: ellipsis;max-width: calc(100% - 100px);vertical-align: bottom;word-wrap: normal;\"><b>$$$.package$$$$</b></span></a></li>" + "\n"
-                                        + "$$$.obbReq$$$$"
                                         + "<li>Yêu cầu: " + "$$$.datAReq$$$$" + "</li>" + "\n"
                                         + "<li>Phiên bản: " + "$$$.datVer$$$$" + "</li>" + "\n"
                                         + "<li>Tính năng MOD:" + "$$$.modListHtml$$$$" + "</li>" + "\n"
                                         + "<li>Kích thước file MOD: " + "$$$.datSize$$$$" + "</li>" + "\n"
                                         //+ "$$$.igroupReqHtml$$$$"
                                         + "$$$.infoNotifyMessage$$$$"
+                                        + "$$$.obbReq$$$$"
                                         + "</ul>" + "\n";
 
-        public String obbReq => "<li>Giải nén thư mục <b>$$$.package$$$$</b> vào Android/obb</li>" + "\n";
+        public String obbReq => "\n"+"<li style=\"color:red\">Giải nén thư mục <b>$$$.package$$$$</b> vào <b>Android/obb/</b></li>" + "\n";
 
         //public Dictionary<String, String> igroupRequireItem => new Dictionary<String, String> {
         //    { "rootReq", "<li>Needs Root: " + "$$$.rootReqHtml$$$$" + "</li>" + "\n" }
