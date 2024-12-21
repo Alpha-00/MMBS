@@ -33,6 +33,7 @@ using System.Text.Json;
 using Newtonsoft.Json;
 using System.Text.Json.Nodes;
 using static System.Net.WebRequestMethods;
+using System.Collections.Immutable;
 
 namespace MMBS
 {
@@ -764,12 +765,25 @@ namespace MMBS
             public string customdata;
             public Newtonsoft.Json.Linq.JObject jsondata;
             public int valid;
+            string customFormatAndRedirect(string link)
+            {
+                var hostSwapList = new Dictionary<string, string>()
+                {
+                
+                    { "apkpure.net","apkpure.com"}
+                }.ToImmutableDictionary();
+                var uri = new UriBuilder(link);
+                if (hostSwapList.ContainsKey(uri.Host)) uri.Host = hostSwapList[uri.Host];
+                return uri.Uri.ToString();
+                
+            }
             //
             public ProcessDataResourceTextBox(string content, string contentQuery = "")
             {
                 string cache = content.Replace(" ", "");
                 if (OldProcessor.ProcSupporter.ValidLinker(content))
                 {
+                    cache = customFormatAndRedirect(cache);
                     Uri uri = new Uri(cache);
                     host = uri.Host;
                     link = uri.ToString();
