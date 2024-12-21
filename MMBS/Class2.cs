@@ -783,10 +783,11 @@ namespace MMBS
                 string cache = content.Replace(" ", "");
                 if (OldProcessor.ProcSupporter.ValidLinker(content))
                 {
-                    cache = customFormatAndRedirect(cache);
-                    Uri uri = new Uri(cache);
+                    var aliasLink = customFormatAndRedirect(cache);
+                    Uri uri = new Uri(aliasLink);
                     host = uri.Host;
-                    link = uri.ToString();
+                    // Still using the previous link to display
+                    link = new Uri(cache).ToString();
                     cache_net = new System.Net.WebClient();
                     cache_net.Proxy = null;
                     cache_net.Encoding = Encoding.UTF8;
@@ -916,10 +917,11 @@ namespace MMBS
                 }
                 void APKPUREproc(string packagename)
                 {
+                    var tempLink = $"https://apkpure.com/en/{packagename}";
                     this.packagename = packagename;
                     try
                     {
-                        if (link.Contains("/vn/")) link = link.Replace("/vn/", "/");
+                        if (tempLink.Contains("/vn/")) tempLink = tempLink.Replace("/vn/", "/");
                         //! The Code to solve 403 Forbiden problem
                         //Source Code: https://stackoverflow.com/questions/16735042/the-remote-server-returned-an-error-403-forbidden
                         //Navigate to front page to Set cookies
@@ -929,7 +931,7 @@ namespace MMBS
 
                         // string Url = uri.AbsoluteUri;
                         CookieContainer cookieJar = new CookieContainer();
-                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(link);
+                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(tempLink);
                         request.CookieContainer = cookieJar;
 
                         request.Accept = @"text/html, application/xhtml+xml, */*";
@@ -955,6 +957,7 @@ namespace MMBS
                         //// 3 next index include a stop, a next begin and a line break /n
                         //scriptCache = ProcSupporter.FindCardinScript(webpage, scriptCache.stop + 3);
 
+                        if (node is null) throw new Exception("Icon Parser: No Image Found");
                         //coverImagelink = scriptCache.GetData("src");
                         //System.Windows.Forms.MessageBox.Show(scriptCache.script);
                         coverImagelink = node.GetAttributeValue("src","");
