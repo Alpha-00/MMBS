@@ -933,13 +933,18 @@ namespace MMBS
                         //End Source
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) cache = System.IO.Directory.CreateDirectory(cacheDir).FullName;
-                        ProcSupporter.HtmlScriptCard scriptCache;
-                        scriptCache = ProcSupporter.FindCardinScript(webpage, "class=\"apk_info");
-                        // 3 next index include a stop, a next begin and a line break /n
-                        scriptCache = ProcSupporter.FindCardinScript(webpage, scriptCache.stop + 3);
+                        //ProcSupporter.HtmlScriptCard scriptCache;
+                        var doc = new HtmlAgilityPack.HtmlDocument();
+                        doc.LoadHtml(webpage);
+                        var node = doc.DocumentNode.SelectSingleNode("/html/body//div[@class=\"apk_info \"]//img");
+                        //scriptCache = ProcSupporter.FindCardinScript(webpage, "class=\"apk_info");
+                        //// 3 next index include a stop, a next begin and a line break /n
+                        //scriptCache = ProcSupporter.FindCardinScript(webpage, scriptCache.stop + 3);
 
-                        coverImagelink = scriptCache.GetData("src");
+                        //coverImagelink = scriptCache.GetData("src");
                         //System.Windows.Forms.MessageBox.Show(scriptCache.script);
+                        coverImagelink = node.GetAttributeValue("src","");
+                        if (String.IsNullOrEmpty(coverImagelink)) throw new Exception("Icon Parser: No Image Found");
                         if (!coverImagelink.Contains("http")) coverImagelink = "https://" + coverImagelink;
                         coverImagelink = Regex.Replace(coverImagelink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(w=\d+(&amp;|&))|(w=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
                         coverImagelink = Regex.Replace(coverImagelink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(h=\d+(&amp;|&))|(h=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
