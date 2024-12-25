@@ -706,15 +706,9 @@
     <None Include="Certificate.pfx" />
     <None Include="Certificate_backup.pfx" />
     <None Include="DataFlow.cd" />
-    <None Include="External\quick_watermark\quick_watermark.deps.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="External\quick_watermark\quick_watermark.dll.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="External\quick_watermark\quick_watermark.runtimeconfig.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="External\quick_watermark\quick_watermark.deps.json" />
+    <None Include="External\quick_watermark\quick_watermark.dll.config" />
+    <None Include="External\quick_watermark\quick_watermark.runtimeconfig.json" />
     <None Include="HonmyoU.snk" />
     <EmbeddedResource Include="Model\post_form\page.scriban-html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -750,180 +744,64 @@
   <ItemGroup>
     <Content Include="bloggersupport.ico" />
     <Content Include="Driver\chromedriver.exe" />
-    <Content Include="External\quick_watermark\AudioSwitcher.AudioApi.CoreAudio.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\AudioSwitcher.AudioApi.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\CommunityToolkit.HighPerformance.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\d3dcompiler_47.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\default_log.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Irony.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\libEGL.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\libGLESv2.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\libSkiaSharp.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\MathNet.Numerics.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.Configuration.Abstractions.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.Configuration.Binder.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.Configuration.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.DependencyInjection.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.Logging.Abstractions.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.Logging.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.ObjectPool.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.Options.ConfigurationExtensions.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.Options.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.Extensions.Primitives.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.VisualStudio.Threading.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Microsoft.VisualStudio.Validation.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Newtonsoft.Json.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\NuGet.Versioning.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\quick_watermark.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\quick_watermark.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\ServiceWire.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\SharpDX.Direct3D11.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\SharpDX.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\SharpDX.DXGI.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\SixLabors.Fonts.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\SkiaSharp.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\SkiaSharp.Extended.Svg.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\SkiaSharp.SceneGraph.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\SkiaSharp.Skottie.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Stride.Core.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\Stride.Core.Mathematics.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\System.Interactive.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\System.IO.Ports.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\System.Management.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\System.Reactive.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.App.Console.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.App.WindowsForms.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.AppServices.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.Core.Commands.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.Core.Commands.vl.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.Core.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.Core.Skia.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.Core.Skia.Windows.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.CoreLib.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.CoreLib.vl.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.CoreLib.Windows.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.CoreLib.Windows.vl.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.Serialization.Raw.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.Serialization.Raw.vl.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.Skia.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="External\quick_watermark\VL.Skia.vl.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="External\quick_watermark\AudioSwitcher.AudioApi.CoreAudio.dll" />
+    <Content Include="External\quick_watermark\AudioSwitcher.AudioApi.dll" />
+    <Content Include="External\quick_watermark\CommunityToolkit.HighPerformance.dll" />
+    <Content Include="External\quick_watermark\d3dcompiler_47.dll" />
+    <Content Include="External\quick_watermark\default_log.txt" />
+    <Content Include="External\quick_watermark\Irony.dll" />
+    <Content Include="External\quick_watermark\libEGL.dll" />
+    <Content Include="External\quick_watermark\libGLESv2.dll" />
+    <Content Include="External\quick_watermark\libSkiaSharp.dll" />
+    <Content Include="External\quick_watermark\MathNet.Numerics.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Configuration.Binder.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Configuration.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.DependencyInjection.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Logging.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.ObjectPool.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Options.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Primitives.dll" />
+    <Content Include="External\quick_watermark\Microsoft.VisualStudio.Threading.dll" />
+    <Content Include="External\quick_watermark\Microsoft.VisualStudio.Validation.dll" />
+    <Content Include="External\quick_watermark\Newtonsoft.Json.dll" />
+    <Content Include="External\quick_watermark\NuGet.Versioning.dll" />
+    <Content Include="External\quick_watermark\quick_watermark.dll" />
+    <Content Include="External\quick_watermark\quick_watermark.exe" />
+    <Content Include="External\quick_watermark\ServiceWire.dll" />
+    <Content Include="External\quick_watermark\SharpDX.Direct3D11.dll" />
+    <Content Include="External\quick_watermark\SharpDX.dll" />
+    <Content Include="External\quick_watermark\SharpDX.DXGI.dll" />
+    <Content Include="External\quick_watermark\SixLabors.Fonts.dll" />
+    <Content Include="External\quick_watermark\SkiaSharp.dll" />
+    <Content Include="External\quick_watermark\SkiaSharp.Extended.Svg.dll" />
+    <Content Include="External\quick_watermark\SkiaSharp.SceneGraph.dll" />
+    <Content Include="External\quick_watermark\SkiaSharp.Skottie.dll" />
+    <Content Include="External\quick_watermark\Stride.Core.dll" />
+    <Content Include="External\quick_watermark\Stride.Core.Mathematics.dll" />
+    <Content Include="External\quick_watermark\System.Interactive.dll" />
+    <Content Include="External\quick_watermark\System.IO.Ports.dll" />
+    <Content Include="External\quick_watermark\System.Management.dll" />
+    <Content Include="External\quick_watermark\System.Reactive.dll" />
+    <Content Include="External\quick_watermark\VL.App.Console.dll" />
+    <Content Include="External\quick_watermark\VL.App.WindowsForms.dll" />
+    <Content Include="External\quick_watermark\VL.AppServices.dll" />
+    <Content Include="External\quick_watermark\VL.Core.Commands.dll" />
+    <Content Include="External\quick_watermark\VL.Core.Commands.vl.dll" />
+    <Content Include="External\quick_watermark\VL.Core.dll" />
+    <Content Include="External\quick_watermark\VL.Core.Skia.dll" />
+    <Content Include="External\quick_watermark\VL.Core.Skia.Windows.dll" />
+    <Content Include="External\quick_watermark\VL.CoreLib.dll" />
+    <Content Include="External\quick_watermark\VL.CoreLib.vl.dll" />
+    <Content Include="External\quick_watermark\VL.CoreLib.Windows.dll" />
+    <Content Include="External\quick_watermark\VL.CoreLib.Windows.vl.dll" />
+    <Content Include="External\quick_watermark\VL.Serialization.Raw.dll" />
+    <Content Include="External\quick_watermark\VL.Serialization.Raw.vl.dll" />
+    <Content Include="External\quick_watermark\VL.Skia.dll" />
+    <Content Include="External\quick_watermark\VL.Skia.vl.dll" />
     <Content Include="Properties\CustomData\CustomOption.txt" />
     <Content Include="todo.txt" />
     <None Include="Resources\2000px-YouTube_full-color_icon_%282017%29.svg.png" />
