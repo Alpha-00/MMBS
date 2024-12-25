@@ -17,7 +17,6 @@ using System.Threading;
 
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Web;
 using System.Net;
 
 using HtmlAgilityPack;
@@ -34,6 +33,8 @@ using Newtonsoft.Json;
 using System.Text.Json.Nodes;
 using static System.Net.WebRequestMethods;
 using System.Collections.Immutable;
+
+using MMBS.OldProcessorSupporter;
 
 namespace MMBS
 {
@@ -445,13 +446,32 @@ namespace MMBS
 
                     return ImageFormat.unknown;
                 }
+                public byte[] ImageBase64ToBytes(string fulltext)
+                {
+                    var pack = Regex.Match(fulltext, @"^data:image\/(?<format>[\w]+);(?<encoder>[\w\d]+),(?<data>.+)$");
+                    var format = pack.Groups["format"].Value;
+                    var encoder = pack.Groups["encoder"].Value;
+                    var data = pack.Groups["data"].Value;
+                    if (encoder != "base64") throw new NotImplementedException($"{encoder} is not supported as image encoder");
+
+                    return Convert.FromBase64String(data);
+
+                }
                 public ImageDownloader(string link, string name_without_extension, string folder)
                 {
                     try
                     {
                         Link = link;
-                        System.Net.WebClient cache_net = new System.Net.WebClient();
-                        ImageinByte = cache_net.DownloadData(link);
+                        if (link.StartsWith("data:image"))
+                        {
+                            ImageinByte = ImageBase64ToBytes(link);
+                        }
+                        if (link.StartsWith("http"))
+                        {
+                            System.Net.WebClient cache_net = new System.Net.WebClient();
+                            ImageinByte = cache_net.DownloadData(link);
+                        }
+                        
                         ImageType = GetImageFormat(ImageinByte).ToString();
                         MemoryStream ImageStream = new MemoryStream(ImageinByte);
                         image = System.Drawing.Image.FromStream(ImageStream);
@@ -464,8 +484,7 @@ namespace MMBS
                     }
                     catch (Exception e)
                     {
-                        if (ImageType == "webp") { }
-                        else
+                        if (ImageType != "webp")
                         {
                             System.Windows.Forms.MessageBox.Show("Download ERROR\n"+link+"\n" + e.Message);
                         }
@@ -755,7 +774,7 @@ namespace MMBS
             public string cacheDir;
             System.Net.WebClient cache_net;
             //Data Here
-            public string coverImagelink;
+            public string coverImageLink;
             public string coverImageDir;
             public ProcSupporter.ImageDownloader coverImage;
             public string packagename;
@@ -770,7 +789,8 @@ namespace MMBS
                 var hostSwapList = new Dictionary<string, string>()
                 {
                 
-                    { "apkpure.net","apkpure.com"}
+                    { "apkpure.net","apkpure.com"},
+                    { "www.apkmonk.com","apkmonk.com" }
                 }.ToImmutableDictionary();
                 var uri = new UriBuilder(link);
                 if (hostSwapList.ContainsKey(uri.Host)) uri.Host = hostSwapList[uri.Host];
@@ -798,12 +818,44 @@ namespace MMBS
                         case "apps.apple.com": APPLEproc(uri);break;
                         case "apkpure.com": APKPUREproc(APKpure_Getpackedname(uri)); break;
                         case "apkcombo.com": APKCOMBOproc(APKcombo_Getpackedname(uri)); break;
-                        case "apps.qoo-app.com": QOOAPPproc(uri);break;
+                        case "apps.qoo-app.com": QOOAPPproc(uri); break;
+                        case "apkmonk.com": GeneralSourceProc(new Apkmonk()); break;
                         default: valid = 0; break;
                     }
 
                 }
                 else valid = 2;
+                void GeneralSourceProc<T>(T model) where T : DataSourceBuilder,DataSourceTemplateRequest
+                {
+                    try
+                    {
+                        model.initWithLink(link);
+                        DataSourceBuilder.storeCache(model);
+                        /// Url of source, using for reference link in the output html
+                        /// Get reformatted string from the model
+                        link = model.link;
+
+                        packagename = model.package;
+                        /// Html webpage, using for internal process
+                        webpage = model.webpage;
+                        /// Folder to store images
+                        cacheDir = model.tempDirectory;
+                        /// Icon illustration of the app
+                        var coverInfo = model.getCover();
+                        coverImageLink = coverInfo.link;
+                        coverImageDir = coverInfo.dir;
+                        coverImage = new ProcSupporter.ImageDownloader(coverImageLink, "cover", cacheDir);
+                        coverImage.ImageinByte = null;
+
+                        /// Validate Signal for the whole process, 1 is no problem, 2 is error
+                        valid = 1;
+                    }
+                    catch (Exception e)
+                    {
+                        System.Windows.Forms.MessageBox.Show($"OldProcess Error\n{typeof(T).FullName}\n{e.Message}");
+                        valid = 2;
+                    }
+                }
                 void PLAYproc(string packagename)
                 {
                     this.packagename = packagename;
@@ -823,26 +875,26 @@ namespace MMBS
                         if (lang == "en") searchKey = "alt=\"Icon image\"";
                         if (lang == "vi") searchKey = "alt=\"Hình ảnh của biểu tượng\"";
                         scriptCache = ProcSupporter.FindCardinScript(webpage, searchKey);
-                        coverImagelink = scriptCache.GetData("src");
+                        coverImageLink = scriptCache.GetData("src");
 
-                        if (string.IsNullOrEmpty(coverImagelink)) throw new Exception("Can't find cover image");
-                        if (coverImagelink.Contains("-rw")) coverImagelink = coverImagelink.Remove(coverImagelink.Length - 2);
-                        if (!coverImagelink.Contains("http")) coverImagelink = "https://" + coverImagelink;
+                        if (string.IsNullOrEmpty(coverImageLink)) throw new Exception("Can't find cover image");
+                        if (coverImageLink.Contains("-rw")) coverImageLink = coverImageLink.Remove(coverImageLink.Length - 2);
+                        if (!coverImageLink.Contains("http")) coverImageLink = "https://" + coverImageLink;
                         //https://play-lh.googleusercontent.com/IeGa7ALAZCgO5TNWfEbxtJdtmM6QKZjbPax4uHHgFhMJfpWdupkmjY5WvUfq99ThZPc=s180
-                        string temp_coverthumbnailLink = coverImagelink.Remove(coverImagelink.IndexOf("=") + 1) + "s140";
+                        string temp_coverthumbnailLink = coverImageLink.Remove(coverImageLink.IndexOf("=") + 1) + "s140";
                         coverImage = new ProcSupporter.ImageDownloader(temp_coverthumbnailLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
                         link = ("https://play.google.com/store/apps/details?id=" + packagename);
                         valid = 1;
 
-                        // System.Windows.Forms.MessageBox.Show(coverImagelink);
+                        // System.Windows.Forms.MessageBox.Show(coverImageLink);
 
                     }
 
                     catch (Exception e)
                     {
-                        System.Windows.Forms.MessageBox.Show("Loi gi roi\nPlay Processor\n" + e.Message);
+                        System.Windows.Forms.MessageBox.Show("OldProcess Error\nPlay Processor\n" + e.Message);
                         valid = 2;
 
                     }
@@ -860,10 +912,10 @@ namespace MMBS
                         if (!System.IO.Directory.Exists(cacheDir)) System.IO.Directory.CreateDirectory(cacheDir);
                         HtmlDocument htmlDocument = new HtmlDocument();
                         htmlDocument.LoadHtml(webpage);
-                        coverImagelink = htmlDocument.DocumentNode.SelectSingleNode("/html/body/div[@class=\"ember-view\"]/main//section[1]/div/div[1]/picture/source[2]").Attributes["srcset"].Value;
-                        coverImagelink = coverImagelink.Remove(coverImagelink.IndexOf(" ")).Trim();
+                        coverImageLink = htmlDocument.DocumentNode.SelectSingleNode("/html/body/div[@class=\"ember-view\"]/main//section[1]/div/div[1]/picture/source[2]").Attributes["srcset"].Value;
+                        coverImageLink = coverImageLink.Remove(coverImageLink.IndexOf(" ")).Trim();
 
-                        coverImage = new ProcSupporter.ImageDownloader(coverImagelink, "cover", cacheDir);
+                        coverImage = new ProcSupporter.ImageDownloader(coverImageLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
                         valid = 1;
@@ -894,16 +946,16 @@ namespace MMBS
                         webpage = ProcSupporter.httpreqDownloadString(lookupURL);
                         //System.Windows.Forms.Clipboard.SetText(webpage);
                         JObject dat = JObject.Parse(webpage) ;
-                        if (dat.SelectToken("$.resultCount").Value<int>()>0)
+                        if (dat.SelectToken("$.resultCount").Value<int>(null)>0)
                         {
                             valid = 2;
                         }
-                        packagename = dat.SelectToken("$.results[0].bundleId").Value<string>();
+                        packagename = dat.SelectToken("$.results[0].bundleId").Value<string>(null);
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) System.IO.Directory.CreateDirectory(cacheDir);
                         //webpage = cache_net.DownloadString(url);
-                        coverImagelink = dat.SelectToken("$.results[0].artworkUrl512").Value<string>();
-                        coverImage = new ProcSupporter.ImageDownloader(coverImagelink, "cover", cacheDir);
+                        coverImageLink = dat.SelectToken("$.results[0].artworkUrl512").Value<string>(null);
+                        coverImage = new ProcSupporter.ImageDownloader(coverImageLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
                         valid = 1;
@@ -922,6 +974,7 @@ namespace MMBS
                     try
                     {
                         if (tempLink.Contains("/vn/")) tempLink = tempLink.Replace("/vn/", "/");
+                        if (link.Contains("/vn/")) link = link.Replace("/vn/", "/");
                         //! The Code to solve 403 Forbiden problem
                         //Source Code: https://stackoverflow.com/questions/16735042/the-remote-server-returned-an-error-403-forbidden
                         //Navigate to front page to Set cookies
@@ -958,15 +1011,15 @@ namespace MMBS
                         //scriptCache = ProcSupporter.FindCardinScript(webpage, scriptCache.stop + 3);
 
                         if (node is null) throw new Exception("Icon Parser: No Image Found");
-                        //coverImagelink = scriptCache.GetData("src");
+                        //coverImageLink = scriptCache.GetData("src");
                         //System.Windows.Forms.MessageBox.Show(scriptCache.script);
-                        coverImagelink = node.GetAttributeValue("src","");
-                        if (String.IsNullOrEmpty(coverImagelink)) throw new Exception("Icon Parser: No Image Found");
-                        if (!coverImagelink.Contains("http")) coverImagelink = "https://" + coverImagelink;
-                        coverImagelink = Regex.Replace(coverImagelink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(w=\d+(&amp;|&))|(w=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
-                        coverImagelink = Regex.Replace(coverImagelink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(h=\d+(&amp;|&))|(h=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
-                        //coverImagelink = Regex.Replace(coverImagelink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>fakeurl=\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
-                        coverImage = new ProcSupporter.ImageDownloader(coverImagelink, "cover", cacheDir);
+                        coverImageLink = node.GetAttributeValue("src","");
+                        if (String.IsNullOrEmpty(coverImageLink)) throw new Exception("Icon Parser: No Image Found");
+                        if (!coverImageLink.Contains("http")) coverImageLink = "https://" + coverImageLink;
+                        coverImageLink = Regex.Replace(coverImageLink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(w=\d+(&amp;|&))|(w=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
+                        coverImageLink = Regex.Replace(coverImageLink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(h=\d+(&amp;|&))|(h=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
+                        //coverImageLink = Regex.Replace(coverImageLink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>fakeurl=\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
+                        coverImage = new ProcSupporter.ImageDownloader(coverImageLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
 
@@ -1009,17 +1062,17 @@ namespace MMBS
                         HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
                         doc.LoadHtml(webpage);
                         //HtmlAgilityPack.HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//body/section[@id=\"main\"]/div[1]//div[@class=\"info\"]/div[@class=\"app_name\"]");
-                        coverImagelink = doc.DocumentNode.SelectSingleNode("//body/section[@id=\"main\"]//div[@class=\"avatar\"]/img").Attributes["data-src"].Value;
-                        coverImagelink = coverImagelink.Substring(coverImagelink.IndexOf("f=auto/") + "f=auto/".Length);
-                        if (!coverImagelink.ToLower().StartsWith("http")) coverImagelink = "https:" + coverImagelink;
-                        if (string.IsNullOrEmpty(coverImagelink)) throw new Exception("Can't find cover image");
-                        if (coverImagelink.Contains("-rw")) coverImagelink = coverImagelink.Remove(coverImagelink.Length - 2);
-                        if (!coverImagelink.Contains("http")) coverImagelink = "https://" + coverImagelink;
-                        if (coverImagelink.Contains("="))
-                        coverImagelink = coverImagelink.Remove(coverImagelink.IndexOf("="))+ "=w240-h480";
-                        string temp_coverthumbnailLink = coverImagelink;
-                        if (coverImagelink.Contains("="))
-                             temp_coverthumbnailLink = coverImagelink.Remove(coverImagelink.IndexOf("=") + 1) + "s140";
+                        coverImageLink = doc.DocumentNode.SelectSingleNode("//body/section[@id=\"main\"]//div[@class=\"avatar\"]/img").Attributes["data-src"].Value;
+                        coverImageLink = coverImageLink.Substring(coverImageLink.IndexOf("f=auto/") + "f=auto/".Length);
+                        if (!coverImageLink.ToLower().StartsWith("http")) coverImageLink = "https:" + coverImageLink;
+                        if (string.IsNullOrEmpty(coverImageLink)) throw new Exception("Can't find cover image");
+                        if (coverImageLink.Contains("-rw")) coverImageLink = coverImageLink.Remove(coverImageLink.Length - 2);
+                        if (!coverImageLink.Contains("http")) coverImageLink = "https://" + coverImageLink;
+                        if (coverImageLink.Contains("="))
+                        coverImageLink = coverImageLink.Remove(coverImageLink.IndexOf("="))+ "=w240-h480";
+                        string temp_coverthumbnailLink = coverImageLink;
+                        if (coverImageLink.Contains("="))
+                             temp_coverthumbnailLink = coverImageLink.Remove(coverImageLink.IndexOf("=") + 1) + "s140";
                         coverImage = new ProcSupporter.ImageDownloader(temp_coverthumbnailLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
@@ -1048,12 +1101,12 @@ namespace MMBS
                         if (!System.IO.Directory.Exists(cacheDir)) System.IO.Directory.CreateDirectory(cacheDir);
 
 
-                        coverImagelink = doc.DocumentNode.SelectSingleNode("/html/body//section[1]//figure/picture/source").Attributes["srcset"].Value;
-                        coverImagelink = "https:" + coverImagelink.Remove(coverImagelink.IndexOf(" ")).Trim();
+                        coverImageLink = doc.DocumentNode.SelectSingleNode("/html/body//section[1]//figure/picture/source").Attributes["srcset"].Value;
+                        coverImageLink = "https:" + coverImageLink.Remove(coverImageLink.IndexOf(" ")).Trim();
 
-                        if (string.IsNullOrEmpty(coverImagelink)) throw new Exception("Can't find cover image");
-                        coverImagelink = coverImagelink.Remove(coverImagelink.IndexOf("?"));
-                        string temp_coverthumbnailLink = coverImagelink + "?w=192";
+                        if (string.IsNullOrEmpty(coverImageLink)) throw new Exception("Can't find cover image");
+                        coverImageLink = coverImageLink.Remove(coverImageLink.IndexOf("?"));
+                        string temp_coverthumbnailLink = coverImageLink + "?w=192";
                         coverImage = new ProcSupporter.ImageDownloader(temp_coverthumbnailLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
@@ -1582,13 +1635,13 @@ namespace MMBS
                         var surl = uri.QueryKey("surl");
                         webpage = OldProcessor.ProcSupporter.httpreqDownloadString(new Uri($"https://www.terabox.com/share/list?app_id=250528&web=1&channel=dubox&clienttype=0&page=1&num=20&order=time&desc=1&shorturl={surl}&root=1"));
                         JObject json = JObject.Parse(webpage);
-                        if (json.SelectToken("$.errno").Value<int>() > 0) throw new Exception("Not found file in this URL");
+                        if (json.SelectToken("$.errno").Value<int>(null) > 0) throw new Exception("Not found file in this URL");
                         var x = json.SelectToken("$.list[0].server_filename");
                         if (x == null) valid = 2;
-                        else fname =  x.Value<string>();
+                        else fname =  x.Value<string>(null);
                         x = json.SelectToken("$.list[0].size"); 
                         if (x == null) valid = 2;
-                        else fsize = MyFunction.SizeSuffix(x.Value<int>());
+                        else fsize = MyFunction.SizeSuffix(x.Value<int>(null));
                         valid = 1;
                     }
                     catch (Exception e)
@@ -1675,6 +1728,24 @@ namespace MMBS
                         case "apps.qoo-app.com":
                             QooappModule cache5 = new QooappModule(webpage, dir);
                             { this.title = cache5.title; this.videolink = cache5.videolink; this.req = cache5.req; this.version = cache5.version; this.desc = cache5.desc; this.Desc_Bold = cache5.Desc_Bold; this.imagelink = cache5.imagelink; this.image = cache5.image; }
+                            break;
+                        case "apkmonk.com":
+                            {
+                                var module = (Apkmonk)DataSourceBuilder.recentModel;
+                                DataSourceBuilder.prepareData(module);
+                                title = module.data.title;
+                                videolink = module.data.videoRemotePath;
+                                req = module.data.osRequirement;
+                                version = module.data.version;
+                                desc = module.data.description[0];
+                                Desc_Bold = desc;
+                                if (module.data.description.Length>1)
+                                Desc_Bold = module.data.description[1];
+                                imagelink = new string[] { };
+                                //imagelink = module.data.images.Select((item) => item.Link).ToArray();
+                                image = new ProcSupporter.ImageDownloader[] { };
+                                //image = module.data.images;
+                            }
                             break;
 
                     }
@@ -1766,7 +1837,7 @@ namespace MMBS
                 {
                     var tmpJToken = customdata.SelectToken("$.data[1][2][140][1][1][0][0][1]");
                     if (tmpJToken is null) return;
-                    string cache = tmpJToken.Value<string>();
+                    string cache = tmpJToken.Value<string>(null);
                     this.req =  cache.Contains("Varies with device") ? cache : $"Android {cache}+";
                     if (String.IsNullOrEmpty(cache)) this.req = "N/A";
                 }
@@ -1774,7 +1845,7 @@ namespace MMBS
                 {
                     var tmpJToken = customdata.SelectToken("$.data[1][2][140][0][0][0]");
                     if (tmpJToken is null) return;
-                    string cache = tmpJToken.Value<string>();
+                    string cache = tmpJToken.Value<string>(null);
                     cache = cache.Trim();
                     version = cache;
                 }
@@ -1815,7 +1886,7 @@ namespace MMBS
                     if (lang == "en")
                         tmpJToken = customdata.SelectToken("$.data[1][2][72][0][1]");
                     if (tmpJToken is null) return;
-                    string cache = tmpJToken.Value<string>();
+                    string cache = tmpJToken.Value<string>(null);
                     cache = cache.Replace("\n", "");
                     cache = cache.Replace("<br>", "\n");
                     cache = cache.Replace("<br/>", "\n");
@@ -2077,8 +2148,8 @@ namespace MMBS
                 public void Get_CustomData()
                 {
                     customdata = JObject.Parse(webpage);
-                    title = customdata.SelectToken("$.results[0].trackName").Value<string>();
-                    desc = customdata.SelectToken("$.results[0].description").Value<string>();
+                    title = customdata.SelectToken("$.results[0].trackName").Value<string>(null);
+                    desc = customdata.SelectToken("$.results[0].description").Value<string>(null);
                     Desc_Bold = desc;
                     string[] listcache = customdata.SelectToken("$.results[0].screenshotUrls").Values<string>().ToArray();
                     if (listcache != null)
@@ -2262,12 +2333,12 @@ namespace MMBS
                 }
                 public void Get_Image()
                 {
+#if DEBUG
                     if (webpage.Contains("<div class=\"screen-wrap") == false)
                     {
-#if DEBUG
                         throw new Exception("Parser Error: No Image Found");
-#endif
                     }
+#endif
                     // Hot fix for Html Agilty Pack is not support img tag
                     var nodes = doc.DocumentNode.SelectNodes("//*[@id=\"screen\"]/div/a").Nodes().ToList();
                     var images = nodes.Where((node) => node.OuterHtml.StartsWith("<img"));

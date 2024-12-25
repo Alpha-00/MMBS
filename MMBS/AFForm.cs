@@ -1,13 +1,14 @@
-﻿using OpenQA.Selenium.DevTools.V120.Runtime;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -276,7 +277,7 @@ namespace MMBS
                 AFFinputer.appInfo.packageName = processDataResourceTextBox.packagename;
                 AFFinputer.appInfo.datasource = processDataResourceTextBox.link;
                 AFFinputer.appInfo.datasourcepage = processDataResourceTextBox.webpage;
-                AFFinputer.appInfo.icon.link = processDataResourceTextBox.coverImagelink;
+                AFFinputer.appInfo.icon.link = processDataResourceTextBox.coverImageLink;
                 AFFinputer.appInfo.icon.dir = processDataResourceTextBox.coverImageDir;
                 if (processDataResourceTextBox.coverImage!=null)
                 AFFinputer.appInfo.icon.image = processDataResourceTextBox.coverImage.image;
@@ -513,12 +514,19 @@ namespace MMBS
                 if (!string.IsNullOrWhiteSpace(AFFinputer.folderlink) && (AFFinputer.folderlink != Class1.GetToken("curdir")))
                 {
                     dialogFile.InitialDirectory = AFFinputer.folderlink.Replace('/','\\');
-                    dialogFile.Title = ("Image Selection");
-                    DialogResult imagelist = dialogFile.ShowDialog();
-                    System.IO.FileInfo file;
-                    foreach (string i in dialogFile.FileNames) { 
-                        file = new System.IO.FileInfo(i); 
-                        AFFinputer.postMedia.ImageList[Convert.ToInt32(file.Name.Remove(file.Name.LastIndexOf(".")).Replace("Screenshot ", ""))].enable = true; };
+                    var screenshotCount = Directory.GetFiles(dialogFile.InitialDirectory).Count((item) => Regex.IsMatch(item, @"\\Screenshot \d+\..{1,4}$"));
+                    if (screenshotCount>0)
+                    {
+
+                        dialogFile.Title = ("Image Selection");
+                        DialogResult imagelist = dialogFile.ShowDialog();
+                        System.IO.FileInfo file;
+                        foreach (string i in dialogFile.FileNames)
+                        {
+                            file = new System.IO.FileInfo(i);
+                            AFFinputer.postMedia.ImageList[Convert.ToInt32(file.Name.Remove(file.Name.LastIndexOf(".")).Replace("Screenshot ", ""))].enable = true;
+                        };
+                    }
                 }
             }
             //Required for recycle this Form

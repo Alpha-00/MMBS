@@ -28,6 +28,8 @@ using OpenQA.Selenium.DevTools;
 using System.Net;
 using Scriban.Parsing;
 using static MMBS.DefineInfoPack;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace MMBS
 {
@@ -575,6 +577,90 @@ namespace MMBS
             {
                 return url;
             }
+        }
+        public class QuickWatermarkApi
+        {
+            protected class QuickWatermarkRequestWatermark
+            {
+                int version = 100;
+                string type = "watermark";
+                public RequestData[] request;
+                public class RequestData
+                {
+                    string image;
+                    string preset;
+                }
+            }
+            protected class QuickWatermarkRequestSplitImage
+            {
+                public int _version = 100;
+                [JsonProperty(PropertyName = "version")]
+                public int version
+                {
+                    get => _version;
+                    set => _version = value;
+                }
+                public string _type = "split";
+                [JsonProperty(PropertyName = "type")]
+                public string type
+                {
+                    get => _type;
+                    set => _type = value;
+                }
+                [JsonProperty(PropertyName = "request")]
+                public RequestData[] request { get; set; }
+                public class RequestData
+                {
+                    [JsonProperty(PropertyName = "image")]
+                    public string image {
+                        get;set;
+                    }
+                    
+                    [JsonProperty(PropertyName = "preset")]
+                    public string preset
+                    {
+                        get; set;
+                    }
+                    public RequestData(string image, string preset="default")
+                    {
+                        this.image = image;
+                        this.preset = preset;
+                    }
+                }
+            }
+            public void screenshotSplitImage(string sourceFilePath)
+            {
+                var request = new QuickWatermarkRequestSplitImage()
+                {
+                    request = new List<QuickWatermarkRequestSplitImage.RequestData>()
+                    {
+                        new QuickWatermarkRequestSplitImage.RequestData($"file:\\\\\\{sourceFilePath}")
+                    }.ToArray()
+                };
+                var wrapper = new Dictionary<string, object>()
+                {
+                    { "QwRequest",request } 
+                };
+                var requestJson = System.Text.Json.JsonSerializer.Serialize(wrapper);
+                var requestFilePath = Path.Combine(Environment.CurrentDirectory, @"External\quick_watermark", "quick_watermark.json");
+                System.IO.File.WriteAllText(requestFilePath, requestJson);
+
+                System.Diagnostics.ProcessStartInfo command = new System.Diagnostics.ProcessStartInfo();
+                command.CreateNoWindow = true;
+                command.FileName = Path.Combine(Environment.CurrentDirectory, @"External\quick_watermark", "quick_watermark.exe");
+                command.Arguments = $"--config quick_watermark.json";
+                //command.UseShellExecute = false;
+                var process = System.Diagnostics.Process.Start(command);
+                process.WaitForExit(3000);
+
+                var sourceFolder = sourceFilePath.Remove(sourceFilePath.LastIndexOf("\\"));
+                var resultFilePath1 = Path.Combine(Environment.CurrentDirectory, @"External\quick_watermark", "split1.png");
+                var resultFilePath2 = Path.Combine(Environment.CurrentDirectory, @"External\quick_watermark", "split2.png");
+                System.IO.File.Move(resultFilePath1, Path.Combine(sourceFolder, "Screenshot 1.png"));
+                System.IO.File.Move(resultFilePath2, Path.Combine(sourceFolder, "Screenshot 2.png"));
+                
+            }
+
         }
     }
 }
