@@ -51,8 +51,8 @@ namespace MMBS.OldProcessorSupporter
         /// Use for Exception, and Log purpose
         /// </summary>
         protected virtual string TemplateName => "Data Source";
-        protected static string[] DefaultPackageFromUriRegexes => new string[] { 
-            @"(([a-zA-Z_]+)\.){1,4}(?<appName>[a-zA-Z_]+)",
+        protected static string[] DefaultPackageFromUriRegexes => new string[] {
+            @"(([a-zA-Z0-9_]+)\.){1,4}(?<appName>[a-zA-Z0-9_]+)",
         };
         #endregion
 
