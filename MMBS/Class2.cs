@@ -946,15 +946,15 @@ namespace MMBS
                         webpage = ProcSupporter.httpreqDownloadString(lookupURL);
                         //System.Windows.Forms.Clipboard.SetText(webpage);
                         JObject dat = JObject.Parse(webpage) ;
-                        if (dat.SelectToken("$.resultCount").Value<int>(null)>0)
+                        if (dat.SelectToken("$.resultCount").Value<int>()>0)
                         {
                             valid = 2;
                         }
-                        packagename = dat.SelectToken("$.results[0].bundleId").Value<string>(null);
+                        packagename = dat.SelectToken("$.results[0].bundleId").Value<string>();
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) System.IO.Directory.CreateDirectory(cacheDir);
                         //webpage = cache_net.DownloadString(url);
-                        coverImageLink = dat.SelectToken("$.results[0].artworkUrl512").Value<string>(null);
+                        coverImageLink = dat.SelectToken("$.results[0].artworkUrl512").Value<string>();
                         coverImage = new ProcSupporter.ImageDownloader(coverImageLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
@@ -1635,13 +1635,13 @@ namespace MMBS
                         var surl = uri.QueryKey("surl");
                         webpage = OldProcessor.ProcSupporter.httpreqDownloadString(new Uri($"https://www.terabox.com/share/list?app_id=250528&web=1&channel=dubox&clienttype=0&page=1&num=20&order=time&desc=1&shorturl={surl}&root=1"));
                         JObject json = JObject.Parse(webpage);
-                        if (json.SelectToken("$.errno").Value<int>(null) > 0) throw new Exception("Not found file in this URL");
+                        if (json.SelectToken("$.errno").Value<int>() > 0) throw new Exception("Not found file in this URL");
                         var x = json.SelectToken("$.list[0].server_filename");
                         if (x == null) valid = 2;
-                        else fname =  x.Value<string>(null);
+                        else fname =  x.Value<string>();
                         x = json.SelectToken("$.list[0].size"); 
                         if (x == null) valid = 2;
-                        else fsize = MyFunction.SizeSuffix(x.Value<int>(null));
+                        else fsize = MyFunction.SizeSuffix(x.Value<int>());
                         valid = 1;
                     }
                     catch (Exception e)
@@ -1837,7 +1837,7 @@ namespace MMBS
                 {
                     var tmpJToken = customdata.SelectToken("$.data[1][2][140][1][1][0][0][1]");
                     if (tmpJToken is null) return;
-                    string cache = tmpJToken.Value<string>(null);
+                    string cache = tmpJToken.Value<string>();
                     this.req =  cache.Contains("Varies with device") ? cache : $"Android {cache}+";
                     if (String.IsNullOrEmpty(cache)) this.req = "N/A";
                 }
@@ -1845,7 +1845,7 @@ namespace MMBS
                 {
                     var tmpJToken = customdata.SelectToken("$.data[1][2][140][0][0][0]");
                     if (tmpJToken is null) return;
-                    string cache = tmpJToken.Value<string>(null);
+                    string cache = tmpJToken.Value<string>();
                     cache = cache.Trim();
                     version = cache;
                 }
@@ -1886,7 +1886,7 @@ namespace MMBS
                     if (lang == "en")
                         tmpJToken = customdata.SelectToken("$.data[1][2][72][0][1]");
                     if (tmpJToken is null) return;
-                    string cache = tmpJToken.Value<string>(null);
+                    string cache = tmpJToken.Value<string>();
                     cache = cache.Replace("\n", "");
                     cache = cache.Replace("<br>", "\n");
                     cache = cache.Replace("<br/>", "\n");
@@ -2148,8 +2148,8 @@ namespace MMBS
                 public void Get_CustomData()
                 {
                     customdata = JObject.Parse(webpage);
-                    title = customdata.SelectToken("$.results[0].trackName").Value<string>(null);
-                    desc = customdata.SelectToken("$.results[0].description").Value<string>(null);
+                    title = customdata.SelectToken("$.results[0].trackName").Value<string>();
+                    desc = customdata.SelectToken("$.results[0].description").Value<string>();
                     Desc_Bold = desc;
                     string[] listcache = customdata.SelectToken("$.results[0].screenshotUrls").Values<string>().ToArray();
                     if (listcache != null)
