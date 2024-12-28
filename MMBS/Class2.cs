@@ -1005,7 +1005,7 @@ namespace MMBS
                         //ProcSupporter.HtmlScriptCard scriptCache;
                         var doc = new HtmlAgilityPack.HtmlDocument();
                         doc.LoadHtml(webpage);
-                        var node = doc.DocumentNode.SelectSingleNode("/html/body//div[@class=\"apk_info \"]//img");
+                        var node = doc.DocumentNode.SelectSingleNode("//div[contains(@class,\"apk_info\")]//img");
                         //scriptCache = ProcSupporter.FindCardinScript(webpage, "class=\"apk_info");
                         //// 3 next index include a stop, a next begin and a line break /n
                         //scriptCache = ProcSupporter.FindCardinScript(webpage, scriptCache.stop + 3);

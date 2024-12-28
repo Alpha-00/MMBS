@@ -39,7 +39,7 @@
             <summary>Gets the batch base path; <c>null</c> if unspecified.</summary>
         </member>
         <member name="T:Google.Apis.Blogger.v3.BloggerService.Scope">
-            <summary>Available OAuth 2.0 scopes for use with the Blogger API.</summary>
+            <summary>Available OAuth 2.0 scopes for use with the Blogger API v3.</summary>
         </member>
         <member name="F:Google.Apis.Blogger.v3.BloggerService.Scope.Blogger">
             <summary>Manage your Blogger account</summary>
@@ -48,7 +48,7 @@
             <summary>View your Blogger account</summary>
         </member>
         <member name="T:Google.Apis.Blogger.v3.BloggerService.ScopeConstants">
-            <summary>Available OAuth 2.0 scope constants for use with the Blogger API.</summary>
+            <summary>Available OAuth 2.0 scope constants for use with the Blogger API v3.</summary>
         </member>
         <member name="F:Google.Apis.Blogger.v3.BloggerService.ScopeConstants.Blogger">
             <summary>Manage your Blogger account</summary>
@@ -282,17 +282,6 @@
         </member>
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.Status">
             <summary>Default value of status is LIVE.</summary>
-            <remarks>
-            Use this property to set a single value for the parameter, or <see cref="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.StatusList"/> to set multiple
-            values. Do not set both properties.
-            </remarks>
-        </member>
-        <member name="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.StatusList">
-            <summary>Default value of status is LIVE.</summary>
-            <remarks>
-            Use this property to set one or more values for the parameter. Do not set both this property and
-            <see cref="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.Status"/>.
-            </remarks>
         </member>
         <member name="T:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.StatusEnum">
             <summary>Default value of status is LIVE.</summary>
@@ -609,9 +598,6 @@
         <member name="M:Google.Apis.Blogger.v3.PagesResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String)">
             <summary>Constructs a new Delete request.</summary>
         </member>
-        <member name="P:Google.Apis.Blogger.v3.PagesResource.DeleteRequest.UseTrash">
-            <summary>Move to Trash if possible</summary>
-        </member>
         <member name="P:Google.Apis.Blogger.v3.PagesResource.DeleteRequest.MethodName">
             <summary>Gets the method name.</summary>
         </member>
@@ -702,9 +688,6 @@
             <summary></summary>
         </member>
         <member name="F:Google.Apis.Blogger.v3.PagesResource.ListRequest.StatusEnum.DRAFT">
-            <summary></summary>
-        </member>
-        <member name="F:Google.Apis.Blogger.v3.PagesResource.ListRequest.StatusEnum.SOFTTRASHED">
             <summary></summary>
         </member>
         <member name="F:Google.Apis.Blogger.v3.PagesResource.ListRequest.ViewEnum.VIEWTYPEUNSPECIFIED">
@@ -899,9 +882,6 @@
         <member name="F:Google.Apis.Blogger.v3.PostUserInfosResource.ListRequest.StatusEnum.SCHEDULED">
             <summary></summary>
         </member>
-        <member name="F:Google.Apis.Blogger.v3.PostUserInfosResource.ListRequest.StatusEnum.SOFTTRASHED">
-            <summary></summary>
-        </member>
         <member name="F:Google.Apis.Blogger.v3.PostUserInfosResource.ListRequest.ViewEnum.VIEWTYPEUNSPECIFIED">
             <summary></summary>
         </member>
@@ -945,9 +925,6 @@
         </member>
         <member name="M:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String)">
             <summary>Constructs a new Delete request.</summary>
-        </member>
-        <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.UseTrash">
-            <summary>Move to Trash if possible</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -1079,21 +1056,6 @@
         <member name="F:Google.Apis.Blogger.v3.PostsResource.ListRequest.OrderByEnum.UPDATED">
             <summary></summary>
         </member>
-        <member name="P:Google.Apis.Blogger.v3.PostsResource.ListRequest.SortOption">
-            <summary>Sort direction applied to post list.</summary>
-        </member>
-        <member name="T:Google.Apis.Blogger.v3.PostsResource.ListRequest.SortOptionEnum">
-            <summary>Sort direction applied to post list.</summary>
-        </member>
-        <member name="F:Google.Apis.Blogger.v3.PostsResource.ListRequest.SortOptionEnum.SORTOPTIONUNSPECIFIED">
-            <summary>The unspecified sort option.</summary>
-        </member>
-        <member name="F:Google.Apis.Blogger.v3.PostsResource.ListRequest.SortOptionEnum.DESCENDING">
-            <summary>The option to sort posts in descending order in time.</summary>
-        </member>
-        <member name="F:Google.Apis.Blogger.v3.PostsResource.ListRequest.SortOptionEnum.ASCENDING">
-            <summary>The option to sort posts in ascending order in time.</summary>
-        </member>
         <member name="F:Google.Apis.Blogger.v3.PostsResource.ListRequest.StatusEnum.LIVE">
             <summary></summary>
         </member>
@@ -1101,9 +1063,6 @@
             <summary></summary>
         </member>
         <member name="F:Google.Apis.Blogger.v3.PostsResource.ListRequest.StatusEnum.SCHEDULED">
-            <summary></summary>
-        </member>
-        <member name="F:Google.Apis.Blogger.v3.PostsResource.ListRequest.StatusEnum.SOFTTRASHED">
             <summary></summary>
         </member>
         <member name="F:Google.Apis.Blogger.v3.PostsResource.ListRequest.ViewEnum.VIEWTYPEUNSPECIFIED">
@@ -1539,9 +1498,6 @@
         <member name="P:Google.Apis.Blogger.v3.Data.Page.Title">
             <summary>The title of this entity. This is the name displayed in the Admin user interface.</summary>
         </member>
-        <member name="P:Google.Apis.Blogger.v3.Data.Page.Trashed">
-            <summary>RFC 3339 date-time when this Page was trashed.</summary>
-        </member>
         <member name="P:Google.Apis.Blogger.v3.Data.Page.Updated">
             <summary>RFC 3339 date-time when this Page was last updated.</summary>
         </member>
@@ -1658,9 +1614,6 @@
         </member>
         <member name="P:Google.Apis.Blogger.v3.Data.Post.TitleLink">
             <summary>The title link URL, similar to atom's related link.</summary>
-        </member>
-        <member name="P:Google.Apis.Blogger.v3.Data.Post.Trashed">
-            <summary>RFC 3339 date-time when this Post was last trashed.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.Data.Post.Updated">
             <summary>RFC 3339 date-time when this Post was last updated.</summary>

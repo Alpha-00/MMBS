@@ -277,11 +277,6 @@
         <member name="P:Google.Apis.Drive.v3.ChangesResource.ListRequest.IncludeItemsFromAllDrives">
             <summary>Whether both My Drive and shared drive items should be included in results.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.ChangesResource.ListRequest.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.ChangesResource.ListRequest.IncludePermissionsForView">
             <summary>
             Specifies which additional view's permissions to include in the response. Only 'published' is supported.
@@ -307,8 +302,8 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.ChangesResource.ListRequest.Spaces">
             <summary>
-            A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and
-            'appDataFolder'.
+            A comma-separated list of spaces to query within the user corpus. Supported values are 'drive',
+            'appDataFolder' and 'photos'.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.ChangesResource.ListRequest.SupportsAllDrives">
@@ -333,9 +328,7 @@
             <summary>Initializes List parameter list.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.ChangesResource.Watch(Google.Apis.Drive.v3.Data.Channel,System.String)">
-            <summary>
-            Subscribes to changes for a user. To use this method, you must include the pageToken query parameter.
-            </summary>
+            <summary>Subscribes to changes for a user.</summary>
             <param name="body">The body of the request.</param>
             <param name="pageToken">
             The token for continuing a previous list request on the next page. This should be set to the value of
@@ -343,9 +336,7 @@
             </param>
         </member>
         <member name="T:Google.Apis.Drive.v3.ChangesResource.WatchRequest">
-            <summary>
-            Subscribes to changes for a user. To use this method, you must include the pageToken query parameter.
-            </summary>
+            <summary>Subscribes to changes for a user.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.ChangesResource.WatchRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.Channel,System.String)">
             <summary>Constructs a new Watch request.</summary>
@@ -372,11 +363,6 @@
         <member name="P:Google.Apis.Drive.v3.ChangesResource.WatchRequest.IncludeItemsFromAllDrives">
             <summary>Whether both My Drive and shared drive items should be included in results.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.ChangesResource.WatchRequest.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.ChangesResource.WatchRequest.IncludePermissionsForView">
             <summary>
             Specifies which additional view's permissions to include in the response. Only 'published' is supported.
@@ -402,8 +388,8 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.ChangesResource.WatchRequest.Spaces">
             <summary>
-            A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and
-            'appDataFolder'.
+            A comma-separated list of spaces to query within the user corpus. Supported values are 'drive',
+            'appDataFolder' and 'photos'.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.ChangesResource.WatchRequest.SupportsAllDrives">
@@ -480,12 +466,12 @@
             <summary>Constructs a new resource.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.CommentsResource.Create(Google.Apis.Drive.v3.Data.Comment,System.String)">
-            <summary>Creates a comment on a file.</summary>
+            <summary>Creates a new comment on a file.</summary>
             <param name="body">The body of the request.</param>
             <param name="fileId">The ID of the file.</param>
         </member>
         <member name="T:Google.Apis.Drive.v3.CommentsResource.CreateRequest">
-            <summary>Creates a comment on a file.</summary>
+            <summary>Creates a new comment on a file.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.CommentsResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.Comment,System.String)">
             <summary>Constructs a new Create request.</summary>
@@ -662,7 +648,7 @@
             <summary>Constructs a new resource.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.DrivesResource.Create(Google.Apis.Drive.v3.Data.Drive,System.String)">
-            <summary>Creates a shared drive.</summary>
+            <summary>Creates a new shared drive.</summary>
             <param name="body">The body of the request.</param>
             <param name="requestId">
             An ID, such as a random UUID, which uniquely identifies this user's request for idempotent creation of a
@@ -672,7 +658,7 @@
             </param>
         </member>
         <member name="T:Google.Apis.Drive.v3.DrivesResource.CreateRequest">
-            <summary>Creates a shared drive.</summary>
+            <summary>Creates a new shared drive.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.DrivesResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.Drive,System.String)">
             <summary>Constructs a new Create request.</summary>
@@ -721,18 +707,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.DrivesResource.DeleteRequest.DriveId">
             <summary>The ID of the shared drive.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.DrivesResource.DeleteRequest.AllowItemDeletion">
-            <summary>
-            Whether any items inside the shared drive should also be deleted. This option is only supported when
-            useDomainAdminAccess is also set to true.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.DrivesResource.DeleteRequest.UseDomainAdminAccess">
-            <summary>
-            Issue the request as a domain administrator; if set to true, then the requester will be granted access
-            if they are an administrator of the domain to which the shared drive belongs.
-            </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.DrivesResource.DeleteRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -812,7 +786,7 @@
             <summary>Constructs a new List request.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.DrivesResource.ListRequest.PageSize">
-            <summary>Maximum number of shared drives to return per page.</summary>
+            <summary>Maximum number of shared drives to return.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.DrivesResource.ListRequest.PageToken">
             <summary>Page token for shared drives.</summary>
@@ -864,12 +838,12 @@
             <summary>Initializes Unhide parameter list.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.DrivesResource.Update(Google.Apis.Drive.v3.Data.Drive,System.String)">
-            <summary>Updates the metadata for a shared drive.</summary>
+            <summary>Updates the metadate for a shared drive.</summary>
             <param name="body">The body of the request.</param>
             <param name="driveId">The ID of the shared drive.</param>
         </member>
         <member name="T:Google.Apis.Drive.v3.DrivesResource.UpdateRequest">
-            <summary>Updates the metadata for a shared drive.</summary>
+            <summary>Updates the metadate for a shared drive.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.DrivesResource.UpdateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.Drive,System.String)">
             <summary>Constructs a new Update request.</summary>
@@ -879,8 +853,8 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.DrivesResource.UpdateRequest.UseDomainAdminAccess">
             <summary>
-            Issue the request as a domain administrator. If set to true, then the requester is granted access if
-            they're an administrator of the domain to which the shared drive belongs.
+            Issue the request as a domain administrator; if set to true, then the requester will be granted access
+            if they are an administrator of the domain to which the shared drive belongs.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.DrivesResource.UpdateRequest.Body">
@@ -940,11 +914,6 @@
             behavior for the request. Permissions are still inherited from parent folders.
             </summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.CopyRequest.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.CopyRequest.IncludePermissionsForView">
             <summary>
             Specifies which additional view's permissions to include in the response. Only 'published' is supported.
@@ -985,11 +954,11 @@
             <summary>Initializes Copy parameter list.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.Create(Google.Apis.Drive.v3.Data.File)">
-            <summary>Creates a file.</summary>
+            <summary>Creates a new file.</summary>
             <param name="body">The body of the request.</param>
         </member>
         <member name="T:Google.Apis.Drive.v3.FilesResource.CreateRequest">
-            <summary>Creates a file.</summary>
+            <summary>Creates a new file.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.File)">
             <summary>Constructs a new Create request.</summary>
@@ -1002,11 +971,6 @@
             Whether to ignore the domain's default visibility settings for the created file. Domain administrators
             can choose to make all uploaded files visible to the domain by default; this parameter bypasses that
             behavior for the request. Permissions are still inherited from parent folders.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.CreateRequest.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.CreateRequest.IncludePermissionsForView">
@@ -1052,7 +1016,7 @@
             <summary>Initializes Create parameter list.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.Create(Google.Apis.Drive.v3.Data.File,System.IO.Stream,System.String)">
-            <summary>Creates a file.</summary>
+            <summary>Creates a new file.</summary>
             <remarks>
             Considerations regarding <paramref name="stream"/>:
             <list type="bullet">
@@ -1117,11 +1081,6 @@
             Whether to ignore the domain's default visibility settings for the created file. Domain administrators
             can choose to make all uploaded files visible to the domain by default; this parameter bypasses that
             behavior for the request. Permissions are still inherited from parent folders.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.CreateMediaUpload.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.CreateMediaUpload.IncludePermissionsForView">
@@ -1243,16 +1202,16 @@
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.Export(System.String,System.String)">
             <summary>
-            Exports a Google Workspace document to the requested MIME type and returns exported byte content. Note that
-            the exported content is limited to 10MB.
+            Exports a Google Doc to the requested MIME type and returns the exported content. Please note that the
+            exported content is limited to 10MB.
             </summary>
             <param name="fileId">The ID of the file.</param>
             <param name="mimeType">The MIME type of the format requested for this export.</param>
         </member>
         <member name="T:Google.Apis.Drive.v3.FilesResource.ExportRequest">
             <summary>
-            Exports a Google Workspace document to the requested MIME type and returns exported byte content. Note that
-            the exported content is limited to 10MB.
+            Exports a Google Doc to the requested MIME type and returns the exported content. Please note that the
+            exported content is limited to 10MB.
             </summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.ExportRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String)">
@@ -1287,46 +1246,22 @@
             instead.
             </para>
             </summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.ExportRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.ExportRequest.DownloadWithStatus(System.IO.Stream)">
             <summary>Synchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.ExportRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
             <returns>The final status of the download; including whether the download succeeded or failed.</returns>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.ExportRequest.DownloadAsync(System.IO.Stream)">
             <summary>Asynchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.ExportRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.ExportRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
             <summary>Asynchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.ExportRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.ExportRequest.DownloadRange(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue)">
             <summary>Synchronously download a range of the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.ExportRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.ExportRequest.DownloadRangeAsync(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue,System.Threading.CancellationToken)">
             <summary>Asynchronously download a range of the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.ExportRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.GenerateIds">
             <summary>Generates a set of file IDs which can be provided in create or copy requests.</summary>
@@ -1343,13 +1278,7 @@
         <member name="P:Google.Apis.Drive.v3.FilesResource.GenerateIdsRequest.Space">
             <summary>
             The space in which the IDs can be used to create new files. Supported values are 'drive' and
-            'appDataFolder'. (Default: 'drive')
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.GenerateIdsRequest.Type">
-            <summary>
-            The type of items which the IDs can be used for. Supported values are 'files' and 'shortcuts'. Note that
-            'shortcuts' are only supported in the drive 'space'. (Default: 'files')
+            'appDataFolder'.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.GenerateIdsRequest.MethodName">
@@ -1381,11 +1310,6 @@
             <summary>
             Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is
             only applicable when alt=media.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.GetRequest.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.GetRequest.IncludePermissionsForView">
@@ -1422,46 +1346,22 @@
             instead.
             </para>
             </summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.GetRequest.DownloadWithStatus(System.IO.Stream)">
             <summary>Synchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
             <returns>The final status of the download; including whether the download succeeded or failed.</returns>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.GetRequest.DownloadAsync(System.IO.Stream)">
             <summary>Asynchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.GetRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
             <summary>Asynchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.GetRequest.DownloadRange(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue)">
             <summary>Synchronously download a range of the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.GetRequest.DownloadRangeAsync(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue,System.Threading.CancellationToken)">
             <summary>Asynchronously download a range of the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.List">
             <summary>Lists or searches files.</summary>
@@ -1502,11 +1402,6 @@
         <member name="P:Google.Apis.Drive.v3.FilesResource.ListRequest.IncludeItemsFromAllDrives">
             <summary>Whether both My Drive and shared drive items should be included in results.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ListRequest.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.ListRequest.IncludePermissionsForView">
             <summary>
             Specifies which additional view's permissions to include in the response. Only 'published' is supported.
@@ -1543,8 +1438,8 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.ListRequest.Spaces">
             <summary>
-            A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and
-            'appDataFolder'.
+            A comma-separated list of spaces to query within the corpus. Supported values are 'drive',
+            'appDataFolder' and 'photos'.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.ListRequest.SupportsAllDrives">
@@ -1568,87 +1463,13 @@
         <member name="M:Google.Apis.Drive.v3.FilesResource.ListRequest.InitParameters">
             <summary>Initializes List parameter list.</summary>
         </member>
-        <member name="M:Google.Apis.Drive.v3.FilesResource.ListLabels(System.String)">
-            <summary>Lists the labels on a file.</summary>
-            <param name="fileId">The ID of the file.</param>
-        </member>
-        <member name="T:Google.Apis.Drive.v3.FilesResource.ListLabelsRequest">
-            <summary>Lists the labels on a file.</summary>
-        </member>
-        <member name="M:Google.Apis.Drive.v3.FilesResource.ListLabelsRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
-            <summary>Constructs a new ListLabels request.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ListLabelsRequest.FileId">
-            <summary>The ID of the file.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ListLabelsRequest.MaxResults">
-            <summary>The maximum number of labels to return per page. When not set, this defaults to 100.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ListLabelsRequest.PageToken">
-            <summary>
-            The token for continuing a previous list request on the next page. This should be set to the value of
-            'nextPageToken' from the previous response.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ListLabelsRequest.MethodName">
-            <summary>Gets the method name.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ListLabelsRequest.HttpMethod">
-            <summary>Gets the HTTP method.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ListLabelsRequest.RestPath">
-            <summary>Gets the REST path.</summary>
-        </member>
-        <member name="M:Google.Apis.Drive.v3.FilesResource.ListLabelsRequest.InitParameters">
-            <summary>Initializes ListLabels parameter list.</summary>
-        </member>
-        <member name="M:Google.Apis.Drive.v3.FilesResource.ModifyLabels(Google.Apis.Drive.v3.Data.ModifyLabelsRequest,System.String)">
-            <summary>Modifies the set of labels on a file.</summary>
-            <param name="body">The body of the request.</param>
-            <param name="fileId">The ID of the file for which the labels are modified.</param>
-        </member>
-        <member name="T:Google.Apis.Drive.v3.FilesResource.ModifyLabelsRequest">
-            <summary>Modifies the set of labels on a file.</summary>
-        </member>
-        <member name="M:Google.Apis.Drive.v3.FilesResource.ModifyLabelsRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.ModifyLabelsRequest,System.String)">
-            <summary>Constructs a new ModifyLabels request.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ModifyLabelsRequest.FileId">
-            <summary>The ID of the file for which the labels are modified.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ModifyLabelsRequest.Body">
-            <summary>Gets or sets the body of this request.</summary>
-        </member>
-        <member name="M:Google.Apis.Drive.v3.FilesResource.ModifyLabelsRequest.GetBody">
-            <summary>Returns the body of the request.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ModifyLabelsRequest.MethodName">
-            <summary>Gets the method name.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ModifyLabelsRequest.HttpMethod">
-            <summary>Gets the HTTP method.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.ModifyLabelsRequest.RestPath">
-            <summary>Gets the REST path.</summary>
-        </member>
-        <member name="M:Google.Apis.Drive.v3.FilesResource.ModifyLabelsRequest.InitParameters">
-            <summary>Initializes ModifyLabels parameter list.</summary>
-        </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.Update(Google.Apis.Drive.v3.Data.File,System.String)">
-            <summary>
-            Updates a file's metadata and/or content. When calling this method, only populate fields in the request that
-            you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This
-            method supports patch semantics.
-            </summary>
+            <summary>Updates a file's metadata and/or content. This method supports patch semantics.</summary>
             <param name="body">The body of the request.</param>
             <param name="fileId">The ID of the file.</param>
         </member>
         <member name="T:Google.Apis.Drive.v3.FilesResource.UpdateRequest">
-            <summary>
-            Updates a file's metadata and/or content. When calling this method, only populate fields in the request that
-            you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This
-            method supports patch semantics.
-            </summary>
+            <summary>Updates a file's metadata and/or content. This method supports patch semantics.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.UpdateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.File,System.String)">
             <summary>Constructs a new Update request.</summary>
@@ -1662,11 +1483,6 @@
         <member name="P:Google.Apis.Drive.v3.FilesResource.UpdateRequest.EnforceSingleParent">
             <summary>
             Deprecated. Adding files to multiple folders is no longer supported. Use shortcuts instead.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.UpdateRequest.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.UpdateRequest.IncludePermissionsForView">
@@ -1715,11 +1531,7 @@
             <summary>Initializes Update parameter list.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.Update(Google.Apis.Drive.v3.Data.File,System.String,System.IO.Stream,System.String)">
-            <summary>
-            Updates a file's metadata and/or content. When calling this method, only populate fields in the request that
-            you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This
-            method supports patch semantics.
-            </summary>
+            <summary>Updates a file's metadata and/or content. This method supports patch semantics.</summary>
             <remarks>
             Considerations regarding <paramref name="stream"/>:
             <list type="bullet">
@@ -1788,11 +1600,6 @@
             Deprecated. Adding files to multiple folders is no longer supported. Use shortcuts instead.
             </summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.UpdateMediaUpload.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.UpdateMediaUpload.IncludePermissionsForView">
             <summary>
             Specifies which additional view's permissions to include in the response. Only 'published' is supported.
@@ -1842,18 +1649,12 @@
             </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.Watch(Google.Apis.Drive.v3.Data.Channel,System.String)">
-            <summary>
-            Subscribes to changes to a file. While you can establish a channel for changes to a file on a shared drive,
-            a change to a shared drive file won't create a notification.
-            </summary>
+            <summary>Subscribes to changes to a file</summary>
             <param name="body">The body of the request.</param>
             <param name="fileId">The ID of the file.</param>
         </member>
         <member name="T:Google.Apis.Drive.v3.FilesResource.WatchRequest">
-            <summary>
-            Subscribes to changes to a file. While you can establish a channel for changes to a file on a shared drive,
-            a change to a shared drive file won't create a notification.
-            </summary>
+            <summary>Subscribes to changes to a file</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.WatchRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.Channel,System.String)">
             <summary>Constructs a new Watch request.</summary>
@@ -1865,11 +1666,6 @@
             <summary>
             Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is
             only applicable when alt=media.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.FilesResource.WatchRequest.IncludeLabels">
-            <summary>
-            A comma-separated list of IDs of labels to include in the labelInfo part of the response.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.FilesResource.WatchRequest.IncludePermissionsForView">
@@ -1912,46 +1708,22 @@
             instead.
             </para>
             </summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.WatchRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.WatchRequest.DownloadWithStatus(System.IO.Stream)">
             <summary>Synchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.WatchRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
             <returns>The final status of the download; including whether the download succeeded or failed.</returns>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.WatchRequest.DownloadAsync(System.IO.Stream)">
             <summary>Asynchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.WatchRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.WatchRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
             <summary>Asynchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.WatchRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.WatchRequest.DownloadRange(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue)">
             <summary>Synchronously download a range of the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.WatchRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.FilesResource.WatchRequest.DownloadRangeAsync(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue,System.Threading.CancellationToken)">
             <summary>Asynchronously download a range of the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.FilesResource.WatchRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="T:Google.Apis.Drive.v3.PermissionsResource">
             <summary>The "permissions" collection of methods.</summary>
@@ -1963,18 +1735,12 @@
             <summary>Constructs a new resource.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.PermissionsResource.Create(Google.Apis.Drive.v3.Data.Permission,System.String)">
-            <summary>
-            Creates a permission for a file or shared drive. For more information on creating permissions, see Share
-            files, folders &amp;amp; drives.
-            </summary>
+            <summary>Creates a permission for a file or shared drive.</summary>
             <param name="body">The body of the request.</param>
             <param name="fileId">The ID of the file or shared drive.</param>
         </member>
         <member name="T:Google.Apis.Drive.v3.PermissionsResource.CreateRequest">
-            <summary>
-            Creates a permission for a file or shared drive. For more information on creating permissions, see Share
-            files, folders &amp;amp; drives.
-            </summary>
+            <summary>Creates a permission for a file or shared drive.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.PermissionsResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.Permission,System.String)">
             <summary>Constructs a new Create request.</summary>
@@ -2010,11 +1776,7 @@
         <member name="P:Google.Apis.Drive.v3.PermissionsResource.CreateRequest.TransferOwnership">
             <summary>
             Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This
-            parameter is required as an acknowledgement of the side effect. File owners can only transfer ownership
-            of files existing on My Drive. Files existing in a shared drive are owned by the organization that owns
-            that shared drive. Ownership transfers are not supported for files and folders in shared drives.
-            Organizers of a shared drive can move items from that shared drive into their My Drive which transfers
-            the ownership to them.
+            parameter is required as an acknowledgement of the side effect.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.PermissionsResource.CreateRequest.UseDomainAdminAccess">
@@ -2212,11 +1974,7 @@
         <member name="P:Google.Apis.Drive.v3.PermissionsResource.UpdateRequest.TransferOwnership">
             <summary>
             Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This
-            parameter is required as an acknowledgement of the side effect. File owners can only transfer ownership
-            of files existing on My Drive. Files existing in a shared drive are owned by the organization that owns
-            that shared drive. Ownership transfers are not supported for files and folders in shared drives.
-            Organizers of a shared drive can move items from that shared drive into their My Drive which transfers
-            the ownership to them.
+            parameter is required as an acknowledgement of the side effect.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.PermissionsResource.UpdateRequest.UseDomainAdminAccess">
@@ -2254,13 +2012,13 @@
             <summary>Constructs a new resource.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.RepliesResource.Create(Google.Apis.Drive.v3.Data.Reply,System.String,System.String)">
-            <summary>Creates a reply to a comment.</summary>
+            <summary>Creates a new reply to a comment.</summary>
             <param name="body">The body of the request.</param>
             <param name="fileId">The ID of the file.</param>
             <param name="commentId">The ID of the comment.</param>
         </member>
         <member name="T:Google.Apis.Drive.v3.RepliesResource.CreateRequest">
-            <summary>Creates a reply to a comment.</summary>
+            <summary>Creates a new reply to a comment.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v3.RepliesResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Drive.v3.Data.Reply,System.String,System.String)">
             <summary>Constructs a new Create request.</summary>
@@ -2535,46 +2293,22 @@
             instead.
             </para>
             </summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.RevisionsResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.RevisionsResource.GetRequest.DownloadWithStatus(System.IO.Stream)">
             <summary>Synchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.RevisionsResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
             <returns>The final status of the download; including whether the download succeeded or failed.</returns>
         </member>
         <member name="M:Google.Apis.Drive.v3.RevisionsResource.GetRequest.DownloadAsync(System.IO.Stream)">
             <summary>Asynchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.RevisionsResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.RevisionsResource.GetRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
             <summary>Asynchronously download the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.RevisionsResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.RevisionsResource.GetRequest.DownloadRange(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue)">
             <summary>Synchronously download a range of the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.RevisionsResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.RevisionsResource.GetRequest.DownloadRangeAsync(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue,System.Threading.CancellationToken)">
             <summary>Asynchronously download a range of the media into the given stream.</summary>
-            <remarks>
-            This method uses the <see cref="P:Google.Apis.Drive.v3.RevisionsResource.GetRequest.MediaDownloader"/> property to perform the download. Progress event
-            handlers and other configuration may be performed using that property prior to calling this method.
-            </remarks>
         </member>
         <member name="M:Google.Apis.Drive.v3.RevisionsResource.List(System.String)">
             <summary>Lists a file's revisions.</summary>
@@ -3045,8 +2779,8 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Comment.Anchor">
             <summary>
-            A region of the document represented as a JSON string. For details on defining anchor properties, refer to
-            Add comments and replies.
+            A region of the document represented as a JSON string. See anchor documentation for details on how to define
+            and interpret anchor properties.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Comment.Author">
@@ -3174,7 +2908,7 @@
         <member name="P:Google.Apis.Drive.v3.Data.Drive.BackgroundImageFile">
             <summary>
             An image file and cropping parameters from which a background image for this shared drive is set. This is a
-            write-only field; it can only be set on drive.drives.update requests that don't set themeId. When specified,
+            write only field; it can only be set on drive.drives.update requests that don't set themeId. When specified,
             all fields of the backgroundImageFile must be set.
             </summary>
         </member>
@@ -3186,8 +2920,8 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Drive.ColorRgb">
             <summary>
-            The color of this shared drive as an RGB hex string. It can only be set on drive.drives.update requests that
-            don't set themeId.
+            The color of this shared drive as an RGB hex string. It can only be set on a drive.drives.update request
+            that does not set themeId.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Drive.CreatedTimeRaw">
@@ -3210,21 +2944,15 @@
         <member name="P:Google.Apis.Drive.v3.Data.Drive.Name">
             <summary>The name of this shared drive.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Drive.OrgUnitId">
-            <summary>
-            The organizational unit of this shared drive. This field is only populated on drives.list responses when the
-            useDomainAdminAccess parameter is set to true.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.Drive.Restrictions">
             <summary>A set of restrictions that apply to this shared drive or items inside this shared drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Drive.ThemeId">
             <summary>
-            The ID of the theme from which the background image and color are set. The set of possible driveThemes can
-            be retrieved from a drive.about.get response. When not specified on a drive.drives.create request, a random
-            theme is chosen from which the background image and color are set. This is a write-only field; it can only
-            be set on requests that don't set colorRgb or backgroundImageFile.
+            The ID of the theme from which the background image and color will be set. The set of possible driveThemes
+            can be retrieved from a drive.about.get response. When not specified on a drive.drives.create request, a
+            random theme is chosen from which the background image and color are set. This is a write-only field; it can
+            only be set on requests that don't set colorRgb or backgroundImageFile.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Drive.ETag">
@@ -3233,7 +2961,7 @@
         <member name="T:Google.Apis.Drive.v3.Data.Drive.BackgroundImageFileData">
             <summary>
             An image file and cropping parameters from which a background image for this shared drive is set. This is a
-            write-only field; it can only be set on drive.drives.update requests that don't set themeId. When specified,
+            write only field; it can only be set on drive.drives.update requests that don't set themeId. When specified,
             all fields of the backgroundImageFile must be set.
             </summary>
         </member>
@@ -3286,12 +3014,6 @@
             Whether the current user can change the driveMembersOnly restriction of this shared drive.
             </summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Drive.CapabilitiesData.CanChangeSharingFoldersRequiresOrganizerPermissionRestriction">
-            <summary>
-            Whether the current user can change the sharingFoldersRequiresOrganizerPermission restriction of this
-            shared drive.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.Drive.CapabilitiesData.CanComment">
             <summary>Whether the current user can comment on files in this shared drive.</summary>
         </member>
@@ -3332,9 +3054,6 @@
         <member name="P:Google.Apis.Drive.v3.Data.Drive.CapabilitiesData.CanRenameDrive">
             <summary>Whether the current user can rename this shared drive.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Drive.CapabilitiesData.CanResetDriveRestrictions">
-            <summary>Whether the current user can reset the shared drive restrictions to defaults.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.Drive.CapabilitiesData.CanShare">
             <summary>Whether the current user can share files or folders in this shared drive.</summary>
         </member>
@@ -3365,12 +3084,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Drive.RestrictionsData.DriveMembersOnly">
             <summary>Whether access to items inside this shared drive is restricted to its members.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Drive.RestrictionsData.SharingFoldersRequiresOrganizerPermission">
-            <summary>
-            If true, only users with the organizer role can share folders. If false, users with either the organizer
-            role or the file organizer role can share folders.
-            </summary>
         </member>
         <member name="T:Google.Apis.Drive.v3.Data.DriveList">
             <summary>A list of shared drives.</summary>
@@ -3454,16 +3167,16 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.FolderColorRgb">
             <summary>
-            The color for a folder or shortcut to a folder as an RGB hex string. The supported colors are published in
-            the folderColorPalette field of the About resource. If an unsupported color is specified, the closest color
-            in the palette will be used instead.
+            The color for a folder as an RGB hex string. The supported colors are published in the folderColorPalette
+            field of the About resource. If an unsupported color is specified, the closest color in the palette will be
+            used instead.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.FullFileExtension">
             <summary>
             The full file extension extracted from the name field. May contain multiple concatenated extensions, such as
             "tar.gz". This is only available for files with binary content in Google Drive. This is automatically
-            updated when the name field changes, however it isn't cleared if the new name does not contain a valid
+            updated when the name field changes, however it is not cleared if the new name does not contain a valid
             extension.
             </summary>
         </member>
@@ -3500,14 +3213,8 @@
         <member name="P:Google.Apis.Drive.v3.Data.File.Kind">
             <summary>Identifies what kind of resource this is. Value: the fixed string "drive#file".</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.LabelInfo">
-            <summary>An overview of the labels on the file.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.LastModifyingUser">
             <summary>The last user to modify the file.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.LinkShareMetadata">
-            <summary>Contains details about the link URLs that clients are using to refer to this item.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.Md5Checksum">
             <summary>
@@ -3559,8 +3266,8 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.Owners">
             <summary>
-            The owner of this file. Only certain legacy files may have more than one owner. This field isn't populated
-            for items in shared drives.
+            The owners of the file. Currently, only certain legacy files may have more than one owner. Not populated for
+            items in shared drives.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.Parents">
@@ -3592,21 +3299,6 @@
             revisions with keepForever enabled.
             </summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.ResourceKey">
-            <summary>A key needed to access the item via a shared link.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.Sha1Checksum">
-            <summary>
-            The SHA1 checksum associated with this file, if available. This field is only populated for files with
-            content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.Sha256Checksum">
-            <summary>
-            The SHA256 checksum associated with this file, if available. This field is only populated for files with
-            content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.Shared">
             <summary>Whether the file has been shared. Not populated for items in shared drives.</summary>
         </member>
@@ -3627,8 +3319,8 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.Size">
             <summary>
-            The size of the file's content in bytes. This field is populated for files with binary content stored in
-            Google Drive and for Docs Editors files; it is not populated for shortcuts or folders.
+            The size of the file's content in bytes. This is applicable to binary files in Google Drive and Google Docs
+            files.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.Spaces">
@@ -3719,11 +3411,6 @@
             user may take.
             </summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanAcceptOwnership">
-            <summary>
-            Whether the current user is the pending owner of the file. Not populated for shared drive files.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanAddChildren">
             <summary>
             Whether the current user can add children to this folder. This is always false when the item is not a
@@ -3745,11 +3432,6 @@
         <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanChangeCopyRequiresWriterPermission">
             <summary>
             Whether the current user can change the copyRequiresWriterPermission restriction of this file.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanChangeSecurityUpdateEnabled">
-            <summary>
-            Whether the current user can change the securityUpdateEnabled field on link share metadata.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanChangeViewersCanCopyContent">
@@ -3793,9 +3475,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanModifyContentRestriction">
             <summary>Whether the current user can modify restrictions on content of this file.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanModifyLabels">
-            <summary>Whether the current user can modify the labels on this file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanMoveChildrenOutOfDrive">
             <summary>
@@ -3847,13 +3526,11 @@
             in shared drives.
             </summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanReadLabels">
-            <summary>Whether the current user can read the labels on this file.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanReadRevisions">
             <summary>
             Whether the current user can read the revisions resource of this file. For a shared drive item, whether
-            revisions of non-folder descendants of this item, or this item itself if it isn't a folder, can be read.
+            revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be
+            read.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.CapabilitiesData.CanReadTeamDrive">
@@ -3896,8 +3573,8 @@
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.ContentHintsData.IndexableText">
             <summary>
-            Text to be indexed for the file to improve fullText queries. This is limited to 128 KB in length and may
-            contain HTML elements. For more information, see Manage file metadata.
+            Text to be indexed for the file to improve fullText queries. This is limited to 128KB in length and may
+            contain HTML elements.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.File.ContentHintsData.Thumbnail">
@@ -3998,24 +3675,6 @@
         <member name="P:Google.Apis.Drive.v3.Data.File.ImageMediaMetadataData.LocationData.Longitude">
             <summary>The longitude stored in the image.</summary>
         </member>
-        <member name="T:Google.Apis.Drive.v3.Data.File.LabelInfoData">
-            <summary>An overview of the labels on the file.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.LabelInfoData.Labels">
-            <summary>
-            The set of labels on the file as requested by the label IDs in the includeLabels parameter. By default,
-            no labels are returned.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Drive.v3.Data.File.LinkShareMetadataData">
-            <summary>Contains details about the link URLs that clients are using to refer to this item.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.LinkShareMetadataData.SecurityUpdateEligible">
-            <summary>Whether the file is eligible for security update.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.LinkShareMetadataData.SecurityUpdateEnabled">
-            <summary>Whether the security update is enabled for this file.</summary>
-        </member>
         <member name="T:Google.Apis.Drive.v3.Data.File.ShortcutDetailsData">
             <summary>
             Shortcut file details. Only populated for shortcut files, which have the mimeType field set to
@@ -4030,9 +3689,6 @@
             The MIME type of the file that this shortcut points to. The value of this field is a snapshot of the
             target's MIME type, captured when the shortcut is created.
             </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.File.ShortcutDetailsData.TargetResourceKey">
-            <summary>The ResourceKey for the target file.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v3.Data.File.VideoMediaMetadataData">
             <summary>Additional metadata about video media. This may not be available immediately upon upload.</summary>
@@ -4091,162 +3747,9 @@
         <member name="P:Google.Apis.Drive.v3.Data.GeneratedIds.ETag">
             <summary>The ETag of the item.</summary>
         </member>
-        <member name="T:Google.Apis.Drive.v3.Data.Label">
-            <summary>Representation of a label and its fields.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Label.Fields">
-            <summary>A map of the label's fields keyed by the field ID.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Label.Id">
-            <summary>The ID of the label.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Label.Kind">
-            <summary>This is always drive#label</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Label.RevisionId">
-            <summary>The revision ID of the label.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Label.ETag">
-            <summary>The ETag of the item.</summary>
-        </member>
-        <member name="T:Google.Apis.Drive.v3.Data.LabelField">
-            <summary>Representation of a label field.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelField.DateString">
-            <summary>Only present if valueType is dateString. RFC 3339 formatted date: YYYY-MM-DD.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelField.Id">
-            <summary>The identifier of this field.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelField.Integer">
-            <summary>Only present if valueType is integer.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelField.Kind">
-            <summary>This is always drive#labelField.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelField.Selection">
-            <summary>Only present if valueType is selection.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelField.Text">
-            <summary>Only present if valueType is text.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelField.User">
-            <summary>Only present if valueType is user.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelField.ValueType">
-            <summary>
-            The field type. While new values may be supported in the future, the following are currently allowed:   -
-            dateString  - integer  - selection  - text  - user
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelField.ETag">
-            <summary>The ETag of the item.</summary>
-        </member>
-        <member name="T:Google.Apis.Drive.v3.Data.LabelFieldModification">
-            <summary>A modification to a label's field.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelFieldModification.FieldId">
-            <summary>The ID of the Field to be modified.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelFieldModification.Kind">
-            <summary>This is always drive#labelFieldModification.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelFieldModification.SetDateValues">
-            <summary>
-            Replaces a dateString field with these new values. The values must be strings in the RFC 3339 full-date
-            format: YYYY-MM-DD.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelFieldModification.SetIntegerValues">
-            <summary>Replaces an integer field with these new values.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelFieldModification.SetSelectionValues">
-            <summary>Replaces a selection field with these new values.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelFieldModification.SetTextValues">
-            <summary>Replaces a text field with these new values.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelFieldModification.SetUserValues">
-            <summary>Replaces a user field with these new values. The values must be valid email addresses.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelFieldModification.UnsetValues">
-            <summary>Unsets the values for this field.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelFieldModification.ETag">
-            <summary>The ETag of the item.</summary>
-        </member>
-        <member name="T:Google.Apis.Drive.v3.Data.LabelList">
-            <summary>A list of labels.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelList.Kind">
-            <summary>This is always drive#labelList</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelList.Labels">
-            <summary>The list of labels.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelList.NextPageToken">
-            <summary>
-            The page token for the next page of labels. This field will be absent if the end of the list has been
-            reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted
-            from the first page of results.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelList.ETag">
-            <summary>The ETag of the item.</summary>
-        </member>
-        <member name="T:Google.Apis.Drive.v3.Data.LabelModification">
-            <summary>
-            A modification to a label on a file. A LabelModification can be used to apply a label to a file, update an
-            existing label on a file, or remove a label from a file.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelModification.FieldModifications">
-            <summary>The list of modifications to this label's fields.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelModification.Kind">
-            <summary>This is always drive#labelModification.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelModification.LabelId">
-            <summary>The ID of the label to modify.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelModification.RemoveLabel">
-            <summary>If true, the label will be removed from the file.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.LabelModification.ETag">
-            <summary>The ETag of the item.</summary>
-        </member>
-        <member name="T:Google.Apis.Drive.v3.Data.ModifyLabelsRequest">
-            <summary>
-            A request to modify the set of labels on a file. This request may contain many modifications that will either
-            all succeed or all fail transactionally.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.ModifyLabelsRequest.Kind">
-            <summary>This is always drive#modifyLabelsRequest</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.ModifyLabelsRequest.LabelModifications">
-            <summary>The list of modifications to apply to the labels on the file.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.ModifyLabelsRequest.ETag">
-            <summary>The ETag of the item.</summary>
-        </member>
-        <member name="T:Google.Apis.Drive.v3.Data.ModifyLabelsResponse">
-            <summary>
-            Response to a ModifyLabels request. This contains only those labels which were added or updated by the request.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.ModifyLabelsResponse.Kind">
-            <summary>This is always drive#modifyLabelsResponse</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.ModifyLabelsResponse.ModifiedLabels">
-            <summary>The list of labels which were added or updated by the request.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.ModifyLabelsResponse.ETag">
-            <summary>The ETag of the item.</summary>
-        </member>
         <member name="T:Google.Apis.Drive.v3.Data.Permission">
             <summary>
-            A permission for a file. A permission grants a user, group, domain, or the world access to a file or a folder
+            A permission for a file. A permission grants a user, group, domain or the world access to a file or a folder
             hierarchy.
             </summary>
         </member>
@@ -4265,16 +3768,13 @@
         <member name="P:Google.Apis.Drive.v3.Data.Permission.DisplayName">
             <summary>
             The "pretty" name of the value of the permission. The following is a list of examples for each type of
-            permission:   - user - User's full name, as defined for their Google Account, such as "Joe Smith."  - group
+            permission:   - user - User's full name, as defined for their Google account, such as "Joe Smith."  - group
             - Name of the Google Group, such as "The Company Administrators."  - domain - String domain name, such as
-            "your-company.com."  - anyone - No displayName is present.
+            "thecompany.com."  - anyone - No displayName is present.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Permission.Domain">
-            <summary>
-            The domain to which this permission refers. The following options are currently allowed:   - The entire
-            domain, such as "your-company.com."  - A target audience, such as "ID.audience.googledomains.com."
-            </summary>
+            <summary>The domain to which this permission refers.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Permission.EmailAddress">
             <summary>The email address of the user or group to which this permission refers.</summary>
@@ -4282,8 +3782,8 @@
         <member name="P:Google.Apis.Drive.v3.Data.Permission.ExpirationTimeRaw">
             <summary>
             The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following
-            restrictions:   - They cannot be set on shared drive items.  - They can only be set on user and group
-            permissions.  - The time must be in the future.  - The time cannot be more than one year in the future.
+            restrictions:   - They can only be set on user and group permissions  - The time must be in the future  -
+            The time cannot be more than a year in the future
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Permission.ExpirationTime">
@@ -4298,16 +3798,10 @@
         <member name="P:Google.Apis.Drive.v3.Data.Permission.Kind">
             <summary>Identifies what kind of resource this is. Value: the fixed string "drive#permission".</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.Permission.PendingOwner">
-            <summary>
-            Whether the account associated with this permission is a pending owner. Only populated for user type
-            permissions for files that aren't in a shared drive.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.Permission.PermissionDetails">
             <summary>
-            Details of whether the permissions on this shared drive item are inherited or are directly on this item.
-            This is an output-only field that's present only for shared drive items.
+            Details of whether the permissions on this shared drive item are inherited or directly on this item. This is
+            an output-only field which is present only for shared drive items.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Permission.PhotoLink">
@@ -4326,7 +3820,7 @@
             <summary>
             The type of the grantee. Valid values are:   - user  - group  - domain  - anyone  When creating a
             permission, if type is user or group, you must provide an emailAddress for the user or group. When type is
-            domain, you must provide a domain. There isn't extra information required for the anyone type.
+            domain, you must provide a domain. There isn't extra information required for a anyone type.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Permission.View">
@@ -4340,8 +3834,8 @@
         </member>
         <member name="T:Google.Apis.Drive.v3.Data.Permission.PermissionDetailsData">
             <summary>
-            Details of whether the permissions on this shared drive item are inherited or are directly on this item.
-            This is an output-only field that's present only for shared drive items.
+            Details of whether the permissions on this shared drive item are inherited or directly on this item. This is
+            an output-only field which is present only for shared drive items.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Permission.PermissionDetailsData.Inherited">
@@ -4357,13 +3851,13 @@
         <member name="P:Google.Apis.Drive.v3.Data.Permission.PermissionDetailsData.PermissionType">
             <summary>
             The permission type for this user. While new values may be added in future, the following are currently
-            allowed:   - file  - member
+            possible:   - file  - member
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.Permission.PermissionDetailsData.Role">
             <summary>
             The primary role for this user. While new values may be added in the future, the following are currently
-            allowed:   - organizer  - fileOrganizer  - writer  - commenter  - reader
+            possible:   - organizer  - fileOrganizer  - writer  - commenter  - reader
             </summary>
         </member>
         <member name="T:Google.Apis.Drive.v3.Data.Permission.TeamDrivePermissionDetailsData">
@@ -4608,12 +4102,6 @@
         <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.Name">
             <summary>The name of this Team Drive.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.OrgUnitId">
-            <summary>
-            The organizational unit of this shared drive. This field is only populated on drives.list responses when the
-            useDomainAdminAccess parameter is set to true.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.Restrictions">
             <summary>A set of restrictions that apply to this Team Drive or items inside this Team Drive.</summary>
         </member>
@@ -4676,12 +4164,6 @@
             Whether the current user can change the domainUsersOnly restriction of this Team Drive.
             </summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.CapabilitiesData.CanChangeSharingFoldersRequiresOrganizerPermissionRestriction">
-            <summary>
-            Whether the current user can change the sharingFoldersRequiresOrganizerPermission restriction of this
-            Team Drive.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.CapabilitiesData.CanChangeTeamDriveBackground">
             <summary>Whether the current user can change the background of this Team Drive.</summary>
         </member>
@@ -4731,9 +4213,6 @@
         <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.CapabilitiesData.CanRenameTeamDrive">
             <summary>Whether the current user can rename this Team Drive.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.CapabilitiesData.CanResetTeamDriveRestrictions">
-            <summary>Whether the current user can reset the Team Drive restrictions to defaults.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.CapabilitiesData.CanShare">
             <summary>Whether the current user can share files or folders in this Team Drive.</summary>
         </member>
@@ -4760,12 +4239,6 @@
             Whether access to this Team Drive and items inside this Team Drive is restricted to users of the domain
             to which this Team Drive belongs. This restriction may be overridden by other sharing policies
             controlled outside of this Team Drive.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.RestrictionsData.SharingFoldersRequiresOrganizerPermission">
-            <summary>
-            If true, only users with the organizer role can share folders. If false, users with either the organizer
-            role or the file organizer role can share folders.
             </summary>
         </member>
         <member name="P:Google.Apis.Drive.v3.Data.TeamDrive.RestrictionsData.TeamMembersOnly">

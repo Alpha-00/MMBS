@@ -90,8 +90,33 @@
             </summary>
             <param name="thenow"></param>
         </member>
+        <member name="F:MMBS.Module.SearchKeywordModule.subkey">
+            <summary>
+            Using for short or lack of data
+            </summary>
+        </member>
         <member name="F:MMBS.OldProcessor.ProcessDownloadLinkTextBox.request_code.SimpleInfo">
             <summary>Valid Check only</summary>
+        </member>
+        <member name="F:MMBS.DefineInfoPack.imageinfo.packtype">
+            <summary>
+            jpg png gif
+            </summary>
+        </member>
+        <member name="F:MMBS.DefineInfoPack.imageinfo.sharetype">
+            <summary>
+            by link, share to drive,...
+            </summary>
+        </member>
+        <member name="F:MMBS.DefineInfoPack.imageinfo.link">
+            <summary>
+            Upload Url
+            </summary>
+        </member>
+        <member name="F:MMBS.DefineInfoPack.imageinfo.dir">
+            <summary>
+            Local Direction
+            </summary>
         </member>
         <member name="M:MMBS.PostDataBundle.#ctor">
             <summary>
@@ -235,6 +260,37 @@
         <member name="M:MMBS.CPTServices.stop">
             <summary>
             Stop service
+            </summary>
+        </member>
+        <member name="T:MMBS.OldProcessorSupporter.DataSourceBuilder">
+            <summary>
+            1. Setup
+            2. Init
+            3. Get Data
+            4. Reset
+            </summary>
+        </member>
+        <member name="P:MMBS.OldProcessorSupporter.DataSourceBuilder.TemplateName">
+            <summary>
+            Name of the processing template
+            
+            Use for Exception, and Log purpose
+            </summary>
+        </member>
+        <member name="M:MMBS.OldProcessorSupporter.DataSourceBuilder.initWithLink(System.String)">
+            <summary>
+            Construct the process from Url
+            
+            It will passing process to <see cref="!:fromPackage"/>
+            </summary>
+            <param name="link"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:MMBS.FMForm.imageListRefresh">
+            <summary>
+            Search the folder and description content to upload all necessary file
+            Check the description to identify links and download it to get more information
             </summary>
         </member>
         <member name="M:MMBS.FMForm.removeTagAtLevel(System.String,System.String[],System.String[],System.Int32)">
@@ -733,6 +789,57 @@
             </summary>
         </member>
         <member name="F:MMBS.Model.PostForm.PostFormTemplate.codeWrapLine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MMBS.Model.PostForm.PostForm241128_Ya4r.#ctor(MMBS.PostDataBundle)">
+            <summary>
+            Need to run follow sequence
+            1. generateForm()
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData241128_Ya4r.toolscript">
+            <summary>
+                <para>
+                    Static information about version of the script for tracking and future refactor
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData241128_Ya4r.layout">
+            <summary>
+                <para>
+                    General structure of the article
+                </para>
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData241128_Ya4r.iconScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData241128_Ya4r.descScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData241128_Ya4r.igroupScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData241128_Ya4r.igroupHtml">
+            <summary>
+            </summary>
+            
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData241128_Ya4r.imageCardScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData241128_Ya4r.linkScript">
             <summary>
             
             </summary>
