@@ -790,7 +790,8 @@ namespace MMBS
                 {
                 
                     { "apkpure.net","apkpure.com"},
-                    { "www.apkmonk.com","apkmonk.com" }
+                    { "www.apkmonk.com","apkmonk.com" },
+                    { "apkcombo.com", "apkcombo.app" }
                 }.ToImmutableDictionary();
                 var uri = new UriBuilder(link);
                 if (hostSwapList.ContainsKey(uri.Host)) uri.Host = hostSwapList[uri.Host];
@@ -817,7 +818,7 @@ namespace MMBS
                         case "play.google.com": PLAYproc(Play_Getpackedname(uri)); break;
                         case "apps.apple.com": APPLEproc(uri);break;
                         case "apkpure.com": APKPUREproc(APKpure_Getpackedname(uri)); break;
-                        case "apkcombo.com": APKCOMBOproc(APKcombo_Getpackedname(uri)); break;
+                        case "apkcombo.app": APKCOMBOproc(APKcombo_Getpackedname(uri)); break;
                         case "apps.qoo-app.com": QOOAPPproc(uri); break;
                         case "apkmonk.com": GeneralSourceProc(new Apkmonk()); break;
                         default: valid = 0; break;
@@ -1723,7 +1724,7 @@ namespace MMBS
                             } break;
                         case "apkpure.com": APKpureModule cache2 = new APKpureModule(webpage, dir); 
                             { this.title = cache2.title; this.videolink = cache2.videolink; this.req = cache2.req; this.version = cache2.version; this.desc = cache2.desc; this.Desc_Bold = cache2.Desc_Bold; this.imagelink = cache2.imagelink; this.image = cache2.image; } break;
-                        case "apkcombo.com": APKcomboModule cache3 = new APKcomboModule(webpage, dir); 
+                        case "apkcombo.app": APKcomboModule cache3 = new APKcomboModule(webpage, dir); 
                             { this.title = cache3.title; this.videolink = cache3.videolink; this.req = cache3.req; this.version = cache3.version; this.desc = cache3.desc; this.Desc_Bold = cache3.Desc_Bold; this.imagelink = cache3.imagelink; this.image = cache3.image; } break;
                         case "apps.qoo-app.com":
                             QooappModule cache5 = new QooappModule(webpage, dir);

@@ -101,7 +101,7 @@ namespace MMBS.Model.PostForm
                     {
                         if (items[i].Length > 50) continue;
                         items[i] = items[i].Trim();
-                        items[i] = Regex.Replace(items[i], "^-|^\\+|\\.$", "");
+                        items[i] = Regex.Replace(items[i], @"^-|^\+|\.$", "");
                         items[i] = MyFunction.CapitalizeEachWord(items[i]);
                         items[i] = items[i].Trim();
                         // Add "|" if not first index 
