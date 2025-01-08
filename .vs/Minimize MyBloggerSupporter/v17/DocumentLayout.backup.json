@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|e:\\personal project\\ya4r.net\\minimize mybloggersupporter\\mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|e:\\personal project\\ya4r.net\\minimize mybloggersupporter\\mmbs\\model\\post_form\\postform240104.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\model\\post_form\\postform240104.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\model\\post_form\\postform240104.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -37,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\model\\post_form\\mod977\\postform240603_mod977.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\model\\post_form\\mod977\\postform240603_mod977.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\formresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -169,6 +161,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:1:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|e:\\personal project\\ya4r.net\\minimize mybloggersupporter\\mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:1:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\afform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|e:\\personal project\\ya4r.net\\minimize mybloggersupporter\\mmbs\\class4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -204,7 +204,7 @@
         },
         {
           "DockedWidth": 283,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -216,15 +216,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "FMForm.cs [Design]",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
               "RelativeDocumentMoniker": "MMBS\\FMForm.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs [Design]",
               "RelativeToolTip": "MMBS\\FMForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T09:00:37.323Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-04T09:00:37.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class2.cs",
+              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class2.cs",
+              "RelativeDocumentMoniker": "MMBS\\Class2.cs",
+              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class2.cs",
+              "RelativeToolTip": "MMBS\\Class2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-05T14:01:04.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": ".gitignore",
+              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-26T14:16:38.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "page.scriban-html",
+              "DocumentMoniker": "C:\\BloggerSupporter\\template\\page.scriban-html",
+              "ToolTip": "C:\\BloggerSupporter\\template\\page.scriban-html",
+              "ViewState": "AgIAAG0AAAAAAAAAAABOwIUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-02T04:41:13.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Microsoft.WinUI.targets",
+              "DocumentMoniker": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WinUI.targets",
+              "ToolTip": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WinUI.targets",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-01-21T03:53:21.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Microsoft.WindowsAppSDK.targets",
+              "DocumentMoniker": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WindowsAppSDK.targets",
+              "ToolTip": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WindowsAppSDK.targets",
+              "ViewState": "AgIAABUAAAAAAAAAAAAqwB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-01-22T11:39:44.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ColorByRegexConfig.txt",
+              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
+              "RelativeDocumentMoniker": ".vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
+              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
+              "RelativeToolTip": ".vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
+              "ViewState": "AgIAABAAAAAAAAAAAABdwBoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-01-22T11:58:02.059Z"
             },
             {
               "$type": "Bookmark",
@@ -232,15 +297,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 41,
               "Title": "AFForm.cs [Design]",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs",
               "RelativeDocumentMoniker": "MMBS\\AFForm.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs [Design]",
               "RelativeToolTip": "MMBS\\AFForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-31T08:01:27.536Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2023-12-31T08:01:27.536Z"
             },
             {
               "$type": "Document",
@@ -251,8 +315,7 @@
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs",
               "RelativeToolTip": "MMBS\\AFForm.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-31T08:19:42.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-31T08:19:42.11Z"
             },
             {
               "$type": "Document",
@@ -263,167 +326,132 @@
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\PostForm240104.cs",
               "RelativeToolTip": "MMBS\\Model\\post_form\\PostForm240104.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-21T08:05:46.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-21T08:05:46.03Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Class2.cs",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class2.cs",
-              "RelativeDocumentMoniker": "MMBS\\Class2.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class2.cs",
-              "RelativeToolTip": "MMBS\\Class2.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-05T14:01:04.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Class1.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class1.cs",
               "RelativeDocumentMoniker": "MMBS\\Class1.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class1.cs",
               "RelativeToolTip": "MMBS\\Class1.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-31T08:29:56.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-31T08:29:56.886Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "PostForm240603_Mod977.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\Mod977\\PostForm240603_Mod977.cs",
               "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\Mod977\\PostForm240603_Mod977.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\Mod977\\PostForm240603_Mod977.cs",
               "RelativeToolTip": "MMBS\\Model\\post_form\\Mod977\\PostForm240603_Mod977.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T09:10:31.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T09:10:31.252Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Class4.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class4.cs",
               "RelativeDocumentMoniker": "MMBS\\Class4.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class4.cs",
               "RelativeToolTip": "MMBS\\Class4.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-21T08:41:37.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-21T08:41:37.674Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "FormResult.cs [Design]",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FormResult.cs",
               "RelativeDocumentMoniker": "MMBS\\FormResult.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FormResult.cs [Design]",
               "RelativeToolTip": "MMBS\\FormResult.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-09T10:38:06.891Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-01-09T10:38:06.891Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 42,
               "Title": "FormResult.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FormResult.cs",
               "RelativeDocumentMoniker": "MMBS\\FormResult.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FormResult.cs",
               "RelativeToolTip": "MMBS\\FormResult.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-10T14:02:46.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-10T14:02:46.065Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "FMForm.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
               "RelativeDocumentMoniker": "MMBS\\FMForm.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
               "RelativeToolTip": "MMBS\\FMForm.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-09T13:10:27.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-09T13:10:27.345Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": ".gitignore",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.gitignore",
               "RelativeToolTip": ".gitignore",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-06-04T14:38:32.753Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T14:38:32.753Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MMBS",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\MMBS.csproj",
-              "RelativeDocumentMoniker": "MMBS\\MMBS.csproj",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\MMBS.csproj",
-              "RelativeToolTip": "MMBS\\MMBS.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-08-26T14:16:38.997Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 11,
               "Title": "PostForm240603_Mod977Tests.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\Model\\post_form\\Mod997\\PostForm240603_Mod977Tests.cs",
               "RelativeDocumentMoniker": "coretestDownloadLink1\\Model\\post_form\\Mod997\\PostForm240603_Mod977Tests.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\Model\\post_form\\Mod997\\PostForm240603_Mod977Tests.cs",
               "RelativeToolTip": "coretestDownloadLink1\\Model\\post_form\\Mod997\\PostForm240603_Mod977Tests.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T09:22:53.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T09:22:53.767Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 12,
               "Title": "Class3.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class3.cs",
               "RelativeDocumentMoniker": "MMBS\\Class3.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class3.cs",
               "RelativeToolTip": "MMBS\\Class3.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-05T14:02:52.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-05T14:02:52.136Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.cs",
               "RelativeDocumentMoniker": "MMBS\\Form1.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.cs [Design]",
               "RelativeToolTip": "MMBS\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-22T14:20:29.448Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-01-22T14:20:29.448Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Program.cs",
               "RelativeDocumentMoniker": "MMBS\\Program.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Program.cs",
               "RelativeToolTip": "MMBS\\Program.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-21T07:21:11.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-21T07:21:11.828Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "CPTServicesTests.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\CPTServicesTests.cs",
               "RelativeDocumentMoniker": "coretestDownloadLink1\\CPTServicesTests.cs",
@@ -435,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "CustomizePostResultTests.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\CustomizePostResultTests.cs",
               "RelativeDocumentMoniker": "coretestDownloadLink1\\CustomizePostResultTests.cs",
@@ -447,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 18,
               "Title": "PostFormBase.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\PostFormBase.cs",
               "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\PostFormBase.cs",
@@ -455,12 +483,11 @@
               "RelativeToolTip": "MMBS\\Model\\post_form\\PostFormBase.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAYwD4AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-04T14:02:55.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-04T14:02:55.323Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 17,
               "Title": "mmbs_template_model_v1.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\mmbs_template_model_v1.cs",
               "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\mmbs_template_model_v1.cs",
@@ -468,12 +495,11 @@
               "RelativeToolTip": "MMBS\\Model\\post_form\\mmbs_template_model_v1.cs",
               "ViewState": "AgIAAEUAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-21T08:03:02.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-21T08:03:02.787Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 20,
               "Title": "SMForm.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\SMForm.cs",
               "RelativeDocumentMoniker": "MMBS\\SMForm.cs",
@@ -481,12 +507,11 @@
               "RelativeToolTip": "MMBS\\SMForm.cs",
               "ViewState": "AgIAAIEAAAAAAAAAAADwv44AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T04:44:41.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T04:44:41.131Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 19,
               "Title": "Class5.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class5.cs",
               "RelativeDocumentMoniker": "MMBS\\Class5.cs",
@@ -494,24 +519,22 @@
               "RelativeToolTip": "MMBS\\Class5.cs",
               "ViewState": "AgIAAIQAAAAAAAAAAAAxwIwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-06T07:35:16.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-06T07:35:16.273Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 22,
               "Title": "imgur_id_query_form.cs [Design]",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\QueryForm\\imgur_id_query_form.cs",
               "RelativeDocumentMoniker": "MMBS\\QueryForm\\imgur_id_query_form.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\QueryForm\\imgur_id_query_form.cs [Design]",
               "RelativeToolTip": "MMBS\\QueryForm\\imgur_id_query_form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T02:27:35.366Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-14T02:27:35.366Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 23,
               "Title": "imgur_id_query_form.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\QueryForm\\imgur_id_query_form.cs",
               "RelativeDocumentMoniker": "MMBS\\QueryForm\\imgur_id_query_form.cs",
@@ -519,12 +542,11 @@
               "RelativeToolTip": "MMBS\\QueryForm\\imgur_id_query_form.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T03:06:39.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T03:06:39.283Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 21,
               "Title": "local_image_upload.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DataModule\\local_image_upload.cs",
               "RelativeDocumentMoniker": "MMBS\\DataModule\\local_image_upload.cs",
@@ -532,12 +554,11 @@
               "RelativeToolTip": "MMBS\\DataModule\\local_image_upload.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAywBMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T02:11:47.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T02:11:47.047Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 24,
               "Title": "CustomDataManagement.Designer.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\CustomDataManagement.Designer.cs",
               "RelativeDocumentMoniker": "MMBS\\CustomDataManagement.Designer.cs",
@@ -545,12 +566,11 @@
               "RelativeToolTip": "MMBS\\CustomDataManagement.Designer.cs",
               "ViewState": "AgIAABYAAAAAAAAAAABOwHkAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T09:05:11.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T09:05:11.889Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 25,
               "Title": "ZZZOptions.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\ZZZOptions.cs",
               "RelativeDocumentMoniker": "MMBS\\ZZZOptions.cs",
@@ -558,12 +578,11 @@
               "RelativeToolTip": "MMBS\\ZZZOptions.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAArwCcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T09:09:54.489Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T09:09:54.489Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 26,
               "Title": "Class6.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class6.cs",
               "RelativeDocumentMoniker": "MMBS\\Class6.cs",
@@ -571,12 +590,11 @@
               "RelativeToolTip": "MMBS\\Class6.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAArwGgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-10T14:11:57.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-10T14:11:57.674Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 27,
               "Title": "standard_data_append.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DataModule\\standard_data_append.cs",
               "RelativeDocumentMoniker": "MMBS\\DataModule\\standard_data_append.cs",
@@ -584,25 +602,11 @@
               "RelativeToolTip": "MMBS\\DataModule\\standard_data_append.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T01:59:03.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T01:59:03.406Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "RTFBuilderbase.cs",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Somethings\\RTFBuilderbase.cs",
-              "RelativeDocumentMoniker": "MMBS\\Somethings\\RTFBuilderbase.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Somethings\\RTFBuilderbase.cs",
-              "RelativeToolTip": "MMBS\\Somethings\\RTFBuilderbase.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAABOwIUAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T04:41:13.079Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 29,
               "Title": "MainProcessorTests.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\MainProcessorTests.cs",
               "RelativeDocumentMoniker": "coretestDownloadLink1\\MainProcessorTests.cs",
@@ -610,12 +614,11 @@
               "RelativeToolTip": "coretestDownloadLink1\\MainProcessorTests.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAUwBgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T03:11:55.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-01T03:11:55.901Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 30,
               "Title": "CustomDataManagement.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\CustomDataManagement.cs",
               "RelativeDocumentMoniker": "MMBS\\CustomDataManagement.cs",
@@ -623,12 +626,11 @@
               "RelativeToolTip": "MMBS\\CustomDataManagement.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAIwA4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T02:21:15.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-13T02:21:15.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 32,
               "Title": "PostFormGeneralCustom.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\PostFormGeneralCustom.cs",
               "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\PostFormGeneralCustom.cs",
@@ -636,34 +638,31 @@
               "RelativeToolTip": "MMBS\\Model\\post_form\\PostFormGeneralCustom.cs",
               "ViewState": "AgIAAG0AAAAAAAAAAAAswHQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-05T13:18:40.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-05T13:18:40.237Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 31,
               "Title": "CustomDataManagement.cs [Design]",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\CustomDataManagement.cs",
               "RelativeDocumentMoniker": "MMBS\\CustomDataManagement.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\CustomDataManagement.cs [Design]",
               "RelativeToolTip": "MMBS\\CustomDataManagement.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-26T13:12:34.213Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-01-26T13:12:34.213Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 33,
               "Title": "page.scriban-html",
               "DocumentMoniker": "C:\\BloggerSupporter\\template\\page.scriban-html",
               "ToolTip": "C:\\BloggerSupporter\\template\\page.scriban-html",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-01-27T09:18:59.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-27T09:18:59.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 34,
               "Title": "custom_post_template_debug_tool_form.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.cs",
               "RelativeDocumentMoniker": "MMBS\\custom_post_template_debug_tool_form.cs",
@@ -671,12 +670,11 @@
               "RelativeToolTip": "MMBS\\custom_post_template_debug_tool_form.cs",
               "ViewState": "AgIAAC8DAAAAAAAAAABOwDEDAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-22T11:23:19.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-22T11:23:19.855Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 35,
               "Title": "ProcSupporterTests.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\coretestDownloadLink1\\ProcSupporterTests.cs",
               "RelativeDocumentMoniker": "coretestDownloadLink1\\ProcSupporterTests.cs",
@@ -684,12 +682,11 @@
               "RelativeToolTip": "coretestDownloadLink1\\ProcSupporterTests.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAwwA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-31T07:52:04.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-31T07:52:04.095Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 37,
               "Title": "custom_post_template_debug_tool_form.Designer.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.Designer.cs",
               "RelativeDocumentMoniker": "MMBS\\custom_post_template_debug_tool_form.Designer.cs",
@@ -697,248 +694,18 @@
               "RelativeToolTip": "MMBS\\custom_post_template_debug_tool_form.Designer.cs",
               "ViewState": "AgIAABQAAAAAAAAAAIBJwBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-22T13:07:42.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-22T13:07:42.41Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 36,
               "Title": "custom_post_template_debug_tool_form.cs [Design]",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.cs",
               "RelativeDocumentMoniker": "MMBS\\custom_post_template_debug_tool_form.cs",
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.cs [Design]",
               "RelativeToolTip": "MMBS\\custom_post_template_debug_tool_form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-26T13:15:42.13Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "page.scriban-html",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\page.scriban-html",
-              "RelativeDocumentMoniker": "MMBS\\Model\\post_form\\page.scriban-html",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Model\\post_form\\page.scriban-html",
-              "RelativeToolTip": "MMBS\\Model\\post_form\\page.scriban-html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-01-21T03:53:21.893Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "Bindable.cs",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Framework\\Bindable.cs",
-              "RelativeDocumentMoniker": "MMBS\\Framework\\Bindable.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Framework\\Bindable.cs",
-              "RelativeToolTip": "MMBS\\Framework\\Bindable.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAqwB8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-22T11:39:44.782Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "Command.cs",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Framework\\Command.cs",
-              "RelativeDocumentMoniker": "MMBS\\Framework\\Command.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Framework\\Command.cs",
-              "RelativeToolTip": "MMBS\\Framework\\Command.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAABdwBoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-22T11:58:02.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "custom_post_template_debug_tool_form.resx",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.resx",
-              "RelativeDocumentMoniker": "MMBS\\custom_post_template_debug_tool_form.resx",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\custom_post_template_debug_tool_form.resx",
-              "RelativeToolTip": "MMBS\\custom_post_template_debug_tool_form.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-01-22T07:53:14.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "DefaultResource.resx",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DefaultResource.resx",
-              "RelativeDocumentMoniker": "MMBS\\DefaultResource.resx",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DefaultResource.resx",
-              "RelativeToolTip": "MMBS\\DefaultResource.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-01-21T06:52:32.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "DefaultResource.Designer.cs",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DefaultResource.Designer.cs",
-              "RelativeDocumentMoniker": "MMBS\\DefaultResource.Designer.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\DefaultResource.Designer.cs",
-              "RelativeToolTip": "MMBS\\DefaultResource.Designer.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-21T06:53:26.652Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "Microsoft.WinUI.targets",
-              "DocumentMoniker": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WinUI.targets",
-              "ToolTip": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WinUI.targets",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-01-10T14:14:46.005Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "Microsoft.WindowsAppSDK.targets",
-              "DocumentMoniker": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WindowsAppSDK.targets",
-              "ToolTip": "C:\\Users\\E5-576G\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.231115000\\buildTransitive\\Microsoft.WindowsAppSDK.targets",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-01-10T14:14:50.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "tempCDF.cs [Design]",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\tempCDF.cs",
-              "RelativeDocumentMoniker": "MMBS\\tempCDF.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\tempCDF.cs [Design]",
-              "RelativeToolTip": "MMBS\\tempCDF.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-09T10:39:44.367Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "SMForm.cs [Design]",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\SMForm.cs",
-              "RelativeDocumentMoniker": "MMBS\\SMForm.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\SMForm.cs [Design]",
-              "RelativeToolTip": "MMBS\\SMForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-09T10:39:43.353Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "FMForm.resx",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.resx",
-              "RelativeDocumentMoniker": "MMBS\\FMForm.resx",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.resx",
-              "RelativeToolTip": "MMBS\\FMForm.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-01-09T13:08:23.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "packages.config",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\packages.config",
-              "RelativeDocumentMoniker": "MMBS\\packages.config",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\packages.config",
-              "RelativeToolTip": "MMBS\\packages.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-01-09T10:39:45.98Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "Form1.resx",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.resx",
-              "RelativeDocumentMoniker": "MMBS\\Form1.resx",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.resx",
-              "RelativeToolTip": "MMBS\\Form1.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-01-09T10:39:38.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "Form1.en-US.resx",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.en-US.resx",
-              "RelativeDocumentMoniker": "MMBS\\Form1.en-US.resx",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.en-US.resx",
-              "RelativeToolTip": "MMBS\\Form1.en-US.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-01-09T10:39:36.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "MMBS\\Form1.Designer.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Form1.Designer.cs",
-              "RelativeToolTip": "MMBS\\Form1.Designer.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAIBJwBYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-09T10:38:17.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "HonmyoU.snk",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\HonmyoU.snk",
-              "RelativeDocumentMoniker": "MMBS\\HonmyoU.snk",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\HonmyoU.snk",
-              "RelativeToolTip": "MMBS\\HonmyoU.snk",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002991|",
-              "WhenOpened": "2024-01-09T10:38:10.744Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "web.config",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\web.config",
-              "RelativeDocumentMoniker": "MMBS\\web.config",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\web.config",
-              "RelativeToolTip": "MMBS\\web.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAABewBcAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-01-06T02:53:40.14Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "todo.txt",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\todo.txt",
-              "RelativeDocumentMoniker": "MMBS\\todo.txt",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\todo.txt",
-              "RelativeToolTip": "MMBS\\todo.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-01-05T14:16:05.346Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "ColorByRegexConfig.txt",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
-              "RelativeDocumentMoniker": ".vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\.vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
-              "RelativeToolTip": ".vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-01-05T13:50:56.632Z"
+              "WhenOpened": "2024-01-26T13:15:42.13Z"
             }
           ]
         }
