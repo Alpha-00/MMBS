@@ -18,6 +18,7 @@
 */SMBSY/obj/*
 */SMBSY.Core/bin/*
 */SMBSY.Core/obj/*
+/.vs
 # Beta Project
 /MMBS Local Web/*
 /MMBS Razor Helper/*
