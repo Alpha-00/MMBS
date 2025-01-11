@@ -1,0 +1,5 @@
+12/14/2024 20:58:41: [--config, Hello]12/14/2024 21:01:08: [--config, Hello]12/14/2024 21:03:10: [--config, Hello]
+12/14/2024 21:03:51: [--config, Hello]
+D:\Documents\vvvv\gamma\Exports\quick_watermark\quick_watermark.exe12/14/2024 21:05:45: [--config, Hello]
+D:\Documents\vvvv\gamma\Exports\quick_watermark\quick_watermark.exe12/15/2024 09:52:26: [--config, Hello]
+D:\Documents\vvvv\gamma\Exports\quick_watermark\quick_watermark.exe

@@ -1,0 +1,20 @@
+﻿****bbtxt.v1.customoption.default
+****updatecode=1000
+[##]Rules Set[##]
+####Every line have 4 characters stand for header
+####The "****" mean special content
+####The "####" mean comment
+####The double "[##]" is comment too
+####define parser System by "defi"
+####The "!!!!" is Variable
+####The "" stand for string use
+####The [] stand for set use
+####Error return default setting
+[/#]
+[##]Variable[##]
+!!!!rules=0
+[/#]
+[##]Option[##]
+[/#]
+[##]Process Keywords[##]
+[/#]

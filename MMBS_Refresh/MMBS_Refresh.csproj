@@ -1,0 +1,244 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <HockeyAppResourceId>dd707c2fc0d64f89bb921f25c84df31e</HockeyAppResourceId>
+    <PublishUrl>E:\Personal Project\Ya4r.net\Minimize MyBloggerSupporter\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <PublisherName>Honmyou</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>0.53.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Configurations>API Debug;Debug;Release</Configurations>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\MMBS.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\MMBS\</OutputPath>
+    <DocumentationFile>bin\MMBS\MMBS.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bloggersupport.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MMBS.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C7A48E5C3297A2307B1206F5642E8A48A002469C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Certificate.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>HonmyoU.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="CustomControl\PlaceholderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CustomControl\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Model\post_form\page.scriban-html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\post_form\title.scriban-html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Update="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bloggersupport.ico" />
+    <Content Include="Driver\chromedriver.exe" />
+    <Content Include="External\quick_watermark\AudioSwitcher.AudioApi.CoreAudio.dll" />
+    <Content Include="External\quick_watermark\AudioSwitcher.AudioApi.dll" />
+    <Content Include="External\quick_watermark\CommunityToolkit.HighPerformance.dll" />
+    <Content Include="External\quick_watermark\d3dcompiler_47.dll" />
+    <Content Include="External\quick_watermark\default_log.txt" />
+    <Content Include="External\quick_watermark\Irony.dll" />
+    <Content Include="External\quick_watermark\libEGL.dll" />
+    <Content Include="External\quick_watermark\libGLESv2.dll" />
+    <Content Include="External\quick_watermark\libSkiaSharp.dll" />
+    <Content Include="External\quick_watermark\MathNet.Numerics.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Configuration.Binder.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Configuration.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.DependencyInjection.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Logging.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.ObjectPool.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Options.dll" />
+    <Content Include="External\quick_watermark\Microsoft.Extensions.Primitives.dll" />
+    <Content Include="External\quick_watermark\Microsoft.VisualStudio.Threading.dll" />
+    <Content Include="External\quick_watermark\Microsoft.VisualStudio.Validation.dll" />
+    <Content Include="External\quick_watermark\Newtonsoft.Json.dll" />
+    <Content Include="External\quick_watermark\NuGet.Versioning.dll" />
+    <Content Include="External\quick_watermark\quick_watermark.dll" />
+    <Content Include="External\quick_watermark\quick_watermark.exe" />
+    <Content Include="External\quick_watermark\ServiceWire.dll" />
+    <Content Include="External\quick_watermark\SharpDX.Direct3D11.dll" />
+    <Content Include="External\quick_watermark\SharpDX.dll" />
+    <Content Include="External\quick_watermark\SharpDX.DXGI.dll" />
+    <Content Include="External\quick_watermark\SixLabors.Fonts.dll" />
+    <Content Include="External\quick_watermark\SkiaSharp.dll" />
+    <Content Include="External\quick_watermark\SkiaSharp.Extended.Svg.dll" />
+    <Content Include="External\quick_watermark\SkiaSharp.SceneGraph.dll" />
+    <Content Include="External\quick_watermark\SkiaSharp.Skottie.dll" />
+    <Content Include="External\quick_watermark\Stride.Core.dll" />
+    <Content Include="External\quick_watermark\Stride.Core.Mathematics.dll" />
+    <Content Include="External\quick_watermark\System.Interactive.dll" />
+    <Content Include="External\quick_watermark\System.IO.Ports.dll" />
+    <Content Include="External\quick_watermark\System.Management.dll" />
+    <Content Include="External\quick_watermark\System.Reactive.dll" />
+    <Content Include="External\quick_watermark\VL.App.Console.dll" />
+    <Content Include="External\quick_watermark\VL.App.WindowsForms.dll" />
+    <Content Include="External\quick_watermark\VL.AppServices.dll" />
+    <Content Include="External\quick_watermark\VL.Core.Commands.dll" />
+    <Content Include="External\quick_watermark\VL.Core.Commands.vl.dll" />
+    <Content Include="External\quick_watermark\VL.Core.dll" />
+    <Content Include="External\quick_watermark\VL.Core.Skia.dll" />
+    <Content Include="External\quick_watermark\VL.Core.Skia.Windows.dll" />
+    <Content Include="External\quick_watermark\VL.CoreLib.dll" />
+    <Content Include="External\quick_watermark\VL.CoreLib.vl.dll" />
+    <Content Include="External\quick_watermark\VL.CoreLib.Windows.dll" />
+    <Content Include="External\quick_watermark\VL.CoreLib.Windows.vl.dll" />
+    <Content Include="External\quick_watermark\VL.Serialization.Raw.dll" />
+    <Content Include="External\quick_watermark\VL.Serialization.Raw.vl.dll" />
+    <Content Include="External\quick_watermark\VL.Skia.dll" />
+    <Content Include="External\quick_watermark\VL.Skia.vl.dll" />
+    <Content Include="Properties\CustomData\CustomOption.txt" />
+    <Content Include="todo.txt" />
+    <None Include="Resources\2000px-YouTube_full-color_icon_%282017%29.svg.png" />
+    <Content Include="Resources\info_icon_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Misc Form\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AForge" Version="2.2.5" />
+    <PackageReference Include="AForge.Video" Version="2.2.5" />
+    <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
+    <PackageReference Include="AsciiToUnicodeMon" Version="1.0.0" />
+    <PackageReference Include="FlareSolverrSharp" Version="2.2.4" />
+    <PackageReference Include="Google.Apis" Version="1.50.0" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.50.0" />
+    <PackageReference Include="Google.Apis.Blogger.v3" Version="1.50.0.2249" />
+    <PackageReference Include="Google.Apis.Core" Version="1.54.0" />
+    <PackageReference Include="Google.Apis.Drive.v3" Version="1.50.0.2265" />
+    <PackageReference Include="Google.Apis.Urlshortener.v1" Version="1.41.1.138" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+    <PackageReference Include="ImageProcessor" Version="2.9.1" />
+    <PackageReference Include="ImageProcessor.Plugins.WebP" Version="1.3.0" />
+    <PackageReference Include="Imgur.API" Version="5.0.0" />
+    <PackageReference Include="MaterialDesignColors" Version="2.0.9" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+    <PackageReference Include="MaterialSkin" Version="0.2.1" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Primitives" Version="8.0.0" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="8.0.0-preview.7.23375.6" />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Scriban" Version="5.9.1" />
+    <PackageReference Include="Selenium.Support" Version="4.16.2" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.27.0" />
+    <PackageReference Include="Selenium.WebDriver.MicrosoftDriver" Version="17.17134.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="9.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.1" />
+    <PackageReference Include="System.IO.Pipelines" Version="9.0.0" />
+    <PackageReference Include="System.Management" Version="9.0.0" />
+    <PackageReference Include="System.Reflection.Metadata" Version="8.0.1" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.0" />
+    <PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+    <PackageReference Include="Unicode.net" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove=".backupFMForm.cs" />
+    <Compile Remove=".backupFMForm.Designer.cs" />
+    <Compile Remove="Properties\CustomData\KeyControlData.cs" />
+    <Compile Remove="Properties\CustomData\KeyControlData.Designer.cs" />
+    <Compile Remove="Properties\DataSources\KeyControlData.cs" />
+    <Compile Remove="Properties\DataSources\KeyControlData.Designer.cs" />
+    <EmbeddedResource Remove=".backupFMForm.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <UseWPF>True</UseWPF>
+  </PropertyGroup>
+</Project>
