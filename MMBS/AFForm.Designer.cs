@@ -79,6 +79,7 @@
 			this.progMirrorDL = new System.Windows.Forms.ProgressBar();
 			this.butCustomData = new System.Windows.Forms.Button();
 			this.checkMenu = new System.Windows.Forms.CheckBox();
+			this.checkArmv8a = new System.Windows.Forms.CheckBox();
 			this.groupDS.SuspendLayout();
 			this.groupDL.SuspendLayout();
 			this.groupAO.SuspendLayout();
@@ -434,6 +435,7 @@
 			this.boxModInfo.TabIndex = 9;
 			this.boxModInfo.Text = "Hello";
 			this.boxModInfo.TextChanged += new System.EventHandler(this.boxModInfo_TextChanged);
+			this.boxModInfo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.boxModInfo_MouseUp);
 			// 
 			// butModInfo
 			// 
@@ -574,6 +576,7 @@
 			this.checkNoImgs_Syswarn.TabIndex = 14;
 			this.checkNoImgs_Syswarn.Text = "No Img";
 			this.checkNoImgs_Syswarn.UseVisualStyleBackColor = true;
+			this.checkNoImgs_Syswarn.Visible = false;
 			this.checkNoImgs_Syswarn.CheckedChanged += new System.EventHandler(this.checkNoImgs_Syswarn_CheckedChanged);
 			// 
 			// tipOne
@@ -729,12 +732,26 @@
 			this.checkMenu.UseVisualStyleBackColor = true;
 			this.checkMenu.CheckedChanged += new System.EventHandler(this.checkMenu_CheckedChanged);
 			// 
+			// checkArmv8a
+			// 
+			this.checkArmv8a.AutoSize = true;
+			this.checkArmv8a.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.checkArmv8a.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.checkArmv8a.Location = new System.Drawing.Point(230, 415);
+			this.checkArmv8a.Name = "checkArmv8a";
+			this.checkArmv8a.Size = new System.Drawing.Size(84, 24);
+			this.checkArmv8a.TabIndex = 17;
+			this.checkArmv8a.Text = "Armv8a";
+			this.checkArmv8a.UseVisualStyleBackColor = true;
+			this.checkArmv8a.CheckedChanged += new System.EventHandler(this.checkArmv8a_CheckedChanged);
+			// 
 			// AFForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(401, 624);
+			this.Controls.Add(this.checkArmv8a);
 			this.Controls.Add(this.checkMenu);
 			this.Controls.Add(this.butCustomData);
 			this.Controls.Add(this.groupMirrorDL);
@@ -831,5 +848,6 @@
         private System.Windows.Forms.Button butCustomData;
         public System.Windows.Forms.ComboBox comboSourceQuery;
         private System.Windows.Forms.CheckBox checkMenu;
+        private System.Windows.Forms.CheckBox checkArmv8a;
     }
 }

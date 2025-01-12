@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Scriban.5.9.1\build\Scriban.props" Condition="Exists('..\packages\Scriban.5.9.1\build\Scriban.props')" />
-  <Import Project="..\packages\Microsoft.AspNetCore.Mvc.Razor.Extensions.2.1.0\build\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.props" Condition="Exists('..\packages\Microsoft.AspNetCore.Mvc.Razor.Extensions.2.1.0\build\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -567,14 +565,20 @@
     <Compile Include="LinkValidator.Designer.cs">
       <DependentUpon>LinkValidator.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\post_form\mmbs_template_model_v1.cs" />
-    <Compile Include="Model\post_form\Mod977\PostForm240603_Mod977.cs" />
-    <Compile Include="Model\post_form\PostForm240104.cs" />
-    <Compile Include="Model\post_form\PostFormBase.cs" />
-    <Compile Include="Model\post_form\PostFormGeneralCustom.cs" />
+    <Compile Include="Misc Form\mod_desc_quick_editor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Misc Form\mod_desc_quick_editor.Designer.cs">
+      <DependentUpon>mod_desc_quick_editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export Model\post_form\mmbs_template_model_v1.cs" />
+    <Compile Include="Export Model\post_form\Mod977\PostForm240603_Mod977.cs" />
+    <Compile Include="Export Model\post_form\PostForm240104.cs" />
+    <Compile Include="Export Model\post_form\PostFormBase.cs" />
+    <Compile Include="Export Model\post_form\PostFormGeneralCustom.cs" />
     <Compile Include="DataModule\local_image_upload.cs" />
     <Compile Include="DataModule\standard_data_append.cs" />
-    <Compile Include="Model\post_form\Ya4r\PostForm241128_Ya4r.cs" />
+    <Compile Include="Export Model\post_form\Ya4r\PostForm241128_Ya4r.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DefaultResource.Designer.cs">
@@ -674,6 +678,9 @@
     <EmbeddedResource Include="LinkValidator.resx">
       <DependentUpon>LinkValidator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Misc Form\mod_desc_quick_editor.resx">
+      <DependentUpon>mod_desc_quick_editor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -710,10 +717,10 @@
     <None Include="External\quick_watermark\quick_watermark.dll.config" />
     <None Include="External\quick_watermark\quick_watermark.runtimeconfig.json" />
     <None Include="HonmyoU.snk" />
-    <EmbeddedResource Include="Model\post_form\page.scriban-html">
+    <EmbeddedResource Include="Export Model\post_form\page.scriban-html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model\post_form\title.scriban-html">
+    <EmbeddedResource Include="Export Model\post_form\title.scriban-html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="packages.config">
@@ -828,31 +835,15 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Misc Form\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.MicrosoftDriver.17.17134.0\build\Selenium.WebDriver.MicrosoftDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.MicrosoftDriver.17.17134.0\build\Selenium.WebDriver.MicrosoftDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets'))" />
-    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.AspNetCore.Mvc.Razor.Extensions.2.1.0\build\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.AspNetCore.Mvc.Razor.Extensions.2.1.0\build\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.AspNetCore.Mvc.Razor.Extensions.2.1.0\build\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.AspNetCore.Mvc.Razor.Extensions.2.1.0\build\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.targets'))" />
-    <Error Condition="!Exists('..\packages\Scriban.5.9.1\build\Scriban.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Scriban.5.9.1\build\Scriban.props'))" />
-    <Error Condition="!Exists('..\packages\Scriban.5.9.1\build\Scriban.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Scriban.5.9.1\build\Scriban.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.4.27.0\build\Selenium.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.4.27.0\build\Selenium.WebDriver.targets'))" />
   </Target>
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
-  <Import Project="..\packages\Selenium.WebDriver.MicrosoftDriver.17.17134.0\build\Selenium.WebDriver.MicrosoftDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.MicrosoftDriver.17.17134.0\build\Selenium.WebDriver.MicrosoftDriver.targets')" />
-  <Import Project="..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" />
-  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
-  <Import Project="..\packages\Microsoft.AspNetCore.Mvc.Razor.Extensions.2.1.0\build\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.targets" Condition="Exists('..\packages\Microsoft.AspNetCore.Mvc.Razor.Extensions.2.1.0\build\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.targets')" />
-  <Import Project="..\packages\Scriban.5.9.1\build\Scriban.targets" Condition="Exists('..\packages\Scriban.5.9.1\build\Scriban.targets')" />
-  <Import Project="..\packages\Selenium.WebDriver.4.27.0\build\Selenium.WebDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.4.27.0\build\Selenium.WebDriver.targets')" />
 </Project>

@@ -92,6 +92,7 @@ namespace MMBS
             this.checkInternet.Checked = thenow.appInfo.internetReq;
             this.checkRoot.Checked = thenow.appInfo.rootReq;
             this.checkOBB.Checked = thenow.appInfo.obbReq;
+            this.checkArmv8a.Checked = thenow.appInfo.armv8aReq;
             this.checkMenu.Checked = thenow.appInfo.menuModFlag;
             this.checkABold.Checked = thenow.appInfo.description.bold;
             this.checkNoLine.Checked = thenow.appInfo.description.noline;
@@ -1482,6 +1483,11 @@ namespace MMBS
         private void checkMenu_CheckedChanged(object sender, EventArgs e)
         {
             FormData.appInfo.menuModFlag = checkMenu.Checked;
+        }
+
+        private void checkArmv8a_CheckedChanged(object sender, EventArgs e)
+        {
+            FormData.appInfo.armv8aReq = checkArmv8a.Checked;
         }
     }
 }
