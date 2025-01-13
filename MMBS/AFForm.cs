@@ -53,6 +53,7 @@ namespace MMBS
         {
             InitializeComponent();
             tipOne.SetToolTip(checkExtPerms, checkExtPerms.Checked ? "External Storage" : "Overlay");
+            modDescQuickEditor.VisibleChanged += modDescQuickEditor_VisibleChanged;
         }
         public AFForm()
         {
@@ -972,6 +973,7 @@ namespace MMBS
         }
 
         protected ModDescriptionQuickEditor modDescQuickEditor = new ModDescriptionQuickEditor();
+
         private void boxModInfo_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -979,8 +981,22 @@ namespace MMBS
                 modDescQuickEditor.Left = Cursor.Position.X - 10;
                 modDescQuickEditor.Top = Cursor.Position.Y - 10;
                 
+                var newSize = new Size(
+                    Screen.PrimaryScreen.WorkingArea.Width - modDescQuickEditor.Left,
+                    Screen.PrimaryScreen.WorkingArea.Height - modDescQuickEditor.Top
+                    );
+                modDescQuickEditor.Size = newSize;
+                modDescQuickEditor.UpdateOptions(boxModInfo.Text);
+                // Add event
+                modDescQuickEditor.VisibleChanged += modDescQuickEditor_VisibleChanged;
                 modDescQuickEditor.Show();
             }
+        }
+
+        private void modDescQuickEditor_VisibleChanged(object sender, EventArgs e)
+        {
+            boxModInfo.Text = modDescQuickEditor.RenderContent();
+            //((ModDescriptionQuickEditor)sender).VisibleChanged -= modDescQuickEditor_VisibleChanged;
         }
 
         private void checkArmv8a_CheckedChanged(object sender, EventArgs e)

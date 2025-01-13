@@ -28,37 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.contentList = new System.Windows.Forms.CheckedListBox();
+			this.mainLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+			this.templateList = new System.Windows.Forms.ListBox();
+			this.mainLayoutPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// listBox1
+			// contentList
 			// 
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.ItemHeight = 16;
-			this.listBox1.Location = new System.Drawing.Point(281, 334);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(120, 84);
-			this.listBox1.TabIndex = 0;
+			this.contentList.CheckOnClick = true;
+			this.contentList.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.contentList.FormattingEnabled = true;
+			this.contentList.Items.AddRange(new object[] {
+            "Vô hạn vàng",
+            "Vô hạn xu",
+            "Vô hạn tiền",
+            "Vô hạn kim cương",
+            "Vô hạn ngọc",
+            "Vô hạn đạn",
+            "Mở khóa súng",
+            "Mở khóa nhân vật",
+            "Xóa quảng cáo"});
+			this.contentList.Location = new System.Drawing.Point(8, 8);
+			this.contentList.Name = "contentList";
+			this.contentList.ScrollAlwaysVisible = true;
+			this.contentList.Size = new System.Drawing.Size(268, 284);
+			this.contentList.TabIndex = 1;
+			this.contentList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.contentList_ItemCheck);
 			// 
-			// mod_desc_quick_editor
+			// mainLayoutPanel
+			// 
+			this.mainLayoutPanel.ColumnCount = 2;
+			this.mainLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+			this.mainLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+			this.mainLayoutPanel.Controls.Add(this.contentList, 0, 0);
+			this.mainLayoutPanel.Controls.Add(this.templateList, 1, 0);
+			this.mainLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.mainLayoutPanel.Location = new System.Drawing.Point(0, 0);
+			this.mainLayoutPanel.Name = "mainLayoutPanel";
+			this.mainLayoutPanel.Padding = new System.Windows.Forms.Padding(5);
+			this.mainLayoutPanel.RowCount = 1;
+			this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.mainLayoutPanel.Size = new System.Drawing.Size(419, 300);
+			this.mainLayoutPanel.TabIndex = 2;
+			this.mainLayoutPanel.MouseLeave += new System.EventHandler(this.mainLayoutPanel_MouseLeave);
+			// 
+			// templateList
+			// 
+			this.templateList.BackColor = System.Drawing.SystemColors.Control;
+			this.templateList.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.templateList.FormattingEnabled = true;
+			this.templateList.ItemHeight = 16;
+			this.templateList.Items.AddRange(new object[] {
+            "- (content).\\n",
+            "(content).\\n",
+            "(content), "});
+			this.templateList.Location = new System.Drawing.Point(282, 8);
+			this.templateList.Name = "templateList";
+			this.templateList.Size = new System.Drawing.Size(129, 284);
+			this.templateList.TabIndex = 5;
+			// 
+			// ModDescriptionQuickEditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(407, 427);
-			this.Controls.Add(this.listBox1);
+			this.ClientSize = new System.Drawing.Size(419, 300);
+			this.Controls.Add(this.mainLayoutPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "mod_desc_quick_editor";
+			this.MaximumSize = new System.Drawing.Size(419, 300);
+			this.MinimumSize = new System.Drawing.Size(100, 100);
+			this.Name = "ModDescriptionQuickEditor";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "mod_desc_quick_editor";
-			this.Deactivate += new System.EventHandler(this.mod_desc_quick_editor_Deactivate);
-			this.Leave += new System.EventHandler(this.mod_desc_quick_editor_Leave);
+			this.VisibleChanged += new System.EventHandler(this.ModDescriptionQuickEditor_VisibleChanged);
 			this.MouseLeave += new System.EventHandler(this.mod_desc_quick_editor_MouseLeave);
+			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ModDescriptionQuickEditor_MouseMove);
+			this.mainLayoutPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TableLayoutPanel mainLayoutPanel;
+        private System.Windows.Forms.ListBox templateList;
+        private System.Windows.Forms.CheckedListBox contentList;
     }
 }

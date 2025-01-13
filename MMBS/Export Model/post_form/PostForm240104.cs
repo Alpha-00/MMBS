@@ -95,14 +95,14 @@ namespace MMBS.Model.PostForm
             }
             else
             {
-                cache_modList = " " + MyFunction.CapitalizeEachWord(data.modInfo.UI.modTypeGetname(data.modInfo.UI.currentindex));
+                cache_modList = " " + ExtendingFunction.CapitalizeEachWord(data.modInfo.UI.modTypeGetname(data.modInfo.UI.currentindex));
             }
             string cache_reqList = "";
             if (data.appInfo.rootReq) { cache_reqList += template.igroupRequireItem["rootReq"]; }
             if (data.appInfo.internetReq) { cache_reqList += template.igroupRequireItem["internetReq"]; }
             if (data.appInfo.obbReq) { cache_reqList += template.igroupRequireItem["obbReq"]; }
             if (data.appInfo.extpermReq) { cache_reqList += template.igroupRequireItem["permReq"]; }
-            SP_iGroupScript = MyFunction.MultiReplace(
+            SP_iGroupScript = ExtendingFunction.MultiReplace(
             template.igroupHtml, 
             "$$$.datAReq$$$$", data.appInfo.androidReq, 
             "$$$.datVer$$$$", data.appInfo.version,
@@ -138,7 +138,7 @@ namespace MMBS.Model.PostForm
                             if (SP_ImageLink_cache.Contains("-rw")) SP_ImageLink_cache = SP_ImageLink_cache.Replace("-rw", "");
                             if (SP_ImageLink_cache.Contains("=")) SP_ImageLink_cache = SP_ImageLink_cache.Remove(SP_ImageLink_cache.IndexOf("=")) + "=w" + NewWidth + "-h" + NewHeight;
                         }
-                        SP_ImageScript += MyFunction.MultiReplace(template.imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", data.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", data.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
+                        SP_ImageScript += ExtendingFunction.MultiReplace(template.imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", data.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", data.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
                     }
                     //Đây là code tạm để thêm separate, nhớ sửa
                     if (i != data.postMedia.ImageList.Count - 1)
@@ -172,9 +172,9 @@ namespace MMBS.Model.PostForm
             string script_postDownload = "";
             if (!string.IsNullOrEmpty(data.appInfo.datasource))
             {
-                SP_SourceScript = data.appInfo.datasourcetype == "play" ? MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.appInfo.datasource, "$$$:.downName$$$$", data.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : "";
+                SP_SourceScript = data.appInfo.datasourcetype == "play" ? ExtendingFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.appInfo.datasource, "$$$:.downName$$$$", data.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : "";
                 //Temporarily v200516
-                SP_SourceScript = data.appInfo.datasourcetype != "play" ? MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.appInfo.datasource, "$$$:.downName$$$$", data.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
+                SP_SourceScript = data.appInfo.datasourcetype != "play" ? ExtendingFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.appInfo.datasource, "$$$:.downName$$$$", data.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
             }
             //Todo: Hot fix- Need refactor
             
@@ -193,15 +193,15 @@ namespace MMBS.Model.PostForm
                 {
                     /* Download link with no Mirror */
                     if (data.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(data.downloadlink.Downloadlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.Downloadlink.link, "$$$:.downName$$$$", data.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.Downloadlink.link, "$$$:.downName$$$$", data.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
                     if (data.downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(data.downloadlink.OBBlink.link))
                     {
-                        SP_DownloadScript += MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.OBBlink.link, "$$$:.downName$$$$", data.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.OBBlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.OBBlink.link, "$$$:.downName$$$$", data.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.OBBlink.FAicon);
                     }
                     if (data.downloadlink.OMirrorlink.check && !string.IsNullOrWhiteSpace(data.downloadlink.OMirrorlink.link)) {
                         if (data.downloadlink.OMirrorlink.linkalias == "Mirror")
                             data.downloadlink.OMirrorlink.linkalias = "Support Us";
-                        SP_DownloadScript += MyFunction.MultiReplace(template.linkoneScript2, "$$$:.downLink$$$$", data.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", data.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.OMirrorlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(template.linkoneScript2, "$$$:.downLink$$$$", data.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", data.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.OMirrorlink.FAicon);
                     }
                     SP_DownloadScript = template.linkScript.Replace("$$$:.downlinkBundleScript$$$$", SP_DownloadScript);
                 }
@@ -212,14 +212,14 @@ namespace MMBS.Model.PostForm
                     string cache_downloadbundle = "";
                     if (data.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(data.downloadlink.Downloadlink.link))
                     {
-                        cache_downloadbundle = MyFunction.MultiReplace(template.linkoneScript2, "$$$:.downLink$$$$", data.downloadlink.Downloadlink.link, "$$$:.downName$$$$", data.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle = ExtendingFunction.MultiReplace(template.linkoneScript2, "$$$:.downLink$$$$", data.downloadlink.Downloadlink.link, "$$$:.downName$$$$", data.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
                     }
                     if (data.downloadlink.linklist.Count > 0)
                     {
                         // Temp replace Mirror for Support Us
                         //data.downloadlink.linklist[0].linkalias = data.downloadlink.linklist[0].linkalias == "Mirror" ? "Support Us" : data.downloadlink.linklist[0].linkalias;
 
-                        cache_downloadbundle += MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.linklist[0].link, "$$$:.downName$$$$", data.downloadlink.linklist[0].linkalias, "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
+                        cache_downloadbundle += ExtendingFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.linklist[0].link, "$$$:.downName$$$$", data.downloadlink.linklist[0].linkalias, "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
                     }
 
                     //Separately process
@@ -228,14 +228,14 @@ namespace MMBS.Model.PostForm
                         // Temp replace Mirror for Support Us
                         //data.downloadlink.OBBlink.linkalias = data.downloadlink.OBBlink.linkalias == "Mirror" ? "Support Us" : data.downloadlink.OBBlink.linkalias;
 
-                        cache_downloadbundle += MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.OBBlink.link, "$$$:.downName$$$$", data.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle += ExtendingFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.OBBlink.link, "$$$:.downName$$$$", data.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
                     }
 
                     //todo: Refactor code to match generateForm layout
                     if (data.downloadlink.OMirrorlink.check && !string.IsNullOrWhiteSpace(data.downloadlink.OMirrorlink.link))
                     {
                         data.downloadlink.OMirrorlink.linkalias = data.downloadlink.OMirrorlink.linkalias == "Mirror" ? "Support Us" : data.downloadlink.OMirrorlink.linkalias;
-                        cache_downloadbundle += MyFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", data.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle += ExtendingFunction.MultiReplace(template.linkoneScript, "$$$:.downLink$$$$", data.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", data.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", data.downloadlink.Downloadlink.FAicon);
                     }
                     SP_DownloadScript = template.linkScript.Replace("$$$:.downlinkBundleScript$$$$", cache_downloadbundle);
                 }
@@ -276,7 +276,7 @@ namespace MMBS.Model.PostForm
             }
             
             //Summary
-            return MyFunction.MultiReplace(template.layout, "$$$.styleCard$$$$", SP_styleCard, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.linkScript$$$$", SP_DownloadScript, "$$$.credit$$$$", SP_CreditScript, "$$$.lastword$$$$", template.lastword);
+            return ExtendingFunction.MultiReplace(template.layout, "$$$.styleCard$$$$", SP_styleCard, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.linkScript$$$$", SP_DownloadScript, "$$$.credit$$$$", SP_CreditScript, "$$$.lastword$$$$", template.lastword);
         }
     }
     public class TemplateData240104 : PostFormTemplate

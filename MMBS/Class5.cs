@@ -107,7 +107,7 @@ namespace MMBS
             return (from string x in new List<string>(uri.Query.Split('?')) where (x.Split('=')[0] == key) select x.Split('=')[1]).SingleOrDefault();
         }
     }
-    public static class MyFunction
+    public static class ExtendingFunction
     {
         public static string CapitalizeEachWord(string str)
         {

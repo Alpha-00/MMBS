@@ -72,7 +72,7 @@ namespace MMBS.Model.PostForm
                             }
                             var imageInfo = data.postMedia.ImageList[id];
                             data.postMedia.ImageList[id].enable = false;
-                            string imageScript = MyFunction.MultiReplace(template.imageCardScript, "$$$:.imageLink$$$$", imageInfo.link);
+                            string imageScript = ExtendingFunction.MultiReplace(template.imageCardScript, "$$$:.imageLink$$$$", imageInfo.link);
                             SP_DescScript += imageScript;
                             continue;
                         }
@@ -90,7 +90,7 @@ namespace MMBS.Model.PostForm
             {
                 string modSurfix = data.modInfo.UI.modTypeGetname(data.modInfo.UI.currentindex);
                 string modApkMessage = data.appInfo.menuModFlag ? "Mod Menu APK" : "Mod APK";
-                modSurfix = modSurfix.ToLower() == "mod" ? modApkMessage : MyFunction.FirstCharEachWordUpcase(modSurfix);
+                modSurfix = modSurfix.ToLower() == "mod" ? modApkMessage : ExtendingFunction.FirstCharEachWordUpcase(modSurfix);
                 _SP_title = (data.appInfo.name).Trim(' ') + " " + modSurfix;
                 string[] items = (!String.IsNullOrWhiteSpace(data.modInfo.UI.modTypeGetDat(data.modInfo.UI.currentindex)) ? data.modInfo.UI.modTypeGetDat(data.modInfo.UI.currentindex).Split('\n') : new string[] { });
                 items = items.Where(x => !String.IsNullOrEmpty(x)).ToArray();
@@ -102,7 +102,7 @@ namespace MMBS.Model.PostForm
                         if (items[i].Length > 50) continue;
                         items[i] = items[i].Trim();
                         items[i] = Regex.Replace(items[i], @"^-|^\+|\.$", "");
-                        items[i] = MyFunction.CapitalizeEachWord(items[i]);
+                        items[i] = ExtendingFunction.CapitalizeEachWord(items[i]);
                         items[i] = items[i].Trim();
                         // Add "|" if not first index 
                         //titleprocRes += i != 0 ? " | " : " ";
@@ -111,7 +111,7 @@ namespace MMBS.Model.PostForm
                     }
                 }
             }
-            SP_iGroupScript = MyFunction.MultiReplace(
+            SP_iGroupScript = ExtendingFunction.MultiReplace(
             template.igroupHtml, 
             "$$$.datAReq$$$$", data.appInfo.androidReq, 
             "$$$.datVer$$$$", data.appInfo.version,
@@ -148,7 +148,7 @@ namespace MMBS.Model.PostForm
             if (SP_DownloadScript.EndsWith("\n")) SP_DownloadScript = SP_DownloadScript.Remove(SP_DownloadScript.Length - 1);
             
             //Summary
-            return MyFunction.MultiReplace(template.layout, 
+            return ExtendingFunction.MultiReplace(template.layout, 
                 "$$$.iconScript$$$$", SP_IconScipt, 
                 "$$$.descScript$$$$", SP_DescScript, 
                 "$$$.igroupScript$$$$", SP_iGroupScript,  

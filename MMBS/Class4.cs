@@ -707,7 +707,7 @@ namespace MMBS
                         {
                             string creditNameString = creditNameFormat.Replace("$$$.creditName$$$$", name);
                             string creditHostString = string.IsNullOrEmpty(host) ? "" : creditHostFormat.Replace("$$$.creditHost$$$$", host);
-                            return MyFunction.MultiReplace(creditStringForm, "$$$.creditNameString$$$$", creditNameString, "$$$.creditHostString$$$$", creditHostString);
+                            return ExtendingFunction.MultiReplace(creditStringForm, "$$$.creditNameString$$$$", creditNameString, "$$$.creditHostString$$$$", creditHostString);
                         }
                         else
                         {

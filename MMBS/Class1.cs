@@ -185,7 +185,7 @@ namespace MMBS
             {
                 string modSurfix = thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex);
                 string modApkMessage = thenow.appInfo.menuModFlag ? "Mod Menu APK" : "Mod APK";
-                modSurfix = modSurfix.ToLower() == "mod" ? modApkMessage : MyFunction.FirstCharEachWordUpcase(modSurfix);
+                modSurfix = modSurfix.ToLower() == "mod" ? modApkMessage : ExtendingFunction.FirstCharEachWordUpcase(modSurfix);
                     titleprocRes = (thenow.appInfo.name).Trim(' ') +" " + modSurfix;
                 string[] items = (!String.IsNullOrWhiteSpace(thenow.modInfo.UI.modTypeGetDat(thenow.modInfo.UI.currentindex)) ? thenow.modInfo.UI.modTypeGetDat(thenow.modInfo.UI.currentindex).Split('\n') : new string[] {});
                 items = items.Where(x => !String.IsNullOrEmpty(x)).ToArray();
@@ -197,7 +197,7 @@ namespace MMBS
                         if (items[i].Length > 50) continue;
                         items[i] = items[i].Trim();
                         items[i] = Regex.Replace(items[i], "^-|^\\+|\\.$", "");
-                        items[i] = MyFunction.CapitalizeEachWord(items[i]);
+                        items[i] = ExtendingFunction.CapitalizeEachWord(items[i]);
                         items[i] = items[i].Trim();
                         // Add "|" if not first index 
                         //titleprocRes += i != 0 ? " | " : " ";
@@ -292,9 +292,9 @@ namespace MMBS
             }
             else
             {
-                cache_modList = " " + MyFunction.CapitalizeEachWord(thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex));
+                cache_modList = " " + ExtendingFunction.CapitalizeEachWord(thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex));
             }
-            SP_iGroupScript = MyFunction.MultiReplace(igroupHtml, "$$$.datAReq$$$$", thenow.appInfo.androidReq, "$$$.datVer$$$$", thenow.appInfo.version,
+            SP_iGroupScript = ExtendingFunction.MultiReplace(igroupHtml, "$$$.datAReq$$$$", thenow.appInfo.androidReq, "$$$.datVer$$$$", thenow.appInfo.version,
                 "$$$.datSize$$$$", thenow.appInfo.size, "$$$.modListHtml$$$$", cache_modList, "$$$.datSourceType$$$$", thenow.appInfo.datasourcemask,
                 "$$$.datSourceLink$$$$", thenow.appInfo.datasource, "$$$.internetReqHtml$$$$", internetReqHtml[thenow.appInfo.internetReq ? 1 : 0], "$$$.rootReqHtml$$$$", rootReqHtml[thenow.appInfo.rootReq ? 1 : 0]);
             SP_iGroupScript = igroupScript.Replace("$$$.igroupHtml$$$$", SP_iGroupScript);
@@ -315,7 +315,7 @@ namespace MMBS
                             if (SP_ImageLink_cache.Contains("-rw")) SP_ImageLink_cache = SP_ImageLink_cache.Replace("-rw", "");
                             if (SP_ImageLink_cache.Contains("=")) SP_ImageLink_cache = SP_ImageLink_cache.Remove(SP_ImageLink_cache.IndexOf("=")) + "=w" + NewWidth + "-h" + NewHeight;
                         }
-                        SP_ImageScript += MyFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", thenow.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
+                        SP_ImageScript += ExtendingFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", thenow.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
                     }
                     //Đây là code tạm để thêm separate, nhớ sửa
                     if (i != thenow.postMedia.ImageList.Count - 1)
@@ -352,9 +352,9 @@ namespace MMBS
                 if (!thenow.downloadlink.MListEnable)
                 {
                     if (thenow.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.Downloadlink.link))
-                        SP_DownloadScript = MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        SP_DownloadScript = ExtendingFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                     if (thenow.downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OBBlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OBBlink.FAicon);
                     SP_DownloadScript = downloadScript.Replace("$$$:.downlinkBundleScript$$$$", SP_DownloadScript);
                 }
                 else
@@ -362,19 +362,19 @@ namespace MMBS
                     string cache_downloadbundle = "";
                     if (thenow.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.Downloadlink.link))
                     {
-                        cache_downloadbundle = MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle = ExtendingFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                         if (thenow.downloadlink.linklist.Count > 0)
                         {
-                            cache_downloadbundle += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[0].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket");
+                            cache_downloadbundle += ExtendingFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[0].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket");
                         }
                         SP_DownloadScript = downloadScript.Replace("$$$:.downlinkBundleScript$$$$", cache_downloadbundle);
                     }
                     if (thenow.downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link))
                     {
-                        SP_DownloadScript += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                         if (thenow.downloadlink.linklist.Count > 1)
                         {
-                            cache_downloadbundle += MyFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[1].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket");
+                            cache_downloadbundle += ExtendingFunction.MultiReplace(downoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[1].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket");
                         }
                         SP_DownloadScript += downloadScript.Replace("$$$:.downlinkBundleScript$$$$", cache_downloadbundle);
                     }
@@ -385,7 +385,7 @@ namespace MMBS
             if (thenow.credit.now != null)
                 SP_CreditScript = string.IsNullOrWhiteSpace(thenow.credit.now.GetPreview(true)) ? "" : credit.Replace("$$$?.creditString$$$$", thenow.credit.now.GetToUse());
             //Summary
-            return postHtml2 = MyFunction.MultiReplace(layout, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.downloadScript$$$$", SP_DownloadScript, "$$$.creadit$$$$", SP_CreditScript, "$$$.lastword$$$$", lastword);
+            return postHtml2 = ExtendingFunction.MultiReplace(layout, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.downloadScript$$$$", SP_DownloadScript, "$$$.creadit$$$$", SP_CreditScript, "$$$.lastword$$$$", lastword);
             // System.Windows.Forms.MessageBox.Show(postHtml);
         }
         
@@ -545,9 +545,9 @@ namespace MMBS
             }
             else
             {
-                cache_modList = " " + MyFunction.CapitalizeEachWord(thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex));
+                cache_modList = " " + ExtendingFunction.CapitalizeEachWord(thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex));
             }
-            SP_iGroupScript = MyFunction.MultiReplace(
+            SP_iGroupScript = ExtendingFunction.MultiReplace(
                 igroupHtml, "$$$.datAReq$$$$", 
                 thenow.appInfo.androidReq, "$$$.datVer$$$$", thenow.appInfo.version,
                 "$$$.datSize$$$$", thenow.appInfo.size, "$$$.modListHtml$$$$", cache_modList, 
@@ -574,7 +574,7 @@ namespace MMBS
                             if (SP_ImageLink_cache.Contains("-rw")) SP_ImageLink_cache = SP_ImageLink_cache.Replace("-rw", "");
                             if (SP_ImageLink_cache.Contains("=")) SP_ImageLink_cache = SP_ImageLink_cache.Remove(SP_ImageLink_cache.IndexOf("=")) + "=w" + NewWidth + "-h" + NewHeight;
                         }
-                        SP_ImageScript += MyFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", thenow.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
+                        SP_ImageScript += ExtendingFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", thenow.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
                     }
                     //Đây là code tạm để thêm separate, nhớ sửa
                     if (i != thenow.postMedia.ImageList.Count - 1)
@@ -608,9 +608,9 @@ namespace MMBS
             string script_postDownload = "";
             if (!string.IsNullOrEmpty(thenow.appInfo.datasource))
             {
-                SP_SourceScript = thenow.appInfo.datasourcetype =="play"?MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link"):"";
+                SP_SourceScript = thenow.appInfo.datasourcetype =="play"?ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link"):"";
                 //Temporarily v200516
-                SP_SourceScript = thenow.appInfo.datasourcetype != "play" ? MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
+                SP_SourceScript = thenow.appInfo.datasourcetype != "play" ? ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
             }
             if (thenow.downloadlink.Downloadlink.check || thenow.downloadlink.OBBlink.check)
             {
@@ -618,9 +618,9 @@ namespace MMBS
                 if (!thenow.downloadlink.MListEnable)
                 {
                     if (thenow.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.Downloadlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                     if (thenow.downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OBBlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OBBlink.FAicon);
                     SP_DownloadScript = linkScript.Replace("$$$:.downlinkBundleScript$$$$", SP_DownloadScript);
                 }
                 /*v200116
@@ -651,10 +651,10 @@ namespace MMBS
                     string cache_downloadbundle = "";
                     if (thenow.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.Downloadlink.link))
                     {
-                        cache_downloadbundle = MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle = ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                         if (thenow.downloadlink.linklist.Count > 0)
                         {
-                            cache_downloadbundle += MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[0].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
+                            cache_downloadbundle += ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[0].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
                         }
                         SP_DownloadScript += linkScript.Replace("$$$:.downlinkBundleScript$$$$", cache_downloadbundle);
                     }
@@ -662,10 +662,10 @@ namespace MMBS
                     //Separately process
                     if (thenow.downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link))
                     {
-                        cache_downloadbundle = MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle = ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                         if (thenow.downloadlink.linklist.Count > 1)
                         {
-                            cache_downloadbundle += MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[1].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
+                            cache_downloadbundle += ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[1].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
                         }
                         script_postDownload=codeWrapLine.Replace("$$$:.var$$$$", cache_downloadbundle);
                     }
@@ -679,7 +679,7 @@ namespace MMBS
             if (thenow.credit.now != null)
                 SP_CreditScript = string.IsNullOrWhiteSpace(thenow.credit.now.GetPreview(true)) ? "" : credit.Replace("$$$?.creditString$$$$", thenow.credit.now.GetToUse());
             //Summary
-            return postHtml = MyFunction.MultiReplace(layout, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.linkScript$$$$", SP_DownloadScript, "$$$.creadit$$$$", SP_CreditScript, "$$$.lastword$$$$", lastword);
+            return postHtml = ExtendingFunction.MultiReplace(layout, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.linkScript$$$$", SP_DownloadScript, "$$$.creadit$$$$", SP_CreditScript, "$$$.lastword$$$$", lastword);
 
         } // <----- HIDEN HERE
         
@@ -864,9 +864,9 @@ namespace MMBS
             }
             else
             {
-                cache_modList = " " + MyFunction.CapitalizeEachWord(thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex));
+                cache_modList = " " + ExtendingFunction.CapitalizeEachWord(thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex));
             }
-            SP_iGroupScript = MyFunction.MultiReplace(
+            SP_iGroupScript = ExtendingFunction.MultiReplace(
                 igroupHtml, "$$$.datAReq$$$$",
                 thenow.appInfo.androidReq, "$$$.datVer$$$$", thenow.appInfo.version,
                 "$$$.datSize$$$$", thenow.appInfo.size, "$$$.modListHtml$$$$", cache_modList,
@@ -898,7 +898,7 @@ namespace MMBS
                             if (SP_ImageLink_cache.Contains("-rw")) SP_ImageLink_cache = SP_ImageLink_cache.Replace("-rw", "");
                             if (SP_ImageLink_cache.Contains("=")) SP_ImageLink_cache = SP_ImageLink_cache.Remove(SP_ImageLink_cache.IndexOf("=")) + "=w" + NewWidth + "-h" + NewHeight;
                         }
-                        SP_ImageScript += MyFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", thenow.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
+                        SP_ImageScript += ExtendingFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", thenow.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
                     }
                     //Đây là code tạm để thêm separate, nhớ sửa
                     if (i != thenow.postMedia.ImageList.Count - 1)
@@ -932,9 +932,9 @@ namespace MMBS
             string script_postDownload = "";
             if (!string.IsNullOrEmpty(thenow.appInfo.datasource))
             {
-                SP_SourceScript = thenow.appInfo.datasourcetype == "play" ? MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : "";
+                SP_SourceScript = thenow.appInfo.datasourcetype == "play" ? ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : "";
                 //Temporarily v200516
-                SP_SourceScript = thenow.appInfo.datasourcetype != "play" ? MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
+                SP_SourceScript = thenow.appInfo.datasourcetype != "play" ? ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
             }
             //Todo: Hot fix- Need refactor
             
@@ -952,11 +952,11 @@ namespace MMBS
                 if (!thenow.downloadlink.MListEnable)
                 {
                     if (thenow.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.Downloadlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                     if (thenow.downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OBBlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OBBlink.FAicon);
                     if (thenow.downloadlink.OMirrorlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OMirrorlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", thenow.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OMirrorlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", thenow.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OMirrorlink.FAicon);
                     SP_DownloadScript = linkScript.Replace("$$$:.downlinkBundleScript$$$$", SP_DownloadScript);
                 }
                
@@ -965,7 +965,7 @@ namespace MMBS
                     string cache_downloadbundle = "";
                     if (thenow.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.Downloadlink.link))
                     {
-                        cache_downloadbundle = MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle = ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                        
                         /*if (thenow.downloadlink.APKlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.APKlink.link))
                             SP_DownloadScript += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.APKlink.link, "$$$:.downName$$$$", thenow.downloadlink.APKlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.APKlink.FAicon);*/
@@ -973,13 +973,13 @@ namespace MMBS
                     }
                     if (thenow.downloadlink.linklist.Count > 0)
                     {
-                        cache_downloadbundle += MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[0].link, "$$$:.downName$$$$", thenow.downloadlink.linklist[0].linkalias, "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
+                        cache_downloadbundle += ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[0].link, "$$$:.downName$$$$", thenow.downloadlink.linklist[0].linkalias, "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
                         //SP_DownloadScript += linkScript.Replace("$$$:.downlinkBundleScript$$$$", cache_downloadbundle);
                     }
                     //Separately process
                     if (thenow.downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link))
                     {
-                        cache_downloadbundle += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                         /*if (thenow.downloadlink.linklist.Count > 1)
                         {
                             cache_downloadbundle += MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[1].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
@@ -989,7 +989,7 @@ namespace MMBS
                     //todo: Refactor code to match generateForm layout
                     if (thenow.downloadlink.OMirrorlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OMirrorlink.link))
                     {
-                        cache_downloadbundle += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", thenow.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", thenow.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                         /*if (thenow.downloadlink.linklist.Count > 1)
                         {
                             cache_downloadbundle += MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[1].link, "$$$:.downName$$$$", "Mirror", "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
@@ -1018,7 +1018,7 @@ namespace MMBS
 
             }
             //Summary
-            return postHtml = MyFunction.MultiReplace(layout, "$$$.styleCard$$$$", SP_styleCard, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.linkScript$$$$", SP_DownloadScript, "$$$.creadit$$$$", SP_CreditScript, "$$$.lastword$$$$", lastword);
+            return postHtml = ExtendingFunction.MultiReplace(layout, "$$$.styleCard$$$$", SP_styleCard, "$$$.iconScript$$$$", SP_IconScipt, "$$$.descScript$$$$", SP_DescScript, "$$$.igroupScript$$$$", SP_iGroupScript, "$$$.imageScript$$$$", SP_ImageScript, "$$$.videoScript$$$$", SP_VideoScript, "$$$.linkScript$$$$", SP_DownloadScript, "$$$.creadit$$$$", SP_CreditScript, "$$$.lastword$$$$", lastword);
 
         }
         public void SpecificProcess(PostDataBundle thenow,Form UI,string code, params string[] para)
@@ -1234,7 +1234,7 @@ namespace MMBS
                 }
                 modfeatureScript = modfeatureScript+cache_modList;
 
-                postHtml = MyFunction.MultiReplace(layout, 
+                postHtml = ExtendingFunction.MultiReplace(layout, 
                     "$$$.iconScript$$$$", iconScript, 
                     "$$$.datasourceScript$$$$", datasourceScript,
                     "$$$.igroupScript$$$$", igroupScript,
@@ -1266,7 +1266,7 @@ namespace MMBS
                     }
 
                     string cache = System.IO.File.ReadAllText("C:\\BloggerSupporter\\buithanhhieu.txt");
-                    postHtml = MyFunction.MultiReplace(cache,
+                    postHtml = ExtendingFunction.MultiReplace(cache,
                         "{{icon}}", (string.IsNullOrWhiteSpace(thenow.appInfo.icon.link) ? "" : thenow.appInfo.icon.link),
                         "{{source}}",thenow.appInfo.datasource,
                         "{{name}}", thenow.appInfo.name,
@@ -1472,7 +1472,7 @@ namespace MMBS
             }
             else
             {
-                cache_modList = " " + MyFunction.CapitalizeEachWord(thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex));
+                cache_modList = " " + ExtendingFunction.CapitalizeEachWord(thenow.modInfo.UI.modTypeGetname(thenow.modInfo.UI.currentindex));
             }
             /*
              * igroupHtml = 
@@ -1500,7 +1500,7 @@ namespace MMBS
             string phonelist = 
                 "<ul>\n" + String.Join("\n",thenow.custom_data["phonereq"].Split("\n").Select<string,string>((x) => $"<li>{x}</li>").ToArray<string>())
                 +"</ul>";
-            SP_iGroupScript = MyFunction.MultiReplace(
+            SP_iGroupScript = ExtendingFunction.MultiReplace(
                 igroupHtml,
                 "$$$.isJailbreak$$$$", yesnoscript[thenow.appInfo.rootReq?1:0],
                 "$$$.datVer$$$$", thenow.appInfo.version,
@@ -1531,7 +1531,7 @@ namespace MMBS
                             if (SP_ImageLink_cache.Contains("-rw")) SP_ImageLink_cache = SP_ImageLink_cache.Replace("-rw", "");
                             if (SP_ImageLink_cache.Contains("=")) SP_ImageLink_cache = SP_ImageLink_cache.Remove(SP_ImageLink_cache.IndexOf("=")) + "=w" + NewWidth + "-h" + NewHeight;
                         }
-                        SP_ImageScript += MyFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", thenow.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
+                        SP_ImageScript += ExtendingFunction.MultiReplace(imagecardScript, "$$$:.imageLink$$$$", SP_ImageLink_cache, "$$$:.imageOHeight$$$$", thenow.postMedia.ImageList[i].height.ToString(), "$$$:.imageOWidth$$$$", thenow.postMedia.ImageList[i].width.ToString(), "$$$:.imageNHeight$$$$", NewHeight.ToString(), "$$$:.imageNWidth$$$$", NewWidth.ToString());
                     }
                     //Đây là code tạm để thêm separate, nhớ sửa
                     if (i != thenow.postMedia.ImageList.Count - 1)
@@ -1551,9 +1551,9 @@ namespace MMBS
             string script_postDownload = "";
             if (!string.IsNullOrEmpty(thenow.appInfo.datasource))
             {
-                SP_SourceScript = thenow.appInfo.datasourcetype == "play" ? MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : "";
+                SP_SourceScript = thenow.appInfo.datasourcetype == "play" ? ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : "";
                 //Temporarily v200516
-                SP_SourceScript = thenow.appInfo.datasourcetype != "play" ? MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
+                SP_SourceScript = thenow.appInfo.datasourcetype != "play" ? ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.appInfo.datasource, "$$$:.downName$$$$", thenow.appInfo.datasourcemask, "$$$:.downFAicon$$$$", "link") : SP_SourceScript;
             }
             if (thenow.downloadlink.Downloadlink.check || thenow.downloadlink.OBBlink.check)
             {
@@ -1562,11 +1562,11 @@ namespace MMBS
                 if (!thenow.downloadlink.MListEnable)
                 {
                     if (thenow.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.Downloadlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                     if (thenow.downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OBBlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OBBlink.FAicon);
                     if (thenow.downloadlink.OMirrorlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OMirrorlink.link))
-                        SP_DownloadScript += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", thenow.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OMirrorlink.FAicon);
+                        SP_DownloadScript += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", thenow.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.OMirrorlink.FAicon);
                     SP_DownloadScript = linkScript.Replace("$$$:.downlinkBundleScript$$$$", SP_DownloadScript);
                 }
 
@@ -1575,22 +1575,22 @@ namespace MMBS
                     string cache_downloadbundle = "";
                     if (thenow.downloadlink.Downloadlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.Downloadlink.link))
                     {
-                        cache_downloadbundle = MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle = ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.Downloadlink.link, "$$$:.downName$$$$", thenow.downloadlink.Downloadlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
 
                     }
                     if (thenow.downloadlink.linklist.Count > 0)
                     {
-                        cache_downloadbundle += MyFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[0].link, "$$$:.downName$$$$", thenow.downloadlink.linklist[0].linkalias, "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
+                        cache_downloadbundle += ExtendingFunction.MultiReplace(linkoneScript, "$$$:.downLink$$$$", thenow.downloadlink.linklist[0].link, "$$$:.downName$$$$", thenow.downloadlink.linklist[0].linkalias, "$$$:.downFAicon$$$$", "rocket").Replace("class=\"btn-slide2\"", "class=\"btn-slide\"");
                     }
                     //Separately process
                     if (thenow.downloadlink.OBBlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link))
                     {
-                        cache_downloadbundle += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OBBlink.link, "$$$:.downName$$$$", thenow.downloadlink.OBBlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                     }
                     //todo: Refactor code to match generateForm layout
                     if (thenow.downloadlink.OMirrorlink.check && !string.IsNullOrWhiteSpace(thenow.downloadlink.OMirrorlink.link))
                     {
-                        cache_downloadbundle += MyFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", thenow.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
+                        cache_downloadbundle += ExtendingFunction.MultiReplace(linkoneScript2, "$$$:.downLink$$$$", thenow.downloadlink.OMirrorlink.link, "$$$:.downName$$$$", thenow.downloadlink.OMirrorlink.linkalias, "$$$:.downFAicon$$$$", thenow.downloadlink.Downloadlink.FAicon);
                         
                     }
                     SP_DownloadScript = linkScript.Replace("$$$:.downlinkBundleScript$$$$", cache_downloadbundle);
@@ -1616,7 +1616,7 @@ namespace MMBS
             }
             //Summary
             return postHtml = 
-                MyFunction.MultiReplace(layout, 
+                ExtendingFunction.MultiReplace(layout, 
                 "$$$.styleCard$$$$", SP_styleCard, 
                 "$$$.iconScript$$$$", SP_IconScipt, 
                 "$$$.descScript$$$$", SP_DescScript, 
@@ -1696,7 +1696,7 @@ namespace MMBS
                 {
                     foreach (var item in keyword)
                     {
-                        cache.Add( MMBS.MyFunction.MultiReplace(item,
+                        cache.Add( MMBS.ExtendingFunction.MultiReplace(item,
                             "*name*", name,
                             "*type*",modtype
                             ));
@@ -1709,7 +1709,7 @@ namespace MMBS
                     {
                         foreach (var item in subkey)
                         {
-                            cache.Add(MMBS.MyFunction.MultiReplace(item,
+                            cache.Add(MMBS.ExtendingFunction.MultiReplace(item,
                             "*name*", name,
                             "*type*", modtype
                             ));

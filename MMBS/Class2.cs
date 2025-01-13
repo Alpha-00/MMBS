@@ -1642,7 +1642,7 @@ namespace MMBS
                         else fname =  x.Value<string>();
                         x = json.SelectToken("$.list[0].size"); 
                         if (x == null) valid = 2;
-                        else fsize = MyFunction.SizeSuffix(x.Value<int>());
+                        else fsize = ExtendingFunction.SizeSuffix(x.Value<int>());
                         valid = 1;
                     }
                     catch (Exception e)
