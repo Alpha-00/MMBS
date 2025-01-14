@@ -24,7 +24,7 @@ namespace MMBS
         const string nothinghereID = "7428959711553198398";
         const string offlinemodsID = "4254511517437771877";
         const string bth = "C:\\BloggerSupporter\\buithanhhieu.txt";
-
+        
         public static string GetToken(string code)
         {
 
@@ -45,7 +45,7 @@ namespace MMBS
                         return "C:\\BloggerSupporter\\";
                             }
                 case "BTH": return bth;
-                           
+                case "modCustom": return "C:\\BloggerSupporter\\mod_custom_options.txt";
             }
             return "";
         }

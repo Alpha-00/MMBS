@@ -52,7 +52,7 @@
 			this.contentList.Location = new System.Drawing.Point(8, 8);
 			this.contentList.Name = "contentList";
 			this.contentList.ScrollAlwaysVisible = true;
-			this.contentList.Size = new System.Drawing.Size(268, 284);
+			this.contentList.Size = new System.Drawing.Size(255, 237);
 			this.contentList.TabIndex = 1;
 			this.contentList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.contentList_ItemCheck);
 			// 
@@ -70,7 +70,7 @@
 			this.mainLayoutPanel.RowCount = 1;
 			this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.mainLayoutPanel.Size = new System.Drawing.Size(419, 300);
+			this.mainLayoutPanel.Size = new System.Drawing.Size(401, 253);
 			this.mainLayoutPanel.TabIndex = 2;
 			this.mainLayoutPanel.MouseLeave += new System.EventHandler(this.mainLayoutPanel_MouseLeave);
 			// 
@@ -84,10 +84,11 @@
             "- (content).\\n",
             "(content).\\n",
             "(content), "});
-			this.templateList.Location = new System.Drawing.Point(282, 8);
+			this.templateList.Location = new System.Drawing.Point(269, 8);
 			this.templateList.Name = "templateList";
-			this.templateList.Size = new System.Drawing.Size(129, 284);
+			this.templateList.Size = new System.Drawing.Size(124, 237);
 			this.templateList.TabIndex = 5;
+			this.templateList.SelectedIndexChanged += new System.EventHandler(this.templateList_SelectedIndexChanged);
 			// 
 			// ModDescriptionQuickEditor
 			// 

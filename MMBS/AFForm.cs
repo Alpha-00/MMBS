@@ -53,7 +53,8 @@ namespace MMBS
         {
             InitializeComponent();
             tipOne.SetToolTip(checkExtPerms, checkExtPerms.Checked ? "External Storage" : "Overlay");
-            modDescQuickEditor.VisibleChanged += modDescQuickEditor_VisibleChanged;
+            //modDescQuickEditor.VisibleChanged += modDescQuickEditor_VisibleChanged;
+            modDescQuickEditor.callback = () => { this.boxModInfo.Text = modDescQuickEditor.RenderContent(); };
         }
         public AFForm()
         {
@@ -995,7 +996,7 @@ namespace MMBS
 
         private void modDescQuickEditor_VisibleChanged(object sender, EventArgs e)
         {
-            boxModInfo.Text = modDescQuickEditor.RenderContent();
+            //boxModInfo.Text = modDescQuickEditor.RenderContent();
             //((ModDescriptionQuickEditor)sender).VisibleChanged -= modDescQuickEditor_VisibleChanged;
         }
 

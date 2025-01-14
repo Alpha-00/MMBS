@@ -27,6 +27,11 @@ namespace MMBS.Misc_Form
         public ModDescriptionQuickEditor()
         {
             InitializeComponent();
+            initContent();
+            initTemplate();
+        }
+        public void initTemplate()
+        {
             templateList.BeginUpdate();
             templateList.Items.Clear();
             foreach (var item in templateInterpret)
@@ -35,9 +40,37 @@ namespace MMBS.Misc_Form
             }
             templateList.SelectedIndex = 0;
             templateList.EndUpdate();
-
         }
+        public void initContent()
+        {
+            if (!System.IO.File.Exists(Class1.GetToken("modCustom")))
+            {
+                var items = new List<string>();
+                foreach (var item in contentList.Items)
+                {
+                    items.Add(item as String);
+                }
+                System.IO.File.WriteAllText(Class1.GetToken("modCustom"), String.Join("\n",items));
+            }
+            try
+            {
+                var data = System.IO.File.ReadAllText(Class1.GetToken("modCustom"));
+                var collection = data.Split("\n");
+                if (collection.Length == 0) return;
+                contentList.BeginUpdate();
+                contentList.Items.Clear();
+                foreach (var item in collection)
+                {
+                    contentList.Items.Add(item);
+                }
+                contentList.EndUpdate();
+                ClearContentCheck();
+            }
+            catch (Exception e)
+            {
 
+            }
+        }
         public void UpdateOptions(string content)
         {
             
@@ -87,13 +120,13 @@ namespace MMBS.Misc_Form
             var builder = new StringBuilder();
             var template = templateList.Text;
             int id = 1;
-            for (int i = 0; i < contentList.Items.Count; i++)
+            for (int i = 0; i < contentStringList.Count; i++)
             {
-                if (contentList.GetItemCheckState(i) == CheckState.Unchecked) continue;
+                //if (contentList.GetItemCheckState(i) == CheckState.Unchecked) continue;
                 
                 var output = ExtendingFunction.MultiReplace(template,
                     "\\n","\n",
-                    "(content)", contentList.Items[i] as string,
+                    "(content)", contentStringList[i],
                     "(index)", id.ToString()
                     );
                 builder.Append(output);
@@ -121,15 +154,33 @@ namespace MMBS.Misc_Form
         private void ModDescriptionQuickEditor_VisibleChanged(object sender, EventArgs e)
         {
         }
-
+        public delegate void registerChanged();
+        public registerChanged callback;
+        public List<string> contentStringList = new List<string>();
         private void contentList_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            
+            if (e.NewValue == CheckState.Checked)
+            {
+                contentStringList.Add(contentList.Items[e.Index] as string);
+            }
+            if (e.NewValue == CheckState.Unchecked)
+            {
+                contentStringList.Remove(contentList.Items[e.Index] as string);
+
+            }
+            if (callback != null)
+            callback();
         }
 
         private void ModDescriptionQuickEditor_MouseMove(object sender, MouseEventArgs e)
         {
             
+        }
+
+        private void templateList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (callback != null)
+            callback();
         }
     }
 }
