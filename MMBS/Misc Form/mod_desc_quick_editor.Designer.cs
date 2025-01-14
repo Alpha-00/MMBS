@@ -88,6 +88,7 @@
 			this.templateList.Name = "templateList";
 			this.templateList.Size = new System.Drawing.Size(129, 284);
 			this.templateList.TabIndex = 5;
+			this.templateList.SelectedIndexChanged += new System.EventHandler(this.templateList_SelectedIndexChanged);
 			// 
 			// ModDescriptionQuickEditor
 			// 
