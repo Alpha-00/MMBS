@@ -35,6 +35,7 @@ using static System.Net.WebRequestMethods;
 using System.Collections.Immutable;
 
 using MMBS.OldProcessorSupporter;
+using System.Security.Cryptography;
 
 namespace MMBS
 {
@@ -627,34 +628,46 @@ namespace MMBS
                 }
             }
 
- 
-            public static string httpreqDownloadString(Uri uri)
+
+            public static string httpreqDownloadString(Uri uri, bool doubleRequest = false)
             {
-                
-                //! The Code to solve 403 Forbiden problem
-                //Source Code: https://stackoverflow.com/questions/16735042/the-remote-server-returned-an-error-403-forbidden
-                //Navigate to front page to Set cookies
-                // HttpRequest htmlReq = new HttpRequest("","","");
+                HttpWebResponse response = null;
+                for (int maxloop = doubleRequest ? 2 : 1; maxloop > 0; maxloop--)
+                {
+                    try
+                    {
+                        //! The Code to solve 403 Forbiden problem
+                        //Source Code: https://stackoverflow.com/questions/16735042/the-remote-server-returned-an-error-403-forbidden
+                        //Navigate to front page to Set cookies
+                        // HttpRequest htmlReq = new HttpRequest("","","");
 
-                // Dictionary<string,List<string>> OLinks = new Dictionary<string, List<string>>();
-                
-                // string Url = uri.AbsoluteUri;
+                        // Dictionary<string,List<string>> OLinks = new Dictionary<string, List<string>>();
 
-                CookieContainer cookieJar = new CookieContainer();
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-                request.CookieContainer = cookieJar;
+                        // string Url = uri.AbsoluteUri;
 
-                request.Accept = @"text/html, application/xhtml+xml, */*";
-                //request.Referer = @"https://www.apkadmin.com/";
-                request.Headers.Add("Accept-Language", "en-GB");
-                request.UserAgent = @"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)";
-                
-                //request.Host = @"www.apkadmin.com";
-                
+                        CookieContainer cookieJar = new CookieContainer();
+                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+                        request.CookieContainer = cookieJar;
 
-                request.UseDefaultCredentials = true;
+                        request.Accept = @"text/html, application/xhtml+xml, */*";
+                        //request.Referer = @"https://www.apkadmin.com/";
+                        request.Headers.Add("Accept-Language", "en-GB");
+                        request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
 
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                        //request.Host = @"www.apkadmin.com";
+
+
+                        request.UseDefaultCredentials = true;
+
+                        response = (HttpWebResponse)request.GetResponse();
+                        break;
+                    }
+                    catch (WebException e)
+                    {
+                      Thread.Sleep(new Random().Next(1000, 1500));
+                    }
+                }
+                if (response == null) throw new NotImplementedException();
                 string webpage;
                 using (var reader = new StreamReader(response.GetResponseStream()))
                 {
@@ -706,7 +719,7 @@ namespace MMBS
                         request.Accept = @"text/html, application/xhtml+xml, */*";
                         //request.Referer = @"https://www.apkadmin.com/";
                         request.Headers.Add("Accept-Language", "en-GB");
-                        request.UserAgent = @"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)";
+                        request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
                         //request.Host = @"www.apkadmin.com";
                         request.UseDefaultCredentials = true;
                        
@@ -991,11 +1004,31 @@ namespace MMBS
                         request.Accept = @"text/html, application/xhtml+xml, */*";
                         //request.Referer = @"https://www.apkadmin.com/";
                         request.Headers.Add("Accept-Language", "en-GB");
-                        request.UserAgent = @"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)";
+                        request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
                         //request.Host = @"www.apkadmin.com";
                         request.UseDefaultCredentials = true;
+                        HttpWebResponse response;
+                        // Double Request
+                        // TODO: Try to remove this behavior
+                        try
+                        {
+                            response = (HttpWebResponse)request.GetResponse();
+                        }
+                        catch (WebException e)
+                        {
+                            int waitTime = (new Random()).Next(1000, 1500);
+                            System.Threading.Thread.Sleep(waitTime);
+                            request = (HttpWebRequest)WebRequest.Create(tempLink);
+                            request.CookieContainer = new CookieContainer();
 
-                        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                            request.Accept = @"text/html, application/xhtml+xml, */*";
+                            //request.Referer = @"https://www.apkadmin.com/";
+                            request.Headers.Add("Accept-Language", "en-GB");
+                            request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
+                            //request.Host = @"www.apkadmin.com";
+                            request.UseDefaultCredentials = true;
+                            response = (HttpWebResponse)request.GetResponse();
+                        }
                         using (var reader = new StreamReader(response.GetResponseStream()))
                         {
                             webpage = reader.ReadToEnd();
@@ -1052,7 +1085,7 @@ namespace MMBS
                         request.CookieContainer = cookieJar;
                         request.Accept = @"text/html, application/xhtml+xml, */*";
                         request.Headers.Add("Accept-Language", "en-GB");
-                        request.UserAgent = @"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)";
+                        request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
                         request.UseDefaultCredentials = true;
                         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                         using (var reader = new StreamReader(response.GetResponseStream()))
@@ -1223,7 +1256,7 @@ namespace MMBS
                                 case "apkadmin.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<h2>File Not Found</h2>")) valid = 1; break;
                                 case "www.file-upload.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<h2>File Not Found</h2>")) valid = 1; break;
                                 case "www.terabox.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("share-error-msg")) valid = 1; break;
-                                case "modsfire.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("Page Not Found")) valid = 1; break;
+                                case "modsfire.com": webpage = ProcSupporter.httpreqDownloadString(uri, doubleRequest: true); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("Page Not Found")) valid = 1; break;
                                 default: webpage = cache_net.DownloadString(uri); if (!string.IsNullOrEmpty(webpage)) valid = 1; break;
                             }
                             if (valid == 0) valid = 2;
@@ -1525,7 +1558,7 @@ namespace MMBS
                         request.Accept = @"text/html, application/xhtml+xml, */*";
                         //request.Referer = @"https://www.apkadmin.com/";
                         request.Headers.Add("Accept-Language", "en-GB");
-                        request.UserAgent = @"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)";
+                        request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
                         //request.Host = @"www.apkadmin.com";
                         request.UseDefaultCredentials = true;
 
@@ -1598,7 +1631,7 @@ namespace MMBS
                         request.Accept = @"text/html, application/xhtml+xml, */*";
                         //request.Referer = @"https://www.apkadmin.com/";
                         request.Headers.Add("Accept-Language", "en-GB");
-                        request.UserAgent = @"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)";
+                        request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
                         //request.Host = @"www.apkadmin.com";
                         request.UseDefaultCredentials = true;
 
@@ -1674,7 +1707,7 @@ namespace MMBS
                 {
                     try
                     {
-                        webpage = OldProcessor.ProcSupporter.httpreqDownloadString(uri);
+                        webpage = OldProcessor.ProcSupporter.httpreqDownloadString(uri, doubleRequest: true);
                         HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
                         doc.LoadHtml(webpage);
                         var x = doc.DocumentNode.SelectSingleNode("/html/body//div[@class=\"name-file\"]").InnerText;
@@ -2279,7 +2312,7 @@ namespace MMBS
                 }
                 public void Get_Title()
                 {
-                    webpage = webpage.Substring(webpage.IndexOf("<div class=\"title_link\">"));
+                    webpage = webpage.Substring(webpage.IndexOf("<div class=\"title_link"));
                     string cache = webpage.Substring(webpage.IndexOf("<h1>") + "<h1>".Length, 255);
                     /*if (cache.Contains("<div class=\"clear\"></div>"))
                     {
