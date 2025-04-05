@@ -806,13 +806,47 @@ namespace MMBS
                     { "www.apkmonk.com","apkmonk.com" },
                     { "apkcombo.com", "apkcombo.app" }
                 }.ToImmutableDictionary();
-                //var regexReplaceList = new Dictionary<string, Func<String, String>>()
-                //{
-                //    { }
-                //}.ToImmutableDictionary();
+                var regexReplaceList = new Dictionary<string, Func<Match, String>>()
+                {
+                    {@"^https://apkcombo\.(?:com|app)(?::\d+)?\/downloader/#package=(.+)",(match)
+                    => {
+                            var pkg = match.Groups[match.Groups.Count-1];
+                            Uri path = new Uri(@"https://apkcombo.com/search?q=" + pkg);
+                            CookieContainer cookieJar = new CookieContainer();
+                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(link);
+                        request.CookieContainer = cookieJar;
+                        request.Accept = @"text/html, application/xhtml+xml, */*";
+                        request.Headers.Add("Accept-Language", "en-GB");
+                        request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
+                        request.UseDefaultCredentials = true;
+                        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                        if (response.StatusCode != HttpStatusCode.Redirect) throw new Exception("Invalid Redirection: APKCombo");
+                        return response.Headers[HttpRequestHeader.Referer].ToString(); 
+                       }
+                    }
+                }.ToImmutableDictionary();
 
                 var uri = new UriBuilder(link);
                 if (hostSwapList.ContainsKey(uri.Host)) uri.Host = hostSwapList[uri.Host];
+                var tempUrl = uri.ToString();
+                foreach (var pattern in regexReplaceList)
+                {
+                    var regex = new Regex(pattern.Key,RegexOptions.IgnoreCase);
+                    if (!regex.IsMatch(tempUrl)) continue;
+                    //System.Windows.Forms.MessageBox.Show("Url Convertion Is Not Available. Please restart with different input","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    throw new NotImplementedException("Convertion not available. Please double check your input");
+                    // Unsuccess Implementation
+                    try
+                    {
+                        tempUrl = pattern.Value(regex.Match(tempUrl));
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                    break;
+
+                }
 
                 return uri.Uri.ToString();
                 

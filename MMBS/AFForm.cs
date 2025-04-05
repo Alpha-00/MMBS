@@ -274,7 +274,20 @@ namespace MMBS
             String queryText = "";
             comboSourceQuery.Invoke(new MethodInvoker(delegate() { queryText = comboSourceQuery.Text; }));
             this.Invoke(InfoSeter,"checkvarThreads.+");
-            OldProcessor.ProcessDataResourceTextBox processDataResourceTextBox = new OldProcessor.ProcessDataResourceTextBox(boxDSlink.Text, queryText);
+            OldProcessor.ProcessDataResourceTextBox processDataResourceTextBox = null ;
+            try
+            {
+                processDataResourceTextBox = new OldProcessor.ProcessDataResourceTextBox(boxDSlink.Text, queryText);
+            }
+            catch (NotImplementedException e)
+            {
+                //this.TopMost = false;
+
+                this.Invoke(InfoSeter, "progressDS value\n0");
+            this.Invoke(InfoSeter, "checkvarThreads.-");
+                MessageBox.Show(e.Message, "System Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             
             this.Invoke(InfoSeter, "checkDS label\n" + processDataResourceTextBox.valid.ToString());
             this.Invoke(InfoSeter, "progressDS value\n0");
