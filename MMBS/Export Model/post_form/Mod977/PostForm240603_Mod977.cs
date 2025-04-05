@@ -149,7 +149,8 @@ namespace MMBS.Model.PostForm
             "$$$.package$$$$", data.appInfo.packageName,
             "$$$.modListHtml$$$$", cache_modList,
             "$$$.infoNotifyMessage$$$$", cacheReqMessageList,
-            "$$$.armv8Req$$$$", data.appInfo.armv8aReq ? template.armv8aMessage: ""
+            "$$$.armv8Req$$$$", data.appInfo.armv8aReq ? template.armv8aMessage: "",
+            "$$$.playCheckMessage$$$$", data.appInfo.playCheckMessage ? template.playCheckMessage: ""
             //"$$$.igroupReqHtml$$$$", cache_reqList
             //"$$$.rootReqHtml$$$$", template.rootReqHtml[data.appInfo.rootReq ?
             //    // temp implement
@@ -335,7 +336,7 @@ namespace MMBS.Model.PostForm
         ///         Static information about version of the script for tracking and future refactor
         ///     </para>
         /// </summary>
-        public String toolscript => "<!--MMBS:240603:240603-->";
+        public String toolscript => "<!--MMBS:240603:250405-->";
 
         /// <summary>
         ///     <para>
@@ -451,6 +452,7 @@ namespace MMBS.Model.PostForm
                                         + "$$$.infoNotifyMessage$$$$"
                                         + "$$$.obbReq$$$$"
                                         + "$$$.armv8Req$$$$"
+                                        + "$$$.playCheckMessage$$$$"
                                         + "</ul>" + "\n";
 
         public String obbReq => "\n"+"<li style=\"color:red\">Giải nén thư mục <b>$$$.package$$$$</b> vào <b>Android/obb/</b></li>" + "\n";
@@ -463,6 +465,7 @@ namespace MMBS.Model.PostForm
         //};
         
         public String infoNotifyExtPermMessage => "<span>Để có được các tính năng MOD, bạn phải</span><span> <a href=\"https://www.mod977.top/2024/11/huong-dan-cap-quyen-truy-cap-bo-nho-ngoai.html\" rel=\"nofollow\" target=\"_blank\"><span><b>Cấp quyền truy cập bộ nhớ ngoài</b></span></a></span>";
+        public String playCheckMessage => "<li><span style=\"color: red;\"><b>Bypass Google Play Check:</b> Vào cửa hàng cài đặt game được vài % thì bấm <b>Hủy/Cancel</b>, sau đó cài bản <b>MOD</b> và thưởng thức.</span></li>";
         /// <summary>
         /// Message ARMv8a requirement
         /// </summary>

@@ -201,6 +201,7 @@ namespace MMBS
             public bool rootReq;
             public bool obbReq;
             public bool armv8aReq;
+            public bool playCheckMessage;
             public bool menuModFlag;
             public DefineInfoPack.imageinfo icon;
             public Descriptionpack description;

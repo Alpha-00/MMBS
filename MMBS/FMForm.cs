@@ -93,6 +93,7 @@ namespace MMBS
             this.checkRoot.Checked = thenow.appInfo.rootReq;
             this.checkOBB.Checked = thenow.appInfo.obbReq;
             this.checkArmv8a.Checked = thenow.appInfo.armv8aReq;
+            this.checkPlayCheckMessage.Checked = thenow.appInfo.playCheckMessage;
             this.checkMenu.Checked = thenow.appInfo.menuModFlag;
             this.checkABold.Checked = thenow.appInfo.description.bold;
             this.checkNoLine.Checked = thenow.appInfo.description.noline;
@@ -1488,6 +1489,11 @@ namespace MMBS
         private void checkArmv8a_CheckedChanged(object sender, EventArgs e)
         {
             FormData.appInfo.armv8aReq = checkArmv8a.Checked;
+        }
+
+        private void checkPlayCheckMessage_CheckedChanged(object sender, EventArgs e)
+        {
+            FormData.appInfo.playCheckMessage = checkPlayCheckMessage.Checked;
         }
     }
 }

@@ -102,6 +102,7 @@ namespace MMBS
             checkInternet.Checked = formData.appInfo.internetReq;
             checkRoot.Checked = formData.appInfo.rootReq;
             checkArmv8a.Checked = formData.appInfo.armv8aReq;
+            checkPlayCheck.Checked = formData.appInfo.playCheckMessage;
             checkOBB.Checked = formData.appInfo.obbReq;
             checkMenu.Checked = formData.appInfo.menuModFlag;
             labelValidDS.Visible = false;
@@ -131,6 +132,7 @@ namespace MMBS
             checkOBB.Checked = formData.appInfo.obbReq;
             checkRoot.Checked = formData.appInfo.rootReq;
             checkArmv8a.Checked = formData.appInfo.armv8aReq;
+            checkPlayCheck.Checked = formData.appInfo.playCheckMessage;
             checkMenu.Checked = formData.appInfo.menuModFlag;
             listCredit.SelectedIndex = formData.credit.nowIndex;
         }
@@ -1003,6 +1005,11 @@ namespace MMBS
         private void checkArmv8a_CheckedChanged(object sender, EventArgs e)
         {
             formData.appInfo.armv8aReq = checkArmv8a.Checked;
+        }
+
+        private void checkPlayCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            formData.appInfo.playCheckMessage = checkPlayCheck.Checked;
         }
     }
 }

@@ -1,5 +1,0 @@
-{{ name }} Mod
-{{- ### Mod List Manipulate Function ### -}}
-{{- for $modId in 0..<modItems.size ~}}
- | {{ modItems[$modId] | regex.replace `(\.$)|(^\d+.\)?\s?)` "" -}}
-{{~ end ~}}

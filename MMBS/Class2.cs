@@ -806,8 +806,14 @@ namespace MMBS
                     { "www.apkmonk.com","apkmonk.com" },
                     { "apkcombo.com", "apkcombo.app" }
                 }.ToImmutableDictionary();
+                //var regexReplaceList = new Dictionary<string, Func<String, String>>()
+                //{
+                //    { }
+                //}.ToImmutableDictionary();
+
                 var uri = new UriBuilder(link);
                 if (hostSwapList.ContainsKey(uri.Host)) uri.Host = hostSwapList[uri.Host];
+
                 return uri.Uri.ToString();
                 
             }

@@ -389,6 +389,28 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:MMBS.Misc_Form.ModDescriptionQuickEditor.templateInterpret">
+            <summary>
+            Translation between template and template reader
+            </summary>
+        </member>
+        <member name="F:MMBS.Misc_Form.ModDescriptionQuickEditor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MMBS.Misc_Form.ModDescriptionQuickEditor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MMBS.Misc_Form.ModDescriptionQuickEditor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="M:MMBS.Model.PostForm.PostForm240603_Mod977.#ctor(MMBS.PostDataBundle)">
             <summary>
             Need to run follow sequence
@@ -466,6 +488,11 @@
         <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.igroupHtml">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.armv8aMessage">
+            <summary>
+            Message ARMv8a requirement
             </summary>
         </member>
         <member name="P:MMBS.Model.PostForm.TemplateData240603_Mod977.modListHtml">

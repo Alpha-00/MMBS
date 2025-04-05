@@ -80,6 +80,7 @@
 			this.butCustomData = new System.Windows.Forms.Button();
 			this.checkMenu = new System.Windows.Forms.CheckBox();
 			this.checkArmv8a = new System.Windows.Forms.CheckBox();
+			this.checkPlayCheck = new System.Windows.Forms.CheckBox();
 			this.groupDS.SuspendLayout();
 			this.groupDL.SuspendLayout();
 			this.groupAO.SuspendLayout();
@@ -544,9 +545,10 @@
 			this.checkExtPerms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.checkExtPerms.Location = new System.Drawing.Point(230, 325);
 			this.checkExtPerms.Name = "checkExtPerms";
-			this.checkExtPerms.Size = new System.Drawing.Size(146, 24);
+			this.checkExtPerms.Size = new System.Drawing.Size(76, 24);
 			this.checkExtPerms.TabIndex = 12;
-			this.checkExtPerms.Text = "External Perms.";
+			this.checkExtPerms.Text = "ExtPm";
+			this.tipOne.SetToolTip(this.checkExtPerms, "External Permission");
 			this.checkExtPerms.UseVisualStyleBackColor = true;
 			this.checkExtPerms.CheckedChanged += new System.EventHandler(this.checkExtPerms_CheckedChanged);
 			// 
@@ -745,12 +747,27 @@
 			this.checkArmv8a.UseVisualStyleBackColor = true;
 			this.checkArmv8a.CheckedChanged += new System.EventHandler(this.checkArmv8a_CheckedChanged);
 			// 
+			// checkPlayCheck
+			// 
+			this.checkPlayCheck.AutoSize = true;
+			this.checkPlayCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.checkPlayCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.checkPlayCheck.Location = new System.Drawing.Point(307, 325);
+			this.checkPlayCheck.Name = "checkPlayCheck";
+			this.checkPlayCheck.Size = new System.Drawing.Size(85, 24);
+			this.checkPlayCheck.TabIndex = 18;
+			this.checkPlayCheck.Text = "PCheck";
+			this.tipOne.SetToolTip(this.checkPlayCheck, "External Permission");
+			this.checkPlayCheck.UseVisualStyleBackColor = true;
+			this.checkPlayCheck.CheckedChanged += new System.EventHandler(this.checkPlayCheck_CheckedChanged);
+			// 
 			// AFForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(401, 624);
+			this.Controls.Add(this.checkPlayCheck);
 			this.Controls.Add(this.checkArmv8a);
 			this.Controls.Add(this.checkMenu);
 			this.Controls.Add(this.butCustomData);
@@ -849,5 +866,6 @@
         public System.Windows.Forms.ComboBox comboSourceQuery;
         private System.Windows.Forms.CheckBox checkMenu;
         private System.Windows.Forms.CheckBox checkArmv8a;
+        private System.Windows.Forms.CheckBox checkPlayCheck;
     }
 }

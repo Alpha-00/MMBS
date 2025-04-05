@@ -34,6 +34,7 @@
 			System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Bye Bye");
 			this.boxAppname = new System.Windows.Forms.TextBox();
 			this.groupInfo = new System.Windows.Forms.GroupBox();
+			this.checkArmv8a = new System.Windows.Forms.CheckBox();
 			this.checkMenu = new System.Windows.Forms.CheckBox();
 			this.butIconClipboard = new System.Windows.Forms.Button();
 			this.progressIcon = new System.Windows.Forms.ProgressBar();
@@ -113,7 +114,7 @@
 			this.boxPackage = new System.Windows.Forms.TextBox();
 			this.labelPackage = new System.Windows.Forms.Label();
 			this.labelAuthor = new System.Windows.Forms.Label();
-			this.checkArmv8a = new System.Windows.Forms.CheckBox();
+			this.checkPlayCheckMessage = new System.Windows.Forms.CheckBox();
 			this.groupInfo.SuspendLayout();
 			this.descMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.boxIcon)).BeginInit();
@@ -145,6 +146,7 @@
 			// 
 			// groupInfo
 			// 
+			this.groupInfo.Controls.Add(this.checkPlayCheckMessage);
 			this.groupInfo.Controls.Add(this.checkArmv8a);
 			this.groupInfo.Controls.Add(this.checkMenu);
 			this.groupInfo.Controls.Add(this.butIconClipboard);
@@ -177,11 +179,23 @@
 			this.groupInfo.TabStop = false;
 			this.groupInfo.Text = "App Information";
 			// 
+			// checkArmv8a
+			// 
+			this.checkArmv8a.AutoSize = true;
+			this.checkArmv8a.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.checkArmv8a.Location = new System.Drawing.Point(222, 138);
+			this.checkArmv8a.Name = "checkArmv8a";
+			this.checkArmv8a.Size = new System.Drawing.Size(88, 24);
+			this.checkArmv8a.TabIndex = 32;
+			this.checkArmv8a.Text = "Armv8a";
+			this.checkArmv8a.UseVisualStyleBackColor = true;
+			this.checkArmv8a.CheckedChanged += new System.EventHandler(this.checkArmv8a_CheckedChanged);
+			// 
 			// checkMenu
 			// 
 			this.checkMenu.AutoSize = true;
 			this.checkMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.checkMenu.Location = new System.Drawing.Point(313, 105);
+			this.checkMenu.Location = new System.Drawing.Point(245, 108);
 			this.checkMenu.Name = "checkMenu";
 			this.checkMenu.Size = new System.Drawing.Size(72, 24);
 			this.checkMenu.TabIndex = 31;
@@ -233,7 +247,7 @@
 			// 
 			this.checkExtPerms.AutoSize = true;
 			this.checkExtPerms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.checkExtPerms.Location = new System.Drawing.Point(245, 133);
+			this.checkExtPerms.Location = new System.Drawing.Point(72, 138);
 			this.checkExtPerms.Name = "checkExtPerms";
 			this.checkExtPerms.Size = new System.Drawing.Size(150, 24);
 			this.checkExtPerms.TabIndex = 27;
@@ -340,7 +354,7 @@
 			// 
 			this.checkRoot.AutoSize = true;
 			this.checkRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.checkRoot.Location = new System.Drawing.Point(145, 133);
+			this.checkRoot.Location = new System.Drawing.Point(323, 108);
 			this.checkRoot.Name = "checkRoot";
 			this.checkRoot.Size = new System.Drawing.Size(66, 24);
 			this.checkRoot.TabIndex = 5;
@@ -353,7 +367,7 @@
 			// 
 			this.checkOBB.AutoSize = true;
 			this.checkOBB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.checkOBB.Location = new System.Drawing.Point(245, 106);
+			this.checkOBB.Location = new System.Drawing.Point(170, 108);
 			this.checkOBB.Name = "checkOBB";
 			this.checkOBB.Size = new System.Drawing.Size(62, 24);
 			this.checkOBB.TabIndex = 4;
@@ -366,7 +380,7 @@
 			// 
 			this.checkInternet.AutoSize = true;
 			this.checkInternet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.checkInternet.Location = new System.Drawing.Point(145, 106);
+			this.checkInternet.Location = new System.Drawing.Point(72, 107);
 			this.checkInternet.Name = "checkInternet";
 			this.checkInternet.Size = new System.Drawing.Size(87, 24);
 			this.checkInternet.TabIndex = 4;
@@ -1223,17 +1237,17 @@
 			this.labelAuthor.TabIndex = 35;
 			this.labelAuthor.Text = "Author";
 			// 
-			// checkArmv8a
+			// checkPlayCheckMessage
 			// 
-			this.checkArmv8a.AutoSize = true;
-			this.checkArmv8a.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.checkArmv8a.Location = new System.Drawing.Point(145, 159);
-			this.checkArmv8a.Name = "checkArmv8a";
-			this.checkArmv8a.Size = new System.Drawing.Size(88, 24);
-			this.checkArmv8a.TabIndex = 32;
-			this.checkArmv8a.Text = "Armv8a";
-			this.checkArmv8a.UseVisualStyleBackColor = true;
-			this.checkArmv8a.CheckedChanged += new System.EventHandler(this.checkArmv8a_CheckedChanged);
+			this.checkPlayCheckMessage.AutoSize = true;
+			this.checkPlayCheckMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.checkPlayCheckMessage.Location = new System.Drawing.Point(313, 138);
+			this.checkPlayCheckMessage.Name = "checkPlayCheckMessage";
+			this.checkPlayCheckMessage.Size = new System.Drawing.Size(89, 24);
+			this.checkPlayCheckMessage.TabIndex = 33;
+			this.checkPlayCheckMessage.Text = "PCheck";
+			this.checkPlayCheckMessage.UseVisualStyleBackColor = true;
+			this.checkPlayCheckMessage.CheckedChanged += new System.EventHandler(this.checkPlayCheckMessage_CheckedChanged);
 			// 
 			// FMForm
 			// 
@@ -1372,5 +1386,6 @@
         private System.Windows.Forms.CheckBox checkMenu;
         private System.Windows.Forms.ToolStripMenuItem stripYa4r;
         private System.Windows.Forms.CheckBox checkArmv8a;
+        private System.Windows.Forms.CheckBox checkPlayCheckMessage;
     }
 }
