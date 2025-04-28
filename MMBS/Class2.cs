@@ -1142,11 +1142,13 @@ namespace MMBS
                         if (string.IsNullOrEmpty(coverImageLink)) throw new Exception("Can't find cover image");
                         if (coverImageLink.Contains("-rw")) coverImageLink = coverImageLink.Remove(coverImageLink.Length - 2);
                         if (!coverImageLink.Contains("http")) coverImageLink = "https://" + coverImageLink;
-                        if (coverImageLink.Contains("="))
-                        coverImageLink = coverImageLink.Remove(coverImageLink.IndexOf("="))+ "=w240-h480";
+                        if (Regex.IsMatch(coverImageLink, @"(?<=\?)w=\d+&?"))
+                            coverImageLink = Regex.Replace(coverImageLink, @"(?<=\?)w=\d+&?","");
+                        //if (coverImageLink.Contains("="))
+                        //coverImageLink = coverImageLink.Remove(coverImageLink.IndexOf("="))+ "=w240-h480";
                         string temp_coverthumbnailLink = coverImageLink;
-                        if (coverImageLink.Contains("="))
-                             temp_coverthumbnailLink = coverImageLink.Remove(coverImageLink.IndexOf("=") + 1) + "s140";
+                        //if (coverImageLink.Contains("="))
+                        //     temp_coverthumbnailLink = coverImageLink.Remove(coverImageLink.IndexOf("=") + 1) + "s140";
                         coverImage = new ProcSupporter.ImageDownloader(temp_coverthumbnailLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
                         coverImage.ImageinByte = null;
@@ -2426,6 +2428,7 @@ namespace MMBS
                         if (!link.StartsWith("http")) continue;
                         link = Regex.Replace(link, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(w=\d+(&amp;|&))|(w=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
                         link = Regex.Replace(link, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(h=\d+(&amp;|&))|(h=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
+                        
                         //link = Regex.Replace(link, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(fakeurl=\d+(&amp;|&))|(fakeurl=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
                         tempLinkList.Add(link);
 
@@ -2567,13 +2570,17 @@ namespace MMBS
                     {
                         string tmp = x.Attributes["data-href"].Value;
                         if (tmp.Contains("="))
-                        tmp = tmp.Remove(tmp.IndexOf("="));
+                        tmp = tmp.Remove(tmp.IndexOf("?"));
+                        if (tmp.StartsWith("https://image.winudf.com"))
+                            tmp += "?fakeurl=1&type=.jpg";
                         return tmp;
                     }).ToArray<string>();
                     //=w360-h640
-                    string[] cache_thumbLink = cache.Select((x)=> {
-                        if (x.StartsWith("https://imgs.apkcombo.com")|| x.StartsWith("https://imgrs.apkcombo.com/")) return x;
-                        return x + "=h160";
+                    string[] cache_thumbLink = cache.Select((x) =>
+                    {
+                        if (x.StartsWith("https://imgs.apkcombo.com") || x.StartsWith("https://imgrs.apkcombo.com/")) return x;
+                        if (x.StartsWith("https://image.winudf.com")) return x;
+                        return x;
                     }
                     ).ToArray<string>();
 
