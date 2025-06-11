@@ -68,6 +68,7 @@
 			this.comboExportScript = new System.Windows.Forms.ComboBox();
 			this.checkNoImgs_Syswarn = new System.Windows.Forms.CheckBox();
 			this.tipOne = new System.Windows.Forms.ToolTip(this.components);
+			this.checkPlayCheck = new System.Windows.Forms.CheckBox();
 			this.progressOnProc = new System.Windows.Forms.ProgressBar();
 			this.groupMirrorDL = new System.Windows.Forms.GroupBox();
 			this.linkMirrorDownload = new System.Windows.Forms.LinkLabel();
@@ -80,7 +81,6 @@
 			this.butCustomData = new System.Windows.Forms.Button();
 			this.checkMenu = new System.Windows.Forms.CheckBox();
 			this.checkArmv8a = new System.Windows.Forms.CheckBox();
-			this.checkPlayCheck = new System.Windows.Forms.CheckBox();
 			this.groupDS.SuspendLayout();
 			this.groupDL.SuspendLayout();
 			this.groupAO.SuspendLayout();
@@ -588,6 +588,20 @@
 			this.tipOne.InitialDelay = 200;
 			this.tipOne.ReshowDelay = 40;
 			// 
+			// checkPlayCheck
+			// 
+			this.checkPlayCheck.AutoSize = true;
+			this.checkPlayCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.checkPlayCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.checkPlayCheck.Location = new System.Drawing.Point(307, 325);
+			this.checkPlayCheck.Name = "checkPlayCheck";
+			this.checkPlayCheck.Size = new System.Drawing.Size(85, 24);
+			this.checkPlayCheck.TabIndex = 18;
+			this.checkPlayCheck.Text = "PCheck";
+			this.tipOne.SetToolTip(this.checkPlayCheck, "External Permission");
+			this.checkPlayCheck.UseVisualStyleBackColor = true;
+			this.checkPlayCheck.CheckedChanged += new System.EventHandler(this.checkPlayCheck_CheckedChanged);
+			// 
 			// progressOnProc
 			// 
 			this.progressOnProc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -746,20 +760,6 @@
 			this.checkArmv8a.Text = "Armv8a";
 			this.checkArmv8a.UseVisualStyleBackColor = true;
 			this.checkArmv8a.CheckedChanged += new System.EventHandler(this.checkArmv8a_CheckedChanged);
-			// 
-			// checkPlayCheck
-			// 
-			this.checkPlayCheck.AutoSize = true;
-			this.checkPlayCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkPlayCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.checkPlayCheck.Location = new System.Drawing.Point(307, 325);
-			this.checkPlayCheck.Name = "checkPlayCheck";
-			this.checkPlayCheck.Size = new System.Drawing.Size(85, 24);
-			this.checkPlayCheck.TabIndex = 18;
-			this.checkPlayCheck.Text = "PCheck";
-			this.tipOne.SetToolTip(this.checkPlayCheck, "External Permission");
-			this.checkPlayCheck.UseVisualStyleBackColor = true;
-			this.checkPlayCheck.CheckedChanged += new System.EventHandler(this.checkPlayCheck_CheckedChanged);
 			// 
 			// AFForm
 			// 

@@ -641,27 +641,28 @@ namespace MMBS
         {
             if (!string.IsNullOrEmpty(fname))
             {
+                var limit = SizeLimit.Width;
                 Size size = TextRenderer.MeasureText(fname, font);
-                if (size.Width <= SizeLimit.Width) { return fname; }
+                if (size.Width < limit) { return fname; }
                 else
                 {
                     if (fname.Contains("."))
                     {
                         string ext = fname.Substring(fname.LastIndexOf("."));
                         size = TextRenderer.MeasureText(".." + ext, font);
-                        if (size.Width < SizeLimit.Width)
+                        if (size.Width < limit)
                         {
                             for (int i = 1; i <= fname.Length; i++)
                             {
                                 size = TextRenderer.MeasureText(fname.Remove(i) + ".." + ext, font);
-                                if (size.Width > SizeLimit.Width) return (fname.Remove(i - 1) + ".." + ext);
+                                if (size.Width > limit) return (fname.Remove(i - 1) + ".." + ext);
                             }
                         }
                     }
                     for (int i = 1; i <= fname.Length; i++)
                     {
                         size = TextRenderer.MeasureText(fname.Remove(i) + "...", font);
-                        if (size.Width > SizeLimit.Width) return (fname.Remove(i - 1) + "...");
+                        if (size.Width > limit) return (fname.Remove(i - 1) + "...");
                     }
 
                 }

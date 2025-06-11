@@ -1753,9 +1753,9 @@ namespace MMBS
                         HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
                         doc.LoadHtml(webpage);
                         var x = doc.DocumentNode.SelectSingleNode(@"/html/body//div[@class=""modlist-bnr-title""]/div[@class=""small-title""]").InnerText;
-                        fname = x;
+                        fname = x.Trim();
                         x = doc.DocumentNode.SelectSingleNode(@"/html/body//div[@class=""modlist-btns-wrp""]//div[@data-bs-original-title=""File size""]/p").InnerText;
-                        fsize = x;
+                        fsize = x.Trim();
                         valid = 1;
                     }
                     catch (Exception e)
