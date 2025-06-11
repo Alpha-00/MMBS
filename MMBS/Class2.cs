@@ -1752,9 +1752,9 @@ namespace MMBS
                         webpage = OldProcessor.ProcSupporter.httpreqDownloadString(uri, doubleRequest: true);
                         HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
                         doc.LoadHtml(webpage);
-                        var x = doc.DocumentNode.SelectSingleNode("/html/body//div[@class=\"name-file\"]").InnerText;
+                        var x = doc.DocumentNode.SelectSingleNode(@"/html/body//div[@class=""modlist-bnr-title""]/div[@class=""small-title""]").InnerText;
                         fname = x;
-                        x = doc.DocumentNode.SelectSingleNode("/html/body//div[@class=\"file-info\"]//span[@class=\"file-size\"]").InnerText;
+                        x = doc.DocumentNode.SelectSingleNode(@"/html/body//div[@class=""modlist-btns-wrp""]//div[@data-bs-original-title=""File size""]/p").InnerText;
                         fsize = x;
                         valid = 1;
                     }

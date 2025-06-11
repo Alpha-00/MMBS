@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|e:\\personal project\\ya4r.net\\minimize mybloggersupporter\\mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B535012-9CF9-4CED-A58E-F376142B0C27}|MMBS\\MMBS.csproj|solutionrelative:mmbs\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -204,7 +204,7 @@
         },
         {
           "DockedWidth": 142,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -216,15 +216,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:1:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
@@ -234,8 +226,7 @@
               "ToolTip": "D:\\Application\\Visual Studio\\VS22\\MSBuild\\Current\\Bin\\amd64\\Microsoft.CSharp.CurrentVersion.targets",
               "ViewState": "AgIAAE8AAAAAAAAAAIAywGMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-04-05T10:07:54.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T10:07:54.804Z"
             },
             {
               "$type": "Document",
@@ -261,9 +252,9 @@
               "Title": "Class2.cs",
               "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class2.cs",
               "RelativeDocumentMoniker": "MMBS\\Class2.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class2.cs \u2B24",
-              "RelativeToolTip": "MMBS\\Class2.cs \u2B24",
-              "ViewState": "AgIAAAUKAAAAAAAAAAAAAA0KAAAhAAAAAAAAAA==",
+              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\Class2.cs",
+              "RelativeToolTip": "MMBS\\Class2.cs",
+              "ViewState": "AgIAAAUKAAAAAAAAAADwvw8KAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-01-05T14:01:04.496Z",
               "EditorCaption": ""
@@ -278,19 +269,6 @@
               "RelativeToolTip": ".vs\\Minimize MyBloggerSupporter\\ColorByRegexConfig.txt",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-01-22T11:58:02.059Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FMForm.cs",
-              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
-              "RelativeDocumentMoniker": "MMBS\\FMForm.cs",
-              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
-              "RelativeToolTip": "MMBS\\FMForm.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAAAKEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:38:32.753Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -346,6 +324,26 @@
               "WhenOpened": "2024-01-10T14:40:16.326Z"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FMForm.cs",
+              "DocumentMoniker": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
+              "RelativeDocumentMoniker": "MMBS\\FMForm.cs",
+              "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs",
+              "RelativeToolTip": "MMBS\\FMForm.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAAAKEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T14:38:32.753Z"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AFForm.cs",
@@ -355,8 +353,7 @@
               "RelativeToolTip": "MMBS\\AFForm.cs",
               "ViewState": "AgIAAA0BAAAAAAAAAABCwBwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-31T08:19:42.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-31T08:19:42.11Z"
             },
             {
               "$type": "Document",
@@ -367,8 +364,7 @@
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\AFForm.cs [Design]",
               "RelativeToolTip": "MMBS\\AFForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T09:00:37.323Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-04T09:00:37.323Z"
             },
             {
               "$type": "Document",
@@ -403,8 +399,7 @@
               "ToolTip": "E:\\Personal Project\\Ya4r.net\\Minimize MyBloggerSupporter\\MMBS\\FMForm.cs [Design]",
               "RelativeToolTip": "MMBS\\FMForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-09T10:38:06.891Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-01-09T10:38:06.891Z"
             },
             {
               "$type": "Document",
@@ -427,8 +422,7 @@
               "RelativeToolTip": "MMBS\\Class1.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAswDIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-31T08:29:56.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-31T08:29:56.886Z"
             },
             {
               "$type": "Document",
@@ -509,8 +503,7 @@
               "RelativeToolTip": "MMBS\\AFForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-31T08:19:42.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-31T08:19:42.11Z"
             },
             {
               "$type": "Document",
@@ -534,8 +527,7 @@
               "RelativeToolTip": "MMBS\\Class5.cs",
               "ViewState": "AgIAAEUAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-21T08:03:02.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-21T08:03:02.787Z"
             },
             {
               "$type": "Document",
@@ -570,8 +562,7 @@
               "RelativeToolTip": "MMBS\\ZZZOptions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T03:06:39.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T03:06:39.283Z"
             },
             {
               "$type": "Document",
@@ -595,8 +586,7 @@
               "RelativeToolTip": "MMBS\\Class6.cs",
               "ViewState": "AgIAABYAAAAAAAAAAABOwHkAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T09:05:11.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T09:05:11.889Z"
             },
             {
               "$type": "Document",
