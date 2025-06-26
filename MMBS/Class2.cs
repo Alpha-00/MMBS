@@ -2564,13 +2564,13 @@ namespace MMBS
                 }
                 public void Get_Image()
                 {
-                    var cacheHTMLColection = HTMLdoc.DocumentNode.SelectNodes("/html/body/section/div/div/div/div[@id=\"gallery-screenshots\"]/a");
+                    var cacheHTMLColection = HTMLdoc.DocumentNode.SelectNodes("//div[@id=\"gallery-screenshots\"]/a");
                     if (cacheHTMLColection is null) return;
                     string[] cache = cacheHTMLColection.AsParallel().Select((x) =>
                     {
                         string tmp = x.Attributes["data-href"].Value;
                         if (tmp.Contains("="))
-                        tmp = tmp.Remove(tmp.IndexOf("?"));
+                        tmp = tmp.Remove(tmp.IndexOf("="));
                         if (tmp.StartsWith("https://image.winudf.com"))
                             tmp += "?fakeurl=1&type=.jpg";
                         return tmp;
