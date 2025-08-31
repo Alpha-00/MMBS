@@ -46,6 +46,7 @@ namespace MMBS
                             }
                 case "BTH": return bth;
                 case "modCustom": return "C:\\BloggerSupporter\\mod_custom_options.txt";
+                case "browserless": return "C:\\BloggerSupporter\\browserless.txt";
             }
             return "";
         }

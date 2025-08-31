@@ -921,6 +921,12 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="M:MMBS.Service.Browserless.getLocalApiKey">
+            <summary>
+            Retrieve the local API key from storage
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:MMBS.Properties.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.

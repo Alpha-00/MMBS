@@ -36,6 +36,7 @@ using System.Collections.Immutable;
 
 using MMBS.OldProcessorSupporter;
 using System.Security.Cryptography;
+using MMBS.Service;
 
 namespace MMBS
 {
@@ -498,12 +499,15 @@ namespace MMBS
                             ImageinByte = cache_net.DownloadData(link);
                             ISupportedImageFormat format = new ImageProcessor.Plugins.WebP.Imaging.Formats.WebPFormat();
                             Size size = new Size(192, 0);
+                            //Size size = new Size(512,512);
+                            
+                            
                             using (MemoryStream inStream = new MemoryStream(ImageinByte))
                             {
                                 using (MemoryStream outStream = new MemoryStream())
                                 {
                                     // Initialize the ImageFactory using the overload to preserve EXIF metadata.
-                                    using (ImageFactory imageFactory = new ImageFactory(preserveExifData: true))
+                                    using (ImageFactory imageFactory = new ImageFactory(preserveExifData: true,fixGamma: true))
                                     {
                                         // Load, resize, set the format and quality and save an image.
                                         image = (Image)imageFactory.Load(inStream).Image.Clone();
@@ -870,7 +874,7 @@ namespace MMBS
                     {
                         case "play.google.com": PLAYproc(Play_Getpackedname(uri)); break;
                         case "apps.apple.com": APPLEproc(uri);break;
-                        case "apkpure.com": APKPUREproc(APKpure_Getpackedname(uri)); break;
+                        case "apkpure.com": APKPUREproc(APKpure_Getpackedname(uri)).Wait(); break;
                         case "apkcombo.app": APKCOMBOproc(APKcombo_Getpackedname(uri)); break;
                         case "apps.qoo-app.com": QOOAPPproc(uri); break;
                         case "apkmonk.com": GeneralSourceProc(new Apkmonk()); break;
@@ -1021,7 +1025,8 @@ namespace MMBS
                         valid = 2;
                     }
                 }
-                void APKPUREproc(string packagename)
+                
+                async Task APKPUREproc(string packagename)
                 {
                     var tempLink = $"https://apkpure.com/en/{packagename}";
                     this.packagename = packagename;
@@ -1037,49 +1042,52 @@ namespace MMBS
                         // Dictionary<string,List<string>> OLinks = new Dictionary<string, List<string>>();
 
                         // string Url = uri.AbsoluteUri;
-                        CookieContainer cookieJar = new CookieContainer();
-                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(tempLink);
-                        request.CookieContainer = cookieJar;
+                        //CookieContainer cookieJar = new CookieContainer();
+                        //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(tempLink);
+                        //request.CookieContainer = cookieJar;
 
-                        request.Accept = @"text/html, application/xhtml+xml, */*";
-                        //request.Referer = @"https://www.apkadmin.com/";
-                        request.Headers.Add("Accept-Language", "en-GB");
-                        request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
-                        //request.Host = @"www.apkadmin.com";
-                        request.UseDefaultCredentials = true;
-                        HttpWebResponse response;
-                        // Double Request
-                        // TODO: Try to remove this behavior
-                        try
-                        {
-                            response = (HttpWebResponse)request.GetResponse();
-                        }
-                        catch (WebException e)
-                        {
-                            int waitTime = (new Random()).Next(1000, 1500);
-                            System.Threading.Thread.Sleep(waitTime);
-                            request = (HttpWebRequest)WebRequest.Create(tempLink);
-                            request.CookieContainer = new CookieContainer();
+                        //request.Accept = @"text/html, application/xhtml+xml, */*";
+                        ////request.Referer = @"https://www.apkadmin.com/";
+                        //request.Headers.Add("Accept-Language", "en-GB");
+                        //request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
+                        ////request.Host = @"www.apkadmin.com";
+                        //request.UseDefaultCredentials = true;
+                        //HttpWebResponse response;
+                        //// Double Request
+                        //// TODO: Try to remove this behavior
+                        //try
+                        //{
+                        //    response = (HttpWebResponse)request.GetResponse();
+                        //}
+                        //catch (WebException e)
+                        //{
+                        //    int waitTime = (new Random()).Next(1000, 1500);
+                        //    System.Threading.Thread.Sleep(waitTime);
+                        //    request = (HttpWebRequest)WebRequest.Create(tempLink);
+                        //    request.CookieContainer = new CookieContainer();
 
-                            request.Accept = @"text/html, application/xhtml+xml, */*";
-                            //request.Referer = @"https://www.apkadmin.com/";
-                            request.Headers.Add("Accept-Language", "en-GB");
-                            request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
-                            //request.Host = @"www.apkadmin.com";
-                            request.UseDefaultCredentials = true;
-                            response = (HttpWebResponse)request.GetResponse();
-                        }
-                        using (var reader = new StreamReader(response.GetResponseStream()))
-                        {
-                            webpage = reader.ReadToEnd();
-                        }
+                        //    request.Accept = @"text/html, application/xhtml+xml, */*";
+                        //    //request.Referer = @"https://www.apkadmin.com/";
+                        //    request.Headers.Add("Accept-Language", "en-GB");
+                        //    request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0";
+                        //    //request.Host = @"www.apkadmin.com";
+                        //    request.UseDefaultCredentials = true;
+                        //    response = (HttpWebResponse)request.GetResponse();
+                        //}
+                        //using (var reader = new StreamReader(response.GetResponseStream()))
+                        //{
+                        //    webpage = reader.ReadToEnd();
+                        //}
                         //End Source
+                        var client = new Browserless();
+                        client.init();
+                        webpage = await client.fetchWithCloudflareBypass(tempLink);
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) cache = System.IO.Directory.CreateDirectory(cacheDir).FullName;
                         //ProcSupporter.HtmlScriptCard scriptCache;
                         var doc = new HtmlAgilityPack.HtmlDocument();
                         doc.LoadHtml(webpage);
-                        var node = doc.DocumentNode.SelectSingleNode("//div[contains(@class,\"apk_info\")]//img");
+                        var node = doc.DocumentNode.SelectSingleNode("//div[@class=\"app-info\"]//img");
                         //scriptCache = ProcSupporter.FindCardinScript(webpage, "class=\"apk_info");
                         //// 3 next index include a stop, a next begin and a line break /n
                         //scriptCache = ProcSupporter.FindCardinScript(webpage, scriptCache.stop + 3);
@@ -1093,11 +1101,11 @@ namespace MMBS
                         coverImageLink = Regex.Replace(coverImageLink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(w=\d+(&amp;|&))|(w=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
                         coverImageLink = Regex.Replace(coverImageLink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>(h=\d+(&amp;|&))|(h=\d+$))(?<suffix>.*)?", "${url}${prefix}${suffix}");
                         //coverImageLink = Regex.Replace(coverImageLink, @"(?<url>[^?]+\?)(?<prefix>.+)?(?<remove>fakeurl=\d+(&amp;|&))(?<suffix>.+)?", "${url}${prefix}${suffix}");
+                        valid = 1;
                         coverImage = new ProcSupporter.ImageDownloader(coverImageLink, "cover", cacheDir);
                         coverImageDir = coverImage.ImageDir;
-                        coverImage.ImageinByte = null;
+                        //coverImage.ImageinByte = null;
 
-                        valid = 1;
                     }
                     catch (System.Net.WebException e)
                     {
@@ -2354,33 +2362,9 @@ namespace MMBS
                 }
                 public void Get_Title()
                 {
-                    webpage = webpage.Substring(webpage.IndexOf("<div class=\"title_link"));
-                    string cache = webpage.Substring(webpage.IndexOf("<h1>") + "<h1>".Length, 255);
-                    /*if (cache.Contains("<div class=\"clear\"></div>"))
-                    {
-                        cache = cache.Remove(cache.IndexOf("</h1>"));
-                    }
-                    else
-                    {
-                        cache = cache.Remove(cache.IndexOf("</h1>")) + ":" + cache.Substring(cache.IndexOf("</h1>") + "</h1>".Length, cache.IndexOf("</div>") - cache.IndexOf("</h1>") + "</h1>".Length);
-                        cache = cache.Replace("\n", "");
-                        cache = cache.Trim(' ');
-                    }*/
-                    if (cache.Contains("</h1>\r\n                    </div>"))
-                    {
-                        cache = cache.Remove(cache.IndexOf("</h1>"));
-                    }
-                    else
-                    {
-                        // Solve 2 part title
-                        cache = cache.Remove(cache.IndexOf("</h1>")) + ":" + cache.Substring(cache.IndexOf("</h1>") + "</h1>".Length, cache.IndexOf("</div>") - cache.IndexOf("</h1>") - "</h1>".Length);
-                        cache = cache.Replace("\n", "");
-                        cache = cache.Replace("\r", "");
-                        cache = cache.Trim(' ');
-                        // Remove : if the name have only one part
-                        if (cache.Last() == ':') cache = cache.Remove(cache.Length - 1);
-                    }
-                    title = cache;
+                    var titleNode = doc.DocumentNode.SelectSingleNode("//span[contains(@class,\"app-name\")]//h1");
+                    if (titleNode is null) throw new Exception("Parser Error: No Title Found");
+                    title = titleNode.InnerText;
                     if (title.Contains(" APK")) title = title.Remove(title.LastIndexOf(" APK"), " APK".Length);
                     title = OldProcessor.ProcSupporter.HtmlSpecialProcess(title);
                 }
@@ -2399,25 +2383,23 @@ namespace MMBS
                     //cache = cache.Substring(cache.IndexOf(">") + 1);
                     //cache = cache.Remove(cache.IndexOf("<"));
                     //req = cache;
+                    var result = doc.DocumentNode.SelectSingleNode("//ul/li[@data-vars-desc=\"AndroidOS\"]/div[@class=\"head\"]");
+                    if (result == null) throw new Exception("APKPURE: Android version requirement not founded");
+                    req = result.InnerText;
                 }
                 public void Get_Version()
                 {
-                    string cache = webpage.Substring(webpage.IndexOf("<p class=\"details_sdk\">") + "<p class=\"details_sdk\">".Length, 512);
+                    string cache = webpage.Substring(webpage.IndexOf("class=\"version") + "class=\"version".Length, 512);
                     cache = cache.Substring(cache.IndexOf(">") + 1);
                     cache = cache.Remove(cache.IndexOf("<"));
                     version = cache;
                 }
                 public void Get_Image()
                 {
-#if DEBUG
-                    if (webpage.Contains("<div class=\"screen-wrap") == false)
-                    {
-                        throw new Exception("Parser Error: No Image Found");
-                    }
-#endif
                     // Hot fix for Html Agilty Pack is not support img tag
-                    var nodes = doc.DocumentNode.SelectNodes("//*[@id=\"screen\"]/div/a").Nodes().ToList();
-                    var images = nodes.Where((node) => node.OuterHtml.StartsWith("<img"));
+                    var nodes = doc.DocumentNode.SelectNodes("//div[@class=\"screenshots-list\"]//a").Nodes().ToList();
+                    //var images = nodes.Where((node) => node.OuterHtml.StartsWith("<img"));
+                    var images = nodes;
                     List<string> subcache = images.Select((node) => node.Attributes["src"].Value).ToList();
                     // Process and filter links
                     List<string> tempLinkList = new List<string>();
@@ -2445,7 +2427,7 @@ namespace MMBS
                 }
                 public void Get_Desc()
                 {
-                    var results = doc.DocumentNode.SelectNodes("//div[@class=\"content\"]/div[1]/div/div");
+                    var results = doc.DocumentNode.SelectNodes("//div[@class=\"show-more\"]//div[@class=\"description\"]");
                     if (results is null) throw new Exception("Parser Error: No description Found");
                     var nodes = results.Nodes().ToList();
                     if (nodes.Count <= 0) throw new Exception("Parser Error: No description Found");

@@ -291,6 +291,7 @@ namespace MMBS
             
             this.Invoke(InfoSeter, "checkDS label\n" + processDataResourceTextBox.valid.ToString());
             this.Invoke(InfoSeter, "progressDS value\n0");
+            Task.WaitAll();
             if (processDataResourceTextBox.valid==1)
             {
                 
@@ -361,7 +362,7 @@ namespace MMBS
             User_DebugSystem.Command(boxDLlink.Text);
             OldProcessor.ProcessDownloadLinkTextBox processDownloadLinkTextBox = new OldProcessor.ProcessDownloadLinkTextBox(boxDLlink.Text);
             User_DebugSystem.Command("call\nHoàn tất và nhập dữ liệu vào Form\n"+ (processDownloadLinkTextBox.valid==1 ?"Thành công":"Thất bại"));
-            
+            Task.WaitAll();
             if (processDownloadLinkTextBox.valid > 0)
             {
                 formData.appInfo.size = processDownloadLinkTextBox.fsize;
@@ -430,8 +431,9 @@ namespace MMBS
         {
             this.Invoke(InfoSeterDown, "checkvarThreads.+");
             OldProcessor.ProcessDownloadLinkTextBox processAPKLinkTextBox = new OldProcessor.ProcessDownloadLinkTextBox(boxAOlink.Text,OldProcessor.ProcessDownloadLinkTextBox.request_code.SimpleInfo);
-           /* this.Invoke(InfoSeter, "checkAO label\n" + processAPKLinkTextBox.valid);
-            this.Invoke(InfoSeter, "linkAOname text\n" + processAPKLinkTextBox.fname);*/
+            Task.WaitAll();
+            /* this.Invoke(InfoSeter, "checkAO label\n" + processAPKLinkTextBox.valid);
+             this.Invoke(InfoSeter, "linkAOname text\n" + processAPKLinkTextBox.fname);*/
             if (processAPKLinkTextBox.valid > 0)
             {
                 formData.appInfo.size = formData.appInfo.size==""?processAPKLinkTextBox.fsize:formData.appInfo.size;
@@ -472,6 +474,7 @@ namespace MMBS
         private async void butIcon_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Task.WaitAll();
             DateTime counter = new DateTime();
             if (Properties.Settings.Default.PermformCheck) counter = DateTime.Now;
             
