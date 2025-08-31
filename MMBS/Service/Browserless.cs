@@ -13,9 +13,12 @@ namespace MMBS.Service
 {
     public class Browserless
     {
+        private static Browserless instance = null;
+        public static Browserless Instance => instance == null? new Browserless():instance;
+        private static List<Task> queue = new List<Task>();
         const String endpoint = "https://production-sfo.browserless.io/chromium/bql";
         String key = "";
-        public void init()
+        private void init()
         {
             key = getLocalApiKey();
         }
@@ -28,7 +31,9 @@ namespace MMBS.Service
               goto(url: $url, waitUntil: load) {
                 status
               }
-              # Or export cleaned HTML with numerous options
+              html(timeout: 500) {
+                html
+              }
         }";
 
         private const String funcCloudflareFetch = @"
@@ -53,7 +58,7 @@ namespace MMBS.Service
         
         public async Task<String> fetch(String url, String query = funcGeneralFetch, String operationName = "Default",bool useProxy = false, bool useHumanBehavior = false)
         {
-
+            if (key == "") init();
             if (query == "") throw new ArgumentException();
             var requestBody = new
             {
@@ -78,7 +83,14 @@ namespace MMBS.Service
                 string requestUrl = $"{endpoint}?token={key}{proxyString}{optionsString}";
 
                 // Send the POST request
-                HttpResponseMessage response = await client.PostAsync(requestUrl, content);
+                if (queue.Count > 0)
+                {
+                    Task.WaitAll(queue.ToArray());
+                }
+                var task = client.PostAsync(requestUrl, content);
+                queue.Add(task);
+                HttpResponseMessage response = await task;
+                queue.Remove(task);
 
                 // Ensure the request was successful
                 //response.EnsureSuccessStatusCode();

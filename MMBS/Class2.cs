@@ -332,7 +332,7 @@ namespace MMBS
                     int cache2 = pos;
                     int stack = 0;
 
-                    for (int i = cache2; (i <= script.Length-1); i++)
+                    for (int i = cache2; (i <= script.Length - 1); i++)
                     {
                         if (script[i] == '>')
                         {
@@ -348,7 +348,7 @@ namespace MMBS
                         {
                             stack++;
                         }
-                        if (i == script.Length-1)
+                        if (i == script.Length - 1)
                         {
                             cache.stop = i;
                             cache.trueform = false;
@@ -473,7 +473,7 @@ namespace MMBS
                             System.Net.WebClient cache_net = new System.Net.WebClient();
                             ImageinByte = cache_net.DownloadData(link);
                         }
-                        
+
                         ImageType = GetImageFormat(ImageinByte).ToString();
                         MemoryStream ImageStream = new MemoryStream(ImageinByte);
                         image = System.Drawing.Image.FromStream(ImageStream);
@@ -488,7 +488,7 @@ namespace MMBS
                     {
                         if (ImageType != "webp")
                         {
-                            System.Windows.Forms.MessageBox.Show("Download ERROR\n"+link+"\n" + e.Message);
+                            System.Windows.Forms.MessageBox.Show("Download ERROR\n" + link + "\n" + e.Message);
                         }
                     }
                     if (ImageType == "webp")
@@ -500,14 +500,14 @@ namespace MMBS
                             ISupportedImageFormat format = new ImageProcessor.Plugins.WebP.Imaging.Formats.WebPFormat();
                             Size size = new Size(192, 0);
                             //Size size = new Size(512,512);
-                            
-                            
+
+
                             using (MemoryStream inStream = new MemoryStream(ImageinByte))
                             {
                                 using (MemoryStream outStream = new MemoryStream())
                                 {
                                     // Initialize the ImageFactory using the overload to preserve EXIF metadata.
-                                    using (ImageFactory imageFactory = new ImageFactory(preserveExifData: true,fixGamma: true))
+                                    using (ImageFactory imageFactory = new ImageFactory(preserveExifData: true, fixGamma: true))
                                     {
                                         // Load, resize, set the format and quality and save an image.
                                         image = (Image)imageFactory.Load(inStream).Image.Clone();
@@ -632,7 +632,13 @@ namespace MMBS
                 }
             }
 
-
+            public static string httpBrowserlessRequest(Uri uri)
+            {
+                var client = Browserless.Instance;
+                var result = client.fetch(uri.OriginalString);
+                result.Wait();
+                return result.Result;
+            }
             public static string httpreqDownloadString(Uri uri, bool doubleRequest = false)
             {
                 HttpWebResponse response = null;
@@ -1079,8 +1085,7 @@ namespace MMBS
                         //    webpage = reader.ReadToEnd();
                         //}
                         //End Source
-                        var client = new Browserless();
-                        client.init();
+                        var client = Browserless.Instance;
                         webpage = await client.fetchWithCloudflareBypass(tempLink);
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) cache = System.IO.Directory.CreateDirectory(cacheDir).FullName;
@@ -1306,7 +1311,7 @@ namespace MMBS
                                 case "apkadmin.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<h2>File Not Found</h2>")) valid = 1; break;
                                 case "www.file-upload.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("<h2>File Not Found</h2>")) valid = 1; break;
                                 case "www.terabox.com": webpage = ProcSupporter.httpreqDownloadString(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("share-error-msg")) valid = 1; break;
-                                case "modsfire.com": webpage = ProcSupporter.httpreqDownloadString(uri, doubleRequest: true); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("Page Not Found")) valid = 1; break;
+                                case "modsfire.com": webpage = ProcSupporter.httpBrowserlessRequest(uri); if (!string.IsNullOrEmpty(webpage) && !webpage.Contains("Page Not Found")) valid = 1; break;
                                 default: webpage = cache_net.DownloadString(uri); if (!string.IsNullOrEmpty(webpage)) valid = 1; break;
                             }
                             if (valid == 0) valid = 2;
@@ -1757,7 +1762,7 @@ namespace MMBS
                 {
                     try
                     {
-                        webpage = OldProcessor.ProcSupporter.httpreqDownloadString(uri, doubleRequest: true);
+                        webpage = OldProcessor.ProcSupporter.httpBrowserlessRequest(uri);
                         HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
                         doc.LoadHtml(webpage);
                         var x = doc.DocumentNode.SelectSingleNode(@"/html/body//div[@class=""modlist-bnr-title""]/div[@class=""small-title""]").InnerText;
