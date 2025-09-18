@@ -26,7 +26,7 @@ namespace coretestDownloadLink1
         public void modsfireTests()
         {
             var browserless = new MMBS.Service.Browserless();
-            browserless.init();
+            //browserless.init();
             var task = browserless.fetch("https://modsfire.com/oCa4r9g72J3M864");
             task.Wait();
             var result = task.Result;
@@ -37,7 +37,7 @@ namespace coretestDownloadLink1
         public void cloudflareTests()
         {
             var browserless = new MMBS.Service.Browserless();
-            browserless.init();
+            //browserless.init();
             var task = browserless.fetchWithCloudflareBypass("https://apkpure.com/vn/plants-vs-zombies/com.ea.game.pvzfree_row");
             task.Wait();
             var result = task.Result;
