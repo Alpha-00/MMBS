@@ -16,7 +16,7 @@ namespace MMBS.Service
         private static Browserless instance = null;
         public static Browserless Instance => instance == null? new Browserless():instance;
         private static List<Task> queue = new List<Task>();
-        const String endpoint = "https://production-sfo.browserless.io/chromium/bql";
+        const String endpoint = "https://production-sfo.browserless.io/stealth/bql";
         String key = "";
         private void init()
         {
@@ -37,23 +37,26 @@ namespace MMBS.Service
         }";
 
         private const String funcCloudflareFetch = @"
-            mutation GeneralFetch($url: String!) {
-              goto(url: $url, waitUntil: load) {
-                status
-              }
-              verify(type: cloudflare) {
-                found
-                solved
-                time
-              }
-              solve(type: hcaptcha,timeout: 1000) {
-                found
-                solved
-              }
-              html(timeout: 500) {
-                html
-              }
-            }";
+            mutation CloudflareFetch($url: String!) {
+  viewport(width: 1366, height: 768) {
+        width
+        height
+        time
+      }
+  goto(url: $url) {
+    status
+  }
+  solve {
+    found
+    solved
+  }
+waitForNavigation(waitUntil: networkIdle){
+    status
+  }
+  html(timeout: 500) {
+    html
+  }
+}";
         private const String optionsCloudflare = "const proxyString = \"&proxy=residential&proxyCountry=us\";\r\nconst optionsString = \"&humanlike=true\";";
         
         public async Task<String> fetch(String url, String query = funcGeneralFetch, String operationName = "Default",bool useProxy = false, bool useHumanBehavior = false)
@@ -79,6 +82,7 @@ namespace MMBS.Service
             {
                 String proxyString = useProxy ? "&proxy=residential&proxyCountry=us" : "";
                 String optionsString = useHumanBehavior ? "&humanlike=true" : "";
+                //optionsString += useStealth ? "&stealth=true" : "";
                 // Add the token to the URL
                 string requestUrl = $"{endpoint}?token={key}{proxyString}{optionsString}";
 
@@ -109,7 +113,7 @@ namespace MMBS.Service
             return "";
         }
 
-        public async Task<String> fetchWithCloudflareBypass(String url, String operationName = "CloudflareFetch") => await fetch(url, funcCloudflareFetch, operationName, true, true);
+        public async Task<String> fetchWithCloudflareBypass(String url, String operationName = "CloudflareFetch") => await fetch(url, funcCloudflareFetch, operationName,useProxy: false, useHumanBehavior: true);
         /// <summary>
         /// Retrieve the local API key from storage
         /// </summary>
