@@ -1087,13 +1087,13 @@ namespace MMBS
                         //End Source
                         var client = Browserless.Instance;
                         webpage = await client.fetchWithCloudflareBypass(tempLink);
-                        if (webpage.Contains("Verify you are human by completing the action below.")) throw new Exception("Error with Browserless prompt. Please don't try again until problem get fix to save token cost.");
+                        if (webpage.Contains("Verify you are human by completing the action below.") || webpage.Contains("review the security of your connection before proceeding")) throw new Exception("Error with Browserless prompt. Please don't try again until problem get fix to save token cost.");
                         cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + packagename;
                         if (!System.IO.Directory.Exists(cacheDir)) cache = System.IO.Directory.CreateDirectory(cacheDir).FullName;
                         //ProcSupporter.HtmlScriptCard scriptCache;
                         var doc = new HtmlAgilityPack.HtmlDocument();
                         doc.LoadHtml(webpage);
-                        var node = doc.DocumentNode.SelectSingleNode("//div[@class=\"apk_info_content\"]/img");
+                        var node = doc.DocumentNode.SelectSingleNode("//div[@class=\"app-info\"]//img");
                         //scriptCache = ProcSupporter.FindCardinScript(webpage, "class=\"apk_info");
                         //// 3 next index include a stop, a next begin and a line break /n
                         //scriptCache = ProcSupporter.FindCardinScript(webpage, scriptCache.stop + 3);
@@ -2368,7 +2368,7 @@ namespace MMBS
                 }
                 public void Get_Title()
                 {
-                    var titleNode = doc.DocumentNode.SelectSingleNode("//div[contains(@class,\"title\")]//h1");
+                    var titleNode = doc.DocumentNode.SelectSingleNode("//div[contains(@class,\"info-content\")]//h1");
                     if (titleNode is null) throw new Exception("Parser Error: No Title Found");
                     title = titleNode.InnerText;
                     if (title.Contains(" APK")) title = title.Remove(title.LastIndexOf(" APK"), " APK".Length);
@@ -2403,10 +2403,10 @@ namespace MMBS
                 public void Get_Image()
                 {
                     // Hot fix for Html Agilty Pack is not support img tag
-                    var nodes = doc.DocumentNode.SelectNodes("//div[@class=\"screenbox\"]//a").Nodes().ToList();
+                    var nodes = doc.DocumentNode.SelectNodes("//div[@class=\"screenshots-container-warper\"]//a").Nodes().ToList();
                     //var images = nodes.Where((node) => node.OuterHtml.StartsWith("<img"));
                     var images = nodes;
-                    List<string> subcache = images.Select((node) => node.Attributes["href"].Value).ToList();
+                    List<string> subcache = images.Select((node) => node.Attributes["data-original"].Value).ToList();
                     // Process and filter links
                     List<string> tempLinkList = new List<string>();
                     for (int i = 0; i < subcache.Count; i++)
@@ -2433,7 +2433,7 @@ namespace MMBS
                 }
                 public void Get_Desc()
                 {
-                    var results = doc.DocumentNode.SelectNodes("//div[starts-with(@class,\"above-info\")]//div[@class=\"description\"]");
+                    var results = doc.DocumentNode.SelectNodes("//div[starts-with(@class,\"show-more-content\")]//div[@class=\"description\"]");
                     if (results is null) throw new Exception("Parser Error: No description Found");
                     var nodes = results.Nodes().ToList();
                     if (nodes.Count <= 0) throw new Exception("Parser Error: No description Found");
