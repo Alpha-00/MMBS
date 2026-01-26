@@ -1,6 +1,6 @@
 ﻿//For const and experience
-using MMBS.Model.PostForm;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Web.UI;
 using System.Web.UI.WebControls.Expressions;
 using System.Windows.Forms;
+using Google.Apis.Drive.v3.Data;
+using MMBS.Model.PostForm;
 using static MMBS.OldProcessor;
 
 namespace MMBS
@@ -1141,66 +1143,70 @@ namespace MMBS
                        credit = 
                     thenow.credit.now != null
                     ? $"Credit to: [b]" +
-                    $"{(string.IsNullOrWhiteSpace(credit) ? "" : (credit== "OfflineMods.Net" ? "[USER=979136]乡HULҜ™[/USER]" : thenow.credit.now.GetToUse()))}" +"[/b]"
+                    $"{(string.IsNullOrWhiteSpace(credit) ? "" : (credit== "OfflineMods.Net" ? "[USER=979136]HULҜ™[/USER]" : thenow.credit.now.GetToUse()))}" +"[/b]"
                     :"";
 
                 string howtoScript =
-                    "______________________________________\r\n\r\n" +
+                    @"______________________________________
 
-                    "[COLOR=#ff0000]*How to install (click the spoilers to read)*[/COLOR]\r\n\r\n" +
+If credits are unknown or incorrect and you are the modder you are free to message [USER=1]@G-Bo[/USER] and the credits will be corrected asap!
 
-                    "[SPOILER=\"Signed APKs\"]\r\n" +
-                    "Signed APKs do work on all Android devices (rooted + non-rooted).\r\n" +
-                    "Signed APKs are in the most cases the only provided files by the mod publisher as they work for everyone.\r\n\r\n" +
+[URL='https://platinmods.com/threads/what-you-need-to-know-about-shared-mods.2381/']What you need to know about Shared-MODs[/URL]
 
-                    "1.) Remove the original game/app.\r\n" +
-                    "2.) Download the MOD APK.\r\n" +
-                    "3.) Install the downloaded MOD APK.\r\n" +
-                    "4.) Enjoy.\r\n\r\n" +
 
-                    "Google login possible? [COLOR=#ff0000]No.[/COLOR]\r\n" +
-                    "Facebook login possible? [COLOR=#00ff00]Yes. But you have to remove the Facebook App from your device.[/COLOR]\r\n" +
-                    "Specific game account login possible (for example: E-Mail, HIVE, Kakao)? [COLOR=#00ff00]Yes.[/COLOR]\r\n\r\n" +
 
-                    "[B]Notes:[/B]\r\n" +
-                    "- If you used our MOD APK before and just want to update, you can install the new MOD APK on top of the old without removing the game/app first.\r\n" +
-                    "- In-App purchases are not possible on signed APKs as they require Google services similar to the Google login process.[/SPOILER]\r\n\r\n" +
+[COLOR=#ff0000]*How to install (click the spoilers to read)*[/COLOR]
 
-                    "[SPOILER=\"Unsigned APKs\"]\r\n" +
-                    "Unsigned APKs do only work on rooted and patched devices/environments.\r\n" +
-                    "These are not always provided by the mod publisher as they do only work under certain circumstances.\r\n\r\n" +
+[SPOILER=""Signed APKs""]
+Signed APKs do work on all Android devices (rooted + non-rooted).
+Signed APKs are in the most cases the only provided files by the mod publisher as they work for everyone.
 
-                    "1.) Your device must be rooted.\r\n" +
-                    "2.) Your device must be patched to ignore app signatures. This can be done with the help of tools such as Luckypatcher or Xposed.\r\n\r\n" +
+1.) Remove the original game/app.
+2.) Download the MOD APK.
+3.) Install the downloaded MOD APK.
+4.) Enjoy.
 
-                    "Once you fill that requirements the process is the same as with signed APKs with the difference that you can overwrite the original game/app with the MOD APK without removing it first.\r\n\r\n" +
+Regarding login methods, please note that [COLOR=rgb(255, 128, 0)]logging in with Google will not be possible[/COLOR] when using signed MODs. [COLOR=rgb(0, 255, 0)]Facebook login (if available) is possible[/COLOR], but it requires you to [COLOR=rgb(255, 128, 0)]remove the Facebook application[/COLOR] from your device. [COLOR=rgb(0, 255, 0)]Other game-specific login methods (if available), such as email, transfer code or guest login usually work fine.[/COLOR]
 
-                    "1.) Download the unsigned MOD APK.\r\n" +
-                    "2.) Install the unsigned MOD APK.\r\n" +
-                    "3.) Enjoy.\r\n\r\n" +
+[B]Notes:[/B]
+- If you used our MOD APK before and just want to update, you can install the new MOD APK on top of the old without removing the game/app first.
+- In-App purchases are not possible on signed APKs as they require Google services similar to the Google login process.[/SPOILER]
 
-                    "[B]Note:[/B]\r\n" +
-                    "For the case the unsigned APK does fail to install: Your device patch is not done correctly!\r\n\r\n" +
+[SPOILER=""Unsigned APKs""]
+Unsigned APKs do only work on rooted and patched devices/environments.
+These are not always provided by the mod publisher as they do only work under certain circumstances.
 
-                    "Google login possible? [COLOR=#00ff00]Yes.[/COLOR]\r\n" +
-                    "Facebook login possible? [COLOR=#00ff00]Yes. Even with Facebook App installed.[/COLOR]\r\n" +
-                    "Specific game account login possible (for example: E-Mail, HIVE, Kakao)? [COLOR=#00ff00]Yes.[/COLOR]\r\n\r\n" +
+1.) Your device must be rooted.
+2.) Your device must be patched to ignore app signatures. This can be done with the help of tools such as Luckypatcher or Xposed.
 
-                    "You are rooted and want to know how to patch your device? Please [URL='https://platinmods.com/threads/.15/']click here[/URL] for more information.[/SPOILER]\r\n\r\n" +
+Once you fill that requirements the process is the same as with signed APKs with the difference that you can overwrite the original game/app with the MOD APK without removing it first.
 
-                    "[SPOILER=\"How to install OBB files\"]\r\n\r\n" +
+1.) Download the unsigned MOD APK.
+2.) Install the unsigned MOD APK.
+3.) Enjoy.
 
-                    "OBB files are not required by every game/app. If necessary, the mod publisher will [U]usually[/U] provide them and tell you that they are needed.\r\n\r\n" +
+[B]Note:[/B]
+For the case the unsigned APK does fail to install: Your device patch is not done correctly!
 
-                    "1.) Download the OBB file/files.\r\n" +
-                    "2.) Download the MOD APK.\r\n" +
-                    "3.) Move the OBB files with the help of a filemanager to Android/obb/<packagecode> on your device.\r\n" +
-                    "4.) Install the downloaded MOD APK.\r\n" +
-                    "5.) Enjoy.\r\n\r\n" +
+[COLOR=rgb(0, 255, 0)]Login methods and In-App purchases on unsigned MODs function the same as in the original game.[/COLOR] Logging in with Google works without issues. Keeping the Facebook application installed is also no problem.
 
-                    "The OBB files are either provided as \".obb\" files or as \".zip\" files. ZIP files do require to be extracted first.\r\n\r\n" +
+You are rooted and want to know how to patch your device? Please check this for more information:
+[URL='https://platinmods.com/threads/videotutorial-how-to-login-with-google-or-facebook-app-on-modded-games.15/'][Videotutorial] How To Login With Google+ Or Facebook App On Modded Games[/URL][/SPOILER]
 
-                    "Still facing issues? Please [URL='https://platinmods.com/threads/.178664/']click here[/URL] for more details.[/SPOILER]";
+[SPOILER=""How to install OBB files""]
+
+OBB files are not required by every game/app. If necessary, the mod publisher will [U]usually[/U] provide them and tell you that they are needed.
+
+1.) Download the OBB file/files.
+2.) Download the MOD APK.
+3.) Move the OBB files with the help of a filemanager to Android/obb/<packagecode> on your device.
+4.) Install the downloaded MOD APK.
+5.) Enjoy.
+
+The OBB files are either provided as "".obb"" files or as "".zip"" files. ZIP files do require to be extracted first.
+
+Still facing issues? Please check here for more details:
+[URL='https://platinmods.com/threads/how-to-install-obb-files-as-detailed-as-possible.178664/']How to install OBB files [as detailed as possible][/URL][/SPOILER]";
 
                 string downlinkScript = $"[COLOR=#00ff00][U]Free Download:[/U][/COLOR]\n" +
                     $"[HIDE]\n" +
@@ -1209,9 +1215,9 @@ namespace MMBS
                     + (String.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link) ? "" : $"\n\nOBB:\n{thenow.downloadlink.OBBlink.link}") +
                     $"[/HIDE]";
 
-                string tutorialslinkScript = "[COLOR=#ff0000]Tutorials:[/COLOR]\r\n" +
-                    "[URL='https://platinmods.com/threads/.220/']How to sign up and download on Platinmods.com[/URL]\r\n" +
-                    "[URL='https://platinmods.com/threads/.178666/']List of useful tutorials about how to use this website and its content[/URL]";
+                string tutorialslinkScript = @"[COLOR=#ff0000]Tutorials:[/COLOR]
+[URL = 'https://platinmods.com/threads/how-to-sign-up-and-download-on-www-platinmods-com.220/']How to sign up and download on Platinmods.com[/ URL]
+[URL = 'https://platinmods.com/threads/list-of-useful-tutorials-about-how-to-use-this-website-and-its-content.178666/']List of useful tutorials about how to use this website and its content[/ URL]";
                 
                 
                 string cache_modList = "";
