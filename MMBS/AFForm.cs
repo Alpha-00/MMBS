@@ -353,9 +353,20 @@ namespace MMBS
             // Not visible by default
             //comboSourceQuery.Visible = this.boxDSlink.Text.Contains("play.google.com");
         }
+        /// <summary>
+        /// Developer Optional Toggle For Download Link Validation
+        /// </summary>
+        private bool needCheckValidDownloadLink = false;
        // [STAThread]
         public void boxDLproc()
         {
+            if (!needCheckValidDownloadLink)
+            {
+                formData.downloadlink.Downloadlink.link = boxDLlink.Text;
+                formData.downloadlink.Downloadlink.check = true;
+                formData.downloadlink.Downloadlink.host = "";
+                return;
+            }
             Console.WriteLine("checkinvoke");
             this.Invoke(InfoSeterDown,"checkvarThreads.+");
             Console.WriteLine("st");
@@ -429,6 +440,13 @@ namespace MMBS
         }
         public void boxAOproc()
         {
+            if (!needCheckValidDownloadLink)
+            {
+                formData.downloadlink.OBBlink.link = boxAOlink.Text;
+                formData.downloadlink.OBBlink.check = true;
+                formData.downloadlink.OBBlink.host = "";
+                return;
+            }
             this.Invoke(InfoSeterDown, "checkvarThreads.+");
             OldProcessor.ProcessDownloadLinkTextBox processAPKLinkTextBox = new OldProcessor.ProcessDownloadLinkTextBox(boxAOlink.Text,OldProcessor.ProcessDownloadLinkTextBox.request_code.SimpleInfo);
             Task.WaitAll();
@@ -460,6 +478,7 @@ namespace MMBS
         }
         private void boxAOlink_TextChanged(object sender, EventArgs e)
         {
+            
             if (this.Created)
             {
                 checkAPK.Checked = boxAOlink.Text != "";
@@ -916,6 +935,7 @@ namespace MMBS
 
         private void boxMirrorDLlink_TextChanged(object sender, EventArgs e)
         {
+            
             //todo:Third Download Box
             if (this.Created)
             {
@@ -929,6 +949,13 @@ namespace MMBS
         }
         public void boxMirrorDLproc()
         {
+            if (!needCheckValidDownloadLink)
+            {
+                formData.downloadlink.OMirrorlink.link = boxMirrorDLlink.Text;
+                formData.downloadlink.OMirrorlink.check = true;
+                formData.downloadlink.OMirrorlink.host = "";
+                return;
+            }
             this.Invoke(InfoSeterDown, "checkvarThreads.+");
             OldProcessor.ProcessDownloadLinkTextBox processMirrorLinkTextBox = new OldProcessor.ProcessDownloadLinkTextBox(boxMirrorDLlink.Text, OldProcessor.ProcessDownloadLinkTextBox.request_code.SimpleInfo);
             /* this.Invoke(InfoSeter, "checkAO label\n" + processAPKLinkTextBox.valid);

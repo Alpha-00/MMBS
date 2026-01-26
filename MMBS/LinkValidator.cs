@@ -30,6 +30,13 @@ namespace MMBS
         }
         public void ValidChecker(string link)
         {
+            // TODO: Convert to setting option
+            labelValid.Visible = true;
+            labelValid.ForeColor = System.Drawing.Color.Lime;
+            FormData.check = true;
+            FormData.host = "";
+            FormData.link = link;
+            return;
             OldProcessor.ProcessDownloadLinkTextBox check = new OldProcessor.ProcessDownloadLinkTextBox(link,OldProcessor.ProcessDownloadLinkTextBox.request_code.SimpleInfo);
             labelUn.Visible = check.valid == 2;
             labelValid.Visible = check.valid > 0;
