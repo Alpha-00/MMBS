@@ -1132,8 +1132,8 @@ namespace MMBS
                 string igroupScript =
                       $"Game Name: {thenow.appInfo.name}\n"
                     + $"Game Version: {(thenow.appInfo.version == "Varies with device" ? "" : thenow.appInfo.version)}"
-                    + $"\nNeeds OBB: {(thenow.appInfo.obbReq ? "[b][COLOR=#ff0000]Yes[/COLOR][/b]" : "No")}"
-                    + $"\nNeeds Root: {(thenow.appInfo.rootReq ? "[b][COLOR=#ff0000]Yes[/COLOR][/b]" : "No")}"
+                    + $"\nNeeds OBB: {(thenow.appInfo.obbReq ? "[b][COLOR=#ff0000]Yes[/COLOR][/b]" : "[COLOR=rgb(0, 255, 0)]No[/COLOR]")}"
+                    + $"\nNeeds Root: {(thenow.appInfo.rootReq ? "[b][COLOR=#ff0000]Yes[/COLOR][/b]" : "[COLOR=rgb(0, 255, 0)]No[/COLOR]")}"
                     //+ $"\nNeeds Internet: {(thenow.appInfo.internetReq ? "Yes" : "No")}"
                     + (thenow.appInfo.extpermReq ? $"\nNeeds Ext.Storage Permission: [b][COLOR=#ff0000]Yes[/COLOR][/b]" :"");
 
@@ -1210,14 +1210,14 @@ Still facing issues? Please check here for more details:
 
                 string downlinkScript = $"[COLOR=#00ff00][U]Free Download:[/U][/COLOR]\n" +
                     $"[HIDE]\n" +
-                    $"Download Link: {thenow.downloadlink.Downloadlink.link}\n\n" +
-                    $"Mirror: {thenow.downloadlink.OMirrorlink.link}" 
+                    $"Download Link (Main)\n\n{thenow.downloadlink.Downloadlink.link}\n\n" +
+                    $"Download Link (Mirror):\n{thenow.downloadlink.OMirrorlink.link}"
                     + (String.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link) ? "" : $"\n\nOBB:\n{thenow.downloadlink.OBBlink.link}") +
                     $"[/HIDE]";
 
                 string tutorialslinkScript = @"[COLOR=#ff0000]Tutorials:[/COLOR]
-[URL = 'https://platinmods.com/threads/how-to-sign-up-and-download-on-www-platinmods-com.220/']How to sign up and download on Platinmods.com[/ URL]
-[URL = 'https://platinmods.com/threads/list-of-useful-tutorials-about-how-to-use-this-website-and-its-content.178666/']List of useful tutorials about how to use this website and its content[/ URL]";
+[URL='https://platinmods.com/threads/how-to-sign-up-and-download-on-www-platinmods-com.220/']How to sign up and download on Platinmods.com[/URL]
+[URL='https://platinmods.com/threads/list-of-useful-tutorials-about-how-to-use-this-website-and-its-content.178666/']List of useful tutorials about how to use this website and its content[/URL]";
                 
                 
                 string cache_modList = "";
