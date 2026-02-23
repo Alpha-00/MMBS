@@ -1038,6 +1038,7 @@ namespace MMBS
                                 switch (codeseg[2])
                                 {
                                     case "current":
+                                       
                                         PMT();
                                         break;
                                 }
@@ -1088,22 +1089,51 @@ namespace MMBS
 
                     }break;
             }
+            String titleProduceInPmtStyle(PostDataBundle data)
+            {
+                var builder = new StringBuilder();
+                builder.Append(data.appInfo.name);
+                var version = data.appInfo.version;
+                if (!string.IsNullOrEmpty(version))
+                builder.Append($" Ver. {version}");
+
+                var modText = thenow.modInfo.UI.modTypeGetDat(thenow.modInfo.UI.currentindex);
+                builder.Append(" MOD APK");
+                if (String.IsNullOrWhiteSpace(modText)) { return builder.ToString(); }
+
+                
+                string[] modItems = modText.Split('\n');
+                modItems = modItems.Where(x => !String.IsNullOrEmpty(x)).ToArray();
+                if (modItems.Length < 1) return builder.ToString();
+                builder.Append(" | ");
+                    for (int i = 0; i < modItems.Length; i++)
+                    {
+                    // Ignore long text which is likely to be a description instead of a mod feature
+                    if (modItems[i].Length > 50) continue;
+                    var item = modItems[i];
+                    item = item.Trim();
+                        item = Regex.Replace(item, "^-|^\\+|\\.$", "");
+                        item = ExtendingFunction.CapitalizeEachWord(item);
+                    item = item.Trim();
+                    builder.Append(item);
+                    if (i != modItems.Length - 1)
+                        builder.Append(", ");
+                }
+                
+                return builder.ToString();
+            }
             void PMT()
             {
+                
                 //tmp code for BTH
                 if (System.IO.File.Exists(Class1.GetToken("BTH")))
                 {
                     BTH(); return;
                 }
                 //Title Process
-                titleprocRes = "";
-                titleuse = false;
-                if (!string.IsNullOrWhiteSpace(thenow.appInfo.name))
-                {
-                    if (thenow.appInfo.version == "Varies with device") MessageBox.Show("Data is not ready to use: Ver. Varies with device", "WARNING");
-                    titleprocRes = (thenow.appInfo.name).Trim(' ') + (thenow.appInfo.version == "Varies with device"?"":" v" +thenow.appInfo.version) +" Mod APK";
-                    titleuse = true;
-                }
+                titleprocRes = titleProduceInPmtStyle(thenow);
+                titleuse = true;
+                
                 //SearchKeyword Process
                 searchproRes = "";
                 searchuse = false;
@@ -1210,8 +1240,8 @@ Still facing issues? Please check here for more details:
 
                 string downlinkScript = $"[COLOR=#00ff00][U]Free Download:[/U][/COLOR]\n" +
                     $"[HIDE]\n" +
-                    $"Download Link (Main)\n\n{thenow.downloadlink.Downloadlink.link}\n\n" +
-                    $"Download Link (Mirror):\n{thenow.downloadlink.OMirrorlink.link}"
+                    $"Main: {thenow.downloadlink.Downloadlink.link}\n\n" +
+                    $"Mirror: {thenow.downloadlink.OMirrorlink.link}"
                     + (String.IsNullOrWhiteSpace(thenow.downloadlink.OBBlink.link) ? "" : $"\n\nOBB:\n{thenow.downloadlink.OBBlink.link}") +
                     $"[/HIDE]";
 
